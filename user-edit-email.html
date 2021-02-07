@@ -1,0 +1,245 @@
+<html lang="en">
+ <head> 
+  <!-- Required meta tags --> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <title>Synadmin - Bootstrap4 Admin Template</title> 
+  <!--favicon--> 
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png"> 
+  <!--plugins--> 
+  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"> 
+  <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet"> 
+  <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet"> 
+  <!-- loader--> 
+  <link href="assets/css/pace.min.css" rel="stylesheet"> 
+  <!-- Bootstrap CSS --> 
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css"> 
+  <!-- Icons CSS --> 
+  <link rel="stylesheet" href="assets/css/icons.css"> 
+  <!-- App CSS --> 
+  <link rel="stylesheet" href="assets/css/app.css"> 
+  <link rel="stylesheet" href="assets/css/dark-style.css"> 
+ </head> 
+ <body class=""> 
+  <!-- wrapper --> 
+  <div class="wrapper"> 
+   <!--header--> 
+   <div id="navbar"></div>
+   <!--end header--> 
+   <!--page-wrapper--> 
+   <div class="page-wrapper">
+    <!--page-content-wrapper--> 
+    <div class="page-content-wrapper">
+      
+      
+     
+    <div id="edit-email-section" class="">
+      <div class="p-3 d-flexx align-items-center justify-content-between text-center" style="position:relative"> 
+      <a href="javascript:history.back()" style="position:absolute;left:15px;top:8px">
+       <i class="bx bx-chevron-left text-dark" style="font-size: 36px"></i>
+      </a>
+      <h3 class="mb-0">แก้ไขอีเมล</h3> 
+
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+       <form> 
+        <div class="form-group"> 
+         <label for="email-input">อีเมล</label>
+         <input type="email" class="form-control" id="email-input" placeholder="พิมพ์อีเมล"> 
+        </div> 
+        <button id="submit-email-btn" type="submit" class="btn btn-primary btn-block mb-2"> บันทึก</button> 
+       </form> 
+       
+       
+
+       
+       
+      </div> 
+     </div> 
+
+    </div>
+
+
+    <div id="verify-code-section" class="d-none">
+      <div class="p-3 d-flexx align-items-center justify-content-between text-center" style="position:relative"> 
+      <a href="javascript:history.back()" style="position:absolute;left:15px;top:8px">
+       <i class="bx bx-chevron-left text-dark" style="font-size: 36px"></i>
+      </a>
+      <h3 class="mb-0">ใส่โค้ดยืนยัน</h3> 
+
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+       
+       
+    <h4 class="mt-5 font-weight-bold">ใส่โค้ดยืนยันอีเมล</h4>
+    <p class="text-muted">โค้ดถูกส่งไปยังอีเมล manassorn@gmail.com ส่งซ้ำ(30วิ)</p>
+    <div class="alert alert-danger d-none" role="alert">
+        ไม่ถูกต้อง 
+      </div> 
+
+    <form class="needs-validation" novalidate>
+
+      <div class="form-inline mt-2 mb-3 justify-content-center"> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+      </div> 
+      <button id="verify-code-btn" type="button" class="btn btn-primary btn-lg btn-block">ยืนยัน</button> 
+      <a href="authentication-login.html" class="btn btn-link btn-block">ไม่ได้รับโค้ด?</a> 
+    </form>
+
+       
+       
+      </div> 
+     </div> 
+
+    </div>
+
+
+
+
+     
+     
+    </div> 
+    
+    
+    
+    
+    <!--end page-content-wrapper--> 
+   </div> 
+   <!--end page-wrapper--> 
+   <!--start overlay--> 
+   <div class="overlay toggle-btn-mobile"></div> 
+   <!--end overlay--> 
+   <!--Start Back To Top Button--> 
+   <a href="javaScript:;" class="back-to-top"><i class="bx bxs-up-arrow-alt"></i></a> 
+   <!--End Back To Top Button-->
+  </div> 
+  <!-- end wrapper --> 
+  <!-- JavaScript --> 
+  <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!--plugins-->
+  <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+  <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+  <!-- App JS -->
+  <script src="assets/js/app.js"></script>
+  
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<!--  <script type="text/babel" src="navbarxxx.js"></script>-->
+  <script type="text/javascript" src="navbar3.js"></script>
+  <!--plugins--> 
+  <!-- App JS --> 
+  <script>
+  window.onhashchange = () => {
+    var hash = window.location.hash
+    $('[id$="section"]').addClass('d-none')
+    
+    if(hash != '') {
+      var editSection = hash
+      $(editSection).removeClass('d-none')
+    } else {
+      $('#display-section').removeClass('d-none')
+    }
+    document.body.scrollTop = 0
+  }
+    
+    // var id = location.hash.substring(1)
+    // if(!id) id = 'hNqOKzYwhJjZTIDLUkf5'
+    var id = 'hNqOKzYwhJjZTIDLUkf5'
+    var jqxhr = $.get( API_HOST + "/api/crud/user/" + id , function(data) {
+      var user = data.data
+      $('#email-input').val(user.email)
+
+    },'json')
+    .fail(function(xhr, error) {
+      console.error( "error", xhr, error );
+      alert("error")
+    })
+    
+    
+
+  
+  		$("#submit-email-btn").on("click", function() {
+		  var form = $('#edit-email-section form')[0]
+		  if (form.checkValidity() === false) {
+		  	form.classList.add('was-validated');
+		    return false
+		  }
+		  var jqxhr = $.post( API_HOST + "/api/verification/email/edit", {email:$("#email-input").val()}, function(data) {
+		    if(data.error) {
+		      $('#edit-email-section .alert').removeClass('d-none')
+		    } else {
+		      location.hash = 'verify-code-section'
+		    }
+		  },'json')
+		  .fail(function(xhr, error) {
+		  console.error( "error", xhr, error );
+		  alert("error")
+		  })
+		  return false
+			
+		})
+
+  
+  	$('#verify-code-section input').on('keyup', function(e) {
+      $this = $(this)
+      if ($this.val().length > 0) {
+        $this.next('input').focus()
+      }
+    })
+    $("#verify-code-section input").keydown(function(event) {
+
+      var isBackspaceOrDelete = event.keyCode === 8 || event.keyCode === 46;
+      $this = $(this)
+
+      if (isBackspaceOrDelete && $this.val().length == 0) {
+        $this.prev('#verify-code-section input').focus()
+        $this.prev('#verify-code-section input').val('')
+
+      }
+    });
+
+		$("#verify-code-btn").on("click", function() {
+		  var form = $('#verify-code-section form')[0]
+		  if (form.checkValidity() === false) {
+		  form.classList.add('was-validated');
+		  return false
+		  }
+		  
+		  var code = getCode()
+		  var email = $('#email-input').val()
+		  var jqxhr = $.post( API_HOST + "/api/user/" + id + "/email", {email: email,code: code}, function(data) {
+		  window.location = 'user-edit.html'
+		
+		  },'json')
+		  .fail(function(xhr, error) {
+		    $('#verify-code-section .alert').removeClass('d-none')
+		    $('#verify-code-section input').val('')
+		    $('#verify-code-section input').first().focus()
+		   console.error( "error", xhr, error );
+		    alert("error")
+		  })
+		})
+		
+		function getCode() {
+		  var code = $('#verify-code-section input').map(function(){
+		  return $(this).val();
+		  }).get().join('')
+		  return code
+		}
+
+    
+  </script>
+ </body>
+</html>

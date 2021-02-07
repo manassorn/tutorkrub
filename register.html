@@ -1,0 +1,249 @@
+<html lang="en">
+ <head> 
+  <!-- Required meta tags --> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <title>Synadmin - Bootstrap4 Admin Template</title> 
+  <!--favicon--> 
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png"> 
+  <!-- loader--> 
+  <link href="assets/css/pace.min.css" rel="stylesheet"> 
+  <!-- Bootstrap CSS --> 
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css"> 
+  <script src="assets/js/pace.min.js"></script>
+  <!-- Icons CSS --> 
+  <link rel="stylesheet" href="assets/css/icons.css"> 
+  <!-- App CSS --> 
+  <link rel="stylesheet" href="assets/css/app.css"> 
+  <link rel="stylesheet" href="assets/css/dark-style.css">
+
+
+ </head> 
+ <body class="bg-forgot"> 
+ <!--header-->
+ <div id="navbar"></div>
+ <!--end header-->
+ 
+  <!-- wrapper --> 
+  <div class="wrapper mt-5"> 
+   <div class="authentication-forgot d-flex align-items-center justify-content-center"> 
+    <div class="card shadow-lg forgot-box"> 
+     <div id="email-card" class="card-body p-md-5"> 
+      <div class="text-center"> 
+       <img src="assets/images/icons/forgot.png" width="150" alt=""> 
+      </div> 
+      <h4 class="mt-5 font-weight-bold">ลงทะเบียน</h4> 
+      <div class="alert alert-danger d-none" role="alert">
+        อีเมลนี้ลงทะเบียนเรียบร้อยแล้ว 
+       <a href="#">เข้าสู่ระบบ </a> 
+      </div> 
+      
+    <form class="needs-validation" novalidate>
+      <div class="form-group mt-2"> 
+       <label>อีเมล</label> 
+       <input id="email" type="email" class="form-control form-control-lg" placeholder="example@user.com" value="manassorn@gmail.com" required>
+       <div class="invalid-feedback">
+         อีเมลไม่ถูกต้อง
+       </div>
+      </div> 
+      <button id="submit-email-btn" type="button" class="btn btn-primary btn-lg btn-block">ยืนยันอีเมล</button>
+      <a href="authentication-login.html" class="btn btn-link btn-block">เข้าสู่ระบบ</a> 
+     </div> 
+    </form>
+     
+    <div id="code-card" class="card-body p-md-5 d-none"> 
+      <div class="text-center"> 
+       <img src="assets/images/icons/forgot.png" width="150" alt=""> 
+      </div> 
+      <h4 class="mt-5 font-weight-bold">ใส่โค้ดยืนยันอีเมล</h4> 
+      <p class="text-muted">โค้ดถูกส่งไปยังอีเมล manassorn@gmail.com ส่งซ้ำ(30วิ)</p> 
+      <div class="alert alert-danger d-none" role="alert">
+        ไม่ถูกต้อง 
+      </div> 
+      
+    <form class="needs-validation" novalidate>
+
+      <div class="form-inline mt-2 mb-3 justify-content-center"> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+      </div> 
+      <button id="verify-code-btn" type="button" class="btn btn-primary btn-lg btn-block">ยืนยัน</button> 
+      <a href="authentication-login.html" class="btn btn-link btn-block">ไม่ได้รับโค้ด?</a> 
+    </form>
+     </div> 
+
+     <div id="profile-card" class="card-body p-md-5 d-none"> 
+      <div class="text-center"> 
+       <img src="assets/images/icons/forgot.png" width="150" alt=""> 
+      </div> 
+      <h4 class="mt-5 font-weight-bold">ข้อมูลผู้ใช้</h4> 
+      <div class="alert alert-danger d-none" role="alert">
+        อีเมลนี้ลงทะเบียนเรียบร้อยแล้ว 
+       <a href="#">เข้าสู่ระบบ </a> 
+      </div> 
+      
+      <form class="needs-validation" novalidate>
+
+      <div class="form-group mt-2"> 
+       <label>ชื่อ</label> 
+       <input id="name" type="text" class="form-control form-control-lg" placeholder=""> 
+      </div> 
+      <div class="form-group mt-2"> 
+       <label>รหัสผ่าน</label> 
+       <input id="password" type="password" class="form-control form-control-lg" placeholder=""> 
+      </div> 
+      <div class="form-group mt-2"> 
+       <label>ยืนยันรหัสผ่าน</label> 
+       <input type="text" class="form-control form-control-lg" placeholder=""> 
+      </div> 
+      <button id="submit-profile-btn" type="button" class="btn btn-primary btn-lg btn-block">ลงทะเบียน</button> 
+      </form>
+      
+     </div> 
+
+
+    </div> 
+   </div> 
+  </div> 
+  <!-- end wrapper -->
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!--plugins-->
+  <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+  <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+  <!-- App JS -->
+  <script src="assets/js/app.js"></script>
+  
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script type="text/babel" src="navbar.js"></script>
+
+  <script>
+    window.onhashchange = () => {
+      var hash = location.hash
+      $('#email-card').addClass('d-none')
+      $('#code-card').addClass('d-none')
+      $('#profile-card').addClass('d-none')
+
+      if(hash == '#code') {
+        $('#code-card').removeClass('d-none')
+      } else if (hash == '#profile') {
+        $('#profile-card').removeClass('d-none')
+      } else {
+        $('#email-card').removeClass('d-none')
+      }
+    }
+
+		$("#submit-email-btn").on("click", function() {
+		  var form = $('#email-card form')[0]
+		  if (form.checkValidity() === false) {
+		  	form.classList.add('was-validated');
+		    return false
+		  }
+		  
+		  var jqxhr = $.post( "http://178.128.93.245:3000/api/verification/email/create", {email:$("#email").val()}, function(data) {
+		    if(data.error) {
+		      $('#email-card .alert').removeClass('d-none')
+		    } else {
+		      location.hash = 'code'
+		    }
+		  },'json')
+		  .fail(function(xhr, error) {
+		  console.error( "error", xhr, error );
+		  alert("error")
+		  })
+		  
+			
+		})
+		
+		$('#code-card input').on('keyup', function(e) {
+      $this = $(this)
+      if ($this.val().length > 0) {
+        $this.next('input').focus()
+      }
+    })
+    $("#code-card input").keydown(function(event) {
+
+      var isBackspaceOrDelete = event.keyCode === 8 || event.keyCode === 46;
+      $this = $(this)
+
+      if (isBackspaceOrDelete && $this.val().length == 0) {
+        $this.prev('#code-card input').focus()
+        $this.prev('#code-card input').val('')
+
+      }
+    });
+
+		$("#verify-code-btn").on("click", function() {
+		  var form = $('#code-card form')[0]
+		  if (form.checkValidity() === false) {
+		  form.classList.add('was-validated');
+		  return false
+		  }
+		  
+		  var code = $('#code-card input').map(function(){
+		  return $(this).val();
+		  }).get().join('')
+		  var email = $('#email').val()
+		  var jqxhr = $.post( "http://178.128.93.245:3000/api/verification/email/verify", {email: email,code: code}, function(data) {
+		  if(data.data.verifyPassed === true) {
+		    location.hash = 'profile'
+		  } else {
+		    $('#code-card .alert').removeClass('d-none')
+		    $('#code-card input').val('')
+		    $('#code-card input').first().focus()
+
+		  }
+		
+		  },'json')
+		  .fail(function(xhr, error) {
+		   console.error( "error", xhr, error );
+		    alert("error")
+		  })
+		})
+		
+		function getCode() {
+		  var code = $('#code-card input').map(function(){
+		  return $(this).val();
+		  }).get().join('')
+		  return code
+		}
+
+		$("#submit-profile-btn").on("click", function() {
+		  var form = $('#profile-card form')[0]
+		  if (form.checkValidity() === false) {
+		  form.classList.add('was-validated');
+		  return false
+		  }
+		  
+		  var code = getCode()
+		  var email = $('#email').val()
+		  var name = $('#name').val()
+		  var password = $('#password').val()
+		  var jqxhr = $.post( "http://178.128.93.245:3000/api/user", {email,code,name,password}, function(data) {
+		  location.href = 'user1.html'
+		
+		  },'json')
+		  .fail(function(xhr, error) {
+		   console.error( "error", xhr, error );
+		    alert("error")
+		  })
+		})
+	</script> 
+	<style>
+      .was-validated .form-control:invalid, .was-validated .form-control:valid {
+       background-image: none;
+       padding-right: inherit;
+      }
+	</style>
+ </body>
+</html>

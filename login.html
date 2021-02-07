@@ -1,0 +1,103 @@
+<html lang="en">
+ <head> 
+  <!-- Required meta tags --> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <title>Synadmin - Bootstrap4 Admin Template</title> 
+  <!--favicon--> 
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png"> 
+  <!-- loader--> 
+  <link href="assets/css/pace.min.css" rel="stylesheet"> 
+  <!-- Bootstrap CSS --> 
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css"> 
+  <!-- Icons CSS --> 
+  <link rel="stylesheet" href="assets/css/icons.css"> 
+  <!-- App CSS --> 
+  <link rel="stylesheet" href="assets/css/app.css"> 
+  <link rel="stylesheet" href="assets/css/dark-style.css"> 
+ </head> 
+ <body class="bg-forgot"> 
+  <!-- wrapper --> 
+  <div class="wrapper"> 
+   <div class="authentication-forgot d-flex align-items-center justify-content-center"> 
+    <div class="card shadow-lg forgot-box"> 
+     <div class="card-body p-md-5"> 
+      <div class="text-center"> 
+       <img src="assets/images/icons/forgot.png" width="150" alt=""> 
+      </div> 
+      <h4 class="mt-5 font-weight-bold">เข้าสู่ระบบ</h4> 
+      <div class="alert alert-danger d-none" role="alert">
+        อีเมลหรือรหัสผ่าน 
+       <b>ไม่ถูกต้อง</b> 
+      </div> 
+      
+      <form class="needs-validation" novalidate>
+
+      <div class="form-group mt-2"> 
+       <label>อีเมล</label> 
+       <input id="email" type="email" class="form-control form-control-lg" placeholder="example@user.com" required> 
+      </div> 
+      <div class="form-group mt-2"> 
+       <label>รหัสผ่าน</label> 
+       <input id="password" type="password" class="form-control form-control-lg" placeholder="" required> 
+       <div class="invalid-feedback">
+        กรุณากรอกรหัสผ่าน
+       </div> 
+      </div> 
+      <button id="submit-login-btn" type="button" class="btn btn-primary btn-lg btn-block">เข้าสู่ระบบ</button> 
+      <a href="authentication-login.html" class="btn btn-link btn-block">ลืมรหัสผ่าน?</a> 
+      </form>
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <!-- end wrapper --> 
+  <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+    <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!--plugins-->
+  <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+  <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+  <!-- App JS -->
+  <script src="assets/js/app.js"></script>
+  
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script type="text/babel" src="navbar.js"></script>
+  
+  <script>
+	$("#submit-login-btn").on("click", function() {
+		  var form = $('form')[0]
+		  if (form.checkValidity() === false) {
+		  form.classList.add('was-validated');
+		  return false
+		  }
+		  
+		  var email = $('#email').val()
+		  var password = $('#password').val()
+		  var jqxhr = $.post( "http://178.128.93.245:3000/api/user/login", {email,password}, function(data) {
+		    if (data.error) {
+		      $('.alert').removeClass('d-none')
+		    } else {
+		      location.href = 'user1.html'
+		    }
+		
+		  },'json')
+		  .fail(function(xhr, error) {
+		   console.error( "error", xhr, error );
+		    alert("error")
+		  })
+		})
+		
+	</script> 
+	<style>
+      .was-validated .form-control:invalid, .was-validated .form-control:valid {
+       background-image: none;
+       padding-right: inherit;
+      }
+	</style>
+ </body>
+</html>

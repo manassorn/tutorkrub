@@ -1,0 +1,306 @@
+<html lang="en">
+ <head> 
+  <!-- Required meta tags --> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <title>Synadmin - Bootstrap4 Admin Template</title> 
+  <!--favicon--> 
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png"> 
+  <!--plugins--> 
+  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"> 
+  <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet"> 
+  <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet"> 
+  <!-- loader--> 
+  <link href="assets/css/pace.min.css" rel="stylesheet"> 
+  <!-- Bootstrap CSS --> 
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css"> 
+  <!-- Icons CSS --> 
+  <link rel="stylesheet" href="assets/css/icons.css"> 
+  <!-- App CSS --> 
+  <link rel="stylesheet" href="assets/css/app.css"> 
+  <link rel="stylesheet" href="assets/css/dark-style.css"> 
+ </head> 
+ <body class=""> 
+  <!-- wrapper --> 
+  <div class="wrapper"> 
+   <!--header--> 
+   <div id="navbar"></div>
+   <!--end header--> 
+   <!--page-wrapper--> 
+   <div class="page-wrapper">
+    <!--page-content-wrapper--> 
+
+    <div class="page-content-wrapper">
+      
+    <div id="display-section">
+     <div class="p-3 text-center" style="background:white"> 
+      <h3 class="mb-0">แก้ไขคอร์ส</h3> 
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="row"> 
+       <div class="col border rounded ml-3 mr-3"> 
+
+        <div class="border-bottom pt-3 pb-3"> 
+         <div class="d-flex justify-content-between"> 
+          <div> 
+           <h6 class="mb-0 text-muted">ชื่อคอร์ส</h6> 
+           <b id="title-display">.</b> 
+          </div> 
+          <a href="javascript:;" field="title" class="edit-link">แก้ไข</a> 
+         </div> 
+        </div> 
+
+        <div class="border-bottom pt-3 pb-3"> 
+         <div class="d-flex justify-content-between"> 
+          <div> 
+           <h6 class="mb-0 text-muted">รายละเอียด</h6> 
+           <b id="description-display">.</b>
+          </div> 
+          <a href="javascript:;" field="description" class="edit-link">แก้ไข</a> 
+         </div> 
+        </div> 
+        
+        
+        <div class="border-bottom pt-3 pb-3"> 
+         <div class="d-flex justify-content-between"> 
+          <div> 
+           <h6 class="mb-0 text-muted">ราคา</h6> 
+           <b>฿<span id="price-display">.</span>/ชั่วโมง</b> 
+          </div> 
+          <a href="javascript:;" field="price" class="edit-link">แก้ไข</a> 
+         </div> 
+        </div> 
+
+        <div class="pt-3 pb-3"> 
+         <div class="d-flex justify-content-between"> 
+          <div> 
+           <h6 class="mb-0 text-muted">หมวดหมู่</h6> 
+           <b id="category-display">.</b> 
+          </div> 
+          <a href="javascript:;" field="category" class="edit-link">แก้ไข</a> 
+         </div> 
+        </div> 
+
+       </div> 
+      </div> 
+     </div> 
+
+    </div>
+     
+     
+    <div id="edit-title-section" class="d-none">
+      <div class="p-3 align-items-center text-center" style="position:relative"> 
+      <a href="javascript:history.back()" style="position:absolute;left:15px;top:7px">
+        <i class="bx bx-chevron-left text-dark" style="font-size: 36px"/>
+      </a>
+      <h3 class="mb-0">แก้ไขชื่อคอร์ส</h3> 
+
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+       <form class="needs-validation" novalidate> 
+        <div class="form-group"> 
+         <label for="title-input">ชื่อคอร์ส</label> 
+         <input type="text" class="form-control" id="title-input" placeholder="พิมพ์ชื่อคอร์ส" required>
+          <div class="invalid-feedback">
+          กรุณาพิมพ์ชื่อคอร์ส
+          </div>
+        </div> 
+        <button type="submit" class="btn btn-primary btn-block mb-2 save-btn" field="title" input="#title-input" display="#title-display"> บันทึก</button> 
+       </form> 
+      </div> 
+     </div> 
+
+    </div>
+
+
+    <div id="edit-description-section" class="d-none">
+      <div class="p-3 align-items-center text-center" style="position:relative"> 
+      <a href="javascript:history.back()" style="position:absolute;left:15px;top:7px">
+        <i class="bx bx-chevron-left text-dark" style="font-size: 36px"/>
+      </a>
+      <h3 class="mb-0">แก้ไขรายละเอียด</h3> 
+
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+       <form class="needs-validation" novalidate> 
+       
+       
+       
+        <div class="form-group"> 
+         <label for="exampleFormControlInput1">รายละเอียด</label>
+          <textarea class="form-control" id="description-textarea" rows="3" placeholder="เล่าเนื้อหาให้ฟังหน่อยค่ะ" required></textarea>
+          <div class="invalid-feedback">
+            กรุณาพิมพ์รายละเอียด
+          </div>
+        </div> 
+        <button type="submit" class="btn btn-primary btn-block mb-2" field="description" input="#description-textarea" display="#description-display"> บันทึก</button> 
+       </form> 
+      </div> 
+     </div> 
+
+    </div>
+
+
+     <div id="edit-price-section" class="d-none">
+      <div class="p-3 align-items-center text-center" style="position:relative"> 
+      <a href="javascript:history.back()" style="position:absolute;left:15px;top:7px">
+        <i class="bx bx-chevron-left text-dark" style="font-size: 36px"/>
+      </a>
+      <h3 class="mb-0">แก้ไขราคา</h3> 
+
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+       <form> 
+        <div class="form-group">
+          <label>ราคา</label>
+            <div class="input-group mb-3">
+              <input id="price-input" type="number" class="form-control" placeholder="พิมพ์ราคา" aria-label="Recipient's username" aria-describedby="basic-addon2" step="1" required>
+              <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">บาทต่อชั่วโมง</span>
+              </div>
+              <div class="invalid-feedback">
+                กรุณาใส่ราคา
+              </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block mb-2" field="price" input="#price-input" display="#price-display"> บันทึก</button> 
+       </form> 
+      </div> 
+     </div> 
+
+    </div>
+
+    <div id="edit-category-section" class="d-none">
+      <div class="p-3 align-items-center text-center" style="position:relative"> 
+      <a href="javascript:history.back()" style="position:absolute;left:15px;top:7px">
+        <i class="bx bx-chevron-left text-dark" style="font-size: 36px"/>
+      </a>
+      <h3 class="mb-0">แก้ไขหมวดหมู่</h3> 
+
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+       <form> 
+        <div class="form-group">
+          <label>หมวดหมู่</label>
+          <select id="category-select" class="form-control">
+            <option>เลือกหมวดหมู่...</option>
+            <option>คณิตศาสตร์</option>
+            <option>วิทยาศาสตร์</option>
+            <option>อื่นๆ</option>
+
+          </select>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block mb-2" field="category" input="#category-select" display="#category-display"> บันทึก</button> 
+       </form> 
+      </div> 
+     </div> 
+
+    </div>
+
+     
+    </div> 
+    <!--end page-content-wrapper--> 
+   </div> 
+   <!--end page-wrapper--> 
+   <!--start overlay--> 
+   <div class="overlay toggle-btn-mobile"></div> 
+   <!--end overlay--> 
+   <!--Start Back To Top Button--> 
+   <a href="javaScript:;" class="back-to-top"><i class="bx bxs-up-arrow-alt"></i></a> 
+   <!--End Back To Top Button-->
+  </div> 
+  <!-- end wrapper --> 
+  <!-- JavaScript --> 
+  <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+      <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!--plugins-->
+  <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+  <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+  <!-- App JS -->
+  <script src="assets/js/app.js"></script>
+  
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <script type="text/babel" src="navbar.js"></script>
+  <!--plugins--> 
+  <!-- App JS --> 
+    <script>
+  window.onhashchange = () => {
+    var hash = window.location.hash
+    $('[id$="-section"]').addClass('d-none')
+    
+    if(hash != '') {
+      var field = hash.substring(1)
+      $('#edit-' + field + '-section').removeClass('d-none')
+    } else {
+      $('#display-section').removeClass('d-none')
+    }
+    
+    document.body.scrollTop = 0
+  }
+    $('.edit-link').click(function(){
+      var field = $(this).attr('field')
+      location.hash = field
+    })
+    
+    var id = location.hash.substring(1)
+    if(!id) id = 'VsNjEXN4IlJDwIDy4Pmt'
+    $('button').click(function(){
+      var form = $(this).parent('form')[0]
+		  if (form.checkValidity() === false) {
+		    form.classList.add('was-validated');
+		    return false
+		  }
+      
+      $this = $(this)
+      var field = $(this).attr('field')
+      var input = $(this).attr('input')
+      var value = $(input).val()
+      
+      var postData = {}
+      postData[field] = value
+
+      var jqxhr = $.post( API_HOST + "/api/crud/course/" + id, postData, function(data) {
+        var display = $this.attr('display')
+        $(display).text(value)
+        history.back()
+      },'json')
+      .fail(function(xhr, error) {
+        console.error( "error", xhr, error );
+        alert("error")
+      })
+      return false
+    })
+    
+    
+    var jqxhr = $.get( API_HOST + "/api/crud/course/" + id, function(data) {
+      var course = data.data
+      $('#title-display').text(course.title)
+      $('#title-input').val(course.title)
+      $('#description-display').text(course.title)
+      $('#description-textarea').val(course.title)
+      $('#price-display').text(course.price)
+      $('#price-input').val(course.price)
+      $('#category-display').text(course.category)
+      $('#category-select').val(course.category)
+
+    },'json')
+    .fail(function(xhr, error) {
+      console.error( "error", xhr, error );
+      alert("error")
+    })
+  </script>
+
+ </body>
+</html>

@@ -1,0 +1,464 @@
+<html lang="en">
+ <head> 
+  <!-- Required meta tags --> 
+  <meta charset="utf-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <title>Synadmin - Bootstrap4 Admin Template</title> 
+  <!--favicon--> 
+  <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png"> 
+  <!--plugins--> 
+  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"> 
+  <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet"> 
+  <link href="assets/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet"> 
+  <!-- loader--> 
+  <link href="assets/css/pace.min.css" rel="stylesheet"> 
+  <!-- Bootstrap CSS --> 
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css"> 
+  <!-- Icons CSS --> 
+  <link rel="stylesheet" href="assets/css/icons.css"> 
+  <!-- App CSS --> 
+  <link rel="stylesheet" href="assets/css/app.css"> 
+  <link rel="stylesheet" href="assets/css/dark-style.css"> 
+ </head> 
+ <body class=""> 
+  <!-- wrapper --> 
+  <div class="wrapper"> 
+   <!--header--> 
+   <div id="navbar"></div>
+   <!--end header--> 
+   <!--page-wrapper--> 
+   <div class="page-wrapper">
+    <!--page-content-wrapper--> 
+    <div class="page-content-wrapper">
+      
+      
+    <div id="display-section">
+     <div class="p-3 text-center" style="background:white"> 
+      <h3 class="mb-0">แก้ไขโปรไฟล์</h3> 
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="row"> 
+       <div class="col border rounded ml-3 mr-3"> 
+        <div class="border-bottom pt-3 pb-3 text-center d-flex flex-column align-items-center"> 
+         <img src="assets/images/avatars/avatar-1.png" class="rounded-circle shadow" width="130" height="130" alt=""> 
+         <b>manassorn</b> 
+        </div> 
+        <div class="border-bottom pt-3 pb-3"> 
+         <h6>ข้อมูลส่วนบุคคล</h6> 
+         <div class="d-flex justify-content-between"> 
+          <div> 
+           <h6 class="mb-0 text-muted">อีเมล</h6> 
+           <b id="email-display">.</b> 
+          </div> 
+          <a href="javascript:void(0)" edit-section="edit-email-section" class="edit-link">แก้ไข</a> 
+         </div> 
+        <div class="d-flex justify-content-between"> 
+          <div> 
+           <h6 class="mb-0 text-muted">ชื่อ</h6> 
+           <b id="name-display">.</b> 
+          </div> 
+          <a href="javascript:void(0)" edit-section="edit-name-section" class="edit-link">แก้ไข</a> 
+         </div> 
+
+        </div> 
+        <div class="border-bottom pt-3 pb-3"> 
+         <h6>ความปลอดภัย</h6> 
+         <div class="d-flex justify-content-between"> 
+          <div> 
+           <h6 class="mb-0 text-muted">รหัสผ่าน</h6> 
+           <b>********</b>
+          </div> 
+          <a href="javascript:;" edit-section="edit-password-section" class="edit-link">แก้ไข</a> 
+         </div> 
+        </div> 
+
+        <div class="pt-3 pb-3"> 
+         <h6>ช่องทางการเรียนการสอน</h6> 
+         <div class="d-flex justify-content-between"> 
+          <div> 
+           <h6 class="mb-0 text-muted">Skype ID</h6> 
+           <b id="skype-id-display">.</b> 
+          </div> 
+          <a href="javascript:;" edit-section="edit-skype-id-section" class="edit-link">แก้ไข</a> 
+         </div> 
+         <div class="d-flex justify-content-between"> 
+          <div> 
+           <h6 class="mb-0 text-muted">Zoom ID</h6> 
+           <b id="zoom-id-display">.</b> 
+          </div> 
+          <a href="javascript:;" edit-section="edit-zoom-id-section" class="edit-link">แก้ไข</a> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+
+      
+      
+      
+    </div>
+     
+    <div id="edit-email-section" class="d-none">
+      <div class="p-3 d-flexx align-items-center justify-content-between text-center" style="position:relative"> 
+      <a href="javascript:history.back()" style="position:absolute;left:15px;top:8px">
+       <i class="bx bx-chevron-left text-dark" style="font-size: 36px"></i>
+      </a>
+      <h3 class="mb-0">แก้ไขอีเมล</h3> 
+
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+       <form> 
+        <div class="form-group"> 
+         <label for="email-input">อีเมล</label>
+         <input type="email" class="form-control" id="email-input" placeholder="พิมพ์อีเมล"> 
+        </div> 
+        <button type="submit" class="btn btn-primary btn-block mb-2"> บันทึก</button> 
+       </form> 
+       
+       
+    <h4 class="mt-5 font-weight-bold">ใส่โค้ดยืนยันอีเมล</h4>
+    <p class="text-muted">โค้ดถูกส่งไปยังอีเมล manassorn@gmail.com ส่งซ้ำ(30วิ)</p>
+    <form id="verify-code-form" class="needs-validation" novalidate>
+
+      <div class="form-inline mt-2 mb-3 justify-content-center"> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required> 
+      </div> 
+      <button id="verify-code-btn" type="button" class="btn btn-primary btn-lg btn-block">ยืนยัน</button> 
+      <a href="authentication-login.html" class="btn btn-link btn-block">ไม่ได้รับโค้ด?</a> 
+    </form>
+
+       
+       
+      </div> 
+     </div> 
+
+    </div>
+
+    <div id="edit-name-section" class="d-none">
+      <div class="p-3 d-flexx align-items-center justify-content-between text-center" style="position:relative"> 
+      <a href="javascript:history.back()" style="position:absolute;left:15px;top:8px">
+       <i class="bx bx-chevron-left text-dark" style="font-size: 36px"></i>
+      </a>
+      <h3 class="mb-0">แก้ไขชื่อ</h3> 
+
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+       <form> 
+        <div class="form-group"> 
+         <label for="name-input">ชื่อ</label>
+         <input type="text" class="form-control" id="name-input" placeholder="พิมพ์ชื่อ"> 
+        </div> 
+        <button type="submit" class="btn btn-primary btn-block mb-2" field="name" input="#name-input" display="#name-display"> บันทึก</button> 
+       </form> 
+      </div> 
+     </div> 
+
+    </div>
+
+
+    <div id="edit-password-section" class="d-none">
+      <div class="p-3 text-center" style="background:white"> 
+      <h3 class="mb-0">แก้ไขรหัสผ่าน</h3> 
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+        <div class="alert alert-danger d-none" role="alert">
+          รหัสผ่านเดิมไม่ถูกต้อง
+        </div>
+       <form class="needs-validation" novalidate>
+        <div class="form-group"> 
+         <label for="password">รหัสผ่านเดิม</label> 
+         <input type="password" class="form-control" id="current-password" aria-describedby="current-password-feedback" required>
+         <div id="current-password-feedback" class="invalid-feedback">
+           กรุณาพิมพ์รหัสผ่านเดิม
+         </div>
+        </div> 
+        
+        <div class="form-group"> 
+         <label for="password">รหัสผ่านใหม่</label> 
+         <input type="password" class="form-control" id="password" minlength="8" required>
+         <div id="password-feedback" class="invalid-feedback">
+          กรุณาพิมพ์รหัสผ่านใหม่อย่างน้อย 8 ตัวอักษร
+         </div>
+        </div> 
+        
+        <div class="form-group"> 
+         <label for="confirm-password">ยืนยันรหัสผ่าน</label> 
+         <input type="password" class="form-control" id="confirm-password" minlength="8" required>
+         <div id="confirm-password-feedback" class="invalid-feedback">
+          กรุณาพิมพ์รหัสผ่านใหม่อย่างน้อย 8 ตัวอักษร
+         </div>
+        </div> 
+
+        
+        <button id="submit-password-btn" type="button" class="btn btn-primary btn-block mb-2 custom-submit"> บันทึก</button>
+       </form> 
+      </div> 
+     </div> 
+
+    </div>
+
+    <div id="edit-skype-id-section" class="d-none">
+      <div class="p-3 text-center" style="background:white"> 
+      <h3 class="mb-0">แก้ไข Skype ID</h3> 
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+       <form> 
+        <div class="form-group"> 
+         <label for="skype-id-input">Skype ID</label>
+         <input type="text" class="form-control" id="skype-id-input" placeholder="พิมพ์ Skype ID"> 
+        </div> 
+        <button type="submit" class="btn btn-primary btn-block mb-2" field="skypeId" input="#skype-id-input" display="#skype-id-display"> บันทึก</button> 
+       </form> 
+      </div> 
+     </div> 
+
+    </div>
+
+    <div id="edit-zoom-id-section" class="d-none">
+      <div class="p-3 text-center" style="background:white"> 
+      <h3 class="mb-0">แก้ไข Zoom ID</h3> 
+     </div> 
+     <div class="container" style="max-width:720px">
+      <div class="border-top pt-3"> 
+       <form> 
+        <div class="form-group"> 
+         <label for="zoom-id-input">Zoom ID</label>
+         <input type="text" class="form-control" id="zoom-id-input" placeholder="พิมพ์ Zoom ID"> 
+        </div> 
+        <button type="submit" class="btn btn-primary btn-block mb-2" field="zoomId" input="#zoom-id-input" display="#zoom-id-display"> บันทึก</button> 
+       </form> 
+      </div> 
+     </div> 
+
+    </div>
+
+     
+     
+    </div> 
+    
+    
+    
+    
+    <!--end page-content-wrapper--> 
+   </div> 
+   <!--end page-wrapper--> 
+   <!--start overlay--> 
+   <div class="overlay toggle-btn-mobile"></div> 
+   <!--end overlay--> 
+   <!--Start Back To Top Button--> 
+   <a href="javaScript:;" class="back-to-top"><i class="bx bxs-up-arrow-alt"></i></a> 
+   <!--End Back To Top Button-->
+  </div> 
+  <!-- end wrapper --> 
+  <!-- JavaScript --> 
+  <!-- jQuery first, then Popper.js, then Bootstrap JS --> 
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!--plugins-->
+  <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
+  <script src="assets/plugins/metismenu/js/metisMenu.min.js"></script>
+  <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+  <!-- App JS -->
+  <script src="assets/js/app.js"></script>
+  
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<!--  <script type="text/babel" src="navbarxxx.js"></script>-->
+  <script type="text/javascript" src="navbar3.js"></script>
+  <!--plugins--> 
+  <!-- App JS --> 
+  <script>
+  window.onhashchange = () => {
+    var hash = window.location.hash
+    $('[id$="section"]').addClass('d-none')
+    
+    if(hash != '') {
+      var editSection = hash
+      $(editSection).removeClass('d-none')
+    } else {
+      $('#display-section').removeClass('d-none')
+    }
+    document.body.scrollTop = 0
+  }
+    $('.edit-link').click(function(){
+      var editSection = $(this).attr('edit-section')
+      location.hash = editSection
+    })
+    
+    // var id = location.hash.substring(1)
+    // if(!id) id = 'hNqOKzYwhJjZTIDLUkf5'
+    var id = 'hNqOKzYwhJjZTIDLUkf5'
+    var jqxhr = $.get( API_HOST + "/api/crud/user/" + id, function(data) {
+      var user = data.data
+      $('#email-display').text(user.email)
+      $('#email-input').val(user.email)
+      $('#name-display').text(user.name)
+      $('#name-input').val(user.name)
+      $('#skype-id-display').text(user.skypeId || '-')
+      $('#skype-id-input').val(user.skypeId)
+      $('#zoom-id-display').text(user.zoomId || '-')
+      $('#zoom-id-input').val(user.zoomId)
+
+    },'json')
+    .fail(function(xhr, error) {
+      console.error( "error", xhr, error );
+      alert("error")
+    })
+    
+    $('button:not(.custom-submit)').click(function(){
+      alert('x')
+      $this = $(this)
+      var field = $(this).attr('field')
+      var input = $(this).attr('input')
+      var value = $(input).val()
+      
+      var postData = {}
+      postData[field] = value
+
+      var jqxhr = $.post( API_HOST + "/api/crud/user/" + id, postData, function(data) {
+        var display = $this.attr('display')
+        $(display).text(value)
+        history.back()
+      },'json')
+      .fail(function(xhr, error) {
+        console.error( "error", xhr, error );
+        alert("error")
+      })
+      return false
+    })
+    
+    $('#submit-password-btn').click(function(){
+     $(this).parent('form').addClass('was-validated')
+
+     //reset
+     $('#current-password')[0].setCustomValidity("");
+     $('#current-password-feedback').text('กรุณาพิมพ์รหัสผ่านเดิม')
+     $('#confirm-password')[0].setCustomValidity("");
+     $('#confirm-password-feedback').text('กรุณาพิมพ์รหัสผ่านใหม่อย่างน้อย 8 ตัวอักษร')
+
+     if($('#password').val() != $('#confirm-password').val()) {
+      $('#confirm-password')[0].setCustomValidity("รหัสผ่านใหม่ไม่ตรงกัน");
+      $('#confirm-password-feedback').text('รหัสผ่านใหม่ไม่ตรงกัน')
+      return
+     }
+
+     if(!$(this).parent('form')[0].checkValidity()) {
+      return
+     }
+
+     var postData = {}
+     postData.currentPassword = $('#current-password').val()
+     postData.newPassword = $('#password').val()
+     var jqxhr = $.post( API_HOST + "/api/user/" + id + "/password", postData, function(data) {
+      history.back()
+      $('#current-password').val('')
+      $('#password').val('')
+      $('#confirm-password').val('')
+      $('#edit-password-section form').removeClass('was-validated')
+     },'json')
+      .fail(function(xhr, error) {
+       console.error( "error", xhr, error );
+       if(xhr.responseJSON.error.message = "current password is incorrect") {
+        $('#current-password')[0].setCustomValidity("รหัสผ่านใหม่ไม่ตรงกัน");
+        $('#current-password').focus().select()
+        $('#current-password-feedback').text("รหัสผ่านเดิมไม่ถูกต้อง");
+       } else {
+        $('#edit-password-section .alert').removeClass('d-none')
+       }
+      })
+
+    })
+
+  $('#current-password').keyup(function() {
+   $('#edit-password-section form').removeClass('was-validated')
+  })
+  
+  		$("#submit-email-btn").on("click", function() {
+		  var form = $('#email-card form')[0]
+		  if (form.checkValidity() === false) {
+		  	form.classList.add('was-validated');
+		    return false
+		  }
+		  
+		  var jqxhr = $.post( "http://178.128.93.245:3000/api/verification/email/create", {email:$("#email").val()}, function(data) {
+		    if(data.error) {
+		      $('#email-card .alert').removeClass('d-none')
+		    } else {
+		      location.hash = 'code'
+		    }
+		  },'json')
+		  .fail(function(xhr, error) {
+		  console.error( "error", xhr, error );
+		  alert("error")
+		  })
+		  
+			
+		})
+
+  
+  	$('#verify-code-form input').on('keyup', function(e) {
+      $this = $(this)
+      if ($this.val().length > 0) {
+        $this.next('input').focus()
+      }
+    })
+    $("#verify-code-form input").keydown(function(event) {
+
+      var isBackspaceOrDelete = event.keyCode === 8 || event.keyCode === 46;
+      $this = $(this)
+
+      if (isBackspaceOrDelete && $this.val().length == 0) {
+        $this.prev('#verify-code-form input').focus()
+        $this.prev('#verify-code-form input').val('')
+
+      }
+    });
+
+		$("#verify-code-btn").on("click", function() {
+		  var form = $('#verify-code-form')[0]
+		  if (form.checkValidity() === false) {
+		  form.classList.add('was-validated');
+		  return false
+		  }
+		  
+		  var code = getCode()
+		  var email = $('#email').val()
+		  var jqxhr = $.post( "http://178.128.93.245:3000/api/verification/email/verify", {email: email,code: code}, function(data) {
+		  if(data.data.verifyPassed === true) {
+		    location.hash = 'profile'
+		  } else {
+		    $('#verify-code-form .alert').removeClass('d-none')
+		    $('#verify-code-form input').val('')
+		    $('#verify-code-form input').first().focus()
+
+		  }
+		
+		  },'json')
+		  .fail(function(xhr, error) {
+		   console.error( "error", xhr, error );
+		    alert("error")
+		  })
+		})
+		
+		function getCode() {
+		  var code = $('#verify-code-form input').map(function(){
+		  return $(this).val();
+		  }).get().join('')
+		  return code
+		}
+
+    
+  </script>
+ </body>
+</html>
