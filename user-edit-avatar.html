@@ -149,6 +149,7 @@ function readFile(input) {
 $('#upload-input').on('change', function() { readFile(this); });
   
   $('#submit-btn').click(function() {
+    alert(22)
    $profilePicPreview.result('blob').then(function(blob) {
      var formData = new FormData()
      formData.append('file', blob)
