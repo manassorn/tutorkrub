@@ -41,7 +41,7 @@
       <a href="javascript:history.back()" style="position:absolute;left:15px;top:8px">
        <i class="bx bx-chevron-left text-dark" style="font-size: 36px"></i>
       </a>
-      <h3 class="mb-0">แก้ไขรูป</h3> 
+      <h3 class="mb-0">อัพโหลดรูป</h3>
 
      </div> 
      <div class="container" style="max-width:720px">
@@ -53,27 +53,19 @@
 
       </div>
       
-      
-      <div id="upload-preview" class="d-none"></div>
-      
-      <button class="btn btn-primary btn-block">
-        save
-      </button>
-      
-      
-       <form> 
-        <div class="form-group"> 
-         <label for="email-input">อีเมล</label>
-         <input type="email" class="form-control" id="email-input" placeholder="พิมพ์อีเมล"> 
-        </div> 
-        <button id="submit-email-btn" type="submit" class="btn btn-primary btn-block mb-2"> บันทึก</button> 
-       </form> 
-       
-       
+
+       <div id="upload-edit" class="d-none">
+        <div id="upload-preview" style="height:350px"></div>
+
+        <div class="p-3 text-center" style="line-height:30px">
+         <a href="#" onclick="$('#upload-input').click()">หมุนรูป</a><br>
+         <a href="#" onclick="$('#upload-input').click()">เลือกรูปใหม่</a>
+        </div>
+        <button id="submit-btn" class="btn btn-primary btn-block">บันทึก</button>
+       </div>
 
        
-       
-      </div> 
+      </div>
      </div> 
 
     </div>
@@ -136,8 +128,8 @@
   });
 
 function readFile(input) {
-  $('#upload-preview').removeClass('d-none')
-    $('#upload-boundary').addClass('d-none')
+  $('#upload-edit').removeClass('d-none')
+ $('#upload-boundary').addClass('d-none')
 
   if (input.files && input.files[0]) {
     var reader = new FileReader();
@@ -156,7 +148,11 @@ function readFile(input) {
 
 $('#upload-input').on('change', function() { readFile(this); });
   
-  
+  $('#submit-btn').click(function() {
+   $profilePicPreview.result('blob').then(function(blob) {
+
+   })
+  })
   
     
   </script>
