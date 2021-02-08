@@ -152,8 +152,7 @@ $('#upload-input').on('change', function() { readFile(this); });
    $profilePicPreview.result('blob').then(function(blob) {
      var formData = new FormData()
      formData.append('file', blob)
-      var jqxhr = $.post( API_HOST + "/api/upload/to/user/" + id + '/avatar', postData, function(data) {
-          $(display).text(value)
+      var jqxhr = $.post( API_HOST + "/api/upload/to/user/" + id + '/avatar', formData, function(data) {
           history.back()
           },'json')
           .fail(function(xhr, error) {
