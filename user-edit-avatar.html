@@ -54,7 +54,7 @@
       </div>
       
 
-       <div id="upload-edit" class="d-none">
+       <div id="upload-edit" class="d-nonex">
         <div id="upload-preview" style="height:350px"></div>
 
         <div class="p-3 text-center" style="line-height:30px">
@@ -114,6 +114,7 @@
   <!--plugins--> 
   <!-- App JS --> 
   <script>
+  var id = 'hNqOKzYwhJjZTIDLUkf5'
   var $profilePicPreview = $('#upload-preview').croppie({
     viewport: {
       width: 200,
@@ -126,7 +127,9 @@
     },
     enableExif: true
   });
-
+$profilePicPreview.croppie('bind', {
+url: '/assets/images/avatars/avatar-1.png'
+});
 function readFile(input) {
   $('#upload-edit').removeClass('d-none')
  $('#upload-boundary').addClass('d-none')
@@ -150,17 +153,18 @@ $('#upload-input').on('change', function() { readFile(this); });
   
   $('#submit-btn').on('click', function() {
     alert(22)
-   $profilePicPreview.result('blob').then(function(blob) {
-     alert(33)
+    $profilePicPreview.croppie('result', 'blob').then(function(blob) {
      var formData = new FormData()
      formData.append('file', blob)
-      var jqxhr = $.post( API_HOST + "/api/upload/to/user/" + id + '/avatar', formData, function(data) {
-          history.back()
-      },'json')
-      .fail(function(xhr, error) {
-        console.error( "error", xhr, error );
-        alert("error")
-      })
+     $.ajax({
+     type: 'POST',
+     url: API_HOST + "/api/upload/to/user/" + id + '/avatar',
+     data: formData,
+     processData: false,
+     contentType: false
+     }).done(function(data) {
+     console.log(data);
+     });
    })
   })
   
