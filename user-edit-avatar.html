@@ -154,11 +154,11 @@ $('#upload-input').on('change', function() { readFile(this); });
      formData.append('file', blob)
       var jqxhr = $.post( API_HOST + "/api/upload/to/user/" + id + '/avatar', formData, function(data) {
           history.back()
-          },'json')
-          .fail(function(xhr, error) {
-          console.error( "error", xhr, error );
-          alert("error")
-          })
+      },'json')
+      .fail(function(xhr, error) {
+        console.error( "error", xhr, error );
+        alert("error")
+      })
    })
   })
   
