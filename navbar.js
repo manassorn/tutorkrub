@@ -6,6 +6,8 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = { auth: false };
+    this.oneClickLogin = this.oneClickLogin.bind(this)
+    this.logout = this.logout.bind(this)
   }
   
   componentDidMount() {
@@ -16,7 +18,6 @@ class NavBar extends React.Component {
     },'json')
     .fail(function(xhr, error) {
       console.error( "error", xhr, error );
-      alert("error")
     })
   }
 
@@ -32,6 +33,20 @@ class NavBar extends React.Component {
       alert("error")
     })
   }
+  
+  logout(e) {
+    const that = this
+    e.preventDefault();
+    var jqxhr = $.post( API_HOST + "/api/user/logout", function(data) {
+      console.log(data);
+      that.setState({auth: false})
+    },'json')
+    .fail(function(xhr, error) {
+      console.error( "error", xhr, error );
+      alert("error")
+    })
+  }
+
 
   render() {
 
@@ -48,7 +63,7 @@ class NavBar extends React.Component {
           </div>
         </div>
         { (!this.state.auth) && <div className="right-topbar ml-auto d-flex align-items-center">
-          <a className="btn btn-link" href="#" onClick={this.oneClickLogin.bind(this)}>
+          <a className="btn btn-link" href="#" onClick={this.oneClickLogin}>
             1คลิกล็อกอิน
           </a>
           <a className="btn btn-primary ml-2" href="#">
@@ -81,7 +96,7 @@ class NavBar extends React.Component {
                       className="bx bx-list-ul"></i><span>
                     รายการนัดหมาย
                   </span></a>
-                  <div className="dropdown-divider mb-0"></div>	<a className="dropdown-item" ><i
+                  <div className="dropdown-divider mb-0"></div>	<a className="dropdown-item" onClick={this.logout}><i
                       className="bx bx-power-off"></i><span>
                     ล็อกเอาท์
                   </span></a>
