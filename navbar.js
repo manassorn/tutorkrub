@@ -26,8 +26,8 @@ class NavBar extends React.Component {
     e.preventDefault();
     var jqxhr = $.get( API_HOST + "/api/user/1clicklogin", function(data) {
       console.log(data);
+      window.localStorage.setItem('accessToken', data.data.accessToken)
       that.setState({auth: true})
-      console.log(jqxhr.getAllResponseHeaders())
     },'json')
     .fail(function(xhr, error) {
       console.error( "error", xhr, error );
