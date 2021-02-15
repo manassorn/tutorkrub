@@ -12,19 +12,16 @@ class NavBar extends React.Component {
   
   componentDidMount() {
     const that = this
-    var jqxhr = $.get( API_HOST + "/api/user/me", function(data) {
-      console.log(data);
+    API.get('/user/me').then(function(response) {
       that.setState({auth: true})
-    },'json')
-    .fail(function(xhr, error) {
-      console.error( "error", xhr, error );
+    }).catch(function(error) {
     })
   }
 
   oneClickLogin(e) {
     const that = this
     e.preventDefault();
-    var jqxhr = $.get( API_HOST + "/api/user/1clicklogin", function(data) {
+    var jqxhr = $.get( API_HOST + "/api/authen/1clicklogin", function(data) {
       console.log(data);
       window.localStorage.setItem('accessToken', data.data.accessToken)
       that.setState({auth: true})
@@ -38,7 +35,7 @@ class NavBar extends React.Component {
   logout(e) {
     const that = this
     e.preventDefault();
-    var jqxhr = $.post( API_HOST + "/api/user/logout", function(data) {
+    var jqxhr = $.post( API_HOST + "/api/authen/logout", function(data) {
       console.log(data);
       that.setState({auth: false})
     },'json')
