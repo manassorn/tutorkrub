@@ -27,6 +27,7 @@ class NavBar extends React.Component {
     var jqxhr = $.get( API_HOST + "/api/user/1clicklogin", function(data) {
       console.log(data);
       that.setState({auth: true})
+      console.log(jqxhr.getAllResponseHeaders())
     },'json')
     .fail(function(xhr, error) {
       console.error( "error", xhr, error );
@@ -53,13 +54,11 @@ class NavBar extends React.Component {
     return <header className="top-header">
       <nav className="navbar navbar-expand">
         <div className="left-topbar d-flex align-items-center">
-          <a href="#" className="toggle-btn">	<i className="bx bx-menu"></i>
-          </a>
           <div className="logo-white">
-            <img src="assets/images/logo-white.png" className="logo-icon" alt=""/>
+            <img src="assets/images/logo1.png" className="logo-icon" alt=""/>
           </div>
           <div className="logo-dark">
-            <img src="assets/images/logo-dark.png" className="logo-icon" alt=""/>
+            <img src="assets/images/logo1.png" className="logo-icon2" alt=""/>
           </div>
         </div>
         { (!this.state.auth) && <div className="right-topbar ml-auto d-flex align-items-center">
@@ -79,7 +78,10 @@ class NavBar extends React.Component {
                       <p className="user-name mb-0">Jessica Doe</p>
                       <p className="designattion mb-0">Available</p>
                     </div>
-                    <img src="assets/images/avatars/avatar-1.png" className="user-img" alt="user avatar"/>
+                    <div className="position-relative">
+                                        <img src="assets/images/avatars/avatar-1.png" className="user-img" alt="user avatar"/> <span className="msg-count2" >8</span> 
+
+                    </div>
                   </div>
                 </a>
                 <div className="dropdown-menu dropdown-menu-right">	<a className="dropdown-item" href="user.html"><i
@@ -96,6 +98,10 @@ class NavBar extends React.Component {
                       className="bx bx-list-ul"></i><span>
                     รายการนัดหมาย
                   </span></a>
+                  <a className="dropdown-item" href="appointment.html"><i
+                                        className="bx bx-money"></i><span>
+                                      คูปองของฉัน
+                                    </span></a>
                   <div className="dropdown-divider mb-0"></div>	<a className="dropdown-item" onClick={this.logout}><i
                       className="bx bx-power-off"></i><span>
                     ล็อกเอาท์

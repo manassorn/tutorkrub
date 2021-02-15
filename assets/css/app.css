@@ -146,6 +146,12 @@ a:hover {
 	width: 120px;
 
 }
+
+.logo-icon2 {
+
+	width: 60px;
+
+}
 .logo-white {
 
 	display: none;
@@ -400,6 +406,42 @@ a:hover {
 	justify-content: center;
 
 	align-items: center;
+
+}
+
+.msg-count2 {
+
+  position: absolute;
+
+  right: 0px;
+
+  top: 0px;
+
+  font-size: 11px;
+
+  font-weight: 500;
+
+  width: 17px;
+
+  height: 17px;
+
+  text-align: center;
+
+  border-radius: 50%;
+
+  z-index: 5;
+
+  padding: 0;
+
+  color: #fff;
+
+  background-color: #007bff;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
 
 }
 

@@ -47,9 +47,13 @@
      <div class="container" style="max-width:720px">
       <div class="border-top pt-3"> 
       
-      <div id="upload-boundary" style="height:90px;border:solid 1px grey;" class="text-center mb-3">
-        คลิกเพื่ออัพโหลดรูป
-        <input type="file" id="upload-input" accept="image/*" required/>
+      <div id="upload-boundary" style="border:dashed 3px #ccc;max-width:500px" class="text-center mb-3 p-5 bg-light">
+        <h3>
+          <a href="javascript:;" onclick="$('#upload-input').click()">คลิกที่นี่</a><br>
+<small class="text-muted">เพื่ออัพโหลดรูป</small><br>
+<i class="bx bx-upload"></i>
+        </h3>
+        <input type="file" id="upload-input" accept="image/*" class="d-none" required/>
 
       </div>
       
@@ -109,8 +113,6 @@
       
 
   
-<!--  <script type="text/babel" src="navbarxxx.js"></script>-->
-  <script type="text/javascript" src="navbar3.js"></script>
   <!--plugins--> 
   <!-- App JS --> 
   <script>
@@ -152,7 +154,10 @@ function readFile(input) {
 $('#upload-input').on('change', function() { readFile(this); });
   
   $('#submit-btn').on('click', function() {
-    $profilePicPreview.croppie('result', 'blob').then(function(blob) {
+<a className="dropdown-item" href="appointment.html"><i
+                      className="bx bx-list-ul"></i><span>
+                    รายการนัดหมาย
+                  </span></a>    $profilePicPreview.croppie('result', 'blob').then(function(blob) {
      var formData = new FormData()
      formData.append('file', blob)
      $.ajax({
