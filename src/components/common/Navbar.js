@@ -1,4 +1,5 @@
 import React from "react";
+import API from '../../Api'
 
 class Navbar extends React.Component {
     constructor(props) {
