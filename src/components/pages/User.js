@@ -1,16 +1,31 @@
 import React from "react";
+import Api from '../../Api'
 
 class User extends React.Component {
+  
+  
     constructor(props) {
         super(props);
+        this.state = {
+          courses: []
+        }
     }
 
     componentDidMount() {
+      Api.get('/crud/course')
+        .then(response => 
+        {
+          console.log('courses',response.data.data)
+        
+        this.setState({ courses: response.data.data })
+        }
+        );
+      
     }
 
     render() {
 
-        return      <div className="container" style="max-width:720px">
+        return      <div className="container" style={{'max-width':'720px'}}>
 
        <div className="border-top border-bottom p-3">
         <div class="text-center d-flex justify-content-center">
@@ -49,7 +64,6 @@ class User extends React.Component {
       <div class="row">
         
         
-        
        <div  class="col-lg-4">
         <div class="card">
          <div class="card-body">
@@ -65,21 +79,23 @@ class User extends React.Component {
         </div>
        </div>
        
-       
-       
-       <div class="course-card d-none col-lg-4">
+       {this.state.courses.map(course => (
+      <div class="course-card col-lg-4">
         <div class="card">
          <div class="card-body">
           <div class="media align-items-center">
            <div class="media-body ml-3">
-            <h5 class="mb-0">title</h5>
-            <p class="mb-0 text-secondary">฿price . category</p>
-            <a href="course-edit.html#id" class="stretched-link">แก้ไข</a>
+            <h5 class="mb-0">{course.title}</h5>
+            <p class="mb-0 text-secondary">฿{course.price} . {course.category}</p>
+            <a href="course-edit.html#{course.id}" class="stretched-link">แก้ไข</a>
            </div>
           </div>
          </div>
         </div>
        </div>
+       ))}
+       
+       
       </div>
 
      </div> 

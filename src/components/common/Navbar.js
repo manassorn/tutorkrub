@@ -1,5 +1,5 @@
 import React from "react";
-import API from '../../Api'
+import Api from '../../Api'
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -11,7 +11,7 @@ class Navbar extends React.Component {
 
     componentDidMount() {
         const that = this
-        API.get('/user/me').then(function(response) {
+        Api.get('/user/me').then(function(response) {
             that.setState({auth: true})
         }).catch(function(error) {
         })
