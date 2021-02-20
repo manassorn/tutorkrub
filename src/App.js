@@ -1,6 +1,7 @@
 import React from "react";
 import Wrapper from "./components/common/Wrapper"
 import User from "./components/pages/User"
+import UserEdit from "./components/pages/UserEdit"
 
 
 class App extends React.Component {
@@ -8,7 +9,7 @@ class App extends React.Component {
         const { name } = this.props;
         return (
                 <Wrapper>
-                    <User></User>
+                    <UserEdit></UserEdit>
                 </Wrapper>
         );
     }
