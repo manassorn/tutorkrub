@@ -9,9 +9,9 @@ class App extends React.Component {
     render() {
         const { name } = this.props;
         return (
-                <Wrapper>
-                    <UserEditEmailVerifyCode></UserEditEmailVerifyCode>
-                </Wrapper>
+          <Wrapper>
+            <UserEditEmailVerifyCode></UserEditEmailVerifyCode>
+          </Wrapper>
         );
     }
 }
