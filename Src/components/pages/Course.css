@@ -1,0 +1,9 @@
+.selected {
+  background: rgb(0, 123, 255, .1);
+  border-color: #007bff !important;
+}
+.disabled {
+  opacity: 0.64;
+  background: #e9ecef;
+  color: #6c757d;
+}

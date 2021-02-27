@@ -15,6 +15,13 @@ const config = {
                 test: /\.(js|jsx)$/,
                 use: 'babel-loader',
                 exclude: /node_modules/
+            },
+            {
+              // Preprocess your css files
+              // you can add additional loaders here (e.g. sass/less etc.)
+              test: /\.css$/,
+              exclude: /node_modules/,
+              use: ['style-loader', 'css-loader'],
             }
         ]
     },
