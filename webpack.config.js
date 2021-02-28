@@ -44,7 +44,8 @@ const config = {
     devServer: {
         port: 9950,
         contentBase: './dist',
-        writeToDisk: true
+        writeToDisk: true,
+        historyApiFallback: { index: 'index.html' }
     }
 };
 
