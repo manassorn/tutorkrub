@@ -4,7 +4,7 @@ import User from "./components/pages/User"
 import UserEdit from "./components/pages/UserEdit"
 import UserEditEmail from "./components/pages/UserEditEmail"
 import UserEditEmailVerifyCode from "./components/pages/UserEditEmailVerifyCode"
-import CourseList from "./components/pages/CourseList"
+import CourseAdd from "./components/pages/CourseAdd"
 
 
 class App extends React.Component {
@@ -12,7 +12,7 @@ class App extends React.Component {
         const { name } = this.props;
         return (
           <Wrapper>
-            <CourseList></CourseList>
+            <CourseAdd></CourseAdd>
           </Wrapper>
         );
     }

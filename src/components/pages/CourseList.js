@@ -68,7 +68,7 @@ class CourseList extends React.Component {
       
       <div class="row"> 
        <div class="col-sm-12 col-md-6 offset-md-3"> 
-        <button class="btn btn-block btn-primary">next</button> 
+        <button class="btn btn-block btn-outline-primary">next</button> 
        </div> 
       </div> 
      </div> 
