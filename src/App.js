@@ -24,9 +24,9 @@ class App extends React.Component {
          <Wrapper>
           <BrowserRouter>
             <Switch>
-              <Route path="/dist/index" component={User} />
-              <Route path="/dist/pay" component={Pay} />
-              <Redirect to="/dist/index" />
+                <Route exact path="/" component={User} />
+                <Route path="/pay" component={Pay} />
+                <Redirect to="/" />
             </Switch>
           </BrowserRouter>
           
