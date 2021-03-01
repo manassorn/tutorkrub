@@ -20,28 +20,26 @@ class Navbar extends React.Component {
     oneClickLogin(e) {
         const that = this
         e.preventDefault();
-        var jqxhr = $.get( API_HOST + "/api/authen/1clicklogin", function(data) {
+        Api.get( "/authen/1clicklogin").then(function(data) {
             console.log(data);
             window.localStorage.setItem('accessToken', data.data.accessToken)
             that.setState({auth: true})
-        },'json')
-            .fail(function(xhr, error) {
-                console.error( "error", xhr, error );
-                alert("error")
-            })
+        }).catch(function(xhr, error) {
+            console.error( "error", xhr, error );
+            alert("error")
+        })
     }
 
     logout(e) {
         const that = this
         e.preventDefault();
-        var jqxhr = $.post( API_HOST + "/api/authen/logout", function(data) {
+        Api.post("/authen/logout").then(function(data) {
             console.log(data);
             that.setState({auth: false})
-        },'json')
-            .fail(function(xhr, error) {
-                console.error( "error", xhr, error );
-                alert("error")
-            })
+        }).catch(function(xhr, error) {
+            console.error( "error", xhr, error );
+            alert("error")
+        })
     }
 
 
