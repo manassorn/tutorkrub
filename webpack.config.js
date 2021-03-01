@@ -7,6 +7,7 @@ const config = {
     ],
     output: {
         path: path.resolve(__dirname, 'dist'),
+        publicPath: 'dist',
         filename: 'bundle.js'
     },
     module: {
@@ -43,9 +44,8 @@ const config = {
     },
     devServer: {
         port: 9950,
-        contentBase: './dist',
-        writeToDisk: true,
-        historyApiFallback: { index: 'index.html' }
+        
+        historyApiFallback: { index: 'dist/index.html' }
     }
 };
 

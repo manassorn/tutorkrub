@@ -28,32 +28,37 @@ class Pay extends React.Component {
 
     render() {
         return      <div class="container pt-3"> 
-      <div class="row border-bottom mb-3 pb-3"> 
+      <div class="row pb-3"> 
        <div class="col"> 
         <h3 class="mb-0">รับสอนคณิตศาสตร์</h3> 
         <span class="text-muted pr-2">โดย manassorn </span> 
-        <br/> 
+        <div className="font-weight-bold">
+          <i className="bx bx-calendar-event"></i>&nbsp;&nbsp;
+                  พุธ 20 ธันวาคม 2563 
+
+        </div>
+        <div className="font-weight-bold">
+          <i className="bx bx-alarm"></i>&nbsp;&nbsp;
+                          00:00 - 01:00
+        
+        </div>
+        
+        
+  
+
+        
+        
+        
        </div> 
       </div> 
-      <div class="row"> 
-       <div class="col-12"> 
-        <h5>พุธ 20 ธันวาคม 2563</h5> 
-        <div class="border p-2 rounded">
-          00:00 - 01:00 
-        </div> 
-       </div> 
-      </div> 
+      
       <div class="row"> 
        <div class="col-12 border-top mt-3 pt-3"> 
-        <h5>เลือกช่องทางชำระเงิน</h5> 
+        <h5>ช่องทางชำระเงิน</h5> 
         <div class="border p-3 rounded"> 
          <input type="radio"/> Promptpay 
         </div> 
-        <h5>โค้ดส่วนลด</h5> 
-      <div class="form-group mt-2"> 
-       <label>ชื่อคอร์ส</label> 
-       <input id="name" type="text" class="form-control" placeholder="พิมพ์ชื่อคอร์ส"/> 
-      </div> 
+
 
        </div> 
        <div class="col-12 border-top mt-3 pt-3"> 
@@ -61,10 +66,23 @@ class Pay extends React.Component {
          <div class="col font-weight-bold"> 
           <h5> ยอดรวม </h5> 
          </div> 
-         <div class="col text-right text-primary font-weight-bold" style="font-size:18px">
+         <div class="col text-right text-primary font-weight-bold" style={{fontSize:'18px'}}>
            $15 
          </div> 
         </div> 
+        
+        <div className="row">
+          <div className="col-12">
+            <div class="form-group mt-2"> 
+               <label>โค้ดส่วนลด</label> 
+               <input id="name" type="text" class="form-control" placeholder=""/> 
+              </div>
+        
+        
+          </div>
+        </div>
+        
+        
         <div class="row"> 
          <div class="col"> 
           <button class="btn btn-block btn-primary mt-3 mb-5">ชำระเงิน</button> 
