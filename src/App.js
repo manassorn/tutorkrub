@@ -1,5 +1,8 @@
 import React from "react";
 import Wrapper from "./components/common/Wrapper"
+import Course from "./components/pages/Course"
+import CourseAdd from "./components/pages/CourseAdd"
+import CourseList from "./components/pages/CourseList"
 import User from "./components/pages/User"
 import UserEdit from "./components/pages/UserEdit"
 import UserEditEmail from "./components/pages/UserEditEmail"
@@ -25,7 +28,14 @@ class App extends React.Component {
           <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={User} />
+                <Route path="/course/add" component={CourseAdd} />
+                <Route path="/course" component={Course} />
+                <Route path="/explore" component={CourseList} />
                 <Route path="/pay" component={Pay} />
+                <Route path="/user" component={User} />
+                <Route path="/user/edit" component={UserEdit} />
+                <Route path="/user/edit/email" component={UserEditEmail} />
+                <Route path="/user/edit/email/verifycode" component={UserEditEmailVerifyCode} />
                 <Redirect to="/" />
             </Switch>
           </BrowserRouter>

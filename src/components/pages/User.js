@@ -32,7 +32,7 @@ class User extends React.Component {
          <img src="assets/images/avatars/avatar-1.png" class="rounded-circle shadow" width="130" height="130" alt=""/>
          <div class="m-3 text-left">
           <h5>Manassorn Vanichdilokkul</h5>
-          <a href="user-edit.html" class="btn btn-outline-primary">แก้ไขโปรไฟล์</a>
+          <a href="/user/edit" class="btn btn-outline-primary">แก้ไขโปรไฟล์</a>
 
           <div class="d-flex mt-2">
            <div class="pr-3 pt-1 pb-1 border-right">
@@ -55,7 +55,7 @@ class User extends React.Component {
        <div class="p-3">
         <div class="text-center d-flex justify-content-between align-items-center">
          <h5>คอร์สทั้งหมด</h5>
-         <a href="course-add.html" class="btn btn-primary ml-auto radius-10"><i class="bx bx-plus"></i> เพิ่มคอร์ส</a>
+         <a href="/course/add" class="btn btn-primary ml-auto radius-10"><i class="bx bx-plus"></i> เพิ่มคอร์ส</a>
 
         </div>
        </div>
