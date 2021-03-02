@@ -27,15 +27,16 @@ class App extends React.Component {
          <Wrapper>
           <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={User} />
+                <Route exact path="/" component={CourseList} />
                 <Route path="/course/add" component={CourseAdd} />
                 <Route path="/course" component={Course} />
                 <Route path="/explore" component={CourseList} />
                 <Route path="/pay" component={Pay} />
-                <Route path="/user" component={User} />
-                <Route path="/user/edit" component={UserEdit} />
                 <Route path="/user/edit/email" component={UserEditEmail} />
                 <Route path="/user/edit/email/verifycode" component={UserEditEmailVerifyCode} />
+                <Route path="/user/edit" component={UserEdit} />
+                <Route path="/user" component={User} />
+
                 <Redirect to="/" />
             </Switch>
           </BrowserRouter>

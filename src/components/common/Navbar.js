@@ -52,10 +52,10 @@ class Navbar extends React.Component {
             <nav className="navbar navbar-expand">
                 <div className="left-topbar d-flex align-items-center">
                     <div className="logo-white">
-                        <img src="assets/images/logo1.png" className="logo-icon" alt=""/>
+                        <img src="/assets/images/logo1.png" className="logo-icon" alt=""/>
                     </div>
                     <div className="logo-dark">
-                        <img src="assets/images/logo1.png" className="logo-icon2" alt=""/>
+                        <img src="/assets/images/logo1.png" className="logo-icon2" alt=""/>
                     </div>
                 </div>
                 { (!this.state.auth) && <div className="right-topbar ml-auto d-flex align-items-center">
@@ -76,7 +76,7 @@ class Navbar extends React.Component {
                                         <p className="designattion mb-0">Available</p>
                                     </div>
                                     <div className="position-relative">
-                                        <img src="assets/images/avatars/avatar-1.png" className="user-img" alt="user avatar"/> <span className="msg-count2" >8</span>
+                                        <img src="/assets/images/avatars/avatar-1.png" className="user-img" alt="user avatar"/> <span className="msg-count2" >8</span>
 
                                     </div>
                                 </div>
