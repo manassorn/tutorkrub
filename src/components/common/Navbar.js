@@ -1,5 +1,6 @@
 import React from "react";
 import Api from '../../Api'
+import Cookie from '../../Cookie'
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -18,26 +19,18 @@ class Navbar extends React.Component {
     }
 
     oneClickLogin(e) {
-      alert(navigator.cookieEnabled)
-      if (navigator.cookieEnabled) {
-        // cookies are enabled
-        // read, write and delete cookies
-      }
-      else {
-        // cookies are disabled, show an error message to the user, or follow other alternative
-      }
+      
       const that = this
       e.preventDefault();
-      alert(234554)
       const storage = localStorage
-      console.log('aa',storage)
         Api.get( "/authen/1clicklogin").then(function(data) {
-            console.log(data);
-            localStorage.setItem('accessToken', data.data.accessToken)
+            console.log('set token',Object.keys(data.data.data));
+            localStorage? localStorage.setItem('accessToken', data.data.data.accessToken) :Cookie.set('accessToken', data.data.data.accessToken)
+            
             that.setState({auth: true})
         }).catch(function(xhr, error) {
             console.error( "error", xhr, error );
-            alert("error22");
+            alert("error");
         })
     }
 

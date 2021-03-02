@@ -8,6 +8,7 @@ const Api = axios.create({
 });
 Api.interceptors.request.use(function(config) {
   const token = localStorage? localStorage.getItem('accessToken') :Cookie.get('accessToken')
+  console.log('request token',token)
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
@@ -25,7 +26,7 @@ Api.interceptors.response.use(function(response) {
   // Do something with response error
   console.log(error)
   if (error.response.status == 401) {
-    localStorage.removeItem('accessToken')
+    localStorage?localStorage.removeItem('accessToken'):Cookie.erase('accessToken')
   }
   return Promise.reject(error);
 });
