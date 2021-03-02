@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Cookie from './Cookie'
 
 const Api = axios.create({
   baseURL: 'http://1hourtutor.com/api',
@@ -6,9 +7,10 @@ const Api = axios.create({
   headers: { 'X-Custom-Header': 'foobar' }
 });
 Api.interceptors.request.use(function(config) {
-  // Do something before request is sent
-  const token = window.localStorage.getItem('accessToken')
-  config.headers.Authorization = `Bearer ${token}`;
+  const token = localStorage? localStorage.getItem('accessToken') :Cookie.get('accessToken')
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
   return config;
 }, function(error) {
   // Do something with request error
@@ -23,7 +25,7 @@ Api.interceptors.response.use(function(response) {
   // Do something with response error
   console.log(error)
   if (error.response.status == 401) {
-    window.localStorage.removeItem('accessToken')
+    localStorage.removeItem('accessToken')
   }
   return Promise.reject(error);
 });

@@ -18,15 +18,26 @@ class Navbar extends React.Component {
     }
 
     oneClickLogin(e) {
-        const that = this
-        e.preventDefault();
+      alert(navigator.cookieEnabled)
+      if (navigator.cookieEnabled) {
+        // cookies are enabled
+        // read, write and delete cookies
+      }
+      else {
+        // cookies are disabled, show an error message to the user, or follow other alternative
+      }
+      const that = this
+      e.preventDefault();
+      alert(234554)
+      const storage = localStorage
+      console.log('aa',storage)
         Api.get( "/authen/1clicklogin").then(function(data) {
             console.log(data);
-            window.localStorage.setItem('accessToken', data.data.accessToken)
+            localStorage.setItem('accessToken', data.data.accessToken)
             that.setState({auth: true})
         }).catch(function(xhr, error) {
             console.error( "error", xhr, error );
-            alert("error")
+            alert("error22");
         })
     }
 
@@ -34,11 +45,10 @@ class Navbar extends React.Component {
         const that = this
         e.preventDefault();
         Api.post("/authen/logout").then(function(data) {
-            console.log(data);
             that.setState({auth: false})
         }).catch(function(xhr, error) {
             console.error( "error", xhr, error );
-            alert("error")
+            alert("error34")
         })
     }
 
@@ -78,21 +88,21 @@ class Navbar extends React.Component {
                                     </div>
                                 </div>
                             </a>
-                            <div className="dropdown-menu dropdown-menu-right">	<a className="dropdown-item" href="user.html"><i
+                            <div className="dropdown-menu dropdown-menu-right">	<a className="dropdown-item" href="/user"><i
                                 className="bx bx-user"></i><span>โปรไฟล์</span></a>
-                                <a className="dropdown-item" href="course-add.html"><i
+                                <a className="dropdown-item" href="/course/add"><i
                                     className="bx bx-plus-circle"></i><span>
                                     สร้างคอร์ส
                                 </span></a>
-                                <a className="dropdown-item" href="user.html" ><i
+                                <a className="dropdown-item" href="/user" ><i
                                     className="bx bx-grid"></i><span>
                                     คอร์สของฉัน
                                 </span></a>
-                                <a className="dropdown-item" href="appointment.html"><i
+                                <a className="dropdown-item" href="/appointment"><i
                                     className="bx bx-list-ul"></i><span>
                                     รายการนัดหมาย
                                 </span></a>
-                                <a className="dropdown-item" href="appointment.html"><i
+                                <a className="dropdown-item" href="/coupon"><i
                                     className="bx bx-money"></i><span>
                                     คูปองของฉัน
                                 </span></a>
