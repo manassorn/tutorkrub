@@ -1,0 +1,19 @@
+.nav-border-bottom .nav-link {
+    border-bottom: solid 3px #cacaca;
+    color: #cacaca;
+    font-size: 1rem;
+}
+.nav-border-bottom .nav-link.active {
+    border-bottom: solid 3px #0069D9;
+    color: #0069D9;
+ }
+ .icon-circle {
+   width: 50px;
+   height: 50px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   background: #0275d8;
+   color: #ffffff;
+ }

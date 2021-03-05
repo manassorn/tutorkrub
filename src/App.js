@@ -9,6 +9,7 @@ import UserEditEmail from "./components/pages/UserEditEmail"
 import UserEditEmailVerifyCode from "./components/pages/UserEditEmailVerifyCode"
 import Pay from "./components/pages/Pay"
 import Appointment from "./components/pages/Appointment"
+import Home from "./components/pages/Home"
 // IMPORT
 
 import {
@@ -28,8 +29,7 @@ class App extends React.Component {
          <Wrapper>
           <BrowserRouter>
             <Switch>
-                <Route exact path="/" component={CourseList} />
-                
+                <Route exact path="/" component={Home} />
                 <Route path="/appointment" component={Appointment} />
                 <Route path="/course/add" component={CourseAdd} />
                 <Route path="/course" component={Course} />
