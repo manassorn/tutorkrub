@@ -1,0 +1,9 @@
+.nav-border-bottom .nav-link {
+    border-bottom: solid 3px #cacaca;
+    color: #cacaca;
+    font-size: 1rem;
+}
+.nav-border-bottom .nav-link.active {
+    border-bottom: solid 3px #0069D9;
+    color: #0069D9;
+ }
