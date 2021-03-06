@@ -19,7 +19,7 @@
     "react-dom": "^16.14.0",
     "react-router-dom": "5.2.0",
     "axios": "^0.21.1",
-    "react-croppie": "1.0.0"
+    "croppie": "^2.6.5"
   },
   "devDependencies": {
     "@babel/core": "7.12.1",

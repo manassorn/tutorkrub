@@ -27,7 +27,9 @@ class UserEdit extends React.Component {
       <div class="row"> 
        <div class="col border rounded ml-3 mr-3"> 
         <div class="border-bottom pt-3 pb-3 text-center d-flex flex-column align-items-center"> 
-         <img src="assets/images/avatars/avatar-1.png" class="rounded-circle shadow" width="130" height="130" alt=""/> 
+          <a href="/user/edit/avatar">
+         <img src={this.state.user.avatar} class="rounded-circle shadow" width="130" height="130" alt=""/> 
+          </a>
          <b>manassorn</b> 
         </div> 
         <div class="border-bottom pt-3 pb-3"> 
