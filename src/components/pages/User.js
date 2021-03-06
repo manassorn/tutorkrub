@@ -1,5 +1,6 @@
 import React from "react";
 import Api from '../../Api'
+import Auth from '../../Auth'
 
 class User extends React.Component {
   
@@ -7,11 +8,19 @@ class User extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+          user: {}, 
           courses: []
         }
     }
 
     componentDidMount() {
+      var id = Auth.getUserId()
+      Api.get('/crud/user/' + id)
+        .then(response => 
+        {
+        this.setState({ user: response.data.data })
+        }
+        );
       Api.get('/crud/course')
         .then(response => 
         {
@@ -29,7 +38,7 @@ class User extends React.Component {
 
        <div className="border-top border-bottom p-3">
         <div class="text-center d-flex justify-content-center">
-         <img src="assets/images/avatars/avatar-1.png" class="rounded-circle shadow" width="130" height="130" alt=""/>
+         <img src={this.state.user.avatar} class="rounded-circle shadow" width="130" height="130" alt=""/>
          <div class="m-3 text-left">
           <h5>Manassorn Vanichdilokkul</h5>
           <a href="/user/edit" class="btn btn-outline-primary">แก้ไขโปรไฟล์</a>

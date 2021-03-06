@@ -7,13 +7,28 @@
     border-bottom: solid 3px #0069D9;
     color: #0069D9;
  }
- .icon-circle {
-   width: 50px;
-   height: 50px;
+ .item {
+   display: flex;
+   margin-bottom: 1rem;
+ }
+ .item .icon {
+   width: 70px;
+   height: 70px;
    display: flex;
    justify-content: center;
    align-items: center;
    border-radius: 50%;
-   background: #265ed7;
+   background: #007bff;
    color: #ffffff;
+ }
+ .item .details {
+   margin-left: 1rem;
+ }
+ .item h6 {
+   font-weight: bold;
+   margin-bottom: .25rem;
+ }
+ .item p {
+    margin-bottom: .25rem;
+
  }

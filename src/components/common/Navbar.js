@@ -5,7 +5,11 @@ import Cookie from '../../Cookie'
 class Navbar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { auth: false };
+        this.state = { 
+          user:{},
+          auth: false 
+          
+        };
         this.oneClickLogin = this.oneClickLogin.bind(this)
         this.logout = this.logout.bind(this)
     }
@@ -13,7 +17,7 @@ class Navbar extends React.Component {
     componentDidMount() {
         const that = this
         Api.get('/user/me').then(function(response) {
-            that.setState({auth: true})
+          that.setState({ user: response.data.data,auth:true })
         }).catch(function(error) {
         })
     }
@@ -52,10 +56,14 @@ class Navbar extends React.Component {
             <nav className="navbar navbar-expand">
                 <div className="left-topbar d-flex align-items-center">
                     <div className="logo-white">
+                    <a href="/">
                         <img src="/assets/images/logo1.png" className="logo-icon" alt=""/>
+                        </a>
                     </div>
                     <div className="logo-dark">
+                    <a href="/">
                         <img src="/assets/images/logo1.png" className="logo-icon2" alt=""/>
+                        </a>
                     </div>
                 </div>
                 { (!this.state.auth) && <div className="right-topbar ml-auto d-flex align-items-center">
@@ -76,7 +84,7 @@ class Navbar extends React.Component {
                                         <p className="designattion mb-0">Available</p>
                                     </div>
                                     <div className="position-relative">
-                                        <img src="/assets/images/avatars/avatar-1.png" className="user-img" alt="user avatar"/> <span className="msg-count2" >8</span>
+                                        <img src={this.state.user.avatar} className="user-img" alt="user avatar"/> <span className="msg-count2" >8</span>
 
                                     </div>
                                 </div>

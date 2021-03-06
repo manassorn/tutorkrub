@@ -1,5 +1,6 @@
 import React from "react";
 import Api from '../../Api'
+import Auth from '../../Auth'
 
 class UserEdit extends React.Component {
   
@@ -12,7 +13,7 @@ class UserEdit extends React.Component {
     }
 
     componentDidMount() {
-      var id = 'hNqOKzYwhJjZTIDLUkf5'
+      var id = Auth.getUserId()
       Api.get('/crud/user/' + id)
         .then(response => 
         {
