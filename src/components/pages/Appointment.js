@@ -30,10 +30,24 @@ class Appointment extends React.Component {
         return      <div class="container" style={{maxWidth:'720px'}}> 
       <div class="mb-3 mt-3"> 
        <ul class="nav nav-tabs"> 
-        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#Experience"><span class="p-tab-name1">ลงเรียน</span> <span class="badge badge-pill badge-danger">3</span></a> </li> 
+        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#Experience"><span class="p-tab-name1">นัดเรียน</span> <span class="badge badge-pill badge-danger">3</span></a> </li> 
         <li class="nav-item"> <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Biography"><span class="p-tab-name1">นัดสอน</span> <span class="badge badge-pill badge-danger">3</span></a> </li> 
        </ul> 
       </div> 
+      
+      <div className="row">
+        <div className="col-md-5">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-primary">รอตอบกลับ</button>
+          <button type="button" class="btn btn-outline-secondary">ตอบกลับแล้ว
+            &nbsp;<span class="badge badge-pill badge-danger">3</span>
+          </button>
+          <button type="button" class="btn btn-outline-secondary">เรียนแล้ว</button>
+        </div>
+        </div>
+      </div>
+      
+      
       <div class="row"> 
        <div class="col-md-6"> 
         <div class="card"> 
