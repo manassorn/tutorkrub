@@ -52,9 +52,12 @@ class CourseAdd extends React.Component {
        }).then(() => {
          location.href = '/user'
        })
-       Api.post('/crud/user', {
-         availableHours: this.availableHours
-       })
+       if(!this.state.hasAvailableHours){
+         Api.post('/crud/user', {
+           availableHours: this.availableHours
+         })
+       }
+       
       
     }
     

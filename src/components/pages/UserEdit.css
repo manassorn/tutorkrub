@@ -1,0 +1,19 @@
+.user-image {
+  width: 130px;
+  height: 130px;
+  position: relative;
+}
+.edit-icon {
+  position: absolute;
+  background: #D1D1D2;
+  border-radius: 50%;
+  width:30px;
+  height: 30px;
+  color: black;
+  right: 3px;
+  bottom: 3px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #6E6E6E;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import Api from '../../Api'
 import Auth from '../../Auth'
+import './UserEdit.css'
 
 class UserEdit extends React.Component {
   
@@ -29,7 +30,10 @@ class UserEdit extends React.Component {
        <div class="col border rounded ml-3 mr-3"> 
         <div class="border-bottom pt-3 pb-3 text-center d-flex flex-column align-items-center"> 
           <a href="/user/edit/avatar">
-         <img src={this.state.user.avatar} class="rounded-circle shadow" width="130" height="130" alt=""/> 
+          <div className="user-image">
+            <img src={this.state.user.avatar} class="rounded-circle shadow" width="130" height="130" alt=""/> <span className="edit-icon"><i className="bx bx-camera"></i></span>
+
+          </div>
           </a>
          <b>manassorn</b> 
         </div> 
