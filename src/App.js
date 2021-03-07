@@ -5,6 +5,7 @@ import CourseAdd from "./components/pages/CourseAdd"
 import CourseList from "./components/pages/CourseList"
 import User from "./components/pages/User"
 import UserEdit from "./components/pages/UserEdit"
+import UserEditAvailableHours from "./components/pages/UserEditAvailableHours"
 import UserEditEmail from "./components/pages/UserEditEmail"
 import UserEditAvatar from "./components/pages/UserEditAvatar"
 import UserEditEmailVerifyCode from "./components/pages/UserEditEmailVerifyCode"
@@ -37,6 +38,7 @@ class App extends React.Component {
                 <Route path="/explore" component={CourseList} />
                 <Route path="/pay" component={Pay} />
                 <Route path="/user/edit/avatar" component={UserEditAvatar} />
+                <Route path="/user/edit/availableHours" component={UserEditAvailableHours} />
                 <Route path="/user/edit/email" component={UserEditEmail} />
                 <Route path="/user/edit/email/verifycode" component={UserEditEmailVerifyCode} />
                 <Route path="/user/edit" component={UserEdit} />

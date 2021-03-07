@@ -42,6 +42,7 @@ class User extends React.Component {
          <div class="m-3 text-left">
           <h5>Manassorn Vanichdilokkul</h5>
           <a href="/user/edit" class="btn btn-outline-primary">แก้ไขโปรไฟล์</a>
+          <a href="/user/edit/availableHours" class="btn btn-outline-primary">แก้ไขเวลาที่สะดวกสอน</a>
 
           <div class="d-flex mt-2">
            <div class="pr-3 pt-1 pb-1 border-right">

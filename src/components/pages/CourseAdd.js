@@ -9,7 +9,7 @@ class CourseAdd extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        weekIncrement: 0
+        hasAvailableHours: false
       }
       this.submitForm = this.submitForm.bind(this)
       this.onCalendarChanged = this.onCalendarChanged.bind(this)
@@ -17,15 +17,11 @@ class CourseAdd extends React.Component {
     }
 
     componentDidMount() {
-      /*Api.get('/crud/course')
-        .then(response => 
-        {
-          console.log('courses',response.data.data)
-        
-        this.setState({ courses: response.data.data })
-        }
-        );
-      */
+      Api.get('/user/me')
+        .then(response => {
+          const hours = response.data.data.availableHours
+          this.setState({hasAvailableHours: !this.isEmpty(hours)})
+        });
     }
     
     onCalendarChanged(hours) {
@@ -40,7 +36,7 @@ class CourseAdd extends React.Component {
         form.classList.add('was-validated');
         return false
       }
-      if(this.isEmptyAvailability()) {
+      if(!this.state.hasAvailableHours && this.isEmptyAvailability()) {
         this.refs.availabilityFeedback.style.display = 'block'
         return false
       }
@@ -54,7 +50,7 @@ class CourseAdd extends React.Component {
          price,
          category
        }).then(() => {
-         location.href = 'user1.html'
+         location.href = '/user'
        })
        Api.post('/crud/user', {
          availableHours: this.availableHours
@@ -62,13 +58,17 @@ class CourseAdd extends React.Component {
       
     }
     
-    isEmptyAvailability() {
-      if(!this.availableHours) {
+    isEmpty(hours) {
+      if (!hours) {
         return true
       }
-      return this.availableHours.every(array => {
+      return hours.every(array => {
         return array.every(item => item === false)
       })
+    }
+    
+    isEmptyAvailability() {
+      return this.isEmpty(this.availableHours)
     }
 
     render() {
@@ -119,15 +119,20 @@ class CourseAdd extends React.Component {
           </div>
       </div>
       
-      <div class="pt-4 border-top mb-3">
+      <div className={this.state.hasAvailableHours? 'd-none' :''}>
+        <div class="pt-4 border-top mb-3">
           <h5>วัน-เวลา ที่สะดวก</h5>
         </div>
-      <div ref="availabilityFeedback" className="text-danger" style={{display:'none'}}>
+        <div ref="availabilityFeedback" className="text-danger" style={{display:'none'}}>
         กรุณาเลือกเวลาที่สะดวก
-      </div>
-        
-      <CalendarPartOfDay onChanged={this.onCalendarChanged}/>
+        </div>
       
+        
+        <CalendarPartOfDay onChanged={this.onCalendarChanged}/>
+      
+      </div>
+      
+
       
       <button onClick={this.submitForm} type="button" class="btn btn-primary btn-lg btn-block mt-4 mb-5">สร้างคอร์ส</button> 
       </form>

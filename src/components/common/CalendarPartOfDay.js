@@ -8,11 +8,11 @@ class CalendarPartOfDay extends React.Component {
 
     constructor(props) {
       super(props);
-      const hours = this.initHours()
+      const hours = this.initHours(this.props.activeHours)
       this.state = {
         selectedPartIndex: 0,
         selectedDayIndex: 0,
-        selectedHours: hours
+        activeHours: hours
       }
       this.daysOfWeekMini = ['จ',
       'อ',
@@ -56,28 +56,34 @@ class CalendarPartOfDay extends React.Component {
       */
     }
     
-    initHours() {
+    initHours(activeHours) {
+      if(activeHours) return activeHours
       return [0,1,2,3,4,5,6].map(i => {
         return Array.apply(null, {length:24}).map(j => false)
       })
     }
     
+    updateActiveHours(hours) {
+      hours = this.initHours(hours)
+      this.setState({activeHours: hours})
+    }
+    
     selectPartOfDay(dayIndex, partIndex) {
-      this.hourCheckboxRefs.map((ref, i) => ref.current.checked = this.state.selectedHours[dayIndex][partIndex *6+i])
+      this.hourCheckboxRefs.map((ref, i) => ref.current.checked = this.state.activeHours[dayIndex][partIndex *6+i])
       this.setState({selectedDayIndex: dayIndex,
         selectedPartIndex: partIndex
       })
     }
     
     saveHours() {
-      const selectedHours = this.state.selectedHours
+      const activeHours = this.state.activeHours
       
       this.hourCheckboxRefs.map((ref, i) => {
-        selectedHours[this.state.selectedDayIndex][this.state.selectedPartIndex * 6 + i] = ref.current.checked
+        activeHours[this.state.selectedDayIndex][this.state.selectedPartIndex * 6 + i] = ref.current.checked
       })
-      this.setState({selectedHours})
-      console.log('setstate', selectedHours[0][0])
-      this.props.onChanged(selectedHours)
+      this.setState({activeHours})
+      console.log('setstate', activeHours[0][0])
+      this.props.onChanged(activeHours)
     }
     
 
@@ -100,7 +106,7 @@ class CalendarPartOfDay extends React.Component {
             <div class="part-of-time col-1 rounded m-1 bg-light p-0" data-toggle="modal" data-target="#exampleModalCenter" onClick={e => this.selectPartOfDay(d,p)}>
             
             {[0,1,2,3,4,5].map(h => (
-              <div className={`hr ${this.state.selectedHours[d][p*6+h]?'selected':''}`}> &nbsp;</div>
+              <div className={`hr ${this.state.activeHours[d][p*6+h]?'selected':''}`}> &nbsp;</div>
 
             ))}
 
