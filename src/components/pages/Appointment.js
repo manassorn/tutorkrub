@@ -27,66 +27,34 @@ class Appointment extends React.Component {
 
 
     render() {
-        return      <div class="container" style={{maxWidth:'720px'}}> 
-      <div class="mb-3 mt-3"> 
-       <ul class="nav nav-tabs"> 
-        <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#Experience"><span class="p-tab-name1">นัดเรียน</span> <span class="badge badge-pill badge-danger">3</span></a> </li> 
-        <li class="nav-item"> <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Biography"><span class="p-tab-name1">นัดสอน</span> <span class="badge badge-pill badge-danger">3</span></a> </li> 
-       </ul> 
-      </div> 
+        return      <div class="container pt-3 border-top" style={{maxWidth:'720px'}}>
       
-      <div className="row">
-        <div className="col-md-5">
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-primary">รอตอบกลับ</button>
-          <button type="button" class="btn btn-outline-secondary">ตอบกลับแล้ว
-            &nbsp;<span class="badge badge-pill badge-danger">3</span>
-          </button>
-          <button type="button" class="btn btn-outline-secondary">เรียนแล้ว</button>
+      
+       <SimpleTitle title='รายละเอียดนัดหมาย' />
+       
+       
+       
+              <div class="p-3">
+        <div class="text-center d-flex justify-content-center">
+         <img src="assets/images/avatars/avatar-1.png" class="rounded-circle shadow" width="130" height="130" alt=""/>
+         <div class="m-3 text-left">
+          <h3>รับสอนคณิตศาสตร์</h3>
+        <span class="text-muted">&bull;&nbsp;&nbsp;manassorn&nbsp;&nbsp;<br/>&bull;&nbsp;&nbsp;สอนแล้ว 0 ครั้ง &nbsp;<br/>
+        &bull;&nbsp; 0 ดาว</span> 
+
+
+
+
+         </div>
         </div>
+        
+        
+        <div class="text-muted mt-2">
+          afsghs shhsjsjsjss hsjsjsjsjsj sj djdjd jdjd ucudus hdj djks jsiwow jxjd jskkkdkd xjkd xbxh xxj djdkkdkd dkkdkd djkd 
         </div>
-      </div>
-      
-      
-      <div class="row"> 
-       <div class="col-md-6"> 
-        <div class="card"> 
-         <div class="card-body"> 
-          <div class="media align-items-center"> 
-           <h5 class="text-center">ธันวา<br/>20</h5> 
-           <div class="media-body ml-3 pl-3 border-left"> 
-            <h5 class="mb-0">รับสอนคณิตศาสตร์</h5> 
-            <p class="mb-0 text-secondary">Web Developer</p> 
-           </div> 
-          </div> 
-         </div> 
-        </div> 
-       </div> 
-       <div class="col-md-6"> 
-        <div class="card"> 
-         <div class="card-body"> 
-          <div class="media align-items-center"> 
-           <div class="media-body ml-3"> 
-            <h5 class="mb-0">Ralph L. Alva</h5> 
-            <p class="mb-0 text-secondary">UI Developer</p> 
-           </div> 
-          </div> 
-         </div> 
-        </div> 
-       </div> 
-       <div class="col-md-6"> 
-        <div class="card"> 
-         <div class="card-body"> 
-          <div class="media align-items-center"> 
-           <div class="media-body ml-3"> 
-            <h5 class="mb-0">John B. Roman</h5> 
-            <p class="mb-0 text-secondary">Graphic Designer</p> 
-           </div> 
-          </div> 
-         </div> 
-        </div> 
-       </div> 
-      </div> 
+
+        
+       </div>
      </div> 
 
     }

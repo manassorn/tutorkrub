@@ -41,12 +41,13 @@ class Navbar extends React.Component {
     logout(e) {
         const that = this
         e.preventDefault();
-        Api.post("/authen/logout").then(function(data) {
+        localStorage? localStorage.removeItem('accessToken', data.data.data.accessToken) :Cookie.erase('accessToken')
+        /*Api.post("/authen/logout").then(function(data) {
             that.setState({auth: false})
         }).catch(function(xhr, error) {
             console.error( "error", xhr, error );
             alert("error34")
-        })
+        })*/
     }
 
 
@@ -84,7 +85,7 @@ class Navbar extends React.Component {
                                         <p className="designattion mb-0">Available</p>
                                     </div>
                                     <div className="position-relative">
-                                        <img src={this.state.user.avatar} className="user-img" alt="user avatar"/> <span className="msg-count2" >8</span>
+                                        <img src={this.state.user.avatarUrl} className="user-img" alt="user avatar"/> <span className="msg-count2" >8</span>
 
                                     </div>
                                 </div>
@@ -99,7 +100,7 @@ class Navbar extends React.Component {
                                     className="bx bx-grid"></i><span>
                                     คอร์สของฉัน
                                 </span></a>
-                                <a className="dropdown-item" href="/appointment"><i
+                                <a className="dropdown-item" href="/appointment/list"><i
                                     className="bx bx-list-ul"></i><span>
                                     รายการนัดหมาย
                                 </span></a>

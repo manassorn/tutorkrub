@@ -44,7 +44,7 @@ class CourseAdd extends React.Component {
       const description = this.refs.description.value
       const price = this.refs.price.value
       const category = this.refs.category.value
-      Api.post('/crud/course',  {
+      Api.post('/course',  {
          title,
          description,
          price,

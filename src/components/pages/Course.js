@@ -9,7 +9,9 @@ class Course extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          weekIncrement: 0
+          weekIncrement: 0,
+          availableHours: [[]],
+          course: {}
         }
         this.daysOfWeek = ['จันทร์',
         'อังคาร',
@@ -28,15 +30,21 @@ class Course extends React.Component {
     }
 
     componentDidMount() {
-      /*Api.get('/crud/course')
+      Api.get('/crud/course')
         .then(response => 
         {
-          console.log('courses',response.data.data)
-        
-        this.setState({ courses: response.data.data })
+          const course = response.data.data
+          this.setState({course})
+          const tutorId = course.tutorId
+
+          return Api.get(`/user/${tutorId}/availableHours`)
         }
-        );
-      */
+        ).then(response => {
+          const availableHours = response.data.data
+          this.setState({availableHours})
+        });
+      
+      
     }
     
     prevWeek() {

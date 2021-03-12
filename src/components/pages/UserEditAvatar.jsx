@@ -72,7 +72,7 @@ class UserEditAvatar extends React.Component {
       this.croppieInstance.result('blob').then(function(blob) {
         var formData = new FormData()
         formData.append('file', blob)
-        Api.post(`/upload/to/user/${id}/avatar`, formData).then(() => {
+        Api.post(`/upload/to/user/${id}/avatarUrl`, formData).then(() => {
           location.href = '/user/edit'
         })
       })

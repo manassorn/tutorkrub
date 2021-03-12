@@ -11,6 +11,7 @@ import UserEditAvatar from "./components/pages/UserEditAvatar"
 import UserEditEmailVerifyCode from "./components/pages/UserEditEmailVerifyCode"
 import Pay from "./components/pages/Pay"
 import Appointment from "./components/pages/Appointment"
+import AppointmentList from "./components/pages/AppointmentList"
 import Home from "./components/pages/Home"
 // IMPORT
 
@@ -32,6 +33,7 @@ class App extends React.Component {
           <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={Home} />
+                <Route path="/appointment/list" component={AppointmentList} />
                 <Route path="/appointment" component={Appointment} />
                 <Route path="/course/add" component={CourseAdd} />
                 <Route path="/course" component={Course} />

@@ -8,12 +8,12 @@ class CourseList extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        weekIncrement: 0
+        courses: []
       }
     }
 
     componentDidMount() {
-      /*Api.get('/crud/course')
+      Api.get('/course/list')
         .then(response => 
         {
           console.log('courses',response.data.data)
@@ -21,7 +21,7 @@ class CourseList extends React.Component {
         this.setState({ courses: response.data.data })
         }
         );
-      */
+      
     }
 
     render() {
@@ -42,15 +42,16 @@ class CourseList extends React.Component {
       </div> 
       <div id="course-cards" class="row">
       
-      {[1,2,3,4,5].map(i => (
+      {this.state.courses.map(course => (
 <div class="col-6 col-md-3">
             <div class="card" style={{'box-shadow':'none'}}>
-                <img class="card-img-top rounded rounded-lg" src="assets/images/avatars/avatar-1.png" alt="Card image cap"/>
+                <img class="card-img-top rounded rounded-lg" src={course.tutorAvatarUrl} alt="Card image cap"/>
                 <div class="card-body p-0">
                     <p class="card-text">
-                        <a href="course.html" className="stretched-link text-dark">รับสอนคณิตศาสตร์</a><br/>
+                        <a href={`/course/${course.id}`} className="stretched-link text-dark">
+                        {course.title}</a><br/>
                          <b>
-                        <span className="text-primary">฿100/ชั่วโมง</span></b>
+                        <span className="text-primary">฿{course.price}/ชั่วโมง</span></b>
                     </p>
                 </div>
             </div>
