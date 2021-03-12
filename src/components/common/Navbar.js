@@ -15,8 +15,12 @@ class Navbar extends React.Component {
     }
 
     componentDidMount() {
-        const that = this
-        Api.get('/user/me').then(function(response) {
+        this.getUser()
+    }
+    
+    getUser() {
+      var that = this
+      Api.get('/user/me').then(function(response) {
           that.setState({ user: response.data.data,auth:true })
         }).catch(function(error) {
         })
@@ -32,6 +36,7 @@ class Navbar extends React.Component {
             localStorage? localStorage.setItem('accessToken', data.data.data.accessToken) :Cookie.set('accessToken', data.data.data.accessToken)
             
             that.setState({auth: true})
+            that.getUser()
         }).catch(function(xhr, error) {
             console.error( "error", xhr, error );
             alert("error");

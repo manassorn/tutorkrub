@@ -10,7 +10,7 @@ class Course extends React.Component {
         super(props);
         this.state = {
           weekIncrement: 0,
-          availableHours: [[]],
+          avaHoursBoolArrays: [[]],
           course: {}
         }
         this.daysOfWeek = ['จันทร์',
@@ -30,7 +30,9 @@ class Course extends React.Component {
     }
 
     componentDidMount() {
-      Api.get('/crud/course')
+      var a = location.href.split('/')
+      var id = a[a.length-1]
+      Api.get(`/course/${id}`)
         .then(response => 
         {
           const course = response.data.data
@@ -41,7 +43,8 @@ class Course extends React.Component {
         }
         ).then(response => {
           const availableHours = response.data.data
-          this.setState({availableHours})
+          const avaHoursBoolArrays = availableHours.split(' ').map(d => d.split('').map(h => h == 1))
+          this.setState({avaHoursBoolArrays})
         });
       
       
@@ -65,10 +68,10 @@ class Course extends React.Component {
        
               <div class="p-3">
         <div class="text-center d-flex justify-content-center">
-         <img src="assets/images/avatars/avatar-1.png" class="rounded-circle shadow" width="130" height="130" alt=""/>
+         <img src={this.state.course.tutorAvatarUrl} class="rounded-circle shadow" width="130" height="130" alt=""/>
          <div class="m-3 text-left">
-          <h3>รับสอนคณิตศาสตร์</h3>
-        <span class="text-muted">&bull;&nbsp;&nbsp;manassorn&nbsp;&nbsp;<br/>&bull;&nbsp;&nbsp;สอนแล้ว 0 ครั้ง &nbsp;<br/>
+          <h3>{this.state.course.title}</h3>
+        <span class="text-muted">&bull;&nbsp;&nbsp;{this.state.course.tutorName}&nbsp;&nbsp;<br/>&bull;&nbsp;&nbsp;สอนแล้ว 0 ครั้ง &nbsp;<br/>
         &bull;&nbsp; 0 ดาว</span> 
 
 
@@ -79,7 +82,7 @@ class Course extends React.Component {
         
         
         <div class="text-muted mt-2">
-          afsghs shhsjsjsjss hsjsjsjsjsj sj djdjd jdjd ucudus hdj djks jsiwow jxjd jskkkdkd xjkd xbxh xxj djdkkdkd dkkdkd djkd {this.state.weekIncrement}
+          {this.state.course.description}
         </div>
 
         
@@ -93,6 +96,58 @@ class Course extends React.Component {
       <div class="border rounded"> 
        <div class="p-2"> 
         <h3>วัน<span class="text-muted" style={{fontSize:'16px'}}> จองล่วงหน้าได้ 90 วัน</span></h3> 
+        
+       
+       
+       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+         <ol class="carousel-indicators">
+           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+         </ol>
+         <div class="carousel-inner">
+           <div class="carousel-item active">
+           xxx
+              <div id="datex" class="row mx-0">
+        {[0,1,2,3,4,5,6].map(i => (
+         <div class="col-3 p-1"> 
+          <div class="option border rounded text-center pb-3 pt-3">
+            {this.daysOfWeek[i]} 
+           <br/> 
+           <b>{this.dates[i].getDate()}</b> 
+          </div> 
+         </div> 
+        ))}
+
+        </div> 
+           
+           
+           
+           
+          
+           </div>
+           <div class="carousel-item">
+             <img class="d-block w-100" src="..." alt="Second slide"/>
+           </div>
+           <div class="carousel-item">
+             <img class="d-block w-100" src="..." alt="Third slide"/>
+           </div>
+         </div>
+         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+           <span class="sr-only">Previous</span>
+         </a>
+         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+           <span class="sr-only">Next</span>
+         </a>
+       </div> 
+        
+        
+  
+        
+        
+        
         
         
         <div class="row mb-2 pb-2 align-items-stretch m-0"> 
