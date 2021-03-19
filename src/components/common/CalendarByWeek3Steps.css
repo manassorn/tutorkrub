@@ -1,0 +1,33 @@
+.carousel-indicators {
+  bottom: -50px;
+}
+.carousel-indicators li {
+  background-color: #ccc;
+  height:10px;
+  border-radius: 5px
+}
+.carousel-indicators .active {
+  background-color: #007bff;
+}
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+    filter: invert(100%);
+}
+
+.carousel-control-next {
+  border:solid 1px ;
+  right: -15% !important;
+}
+
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+  left: 0;
+}
+.calendar3steps .selected {
+  background: rgb(0, 123, 255, .1);
+  border-color: #007bff !important;
+}
+.calendar3steps .disabled {
+  opacity: 0.64;
+  background: #e9ecef;
+  color: #6c757d;
+}
