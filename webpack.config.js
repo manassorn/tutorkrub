@@ -42,7 +42,7 @@ const config = {
         ]
     },
     devServer: {
-        port: 9950,
+        port: 9951,
         
         historyApiFallback: { index: 'dist/index2.html' }
     }

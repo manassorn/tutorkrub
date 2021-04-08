@@ -1,7 +1,9 @@
 import React from "react";
 import Api from '../../Api'
+import Utils from '../../Utils'
 import SimpleTitle from '../common/SimpleTitle'
-import './Course.css'
+import AppointmentChat from './AppointmentChat'
+import './Appointment.css'
 
 class Appointment extends React.Component {
 
@@ -27,7 +29,7 @@ class Appointment extends React.Component {
 
 
     render() {
-        return      <div class="container pt-3 border-top" style={{maxWidth:'720px'}}>
+        return <div class="container pt-3 border-top" style={{maxWidth:'720px'}}>
       
       
        <SimpleTitle title='รายละเอียดนัดหมาย' />
@@ -35,25 +37,70 @@ class Appointment extends React.Component {
        
        
               <div class="p-3">
-        <div class="text-center d-flex justify-content-center">
-         <img src="assets/images/avatars/avatar-1.png" class="rounded-circle shadow" width="130" height="130" alt=""/>
-         <div class="m-3 text-left">
-          <h3>รับสอนคณิตศาสตร์</h3>
-        <span class="text-muted">&bull;&nbsp;&nbsp;manassorn&nbsp;&nbsp;<br/>&bull;&nbsp;&nbsp;สอนแล้ว 0 ครั้ง &nbsp;<br/>
-        &bull;&nbsp; 0 ดาว</span> 
+        <div>
+         <div class="">
+          <div class="media align-items-top"> 
+           <div class=""> 
+            <img src="/assets/images/avatars/avatar-1.png" width="40" height="40" class="rounded-circle" alt="" /> 
+           </div> 
+           <div class="media-body pl-2"> 
+            <h4 class="mb-1 font-weight-bold">รับสอนคณิตศาสตร์ </h4> 
+             
+           </div> 
+          </div> 
+         
+          
+          <div class="mt-2 media align-items-center"> 
+           <div class="product-img"> 
+            <i className="bx bx-calendar" style={{fontSize:'30px'}}></i>
 
-
+           </div> 
+           <div class="media-body pl-3"> 
+            <h6 class="mb-0 font-weight-bold">{Utils.formatDate(new Date())}</h6> 
+           </div> 
+          </div>
+          <div class="mt-2 media align-items-center"> 
+           <div class="product-img"> 
+           <i className="bx bx-alarm" style={{fontSize:'30px'}}></i>
+           </div> 
+           <div class="media-body pl-3"> 
+            <h6 class="mb-0 font-weight-bold">{Utils.formatHourPeriod(1,1)}</h6> 
+           </div> 
+          </div>
+          
+          
+        <div className="mt-2">
+          <div className="appointment-badge bg-light-info text-info">
+          รอติวเตอร์ตอบรับ
+          </div>
+        </div>
 
 
          </div>
         </div>
         
         
-        <div class="text-muted mt-2">
-          afsghs shhsjsjsjss hsjsjsjsjsj sj djdjd jdjd ucudus hdj djks jsiwow jxjd jskkkdkd xjkd xbxh xxj djdkkdkd dkkdkd djkd 
-        </div>
-
+       </div>
+       
+       <AppointmentChat />
+       
+       
+       <div className="pl-3 pt-3 border-top">
+       <h3>
+       ประวัติ
+       </h3>
+        <ol className="timeline">
+        <li>ติวเตอร์เปลี่ยนเวลานัดหมาย
+          <small>{Utils.formatTimestamp(new Date())}</small>
+        </li>
+        <li>ติวเตอร์ตอบตกลง
+          <small>{Utils.formatTimestamp(new Date())}</small>
+        </li>
+        <li>นัดหมายถูกสร้าง
+          <small>{Utils.formatTimestamp(new Date())}</small>
+        </li>
         
+        </ol>
        </div>
      </div> 
 

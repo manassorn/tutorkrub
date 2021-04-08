@@ -16,12 +16,18 @@
 
 .carousel-control-next {
   border:solid 1px ;
-  right: -15% !important;
+  border-radius: 4px;
+  right: -40px !important;
+  max-width: 40px;
 }
 
-.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
-  left: 0;
+.carousel-control-prev {
+  border: solid 1px;
+  border-radius: 4px;
+  left: -15% !important;
 }
+
+
 .calendar3steps .selected {
   background: rgb(0, 123, 255, .1);
   border-color: #007bff !important;

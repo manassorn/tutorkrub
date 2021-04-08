@@ -1,6 +1,7 @@
 import React from "react";
 import Api from '../../Api'
 import SimpleTitle from '../common/SimpleTitle'
+import Utils from '../../Utils'
 import './Course.css'
 
 class AppointmentList extends React.Component {
@@ -9,20 +10,24 @@ class AppointmentList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      weekIncrement: 0
+      appointments: []
     }
   }
 
   componentDidMount() {
-    /*Api.get('/crud/course')
+    Api.get('/appointment/student/status/to_be_paid')
       .then(response => 
       {
-        console.log('courses',response.data.data)
-      
-      this.setState({ courses: response.data.data })
+        let appointments = response.data.data
+        appointments = appointments.map(a => {
+          a.startTime = Utils.strToDate(a.startTime)
+          return a
+        })
+      this.setState({ appointments })
       }
       );
-    */
+    
+    
   }
 
 
@@ -38,7 +43,8 @@ class AppointmentList extends React.Component {
       <div className="row mb-3">
         <div className="col-md-5">
         <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-primary">รอตอบกลับ</button>
+          <button type="button" class="btn btn-primary">รอชำระเงิน</button>
+          <button type="button" class="btn btn-outline-secondary">รอตอบกลับ</button>
           <button type="button" class="btn btn-outline-secondary">ตอบกลับแล้ว
             &nbsp;<span class="badge badge-pill badge-danger">3</span>
           </button>
@@ -47,26 +53,33 @@ class AppointmentList extends React.Component {
         </div>
       </div>
       
-      
+      {this.state.appointments.map(ap => (
       <div class="row"> 
       
        <div class="col-md-6"> 
         <div class="card"> 
          <div class="card-body"> 
           <div class="media align-items-center"> 
-           <h5 class="text-center">ธันวา<br/>20</h5> 
+           <h5 class="text-center">{Utils.formatFullMonth(ap.startTime)}<br/>{ap.startTime.getDate()}</h5> 
            <div class="media-body ml-3 pl-3 border-left"> 
-            <h5 class="mb-0">รับสอนคณิตศาสตร์</h5> 
-            <p class="mb-0 text-secondary">Web Developer</p> 
-            <a href="#" class="btn btn-outline-primary stretched-link">ดูรายละเอียด</a>
+            <h5 class="mb-0">{ap.courseName}</h5> 
+            <p class="mb-0 text-secondary">โดย {ap.tutorName}</p> 
+            <a href={`/appointment/${ap.id}`} class="btn btn-outline-primary stretched-link">ดูรายละเอียด</a>
            </div> 
           </div> 
          </div> 
         </div> 
        </div> 
        
+      </div>
+      
+      ))}
 
-      </div> 
+      
+      
+      
+      
+      
      </div>
 
   }

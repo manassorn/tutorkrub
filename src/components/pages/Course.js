@@ -2,6 +2,7 @@ import React from "react";
 import Api from '../../Api'
 import SimpleTitle from '../common/SimpleTitle'
 import CalendarByWeek3Steps from '../common/CalendarByWeek3Steps'
+import Utils from '../../Utils'
 import './Course.css'
 
 class Course extends React.Component {
@@ -10,13 +11,17 @@ class Course extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          course: {}
+          course: {},
+          selectedDateHour: undefined
         }
+      this.onCalendarChanged = this.onCalendarChanged.bind(this)
+      this.createAppointment = this.createAppointment.bind(this)
     }
     
     componentDidMount() {
       var a = location.href.split('/')
       var id = a[a.length-1]
+      this.courseId = id
       Api.get(`/course/${id}`)
         .then(response => 
         {
@@ -32,7 +37,23 @@ class Course extends React.Component {
           this.setState({avaHoursBoolArrays})
         });
       
-      
+    }
+    
+    onCalendarChanged(selectedDateHour){
+      this.setState({selectedDateHour})
+    }
+    
+    createAppointment() {
+      console.log(this.courseId)
+      Api.post(`/appointment/course/${this.courseId}`, {
+        startTime: this.state.selectedDateHour,
+        length: 1
+      })
+        .then(response => 
+        {
+          location.href = '/appointment/list'
+        }
+        )
     }
     
     render() {
@@ -74,14 +95,30 @@ class Course extends React.Component {
        <div class="p-2"> 
       
        
-       <CalendarByWeek3Steps numberOfWeek="6"/>
+       <CalendarByWeek3Steps numberOfWeek="6" onChanged={this.onCalendarChanged}/>
       
    
        </div> 
       </div> 
       
       <div>
-        <button class="btn btn-primary btn-block mt-3 mb-5">นัดหมาย</button>
+      {this.state.selectedDateHour && 
+        <>
+        <div className="font-weight-bold">
+          <i className="bx bx-calendar-event"></i>&nbsp;&nbsp;
+            {Utils.formatDate(this.state.selectedDateHour)}
+
+        </div>
+        <div className="font-weight-bold">
+          <i className="bx bx-alarm"></i>&nbsp;&nbsp;
+            {Utils.formatHourPeriod(this.state.selectedDateHour.getHours(), 1)}
+        </div>
+        </>
+      }
+
+        
+        
+        <button className="btn btn-primary btn-block mt-3 mb-5" disabled={this.state.selectedDateHour? '' :'disabled'} onClick={this.createAppointment}>นัดหมาย</button>
       </div>
       
      </div> 
