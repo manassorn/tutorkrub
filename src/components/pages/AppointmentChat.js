@@ -27,7 +27,7 @@ class Appointment extends React.Component {
       Api.get(`/appointment/${this.appointmentId}/message`)
         .then(response => 
         {
-          console.log('msgs',response.data.data)
+          console.log(JSON.stringify(response.data.data))
         
         this.setState({ messages: response.data.data })
         }
@@ -88,25 +88,7 @@ class Appointment extends React.Component {
        
         {this.state.messages.map(message => (<>{this.renderChat(message)}</>)
         )}
-
-
-        <div class="chat-content-leftside"> 
-         <div class="media"> 
-          <img src="/assets/images/avatars/avatar-3.png" width="48" height="48" class="rounded-circle" alt=""/> 
-          <div class="media-body ml-2"> 
-           <p class="mb-0 chat-time">Harvey, 2:48 PM</p> 
-           <p class="chat-left-msg">okk, what about admin template?</p> 
-          </div> 
-         </div> 
-        </div> 
-        <div class="chat-content-rightside"> 
-         <div class="media"> 
-          <div class="media-body mr-2"> 
-           <p class="mb-0 chat-time text-right">you, 3:14 PM</p> 
-           <p class="chat-right-msg">i purchased dashtreme admin template from themeforest. it is very good product for web application</p> 
-          </div> 
-         </div> 
-        </div>
+        
        </div>
        
        

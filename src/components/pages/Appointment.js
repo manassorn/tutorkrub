@@ -13,6 +13,7 @@ class Appointment extends React.Component {
       this.state = {
         weekIncrement: 0
       }
+      this.appointmentId = location.href.split('/').pop()
     }
     
     componentDidMount() {
@@ -82,7 +83,7 @@ class Appointment extends React.Component {
         
        </div>
        
-       <AppointmentChat />
+       <AppointmentChat appointmentId={this.appointmentId}/>
        
        
        <div className="pl-3 pt-3 border-top">
