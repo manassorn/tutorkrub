@@ -1,5 +1,6 @@
 import React from "react";
 import Api from '../../Api'
+import Me from '../../Me'
 import SimpleTitle from '../common/SimpleTitle'
 import Croppie from 'croppie'
 import "croppie/croppie.css"
@@ -19,7 +20,7 @@ class UserEditAvatar extends React.Component {
 
     componentDidMount() {
       window.addEventListener('hashchange', e => this.onHashChange)
-      var id = 'hNqOKzYwhJjZTIDLUkf5'
+      var id = Me.userId()
       Api.get('/crud/user/' + id)
         .then(response => 
         {
@@ -68,7 +69,7 @@ class UserEditAvatar extends React.Component {
     }
     
     uploadImageFile() {
-      var id = 'hNqOKzYwhJjZTIDLUkf5'
+      var id = Me.userId()
       this.croppieInstance.result('blob').then(function(blob) {
         var formData = new FormData()
         formData.append('file', blob)

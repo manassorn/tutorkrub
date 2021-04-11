@@ -31,11 +31,11 @@ class UserEdit extends React.Component {
         <div class="border-bottom pt-3 pb-3 text-center d-flex flex-column align-items-center"> 
           <a href="/user/edit/avatar">
           <div className="user-image">
-            <img src={this.state.user.avatar} class="rounded-circle shadow" width="130" height="130" alt=""/> <span className="edit-icon"><i className="bx bx-camera"></i></span>
+            <img src={this.state.user.avatarUrl} class="rounded-circle shadow" width="130" height="130" alt=""/> <span className="edit-icon"><i className="bx bx-camera"></i></span>
 
           </div>
           </a>
-         <b>manassorn</b> 
+         <b>{this.state.user.username}</b> 
         </div> 
         <div class="border-bottom pt-3 pb-3"> 
          <h6>ข้อมูลส่วนบุคคล</h6> 
@@ -45,7 +45,7 @@ class UserEdit extends React.Component {
            <b id="email-display">{this.state.user.email}</b> 
           </div> 
           <a href="javascript:void(0)" edit-section="edit-email-section" class="edit-link">แก้ไข</a> 
-         </div> 
+         </div>
         <div class="d-flex justify-content-between"> 
           <div> 
            <h6 class="mb-0 text-muted">ชื่อ</h6> 
@@ -71,14 +71,14 @@ class UserEdit extends React.Component {
          <div class="d-flex justify-content-between"> 
           <div> 
            <h6 class="mb-0 text-muted">Skype ID</h6> 
-           <b id="skype-id-display">{this.state.user.skypeId}</b> 
+           <b id="skype-id-display">{this.state.user.skypeId || '-'}</b> 
           </div> 
           <a href="javascript:;" edit-section="edit-skype-id-section" class="edit-link">แก้ไข</a> 
          </div> 
          <div class="d-flex justify-content-between"> 
           <div> 
            <h6 class="mb-0 text-muted">Zoom ID</h6> 
-           <b id="zoom-id-display">{this.state.user.zoomId}</b> 
+           <b id="zoom-id-display">{this.state.user.zoomId || '-'}</b> 
           </div> 
           <a href="javascript:;" edit-section="edit-zoom-id-section" class="edit-link">แก้ไข</a> 
          </div> 

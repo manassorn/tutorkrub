@@ -1,5 +1,9 @@
 import React from "react";
+import {toDate} from 'date-fns-tz'
+import {formatDistance} from 'date-fns'
+import {th} from 'date-fns/locale'
 import Api from '../../Api'
+import Me from '../../Me'
 import Utils from '../../Utils'
 import SimpleTitle from '../common/SimpleTitle'
 import './Appointment.css'
@@ -11,7 +15,7 @@ class Appointment extends React.Component {
       super(props);
       this.appointmentId = this.props.appointmentId
       this.state = {
-        messages: [{text:'test'}]
+        messages: []
       }
       
       this.textInputRef = React.createRef()
@@ -50,20 +54,22 @@ class Appointment extends React.Component {
     
     renderChat(message) {        
 
-      if(message.direction == 'left') {
-        return this.renderChatLeft()
-      } else {
+      if(message.from === Me.userId()) {
         return this.renderChatRight(message)
+
+      } else {
+        return this.renderChatLeft(message)
+
       }
     }
     
-    renderChatLeft() {
+    renderChatLeft(message) {
       return <div class="chat-content-leftside"> 
          <div class="media"> 
-          <img src="/assets/images/avatars/avatar-3.png" width="48" height="48" class="rounded-circle" alt=""/> 
+          <img src={message.fromAvatarUrl} width="48" height="48" class="rounded-circle" alt=""/> 
           <div class="media-body ml-2"> 
-           <p class="mb-0 chat-time">Harvey, 2:35 PM</p> 
-           <p class="chat-left-msg">Hi, harvey where are you now a days?</p> 
+           <p class="mb-0 chat-time"> {formatDistance(toDate(message.timestamp), new Date(), {addSuffix:true,locale:th})}</p> 
+           <p class="chat-left-msg">{message.text}</p> 
           </div> 
          </div> 
         </div>
@@ -73,7 +79,8 @@ class Appointment extends React.Component {
       return <div class="chat-content-rightside"> 
          <div class="media d-flex ml-auto"> 
           <div class="media-body mr-2"> 
-           <p class="mb-0 chat-time text-right">you, 2:37 PM</p> 
+           <p class="mb-0 chat-time text-right">คุณ, 
+           {formatDistance(toDate(message.timestamp), new Date(), {addSuffix:true,locale:th})}</p> 
            <p class="chat-right-msg">{message.text}</p> 
           </div> 
          </div> 

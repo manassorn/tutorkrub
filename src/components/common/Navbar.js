@@ -10,7 +10,7 @@ class Navbar extends React.Component {
           auth: false 
           
         };
-        this.oneClickLogin = this.oneClickLogin.bind(this)
+        this.devlogin = this.devlogin.bind(this)
         this.logout = this.logout.bind(this)
     }
 
@@ -26,12 +26,12 @@ class Navbar extends React.Component {
         })
     }
 
-    oneClickLogin(e) {
+    devlogin(e, userId = 'hNqOKzYwhJjZTIDLUkf5') {
       
       const that = this
       e.preventDefault();
       const storage = localStorage
-        Api.get( "/authen/1clicklogin").then(function(data) {
+        Api.get( "/authen/devlogin/" + userId).then(function(data) {
             console.log('set token',Object.keys(data.data.data));
             localStorage? localStorage.setItem('accessToken', data.data.data.accessToken) :Cookie.set('accessToken', data.data.data.accessToken)
             
@@ -72,9 +72,26 @@ class Navbar extends React.Component {
                         </a>
                     </div>
                 </div>
-                { (!this.state.auth) && <div className="right-topbar ml-auto d-flex align-items-center">
-                    <a className="btn btn-link" href="#" onClick={this.oneClickLogin}>
-                        1คลิกล็อกอิน
+                
+                 <div className="right-topbar ml-auto">
+                <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i className="bx bx-key"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'hNqOKzYwhJjZTIDLUkf5')}>Login as Pun</a>
+                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'PIrlU8ZS7htHOwU0z9iS')}>Login as Bamboo</a>
+                        </div>
+                      </li>
+                </ul>
+                </div>
+                
+                
+                
+                { (this.state.authx) && <div className="right-topbar ml-auto d-flex align-items-center">
+                    <a className="btn btn-link" href="#" onClick={this.devlogin}>
+                        devlogin
                     </a>
                     <a className="btn btn-primary ml-2" href="#">
                         สมัครสมาชิก
