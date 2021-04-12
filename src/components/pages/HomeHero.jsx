@@ -19,7 +19,12 @@ class HomeHero extends React.Component {
         <div className="col-md-5 offset-md-2 col-sm-12" style={{paddingTop:'150px', paddingBottom:'150px'}}>
 
         <h2>สอน หรือ เรียน แค่ 1 ชั่วโมง</h2>
-        <div>ไม่มีข้อผูกมัด เรียนจบเป็นครั้งๆ</div>
+        <div className="pl-2">
+            <img src="https://cdn0.agoda.net/images/emailmarketing/ycs_elements/agx-50-circle-check.png" width="16"/>&nbsp;ไม่มีข้อผูกมัด
+            <br/>
+            <img src="https://cdn0.agoda.net/images/emailmarketing/ycs_elements/agx-50-circle-check.png" width="16"/>&nbsp;เรียนจบเป็นครั้งๆ
+
+        </div>
 
         <div className="mt-3">
           <a href="#" className="btn btn-outline-primary rounded-pill">สมัครสอน</a>

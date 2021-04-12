@@ -29,17 +29,17 @@ class HomeGettingStarted extends React.Component {
     }
 
     render() {
-      return <div className="mx-auto col-md-5 col-sm-12">
+      return <div className="mx-auto col-md-5 col-sm-12 pt-5">
           <div className="text-center">
               <span className="h6">4 ขั้นตอน</span>
               <p className="h4">ง่ายๆ ในการ</p>
           </div>
           <ul className="nav nav-border-bottom justify-content-center">
               <li className="nav-item">
-                  <a className={`nav-link px-5 ${this.state.tab == 'tutor'? 'active' :''}`} href="#" onClick={e => this.clickTab('tutor')}>เป็นติวเตอร์</a>
+                  <a className={`nav-link px-5 ${this.state.tab == 'tutor'? 'active' :''}`} href="#" onClick={e => this.clickTab('tutor')}>สอน</a>
               </li>
               <li className="nav-item">
-                  <a className={`nav-link px-5 ${this.state.tab == 'student'? 'active' :''}`} href="#" onClick={e => this.clickTab('student')}>เป็นนักเรียน</a>
+                  <a className={`nav-link px-5 ${this.state.tab == 'student'? 'active' :''}`} href="#" onClick={e => this.clickTab('student')}>เรียน</a>
               </li>
           </ul>
           <div className="p-3">
