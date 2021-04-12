@@ -29,9 +29,9 @@ class HomeGettingStarted extends React.Component {
     }
 
     render() {
-      return <div>
+      return <div className="mx-auto col-md-5 col-sm-12">
           <div className="text-center">
-              <span class="h6">4 ขั้นตอน</span>
+              <span className="h6">4 ขั้นตอน</span>
               <p className="h4">ง่ายๆ ในการ</p>
           </div>
           <ul className="nav nav-border-bottom justify-content-center">

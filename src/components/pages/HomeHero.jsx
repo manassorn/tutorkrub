@@ -15,13 +15,16 @@ class HomeHero extends React.Component {
   }
 
   render() {
-    return <div class="hero">
-        
-      <h2>ตลาดติวเตอร์</h2>
-      
-      <div>
-        <a href="#" className="btn btn-outline-light rounded-pill">เป็นติวเตอร์</a>
-        <a href="#" className="btn btn-outline-light rounded-pill ml-3">เป็นนักเรียน</a>
+    return <div className="hero-bg-young-boy row">
+        <div className="col-md-5 offset-md-2 col-sm-12" style={{paddingTop:'150px', paddingBottom:'150px'}}>
+
+        <h2>สอน หรือ เรียน แค่ 1 ชั่วโมง</h2>
+        <div>ไม่มีข้อผูกมัด เรียนจบเป็นครั้งๆ</div>
+
+        <div className="mt-3">
+          <a href="#" className="btn btn-outline-primary rounded-pill">สมัครสอน</a>
+          <a href="#" className="btn btn-outline-primary rounded-pill ml-3">สมัครเรียน</a>
+        </div>
       </div>
      </div>
 

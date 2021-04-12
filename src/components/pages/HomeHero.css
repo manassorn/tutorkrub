@@ -1,5 +1,15 @@
 .hero {
   background: url(https://i.ibb.co/N9ZDfMB/16952.png);
   color:white;
-  text-align: center;
+  /*text-align: center;*/
+}
+.hero-bg-young-boy {
+  background: url(https://i.imgur.com/j6Md9Q7.jpg);
+  /* transform: scaleX(-1); */
+  background-size: 90%;
+  background-position: 50px -20px;
+}
+.hero-bg-young-girl {
+  background: url(https://i.imgur.com/fQDe8R8.jpg);
+  background-size: 80%;
 }
