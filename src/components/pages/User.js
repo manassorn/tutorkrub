@@ -38,9 +38,9 @@ class User extends React.Component {
 
        <div className="border-top border-bottom p-3">
         <div class="text-center d-flex justify-content-center">
-         <img src={this.state.user.avatar} class="rounded-circle shadow" width="130" height="130" alt=""/>
+         <img src={this.state.user.avatarUrl} class="rounded-circle shadow" width="130" height="130" alt=""/>
          <div class="m-3 text-left">
-          <h5>Manassorn Vanichdilokkul</h5>
+          <h5>{this.state.user.name}</h5>
           <a href="/user/edit" class="btn btn-outline-primary">แก้ไขโปรไฟล์</a>
           <a href="/user/edit/availableHours" class="btn btn-outline-primary">แก้ไขเวลาที่สะดวกสอน</a>
 

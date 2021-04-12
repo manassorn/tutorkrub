@@ -43,49 +43,72 @@ class HomeGettingStarted extends React.Component {
               </li>
           </ul>
           <div className="p-3">
-              <div className="item">
-                  <div className="icon">
-                      <i className="bx bx-id-card bx-md"></i>
-                  </div>
-                  <div className="details">
-                    <h6>1.ลงทะเบียน</h6>
-                    <p>กรอกชื่อ นามสกุล อีเมลหรือเบอร์โทรศัพท์ให้ครบถ้วน</p>
-                      <a href="/course/add" className="btn btn-outline-primary">
-                        สมัครสมาชิก
-                      </a>
-                  </div>
-              </div>
-              <div className="item">
-                  <div className="icon">
-                      <i className="bx bx-calendar bx-md"></i>
-                  </div>
-                  <div className="details">
-                    <h6>2.สร้างคอร์สเรียน</h6>
-                    <p>เลือกหมวดหมู่ และกรอกเนื้อหาให้ครบถ้วน เพื่อให้นักเรียนค้นพบได้ง่ายยิ่งขึ้น</p>
-                      <a href="/course/add" className="btn btn-outline-primary">
-                        สร้างคอร์ส
-                      </a>
-                  </div>
-              </div>
-              
-              <div className="item">
-                  <div className="icon">
-                      <i className="bx bx-video bx-md"></i>
-                  </div>
-                  <div className="details">
-                    <h6>3.เริ่มสอน</h6>
-                    <p>กรอกชื่อ นามสกุล อีเมลหรือเบอร์โทรศัพท์ให้ครบถ้วน</p>
-                  </div>
-              </div>
-              <div className="item">
-                  <div className="icon">
-                      <i className="bx bx-wallet bx-md"></i>
-                  </div>
-                  <div className="details">
-                    <h6>4.รับเงินทันทีเมื่อสอนจบ</h6>
-                    <p>กรอกชื่อ นามสกุล อีเมลหรือเบอร์โทรศัพท์ให้ครบถ้วน</p>
-                  </div>
-              </div>
+
+
+
+
+
+          <div class="mt-2 media"> 
+           <div class="product-img"> 
+            <i className="bx bx-id-card" style={{fontSize:'30px'}}></i>
+           </div> 
+           <div class="media-body pl-3"> 
+            <h6 class="mb-0 font-weight-bold">1. ลงทะเบียน</h6> 
+            <p className="mb-1">
+            กรอกชื่อ นามสกุล อีเมลหรือเบอร์โทรศัพท์ให้ครบถ้วน
+            </p>
+            <a href="/course/add" className="btn btn-outline-primary">
+              สมัครสมาชิก
+            </a>
+           </div> 
+          </div>
+          
+          
+          
+         <div class="mt-4 media"> 
+           <div class="product-img"> 
+            <i className="bx bx-calendar" style={{fontSize:'30px'}}></i>
+           </div> 
+           <div class="media-body pl-3"> 
+            <h6 class="mb-0 font-weight-bold">2. สร้างคอร์สเรียน</h6> 
+            <p className="mb-1">
+ เลือกหมวดหมู่ และกรอกเนื้อหาให้ครบถ้วน เพื่อให้นักเรียนค้นพบได้ง่ายยิ่งขึ้น
+            </p>
+            <a href="/course/add" className="btn btn-outline-primary">
+              สมัครสมาชิก
+            </a>
+           </div> 
+          </div>
+          
+          
+         <div class="mt-4 media"> 
+           <div class="product-img"> 
+            <i className="bx bx-video" style={{fontSize:'30px'}}></i>
+           </div> 
+           <div class="media-body pl-3"> 
+            <h6 class="mb-0 font-weight-bold">3. เริ่มสอน</h6> 
+            <p className="mb-1">
+ ........
+            </p>
+           </div> 
+          </div>
+          
+          
+          
+          
+         <div class="mt-4 media"> 
+           <div class="product-img"> 
+            <i className="bx bx-wallet" style={{fontSize:'30px'}}></i>
+           </div> 
+           <div class="media-body pl-3"> 
+            <h6 class="mb-0 font-weight-bold">4. รับเงินทันทีเมื่อสอนจบ</h6> 
+            <p className="mb-1">
+ ........
+            </p>
+           </div> 
+          </div>
+
+
           </div>
       </div>
 

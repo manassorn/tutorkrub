@@ -32,8 +32,18 @@ class Appointment extends React.Component {
         .then(response => 
         {
           console.log(JSON.stringify(response.data.data))
-        
-        this.setState({ messages: response.data.data })
+          
+        let messages = response.data.data
+        messages.sort((a,b) => {
+          if (a.timestamp < b.timestamp) {
+            return -1
+          } else if(a.timestamp > b.timestamp) {
+            return 1
+          } else {
+            return 0
+          }
+        })
+        this.setState({ messages })
         }
         );
     }
