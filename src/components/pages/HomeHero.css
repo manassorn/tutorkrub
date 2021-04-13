@@ -6,6 +6,15 @@
 .hero-bg-young-boy {
   background: url(https://i.imgur.com/j6Md9Q7.jpg);
   /* transform: scaleX(-1); */
-  background-size: 90%;
-  background-position: 50px -20px;
+  /*background-size: 90%;*/
+  /*background-position: 50px -20px;*/
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+@media only screen and (max-width: 768px) {
+  .hero-bg-young-boy {
+    background: url(https://i.imgur.com/zogMHed.jpg);
+  }
+}
+
