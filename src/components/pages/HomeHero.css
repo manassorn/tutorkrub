@@ -3,12 +3,16 @@
   color:white;
   /*text-align: center;*/
 }
+.hero-message {
+  padding-top:150px;
+  padding-bottom:150px;
+}
 .hero-bg-young-boy {
   background: url(https://i.imgur.com/j6Md9Q7.jpg);
   /* transform: scaleX(-1); */
   /*background-size: 90%;*/
   /*background-position: 50px -20px;*/
-  background-position: center;
+  background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -18,6 +22,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+  .hero-message {
+    padding-top:60px;
+    padding-bottom:150px;
   }
 }
 

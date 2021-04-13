@@ -16,7 +16,7 @@ class HomeHero extends React.Component {
 
   render() {
     return <div className="hero-bg-young-boy row mx-0">
-        <div className="col-md-5 offset-md-2 col-sm-12" style={{paddingTop:'150px', paddingBottom:'150px'}}>
+        <div className="col-md-5 offset-md-2 col-sm-12 hero-message">
 
         <h2>สอน / เรียน แค่ 1 ชั่วโมง</h2>
         <div className="pl-2">
