@@ -10,7 +10,7 @@ class HomeFooter extends React.Component {
     }
     
     render() {
-      return <div className="p-3 border-top">
+      return <div className="p-3 border-top bg-light">
           บริษัท วันอาวติวเตอร์ จำกัด
           copyright © 2021
       </div>

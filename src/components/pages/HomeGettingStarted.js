@@ -75,7 +75,7 @@ class HomeGettingStarted extends React.Component {
  เลือกหมวดหมู่ และกรอกเนื้อหาให้ครบถ้วน เพื่อให้นักเรียนค้นพบได้ง่ายยิ่งขึ้น
             </p>
             <a href="/course/add" className="btn btn-outline-primary">
-              สมัครสมาชิก
+              สร้างคอร์ส
             </a>
            </div> 
           </div>
@@ -101,7 +101,7 @@ class HomeGettingStarted extends React.Component {
             <i className="bx bx-wallet" style={{fontSize:'30px'}}></i>
            </div> 
            <div class="media-body pl-3"> 
-            <h6 class="mb-0 font-weight-bold">4. รับเงินทันทีเมื่อสอนจบ</h6> 
+            <h6 class="mb-0 font-weight-bold">4. รับเงินเมื่อสอนจบ</h6> 
             <p className="mb-1">
  ........
             </p>

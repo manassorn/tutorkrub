@@ -23,7 +23,6 @@ class Home extends React.Component {
         <HomeRegister/>
         <HomeContactUs/>
         <HomeFooter/>
-      
      </div> 
 
     }

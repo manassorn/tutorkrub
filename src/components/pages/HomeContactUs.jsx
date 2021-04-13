@@ -45,8 +45,8 @@ class HomeFooter extends React.Component {
                         <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
 
-                    <button className="btn btn-primary round-pill">
-                        ส่งข้อความ
+                    <button className="btn btn-primary rounded-pill">
+                        ส่งข้อความหาเรา
                     </button>
                 </form>
                 <div className="mt-3">
