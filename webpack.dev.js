@@ -7,7 +7,7 @@ module.exports = merge(common, {
   devServer: {
     port: 9950,
   
-    historyApiFallback: { index: 'dist/index2.html' }
+    historyApiFallback: { index: 'dist/index.html' }
   }
 });
 Tip
