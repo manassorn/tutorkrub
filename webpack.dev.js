@@ -10,4 +10,3 @@ module.exports = merge(common, {
     historyApiFallback: { index: 'dist/index.html' }
   }
 });
-Tip

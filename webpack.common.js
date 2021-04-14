@@ -1,4 +1,4 @@
-const webpack = require('webpack');
+const CopyPlugin = require("copy-webpack-plugin");
 const path = require('path');
 
 const config = {
@@ -41,19 +41,13 @@ const config = {
             path.join(process.env.NPM_CONFIG_PREFIX || __dirname, 'lib/node_modules')
         ]
   },
-  plugins: [
-      
-    {
-      apply: (compiler) => {
-        compiler.hooks.done.tap('DonePlugin', (stats) => {
-          console.log('Compile is done !')
-          setTimeout(() => {
-            process.exit(0)
-          })
-        });
-      }
-    }
-  ]
+    plugins: [
+        new CopyPlugin({
+            patterns: [
+                { from: "assets", to: "assets" },
+            ],
+        }),
+    ]
 };
 
 module.exports = config;
