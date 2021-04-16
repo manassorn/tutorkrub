@@ -41,13 +41,13 @@ const config = {
             path.join(process.env.NPM_CONFIG_PREFIX || __dirname, 'lib/node_modules')
         ]
   },
-    plugins: [
-        new CopyPlugin({
-            patterns: [
-                { from: "assets", to: "assets" },
-            ],
-        }),
-    ]
+    // plugins: [
+    //     new CopyPlugin({
+    //         patterns: [
+    //             { from: "assets", to: "assets" },
+    //         ],
+    //     }),
+    // ]
 };
 
 module.exports = config;

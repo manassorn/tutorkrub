@@ -2,7 +2,7 @@ import axios from 'axios';
 import Cookie from './Cookie'
 
 const Api = axios.create({
-  baseURL: 'http://1hourtutor.com/api',
+  baseURL: 'https://1hourtutor.com/api',
   timeout: 1000,
   headers: { 'X-Custom-Header': 'foobar' }
 });
