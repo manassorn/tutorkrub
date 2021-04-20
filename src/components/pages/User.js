@@ -1,6 +1,8 @@
 import React from "react";
 import Api from '../../Api'
 import Auth from '../../Auth'
+import SimpleTitle from '../common/SimpleTitle'
+
 
 class User extends React.Component {
   
@@ -36,13 +38,14 @@ class User extends React.Component {
 
         return      <div className="container" style={{'max-width':'720px'}}>
 
-       <div className="border-top border-bottom p-3">
+      <SimpleTitle title="โปรไฟล์"/>
+
+
+       <div className="border-top border-bottom py-4">
         <div class="text-center d-flex justify-content-center">
          <img src={this.state.user.avatarUrl} class="rounded-circle shadow" width="130" height="130" alt=""/>
          <div class="m-3 text-left">
           <h5>{this.state.user.name}</h5>
-          <a href="/user/edit" class="btn btn-outline-primary">แก้ไขโปรไฟล์</a>
-          <a href="/user/edit/availableHours" class="btn btn-outline-primary">แก้ไขเวลาที่สะดวกสอน</a>
 
           <div class="d-flex mt-2">
            <div class="pr-3 pt-1 pb-1 border-right">
@@ -59,10 +62,23 @@ class User extends React.Component {
 
          </div>
         </div>
+        
+        <div className="row mt-3">
+          <div className="offset-md-2 col-md-4 col-6">
+            <a href="/user/edit" className="btn btn-block btn-outline-primary">แก้ไขโปรไฟล์</a>
+
+          </div>
+          <div className="col-md-4 col-6">
+            <a href="/user/edit/availableHours" className=" btn btn-block btn-outline-primary">เวลาที่สะดวกสอน</a>
+
+          </div>
+
+
+        </div>
        </div>
 
 
-       <div class="p-3">
+       <div class="py-4">
         <div class="text-center d-flex justify-content-between align-items-center">
          <h5>คอร์สทั้งหมด</h5>
          <a href="/course/add" class="btn btn-primary ml-auto radius-10"><i class="bx bx-plus"></i> เพิ่มคอร์ส</a>

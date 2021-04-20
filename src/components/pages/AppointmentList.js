@@ -33,6 +33,10 @@ class AppointmentList extends React.Component {
 
   render() {
     return <div class="container" style={{maxWidth:'720px'}}> 
+    
+      <SimpleTitle title="รายการนัดหมาย"/>
+
+    
       <div class="mb-3 mt-3"> 
        <ul class="nav nav-tabs"> 
         <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#Experience"><span class="p-tab-name1">นัดเรียน</span> <span class="badge badge-pill badge-danger">3</span></a> </li> 
@@ -40,8 +44,7 @@ class AppointmentList extends React.Component {
        </ul> 
       </div> 
       
-      <div className="row mb-3">
-        <div className="col-md-5">
+      <div className="mb-3">
         <div class="btn-group" role="group" aria-label="Basic example">
           <button type="button" class="btn btn-primary">รอชำระเงิน</button>
           <button type="button" class="btn btn-outline-secondary">รอตอบกลับ</button>
@@ -49,7 +52,6 @@ class AppointmentList extends React.Component {
             &nbsp;<span class="badge badge-pill badge-danger">3</span>
           </button>
           <button type="button" class="btn btn-outline-secondary">เรียนแล้ว</button>
-        </div>
         </div>
       </div>
       

@@ -73,33 +73,32 @@ class Navbar extends React.Component {
                     </div>
                 </div>
                 
-                 <div className="right-topbar ml-auto">
-                <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          <i className="bx bx-key"></i>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'hNqOKzYwhJjZTIDLUkf5')}>Login as Pun</a>
-                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'PIrlU8ZS7htHOwU0z9iS')}>Login as Bamboo</a>
-                        </div>
-                      </li>
-                </ul>
+                <div className="flex-grow-1">
+                  
+                  
+                  <a className="pl-4" href="/course/explore">สำรวจวิชาเรียน <span class="sr-only">(current)</span></a>
+                  
+
+                
+                
                 </div>
                 
                 
                 
-                { (this.state.authx) && <div className="right-topbar ml-auto d-flex align-items-center">
-                    <a className="btn btn-link" href="#" onClick={this.devlogin}>
-                        devlogin
-                    </a>
-                    <a className="btn btn-primary ml-2" href="#">
-                        สมัครสมาชิก
-                    </a>
-                </div> }
-                { this.state.auth &&  <div className="right-topbar ml-auto">
-                    <ul className="navbar-nav">
-                        <li className="nav-item dropdown dropdown-user-profile">
+                 <div className="right-topbar ml-auto">
+                <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i className="bx bx-key"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'hNqOKzYwhJjZTIDLUkf5')}>Login as Pun</a>
+                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'PIrlU8ZS7htHOwU0z9iS')}>Login as Bamboo</a>
+                        </div>
+                      </li>
+                      
+            { this.state.auth && 
+                <li className="nav-item dropdown dropdown-user-profile">
                             <a className="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-toggle="dropdown">
                                 <div className="media user-box align-items-center">
                                     <div className="media-body user-info">
@@ -136,9 +135,23 @@ class Navbar extends React.Component {
                                 </span></a>
                             </div>
                         </li>
-                    </ul>
+                      }
+                      
+                </ul>
                 </div>
-                }
+                
+                
+                
+                { (this.state.authx) && <div className="right-topbar ml-auto d-flex align-items-center">
+                    <a className="btn btn-link" href="#" onClick={this.devlogin}>
+                        devlogin
+                    </a>
+                    <a className="btn btn-primary ml-2" href="#">
+                        สมัครสมาชิก
+                    </a>
+                </div> }
+                
+                
             </nav>
         </header>
     }

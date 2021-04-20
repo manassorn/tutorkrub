@@ -62,35 +62,43 @@ class Course extends React.Component {
       
        <SimpleTitle title='รายละเอียดคอร์ส' />
        
+       <div className="row mt-3">
        
-       
-              <div class="p-3">
-        <div class="text-center d-flex justify-content-center">
-         <img src={this.state.course.tutorAvatarUrl} class="rounded-circle shadow" width="130" height="130" alt=""/>
-         <div class="m-3 text-left">
-          <h3>{this.state.course.title}</h3>
-        <span class="text-muted">&bull;&nbsp;&nbsp;{this.state.course.tutorName}&nbsp;&nbsp;<br/>&bull;&nbsp;&nbsp;สอนแล้ว 0 ครั้ง &nbsp;<br/>
-        &bull;&nbsp; 0 ดาว</span> 
-
-
-
-
-         </div>
-        </div>
-        
-        
-        <div class="text-muted mt-2">
-          {this.state.course.description}
-        </div>
-
-        
-       </div>
-
-       
-       
-       
-       
+       <div className="col-12 col-sm-8">
+        <h3>{this.state.course.title}</h3>
+        <span class="mt-2 text-muted">สอนแล้ว 0 ครั้ง &nbsp;
+        &bull;&nbsp;<span className="text-warning">&#9733;</span> 0</span> 
+        <p className="mt-2 text-muted">
+        {this.state.course.description && this.state.course.description.split("\n").join("<br/>")}
+        </p>
+      </div>
       
+      <div className="col-sm-4 d-none d-sm-block text-center">
+        <img src={this.state.course.tutorAvatarUrl} width="80" height="80" class="rounded-circle shadow" alt=""/>
+        <br/>
+       {this.state.course.tutorName}
+
+      </div>
+      
+      </div>
+      
+      <div className="row align-items-center mb-4">
+      <div className="col-4">
+        <h4>฿30</h4>
+      </div>
+      <div className="col-8 text-right d-block d-sm-none">
+       {this.state.course.tutorName}&nbsp;&nbsp;
+        <img src={this.state.course.tutorAvatarUrl} width="40" height="40" class="rounded-circle shadow" alt=""/>
+       
+      </div> 
+
+        
+
+        </div>
+
+        
+
+       
       <div class="border rounded"> 
        <div class="p-2"> 
       

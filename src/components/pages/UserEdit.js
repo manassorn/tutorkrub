@@ -1,6 +1,7 @@
 import React from "react";
 import Api from '../../Api'
 import Auth from '../../Auth'
+import SimpleTitle from '../common/SimpleTitle'
 import './UserEdit.css'
 
 class UserEdit extends React.Component {
@@ -26,6 +27,9 @@ class UserEdit extends React.Component {
     render() {
       
       return <div class="container" style={{'maxWidth':'720px'}}>
+            
+      <SimpleTitle title="แก้ไขโปรไฟล์"/>
+
       <div class="row"> 
        <div class="col border rounded ml-3 mr-3"> 
         <div class="border-bottom pt-3 pb-3 text-center d-flex flex-column align-items-center"> 
