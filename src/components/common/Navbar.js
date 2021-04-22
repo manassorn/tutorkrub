@@ -106,7 +106,7 @@ class Navbar extends React.Component {
                                         <p className="designattion mb-0">Available</p>
                                     </div>
                                     <div className="position-relative">
-                                        <img src={this.state.user.avatarUrl} className="user-img" alt="user avatar"/> <span className="msg-count2" >8</span>
+                                        <img src={this.state.user.avatarUrl} className="user-img" alt="user avatar" width="48" height="48"/> <span className="msg-count2" >8</span>
 
                                     </div>
                                 </div>
