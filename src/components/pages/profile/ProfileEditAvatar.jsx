@@ -1,11 +1,11 @@
 import React from "react";
-import Api from '../../Api'
-import Me from '../../Me'
-import SimpleTitle from '../common/SimpleTitle'
+import Api from '../../../Api'
+import Me from '../../../Me'
+import SimpleTitle from '../../common/SimpleTitle'
 import Croppie from 'croppie'
 import "croppie/croppie.css"
 
-class UserEditAvatar extends React.Component {
+class ProfileEditAvatar extends React.Component {
   
     constructor(props) {
       super(props);
@@ -116,4 +116,4 @@ class UserEditAvatar extends React.Component {
 
     }
 }
-export default UserEditAvatar
+export default ProfileEditAvatar

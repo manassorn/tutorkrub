@@ -1,8 +1,8 @@
 import React from "react";
-import Api from '../../Api'
-import SimpleTitle from '../common/SimpleTitle'
-import CalendarByWeek3Steps from '../common/CalendarByWeek3Steps'
-import Utils from '../../Utils'
+import Api from '../../../Api'
+import SimpleTitle from '../../common/SimpleTitle'
+import CalendarByWeek3Steps from '../../common/CalendarByWeek3Steps'
+import Utils from '../../../Utils'
 import './Course.css'
 
 class Course extends React.Component {

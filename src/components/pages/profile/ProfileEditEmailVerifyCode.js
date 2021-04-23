@@ -1,8 +1,8 @@
 import React from "react";
-import Api from '../../Api'
-import SimpleTitle from '../common/SimpleTitle'
+import Api from '../../../Api'
+import SimpleTitle from '../../common/SimpleTitle'
 
-class UserEditEmailVerifyCode extends React.Component {
+class ProfileEditEmailVerifyCode extends React.Component {
   
   
     constructor(props) {
@@ -66,4 +66,4 @@ class UserEditEmailVerifyCode extends React.Component {
     }
 }
 
-export default UserEditEmailVerifyCode
+export default ProfileEditEmailVerifyCode

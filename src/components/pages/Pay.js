@@ -1,7 +1,7 @@
 import React from "react";
 import Api from '../../Api'
 import SimpleTitle from '../common/SimpleTitle'
-import './Course.css'
+import './course/Course.css'
 
 class Pay extends React.Component {
 

@@ -1,7 +1,7 @@
 import React from "react";
-import Api from '../../Api'
-import Utils from '../../Utils'
-import SimpleTitle from '../common/SimpleTitle'
+import Api from '../../../Api'
+import Utils from '../../../Utils'
+import SimpleTitle from '../../common/SimpleTitle'
 import AppointmentChat from './AppointmentChat'
 import './Appointment.css'
 

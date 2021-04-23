@@ -1,10 +1,10 @@
 import React from "react";
-import Api from '../../Api'
-import Auth from '../../Auth'
-import SimpleTitle from '../common/SimpleTitle'
+import Api from '../../../Api'
+import Auth from '../../../Auth'
+import SimpleTitle from '../../common/SimpleTitle'
 
 
-class User extends React.Component {
+class Profile extends React.Component {
   
   
     constructor(props) {
@@ -113,7 +113,7 @@ class User extends React.Component {
            <div class="media-body ml-3">
             <h5 class="mb-0">{course.title}</h5>
             <p class="mb-0 text-secondary">฿{course.price} . {course.category}</p>
-            <a href="course-edit.html#{course.id}" class="stretched-link">แก้ไข</a>
+            <a href={`/course/edit#${course.id}`} class="stretched-link">แก้ไข</a>
            </div>
           </div>
          </div>
@@ -129,4 +129,4 @@ class User extends React.Component {
     }
 };
 
-export default User
+export default Profile

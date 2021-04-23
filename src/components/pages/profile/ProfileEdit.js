@@ -1,10 +1,10 @@
 import React from "react";
-import Api from '../../Api'
-import Auth from '../../Auth'
-import SimpleTitle from '../common/SimpleTitle'
-import './UserEdit.css'
+import Api from '../../../Api'
+import Auth from '../../../Auth'
+import SimpleTitle from '../../common/SimpleTitle'
+import './ProfileEdit.css'
 
-class UserEdit extends React.Component {
+class ProfileEdit extends React.Component {
   
   
     constructor(props) {
@@ -94,4 +94,4 @@ class UserEdit extends React.Component {
     }
 };
 
-export default UserEdit
+export default ProfileEdit

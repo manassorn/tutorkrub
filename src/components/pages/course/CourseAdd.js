@@ -1,7 +1,7 @@
 import React from "react";
-import Api from '../../Api'
-import SimpleTitle from '../common/SimpleTitle'
-import CalendarPartOfDay from '../common/CalendarPartOfDay'
+import Api from '../../../Api'
+import SimpleTitle from '../../common/SimpleTitle'
+import CalendarPartOfDay from '../../common/CalendarPartOfDay'
 
 class CourseAdd extends React.Component {
 

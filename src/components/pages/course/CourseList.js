@@ -1,6 +1,6 @@
 import React from "react";
-import Api from '../../Api'
-import SimpleTitle from '../common/SimpleTitle'
+import Api from '../../../Api'
+import SimpleTitle from '../../common/SimpleTitle'
 
 class CourseList extends React.Component {
 

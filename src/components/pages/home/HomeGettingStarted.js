@@ -1,6 +1,6 @@
 import React from "react";
-import Api from '../../Api'
-import SimpleTitle from '../common/SimpleTitle'
+import Api from '../../../Api'
+import SimpleTitle from '../../common/SimpleTitle'
 import './HomeGettingStarted.css'
 
 class HomeGettingStarted extends React.Component {

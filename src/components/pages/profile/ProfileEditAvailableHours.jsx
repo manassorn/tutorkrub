@@ -1,11 +1,11 @@
 import React from "react";
-import Api from '../../Api'
-import Auth from '../../Auth'
-import SimpleTitle from '../common/SimpleTitle'
+import Api from '../../../Api'
+import Auth from '../../../Auth'
+import SimpleTitle from '../../common/SimpleTitle'
 
-import CalendarPartOfDay from '../common/CalendarPartOfDay'
+import CalendarPartOfDay from '../../common/CalendarPartOfDay'
 
-class UserEditAvailableHours extends React.Component {
+class ProfileEditAvailableHours extends React.Component {
   
     constructor(props) {
       super(props);
@@ -48,4 +48,4 @@ class UserEditAvailableHours extends React.Component {
       </div>
     }
 }
-export default UserEditAvailableHours
+export default ProfileEditAvailableHours

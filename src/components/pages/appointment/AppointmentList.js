@@ -1,8 +1,8 @@
 import React from "react";
-import Api from '../../Api'
-import SimpleTitle from '../common/SimpleTitle'
-import Utils from '../../Utils'
-import './Course.css'
+import Api from '../../../Api'
+import SimpleTitle from '../../common/SimpleTitle'
+import Utils from '../../../Utils'
+import '../course/Course.css'
 
 class AppointmentList extends React.Component {
 

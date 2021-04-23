@@ -1,8 +1,8 @@
 import React from "react";
-import Api from '../../Api'
-import SimpleTitle from '../common/SimpleTitle'
+import Api from '../../../Api'
+import SimpleTitle from '../../common/SimpleTitle'
 
-class UserEditEmail extends React.Component {
+class ProfileEditEmail extends React.Component {
   
   
     constructor(props) {
@@ -50,4 +50,4 @@ class UserEditEmail extends React.Component {
     }
 }
 
-export default UserEditEmail
+export default ProfileEditEmail

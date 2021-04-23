@@ -2,10 +2,10 @@ import React from "react";
 import {toDate} from 'date-fns-tz'
 import {formatDistance} from 'date-fns'
 import {th} from 'date-fns/locale'
-import Api from '../../Api'
-import Me from '../../Me'
-import Utils from '../../Utils'
-import SimpleTitle from '../common/SimpleTitle'
+import Api from '../../../Api'
+import Me from '../../../Me'
+import Utils from '../../../Utils'
+import SimpleTitle from '../../common/SimpleTitle'
 import './Appointment.css'
 
 class Appointment extends React.Component {
