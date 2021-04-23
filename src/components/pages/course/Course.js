@@ -69,7 +69,9 @@ class Course extends React.Component {
         <span class="mt-2 text-muted">สอนแล้ว 0 ครั้ง &nbsp;
         &bull;&nbsp;<span className="text-warning">&#9733;</span> 0</span> 
         <p className="mt-2 text-muted">
-        {this.state.course.description && this.state.course.description.split("\n").join("<br/>")}
+        {this.state.course.description && this.state.course.description.split('\n').map(line => (
+          <>{line}<br/></>
+        ))}
         </p>
       </div>
       

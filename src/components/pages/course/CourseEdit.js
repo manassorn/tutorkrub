@@ -8,13 +8,16 @@ class CourseAdd extends React.Component {
 
     constructor(props) {
       super(props);
+      this.courseId = location.hash.substr(1)
       this.state = {
         hasAvailableHours: false,
-        course: {}
+        course: {},
+        value: ""
       }
       this.submitForm = this.submitForm.bind(this)
       this.onCalendarChanged = this.onCalendarChanged.bind(this)
       this.availableHours = undefined
+      this.handleChange = this.handleChange.bind(this)
     }
 
     componentDidMount() {
@@ -23,10 +26,9 @@ class CourseAdd extends React.Component {
           const hours = response.data.data.availableHours
           this.setState({hasAvailableHours: !this.isEmpty(hours)})
         });
-      const courseId = location.hash
-      Api.get(`/course/${courseId}`)
+      Api.get('/course/' + this.courseId)
         .then(response => {
-          this.setState({course: response.data.data})
+          this.setState({course: response.data.data, value: response.data.data.description})
         })
     }
     
@@ -50,7 +52,7 @@ class CourseAdd extends React.Component {
       const description = this.refs.description.value
       const price = this.refs.price.value
       const category = this.refs.category.value
-      Api.post('/course',  {
+      Api.post('/course/' + this.courseId ,  {
          title,
          description,
          price,
@@ -80,6 +82,10 @@ class CourseAdd extends React.Component {
       return this.isEmpty(this.availableHours)
     }
 
+    handleChange(event) {
+      this.setState({value: event.target.value});
+    }
+
     render() {
         return <div class="container" style={{maxWidth:'720px'}}>
       <SimpleTitle title="แก้ไขคอร์ส" />
@@ -88,15 +94,14 @@ class CourseAdd extends React.Component {
 
       <div class="form-group mt-2"> 
        <label>ชื่อคอร์ส</label> 
-       <input ref="title" type="text" class="form-control" placeholder="พิมพ์ชื่อคอร์ส" value={this.course.name} required/>
+       <input ref="title" type="text" class="form-control" placeholder="พิมพ์ชื่อคอร์ส" value={this.state.course.title} required/>
        <div class="invalid-feedback">
          กรุณาใส่ชื่อคอร์ส
        </div>
       </div> 
       <div class="form-group mt-2"> 
        <label>รายละเอียด</label> 
-       <textarea class="form-control" ref="description" rows="3" placeholder="เล่าเนื้อหาให้ฟังหน่อยค่ะ" required>
-         {this.course.description}
+       <textarea value={this.state.value} onChange={this.handleChange} class="form-control" ref="description" rows="3" placeholder="เล่าเนื้อหาให้ฟังหน่อยค่ะ" required>
        </textarea>
         <div class="invalid-feedback">
          กรุณาใส่รายละเอียด
@@ -106,7 +111,7 @@ class CourseAdd extends React.Component {
           <div class="form-group col-md-6">
               <label>ราคา</label>
               <div class="input-group mb-3">
-                  <input value={this.course.price} ref="price" type="number" class="form-control" placeholder="พิมพ์ราคา" aria-label="Recipient's username" aria-describedby="basic-addon2" required/>
+                  <input value={this.state.course.price} ref="price" type="number" class="form-control" placeholder="พิมพ์ราคา" aria-label="Recipient's username" aria-describedby="basic-addon2" required/>
                   <div class="invalid-feedback order-last">
                                                     กรุณาใส่ราคา
                                                   </div>
