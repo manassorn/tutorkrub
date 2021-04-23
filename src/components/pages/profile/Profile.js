@@ -113,7 +113,7 @@ class Profile extends React.Component {
            <div class="media-body ml-3">
             <h5 class="mb-0">{course.title}</h5>
             <p class="mb-0 text-secondary">฿{course.price} . {course.category}</p>
-            <a href={`/course/edit#${course.id}`} class="stretched-link">แก้ไข</a>
+            <a href={`/course/edit/${course.id}`} class="stretched-link">แก้ไข</a>
            </div>
           </div>
          </div>

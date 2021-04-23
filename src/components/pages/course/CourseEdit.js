@@ -8,7 +8,7 @@ class CourseAdd extends React.Component {
 
     constructor(props) {
       super(props);
-      this.courseId = location.hash.substr(1)
+      this.courseId = location.href.split('/').pop()
       this.state = {
         hasAvailableHours: false,
         course: {},
