@@ -4,6 +4,10 @@ function formatTimestamp(date) {
   return date.toLocaleDateString('th-th', options) + ' ' + date.toLocaleTimeString('th-th')
 }
 
+function formatShortMonth(date) {
+  return date.toLocaleString('th-th', {month:'short'})
+}
+
 function formatDate(date) {
    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 
@@ -34,14 +38,20 @@ function strToDate(str) {
   return new Date(str)
 }
 
+function range(n) {
+  return [...Array(n).keys()]
+}
+
 const Utils = {
   formatTimestamp,
   formatDate,
   formatHour,
   formatHourPeriod,
+  formatShortMonth,
   formatFullMonth,
   truncateDateHour,
-  strToDate
+  strToDate,
+  range
 }
 
 export default Utils

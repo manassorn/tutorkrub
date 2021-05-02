@@ -42,6 +42,22 @@ class ProfileEditAvailableHours extends React.Component {
     render() {
       return <div className="container" style={{maxWidth:'720px'}}>
       <SimpleTitle title="แก้ไขเวลาที่สะดวกสอน"/>
+      
+      <div class="btn-group-round my-3"> 
+            
+        <div class="btn-group d-flex"> 
+
+          <button type="button" class="btn btn-white w-75">เหมือนกันทุกอาทิตย์</button> 
+            <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="javaScript:;">ddd</a> 
+
+            </div>
+          <button type="button" class="btn btn-white dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="sr-only">Toggle Dropdown</span> 
+                </button> 
+        </div> 
+      </div>
+      
+      
       <CalendarPartOfDay selectedHours={this.state.availableHours} onChanged={this.onCalendarChanged} ref="calendar"/>
       
       <button className="mt-3 mb-5 btn btn-primary btn-block" onClick={this.saveAvailableHours}>บันทึก</button>

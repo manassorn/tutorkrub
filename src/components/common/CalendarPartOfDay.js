@@ -1,5 +1,7 @@
 import React from "react";
+import addDays from 'date-fns/addDays'
 import Api from '../../Api'
+import Utils from '../../Utils'
 import SimpleTitle from '../common/SimpleTitle'
 import './CalendarPartOfDay.css'
 
@@ -8,7 +10,9 @@ class CalendarPartOfDay extends React.Component {
 
     constructor(props) {
       super(props);
+      this.startOfWeek = this.props.startOfWeek
       const hours = this.initHours(this.props.activeHours)
+      
       this.state = {
         selectedPartIndex: 0,
         selectedDayIndex: 0,
@@ -30,10 +34,10 @@ class CalendarPartOfDay extends React.Component {
       'เสาร์',
       'อาทิตย์',
       ]
-      this.partsOfDay = ['ช่วงเช้ามืด',
-      'ช่วงเช้า',
-      'ช่วงบ่าย',
-      'ช่วงค่ำ']
+      this.partsOfDay = ['เช้ามืด',
+      'เช้า',
+      'บ่าย',
+      'ค่ำ']
       this.partsOfDayTime = ['00:00-06:00',
       '06:00-12:00',
       '12:00-18:00',
@@ -91,8 +95,19 @@ class CalendarPartOfDay extends React.Component {
       return <div>
        <div class="row flex-nowrap">
         <div class="col-3"> </div>
-        {this.daysOfWeekMini.map(d => (
-            <div class="col-1 m-1 p-0 text-center font-weight-bold">{d}</div>
+        {this.daysOfWeekMini.map((dow,i) => (
+            <div class="col-1 m-1 p-0 text-center">
+            <div className="font-weight-boldx">
+              {dow}
+            </div>
+            {this.startOfWeek && 
+              <div className="font-weight-bold">{addDays(this.startOfWeek, i).getDate()}</div>
+            }
+            {this.startOfWeek && 
+              <div>{Utils.formatShortMonth(addDays(this.startOfWeek, i))}</div>
+            }
+
+            </div>
         
         ))}
 

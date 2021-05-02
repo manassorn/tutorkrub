@@ -12,6 +12,12 @@ class AppointmentList extends React.Component {
     this.state = {
       appointments: []
     }
+    this.icons = ['bx-bitcoin', 'bx-message', 'bx-chat', 'bx-task']
+    this.labels = ['รอชำระเงิน',
+    'รอตอบรับ',
+    'ตอบรับแล้ว',
+    'เรียนแล้ว',
+    ]
   }
 
   componentDidMount() {
@@ -44,14 +50,32 @@ class AppointmentList extends React.Component {
        </ul> 
       </div> 
       
+      
+      
       <div className="mb-3">
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <button type="button" class="btn btn-primary">รอชำระเงิน</button>
-          <button type="button" class="btn btn-outline-secondary">รอตอบกลับ</button>
-          <button type="button" class="btn btn-outline-secondary">ตอบกลับแล้ว
-            &nbsp;<span class="badge badge-pill badge-danger">3</span>
+        <div className="btn-group d-flex d-sm-none" role="group" aria-label="Basic example">
+        {this.icons.map((icon, i) => (
+          <button type="button" className="btn btn-white font-13 w-25" style={{position:'relative'}}>
+          
+            <i className={"bx bx-md my-0 " + icon}></i><br/>
+          {this.labels[i]}
+          <span className="badge badge-pill badge-danger" style={{position:'absolute',top:'10px',right:'10px'}}>3</span>
           </button>
-          <button type="button" class="btn btn-outline-secondary">เรียนแล้ว</button>
+        
+        ))}
+
+        </div>
+        <div className="btn-group d-none d-sm-block" role="group" aria-label="Basic example">
+        {this.icons.map((icon, i) => (
+          
+          <button type="button" className="btn btn-white">
+          
+            <i className={"bx " + icon}></i>&nbsp;
+          {this.labels[i]} &nbsp;
+          <span className="badge badge-pill badge-danger">3</span>
+          </button>
+        ))}
+          
         </div>
       </div>
       

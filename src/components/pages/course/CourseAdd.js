@@ -2,6 +2,7 @@ import React from "react";
 import Api from '../../../Api'
 import SimpleTitle from '../../common/SimpleTitle'
 import CalendarPartOfDay from '../../common/CalendarPartOfDay'
+import Constant from '../../../Constant'
 
 class CourseAdd extends React.Component {
 
@@ -14,6 +15,12 @@ class CourseAdd extends React.Component {
       this.submitForm = this.submitForm.bind(this)
       this.onCalendarChanged = this.onCalendarChanged.bind(this)
       this.availableHours = undefined
+      
+      this.titleRef = React.createRef()
+      this.descRef = React.createRef()
+      this.subjectRef = React.createRef()
+      this.schoolLevelRef = React.createRef()
+      this.priceRef = React.createRef()
     }
 
     componentDidMount() {
@@ -40,15 +47,17 @@ class CourseAdd extends React.Component {
         this.refs.availabilityFeedback.style.display = 'block'
         return false
       }
-      const title = this.refs.title.value
-      const description = this.refs.description.value
-      const price = this.refs.price.value
-      const category = this.refs.category.value
+      const title = this.titleRef.current.value
+      const description = this.descRef.current.value
+      const price = this.priceRef.current.value
+      const subject = this.subjectRef.current.value
+      const schoolLevel = this.schoolLevelRef.current.value
       Api.post('/course',  {
          title,
          description,
+         schoolLevel,
+         subject,
          price,
-         category
        }).then(() => {
          location.href = '/user'
        })
@@ -82,23 +91,43 @@ class CourseAdd extends React.Component {
 
       <div class="form-group mt-2"> 
        <label>ชื่อคอร์ส</label> 
-       <input ref="title" type="text" class="form-control" placeholder="พิมพ์ชื่อคอร์ส" required/> 
+       <input ref={this.titleRef} type="text" class="form-control" placeholder="พิมพ์ชื่อคอร์ส" required/> 
        <div class="invalid-feedback">
          กรุณาใส่ชื่อคอร์ส
        </div>
       </div> 
       <div class="form-group mt-2"> 
        <label>รายละเอียด</label> 
-       <textarea class="form-control" ref="description" rows="3" placeholder="เล่าเนื้อหาให้ฟังหน่อยค่ะ" required></textarea>
+       <textarea class="form-control" ref={this.descRef} rows="3" placeholder="เล่าเนื้อหาให้ฟังหน่อยค่ะ" required></textarea>
         <div class="invalid-feedback">
          กรุณาใส่รายละเอียด
         </div>
       </div>
       <div class="row">
           <div class="form-group col-md-6">
+              <label>ชั้นเรียน</label>
+              <select ref={this.schoolLevelRef} class="form-control">
+                  {Constant.schoolLevels.map(l => (
+                    <option>{l}</option>
+
+                  ))}
+              </select>
+
+          </div>
+          <div class="form-group col-md-6">
+              <label>วิชา</label>
+              <select ref={this.subjectRef} class="form-control">
+                  {Constant.subjects.map(s => (
+                    <option>{s}</option>
+
+                  ))}
+              </select>
+
+          </div>
+          <div class="form-group col-md-6">
               <label>ราคา</label>
               <div class="input-group mb-3">
-                  <input ref="price" type="number" class="form-control" placeholder="พิมพ์ราคา" aria-label="Recipient's username" aria-describedby="basic-addon2" required/>
+                  <input ref={this.priceRef} type="number" class="form-control" placeholder="พิมพ์ราคา" aria-label="Recipient's username" aria-describedby="basic-addon2" required/>
                   <div class="invalid-feedback order-last">
                                                     กรุณาใส่ราคา
                                                   </div>
@@ -111,15 +140,7 @@ class CourseAdd extends React.Component {
               
 
           </div>
-
-          <div class="form-group col-md-6">
-              <label>หมวดหมู่</label>
-              <select ref="category" class="form-control">
-                  <option>เลือกหมวดหมู่...</option>
-                  <option>...</option>
-              </select>
-
-          </div>
+      
       </div>
       
       <div className={this.state.hasAvailableHours? 'd-none' :''}>

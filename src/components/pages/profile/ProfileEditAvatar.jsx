@@ -70,12 +70,25 @@ class ProfileEditAvatar extends React.Component {
     
     uploadImageFile() {
       var id = Me.userId()
-      this.croppieInstance.result('blob').then(function(blob) {
+      /*
+      this.croppieInstance.result('blob', 'original','png',1).then(function(blob) {
         var formData = new FormData()
         formData.append('file', blob)
         Api.post(`/upload/to/user/${id}/avatarUrl`, formData).then(() => {
           location.href = '/user/edit'
         })
+      })
+      */
+      this.croppieInstance.result('rawcanvas', 'original', 'png', 1).then(function(canvas) {
+        console.log(canvas)
+        canvas.toBlob((blob) => {
+          var formData = new FormData()
+          formData.append('file', blob)
+          Api.post(`/upload/to/user/${id}/avatarUrl`, formData).then(() => {
+            location.href = '/user/edit'
+          })
+        }, 'image/png',1)
+        
       })
       
     }
@@ -100,7 +113,7 @@ class ProfileEditAvatar extends React.Component {
       </div>
       
 
-       <div id="upload-edit" className={this.state.avatar == 'previewImage'? '' :'d-none'}>
+       <div id="upload-edit" className={this.state.avatar == 'previewImage'? '' :'d-nonex'}>
         <div ref={this.uploadPreview} id="upload-preview" style={{height:'350px'}}></div>
 
         <div class="p-3 text-center" style={{lineHeight:'30px'}}>

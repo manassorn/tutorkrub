@@ -99,14 +99,16 @@ class Navbar extends React.Component {
                       
             { this.state.auth && 
                 <li className="nav-item dropdown dropdown-user-profile">
-                            <a className="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-toggle="dropdown">
+                  <a className="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-toggle="dropdown">
                                 <div className="media user-box align-items-center">
                                     <div className="media-body user-info">
                                         <p className="user-name mb-0">Jessica Doe</p>
                                         <p className="designattion mb-0">Available</p>
                                     </div>
-                                    <div className="position-relative">
-                                        <img src={this.state.user.avatarUrl} className="user-img" alt="user avatar" width="48" height="48"/> <span className="msg-count2" >8</span>
+                  <div className="position-relative">
+                    <div style={{width:'48px', height:'48px'}}>
+                    <img src={this.state.user.avatarUrl} className="user-img" width="48" height="48" />
+                     </div>                   <span className="msg-count2" >8</span>
 
                                     </div>
                                 </div>

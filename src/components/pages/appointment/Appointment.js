@@ -3,6 +3,7 @@ import Api from '../../../Api'
 import Utils from '../../../Utils'
 import SimpleTitle from '../../common/SimpleTitle'
 import AppointmentChat from './AppointmentChat'
+import AppointmentProgressBar from './AppointmentProgressBar'
 import './Appointment.css'
 
 class Appointment extends React.Component {
@@ -75,7 +76,87 @@ class Appointment extends React.Component {
           รอติวเตอร์ตอบรับ
           </div>
         </div>
+        
+        
+        <div className="alert alert-warning">
+        <h4>รอชำระเงิน</h4>
+        <hr/>
+        <p>นัดหมายจะถูกส่งไปหาติวเตอร์หลังจากชำระเงิน</p>
+        <a href="#" className="btn btn-warning">ชำระเงิน</a>
+        </div>
+        
+        <div className="alert alert-info">
+          <h4>รอติวเตอร์ตอบรับ</h4>
+          <hr/>
+          <p>นัดหมายได้ถูกส่งไปยังติวเตอร์ ติวเตอร์จะตอบรับก่อนเวลานัดหมาย 1 วัน</p>
+        </div>
+        
+        <div className="alert alert-success">
+          <h4>ติวเตอร์ตอบรับแล้ว</h4>
+          <hr/>
+          <p>กรุณาออนไลน์ก่อนเวลานัดหมาย 15 นาที</p>
+        </div>
+        
+        
+        <div className="alert alert-info">
+          <h4>ถึงเวลานัดหมาย</h4>
+          <hr/>
+          <p>หากติวเตอร์ยังไม่มา
+          กรุณากดปุ่มด้านล่างเพื่อติดต่อเจ้าหน้าที่</p>
+          <a href="#" className="btn btn-danger">ติวเตอร์ยังไม่มา</a>
 
+          
+        </div>
+        
+        
+        <div className="alert alert-secondary">
+        
+          <h4>เลยเวลานัดหมาย</h4>
+          <hr/>
+          <p>กรุณาออนไลน์ก่อนเวลานัดหมาย 15 นาที</p>
+          <a href="#" className="btn btn-primary">ยืนยันว่าเรียนจบแล้ว</a>
+        </div>
+        
+        
+        <div className="alert alert-warning">
+          <h4>นัดหมายใหม่</h4>
+          <hr/>
+          <p>หากไม่ตอบรับ 1 วันก่อนเวลานัดหมาย นัดหมายจะถูกยกเลิกอัตโนมัติ<br/>
+          </p>
+          <a href="#" className="btn btn-primary">ตอบรับ</a>
+          <a href="#" className="btn btn-danger">ปฏิเสธ</a>
+          <a href="#" className="btn btn-outline-primary btn-white">ขอเปลี่ยนเวลา</a>
+
+          
+        </div>
+
+
+        <div className="alert alert-success">
+          <h4>นัดหมายยืนยัน</h4>
+          <hr/>
+          <p>กรุณาออนไลน์ก่อนเวลานัดหมาย 10 นาที</p>
+        </div>
+        
+        
+        
+        <div className="alert alert-info">
+          <h4>ถึงเวลานัดหมาย</h4>
+          <hr/>
+          <p>หากนักเรียนยังไม่มากรุณากดปุ่มด้านล่างเพื่อติดต่อเจ้าหน้าที่ </p>
+          <a href="#" className="btn btn-danger">นักเรียนยังไม่มา</a>
+
+        </div>
+        
+        
+       <div className="alert alert-secondary">
+          <h4>เลยเวลานัดหมาย</h4>
+          <hr/>
+          <p>เราจะโอนเงินให้ทันที หลังจากนักเรียนกดยืนยัน 
+          หากนักเรียนลืมกดยืนยัน เราจะโอนเงินให้ภายใน 24 ชั่วโมง
+          
+          </p>
+        </div>
+ 
 
          </div>
         </div>
@@ -83,9 +164,12 @@ class Appointment extends React.Component {
         
        </div>
        
+       <div className="row">
+       <div className="col-sm-6">
        <AppointmentChat appointmentId={this.appointmentId}/>
+       </div>
        
-       
+       <div className="col-sm-6">
        <div className="pl-3 pt-3 border-top">
        <h3>
        ประวัติ
@@ -103,6 +187,11 @@ class Appointment extends React.Component {
         
         </ol>
        </div>
+       </div>
+       
+       </div>
+       
+       
      </div> 
 
     }
