@@ -13,6 +13,7 @@ import ProfileEditEmailVerifyCode from "./components/pages/profile/ProfileEditEm
 import Pay from "./components/pages/Pay"
 import Appointment from "./components/pages/appointment/Appointment"
 import AppointmentList from "./components/pages/appointment/AppointmentList"
+import Register from "./components/pages/Register"
 import Home from "./components/pages/home/Home"
 // IMPORT
 
@@ -47,6 +48,7 @@ class App extends React.Component {
               <Route path="/user/edit/email/verifycode" component={ProfileEditEmailVerifyCode} />
               <Route path="/user/edit" component={ProfileEdit} />
               <Route path="/user" component={Profile} />
+              <Route path="/register" component={Register} />
 
               <Redirect to="/" />
             </Switch>
