@@ -105,8 +105,10 @@ class Appointment extends React.Component {
         
         <h3>ข้อความ</h3>
         
-        <div className="text-center text-primary">
-        <img src="/assets/images/icons/chat.svg" width="80"/>
+        <div className="text-center text-muted">
+        <img src="/assets/images/icons/chat2.svg" width="80"/>
+        <br/>
+        เริ่มต้นสนทนา
         </div>
 
        <div class="d-none chat-contentx ps ps--active-y"> 
