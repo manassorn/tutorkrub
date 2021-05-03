@@ -40,7 +40,18 @@ class Register extends React.Component {
         <Separator text="หรือ"/>
         </div>
 
-        เบอร์โทรศัพท์
+        
+    <form class="needs-validation" novalidate>
+      <div class="form-group mt-2"> 
+       <label>อีเมล</label> 
+       <input id="email" type="email" class="form-control form-control-lg" placeholder="example@user.com" value="manassorn@gmail.com" required />
+       <div class="invalid-feedback">
+         อีเมลไม่ถูกต้อง
+       </div>
+      </div> 
+      <button id="submit-email-btn" type="button" class="btn btn-primary btn-lg btn-block">ยืนยันอีเมล</button>
+      <a href="authentication-login.html" class="btn btn-link btn-block">เข้าสู่ระบบ</a> 
+    </form>
        
       </div>
        
