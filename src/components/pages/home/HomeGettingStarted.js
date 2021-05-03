@@ -73,7 +73,7 @@ class HomeGettingStarted extends React.Component {
             <p className="mb-1">
             กรอกชื่อ นามสกุล อีเมลหรือเบอร์โทรศัพท์ให้ครบถ้วน
             </p>
-            <a href="/course/add" className="btn btn-block btn-outline-primary py-2">
+            <a href="/register" className="btn btn-block btn-outline-primary py-2">
               สมัครสมาชิก
             </a>
            </div> 
