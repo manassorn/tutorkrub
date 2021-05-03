@@ -2,6 +2,7 @@ separator {
   display: flex;
   align-items: center;
   text-align: center;
+  background: red;
 }
 
 .separator::before,
