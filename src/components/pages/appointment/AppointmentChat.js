@@ -105,7 +105,7 @@ class Appointment extends React.Component {
         
         <h3>ข้อความ</h3>
         
-        <div className="text-center">
+        <div className="text-center text-primary">
         <img src="/assets/images/icons/chat.svg" width="80"/>
         </div>
 
