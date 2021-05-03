@@ -32,7 +32,7 @@ class Register extends React.Component {
       <SimpleTitle title='ลงทะเบียน' />
        
       <div class="p-3">
-
+<div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true"></div>
         <button className="btn btn-primary btn-block">login with facebook</button>
         <button className="btn btn-primary btn-block">login with Line</button>
         
