@@ -106,9 +106,9 @@ class Appointment extends React.Component {
         <h3>ข้อความ</h3>
         
         <div className="text-center text-muted">
-        <img src="/assets/images/icons/chat2.svg" width="80"/>
+        <img src="/assets/images/icons/chat3.svg" width="80"/>
         <br/>
-        เริ่มต้นสนทนา
+        เริ่มต้นสนทนา2
         </div>
 
        <div class="d-none chat-contentx ps ps--active-y"> 
