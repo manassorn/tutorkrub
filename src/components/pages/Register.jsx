@@ -32,9 +32,8 @@ class Register extends React.Component {
       <SimpleTitle title='ลงทะเบียน' />
        
       <div class="p-3">
-<div class="fb-login-button" data-width="100%" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true"></div>
-        <button className="btn btn-primary btn-block">login with facebook</button>
-        <button className="btn btn-primary btn-block">login with Line</button>
+      <div class="fb-login-button" data-width="100%" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true"></div>
+        <button className="mt-3 btn btn-primary btn-block">login with Line</button>
         
         <div className="my-3">
         <Separator text="หรือ"/>
@@ -49,6 +48,27 @@ class Register extends React.Component {
          อีเมลไม่ถูกต้อง
        </div>
       </div> 
+      <div class="form-group mt-2"> 
+       <label>ชื่อ</label> 
+       <input id="name" type="text" class="form-control" required />
+       <div class="invalid-feedback">
+         อีเมลไม่ถูกต้อง
+       </div>
+      </div>
+      <div class="form-group mt-2"> 
+       <label>รหัสผ่าน</label> 
+       <input id="pwd" type="password" class="form-control" required />
+       <div class="invalid-feedback">
+         อีเมลไม่ถูกต้อง
+       </div>
+      </div>
+      <div class="form-group mt-2"> 
+       <label>ยืนยันรหัสผ่าน</label> 
+       <input id="pwd2" type="password" class="form-control" required />
+       <div class="invalid-feedback">
+         อีเมลไม่ถูกต้อง
+       </div>
+      </div>
       <button id="submit-email-btn" type="button" class="btn btn-primary btn-block">ดำเนินการต่อ</button>
       <a href="authentication-login.html" class="btn btn-link btn-block">เข้าสู่ระบบ</a> 
     </form>
