@@ -44,12 +44,12 @@ class Register extends React.Component {
     <form class="needs-validation" novalidate>
       <div class="form-group mt-2"> 
        <label>อีเมล</label> 
-       <input id="email" type="email" class="form-control form-control-lg" placeholder="example@user.com" value="manassorn@gmail.com" required />
+       <input id="email" type="email" class="form-control" placeholder="example@user.com" value="manassorn@gmail.com" required />
        <div class="invalid-feedback">
          อีเมลไม่ถูกต้อง
        </div>
       </div> 
-      <button id="submit-email-btn" type="button" class="btn btn-primary btn-lg btn-block">ยืนยันอีเมล</button>
+      <button id="submit-email-btn" type="button" class="btn btn-primary btn-block">ดำเนินการต่อ</button>
       <a href="authentication-login.html" class="btn btn-link btn-block">เข้าสู่ระบบ</a> 
     </form>
        
