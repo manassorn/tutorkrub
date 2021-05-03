@@ -1,5 +1,6 @@
 import React from "react";
 import Api from '../../Api'
+import Separator from '../common/Separator'
 import SimpleTitle from '../common/SimpleTitle'
 
 class Register extends React.Component {
@@ -34,7 +35,7 @@ class Register extends React.Component {
 
         <button className="btn btn-primary btn-block">login with facebook</button>
         <button className="btn btn-primary btn-block">login with Line</button>
-
+        <Separator text="หรือ"/>
 
         เบอร์โทรศัพท์
        
@@ -45,4 +46,4 @@ class Register extends React.Component {
 
     }
 }
-export default Register
+export default Register;
