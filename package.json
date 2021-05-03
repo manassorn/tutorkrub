@@ -12,7 +12,7 @@
     "build-dev": "webpack --mode development --config webpack.dev.js",
     "build-prod": "webpack --config webpack.prod.js",
     "start": "webpack serve --hot --mode development",
-    "start:dev": "webpack-dev-server"
+    "start:dev": "webpack-dev-server --config webpack.dev.js --host 0.0.0.0"
   },
   "dependencies": {
     "react": "^16.14.0",
