@@ -104,8 +104,12 @@ class Appointment extends React.Component {
         <HeaderIcon text="ข้อความ"/>
         
         <h3>ข้อความ</h3>
+        
+        <div className="">
+        <img src="/assets/images/icons/chat.svg" />
+        </div>
 
-       <div class="chat-contentx ps ps--active-y"> 
+       <div class="d-none chat-contentx ps ps--active-y"> 
        
         {this.state.messages.map(message => (<>{this.renderChat(message)}</>)
         )}
