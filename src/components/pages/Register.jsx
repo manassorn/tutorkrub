@@ -37,7 +37,7 @@ class Register extends React.Component {
         <button className="btn btn-primary btn-block">login with Line</button>
         
         <div className="my-3">
-        <Separator text="หรือ"/>
+        <Separator text="     หรือ     "/>
         </div>
 
         เบอร์โทรศัพท์
