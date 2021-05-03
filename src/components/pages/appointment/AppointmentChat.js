@@ -103,10 +103,10 @@ class Appointment extends React.Component {
         
         <HeaderIcon text="ข้อความ"/>
         
-        <h3>ssข้อความ</h3>
+        <h3>ข้อความ</h3>
         
         <div className="">
-        <img src="/assets/images/icons/chat.svg" />
+        <img src="/assets/images/icons/chat.svg" width="80"/>
         </div>
 
        <div class="d-none chat-contentx ps ps--active-y"> 
