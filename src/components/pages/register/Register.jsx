@@ -55,6 +55,9 @@ class Register extends React.Component {
        <div class="invalid-feedback">
          อีเมลไม่ถูกต้อง
        </div>
+       <div class="invalid-feedback">
+         อีเมลไม่ถูกต้อง
+       </div>
       </div>
       <div class="form-group mt-2"> 
        <label>รหัสผ่าน</label> 

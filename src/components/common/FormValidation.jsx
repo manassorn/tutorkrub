@@ -22,6 +22,10 @@ class FormValidation extends React.Component {
       event.preventDefault()
       return false
     }
+    if (!this.props.validate?.()) {
+      event.preventDefault()
+      return false
+    }
     this.props.onSubmit?.()
   }
 
