@@ -25,7 +25,7 @@ class FormValidation extends React.Component {
   }
 
   render() {
-    return <form ref={this.form} onSubmit={this.onSubmit} className="needs-validation" novalidate>
+    return <form ref={this.form} onSubmit={this.onSubmit} className="needs-validation" noValidate>
         {this.props.children}
       </form>
 
