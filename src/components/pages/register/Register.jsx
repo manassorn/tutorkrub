@@ -70,7 +70,7 @@ class Register extends React.Component {
          อีเมลไม่ถูกต้อง
        </div>
       </div>
-      <button id="submit-email-btn" type="button" class="btn btn-primary btn-block">ดำเนินการต่อ</button>
+      <button id="submit-email-btn" type="submit" class="btn btn-primary btn-block">ดำเนินการต่อ</button>
       <a href="authentication-login.html" class="btn btn-link btn-block">เข้าสู่ระบบ</a> 
     </FormValidation>
        
