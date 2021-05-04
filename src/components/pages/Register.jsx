@@ -80,7 +80,7 @@ class Register extends React.Component {
       
       
       
-    <div id="code-card" class="card-body p-md-5 d-none"> 
+    <div id="code-card" class="card-body p-md-5 d-nonex"> 
       <div class="text-center"> 
        <img src="assets/images/icons/forgot.png" width="150" alt=""/> 
       </div> 
