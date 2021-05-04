@@ -15,17 +15,18 @@ class FormValidation extends React.Component {
 
   }
   
-  onSubmit() {
+  onSubmit(event) {
     const form = this.form.current
     if (form.checkValidity() === false) {
       form.classList.add('was-validated');
+      event.preventDefault()
       return false
     }
     this.props.onSubmit?.()
   }
 
   render() {
-    return <form ref={this.form} onSubmit={this.onSubmit} className="needs-validation" noValidate>
+    return <form ref={this.form} onSubmit={e => this.onSubmit(e)} className="needs-validation" noValidate>
         {this.props.children}
       </form>
 
