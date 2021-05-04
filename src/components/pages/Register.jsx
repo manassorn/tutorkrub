@@ -93,12 +93,12 @@ class Register extends React.Component {
     <form class="needs-validation" novalidate>
 
       <div class="form-inline mt-2 mb-3 justify-content-center"> 
-       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required /> 
-       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required /> 
-       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required /> 
-       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required /> 
-       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required /> 
-       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style="width:50px" required /> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style={{width:'50px'}} required /> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style={{width:'50px'}} required /> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style={{width:'50px'}} required /> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style={{width:'50px'}} required /> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style={{width:'50px'}} required /> 
+       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style={{width:'50px'}} required /> 
       </div> 
       <button id="verify-code-btn" type="button" class="btn btn-primary btn-lg btn-block">ยืนยัน</button> 
       <a href="authentication-login.html" class="btn btn-link btn-block">ไม่ได้รับโค้ด?</a> 
