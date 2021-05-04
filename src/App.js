@@ -13,7 +13,7 @@ import ProfileEditEmailVerifyCode from "./components/pages/profile/ProfileEditEm
 import Pay from "./components/pages/Pay"
 import Appointment from "./components/pages/appointment/Appointment"
 import AppointmentList from "./components/pages/appointment/AppointmentList"
-import Register from "./components/pages/Register"
+import Register from "./components/pages/register/Register"
 import Home from "./components/pages/home/Home"
 // IMPORT
 

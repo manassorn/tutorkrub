@@ -1,6 +1,7 @@
 import React from "react";
 import Api from '../../Api'
 import Separator from '../common/Separator'
+import FormValidation from '../common/FormValidation'
 import SimpleTitle from '../common/SimpleTitle'
 
 class Register extends React.Component {
@@ -40,7 +41,7 @@ class Register extends React.Component {
         </div>
 
         
-    <form class="needs-validation" novalidate>
+    <FormValidation>
       <div class="form-group mt-2"> 
        <label>อีเมล</label> 
        <input id="email" type="email" class="form-control" placeholder="example@user.com" value="manassorn@gmail.com" required />
@@ -71,41 +72,11 @@ class Register extends React.Component {
       </div>
       <button id="submit-email-btn" type="button" class="btn btn-primary btn-block">ดำเนินการต่อ</button>
       <a href="authentication-login.html" class="btn btn-link btn-block">เข้าสู่ระบบ</a> 
-    </form>
+    </FormValidation>
        
       </div>
       
       
-      
-      
-      
-      
-    <div id="code-card" class="card-body p-md-5 d-nonex"> 
-      <div class="text-center"> 
-       <img src="assets/images/icons/forgot.png" width="150" alt=""/> 
-      </div> 
-      <h4 class="mt-5 font-weight-bold">ใส่โค้ดยืนยันอีเมล</h4> 
-      <p class="text-muted">โค้ดถูกส่งไปยังอีเมล manassorn@gmail.com ส่งซ้ำ(30วิ)</p> 
-      <div class="alert alert-danger d-none" role="alert">
-        ไม่ถูกต้อง 
-      </div> 
-      
-    <form class="needs-validation" novalidate>
-
-      <div class="form-inline mt-2 mb-3 justify-content-center"> 
-       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style={{width:'50px'}} required /> 
-       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style={{width:'50px'}} required /> 
-       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style={{width:'50px'}} required /> 
-       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style={{width:'50px'}} required /> 
-       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style={{width:'50px'}} required /> 
-       <input type="tel" min="0" maxlength="1" step="1" class="form-control form-control-lg mr-1" style={{width:'50px'}} required /> 
-      </div> 
-      <button id="verify-code-btn" type="button" class="btn btn-primary btn-lg btn-block">ยืนยัน</button> 
-      <a href="authentication-login.html" class="btn btn-link btn-block">ไม่ได้รับโค้ด?</a> 
-    </form>
-     </div> 
-
-       
        
      </div> 
 
