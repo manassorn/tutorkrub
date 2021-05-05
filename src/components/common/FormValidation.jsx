@@ -28,6 +28,16 @@ class FormValidation extends React.Component {
     }
   }
   
+  ok(ele) {
+    //ele.classList.add('is-invalid')
+    ele.setCustomValidity('')
+    const first = ele.nextElementSibling
+    while(ele = ele.nextElementSibling) {
+      ele.classList.add('d-none')
+    }
+    first.classList.remove('d-none')
+  }
+  
   onSubmit(event) {
     const form = this.form.current
     if (form.checkValidity() === false) {
@@ -36,7 +46,7 @@ class FormValidation extends React.Component {
       return false
     }
     if (!this.props.validate?.()) {
-      //form.classList.add('was-validated');
+      form.classList.add('was-validated');
       event.preventDefault()
       return false
     }
