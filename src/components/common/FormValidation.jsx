@@ -38,6 +38,7 @@ class FormValidation extends React.Component {
       return false
     }
     if (!this.props.validate?.()) {
+      form.classList.add('was-validated');
       event.preventDefault()
       return false
     }
