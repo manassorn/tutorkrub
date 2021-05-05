@@ -17,6 +17,7 @@ class FormValidation extends React.Component {
   
   fail(ele, feedbackId) {
     console.log('fail')
+    console.log(ele)
     console.log(ele.nextElementSiblings)
     while(ele = ele.nextElementSiblings) {
       const id = ele.getAttribute('feedback-id')
