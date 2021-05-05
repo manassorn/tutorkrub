@@ -12,6 +12,7 @@ class Register extends React.Component {
       this.state = {
       }
       this.form = React.createRef()
+      this.validate = this.validate.bind(this)
     }
     
     componentDidMount() {
