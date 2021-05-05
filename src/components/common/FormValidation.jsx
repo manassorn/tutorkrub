@@ -23,6 +23,7 @@ class FormValidation extends React.Component {
       const id = ele.getAttribute('feedback-id')
       console.log(id)
       if(id === feedbackId) {
+        ele.classList.add('is-invalid')
         ele.classList.remove('d-none')
       } else {
         ele.classList.add('d-none')
