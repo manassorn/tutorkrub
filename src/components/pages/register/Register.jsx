@@ -59,21 +59,21 @@ class Register extends React.Component {
       </div> 
       <div class="form-group mt-2"> 
        <label>ชื่อ</label> 
-       <input id="name" type="text" class="form-control" required />
+       <input id="name" type="text" class="form-control" value="jcjf" required />
        <div class="invalid-feedback">
          อีเมลไม่ถูกต้อง
        </div>
       </div>
       <div class="form-group mt-2"> 
        <label>รหัสผ่าน</label> 
-       <input ref={ele => this.pwd = ele} id="pwd" type="password" class="form-control" required />
+       <input ref={ele => this.pwd = ele} id="pwd" type="password" class="form-control" value="hfjf" required />
        <div class="invalid-feedback">
          อีเมลไม่ถูกต้อง
        </div>
       </div>
       <div ref={ele => this.pwd2 = ele} class="form-group mt-2"> 
        <label>ยืนยันรหัสผ่าน</label> 
-       <input id="pwd2" type="password" class="form-control" required />
+       <input id="pwd2" type="password" class="form-control" value="irkfjf" required />
        <div class="invalid-feedback">
          โปรดยืนยันรหัสผ่าน
        </div>
