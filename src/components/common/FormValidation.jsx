@@ -16,15 +16,11 @@ class FormValidation extends React.Component {
   }
   
   fail(ele, feedbackId) {
-    console.log('fail')
-    console.log(ele)
-    console.log(ele.nextElementSibling)
+    ele.classList.add('is-invalid')
     while(ele = ele.nextElementSibling) {
       const id = ele.getAttribute('feedback-id')
-      console.log(id)
       if(id === feedbackId) {
         console.log('ffff', ele.classList)
-        ele.classList.add('is-invalid')
         ele.classList.remove('d-none')
       } else {
         ele.classList.add('d-none')
