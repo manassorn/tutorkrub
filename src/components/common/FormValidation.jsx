@@ -20,7 +20,6 @@ class FormValidation extends React.Component {
     while(ele = ele.nextElementSibling) {
       const id = ele.getAttribute('feedback-id')
       if(id === feedbackId) {
-        console.log('ffff', ele.classList)
         ele.classList.remove('d-none')
       } else {
         ele.classList.add('d-none')
@@ -36,7 +35,7 @@ class FormValidation extends React.Component {
       return false
     }
     if (!this.props.validate?.()) {
-      form.classList.add('was-validated');
+      //form.classList.add('was-validated');
       event.preventDefault()
       return false
     }
