@@ -27,6 +27,7 @@ class Register extends React.Component {
     }
     
     validate() {
+      console.log('validateeee')
       this.form.invalidFeedback(this.pwd2, "notmatch")
       return false
     }
