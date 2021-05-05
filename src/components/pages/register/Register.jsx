@@ -73,11 +73,11 @@ class Register extends React.Component {
       </div>
       <div class="form-group mt-2"> 
        <label>ยืนยันรหัสผ่าน</label> 
-       <input ref={ele => this.pwd2 = ele} id="pwd2" type="password" class="form-control" value="irkfjf" required />
+       <input ref={ele => this.pwd2 = ele} id="pwd2" type="password" class="form-control" value="irkfjf" aria-describedby="pwdMismatch" required />
        <div class="invalid-feedback">
          โปรดยืนยันรหัสผ่าน
        </div>
-       <div class="invalid-feedback d-none" feedback-id="notmatch">
+       <div id="pwdMismatch" class="invalid-feedback d-none" feedback-id="notmatch">
          รหัสผ่านไม่ตรงกัน
        </div>
       </div>
