@@ -79,7 +79,7 @@ class Register extends React.Component {
       </div>
       <div class="form-group mt-2"> 
        <label>ยืนยันรหัสผ่าน</label> 
-       <input ref={ele => this.pwd2 = ele} id="pwd2" type="password" class="form-control" aria-describedby="pwdMismatch" required />
+       <input ref={ele => this.pwd2 = ele} id="pwd2" type="password" class="form-control" aria-describedby="pwdMismatch" onChange={this.validate} required />
        <div class="invalid-feedback">
          โปรดยืนยันรหัสผ่าน
        </div>
