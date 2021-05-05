@@ -31,10 +31,8 @@ class Register extends React.Component {
       if(this.pwd.value !== this.pwd2.value) {
         this.form.current.fail(this.pwd2, "notmatch")
         return false
-
       } else {
         this.form.current.ok(this.pwd2)
-
         return true
       }
     }
@@ -58,33 +56,30 @@ class Register extends React.Component {
     <FormValidation ref={this.form} validate={this.validate}>
       <div class="form-group mt-2"> 
        <label>อีเมล</label> 
-       <input id="email" type="email" class="form-control" placeholder="example@user.com" value="manassorn@gmail.com" required />
+       <input id="email" type="email" class="form-control" placeholder="example@user.com" required />
        <div class="invalid-feedback">
-         อีเมลไม่ถูกต้อง
+         โปรดกรอกอีเมลให้ถูกต้อง
        </div>
       </div> 
       <div class="form-group mt-2"> 
        <label>ชื่อ</label> 
        <input id="name" type="text" class="form-control" required />
        <div class="invalid-feedback">
-         อีเมลไม่ถูกต้อง
+         โปรดกรอกชื่อ
        </div>
       </div>
       <div class="form-group mt-2"> 
        <label>รหัสผ่าน</label> 
        <input ref={ele => this.pwd = ele} id="pwd" type="password" class="form-control" required />
        <div class="invalid-feedback">
-         อีเมลไม่ถูกต้อง
+         โปรดกรอกรหัสผ่าน
        </div>
       </div>
       <div class="form-group mt-2"> 
        <label>ยืนยันรหัสผ่าน</label> 
        <input ref={ele => this.pwd2 = ele} id="pwd2" type="password" class="form-control" aria-describedby="pwdMismatch" onChange={this.validate} required />
        <div class="invalid-feedback">
-         โปรดยืนยันรหัสผ่าน
-       </div>
-       <div id="pwdMismatch" class="invalid-feedback d-none" feedback-id="notmatch">
-         รหัสผ่านไม่ตรงกัน
+         โปรดยืนยันรหัสผ่านให้ถูกต้อง
        </div>
       </div>
       <button id="submit-email-btn" type="submit" class="btn btn-primary btn-block">ดำเนินการต่อ</button>

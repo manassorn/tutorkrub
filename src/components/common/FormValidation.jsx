@@ -18,24 +18,25 @@ class FormValidation extends React.Component {
   fail(ele, feedbackId) {
     //ele.classList.add('is-invalid')
     ele.setCustomValidity(feedbackId)
-    while(ele = ele.nextElementSibling) {
+    /*while(ele = ele.nextElementSibling) {
       const id = ele.getAttribute('feedback-id')
       if(id === feedbackId) {
         ele.classList.remove('d-none')
       } else {
         ele.classList.add('d-none')
       }
-    }
+    }*/
   }
   
   ok(ele) {
     //ele.classList.add('is-invalid')
     ele.setCustomValidity('')
-    const first = ele.nextElementSibling
+    /*const first = ele.nextElementSibling
     while(ele = ele.nextElementSibling) {
       ele.classList.add('d-none')
     }
     first.classList.remove('d-none')
+    */
   }
   
   onSubmit(event) {
