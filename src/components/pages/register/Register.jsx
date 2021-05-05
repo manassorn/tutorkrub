@@ -11,6 +11,7 @@ class Register extends React.Component {
       super(props);
       this.state = {
       }
+      this.form = React.createRef()
     }
     
     componentDidMount() {
@@ -23,6 +24,10 @@ class Register extends React.Component {
         }
         );
       */
+    }
+    
+    validate() {
+      this.form.invalidFeedback(this.pwd2, "notmatch")
     }
 
 
@@ -41,7 +46,7 @@ class Register extends React.Component {
         </div>
 
         
-    <FormValidation>
+    <FormValidation ref={this.form} validate={this.validate}>
       <div class="form-group mt-2"> 
        <label>อีเมล</label> 
        <input id="email" type="email" class="form-control" placeholder="example@user.com" value="manassorn@gmail.com" required />
@@ -55,22 +60,22 @@ class Register extends React.Component {
        <div class="invalid-feedback">
          อีเมลไม่ถูกต้อง
        </div>
-       <div class="invalid-feedback">
-         อีเมลไม่ถูกต้อง
-       </div>
       </div>
       <div class="form-group mt-2"> 
        <label>รหัสผ่าน</label> 
-       <input id="pwd" type="password" class="form-control" required />
+       <input ref={ele => this.pwd = ele} id="pwd" type="password" class="form-control" required />
        <div class="invalid-feedback">
          อีเมลไม่ถูกต้อง
        </div>
       </div>
-      <div class="form-group mt-2"> 
+      <div ref={ele => this.pwd2 = ele} class="form-group mt-2"> 
        <label>ยืนยันรหัสผ่าน</label> 
        <input id="pwd2" type="password" class="form-control" required />
        <div class="invalid-feedback">
-         อีเมลไม่ถูกต้อง
+         โปรดยืนยันรหัสผ่าน
+       </div>
+       <div class="invalid-feedback d-none" feedback-id="notmatch">
+         รหัสผ่านไม่ตรงกัน
        </div>
       </div>
       <button id="submit-email-btn" type="submit" class="btn btn-primary btn-block">ดำเนินการต่อ</button>
