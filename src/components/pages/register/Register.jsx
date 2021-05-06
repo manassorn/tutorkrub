@@ -13,6 +13,7 @@ class Register extends React.Component {
       }
       this.form = React.createRef()
       this.validate = this.validate.bind(this)
+      this.register = this.register.bind(this)
     }
     
     componentDidMount() {
@@ -45,6 +46,8 @@ class Register extends React.Component {
       Api.post('/user', {email, name, password}).then(() => {
         location.href = '/course/explore'
       })
+      
+      return false
     }
 
 
@@ -63,7 +66,7 @@ class Register extends React.Component {
         </div>
 
         
-    <FormValidation ref={this.form} validate={this.validate}>
+    <FormValidation ref={this.form} validate={this.validate} onSubmit={this.register}>
       <div class="form-group mt-2"> 
        <label>อีเมล</label> 
        <input ref={ele => this.email = ele} id="email" type="email" class="form-control" placeholder="example@user.com" required />
