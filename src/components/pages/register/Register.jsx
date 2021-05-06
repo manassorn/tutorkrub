@@ -36,6 +36,16 @@ class Register extends React.Component {
         return true
       }
     }
+    
+    register() {
+      const email = this.email.value
+      const name = this.name.value
+      const password =this.pwd.value
+      
+      Api.post('/user', {email, name, password}).then(() => {
+        location.href = '/course/explore'
+      })
+    }
 
 
     render() {
@@ -56,14 +66,14 @@ class Register extends React.Component {
     <FormValidation ref={this.form} validate={this.validate}>
       <div class="form-group mt-2"> 
        <label>อีเมล</label> 
-       <input id="email" type="email" class="form-control" placeholder="example@user.com" required />
+       <input ref={ele => this.email = ele} id="email" type="email" class="form-control" placeholder="example@user.com" required />
        <div class="invalid-feedback">
          โปรดกรอกอีเมลให้ถูกต้อง
        </div>
       </div> 
       <div class="form-group mt-2"> 
        <label>ชื่อ</label> 
-       <input id="name" type="text" class="form-control" required />
+       <input ref={ele => this.name = ele} id="name" type="text" class="form-control" required />
        <div class="invalid-feedback">
          โปรดกรอกชื่อ
        </div>
