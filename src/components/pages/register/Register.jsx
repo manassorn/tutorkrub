@@ -38,7 +38,8 @@ class Register extends React.Component {
       }
     }
     
-    register() {
+    register(event) {
+      console.log('registerrr')
       const email = this.email.value
       const name = this.name.value
       const password =this.pwd.value
@@ -47,7 +48,7 @@ class Register extends React.Component {
         location.href = '/course/explore'
       })
       
-      return false
+      event.preventDefault()
     }
 
 
@@ -66,7 +67,7 @@ class Register extends React.Component {
         </div>
 
         
-    <FormValidation ref={this.form} validate={this.validate} onSubmit={this.register}>
+    <FormValidation ref={this.form} validate={this.validate} onSubmit={e => this.register(e)}>
       <div class="form-group mt-2"> 
        <label>อีเมล</label> 
        <input ref={ele => this.email = ele} id="email" type="email" class="form-control" placeholder="example@user.com" required />
