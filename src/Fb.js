@@ -1,7 +1,7 @@
 
 
 
-export function init() {
+function init() {
   window.fbAsyncInit = function() {
    FB.init({
     xfbml            : true,
@@ -17,3 +17,9 @@ export function init() {
    fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 }
+
+const Fb = {
+  init
+}
+
+export default Fb
