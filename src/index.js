@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import Fb from "./Fb";
 
-console.log('location.href=',location.href)
+Fb.init()
+
 var mountNode = document.getElementById("app");
-ReactDOM.render(<App name="Janexddxsururuddx" />, mountNode);
+ReactDOM.render(<App />, mountNode);

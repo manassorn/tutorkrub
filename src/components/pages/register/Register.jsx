@@ -39,7 +39,6 @@ class Register extends React.Component {
     }
     
     register(event) {
-      console.log('registerrr')
       const email = this.email.value
       const name = this.name.value
       const password =this.pwd.value
