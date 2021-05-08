@@ -26,7 +26,7 @@ class Register extends React.Component {
         }
         );
       */
-      window.FB.XFBML.parse()    
+      //window.FB.XFBML.parse()    
       
     }
     
