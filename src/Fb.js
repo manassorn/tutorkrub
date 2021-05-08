@@ -3,14 +3,10 @@
 
 function init() {
   window.fbAsyncInit = function() {
-    setTimeout(()=>{
-      
    FB.init({
     xfbml            : true,
     version          : 'v10.0'
    });
-    },3000)
-
   };
 
   (function(d, s, id) {

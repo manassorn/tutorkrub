@@ -26,6 +26,8 @@ class Register extends React.Component {
         }
         );
       */
+      window.FB.XFBML.parse()    
+      
     }
     
     validate() {
