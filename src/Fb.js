@@ -3,6 +3,7 @@
 
 function init() {
   window.fbAsyncInit = function() {
+    console.log('fb.ibit')
    FB.init({
     xfbml            : true,
     version          : 'v10.0'
