@@ -74,7 +74,7 @@ class Register extends React.Component {
       <SimpleTitle title='ลงทะเบียน' />
        
       <div class="p-3">
-      <div class="fb-login-button" data-width="100%" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true"  onClick={e => this.loginFb()}></div>
+      <div class="fb-login-button" data-width="100%" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true" data-login={e => this.loginFb}></div>
 
         <button className="mt-3 btn btn-primary btn-block" onClick={e => this.loginFb()}>login with Line</button>
         
