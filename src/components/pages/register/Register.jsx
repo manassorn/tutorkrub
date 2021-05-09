@@ -41,9 +41,10 @@ class Register extends React.Component {
     }
     
     loginFb() {
+      console.log('loginfb')
       window.FB.login(function(response) {
         if (response.authResponse) {
-          alert('Welcome!  Fetching your information.... ');
+          console.log('Welcome!  Fetching your information.... ');
           window.FB.api('/me', function(response) {
             alert('Good to see you, ' + response.name + '.');
           });
@@ -74,7 +75,7 @@ class Register extends React.Component {
        
       <div class="p-3">
       <div class="fb-login-button" data-width="100%" data-size="large" data-button-type="continue_with" data-layout="default" data-auto-logout-link="false" data-use-continue-as="true"></div>
-        <button className="mt-3 btn btn-primary btn-block" onClick={this.loginFb}>login with Line</button>
+        <button className="mt-3 btn btn-primary btn-block" onClick={e => this.loginFb()}>login with Line</button>
         
         <div className="my-3">
         <Separator text="หรือ"/>
