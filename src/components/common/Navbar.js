@@ -1,6 +1,7 @@
 import React from "react";
 import Api from '../../Api'
 import Cookie from '../../Cookie'
+import Me from '../../Me'
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -31,12 +32,16 @@ class Navbar extends React.Component {
       const that = this
       e.preventDefault();
       const storage = localStorage
-        Api.get( "/authen/devlogin/" + userId).then(function(data) {
-            console.log('set token',Object.keys(data.data.data));
-            localStorage? localStorage.setItem('accessToken', data.data.data.accessToken) :Cookie.set('accessToken', data.data.data.accessToken)
-            
-            that.setState({auth: true})
-            that.getUser()
+        Api.get( "/authen/devlogin2/" + userId).then(function(response) {
+          const user = response.data.data
+          Me.subject.next(user)
+          that.setState({auth: true})
+          that.setState({ user, auth:true })
+            // console.log('set token',Object.keys(response.data.data));
+            // localStorage? localStorage.setItem('accessToken', data.data.data.accessToken) :Cookie.set('accessToken', data.data.data.accessToken)
+            //
+            // that.setState({auth: true})
+            // that.getUser()
         }).catch(function(xhr, error) {
             console.error( "error", xhr, error );
             alert("error");
