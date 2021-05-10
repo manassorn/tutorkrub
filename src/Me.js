@@ -1,6 +1,8 @@
+import { BehaviorSubject } from 'rxjs';
 import Cookie from './Cookie'
 import Jwt from './Jwt'
 
+const subject = BehaviorSubject(null);
 function userId() {
   let accessToken = ''
   if(localStorage) {
@@ -12,4 +14,4 @@ function userId() {
   return json.userId
 }
 
-export default {userId}
+export default {userId, subject}

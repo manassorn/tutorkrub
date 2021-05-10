@@ -1,5 +1,6 @@
 import React from "react";
 import Api from '../../../Api'
+import Me from '../../../Me'
 import Separator from '../../common/Separator'
 import FormValidation from '../../common/FormValidation'
 import SimpleTitle from '../../common/SimpleTitle'
@@ -44,10 +45,16 @@ class Register extends React.Component {
       console.log('loginfb')
       window.FB.login(function(response) {
         if (response.authResponse) {
-          console.log('Welcome!  Fetching your information.... ');
-          window.FB.api('/me', function(response) {
-            alert('Good to see you, ' + response.name + '.');
-          });
+          const accessToken = response.authResponse.accessToken
+          Api.post('/authen/fb', { accessToken })
+            .then(response =>
+              {
+                const user = response.data.data
+                Me.subject.next(user)
+                console.log(user)
+              }
+            );
+
         } else {
           console.log('User cancelled login or did not fully authorize.');
         }
