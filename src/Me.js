@@ -2,7 +2,7 @@ import { BehaviorSubject } from 'rxjs';
 import Cookie from './Cookie'
 import Jwt from './Jwt'
 
-const subject = BehaviorSubject(null);
+const subject = new BehaviorSubject(null);
 function userId() {
   return subject.value
   /*let accessToken = ''
