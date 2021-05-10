@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-";
 import Api from '../../Api'
 import Cookie from '../../Cookie'
 import Me from '../../Me'
@@ -118,8 +119,11 @@ class Navbar extends React.Component {
                                     </div>
                                 </div>
                             </a>
-                            <div className="dropdown-menu dropdown-menu-right">	<a className="dropdown-item" href="/user"><i
-                                className="bx bx-user"></i><span>โปรไฟล์</span></a>
+                            <div className="dropdown-menu dropdown-menu-right">	
+                            
+                      <Link className="dropdown-item" to="/user"><i
+                                className="bx bx-user"></i><span>โปรไฟล์</span></Link>
+                                
                                 <a className="dropdown-item" href="/course/add"><i
                                     className="bx bx-plus-circle"></i><span>
                                     สร้างคอร์ส
