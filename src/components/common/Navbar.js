@@ -17,7 +17,10 @@ class Navbar extends React.Component {
     }
 
     componentDidMount() {
-        this.getUser()
+        // this.getUser()
+      if(Me.getUser()) {
+        this.setState({ user: Me.getUser(), auth:true })
+      }
     }
     
     getUser() {
@@ -68,21 +71,21 @@ class Navbar extends React.Component {
             <nav className="navbar navbar-expand">
                 <div className="left-topbar d-flex align-items-center">
                     <div className="logo-white">
-                    <a href="/">
+                    <Link to="/">
                         <img src="/assets/images/logo1.png" className="logo-icon" alt=""/>
-                        </a>
+                        </Link>
                     </div>
                     <div className="logo-dark">
-                    <a href="/">
+                    <Link to="/">
                         <img src="/assets/images/logo1.png" className="logo-icon2" alt=""/>
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 
                 <div className="flex-grow-1">
                   
                   
-                  <a className="pl-4" href="/course/explore">สำรวจวิชาเรียน <span class="sr-only">(current)</span></a>
+                  <Link className="pl-4" to="/course/explore">สำรวจวิชาเรียน <span class="sr-only">(current)</span></Link>
                   
 
                 
@@ -121,25 +124,25 @@ class Navbar extends React.Component {
                             </a>
                             <div className="dropdown-menu dropdown-menu-right">	
                             
-                      <Link className="dropdown-item" to="/user"><i
+                                <Link className="dropdown-item" to="/user"><i
                                 className="bx bx-user"></i><span>โปรไฟล์</span></Link>
                                 
-                                <a className="dropdown-item" href="/course/add"><i
+                                <Link className="dropdown-item" to="/course/add"><i
                                     className="bx bx-plus-circle"></i><span>
                                     สร้างคอร์ส
-                                </span></a>
-                                <a className="dropdown-item" href="/user" ><i
+                                </span></Link>
+                                <Link className="dropdown-item" to="/user" ><i
                                     className="bx bx-grid"></i><span>
                                     คอร์สของฉัน
-                                </span></a>
-                                <a className="dropdown-item" href="/appointment/list"><i
+                                </span></Link>
+                                <Link className="dropdown-item" to="/appointment/list"><i
                                     className="bx bx-list-ul"></i><span>
                                     รายการนัดหมาย
-                                </span></a>
-                                <a className="dropdown-item" href="/coupon"><i
+                                </span></Link>
+                                <Link className="dropdown-item" to="/coupon"><i
                                     className="bx bx-money"></i><span>
                                     คูปองของฉัน
-                                </span></a>
+                                </span></Link>
                                 <div className="dropdown-divider mb-0"></div>	<a className="dropdown-item" onClick={this.logout}><i
                                     className="bx bx-power-off"></i><span>
                                     ล็อกเอาท์

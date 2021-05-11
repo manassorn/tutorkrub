@@ -31,8 +31,8 @@ class App extends React.Component {
     render() {
         const { name } = this.props;
         return (
-         <Wrapper>
           <BrowserRouter>
+            <Wrapper>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/appointment/list" component={AppointmentList} />
@@ -52,9 +52,9 @@ class App extends React.Component {
 
               <Redirect to="/" />
             </Switch>
+            </Wrapper>
           </BrowserRouter>
-          
-         </Wrapper>
+
         );
     }
 }
