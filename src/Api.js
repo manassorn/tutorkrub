@@ -18,6 +18,7 @@ Api.interceptors.request.use(function(config) {
 });
 Api.interceptors.response.use(function(response) {
   if(response.headers.accessTokenDev) {
+    console.log('setaccesstokendev', response.headers.accessTokenDev)
     Auth.accessTokenDev = response.headers.accessTokenDev
   }
   return response;
