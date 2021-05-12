@@ -1,5 +1,6 @@
 import axios from 'axios';
 import Cookie from './Cookie'
+import Auth from './Auth'
 
 const Api = axios.create({
   baseURL: 'https://1hourtutor.com/api',
@@ -7,10 +8,8 @@ const Api = axios.create({
   headers: { 'X-Custom-Header': 'foobar' }
 });
 Api.interceptors.request.use(function(config) {
-  const token = localStorage? localStorage.getItem('accessToken') :Cookie.get('accessToken')
-  console.log('request token',token)
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
+  if (Auth.accessTokenDev) {
+    config.headers.Authorization = `Bearer ${Auth.accessTokenDev}`;
   }
   return config;
 }, function(error) {
@@ -18,15 +17,14 @@ Api.interceptors.request.use(function(config) {
   return Promise.reject(error);
 });
 Api.interceptors.response.use(function(response) {
-  // Any status code that lie within the range of 2xx cause this function to trigger
-  // Do something with response data
+  if(response.headers.accessTokenDev) {
+    Auth.accessTokenDev = response.headers.accessTokenDev
+  }
   return response;
 }, function(error) {
-  // Any status codes that falls outside the range of 2xx cause this function to trigger
-  // Do something with response error
   console.log(error)
   if (error.response.status == 401) {
-    localStorage?localStorage.removeItem('accessToken'):Cookie.erase('accessToken')
+    Auth.accessTokenDev = undefined
   }
   return Promise.reject(error);
 });
