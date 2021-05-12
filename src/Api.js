@@ -17,6 +17,8 @@ Api.interceptors.request.use(function(config) {
   return Promise.reject(error);
 });
 Api.interceptors.response.use(function(response) {
+  console.log(response.headers)
+
   if(response.headers.accessTokenDev) {
     console.log('setaccesstokendev', response.headers.accessTokenDev)
     Auth.accessTokenDev = response.headers.accessTokenDev
