@@ -21,7 +21,7 @@ Api.interceptors.response.use(function(response) {
 
   if(response.headers.accesstokendev) {
     console.log('setaccesstokendev', response.headers.accesstokendev)
-    Auth.accessTokenDev = response.headers.accessTokenDev
+    Auth.accessTokenDev = response.headers.accesstokendev
   }
   return response;
 }, function(error) {
