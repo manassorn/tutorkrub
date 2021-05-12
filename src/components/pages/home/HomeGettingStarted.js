@@ -45,19 +45,7 @@ class HomeGettingStarted extends React.Component {
           
           <div className="row mx-0">
           <div className="offset-md-1 col-md-5 pt-4">
-          
-          <div className="text-center">
-            <span className="h6">4 ขั้นตอน</span>
-            <p className="h4">ง่ายๆ ในการ</p>
-          </div>
-          <ul className="nav nav-border-bottom justify-content-center">
-              <li className="nav-item">
-                  <a className={`nav-link px-5 ${this.state.tab == 'tutor'? 'active' :''}`} href="#" onClick={e => this.clickTab('tutor')}>สอน</a>
-              </li>
-              <li className="nav-item">
-                  <a className={`nav-link px-5 ${this.state.tab == 'student'? 'active' :''}`} href="#" onClick={e => this.clickTab('student')}>เรียน</a>
-              </li>
-          </ul>
+        
 
 
           <div class="mt-2 media"> 
