@@ -63,8 +63,10 @@ class HomeFooter extends React.Component {
       <div className="row mx-0 py-4 bg-light">
       {[0,1,2,3].map(() => (
         <div className="col-sm-3">
-          <div class="card"> <img class="card-img-top" src="..." alt="Card image cap"/> <div class="card-body text-center"> 
-          
+          <div class="card"> <div class="card-body text-center"> 
+          <p>
+          <img src="assets/images/avatars/avatar-10.png" width="100" height="100" class="rounded-circle ml-3 shadow" alt=""/>
+          </p>
           <h5 class="card-title">Card title</h5> <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> </div> </div>
         </div>
       
