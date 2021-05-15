@@ -87,6 +87,11 @@ class Register extends React.Component {
 <button type="button" class="btn btn-primary w-100" onClick={e => this.loginFb()}>ลงทะเบียนด้วย Facebook</button> 
         </div>
         
+    <button class="btn btn-primary d-flex">
+    <i className="bx bxl-facebook"></i>
+    <span className="w-100"> ลงทะเบียนด้วย Facebook</span>
+    </button>
+        
         
         <div className="my-3">
         <Separator text="หรือ"/>
