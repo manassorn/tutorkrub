@@ -75,7 +75,7 @@ class CourseList extends React.Component {
       
       {this.state.courses.map(course => (
 <div class="col-6 col-md-3">
-            <div class="card" style={{'box-shadow':'none'}}>
+            <div class="card radius-10 bg-light" style={{'box-shadow':'none'}}>
                 <img class="card-img-top rounded rounded-lg" src={course.tutorAvatarUrl} alt="Card image cap"/>
                 <div class="card-body p-0 mt-2">
                     <p class="card-text">
