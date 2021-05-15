@@ -138,8 +138,8 @@ class HomeGettingStarted extends React.Component {
             <i className="bx bx-calendar" style={{fontSize:'30px'}}></i>
            </div> 
            <div class="media-body pl-3"> 
-            <h6 class="mb-0 font-weight-bold">2. ลงเวลาเรียนและชำระเงิน</h6> 
-            <p className="mb-1">ค้นหาวิชาเรียนและ
+            <h6 class="mb-0 font-weight-bold">2. เวลาเรียนและชำระเงิน</h6> 
+            <p className="mb-1">
   เลือกเวลาเรียนที่สะดวก
             </p>
             <a href="/course/add" className="btn btn-block btn-outline-primary py-2">
