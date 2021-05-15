@@ -28,9 +28,9 @@ class HomeFooter extends React.Component {
                 </div>
  
             </div>
-            <div className="col-md-4 p-3">
+            <div className="col-md-4 text-white">
             
-         <div class="mt-4 media"> 
+         <div class="mt-4 mx-3 media"> 
            <div class="product-img"> 
             <i className="bx bx-video" style={{fontSize:'30px'}}></i>
            </div> 
