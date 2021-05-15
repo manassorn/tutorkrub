@@ -22,8 +22,8 @@ class HomeFooter extends React.Component {
       </div>
       
       
-          <div className="text-center mb-3" style={{background:'#0099ff'}}>
-              <span className="h6">4 สิ่ง</span>
+          <div className="text-white text-center py-3" style={{background:'#0099ff'}}>
+              <span className="h6">4 ประโยชน์</span>
               <p className="h4">ที่จะได้รับ</p>
           </div>
       
@@ -35,6 +35,20 @@ class HomeFooter extends React.Component {
  
             </div>
             <div className="col-md-4 text-white mx-3">
+            
+            
+         <div class="mt-4 media"> 
+           <div class="product-img"> 
+            <i className="bx bx-video" style={{fontSize:'30px'}}></i>
+           </div> 
+           <div class="media-body pl-3"> 
+            <h5 class="font-weight-bold">ไม่ผูกมัด</h5> 
+            <p className="mb-1">
+ ชำระค่าเรียนเป็นครั้ง ครั้งละ 1 ชั่วโมง
+            </p>
+           </div> 
+          </div>
+            
             
          <div class="mt-4 media"> 
            <div class="product-img"> 
@@ -78,18 +92,7 @@ class HomeFooter extends React.Component {
            
     
     
-         <div class="mt-4 media"> 
-           <div class="product-img"> 
-            <i className="bx bx-video" style={{fontSize:'30px'}}></i>
-           </div> 
-           <div class="media-body pl-3"> 
-            <h5 class="font-weight-bold">ไม่ผูกมัด</h5> 
-            <p className="mb-1">
- ชำระค่าเรียนเป็นครั้ง ครั้งละ 1 ชั่วโมง
-            </p>
-           </div> 
-          </div>
-            
+
             
             
             </div>
@@ -106,7 +109,7 @@ class HomeFooter extends React.Component {
       </div>
       
       
-          <div className="bg-light text-center mb-3">
+          <div className="bg-light text-center pt-3">
               <span className="h6">ผู้คน</span>
               <p className="h4">ที่กล่าวชมเรา</p>
           </div>
