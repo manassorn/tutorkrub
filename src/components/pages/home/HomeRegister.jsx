@@ -37,11 +37,52 @@ class HomeFooter extends React.Component {
            <div class="media-body pl-3"> 
             <h5 class="font-weight-bold">เรียนออนไลน์</h5> 
             <p className="mb-1">
- เรียนำด้จากทุกที่ เว้นระยะห่างทางสังคม
+ เรียนได้จากทุกที่ เว้นระยะห่างทางสังคม
+            </p>
+           </div> 
+          </div>
+          
+          
+          
+         <div class="mt-4 media"> 
+           <div class="product-img"> 
+            <i className="bx bx-video" style={{fontSize:'30px'}}></i>
+           </div> 
+           <div class="media-body pl-3"> 
+            <h5 class="font-weight-bold">เลือกเวลาเรียนได้เอง</h5> 
+            <p className="mb-1">
+ เรียนได้จากทุกที่ เว้นระยะห่างทางสังคม
             </p>
            </div> 
           </div>
             
+ 
+          <div class="mt-4 media"> 
+            <div class="product-img"> 
+             <i className="bx bx-video" style={{fontSize:'30px'}}></i>
+            </div> 
+            <div class="media-body pl-3"> 
+             <h5 class="font-weight-bold">ปลอดภัย ไม่โกง</h5> 
+             <p className="mb-1">
+  เรียนได้จากทุกที่ เว้นระยะห่างทางสังคม
+             </p>
+            </div> 
+           </div>
+           
+           
+    
+    
+         <div class="mt-4 media"> 
+           <div class="product-img"> 
+            <i className="bx bx-video" style={{fontSize:'30px'}}></i>
+           </div> 
+           <div class="media-body pl-3"> 
+            <h5 class="font-weight-bold">เรียนออนไลน์</h5> 
+            <p className="mb-1">
+ เรียนได้จากทุกที่ เว้นระยะห่างทางสังคม
+            </p>
+           </div> 
+          </div>
             
             
             
