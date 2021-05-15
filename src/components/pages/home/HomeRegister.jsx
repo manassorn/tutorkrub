@@ -61,7 +61,7 @@ class HomeFooter extends React.Component {
       
       
       <div className="row mx-0 py-4 bg-light">
-      {[0,1,2,3].map(() => (
+      {[0,1,2].map(() => (
         <div className="col-sm-3">
           <div class="card"> <div class="card-body text-center"> 
           <p>
