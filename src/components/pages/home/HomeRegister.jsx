@@ -22,7 +22,7 @@ class HomeFooter extends React.Component {
       </div>
       
       
-          <div className="text-white text-center py-3" style={{background:'#0099ff'}}>
+          <div className="text-white text-center pt-5 pb-3" style={{background:'#0099ff'}}>
               <span className="h6">4 ประโยชน์</span>
               <p className="h4">ที่จะได้รับ</p>
           </div>
@@ -109,7 +109,7 @@ class HomeFooter extends React.Component {
       </div>
       
       
-          <div className="bg-light text-center py-3">
+          <div className="bg-light text-center pt-5 pb-3">
               <span className="h6">ผู้คน</span>
               <p className="h4">ที่กล่าวชมเรา</p>
           </div>
