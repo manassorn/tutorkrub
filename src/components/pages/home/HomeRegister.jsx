@@ -51,7 +51,7 @@ class HomeFooter extends React.Component {
            <div class="media-body pl-3"> 
             <h5 class="font-weight-bold">เลือกเวลาเรียนได้เอง</h5> 
             <p className="mb-1">
- เรียนได้จากทุกที่ เว้นระยะห่างทางสังคม
+ นัดหมายเวลาที่สะดวกได้เอง
             </p>
            </div> 
           </div>
@@ -64,7 +64,7 @@ class HomeFooter extends React.Component {
             <div class="media-body pl-3"> 
              <h5 class="font-weight-bold">ปลอดภัย ไม่โกง</h5> 
              <p className="mb-1">
-  เรียนได้จากทุกที่ เว้นระยะห่างทางสังคม
+  เงินจะโอนไปให้ติวเตอร์ หลังจากเรียนจบเท่านั้น
              </p>
             </div> 
            </div>
@@ -77,9 +77,9 @@ class HomeFooter extends React.Component {
             <i className="bx bx-video" style={{fontSize:'30px'}}></i>
            </div> 
            <div class="media-body pl-3"> 
-            <h5 class="font-weight-bold">เรียนออนไลน์</h5> 
+            <h5 class="font-weight-bold">ไม่ผูกมัด</h5> 
             <p className="mb-1">
- เรียนได้จากทุกที่ เว้นระยะห่างทางสังคม
+ ชำระค่าเรียนเป็นครั้ง ครั้งละ 1 ชั่วโมง
             </p>
            </div> 
           </div>
