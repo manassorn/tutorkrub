@@ -35,9 +35,9 @@ class HomeFooter extends React.Component {
             <i className="bx bx-video" style={{fontSize:'30px'}}></i>
            </div> 
            <div class="media-body pl-3"> 
-            <h6 class="mb-0 font-weight-bold">3. เริ่มเรียน</h6> 
+            <h5 class="font-weight-bold">เรียนออนไลน์</h5> 
             <p className="mb-1">
- เตรียมตัวก่อนเวลานัดหมาย 10 นาที ตรวจสอบอินเตอร์และอุปกรณ์ว่าพร้อมใช้งาน
+ เรียนำด้จากทุกที่ เว้นระยะห่างทางสังคม
             </p>
            </div> 
           </div>
