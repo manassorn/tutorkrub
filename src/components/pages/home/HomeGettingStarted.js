@@ -138,12 +138,12 @@ class HomeGettingStarted extends React.Component {
             <i className="bx bx-calendar" style={{fontSize:'30px'}}></i>
            </div> 
            <div class="media-body pl-3"> 
-            <h6 class="mb-0 font-weight-bold">2. สร้างคอร์สเรียน</h6> 
-            <p className="mb-1">
-  กรอกรายลัเอียดเยอะๆ เพื่อให้นักเรียนค้นพบได้ง่ายยิ่งขึ้น
+            <h6 class="mb-0 font-weight-bold">2. ลงเวลาเรียนและชำระเงิน</h6> 
+            <p className="mb-1">ค้นหาวิชาเรียนและ
+  เลือกเวลาเรียนที่สะดวก
             </p>
             <a href="/course/add" className="btn btn-block btn-outline-primary py-2">
-              สร้างคอร์ส
+              ค้นหาวิชาเรียน
             </a>
            </div> 
           </div>
@@ -155,7 +155,7 @@ class HomeGettingStarted extends React.Component {
             <i className="bx bx-video" style={{fontSize:'30px'}}></i>
            </div> 
            <div class="media-body pl-3"> 
-            <h6 class="mb-0 font-weight-bold">3. เริ่มสอน</h6> 
+            <h6 class="mb-0 font-weight-bold">3. เริ่มเรียน</h6> 
             <p className="mb-1">
  เตรียมตัวก่อนเวลานัดหมาย 10 นาที ตรวจสอบอินเตอร์และอุปกรณ์ว่าพร้อมใช้งาน
             </p>
@@ -167,9 +167,9 @@ class HomeGettingStarted extends React.Component {
             <i className="bx bx-wallet" style={{fontSize:'30px'}}></i>
            </div> 
            <div class="media-body pl-3"> 
-            <h6 class="mb-0 font-weight-bold">4. รับเงินเมื่อสอนจบ</h6> 
+            <h6 class="mb-0 font-weight-bold">4. เงินถูกโอนไปยังติวเตอร์</h6> 
             <p className="mb-1">
- เมื่อคุณสอนจบ เงินจะถูกโอนเข้า "กระเป๋าตังค์" ของคุณ
+ เมื่อคุณเรียนจบ เงินจะถูกโอนเข้า "กระเป๋าตังค์" ของติวเตอร์
             </p>
            </div> 
           </div>
