@@ -60,9 +60,9 @@ class HomeFooter extends React.Component {
       
       
       
-      <div className="row mx-0 py-4 bg-light">
+      <div className="row mx-0 px-md-5 py-4 bg-light">
       {[0,1,2].map(() => (
-        <div className="col-sm-3">
+        <div className="col-sm-4">
           <div class="card"> <div class="card-body text-center"> 
           <p>
           <img src="assets/images/avatars/avatar-10.png" width="100" height="100" class="rounded-circle ml-3 shadow" alt=""/>
