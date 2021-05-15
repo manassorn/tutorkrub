@@ -10,7 +10,7 @@ class HomeFooter extends React.Component {
     }
     
     render() {
-      return <div className="p-3">
+      return <div className="p-3 my-5">
           <div className="text-center">
               <span className="h6">ติดต่อเรา</span>
               <p className="h4">มีคำถามหรือข้อสงสัย</p>
