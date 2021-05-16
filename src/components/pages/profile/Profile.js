@@ -94,12 +94,9 @@ class Profile extends React.Component {
        {this.state.courses.map(course => (
       <div class="course-card col-lg-4">
         <div class="card radius-10 border">
-         <div className="card-header">
-         {course.title}
-         </div>
          <div class="card-body">
-            <h5 className="card-title">฿{course.price}</h5>
-            <p class="card-text">{course.schoolLevel} . {course.subject}</p>
+            <h5 className="card-title">{course.title}</h5>
+            <p class="card-text">฿{course.price} . {course.schoolLevel} . {course.subject}</p>
 
 
             <a href={`/course/edit/${course.id}`} class="card-link stretched-link">แก้ไข</a>
