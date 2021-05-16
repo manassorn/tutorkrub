@@ -102,7 +102,7 @@ class Profile extends React.Component {
             <span class="badge badge-pill badge-secondary">{course.subject}</span>
 
             <p class="mb-0 font-weight-bold">฿{course.price}</p>
-            <a href={`/course/edit/${course.id}`} class="stretched-link">แก้ไข</a>
+            <a href={`/course/edit/${course.id}`} class="btn btn-white stretched-link">แก้ไข</a>
            </div>
           </div>
          </div>
