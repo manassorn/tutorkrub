@@ -83,7 +83,7 @@ class AppointmentList extends React.Component {
       <div class="row"> 
       
        <div class="col-md-6"> 
-        <div class="card"> 
+        <div class="card radius-10 border"> 
          <div class="card-body"> 
           <div class="media align-items-center"> 
           <div className="text-center">
