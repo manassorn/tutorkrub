@@ -95,9 +95,19 @@ class Profile extends React.Component {
       <div class="course-card col-lg-4">
         <div class="card radius-10 border">
          <div className="card-header">คอร์ส</div>
-         <div class="card-body">
-          <h5 className="card-title">{course.title}</h5>
-          <span className="card-subtitle">{course.schoolLevel} . {course.subject}</span>
+         <div class="card-body row">
+          <div className="col-md-10">
+            <h5 className="card-title">{course.title}</h5>
+            <span className="card-subtitle">{course.schoolLevel} . {course.subject}</span>
+            <p class="">฿{course.price}</p>
+
+          </div>
+          <div className="col-md-2">
+            <a href={`/course/edit/${course.id}`} class="btn btn-white btn-block stretched-link">แก้ไข</a>
+
+          </div>
+
+          
          
           <div class="media align-items-center">
            <div class="media-body ml-3">
