@@ -91,9 +91,9 @@ class AppointmentList extends React.Component {
           <div class="media align-items-center"> 
            <h5 class="text-center">{Utils.formatFullMonth(ap.startTime)}<br/>{ap.startTime.getDate()}</h5> 
            <div class="media-body ml-3 pl-3 border-left"> 
-            <h5 class="mb-0">{ap.courseName}</h5> 
-            <p class="mb-0 text-secondary">โดย {ap.tutorName}</p> 
-            <a href={`/appointment/${ap.id}`} class="btn btn-outline-primary stretched-link">ดูรายละเอียด</a>
+            <h5 class="card-title">{ap.courseName}</h5> 
+            <p class="card-text"><span className="text-muted">โดย {ap.tutorName}</span></p> 
+            <a href={`/appointment/${ap.id}`} class="card-link btn btn-outline-primary stretched-link">ดูรายละเอียด</a>
            </div> 
           </div> 
          </div> 
