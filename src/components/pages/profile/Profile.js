@@ -98,10 +98,9 @@ class Profile extends React.Component {
          {course.title}
          </div>
          <div class="card-body">
-            <h5 className="card-title">{course.title}</h5>
+            <h5 className="card-title">฿{course.price}</h5>
             <p class="card-text">{course.schoolLevel} . {course.subject}</p>
 
-            <h6 className="card-subtitle mb-2">฿{course.price}</h6>
 
             <a href={`/course/edit/${course.id}`} class="card-link stretched-link">แก้ไข</a>
 
