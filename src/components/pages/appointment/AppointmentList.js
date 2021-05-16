@@ -86,8 +86,8 @@ class AppointmentList extends React.Component {
         <div class="card"> 
          <div class="card-body"> 
           <div class="media align-items-center"> 
-          <div>
-           <h5 class="card-title text-center">{Utils.formatFullMonth(ap.startTime)}<br/>{ap.startTime.getDate()}</h5> 
+          <div className="text-center">
+           <h5 class="card-title">{Utils.formatFullMonth(ap.startTime)}<br/>{ap.startTime.getDate()}</h5> 
            <h6 className="card-subtitle">
                 10:00
             </h6>
