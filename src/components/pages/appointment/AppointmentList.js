@@ -111,12 +111,12 @@ class AppointmentList extends React.Component {
       <div class="row"> 
       
        <div class="col-md-6"> 
-        <div class="card radius-10 border"> <div className="card-header d-flex justify-content-space-between">
+        <div class="card radius-10 border"> <div className="card-header d-flex justify-content-between">
         <div>
         {Utils.formatFullMonth(ap.startTime)} {ap.startTime.getDate()}
         </div>
         <div>
-        <i courseName="bx bx-bitcoin"></i> รอชำระเงิน
+        <i className="bx bx-bitcoin"></i> รอชำระเงิน
         </div>
         </div>
         <div class="card-body"> 
