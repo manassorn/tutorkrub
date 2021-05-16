@@ -84,12 +84,14 @@ class AppointmentList extends React.Component {
       
        <div class="col-md-6"> 
         <div class="card"> 
-          <div className="card-header">
-          <i className="bx bx-bitcoin"></i>
-          รอชำระเงิน</div>
          <div class="card-body"> 
           <div class="media align-items-center"> 
-           <h5 class="text-center">{Utils.formatFullMonth(ap.startTime)}<br/>{ap.startTime.getDate()}</h5> 
+          <div>
+           <h5 class="card-title text-center">{Utils.formatFullMonth(ap.startTime)}<br/>{ap.startTime.getDate()}</h5> 
+           <h6 className="card-subtitle">
+                10:00
+            </h6>
+          </div>
            <div class="media-body ml-3 pl-3 border-left"> 
             <h5 class="card-title">{ap.courseName}</h5> 
             <p class="card-text"><span className="text-muted">โดย {ap.tutorName}</span></p> 
