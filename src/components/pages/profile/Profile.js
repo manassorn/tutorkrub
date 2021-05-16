@@ -94,7 +94,7 @@ class Profile extends React.Component {
        {this.state.courses.map(course => (
       <div class="course-card col-lg-4">
         <div style={{borderLeft:"solid 5px red"}} class="card radius-10 border">
-         <div class="card-body">
+         <div style={{borderLeft:"solid 5px green"}} class="card-body">
             <h5 className="card-title">{course.title}</h5>
             <p class="card-text">฿{course.price} . {course.schoolLevel} . {course.subject}</p>
 
