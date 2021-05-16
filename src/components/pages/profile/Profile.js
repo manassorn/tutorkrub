@@ -96,7 +96,7 @@ class Profile extends React.Component {
         <div class="card radius-10 border">
          <div className="card-header">aa</div>
          <div class="card-body">
-         
+          <h5 className="card-title">{course.title}</h5>
          
           <div class="media align-items-center">
            <div class="media-body ml-3">
