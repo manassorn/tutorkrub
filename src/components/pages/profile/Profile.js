@@ -99,7 +99,7 @@ class Profile extends React.Component {
           <div className="col-md-10">
             <h5 className="card-title">{course.title}</h5>
             <span className="card-subtitle">{course.schoolLevel} . {course.subject}</span>
-            <p class="">฿{course.price}</p>
+            <p class="card-text">฿{course.price}</p>
 
           </div>
           <div className="col-md-2">
@@ -107,18 +107,6 @@ class Profile extends React.Component {
 
           </div>
 
-          
-         
-          <div class="media align-items-center">
-           <div class="media-body ml-3">
-            <h5 class="mb-0">{course.title}</h5>
-            <span class="badge badge-pill badge-secondary">{course.schoolLevel}</span>&nbsp;
-            <span class="badge badge-pill badge-secondary">{course.subject}</span>
-
-            <p class="mb-0 font-weight-bold">฿{course.price}</p>
-            <a href={`/course/edit/${course.id}`} class="btn btn-white stretched-link">แก้ไข</a>
-           </div>
-          </div>
          </div>
         </div>
        </div>
