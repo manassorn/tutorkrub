@@ -95,8 +95,7 @@ class AppointmentList extends React.Component {
            <div class="media-body ml-3 pl-3 border-left"> 
             <h5 class="card-title">{ap.courseName}</h5> 
             <p class="card-text"><span className="text-muted">โดย {ap.tutorName}</span></p> 
-            <a href={`/appointment/${ap.id}`} class="card-link stretched-link">ดูรายละเอียด</a>
-            <a href={`/appointment/${ap.id}`} class=" card-link stretched-link">ชำระเงิน</a>
+            <a href={`/appointment/${ap.id}`} class="btn btn-outline-primary card-link stretched-link">ชำระเงิน</a>
 
            </div> 
           </div> 
