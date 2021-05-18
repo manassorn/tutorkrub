@@ -82,7 +82,7 @@ class AppointmentList extends React.Component {
       {this.state.appointments.map(ap => (
       <div class="row"> 
       
-       <div class="col-md-10"> 
+       <div class="col-md-12"> 
         <div class="card radius-10 border"> 
          <div class="card-body"> 
           <div class="media align-items-center"> 
@@ -105,6 +105,24 @@ class AppointmentList extends React.Component {
 
             <a href={`/appointment/${ap.id}`} class="btn btn-outline-primary btn-block stretched-link">ชำระเงิน</a>
 
+
+
+
+            <div className="row">
+              <div className="col-md-8">
+            <h5 class="card-title">{ap.courseName}</h5> 
+            <p class="card-text"><span className="text-muted">โดย {ap.tutorName}</span></p> 
+            <a href={`/appointment/${ap.id}`} class="card-link stretched-link">ดูรายละเอียด</a>
+
+              </div>
+              <div className="col-md-4">
+            <p class="card-text">
+            <span>
+            <i className="bx bx-bitcoin"></i>
+            </span> รอชำระเงิน
+            </p>
+              </div>
+            </div>
 
            </div> 
           </div> 
