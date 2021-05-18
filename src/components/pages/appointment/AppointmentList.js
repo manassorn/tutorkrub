@@ -82,7 +82,7 @@ class AppointmentList extends React.Component {
       {this.state.appointments.map(ap => (
       <div class="row"> 
       
-       <div class="col-md-9"> 
+       <div class="col-md-10"> 
         <div class="card radius-10 border"> 
          <div class="card-body"> 
           <div class="media align-items-center"> 
