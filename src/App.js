@@ -31,7 +31,7 @@ import {
 
 
 class App extends React.Component {
-  constructor(){
+  componentWillMount(){
     Api.get('/user/me').then(response => {
       const user = response.data.data
       Me.setUser(user)
