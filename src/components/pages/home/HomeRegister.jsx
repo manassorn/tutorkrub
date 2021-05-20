@@ -79,7 +79,7 @@ class HomeFooter extends React.Component {
  
           <div class="mt-4 media"> 
             <div class="product-img"> 
-             <i className="bx bx-video" style={{fontSize:'30px'}}></i>
+            <img src="/assets/images/home/shakehand-white.png" width="100%"/>
             </div> 
             <div class="media-body pl-3"> 
              <h5 class="font-weight-bold">ปลอดภัย ไม่โกง</h5> 
