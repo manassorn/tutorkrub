@@ -30,7 +30,7 @@ class HomeFooter extends React.Component {
         <div className="row" style={{background:'#0099ff'}}>
             <div className="col-md-4 offset-md-2">
                 <div className="col-5 col-md-12 mx-auto">
-                    <img src="/assets/images/home/contact-us.jpg" width="100%"/>
+                    <img src="/assets/images/home/student-write.png" width="100%"/>
                 </div>
  
             </div>
