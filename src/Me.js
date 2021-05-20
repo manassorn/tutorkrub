@@ -25,5 +25,8 @@ function getUser() {
   const json = Jwt.parse(accessToken)
   return json.userId*/
 }
+function setUser(user) {
+  subject.next(user)
+}
 
 export default {getUser,userId, subject}

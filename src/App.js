@@ -1,4 +1,7 @@
 import React from "react";
+import Api from "./Api"
+import Me from "./Me"
+
 import Wrapper from "./components/common/Wrapper"
 import Course from "./components/pages/course/Course"
 import CourseAdd from "./components/pages/course/CourseAdd"
@@ -28,6 +31,12 @@ import {
 
 
 class App extends React.Component {
+  constructor(){
+    Api.get('/user/me').then(response => {
+      const user = response.data.data
+      Me.setUser(user)
+    })
+  }
     render() {
         const { name } = this.props;
         return (
