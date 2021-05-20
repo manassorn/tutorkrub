@@ -34,6 +34,7 @@ class App extends React.Component {
   componentDidMount(){
     Api.get('/user/me').then(response => {
       const user = response.data.data
+      console.log(user)
       Me.setUser(user)
     })
   }

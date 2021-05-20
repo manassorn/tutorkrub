@@ -28,5 +28,8 @@ function getUser() {
 function setUser(user) {
   subject.next(user)
 }
+function subscribe(fn) {
+  subject.subscribe(fn)
+}
 
-export default {getUser,userId, subject}
+export default {getUser,userId, subject,setUser, subscribe}
