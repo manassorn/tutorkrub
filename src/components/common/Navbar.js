@@ -23,7 +23,7 @@ class Navbar extends React.Component {
       } else {
         Me.subscribe((user)=>{
           console.log('user',user)
-          this.setState({user,})
+          this.setState({user,auth:true})
         })
       }
     }
