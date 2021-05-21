@@ -27,7 +27,7 @@ class HomeFooter extends React.Component {
               <p className="h4">ที่จะได้รับ</p>
           </div>
       
-        <div className="row" style={{background:'#0099ff'}}>
+        <div className="row mx-0" style={{background:'#0099ff'}}>
             <div className="col-md-4 offset-md-2">
                 <div className="col-5 col-md-12 mx-auto">
                     <img src="/assets/images/home/student-write.png" width="100%"/>
