@@ -66,7 +66,7 @@ class HomeFooter extends React.Component {
           
          <div class="mt-4 media"> 
            <div class="product-img">
-             <img src="/assets/images/home/calendar-flat.png" width="100%"/>
+             <img src="/assets/images/home/calendar-flat.png" width="100%" className="radius-10"/>
            </div> 
            <div class="media-body pl-3"> 
             <h5 class="font-weight-bold">เลือกเวลาเรียนได้เอง</h5> 
