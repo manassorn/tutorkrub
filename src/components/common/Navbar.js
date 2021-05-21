@@ -20,6 +20,10 @@ class Navbar extends React.Component {
         // this.getUser()
       if(Me.getUser()) {
         this.setState({ user: Me.getUser(), auth:true })
+      } else {
+        Me.subscribe((user)=>{
+          this.setState({user,auth:true})
+        })
       }
     }
     
