@@ -39,7 +39,7 @@ class HomeFooter extends React.Component {
             
          <div class="mt-4 media"> 
            <div class="product-img">
-             <img src="/assets/images/home/mobile.jpg" width="100%"/>
+             <img src="/assets/images/home/mobile.jpg" width="100%" className="radius-10"/>
            </div> 
            <div class="media-body pl-3"> 
             <h5 class="font-weight-bold">ไม่ผูกมัด</h5> 
@@ -52,7 +52,7 @@ class HomeFooter extends React.Component {
             
          <div class="mt-4 media"> 
            <div class="product-img">
-             <img src="/assets/images/home/online.png" width="100%"/>
+             <img src="/assets/images/home/online.png" width="100%" className="radius-10"/>
            </div> 
            <div class="media-body pl-3"> 
             <h5 class="font-weight-bold">เรียนออนไลน์</h5> 
