@@ -25,8 +25,9 @@ Api.interceptors.response.use(function(response) {
   console.log(Object.keys(error.response))
   console.log(error.config.url)  
 
-  if (error.response.status == 401) {
-    Auth.accessTokenDev = undefined
+  if (error.config.url != '/user/me' && error.response.status == 401) {
+    
+    location.href = '/register'
   }
   return Promise.reject(error);
 });
