@@ -37,7 +37,7 @@ class Navbar extends React.Component {
         })
     }
 
-    devlogin(e, userId = 'hNqOKzYwhJjZTIDLUkf5') {
+    devlogin(e, userId = 'fiSdcHz3FcLxZ0b2ienj') {
       
       const that = this
       e.preventDefault();
@@ -107,7 +107,7 @@ class Navbar extends React.Component {
                           <i className="bx bx-key"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'hNqOKzYwhJjZTIDLUkf5')}>Login as Pun</a>
+                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'fiSdcHz3FcLxZ0b2ienj')}>Login as Pun</a>
                           <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'PIrlU8ZS7htHOwU0z9iS')}>Login as Bamboo</a>
                         </div>
                       </li>

@@ -33,7 +33,6 @@ import {
 
 class App extends React.Component {
   componentDidMount(){
-    console.log('qqwq')
     Api.get('/user/me').then(response => {
       const user = response.data.data
       console.log(user)
