@@ -62,8 +62,10 @@ class Navbar extends React.Component {
         const that = this
         e.preventDefault();
         Api.post("/authen/logout").then(function(data) {
+          console.log('logout')
             that.setState({auth: false})
         }).catch(function(xhr, error) {
+          alert('error')
         })
     }
 
