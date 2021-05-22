@@ -1,9 +1,9 @@
 import React from "react";
-import Api from '../../../Api'
-import Me from '../../../Me'
-import Separator from '../../common/Separator'
-import FormValidation from '../../common/FormValidation'
-import SimpleTitle from '../../common/SimpleTitle'
+import Api from '../../Api'
+import Me from '../../Me'
+import Separator from '../common/Separator'
+import FormValidation from '../common/FormValidation'
+import SimpleTitle from '../common/SimpleTitle'
 
 class Login extends React.Component {
 
