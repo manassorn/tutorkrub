@@ -16,7 +16,7 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-      var id = Auth.getUserId()
+      var id = Me.userId()
       Api.get('/crud/user/' + id)
         .then(response => 
         {
