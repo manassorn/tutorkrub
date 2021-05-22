@@ -17,7 +17,10 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-      this.setState({user: Me.getUser()})
+      const that = this
+      Me.subscribe((user) => {
+        that.setState({user})
+      })
       Api.get('/crud/course')
         .then(response => 
         {
