@@ -61,7 +61,7 @@ class App extends React.Component {
               <Route path="/user/edit" component={ProfileEdit} />
               <Route path="/user" component={Profile} />
               <Route path="/register" component={Register} />
-              <Route path="/login?redirect=:redirect" component={Login} />
+              <Route path="/login" component={Login} />
 
               <Redirect to="/" />
             </Switch>
