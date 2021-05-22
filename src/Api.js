@@ -20,6 +20,11 @@ Api.interceptors.response.use(function(response) {
   return response;
 }, function(error) {
   console.log(Object.keys(error))
+  console.log(Object.keys(error.request))
+  console.log(Object.keys(error.response))
+  console.log(Object.keys(error.config))
+  console.log(error.config.url)  
+
   if (error.response.status == 401) {
     Auth.accessTokenDev = undefined
   }
