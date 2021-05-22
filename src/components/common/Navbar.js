@@ -61,13 +61,10 @@ class Navbar extends React.Component {
     logout(e) {
         const that = this
         e.preventDefault();
-        localStorage? localStorage.removeItem('accessToken', data.data.data.accessToken) :Cookie.erase('accessToken')
-        /*Api.post("/authen/logout").then(function(data) {
+        Api.post("/authen/logout").then(function(data) {
             that.setState({auth: false})
         }).catch(function(xhr, error) {
-            console.error( "error", xhr, error );
-            alert("error34")
-        })*/
+        })
     }
 
 
