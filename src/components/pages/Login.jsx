@@ -112,7 +112,7 @@ class Login extends React.Component {
        </div>
       </div>
     
-      <button id="submit-email-btn" type="submit" class="btn btn-primary btn-block" onClick={e => {this.login}}>เข้าสู่ระบบ</button>
+      <button id="submit-email-btn" type="submit" class="btn btn-primary btn-block" onClick={e => {this.login(e)}}>เข้าสู่ระบบ</button>
       <a href="authentication-login.html" class="btn btn-link btn-block">ลงทะเบียน</a> 
     </FormValidation>
        
