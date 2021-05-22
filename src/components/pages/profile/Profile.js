@@ -1,6 +1,7 @@
 import React from "react";
 import Api from '../../../Api'
 import Auth from '../../../Auth'
+import Me from '../../../Me'
 import SimpleTitle from '../../common/SimpleTitle'
 
 
@@ -16,17 +17,10 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-      Api.get('/user/me')
-        .then(response => 
-        {
-        this.setState({ user: response.data.data })
-        }
-        );
+      this.state.setState({user: Me.getUser()})
       Api.get('/crud/course')
         .then(response => 
         {
-          console.log('courses',response.data.data)
-        
         this.setState({ courses: response.data.data })
         }
         );
