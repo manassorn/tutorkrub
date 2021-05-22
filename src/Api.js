@@ -17,15 +17,9 @@ Api.interceptors.request.use(function(config) {
   return Promise.reject(error);
 });
 Api.interceptors.response.use(function(response) {
-  console.log(Object.keys(response.headers))
-
-  if(response.headers.accesstokendev) {
-    console.log('setaccesstokendev', response.headers.accesstokendev)
-    Auth.accessTokenDev = response.headers.accesstokendev
-  }
   return response;
 }, function(error) {
-  console.log(error)
+  console.log(Object.keys(error))
   if (error.response.status == 401) {
     Auth.accessTokenDev = undefined
   }
