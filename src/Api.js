@@ -20,8 +20,8 @@ Api.interceptors.response.use(function(response) {
   return response;
 }, function(error) {
   console.log(Object.keys(error))
-  console.log(Object.keys(error.request))
-  console.log(Object.keys(error.response))
+  console.log(error.response.request.responseURL)
+  console.log(error.request.responseURL)
   console.log(Object.keys(error.config))
   console.log(error.config.url)  
 
