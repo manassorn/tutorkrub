@@ -25,9 +25,9 @@ Api.interceptors.response.use(function(response) {
   console.log(Object.keys(error.response))
   console.log(error.config.url)  
 
-  if (error.config.url != '/user/me' && error.response.status == 401) {
+  if (error.config.url != '/user/me' && error.config.url != '/authen/login' && error.response.status == 401) {
     
-    location.href = '/register'
+    location.href = '/register?redirect=' + location.pathname
   }
   return Promise.reject(error);
 });
