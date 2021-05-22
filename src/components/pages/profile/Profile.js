@@ -16,8 +16,7 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-      var id = Me.userId()
-      Api.get('/crud/user/' + id)
+      Api.get('/user/me')
         .then(response => 
         {
         this.setState({ user: response.data.data })
