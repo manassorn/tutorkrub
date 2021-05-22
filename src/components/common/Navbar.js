@@ -146,7 +146,7 @@ class Navbar extends React.Component {
                                     className="bx bx-money"></i><span>
                                     คูปองของฉัน
                                 </span></Link>
-                                <div className="dropdown-divider mb-0"></div>	<a className="dropdown-item" onClick={this.logout}><i
+                                <div className="dropdown-divider mb-0"></div>	<a className="dropdown-item" onClick={e => this.logout}><i
                                     className="bx bx-power-off"></i><span>
                                     ล็อกเอาท์
                                 </span></a>
