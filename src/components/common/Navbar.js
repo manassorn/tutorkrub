@@ -60,7 +60,7 @@ class Navbar extends React.Component {
 
     logout(e) {
         const that = this
-        //e.preventDefault();
+        e.preventDefault();
         console.log('lllllogout')
         Api.post("/authen/logout").then(function(data) {
           console.log('logout')
@@ -149,7 +149,7 @@ class Navbar extends React.Component {
                                     className="bx bx-money"></i><span>
                                     คูปองของฉัน
                                 </span></Link>
-                                <div className="dropdown-divider mb-0"></div>	<a className="dropdown-item" onClick={e => this.logout}><i
+                                <div className="dropdown-divider mb-0"></div>	<a className="dropdown-item" onClick={e => this.logout(e)}><i
                                     className="bx bx-power-off"></i><span>
                                     ล็อกเอาท์
                                 </span></a>
