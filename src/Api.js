@@ -22,7 +22,7 @@ Api.interceptors.response.use(function(response) {
   console.log(Object.keys(error))
   console.log(error.response)
   console.log(error.request.responseURL)
-  console.log(Object.keys(error.request))
+  console.log(Object.keys(error.response))
   console.log(error.config.url)  
 
   if (error.response.status == 401) {
