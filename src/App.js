@@ -17,6 +17,7 @@ import Pay from "./components/pages/Pay"
 import Appointment from "./components/pages/appointment/Appointment"
 import AppointmentList from "./components/pages/appointment/AppointmentList"
 import Register from "./components/pages/register/Register"
+import Login from "./components/pages/Login"
 import Home from "./components/pages/home/Home"
 // IMPORT
 
