@@ -17,7 +17,7 @@ class Profile extends React.Component {
     }
 
     componentDidMount() {
-      this.state.setState({user: Me.getUser()})
+      this.setState({user: Me.getUser()})
       Api.get('/crud/course')
         .then(response => 
         {
