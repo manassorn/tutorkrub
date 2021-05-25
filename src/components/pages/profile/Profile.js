@@ -20,10 +20,9 @@ class Profile extends React.Component {
       const that = this
       Me.subscribe((user) => {
         if(!user) return
-        console.log('userrr',user.avatarUrl)
         that.setState({user})
       })
-      Api.get('/crud/course')
+      Api.get('/courses/mine')
         .then(response => 
         {
         this.setState({ courses: response.data.data })
