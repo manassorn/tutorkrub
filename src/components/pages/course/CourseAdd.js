@@ -38,7 +38,6 @@ class CourseAdd extends React.Component {
     
     submitForm() {
       const form = this.refs.form;
-      console.log(form)
       if (form.checkValidity() === false) {
         form.classList.add('was-validated');
         return false
@@ -52,7 +51,7 @@ class CourseAdd extends React.Component {
       const price = this.priceRef.current.value
       const subject = this.subjectRef.current.value
       const schoolLevel = this.schoolLevelRef.current.value
-      Api.post('/course',  {
+      Api.post('/courses',  {
          title,
          description,
          schoolLevel,

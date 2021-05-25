@@ -32,7 +32,7 @@ class CourseAdd extends React.Component {
           const hours = response.data.data.availableHours
           this.setState({hasAvailableHours: !this.isEmpty(hours)})
         });
-      Api.get('/course/' + this.courseId)
+      Api.get('/courses/' + this.courseId)
         .then(response => {
           const course = response.data.data
           this.titleRef.current.value = course.title
