@@ -4,7 +4,7 @@ import SimpleTitle from '../../common/SimpleTitle'
 import CalendarPartOfDay from '../../common/CalendarPartOfDay'
 import Constant from '../../../Constant'
 
-class CourseAdd extends React.Component {
+class CourseEdit extends React.Component {
 
 
     constructor(props) {
@@ -65,7 +65,7 @@ class CourseAdd extends React.Component {
       const price = this.priceRef.current.value
       const subject = this.subjectRef.current.value
       const schoolLevel = this.schoolLevelRef.current.value
-      Api.post('/course/' + this.courseId ,  {
+      Api.put('/courses/' + this.courseId ,  {
          title,
          description,
          schoolLevel,
@@ -184,4 +184,4 @@ class CourseAdd extends React.Component {
 
     }
 }
-export default CourseAdd
+export default CourseEdit
