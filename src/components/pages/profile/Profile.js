@@ -22,7 +22,7 @@ class Profile extends React.Component {
         if(!user) return
         that.setState({user})
       })
-      Api.get('/courses/mine')
+      Api.get('/courses')
         .then(response => 
         {
         this.setState({ courses: response.data.data })
