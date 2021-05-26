@@ -86,7 +86,7 @@ class CalendarPartOfDay extends React.Component {
         activeHours[this.state.selectedDayIndex][this.state.selectedPartIndex * 6 + i] = ref.current.checked
       })
       this.setState({activeHours})
-      console.log('setstate', activeHours[0][0])
+      //console.log('setstate', activeHours[0][0])
       this.props.onChanged(activeHours)
     }
     
