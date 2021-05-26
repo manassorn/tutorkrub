@@ -61,9 +61,7 @@ class Navbar extends React.Component {
     logout(e) {
         const that = this
         e.preventDefault();
-        console.log('lllllogout')
         Api.post("/authen/logout").then(function(data) {
-          console.log('logout')
             that.setState({auth: false})
         }).catch(function(xhr, error) {
           alert('error')
@@ -108,7 +106,7 @@ class Navbar extends React.Component {
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                           <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'fiSdcHz3FcLxZ0b2ienj')}>Login as Pun</a>
-                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'PIrlU8ZS7htHOwU0z9iS')}>Login as Bamboo</a>
+                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'Uh2S6P31pGs29M2zblDH')}>Login as Bamboo</a>
                         </div>
                       </li>
                       
