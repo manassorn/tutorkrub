@@ -6,7 +6,7 @@ import Wrapper from "./components/common/Wrapper"
 import Course from "./components/pages/course/Course"
 import CourseAdd from "./components/pages/course/CourseAdd"
 import CourseEdit from "./components/pages/course/CourseEdit"
-import CourseList from "./components/pages/course/CourseList"
+import Explore from "./components/pages/explore/Explore"
 import Profile from "./components/pages/profile/Profile"
 import ProfileEdit from "./components/pages/profile/ProfileEdit"
 import ProfileEditAvailableHours from "./components/pages/profile/ProfileEditAvailableHours"
@@ -50,7 +50,7 @@ class App extends React.Component {
               <Route path="/appointment" component={Appointment} />
               <Route path="/course/add" component={CourseAdd} />
               <Route path="/course/edit" component={CourseEdit} />
-              <Route path="/course/explore" component={CourseList} />
+              <Route path="/explore" component={Explore} />
               <Route path="/course" component={Course} />
               <Route path="/pay" component={Pay} />
               <Route path="/user/edit/avatar" component={ProfileEditAvatar} />
