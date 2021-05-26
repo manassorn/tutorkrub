@@ -89,7 +89,7 @@ class Navbar extends React.Component {
                 <div className="flex-grow-1">
                   
                   
-                  <Link className="pl-4" to="/course/explore">สำรวจวิชาเรียน <span class="sr-only">(current)</span></Link>
+                  <Link className="pl-4" to="/explore">สำรวจวิชาเรียน <span class="sr-only">(current)</span></Link>
                   
 
                 
