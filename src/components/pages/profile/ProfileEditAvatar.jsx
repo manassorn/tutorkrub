@@ -20,8 +20,7 @@ class ProfileEditAvatar extends React.Component {
 
     componentDidMount() {
       window.addEventListener('hashchange', e => this.onHashChange)
-      var id = Me.userId()
-      Api.get('/crud/user/' + id)
+      Api.get('/user/me')
         .then(response => 
         {
         this.setState({ user: response.data.data })
