@@ -1,6 +1,5 @@
 import React from "react";
 import Api from '../../../Api'
-import Auth from '../../../Auth'
 import SimpleTitle from '../../common/SimpleTitle'
 import './ProfileEdit.css'
 
@@ -15,8 +14,7 @@ class ProfileEdit extends React.Component {
     }
 
     componentDidMount() {
-      var id = Auth.getUserId()
-      Api.get('/crud/user/' + id)
+      Api.get('/user/me')
         .then(response => 
         {
         this.setState({ user: response.data.data })
