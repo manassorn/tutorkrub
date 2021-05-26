@@ -75,8 +75,8 @@ class Explore extends React.Component {
       {this.state.courses.map(course => (
 <div class="col-6 col-md-3">
             <div class="card" style={{'box-shadow':'none'}}>
-                <div className="bg-light" style={{paddingTop:'100%'}}>
-                <img class="card-img-top rounded rounded-lg" src={course.tutorAvatarUrl} alt=""/>
+                <div className="bg-light" style={{paddingTop:'100%',position:'relative'}}>
+                <img class="card-img-top rounded rounded-lg" src={course.tutorAvatarUrl} alt="" style={{position:'absolute'}}/>
                 </div>
                 <div class="card-body p-0 mt-2">
                     <p class="card-text">
