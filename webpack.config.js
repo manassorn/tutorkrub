@@ -18,6 +18,17 @@ const config = {
                 exclude: /node_modules/
             },
             {
+              test: /\.s[ac]ss$/i,
+              use: [
+                      // Creates `style` nodes from JS strings
+                      "style-loader",
+                      // Translates CSS into CommonJS
+                      "css-loader",
+                      // Compiles Sass to CSS
+                      "sass-loader",
+                    ],
+            },
+            {
               // Preprocess your css files
               // you can add additional loaders here (e.g. sass/less etc.)
               test: /\.css$/,

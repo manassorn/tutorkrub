@@ -23,7 +23,7 @@ class ProfileEditAvailableHours extends React.Component {
         .then(response => {
         const hours = response.data.data.availableHours
         this.availableHours = hours
-        this.refs.calendar.updateActiveHours(hours)
+        //this.refs.calendar.updateActiveHours(hours)
         });
     }
     
