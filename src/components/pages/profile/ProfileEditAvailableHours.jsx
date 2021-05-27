@@ -2,6 +2,7 @@ import React from "react";
 import Api from '../../../Api'
 import Auth from '../../../Auth'
 import SimpleTitle from '../../common/SimpleTitle'
+import Switcher from '../../common/Switcher'
 
 import CalendarPartOfDay from '../../common/CalendarPartOfDay'
 
@@ -55,6 +56,10 @@ class ProfileEditAvailableHours extends React.Component {
           <button type="button" class="btn btn-white dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="sr-only">Toggle Dropdown</span> 
                 </button> 
         </div> 
+      </div>
+      
+      <div>
+      <Switcher/>
       </div>
       
       
