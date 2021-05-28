@@ -1,5 +1,5 @@
 import React from "react";
-import "./Switcher.css"
+import "./Switcher.scss"
 
 class Switcher extends React.Component {
     constructor(props) {
