@@ -122,7 +122,7 @@ class CalendarPartOfDay extends React.Component {
             <div class="part-of-time col-1 rounded m-1 bg-light p-0" data-toggle="modal" data-target="#exampleModalCenter" onClick={e => this.selectPartOfDay(d,p)}>
             
             {[0,1,2,3,4,5].map(h => (
-              <div className={`hr ${this.state.activeHours[d][p*6+h]?'selected':''} diagonal-stripe-3`}> &nbsp;</div>
+              <div className={`hr ${this.state.activeHours[d][p*6+h]?'selected':''} diagonal-stripe-4`}> &nbsp;</div>
 
             ))}
 
