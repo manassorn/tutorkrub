@@ -15,7 +15,7 @@ class Switcher extends React.Component {
       <label for="test">
         <input type="checkbox" id="test" value=""/>
         <span><small></small></span>
-        <small>Light switch</small>
+        <small>ซ้ำกันทุกอาทิตย์</small>
       </label>
     </div>
     }
