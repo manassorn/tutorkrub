@@ -5,6 +5,7 @@ import SimpleTitle from '../../common/SimpleTitle'
 import Switcher from '../../common/Switcher'
 
 import CalendarPartOfDay from '../../common/CalendarPartOfDay'
+import CalendarCarousel from '../../common/CalendarCarousel'
 
 class ProfileEditAvailableHours extends React.Component {
   
@@ -64,6 +65,8 @@ class ProfileEditAvailableHours extends React.Component {
       
       
       <CalendarPartOfDay selectedHours={this.state.availableHours} onChanged={this.onCalendarChanged} ref="calendar"/>
+      
+      <CalendarCarousel />
       
       <button className="mt-3 mb-5 btn btn-primary btn-block" onClick={this.saveAvailableHours}>บันทึก</button>
       </div>
