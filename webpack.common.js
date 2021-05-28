@@ -31,7 +31,7 @@ const config = {
       {
         // Preprocess your css files
         // you can add additional loaders here (e.g. sass/less etc.)
-        test: /\.css$/,
+        test: /\.cssaa$/,
         use: ['style-loader', 'css-loader'],
             }
         ]
