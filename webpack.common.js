@@ -18,7 +18,7 @@ const config = {
         exclude: /node_modules/
             },
             {
-              test: /\.s[ac]ssaa$/i,
+              test: /\.s[ac]ss$/i,
               use: [
                       // Creates `style` nodes from JS strings
                       "style-loader",
@@ -31,7 +31,7 @@ const config = {
       {
         // Preprocess your css files
         // you can add additional loaders here (e.g. sass/less etc.)
-        test: /\.cssaa$/,
+        test: /\.css$/,
         use: ['style-loader', 'css-loader'],
             }
         ]
