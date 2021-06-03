@@ -18,11 +18,14 @@ class CalendarPartOfDay extends React.Component {
 
       let avaialbleHrs = []
       this.availability = this.props.availability
-      if (this.isRecurring) {
-        avaialbleHrs = hexToBoolArray(this.availability.recurring)
-      } else {
-        avaialbleHrs = calibateNonRecurAv(this.availability.nonRecurring)
+      if (this.availability) {
+        if (this.isRecurring) {
+          avaialbleHrs = this.hexToBoolArray(this.availability.recurring)
+        } else {
+          avaialbleHrs = this.calibateNonRecurAv(this.availability.nonRecurring)
+        }
       }
+      
       
       this.bookedHrs = this.props.bookedHrs || []
       this.bookedByMeHrs = this.props.bookedByMeHrs || []
