@@ -93,7 +93,7 @@ class CalendarPartOfDay extends React.Component {
     }
     
     getHex() {
-      const bin = this.state.availableHrs.map(i => i? '1' :'0').padEnd(168, '0')
+      const bin = this.state.availableHrs.map(i => i? '1' :'0').join('').padEnd(168, '0')
       return this.binToHex(bin)
     }
     
