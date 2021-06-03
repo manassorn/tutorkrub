@@ -14,6 +14,8 @@ class ProfileEditAvailableHours extends React.Component {
       this.state = {
         availability: undefined
       }
+      this.recurringCalendar = React.createRef()
+      
       this.onCalendarChanged = this.onCalendarChanged.bind(this)
       this.saveAvailableHours = this.saveAvailableHours.bind(this)
       
@@ -33,8 +35,8 @@ class ProfileEditAvailableHours extends React.Component {
     }
     
     saveAvailableHours() {
-      
-      Api.post('/user/me/availability', {availability: this.availability}).then(() => {
+      const recurringHex = this.recurringCalendar.current.getHex()
+      Api.post('/user/me/availability', {availability: {recurringHex}}).then(() => {
         location.href = '/user'
       })
     }
@@ -62,7 +64,7 @@ class ProfileEditAvailableHours extends React.Component {
       </div>
       
       
-      <CalendarPartOfDay availability={this.state.availability} isRecurring="true" ref="calendar"/>
+      <CalendarPartOfDay hex={this.state.availability?this.state.availability.recurringHex:null} ref={this.recurringCalendar}/>
       
       
       <CalendarCarousel availability={this.state.availability}/>

@@ -14,23 +14,10 @@ class CalendarPartOfDay extends React.Component {
       super(props);
       this.startOfWeek = this.props.startOfWeek
       
-      this.isRecurring = this.props.isRecurring || true
+      const availableHrs = this.hexToBoolArray(this.props.hex)
 
-      let availableHrs = []
-      this.availability = this.props.availability
-      if (this.availability) {
-        if (this.isRecurring) {
-          availableHrs = this.hexToBoolArray(this.availability.recurring)
-        } else {
-          availableHrs = this.calibateNonRecurAv(this.availability.nonRecurring)
-        }
-      }
-      
-      
       this.bookedHrs = this.props.bookedHrs || []
       this.bookedByMeHrs = this.props.bookedByMeHrs || []
-      this.isRecurring = !!this.startOfWeek
-      const hours = this.initHours(this.props.availableHrs)
       
       this.state = {
         clickedPartIndex: 0,
@@ -105,16 +92,9 @@ class CalendarPartOfDay extends React.Component {
       return bin.split('').map(i => i == '1')
     }
     
-    initHours(availableHrs) {
-      if(availableHrs) return availableHrs
-      return [0,1,2,3,4,5,6].map(i => {
-        return Array.apply(null, {length:24}).map(j => false)
-      })
-    }
-    
-    updateavailableHrs(hours) {
-      hours = this.initHours(hours)
-      this.setState({availableHrs: hours})
+    getHex() {
+      const bin = this.state.availableHrs.map(i => i? '1' :'0').padEnd(168, '0')
+      return this.binToHex(bin)
     }
     
     selectPartOfDay(dayIndex, partIndex) {
