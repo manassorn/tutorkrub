@@ -16,13 +16,13 @@ class CalendarPartOfDay extends React.Component {
       
       this.isRecurring = this.props.isRecurring || true
 
-      let avaialbleHrs = []
+      let availableHrs = []
       this.availability = this.props.availability
       if (this.availability) {
         if (this.isRecurring) {
-          avaialbleHrs = this.hexToBoolArray(this.availability.recurring)
+          availableHrs = this.hexToBoolArray(this.availability.recurring)
         } else {
-          avaialbleHrs = this.calibateNonRecurAv(this.availability.nonRecurring)
+          availableHrs = this.calibateNonRecurAv(this.availability.nonRecurring)
         }
       }
       
@@ -36,7 +36,7 @@ class CalendarPartOfDay extends React.Component {
         clickedPartIndex: 0,
         clickedDayIndex: 0,
         scheduleHr: undefined,
-        avaialbleHrs,
+        availableHrs,
       }
       this.daysOfWeekMini = ['จ',
       'อ',
@@ -133,8 +133,8 @@ class CalendarPartOfDay extends React.Component {
       this.setState({availableHrs})
       //console.log('setstate', availableHrs[0][0])
       
-      const bin = availableHrs.map(i => i?'1':'0').join('')
-      const hex = binToHex(bin)
+      //const bin = availableHrs.map(i => i?'1':'0').join('')
+      //const hex = binToHex(bin)
       /*if(this.isRecurring) {
         this.props.onRecurringChanged(hex)
       } else {
