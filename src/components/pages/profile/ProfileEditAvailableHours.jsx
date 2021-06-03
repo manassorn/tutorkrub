@@ -12,7 +12,7 @@ class ProfileEditAvailableHours extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        availableHours: undefined
+        availability: undefined
       }
       this.onCalendarChanged = this.onCalendarChanged.bind(this)
       this.saveAvailableHours = this.saveAvailableHours.bind(this)
@@ -20,12 +20,11 @@ class ProfileEditAvailableHours extends React.Component {
     }
 
     componentDidMount() {
-      var id = Auth.getUserId()
       Api.get('/user/me')
         .then(response => {
-        const hours = response.data.data.availableHours
-        this.availableHours = hours
+        this.availability = response.data.data.availability
         //this.refs.calendar.updateActiveHours(hours)
+        this.setState({availability})
         });
     }
     
@@ -34,9 +33,8 @@ class ProfileEditAvailableHours extends React.Component {
     }
     
     saveAvailableHours() {
-      const id = Auth.getUserId()
       
-      Api.post('/user/' + id + '/availableHours', {availableHours: this.availableHours}).then(() => {
+      Api.post('/user/me/availability', {availability: this.availability}).then(() => {
         location.href = '/user'
       })
     }
@@ -64,9 +62,10 @@ class ProfileEditAvailableHours extends React.Component {
       </div>
       
       
-      <CalendarPartOfDay selectedHours={this.state.availableHours} onChanged={this.onCalendarChanged} ref="calendar"/>
+      <CalendarPartOfDay availability={this.state.availability} isRecurring="true" ref="calendar"/>
       
-      <CalendarCarousel />
+      
+      <CalendarCarousel availability={this.state.availability}/>
       
       <button className="mt-3 mb-5 btn btn-primary btn-block" onClick={this.saveAvailableHours}>บันทึก</button>
       </div>

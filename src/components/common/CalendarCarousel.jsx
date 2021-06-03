@@ -97,7 +97,7 @@ class CalendarCarousel extends React.Component {
          <div class="carousel-inner">
          {Utils.range(this.numberOfWeeks).map(i => (
             <div className={`carousel-item ${(i==0)?'active':''}`}>
-              <CalendarPartOfDay startOfWeek={addWeeks(startOfWeek(new Date()),i)} />
+              <CalendarPartOfDay startOfWeek={addWeeks(startOfWeek(new Date()),i)} isRecurring="false" availability={this.props.availability}/>
             </div>
          ))}
         

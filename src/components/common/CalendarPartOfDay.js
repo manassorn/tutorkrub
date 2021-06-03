@@ -1,5 +1,6 @@
 import React from "react";
 import addDays from 'date-fns/addDays'
+import differenceInHours from 'date-fns/differenceInHours'
 import Api from '../../Api'
 import Utils from '../../Utils'
 import SimpleTitle from '../common/SimpleTitle'
@@ -12,12 +13,27 @@ class CalendarPartOfDay extends React.Component {
     constructor(props) {
       super(props);
       this.startOfWeek = this.props.startOfWeek
-      const hours = this.initHours(this.props.activeHours)
+      
+      this.isRecurring = this.props.isRecurring || true
+
+      let avaialbleHrs = []
+      this.availability = this.props.availability
+      if (this.isRecurring) {
+        avaialbleHrs = hexToBoolArray(this.availability.recurring)
+      } else {
+        avaialbleHrs = calibateNonRecurAv(this.availability.nonRecurring)
+      }
+      
+      this.bookedHrs = this.props.bookedHrs || []
+      this.bookedByMeHrs = this.props.bookedByMeHrs || []
+      this.isRecurring = !!this.startOfWeek
+      const hours = this.initHours(this.props.availableHrs)
       
       this.state = {
-        selectedPartIndex: 0,
-        selectedDayIndex: 0,
-        activeHours: hours
+        clickedPartIndex: 0,
+        clickedDayIndex: 0,
+        scheduleHr: undefined,
+        avaialbleHrs,
       }
       this.daysOfWeekMini = ['จ',
       'อ',
@@ -61,36 +77,72 @@ class CalendarPartOfDay extends React.Component {
       */
     }
     
-    initHours(activeHours) {
-      if(activeHours) return activeHours
+    hexToBin(hex) {
+      return (parseInt(hex, 16).toString(2)).padStart(168, '0')
+
+    }
+    
+    binToHex(bin) {
+      return (parseInt(bin, 2).toString(16)).padStart(21, '0')
+    }
+    
+    hexToBoolArray(hex) {
+      const bin = this.hexToBin(hex)
+      return bin.split('').map(i => i == '1')
+    }
+    
+    calibateNonRecurAv(av) {
+      let bin = this.hexToBin(av.hex)
+      const diff = differenceInHours(av.startDate, this.startOfWeek)
+      if(diff > 0) {
+        bin = bin.slice(diff).padEnd(168, '0')
+      } else {
+        bin = bin.slice(0, diff).padStart(168,'0')
+      }
+      return bin.split('').map(i => i == '1')
+    }
+    
+    initHours(availableHrs) {
+      if(availableHrs) return availableHrs
       return [0,1,2,3,4,5,6].map(i => {
         return Array.apply(null, {length:24}).map(j => false)
       })
     }
     
-    updateActiveHours(hours) {
+    updateavailableHrs(hours) {
       hours = this.initHours(hours)
-      this.setState({activeHours: hours})
+      this.setState({availableHrs: hours})
     }
     
     selectPartOfDay(dayIndex, partIndex) {
-      this.hourCheckboxRefs.map((ref, i) => ref.current.checked = this.state.activeHours[dayIndex][partIndex *6+i])
-      this.setState({selectedDayIndex: dayIndex,
-        selectedPartIndex: partIndex
+      this.hourCheckboxRefs.map((ref, i) => ref.current.checked = this.state.availableHrs[dayIndex][partIndex *6+i])
+      this.setState({clickedDayIndex: dayIndex,
+        clickedPartIndex: partIndex
       })
     }
     
     saveHours() {
-      const activeHours = this.state.activeHours
+      const availableHrs = this.state.availableHrs
       
       this.hourCheckboxRefs.map((ref, i) => {
-        activeHours[this.state.selectedDayIndex][this.state.selectedPartIndex * 6 + i] = ref.current.checked
+        availableHrs[this.state.clickedDayIndex][this.state.clickedPartIndex * 6 + i] = ref.current.checked
       })
-      this.setState({activeHours})
-      //console.log('setstate', activeHours[0][0])
-      this.props.onChanged(activeHours)
+      this.setState({availableHrs})
+      //console.log('setstate', availableHrs[0][0])
+      
+      const bin = availableHrs.map(i => i?'1':'0').join('')
+      const hex = binToHex(bin)
+      /*if(this.isRecurring) {
+        this.props.onRecurringChanged(hex)
+      } else {
+        const startDate = this.startOfWeek
+        this.props.onNonRecurringChanged({startDate, hex})
+      }*/
     }
     
+    getHrClassName(dayIndex, partIndex) {
+      
+    }
 
     render() {
       return <div>
@@ -119,10 +171,10 @@ class CalendarPartOfDay extends React.Component {
           <div class="col-3">{this.partsOfDay[p]}<br/>{this.partsOfDayTime[p]}</div>
           
           {[0,1,2,3,4,5,6].map(d => (
-            <div class="part-of-time col-1 rounded m-1 bg-light p-0" data-toggle="modal" data-target="#exampleModalCenter" onClick={e => this.selectPartOfDay(d,p)}>
+            <div class="part-of-time col-1 rounded m-1 bg-light p-0" data-toggle="modal" data-target="#calendarPartOfDayModal" onClick={e => this.selectPartOfDay(d,p)}>
             
             {[0,1,2,3,4,5].map(h => (
-              <div className={`hr ${this.state.activeHours[d][p*6+h]?'selected':''} diagonal-stripe-6`}> &nbsp;</div>
+              <div className={`hr ${this.state.availableHrs[d][p*6+h]?'selected':''} diagonal-stripe-6`}> &nbsp;</div>
 
             ))}
 
@@ -135,24 +187,24 @@ class CalendarPartOfDay extends React.Component {
         </div>
       ))}
       
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal fade" id="calendarPartOfDayModal" tabindex="-1" role="dialog" aria-labelledby="calendarPartOfDayModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalCenterTitle">เลือกเวลาที่สะดวก</h5>
+          <h5 class="modal-title" id="calendarPartOfDayModalTitle">เลือกเวลาที่สะดวก</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <div class="pt-2 pb-2 mb-2 font-weight-bold">{this.daysOfWeek[this.state.selectedDayIndex]}</div>
+          <div class="pt-2 pb-2 mb-2 font-weight-bold">{this.daysOfWeek[this.state.clickedDayIndex]}</div>
           
           {[0,1,2,3,4,5].map(i => (
                     
 <label class="checkbox">
   <span class="checkbox__input">
     <input type="checkbox" name={this.hourCheckboxRefs[i]} ref={this.hourCheckboxRefs[i]}/>
-    <div class="hour rounded pl-4 pr-4 pt-2 pb-2 mb-2">{this.state.selectedPartIndex * 6 + i}:00</div>
+    <div class="hour rounded pl-4 pr-4 pt-2 pb-2 mb-2">{this.state.clickedPartIndex * 6 + i}:00</div>
   </span>
 </label>
 
