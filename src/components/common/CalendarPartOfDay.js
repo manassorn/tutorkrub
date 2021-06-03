@@ -144,7 +144,7 @@ class CalendarPartOfDay extends React.Component {
     }
     
     getHrClassName(d,p,h) {
-      if (this.state.avaialbleHrs) {
+      if (this.state.availableHrs) {
         return this.state.availableHrs[d*24+p*6+h]?'selected':''
 
       }
