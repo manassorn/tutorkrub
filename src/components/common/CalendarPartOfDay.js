@@ -128,7 +128,7 @@ class CalendarPartOfDay extends React.Component {
       const availableHrs = this.state.availableHrs
       
       this.hourCheckboxRefs.map((ref, i) => {
-        availableHrs[this.state.clickedDayIndex][this.state.clickedPartIndex * 6 + i] = ref.current.checked
+        availableHrs[this.state.clickedDayIndex * 24 + this.state.clickedPartIndex * 6 + i] = ref.current.checked
       })
       this.setState({availableHrs})
       //console.log('setstate', availableHrs[0][0])
