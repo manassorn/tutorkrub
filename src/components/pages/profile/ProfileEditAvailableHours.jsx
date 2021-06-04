@@ -34,7 +34,7 @@ class ProfileEditAvailableHours extends React.Component {
         setTimeout(() => {
           that.setState({recurringHex, isRecurring})
 
-        },1000)
+        },1001)
         });
     }
     
