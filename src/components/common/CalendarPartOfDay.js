@@ -13,7 +13,7 @@ class CalendarPartOfDay extends React.Component {
     constructor(props) {
       super(props);
       this.startOfWeek = this.props.startOfWeek
-      
+      console.log('hex',this.props.hex)
       const availableHrs = this.hexToBoolArray(this.props.hex)
 
       this.bookedHrs = this.props.bookedHrs || []
