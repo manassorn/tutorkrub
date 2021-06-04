@@ -24,7 +24,7 @@ class ProfileEditAvailableHours extends React.Component {
     componentDidMount() {
       Api.get('/user/me')
         .then(response => {
-        this.availability = response.data.data.availability
+        const availability = response.data.data.availability
         //this.refs.calendar.updateActiveHours(hours)
         this.setState({availability})
         });
