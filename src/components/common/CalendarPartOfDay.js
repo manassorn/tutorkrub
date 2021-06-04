@@ -67,6 +67,14 @@ class CalendarPartOfDay extends React.Component {
       */
     }
     
+    componentDidUpdate(prevProps) {
+      if (this.props.hex != prevProps.hex) 
+      {
+        const availableHrs = this.hexToBoolArray(this.props.hex)
+        this.setState({availableHrs})
+      }
+    }
+    
     hexToBin(hex) {
       return (parseInt(hex, 16).toString(2)).padStart(168, '0')
 
