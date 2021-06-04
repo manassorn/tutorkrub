@@ -70,9 +70,9 @@ class ProfileEditAvailableHours extends React.Component {
       <Switcher onChange={this.onSwitcherChange} checked={this.state.isRecurring} label="เวลาเดิมทุกอาทิตย์"/>
       </div>
       
-      <CalendarPartOfDay hex={this.state.recurringHex} ref={this.recurringCalendar}/>
+      {this.state.isRecurring && <CalendarPartOfDay hex={this.state.recurringHex} ref={this.recurringCalendar}/>}
       
-      <CalendarCarousel availability={this.state.availability}/>
+      {!this.state.isRecurring && <CalendarCarousel availability={this.state.availability}/>}
       
       <button className="mt-3 mb-5 btn btn-primary btn-block" onClick={this.saveAvailableHours}>บันทึก</button>
       </div>
