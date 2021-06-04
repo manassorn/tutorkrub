@@ -36,6 +36,7 @@ class ProfileEditAvailableHours extends React.Component {
     }
     
     onSwitcherChange(on) {
+      console.log('oc' ,on)
       this.setState({isRecurring:on})
     }
     
