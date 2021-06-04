@@ -31,16 +31,15 @@ class ProfileEditAvailableHours extends React.Component {
         const recurringHex = availability.recurringHex
         const isRecurring = availability.isRecurring
         //this.refs.calendar.updateActiveHours(hours)
-        setTimeout(() => {
-          that.setState({recurringHex, isRecurring})
-
-        },3001)
+        that.setState({recurringHex, isRecurring})
         });
     }
     
     onSwitcherChange(on) {
-      console.log('oc' ,on)
-      this.setState({isRecurring:on})
+      setTimeout(() => {
+       this.setState({isRecurring:on})
+       
+      },1000)      
     }
     
     saveAvailableHours() {
