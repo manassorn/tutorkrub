@@ -4,18 +4,23 @@ import "./Switcher.scss"
 class Switcher extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+          label: this.props.label,
+          checked: this.props.checked
+        }
     }
 
-    componentDidMount() {
+    onClick(e) {
+      this.setState({checked:!e.target.checked})
     }
 
     render() {
 
         return <div class="checkbox switcher">
       <label for="test">
-        <input type="checkbox" id="test" value=""/>
+        <input type="checkbox" id="test" onClick={e => this.onClick(e)} onChange={e => this.props.onChange(e.target.checked)} value={this.state.checked} />
         <span><small></small></span>
-        <small>ซ้ำกันทุกอาทิตย์</small>
+        <small>{this.state.label}</small>
       </label>
     </div>
     }

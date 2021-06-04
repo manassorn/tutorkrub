@@ -66,7 +66,7 @@ class ProfileEditAvailableHours extends React.Component {
       </div>
       
       <div>
-      <Switcher onChange={this.onSwitcherChange} value={this.state.isRecurring} label="เวลาเดิมทุกอาทิตย์"/>
+      <Switcher onChange={this.onSwitcherChange} checked={this.state.isRecurring} label="เวลาเดิมทุกอาทิตย์"/>
       </div>
       
       <CalendarPartOfDay hex={this.state.recurringHex} ref={this.recurringCalendar}/>
