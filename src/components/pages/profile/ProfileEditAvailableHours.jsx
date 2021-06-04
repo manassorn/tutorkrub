@@ -22,12 +22,13 @@ class ProfileEditAvailableHours extends React.Component {
     }
 
     componentDidMount() {
+      const that = this
       Api.get('/user/me')
         .then(response => {
         const availability = response.data.data.availability
         console.log('avail', availability.recurringHex)
         //this.refs.calendar.updateActiveHours(hours)
-        this.setState({availability})
+        that.setState({availability})
         });
     }
     
