@@ -18,7 +18,7 @@ class ProfileEditAvailableHours extends React.Component {
       }
       this.recurringCalendar = React.createRef()
       
-      this.onCalendarChanged = this.onCalendarChanged.bind(this)
+      this.onSwitcherChange = this.onSwitcherChange.bind(this)
       this.saveAvailableHours = this.saveAvailableHours.bind(this)
       
     }
