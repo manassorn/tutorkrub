@@ -12,7 +12,8 @@ class ProfileEditAvailableHours extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        availability: undefined
+        availability: undefined,
+        recurringHex: undefined
       }
       this.recurringCalendar = React.createRef()
       
@@ -26,9 +27,9 @@ class ProfileEditAvailableHours extends React.Component {
       Api.get('/user/me')
         .then(response => {
         const availability = response.data.data.availability
-        console.log('avail', availability.recurringHex)
+        const recurringHex = availability.recurringHex
         //this.refs.calendar.updateActiveHours(hours)
-        that.setState({availability})
+        that.setState({recurringHex})
         });
     }
     
@@ -65,11 +66,7 @@ class ProfileEditAvailableHours extends React.Component {
       <Switcher/>
       </div>
       
-      {this.state.availability && <CalendarPartOfDay hex={this.state.availability.recurringHex} />}
-      
-      
-      <CalendarPartOfDay hex={this.state.availability?this.state.availability.recurringHex:null} ref={this.recurringCalendar}/>
-      
+      <CalendarPartOfDay hex={this.state.availability.recurringHex} ref={this.recurringCalendar}/>
       
       <CalendarCarousel availability={this.state.availability}/>
       
