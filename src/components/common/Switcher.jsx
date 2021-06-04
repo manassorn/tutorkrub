@@ -6,7 +6,7 @@ class Switcher extends React.Component {
         super(props);
         this.state = {
           label: this.props.label,
-          checked: this.props.checked
+          checked: !!this.props.checked
         }
     }
     
