@@ -67,6 +67,8 @@ class ProfileEditAvailableHours extends React.Component {
       <Switcher/>
       </div>
       
+      {this.state.response && <CalendarPartOfDay hex={this.state.recurringHex} ref={this.recurringCalendar}/>}
+      
       <CalendarPartOfDay hex={this.state.recurringHex} ref={this.recurringCalendar}/>
       
       <CalendarCarousel availability={this.state.availability}/>
