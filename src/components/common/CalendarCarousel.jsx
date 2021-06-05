@@ -30,20 +30,7 @@ class CalendarCarousel extends React.Component {
     render() {
       return <div>
       <div className="d-flex">
-        <div>
-        <span className="bg-secondary radius-10 p-2 d-inline-block"> 
-          <img src="/assets/images/icons/appointment-book.png" width="45" alt=""/> 
 
-        </span> 
-        </div>
-        <div className="ml-3">
-        <h4 className="mb-1">ตารางเวลา</h4>
-        <span className="text-muted">
-        จองล่วงหน้าได้ 8 สัปดาห์
-        </span>
-        </div>
-      </div>
-      
       <div class="mt-3 btn-group d-flex" role="group" aria-label="...">
         <button type="button" class="btn btn-white w-25">
         <a ref={this.prevWeekRangeBtn} class="left carousel-control d-none" href="#carouselWeekRange" data-slide="prev">

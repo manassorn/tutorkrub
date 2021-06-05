@@ -101,6 +101,21 @@ class Course extends React.Component {
 
       <div className="row">
       <div className="col-sm-7 border-top pt-3 mb-3">
+      <div className="d-flex">
+        <div>
+        <span className="bg-secondary radius-10 p-2 d-inline-block"> 
+          <img src="/assets/images/icons/appointment-book.png" width="45" alt=""/> 
+
+        </span> 
+        </div>
+        <div className="ml-3">
+        <h4 className="mb-1">เวลานัดหมาย</h4>
+        <span className="text-muted">
+        จองล่วงหน้าได้ 8 สัปดาห์
+        </span>
+        </div>
+      </div>
+      
         <CalendarCarousel/>
       </div>
 
