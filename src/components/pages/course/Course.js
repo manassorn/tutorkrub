@@ -23,19 +23,18 @@ class Course extends React.Component {
       var a = location.href.split('/')
       var id = a[a.length-1]
       this.courseId = id
-      Api.get(`/course/${id}`)
+      Api.get(`/courses/${id}`)
         .then(response => 
         {
           const course = response.data.data
           this.setState({course})
           const tutorId = course.tutorId
 
-          return Api.get(`/user/${tutorId}/availableHours`)
+          return Api.get(`/users/${tutorId}/availability`)
         }
         ).then(response => {
-          const availableHours = response.data.data
-          const avaHoursBoolArrays = availableHours.split(' ').map(d => d.split('').map(h => h == 1))
-          this.setState({avaHoursBoolArrays})
+          const recurringHex = response.data.data.recurringHex
+          this.setState({recurringHex})
         });
       
     }
@@ -46,7 +45,7 @@ class Course extends React.Component {
     
     createAppointment() {
       console.log(this.courseId)
-      Api.post(`/appointment/course/${this.courseId}`, {
+      Api.post(`/appointments/course/${this.courseId}`, {
         startTime: this.state.selectedDateHour,
         length: 1
       })
