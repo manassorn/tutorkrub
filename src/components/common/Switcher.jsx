@@ -6,23 +6,34 @@ class Switcher extends React.Component {
         super(props);
         this.state = {
           label: this.props.label,
-          checked: !!this.props.checked
+          checked: this.props.checked
         }
+        this.onChange = this.onChange.bind(this)
     }
     
     /*onComponentUpdated(prevProps) {
-      if (this.props.checked != pre)
+      if (this.props.checked != prevProps.checked) {
+        this.checkBox.current.checked = this.props.checked
+      }
+    }
+    
+    onComponentDidMount() {
+      if(this.props.checked) {
+        this.checkBox.current.checked = true
+      }
     }*/
 
-    onClick(e) {
-      this.setState({checked:!e.target.checked})
+    onChange(e) {
+      const checked = !this.state.checked
+      this.setState({checked})
+      this.props.onChange(checked)
     }
 
     render() {
 
         return <div class="checkbox switcher">
       <label for="test">
-        <input type="checkbox" id="test" onClick={e => this.onClick(e)} onChange={e => this.props.onChange(e.target.checked)} checked={this.state.checked} />
+        <input type="checkbox" id="test" onChange={e => this.onChange()} checked={this.state.checked} />
         <span><small></small></span>
         <small>{this.state.label}</small>
       </label>
