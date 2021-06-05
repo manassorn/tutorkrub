@@ -29,7 +29,6 @@ class CalendarCarousel extends React.Component {
 
     render() {
       return <div>
-      <div className="d-flex">
 
       <div class="mt-3 btn-group d-flex" role="group" aria-label="...">
         <button type="button" class="btn btn-white w-25">
