@@ -99,6 +99,9 @@ class CalendarPartOfDay extends React.Component {
       console.log('hextobool')
       if(!hex) return hex
       const bin = this.hexToBin(hex)
+      console.log('bin',bin)
+      console.log('bin2',bin.split(''))
+
       return bin.split('').map(i => i == '1')
     }
     
