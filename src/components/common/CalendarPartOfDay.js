@@ -13,17 +13,21 @@ class CalendarPartOfDay extends React.Component {
     constructor(props) {
       super(props);
       this.startOfWeek = this.props.startOfWeek
-      console.log('hex',this.props.hex)
-      const availableHrs = this.hexToBoolArray(this.props.hex)
-
-      this.bookedHrs = this.props.bookedHrs || []
-      this.bookedByMeHrs = this.props.bookedByMeHrs || []
+      
+      const layer1Hrs = this.hexToBoolArray(this.props.layer1Hex)
+      const layer2Hrs = this.hexToBoolArray(this.props.layer2Hex)
+      const layer3Hrs = this.hexToBoolArray(this.props.layer3Hex)
+      const layer4Hrs = this.hexToBoolArray(this.props.layer4Hex)
+      
       
       this.state = {
         clickedPartIndex: 0,
         clickedDayIndex: 0,
         scheduleHr: undefined,
-        availableHrs,
+        layer1Hrs,
+        layer2Hrs,
+        layer3Hrs,
+        layer4Hrs
       }
       this.daysOfWeekMini = ['จ',
       'อ',
@@ -68,11 +72,16 @@ class CalendarPartOfDay extends React.Component {
     }
     
     componentDidUpdate(prevProps) {
-      if (this.props.hex != prevProps.hex) 
-      {
-        const availableHrs = this.hexToBoolArray(this.props.hex)
-        this.setState({availableHrs})
-      }
+      const newState = {}
+      [1,2,3,4].map(i => {
+        const layerHex = `layer${i}Hex`
+        if (this.props[layerHex] != prevProps[layerHex])
+        {
+          const boolArray = this.hexToBoolArray(this.props[layerHex])
+          newState[`layer${i}Hrs`] = boolArray
+        }
+      })
+      this.setState(newState)
     }
     
     hexToBin(hex) {
@@ -100,13 +109,13 @@ class CalendarPartOfDay extends React.Component {
       return bin.split('').map(i => i == '1')
     }
     
-    getHex() {
-      const bin = this.state.availableHrs.map(i => i? '1' :'0').join('').padEnd(168, '0')
+    getHex(i) {
+      const bin = this.state[`layer${i}Hrs`].map(i => i? '1' :'0').join('').padEnd(168, '0')
       return this.binToHex(bin)
     }
     
     selectPartOfDay(dayIndex, partIndex) {
-      this.hourCheckboxRefs.map((ref, i) => ref.current.checked = this.state.availableHrs[dayIndex][partIndex *6+i])
+      //this.hourCheckboxRefs.map((ref, i) => ref.current.checked = this.state.availableHrs[dayIndex][partIndex *6+i])
       this.setState({clickedDayIndex: dayIndex,
         clickedPartIndex: partIndex
       })
@@ -132,9 +141,18 @@ class CalendarPartOfDay extends React.Component {
     }
     
     getHrClassName(d,p,h) {
-      if (this.state.availableHrs) {
-        return this.state.availableHrs[d*24+p*6+h]?'selected':''
-
+      const hr = d*24+p*6+h
+      if (this.state.layer4Hrs && this.state.layer4Hrs[hr]) {
+        return 'red-glow'
+      }
+      if (this.state.layer3Hrs && this.state.layer3Hrs[hr]) {
+        return 'stripe-green'
+      }
+      if (this.state.layer2Hrs && this.state.layer2Hrs[hr]) {
+        return 'stripe-grey'
+      }
+      if (this.state.layer1Hrs && this.state.layer1Hrs[hr]) {
+        return 'green-glow'
       }
       return ''
     }
@@ -195,6 +213,10 @@ class CalendarPartOfDay extends React.Component {
           <div class="pt-2 pb-2 mb-2 font-weight-bold">{this.daysOfWeek[this.state.clickedDayIndex]}</div>
           
           {[0,1,2,3,4,5].map(i => (
+    <div className={`hour rounded pl-4 pr-4 pt-2 pb-2 mb-2 ${getHrClassName(this.state.clickedDayIndex, this.state.clickedPartIndex,i)}`}>{this.state.clickedPartIndex * 6 + i}:00</div>
+                    
+                    
+                    
                     
 <label class="checkbox">
   <span class="checkbox__input">
