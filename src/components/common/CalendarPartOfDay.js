@@ -15,9 +15,10 @@ class CalendarPartOfDay extends React.Component {
       this.startOfWeek = this.props.startOfWeek
       
       const layer1Hrs = this.hexToBoolArray(this.props.layer1Hex)
-      const layer2Hrs = this.hexToBoolArray(this.props.layer2Hex)
-      const layer3Hrs = this.hexToBoolArray(this.props.layer3Hex)
-      const layer4Hrs = this.hexToBoolArray(this.props.layer4Hex)
+      
+      const layer2Hrs = this.hexToBoolArray(this.props.layer2Hex) || []
+      const layer3Hrs = this.hexToBoolArray(this.props.layer3Hex) || []
+      const layer4Hrs = this.hexToBoolArray(this.props.layer4Hex) || []
       
       
       this.state = {
@@ -95,6 +96,7 @@ class CalendarPartOfDay extends React.Component {
     }
     
     hexToBoolArray(hex) {
+      if(!hex) return hex
       const bin = this.hexToBin(hex)
       return bin.split('').map(i => i == '1')
     }
