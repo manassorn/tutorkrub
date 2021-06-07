@@ -96,6 +96,7 @@ class CalendarPartOfDay extends React.Component {
     }
     
     hexToBoolArray(hex) {
+      console.log('hextobool')
       if(!hex) return hex
       const bin = this.hexToBin(hex)
       return bin.split('').map(i => i == '1')
@@ -126,6 +127,7 @@ class CalendarPartOfDay extends React.Component {
     }
     
     saveHours() {
+      console.log('savehr')
       const availableHrs = this.state.availableHrs
       
       this.hourCheckboxRefs.map((ref, i) => {
