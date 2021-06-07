@@ -74,9 +74,9 @@ class CalendarPartOfDay extends React.Component {
     }
     
     componentDidUpdate(prevProps) {
-      return
+      //return
       const newState = {}
-      [1,2,3,4].map(i => {
+      [1].map(i => {
         const layerHex = `layer${i}Hex`
         if (this.props[layerHex] && this.props[layerHex] != prevProps[layerHex])
         {
@@ -118,7 +118,6 @@ class CalendarPartOfDay extends React.Component {
     }
     
     getHex(i) {
-      console.log('getHex')
       const bin = this.state[`layer${i}Hrs`].map(i => i? '1' :'0').join('').padEnd(168, '0')
       return this.binToHex(bin)
     }
@@ -131,7 +130,6 @@ class CalendarPartOfDay extends React.Component {
     }
     
     saveHours() {
-      console.log('savehr')
       const availableHrs = this.state.availableHrs
       
       this.hourCheckboxRefs.map((ref, i) => {
