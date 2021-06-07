@@ -57,6 +57,7 @@ class CalendarPartOfDay extends React.Component {
       
       this.selectPartOfDay = this.selectPartOfDay.bind(this)
       this.saveHours = this.saveHours.bind(this)
+      this.getHrClassName = this.getHrClassName.bind(this)
     }
 
     componentDidMount() {
@@ -213,7 +214,7 @@ class CalendarPartOfDay extends React.Component {
           <div class="pt-2 pb-2 mb-2 font-weight-bold">{this.daysOfWeek[this.state.clickedDayIndex]}</div>
           
           {[0,1,2,3,4,5].map(i => (
-    <div className={`hour rounded pl-4 pr-4 pt-2 pb-2 mb-2 ${getHrClassName(this.state.clickedDayIndex, this.state.clickedPartIndex,i)}`}>{this.state.clickedPartIndex * 6 + i}:00</div>
+    <div className={`hour rounded pl-4 pr-4 pt-2 pb-2 mb-2 ${this.getHrClassName(this.state.clickedDayIndex, this.state.clickedPartIndex,i)}`}>{this.state.clickedPartIndex * 6 + i}:00</div>
                     
                     
                     
