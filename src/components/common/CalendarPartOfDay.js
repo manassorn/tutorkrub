@@ -218,12 +218,7 @@ class CalendarPartOfDay extends React.Component {
                     
                     
                     
-<label class="checkbox">
-  <span class="checkbox__input">
-    <input type="checkbox" name={this.hourCheckboxRefs[i]} ref={this.hourCheckboxRefs[i]}/>
-    <div class="hour rounded pl-4 pr-4 pt-2 pb-2 mb-2">{this.state.clickedPartIndex * 6 + i}:00</div>
-  </span>
-</label>
+
 
           
           ))}
