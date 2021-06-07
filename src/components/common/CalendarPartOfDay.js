@@ -84,7 +84,7 @@ class CalendarPartOfDay extends React.Component {
           newState[`layer${i}Hrs`] = boolArray
         }
       })
-      this.setState(newState)
+      //this.setState(newState)
     }
     
     hexToBin(hex) {
