@@ -76,7 +76,7 @@ class CalendarPartOfDay extends React.Component {
     componentDidUpdate(prevProps) {
       //return
       const newState = {}
-      [1].map(i => {
+      [1].map((i) => {
         const layerHex = `layer${i}Hex`
         return
         if (this.props[layerHex] && this.props[layerHex] != prevProps[layerHex])
