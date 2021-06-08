@@ -37,6 +37,6 @@ border-bottom-right-radius: 3px;
  + .hour {
   background: #5cb85c;
 }
-.green-glow {
+.hour.green-glow, .hr.green-glow {
   background: #90C750;
 }
