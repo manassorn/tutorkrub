@@ -75,7 +75,7 @@ class CalendarPartOfDay extends React.Component {
     
     componentDidUpdate(prevProps) {
       const newState = {}
-      const a = [1].map((i) => {
+      const a = [1,2,3,4].map((i) => {
         const layerHex = `layer${i}Hex`
         if (this.props[layerHex] && this.props[layerHex] != prevProps[layerHex])
         {
@@ -84,7 +84,7 @@ class CalendarPartOfDay extends React.Component {
           newState[`layer${i}Hrs`] = boolArray
         }
       })
-      //this.setState(newState)
+      this.setState(newState)
     }
     
     hexToBin(hex) {
