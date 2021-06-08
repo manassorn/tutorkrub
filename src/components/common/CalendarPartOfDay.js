@@ -76,16 +76,15 @@ class CalendarPartOfDay extends React.Component {
     componentDidUpdate(prevProps) {
       //return
       const newState = {}
-      return
-      [1].map((i) => {
-        return
+      const i = 1
+      //[1].map((i) => {
         const layerHex = `layer${i}Hex`
         if (this.props[layerHex] && this.props[layerHex] != prevProps[layerHex])
         {
           const boolArray = this.hexToBoolArray(this.props[layerHex])
           newState[`layer${i}Hrs`] = boolArray
         }
-      })
+      //})
       //this.setState(newState)
     }
     
