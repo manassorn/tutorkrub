@@ -77,6 +77,7 @@ class CalendarPartOfDay extends React.Component {
       //return
       const newState = {}
       console.log([1].map(i => i))
+      [1].map(i => i)
       //[0].map(i => i)
       return
       [1].map((i) => {
