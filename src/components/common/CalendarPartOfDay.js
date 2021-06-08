@@ -84,7 +84,6 @@ class CalendarPartOfDay extends React.Component {
           newState[`layer${i}Hrs`] = boolArray
         }
       })
-      console.log('x',Object.keys(newState))
       if(Object.keys(newState).length > 0)
       this.setState(newState)
     }
