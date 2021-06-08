@@ -80,6 +80,7 @@ class CalendarPartOfDay extends React.Component {
         if (this.props[layerHex] && this.props[layerHex] != prevProps[layerHex])
         {
           const boolArray = this.hexToBoolArray(this.props[layerHex])
+          console.log('b',boolArray)
           newState[`layer${i}Hrs`] = boolArray
         }
       })
@@ -96,12 +97,8 @@ class CalendarPartOfDay extends React.Component {
     }
     
     hexToBoolArray(hex) {
-      console.log('hextobool')
       if(!hex) return hex
       const bin = this.hexToBin(hex)
-      console.log('bin',bin)
-      console.log('bin2',bin.split(''))
-
       return bin.split('').map(i => i == '1')
     }
     
