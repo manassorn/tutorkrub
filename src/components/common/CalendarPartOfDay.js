@@ -85,6 +85,7 @@ class CalendarPartOfDay extends React.Component {
         }
       })
       console.log('x',Object.keys(newState))
+      if(Object.keys(newState).length > 0)
       this.setState(newState)
     }
     
