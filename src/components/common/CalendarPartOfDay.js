@@ -176,7 +176,7 @@ class CalendarPartOfDay extends React.Component {
     }
     
     getHrClassNameForModal(d, p, i) {
-      return ''
+      
       if (this.state.modalCheckboxes[i]) {
         return this.getEditingPatternClassName()
       }
