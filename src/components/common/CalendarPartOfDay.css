@@ -35,7 +35,7 @@ border-bottom-right-radius: 3px;
 }
 .checkbox__input input:checked
  + .hour {
-  background: #5cb85c;
+  /*background: #5cb85c;*/
 }
 .hour.green-glow, .hr.green-glow {
   background: #90C750;
