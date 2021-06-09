@@ -12,23 +12,29 @@ class CalendarPartOfDay extends React.Component {
 
     constructor(props) {
       super(props);
-      this.startOfWeek = this.props.startOfWeek
+      this.isEditMode = props.mode=='edit'
+      this.editingLayerIndex = props.editingLayerIndex || 0
+      this.startOfWeek = props.startOfWeek
       
-      const layer1Hrs = this.hexToBoolArray(this.props.layer1Hex)
+      const layer1ActiveHrs = this.hexToBoolArray(props.layer1Hex)
       
-      const layer2Hrs = this.hexToBoolArray(this.props.layer2Hex) || []
-      const layer3Hrs = this.hexToBoolArray(this.props.layer3Hex) || []
-      const layer4Hrs = this.hexToBoolArray(this.props.layer4Hex) || []
+      const layer2ActiveHrs = this.hexToBoolArray(props.layer2Hex) || []
+      const layer3ActiveHrs = this.hexToBoolArray(props.layer3Hex) || []
+      const layer4ActiveHrs = this.hexToBoolArray(props.layer1ActiveHrs) || []
+      
+      const layers = [
+        layer1ActiveHrs,
+        layer2ActiveHrs,
+        layer3ActiveHrs,
+        layer4ActiveHrs,
+        ]
       
       
       this.state = {
         clickedPartIndex: 0,
         clickedDayIndex: 0,
         scheduleHr: undefined,
-        layer1Hrs,
-        layer2Hrs,
-        layer3Hrs,
-        layer4Hrs,
+        layers,
         modalCheckboxes:[]
       }
       this.daysOfWeekMini = ['จ',
@@ -61,6 +67,11 @@ class CalendarPartOfDay extends React.Component {
       this.saveHours = this.saveHours.bind(this)
       this.getHrClassName = this.getHrClassName.bind(this)
       this.onModalCheckboxChange = this.onModalCheckboxChange.bind(this)
+      this.editingLayer = this.editingLayer.bind(this)
+      this.getEditingLayerHex = this.getEditingLayerHex.bind(this)
+      this.getHrClassNameForModal = this.getHrClassNameForModal.bind(this)
+      this.getPatternClassName = this.getPatternClassName.bind(this)
+      this.getEditingPatternClassName = this.getEditingPatternClassName.bind(this)
     }
 
     componentDidMount() {
@@ -76,18 +87,20 @@ class CalendarPartOfDay extends React.Component {
     }
     
     componentDidUpdate(prevProps) {
-      const newState = {}
+      let isChanged = false
+      const layers = this.state.layers
       const a = [1,2,3,4].map((i) => {
         const layerHex = `layer${i}Hex`
         if (this.props[layerHex] && this.props[layerHex] != prevProps[layerHex])
         {
           const boolArray = this.hexToBoolArray(this.props[layerHex])
-          console.log('b',boolArray)
-          newState[`layer${i}Hrs`] = boolArray
+          
+          layers[i-1] = boolArray
+          isChanged = true
         }
       })
-      if(Object.keys(newState).length > 0)
-      this.setState(newState)
+      if(isChanged)
+      this.setState({layers})
     }
     
     hexToBin(hex) {
@@ -116,8 +129,12 @@ class CalendarPartOfDay extends React.Component {
       return bin.split('').map(i => i == '1')
     }
     
-    getHex(i) {
-      const bin = this.state[`layer${i}Hrs`].map(i => i? '1' :'0').join('').padEnd(168, '0')
+    editingLayer() {
+      return this.state.layers[this.editingLayerIndex]
+    }
+    
+    getEditingLayerHex(i) {
+      const bin = this.editingLayer().map(i => i? '1' :'0').join('').padEnd(168, '0')
       return this.binToHex(bin)
     }
     
@@ -130,22 +147,14 @@ class CalendarPartOfDay extends React.Component {
     }
     
     saveHours() {
-      const layer1Hrs = this.state.layer1Hrs
+      const layers = this.state.layers
+      const index = this.editingLayerIndex
       
       this.hourCheckboxRefs.map((ref, i) => {
-        layer1Hrs[this.state.clickedDayIndex * 24 + this.state.clickedPartIndex * 6 + i] = ref.current.checked
+        layers[index][this.state.clickedDayIndex * 24 + this.state.clickedPartIndex * 6 + i] = ref.current.checked
       })
-      this.setState({layer1Hrs})
-      //console.log('setstate', availableHrs[0][0])
+      this.setState({layers})
       
-      //const bin = availableHrs.map(i => i?'1':'0').join('')
-      //const hex = binToHex(bin)
-      /*if(this.isRecurring) {
-        this.props.onRecurringChanged(hex)
-      } else {
-        const startDate = this.startOfWeek
-        this.props.onNonRecurringChanged({startDate, hex})
-      }*/
     }
     
     onModalCheckboxChange(i) {
@@ -155,27 +164,28 @@ class CalendarPartOfDay extends React.Component {
     }
     
     getHrClassName(d,p,i) {
-      const hr = d*24+p*6+i
-      if (this.state.layer4Hrs && this.state.layer4Hrs[hr]) {
-        return 'red-glow'
-      }
-      if (this.state.layer3Hrs && this.state.layer3Hrs[hr]) {
-        return 'stripe-green'
-      }
-      if (this.state.layer2Hrs && this.state.layer2Hrs[hr]) {
-        return 'stripe-grey'
-      }
-      if (this.state.layer1Hrs && this.state.layer1Hrs[hr]) {
-        return 'green-glow'
+      const h = d*24+p*6+i
+      for(let j = this.state.layers.length - 1; j>=0; j--) {
+        if (this.state.layers[j][h]) {
+          return this.getPatternClassName(j)
+        }
       }
       return ''
     }
     
     getHrClassNameForModal(d, p, i) {
       if (this.state.modalCheckboxes[i]) {
-        return 'green-glow'
+        return this.getEditingPatternClassName()
       }
       return ''
+    }
+    
+    getEditingPatternClassName() {
+      return this.getPatternClassName(this.editingLayerIndex)
+    }
+    
+    getPatternClassName(i) {
+      return ['green-glow', 'stripe-grey', 'stripe-green', 'red-glow'][i]
     }
 
     render() {
