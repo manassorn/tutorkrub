@@ -155,9 +155,6 @@ class CalendarPartOfDay extends React.Component {
     }
     
     getHrClassName(d,p,i) {
-      if(this.state.modalCheckboxes[i]) {
-        return 'green-glow'
-      }
       const hr = d*24+p*6+i
       if (this.state.layer4Hrs && this.state.layer4Hrs[hr]) {
         return 'red-glow'
