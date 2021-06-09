@@ -87,6 +87,7 @@ class CalendarPartOfDay extends React.Component {
     }
     
     componentDidUpdate(prevProps) {
+      return
       let isChanged = false
       const layers = this.state.layers
       const a = [1,2,3,4].map((i) => {
