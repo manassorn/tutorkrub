@@ -7,7 +7,7 @@
   border: solid 1px #90C750;
 }
 .modal .hour.selected {
-  background-color: #90C750 !important;
+  /*background-color: #90C750 !important;*/
 }
 .part-of-time .hr {
   line-height: 9px;
