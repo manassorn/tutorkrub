@@ -28,7 +28,8 @@ class CalendarPartOfDay extends React.Component {
         layer1Hrs,
         layer2Hrs,
         layer3Hrs,
-        layer4Hrs
+        layer4Hrs,
+        modalCheckboxes:[]
       }
       this.daysOfWeekMini = ['จ',
       'อ',
@@ -59,6 +60,7 @@ class CalendarPartOfDay extends React.Component {
       this.selectPartOfDay = this.selectPartOfDay.bind(this)
       this.saveHours = this.saveHours.bind(this)
       this.getHrClassName = this.getHrClassName.bind(this)
+      this.onModalCheckboxChange = this.onModalCheckboxChange.bind(this)
     }
 
     componentDidMount() {
@@ -120,9 +122,10 @@ class CalendarPartOfDay extends React.Component {
     }
     
     selectPartOfDay(dayIndex, partIndex) {
-      //this.hourCheckboxRefs.map((ref, i) => ref.current.checked = this.state.availableHrs[dayIndex][partIndex *6+i])
+      const modalCheckboxes = this.hourCheckboxRefs.map((ref, i) =>  this.state.availableHrs[dayIndex][partIndex *6+i])
       this.setState({clickedDayIndex: dayIndex,
-        clickedPartIndex: partIndex
+        clickedPartIndex: partIndex,
+        modalCheckboxes
       })
     }
     
@@ -143,6 +146,12 @@ class CalendarPartOfDay extends React.Component {
         const startDate = this.startOfWeek
         this.props.onNonRecurringChanged({startDate, hex})
       }*/
+    }
+    
+    onModalCheckboxChange(i) {
+      const modalCheckboxes = this.state.modalCheckboxes
+      modalCheckboxes[i] = !modalCheckboxes[i]
+      this.setState({modalCheckboxes})
     }
     
     getHrClassName(d,p,h) {
@@ -221,7 +230,7 @@ class CalendarPartOfDay extends React.Component {
     
 <label class="checkbox">
   <span class="checkbox__input">
-    <input type="checkbox" name={this.hourCheckboxRefs[i]} ref={this.hourCheckboxRefs[i]}/>
+    <input type="checkbox" onChange={e => this.onModalCheckboxChange(i)} check={this.state.modalCheckboxes[i]} ref={this.hourCheckboxRefs[i]} />
     <div className={`hour rounded pl-4 pr-4 pt-2 pb-2 mb-2 ${this.getHrClassName(this.state.clickedDayIndex, this.state.clickedPartIndex,i)}`}>{this.state.clickedPartIndex * 6 + i}:00</div>
   </span>
 </label>           
