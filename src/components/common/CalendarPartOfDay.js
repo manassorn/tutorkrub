@@ -130,12 +130,12 @@ class CalendarPartOfDay extends React.Component {
     }
     
     saveHours() {
-      const availableHrs = this.state.availableHrs
+      const layer1Hrs = this.state.layer1Hrs
       
       this.hourCheckboxRefs.map((ref, i) => {
         availableHrs[this.state.clickedDayIndex * 24 + this.state.clickedPartIndex * 6 + i] = ref.current.checked
       })
-      this.setState({availableHrs})
+      this.setState({layer1Hrs})
       //console.log('setstate', availableHrs[0][0])
       
       //const bin = availableHrs.map(i => i?'1':'0').join('')
