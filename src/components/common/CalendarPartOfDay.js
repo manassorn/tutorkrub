@@ -16,7 +16,7 @@ class CalendarPartOfDay extends React.Component {
       this.editingLayerIndex = props.editingLayerIndex || 0
       this.startOfWeek = props.startOfWeek
       
-      const layer1ActiveHrs = this.hexToBoolArray(props.layer1Hex)
+      const layer1ActiveHrs = this.hexToBoolArray(props.layer1Hex) || []
       
       const layer2ActiveHrs = this.hexToBoolArray(props.layer2Hex) || []
       const layer3ActiveHrs = this.hexToBoolArray(props.layer3Hex) || []
@@ -87,7 +87,6 @@ class CalendarPartOfDay extends React.Component {
     }
     
     componentDidUpdate(prevProps) {
-      return
       let isChanged = false
       const layers = this.state.layers
       const a = [1,2,3,4].map((i) => {
