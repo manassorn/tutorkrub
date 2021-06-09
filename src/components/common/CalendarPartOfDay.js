@@ -173,6 +173,13 @@ class CalendarPartOfDay extends React.Component {
       }
       return ''
     }
+    
+    getHrClassNameForModal(d, p, i) {
+      if (this.state.modalCheckboxes[i]) {
+        return 'green-glow'
+      }
+      return ''
+    }
 
     render() {
       return <div>
@@ -234,7 +241,7 @@ class CalendarPartOfDay extends React.Component {
 <label class="checkbox">
   <span class="checkbox__input">
     <input type="checkbox" onChange={e => this.onModalCheckboxChange(i)} check={this.state.modalCheckboxes[i]} ref={this.hourCheckboxRefs[i]} />
-    <div className={`hour rounded pl-4 pr-4 pt-2 pb-2 mb-2 ${this.getHrClassName(this.state.clickedDayIndex, this.state.clickedPartIndex,i)}`}>{this.state.clickedPartIndex * 6 + i}:00</div>
+    <div className={`hour rounded pl-4 pr-4 pt-2 pb-2 mb-2 ${this.getHrClassNameForModal(this.state.clickedDayIndex, this.state.clickedPartIndex,i)}`}>{this.state.clickedPartIndex * 6 + i}:00</div>
   </span>
 </label>           
           
