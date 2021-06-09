@@ -150,8 +150,8 @@ class CalendarPartOfDay extends React.Component {
       const layers = this.state.layers
       const index = this.editingLayerIndex
       
-      this.hourCheckboxRefs.map((ref, i) => {
-        layers[index][this.state.clickedDayIndex * 24 + this.state.clickedPartIndex * 6 + i] = ref.current.checked
+      this.state.modalCheckboxes.map((bool, i) => {
+        layers[index][this.state.clickedDayIndex * 24 + this.state.clickedPartIndex * 6 + i] = bool
       })
       this.setState({layers})
       
