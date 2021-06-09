@@ -170,6 +170,7 @@ class CalendarPartOfDay extends React.Component {
         console.log('j', j)
         console.log('h', h)
         if (this.state.layers[j][h]) {
+          return ''
           return this.getPatternClassName(j)
         }
       }
