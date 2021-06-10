@@ -155,7 +155,7 @@ class CalendarPartOfDay extends React.Component {
       })
       this.setState({layers})
       
-      this.props.onSaved(layers[this.editingLayerIndex])
+      this.props.onSaved(this.getEditingLayerHex())
     }
     
     onModalCheckboxChange(i) {
