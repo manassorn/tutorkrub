@@ -37,6 +37,7 @@ class CalendarPartOfDay extends React.Component {
         layers,
         modalCheckboxes:[]
       }
+      this.modalRandom = Math.floor(Math.random() * 1000000)
       this.daysOfWeekMini = ['จ',
       'อ',
       'พ',
@@ -217,7 +218,7 @@ class CalendarPartOfDay extends React.Component {
           <div class="col-3">{this.partsOfDay[p]}<br/>{this.partsOfDayTime[p]}</div>
           
           {[0,1,2,3,4,5,6].map(d => (
-            <div class="part-of-time col-1 rounded m-1 bg-light p-0" data-toggle="modal" data-target="#calendarPartOfDayModal" onClick={e => this.selectPartOfDay(d,p)}>
+            <div class="part-of-time col-1 rounded m-1 bg-light p-0" data-toggle="modal" data-target={`#calendarPartOfDayModal${this.modalRandom}`} onClick={e => this.selectPartOfDay(d,p)}>
             
             {[0,1,2,3,4,5].map(h => (
               <div className={`hr ${this.getHrClassName(d,p,h)}`}> &nbsp;</div>
@@ -233,7 +234,7 @@ class CalendarPartOfDay extends React.Component {
         </div>
       ))}
       
-        <div class="modal fade" id="calendarPartOfDayModal" tabindex="-1" role="dialog" aria-labelledby="calendarPartOfDayModalTitle" aria-hidden="true">
+        <div class="modal fade" id={`calendarPartOfDayModal${this.modalRandom}`} tabindex="-1" role="dialog" aria-labelledby="calendarPartOfDayModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
