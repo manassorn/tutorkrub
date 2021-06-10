@@ -19,7 +19,7 @@ class ProfileEditAvailableHours extends React.Component {
       this.recurringCalendar = React.createRef()
       
       this.onSwitcherChange = this.onSwitcherChange.bind(this)
-      this.saveAvailableHours = this.saveAvailableHours.bind(this)
+      this.saveRecurring = this.saveRecurring.bind(this)
       
     }
 
@@ -41,8 +41,7 @@ class ProfileEditAvailableHours extends React.Component {
       },150)      
     }
     
-    saveAvailableHours() {
-      const recurringHex = this.recurringCalendar.current.getHex()
+    saveRecurring(recurringHex) {
       const isRecurring = this.state.isRecurring
       Api.post('/user/me/availability', {availability: {recurringHex,isRecurring}}).then(() => {
         location.href = '/user'
@@ -71,7 +70,7 @@ class ProfileEditAvailableHours extends React.Component {
       <Switcher onChange={this.onSwitcherChange} checked={this.state.isRecurring} label="เวลาเดิมทุกอาทิตย์"/>
       </div>
       
-      {this.state.isRecurring && <CalendarPartOfDay layer1Hex={this.state.recurringHex} ref={this.recurringCalendar}/>}
+      {this.state.isRecurring && <CalendarPartOfDay layer1Hex={this.state.recurringHex} ref={this.recurringCalendar} onSaved={hex => this.saveRecurring(hex)}/>}
       
       {!this.state.isRecurring && <CalendarCarousel availability={this.state.availability}/>}
       
