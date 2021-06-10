@@ -44,7 +44,7 @@ class ProfileEditAvailableHours extends React.Component {
     saveRecurring(recurringHex) {
       const isRecurring = this.state.isRecurring
       Api.post('/user/me/availability', {availability: {recurringHex,isRecurring}}).then(() => {
-        location.href = '/user'
+        //todo
       })
     }
     
