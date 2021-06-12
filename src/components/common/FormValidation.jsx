@@ -51,6 +51,7 @@ class FormValidation extends React.Component {
       event.preventDefault()
       return false
     }
+    console.log('submittt')
     return this.props.onSubmit?.(event)
   }
 
