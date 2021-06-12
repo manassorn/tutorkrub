@@ -9,7 +9,7 @@ import CourseEdit from "./components/pages/course/CourseEdit"
 import Explore from "./components/pages/explore/Explore"
 import Profile from "./components/pages/profile/Profile"
 import ProfileEdit from "./components/pages/profile/ProfileEdit"
-import ProfileEditAvailableHours from "./components/pages/profile/ProfileEditAvailableHours"
+import ProfileEditAvailability from "./components/pages/profile/ProfileEditAvailability"
 import ProfileEditEmail from "./components/pages/profile/ProfileEditEmail"
 import ProfileEditAvatar from "./components/pages/profile/ProfileEditAvatar"
 import ProfileEditEmailVerifyCode from "./components/pages/profile/ProfileEditEmailVerifyCode"
@@ -54,7 +54,7 @@ class App extends React.Component {
               <Route path="/course" component={Course} />
               <Route path="/pay" component={Pay} />
               <Route path="/user/edit/avatar" component={ProfileEditAvatar} />
-              <Route path="/user/edit/availableHours" component={ProfileEditAvailableHours} />
+              <Route path="/user/edit/availability" component={ProfileEditAvailability} />
               <Route path="/user/edit/email" component={ProfileEditEmail} />
               <Route path="/user/edit/email/verifycode" component={ProfileEditEmailVerifyCode} />
               <Route path="/user/edit" component={ProfileEdit} />
