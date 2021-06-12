@@ -48,9 +48,13 @@ class FormValidation extends React.Component {
       event.preventDefault()
       return false
     }
+            console.log('submittt2')
+
     if (!this.props.validate?.()) {
       form.classList.add('was-validated');
       event.preventDefault()
+              console.log('submittt3')
+
       return false
     }
     return this.props.onSubmit?.(event)
