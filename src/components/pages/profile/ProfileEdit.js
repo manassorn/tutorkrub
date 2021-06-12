@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import Api from '../../../Api'
 import SimpleTitle from '../../common/SimpleTitle'
 import './ProfileEdit.css'
@@ -75,13 +76,16 @@ class ProfileEdit extends React.Component {
            <h6 class="mb-0 text-muted">Skype ID</h6> 
            <b id="skype-id-display">{this.state.user.skypeId || '-'}</b> 
           </div> 
-          <a href="javascript:;" edit-section="edit-skype-id-section" class="edit-link">แก้ไข</a> 
+          <Link to='/user/edit/skypeid'>
+            แก้ไข
+          </Link>
          </div> 
          <div class="d-flex justify-content-between"> 
           <div> 
            <h6 class="mb-0 text-muted">Zoom ID</h6> 
            <b id="zoom-id-display">{this.state.user.zoomId || '-'}</b> 
           </div> 
+          
           <a href="javascript:;" edit-section="edit-zoom-id-section" class="edit-link">แก้ไข</a> 
          </div> 
         </div> 
