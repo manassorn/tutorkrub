@@ -29,7 +29,9 @@ class ProfileEditSkypeId extends React.Component {
     submit() {
       const skypeId = this.input.value
       Api.post('/user/me', {skypeId})
-      .then(() => {})
+      .then(() => {
+        location.href = '/user/edit'
+      })
     }
     
     render() {
