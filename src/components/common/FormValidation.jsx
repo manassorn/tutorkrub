@@ -40,6 +40,8 @@ class FormValidation extends React.Component {
   }
   
   onSubmit(event) {
+        console.log('submittt1')
+
     const form = this.form.current
     if (form.checkValidity() === false) {
       form.classList.add('was-validated');
@@ -51,7 +53,6 @@ class FormValidation extends React.Component {
       event.preventDefault()
       return false
     }
-    console.log('submittt')
     return this.props.onSubmit?.(event)
   }
 
