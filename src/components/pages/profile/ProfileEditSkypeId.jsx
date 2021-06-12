@@ -20,7 +20,7 @@ class ProfileEditSkypeId extends React.Component {
         .then(response => 
         {
           const user = response.data.data
-          that.inputRef.current.value = user.skypeId
+          that.input.value = user.skypeId
         }
         );
       
