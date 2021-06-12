@@ -42,7 +42,11 @@ class ProfileEditSkypeId extends React.Component {
               <div class="form-group"> 
                <label for="email-input">Skype ID</label>
                <input type="text" ref={ele=> this.input= ele} class="form-control" id="input" placeholder="" required/> 
+                <div class="invalid-feedback">
+                        โปรดกรอก Skype ID
+                </div>
               </div> 
+              
               <button type="submit" class="btn btn-primary btn-block mb-2">บันทึก</button> 
              </FormValidation> 
         </div> 
