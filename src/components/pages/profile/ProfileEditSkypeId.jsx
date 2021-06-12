@@ -1,6 +1,6 @@
 import React from "react";
 import Api from '../../../Api'
-import FormValidation from '../../../common/FormValidation'
+import FormValidation from '../../common/FormValidation'
 import SimpleTitle from '../../common/SimpleTitle'
 
 class ProfileEditSkypeId extends React.Component {
