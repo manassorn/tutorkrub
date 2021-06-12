@@ -50,7 +50,7 @@ class FormValidation extends React.Component {
     }
             console.log('submittt2')
 
-    if (!this.props.validate?.()) {
+    if (this.props.validate && !this.props.validate()) {
       form.classList.add('was-validated');
       event.preventDefault()
               console.log('submittt3')
