@@ -38,7 +38,7 @@ class ProfileEditSkypeId extends React.Component {
       <div>
         <SimpleTitle title="แก้ไข Skype ID" backBtn></SimpleTitle> 
         <div class = "border-top pt-3" >
-              <FormValidation ref={this.form} validate={this.validate} onSubmit={e => this.submit(e)}>
+              <FormValidation ref={this.form} onSubmit={e => this.submit(e)}>
               <div class="form-group"> 
                <label for="email-input">Skype ID</label>
                <input type="text" ref={ele=> this.input= ele} class="form-control" id="input" placeholder="" required/> 
