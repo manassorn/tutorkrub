@@ -78,7 +78,7 @@ class ProfileEditAvatar extends React.Component {
       */
       this.croppieInstance.result({
           type: "blob",
-          size: {width:800},
+          size: {width:700},
           format: "png",
           quality: 1
         }).then(function(blob) {
