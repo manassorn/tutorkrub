@@ -68,7 +68,6 @@ class ProfileEditAvatar extends React.Component {
     }
     
     uploadImageFile() {
-      var id = Me.userId()
       /*
       this.croppieInstance.result('blob', 'original','png',1).then(function(blob) {
         var formData = new FormData()
@@ -89,8 +88,8 @@ class ProfileEditAvatar extends React.Component {
         //canvas.toBlob((blob) => {
           var formData = new FormData()
           formData.append('file', blob)
-          alert('ff',id)
-          Api.post(`/upload/to/Users/${id}/avatarUrl`, formData).then(() => {
+          alert('ff')
+          Api.post('/user/me/avatar', formData).then(() => {
             alert('e')
             location.href = '/user/edit'
           }).catch(() => {
