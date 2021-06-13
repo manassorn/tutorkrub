@@ -20,7 +20,7 @@ class ProfileEditZoomId extends React.Component {
         .then(response => 
         {
           const user = response.data.data
-          that.simpleEdit.setValue(user.zoomId)
+          that.simpleEdit.current.setValue(user.zoomId)
           console.log('setv',user.zoomId)
         }
         );
