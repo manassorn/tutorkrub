@@ -11,6 +11,7 @@ import Profile from "./components/pages/profile/Profile"
 import ProfileEdit from "./components/pages/profile/ProfileEdit"
 import ProfileEditAvailability from "./components/pages/profile/ProfileEditAvailability"
 import ProfileEditSkypeId from "./components/pages/profile/ProfileEditSkypeId"
+import ProfileEditZoomId from "./components/pages/profile/ProfileEditZoomId"
 import ProfileEditEmail from "./components/pages/profile/ProfileEditEmail"
 import ProfileEditAvatar from "./components/pages/profile/ProfileEditAvatar"
 import ProfileEditEmailVerifyCode from "./components/pages/profile/ProfileEditEmailVerifyCode"
@@ -56,6 +57,7 @@ class App extends React.Component {
               <Route path="/pay" component={Pay} />
               <Route path="/user/edit/avatar" component={ProfileEditAvatar} />
               <Route path="/user/edit/skypeid" component={ProfileEditSkypeId} />
+              <Route path="/user/edit/zoomid" component={ProfileEditZoomId} />
               <Route path="/user/edit/availability" component={ProfileEditAvailability} />
               <Route path="/user/edit/email" component={ProfileEditEmail} />
               <Route path="/user/edit/email/verifycode" component={ProfileEditEmailVerifyCode} />

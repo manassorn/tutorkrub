@@ -86,7 +86,9 @@ class ProfileEdit extends React.Component {
            <b id="zoom-id-display">{this.state.user.zoomId || '-'}</b> 
           </div> 
           
-          <a href="javascript:;" edit-section="edit-zoom-id-section" class="edit-link">แก้ไข</a> 
+          <Link to='/user/edit/zoomid'>
+            แก้ไข
+          </Link>
          </div> 
         </div> 
        </div> 
