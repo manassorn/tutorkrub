@@ -78,8 +78,12 @@ class ProfileEditAvatar extends React.Component {
         })
       })
       */
-      this.croppieInstance.result('rawcanvas', 'original', 'png', 1).then(function(canvas) {
-        console.log(canvas)
+      this.croppieInstance.result({
+          type: "canvas",
+          size: "original",
+          format: "png",
+          quality: 1
+        }).then(function(canvas) {
         canvas.toBlob((blob) => {
           var formData = new FormData()
           formData.append('file', blob)
