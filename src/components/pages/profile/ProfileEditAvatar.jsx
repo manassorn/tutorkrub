@@ -52,12 +52,10 @@ class ProfileEditAvatar extends React.Component {
       if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function(event) {
-          alert('a')
           that.croppieInstance.bind( {
             url: event.target.result,
             zoom:1
           });
-          alert('b')
           
           that.setState({avatar:'previewImage'})
           
@@ -80,16 +78,19 @@ class ProfileEditAvatar extends React.Component {
         })
       })
       */
+    alert('c')
       this.croppieInstance.result({
           type: "blob",
           size: "original",
           format: "png",
           quality: 1
         }).then(function(blob) {
+          alert('d')
         //canvas.toBlob((blob) => {
           var formData = new FormData()
           formData.append('file', blob)
           Api.post(`/upload/to/Users/${id}/avatarUrl`, formData).then(() => {
+            alert('e')
             location.href = '/user/edit'
           })
         //}, 'image/png',1)
