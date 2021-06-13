@@ -89,10 +89,12 @@ class ProfileEditAvatar extends React.Component {
         //canvas.toBlob((blob) => {
           var formData = new FormData()
           formData.append('file', blob)
-          alert('ff')
+          alert('ff',id)
           Api.post(`/upload/to/Users/${id}/avatarUrl`, formData).then(() => {
             alert('e')
             location.href = '/user/edit'
+          }).catch(() => {
+            alert('error')
           })
         //}, 'image/png',1)
         
