@@ -1,7 +1,7 @@
 import React from "react";
 import Api from '../../Api'
-import FormValidation from './common/FormValidation'
-import SimpleTitle from './common/SimpleTitle'
+import FormValidation from './FormValidation'
+import SimpleTitle from './SimpleTitle'
 
 class SimpleEdit extends React.Component {
   
