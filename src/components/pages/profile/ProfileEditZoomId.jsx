@@ -39,4 +39,4 @@ class ProfileEditZoomId extends React.Component {
     }
 }
 
-export default ProfileEditSkypeId
+export default ProfileEditZoomId
