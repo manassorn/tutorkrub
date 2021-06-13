@@ -34,7 +34,7 @@ class ProfileEditZoomId extends React.Component {
     }
     
     render() {
-      return <SimpleEdit fieldName="Zoom ID" onSubmit={val => this.submit(val)} />
+      return <SimpleEdit ref={this.simpleEdit} fieldName="Zoom ID" onSubmit={val => this.submit(val)} />
 
     }
 }

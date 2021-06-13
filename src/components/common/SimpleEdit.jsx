@@ -29,7 +29,7 @@ class SimpleEdit extends React.Component {
       return      <div class="container" style={{maxWidth:'720px'}}>
       
       <div>
-        <SimpleTitle title={`แก้ไข ${this.field}`} backBtn></SimpleTitle> 
+        <SimpleTitle title={`แก้ไข ${this.fieldName}`} backBtn></SimpleTitle> 
         <div class = "border-top pt-3" >
               <FormValidation ref={this.form} onSubmit={e => this.submit(e)}>
               <div class="form-group"> 
