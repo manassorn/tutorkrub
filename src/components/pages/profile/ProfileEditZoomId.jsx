@@ -27,7 +27,7 @@ class ProfileEditZoomId extends React.Component {
     }
     
     submit(value) {
-      console.log('submitt')
+      console.log('submitt',value)
       Api.post('/user/me', {zoomId: value})
       .then(() => {
         location.href = '/user/edit'
