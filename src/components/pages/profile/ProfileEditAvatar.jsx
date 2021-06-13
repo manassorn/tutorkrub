@@ -54,7 +54,6 @@ class ProfileEditAvatar extends React.Component {
         reader.onload = function(event) {
           that.croppieInstance.bind( {
             url: event.target.result,
-            zoom:1
           });
           
           that.setState({avatar:'previewImage'})
@@ -77,20 +76,16 @@ class ProfileEditAvatar extends React.Component {
         })
       })
       */
-    alert('c')
       this.croppieInstance.result({
           type: "blob",
-          size: "original",
+          size: {width:800},
           format: "png",
           quality: 1
         }).then(function(blob) {
-          alert('d')
         //canvas.toBlob((blob) => {
           var formData = new FormData()
           formData.append('file', blob)
-          alert('ff')
           Api.post('/user/me/avatar', formData).then(() => {
-            alert('e')
             location.href = '/user/edit'
           }).catch((reason) => {
             alert(reason)
