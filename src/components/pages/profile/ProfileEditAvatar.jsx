@@ -92,8 +92,8 @@ class ProfileEditAvatar extends React.Component {
           Api.post('/user/me/avatar', formData).then(() => {
             alert('e')
             location.href = '/user/edit'
-          }).catch(() => {
-            alert('error')
+          }).catch((reason) => {
+            alert(reason)
           })
         //}, 'image/png',1)
         
