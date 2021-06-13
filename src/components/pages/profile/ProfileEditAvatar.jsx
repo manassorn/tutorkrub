@@ -52,11 +52,12 @@ class ProfileEditAvatar extends React.Component {
       if (input.files && input.files[0]) {
         var reader = new FileReader();
         reader.onload = function(event) {
-          
+          alert('a')
           that.croppieInstance.bind( {
             url: event.target.result,
             zoom:1
           });
+          alert('b')
           
           that.setState({avatar:'previewImage'})
           
