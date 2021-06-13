@@ -60,7 +60,7 @@ class ProfileEditAvatar extends React.Component {
           const img = new Image()
           img.src = event.target.result
           img.onload = ()=>{
-            console.log('w',img.naturalWidth)
+            alert(img.naturalWidth)
           }
           
           that.setState({avatar:'previewImage'})
