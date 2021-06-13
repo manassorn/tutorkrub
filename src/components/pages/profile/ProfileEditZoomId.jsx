@@ -21,14 +21,12 @@ class ProfileEditZoomId extends React.Component {
         {
           const user = response.data.data
           that.simpleEdit.current.setValue(user.zoomId)
-          console.log('setv',user.zoomId)
         }
         );
       
     }
     
     submit(value) {
-      console.log('submitt',value)
       Api.post('/user/me', {zoomId: value})
       .then(() => {
         location.href = '/user/edit'
