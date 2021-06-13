@@ -54,14 +54,9 @@ class ProfileEditAvatar extends React.Component {
         reader.onload = function(event) {
           
           that.croppieInstance.bind( {
-            url: event.target.result
+            url: event.target.result,
+            zoom:1
           });
-          
-          const img = new Image()
-          img.src = event.target.result
-          img.onload = ()=>{
-            alert(img.naturalWidth)
-          }
           
           that.setState({avatar:'previewImage'})
           
