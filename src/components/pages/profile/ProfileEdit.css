@@ -6,6 +6,8 @@
 .edit-icon {
   position: absolute;
   background: #D1D1D2;
+  color: #fff;
+  background-color: #007bff;
   border-radius: 50%;
   width:30px;
   height: 30px;
@@ -15,5 +17,4 @@
   display:flex;
   justify-content: center;
   align-items: center;
-  border: solid 1px #6E6E6E;
 }
