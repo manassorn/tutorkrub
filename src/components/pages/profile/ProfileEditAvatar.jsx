@@ -2,6 +2,7 @@ import React from "react";
 import Api from '../../../Api'
 import Me from '../../../Me'
 import SimpleTitle from '../../common/SimpleTitle'
+import ButtonSpinner from '../../common/ButtonSpinner'
 import Croppie from 'croppie'
 import "croppie/croppie.css"
 
@@ -116,14 +117,14 @@ class ProfileEditAvatar extends React.Component {
       </div>
       
 
-       <div id="upload-edit" className={this.state.avatar == 'previewImage'? '' :'d-nonex'}>
+       <div id="upload-edit" className={this.state.avatar == 'previewImage'? '' :'d-none'}>
         <div ref={this.uploadPreview} id="upload-preview" style={{height:'350px'}}></div>
 
         <div class="p-3 text-center" style={{lineHeight:'30px'}}>
          <a href="#" onClick={e => this.croppieInstance.rotate(-90)} className="btn btn-outline-primary">หมุนรูป <i className="bx bx-rotate-right"></i></a>   &nbsp;&nbsp;&nbsp;
          <a href="#" onClick={e => this.uploadInput.current.click()} className="btn btn-outline-primary">เลือกรูปใหม่ <i className="bx bx-folder-open"></i></a>
         </div>
-        <button id="submit-btn" class="btn btn-primary btn-block" onClick={this.uploadImageFile}>บันทึก</button>
+        <ButtonSpinner onClick={e => this.uploadImageFile(e)}/>
        </div>
 
        
