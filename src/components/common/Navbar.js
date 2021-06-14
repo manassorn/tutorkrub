@@ -73,7 +73,7 @@ class Navbar extends React.Component {
       this.secretCount = this.secretCount || 0;
       if(++this.secretCount == 5) {
         alert('ok')
-        $
+        $('#exampleModal').modal('show')
       }
     }
 
