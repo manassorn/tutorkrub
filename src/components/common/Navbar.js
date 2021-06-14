@@ -72,7 +72,7 @@ class Navbar extends React.Component {
     render() {
 
         return <header className="top-header">
-            <nav className="navbar navbar-expand">
+            <nav className="navbar navbar-expand bg-primary">
                 <div className="left-topbar d-flex align-items-center">
                     <div className="logo-white">
                     <Link to="/">
@@ -86,7 +86,7 @@ class Navbar extends React.Component {
                     </div>
                 </div>
                 
-                <div className="flex-grow-1">
+                <div className="flex-grow-1 bg-danger">
                   
                   
                   <Link className="pl-4" to="/explore">สำรวจวิชาเรียน <span class="sr-only">(current)</span></Link>
