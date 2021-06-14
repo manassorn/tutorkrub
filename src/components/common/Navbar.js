@@ -14,6 +14,7 @@ class Navbar extends React.Component {
         };
         this.devlogin = this.devlogin.bind(this)
         this.logout = this.logout.bind(this)
+        this.activateSecretPanel = this.activateSecretPanel.bind(this)
     }
 
     componentDidMount() {
@@ -67,12 +68,20 @@ class Navbar extends React.Component {
           alert('error')
         })
     }
+    
+    activateSecretPanel() {
+      this.secretCount = this.secretCount || 0;
+      if(++this.secretCount == 5) {
+        alert('ok')
+        $('#exampleModal').modal('show')
+      }
+    }
 
 
     render() {
 
         return <header className="top-header">
-            <nav className="navbar navbar-expand bg-primary">
+            <nav className="navbar navbar-expand">
                 <div className="left-topbar d-flex align-items-center">
                     <div className="logo-white">
                     <Link to="/">
@@ -86,7 +95,7 @@ class Navbar extends React.Component {
                     </div>
                 </div>
                 
-                <div className="flex-grow-1 bg-danger">
+                <div className="flex-grow-1" onClick={e => this.activateSecretPanel(e)}>
                   
                   
                   <Link className="pl-4" to="/explore">สำรวจวิชาเรียน <span class="sr-only">(current)</span></Link>
@@ -171,6 +180,26 @@ class Navbar extends React.Component {
                 
                 
             </nav>
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
         </header>
     }
 }
