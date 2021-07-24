@@ -72,9 +72,16 @@ class Navbar extends React.Component {
     activateSecretPanel() {
       this.secretCount = this.secretCount || 0;
       if(++this.secretCount == 5) {
-        alert('ok')
         $('#exampleModal').modal('show')
+        this.secretCount = 0
       }
+      if(this.secretCount == 1) {
+        const that = this;
+        setTimeout(() => {
+          that.secretCount = 0
+        }, 3000)
+      }
+      
     }
 
 

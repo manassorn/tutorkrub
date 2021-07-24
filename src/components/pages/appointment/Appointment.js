@@ -4,6 +4,7 @@ import Utils from '../../../Utils'
 import SimpleTitle from '../../common/SimpleTitle'
 import AppointmentChat from './AppointmentChat'
 import AppointmentProgressBar from './AppointmentProgressBar'
+import ActionCardNew from './actionCards/New'
 import './Appointment.css'
 
 class Appointment extends React.Component {
@@ -78,12 +79,7 @@ class Appointment extends React.Component {
         </div>
         
         
-        <div className="alert alert-warning">
-        <h4>รอชำระเงิน</h4>
-        <hr/>
-        <p>นัดหมายจะถูกส่งไปหาติวเตอร์หลังจากชำระเงิน</p>
-        <a href="#" className="btn btn-warning">ชำระเงิน</a>
-        </div>
+        <ActionCardNew/>
         
         <div className="alert alert-info">
           <h4>รอติวเตอร์ตอบรับ</h4>
