@@ -1,6 +1,6 @@
 import React from "react";
 
-class Appointment extends React.Component {
+class ActionCardNew extends React.Component {
     
   render() {
     return <div className="alert alert-warning">
@@ -12,3 +12,4 @@ class Appointment extends React.Component {
       
   }
 }
+export default ActionCardNew
