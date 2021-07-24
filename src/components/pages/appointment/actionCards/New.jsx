@@ -3,11 +3,15 @@ import React from "react";
 class ActionCardNew extends React.Component {
     
   render() {
-    return <div className="alert alert-warning">
-      <h4>รอชำระเงิน</h4>
+    return <div className="alert alert-info">
+      <h4>รอติวเตอร์ตอบรับ</h4>
       <hr/>
-      <p>นัดหมายจะถูกส่งไปหาติวเตอร์หลังจากชำระเงิน</p>
-      <a href="#" className="btn btn-warning">ชำระเงิน</a>
+      <p>นัดหมายได้ถูกส่งไปยังติวเตอร์ ติวเตอร์จะตอบรับภายใน 24 ชั่วโมง
+      <ul><li>
+      หากติวเตอร์ไม่ตอบรับ นัดหมายจะถูกยกเลิก และเงินจะถูกคืนใน กระเป๋าตังค์
+      </li></ul>
+      </p>
+      <a href="#" className="btn btn-danger">ยกเลิกนัดหมาย</a>
     </div>
       
   }
