@@ -66,7 +66,7 @@ class Register extends React.Component {
       const name = this.name.value
       const password =this.pwd.value
       
-      Api.post('/user', {email, name, password}).then(() => {
+      Api.post('/register', {email, name, password}).then(() => {
         location.href = '/course/explore'
       })
       

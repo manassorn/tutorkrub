@@ -4,7 +4,7 @@ import Utils from '../../../Utils'
 import SimpleTitle from '../../common/SimpleTitle'
 import AppointmentChat from './AppointmentChat'
 import AppointmentProgressBar from './AppointmentProgressBar'
-import ActionCardNew from './actionCards/New'
+import StudentNewActionCard from './actionCards/StudentNew'
 import './Appointment.css'
 
 class Appointment extends React.Component {
@@ -79,7 +79,7 @@ class Appointment extends React.Component {
         </div>
         
         
-        <ActionCardNew/>
+        <StudentNewActionCard/>
         
         <div className="alert alert-info">
           <h4>รอติวเตอร์ตอบรับ</h4>

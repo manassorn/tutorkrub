@@ -1,9 +1,9 @@
 import React from "react";
 
-class ActionCardNew extends React.Component {
+class StudentDisputeActionCard extends React.Component {
     
   render() {
-    return <div className="alert alert-info">
+    return <div className="alert alert-warning">
       <h4>รอติวเตอร์ตอบรับ</h4>
       <hr/>
       <p>นัดหมายได้ถูกส่งไปยังติวเตอร์ ติวเตอร์จะตอบรับภายใน 24 ชั่วโมง
@@ -16,4 +16,4 @@ class ActionCardNew extends React.Component {
       
   }
 }
-export default ActionCardNew
+export default StudentDisputeActionCard
