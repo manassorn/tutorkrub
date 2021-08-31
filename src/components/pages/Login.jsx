@@ -52,7 +52,6 @@ class Login extends React.Component {
     }
     
     login(event) {
-      console.log('error')
       const email = this.email.value
       const password =this.pwd.value
       const that = this;
@@ -63,7 +62,7 @@ class Login extends React.Component {
         if(redirect) {
           location.href= redirect
         } else {
-          location.href = '/course/explore'
+          location.href = '/user'
         }
       }).catch(() => {
         this.setState({hasLoginError: true})
