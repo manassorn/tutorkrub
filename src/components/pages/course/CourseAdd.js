@@ -44,7 +44,7 @@ class CourseAdd extends React.Component {
       }
       if(!this.state.hasAvailableHours && this.isEmptyAvailability()) {
         this.refs.availabilityFeedback.style.display = 'block'
-        return false
+        //return false
       }
       const title = this.titleRef.current.value
       const description = this.descRef.current.value
