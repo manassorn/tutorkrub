@@ -25,7 +25,7 @@ class Profile extends React.Component {
       Api.get('/courses')
         .then(response => 
         {
-          console.log(response.data.data)
+          console.log(response.data.data[0]._id)
         this.setState({ courses: response.data.data })
         }
         );
