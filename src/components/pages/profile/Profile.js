@@ -25,7 +25,6 @@ class Profile extends React.Component {
       Api.get('/courses')
         .then(response => 
         {
-          console.log(response.data.data[0]._id)
         this.setState({ courses: response.data.data })
         }
         );
@@ -97,7 +96,7 @@ class Profile extends React.Component {
             <p class="card-text">฿{course.price} . {course.schoolLevel} . {course.subject}</p>
 
 
-            <a href={`/course/edit/${course.id}`} class="card-link stretched-link">แก้ไข</a>
+            <a href={`/course/edit/${course._id}`} class="card-link stretched-link">แก้ไข</a>
 
 
          </div>
