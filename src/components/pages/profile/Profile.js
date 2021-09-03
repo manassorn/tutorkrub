@@ -25,6 +25,7 @@ class Profile extends React.Component {
       Api.get('/courses')
         .then(response => 
         {
+          console.log(response.data.data)
         this.setState({ courses: response.data.data })
         }
         );
