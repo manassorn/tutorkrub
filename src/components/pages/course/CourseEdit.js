@@ -22,7 +22,7 @@ class CourseEdit extends React.Component {
       this.titleRef = React.createRef()
       this.descRef = React.createRef()
       this.subjectRef = React.createRef()
-      this.schoolLevelRef = React.createRef()
+      this.levelRef = React.createRef()
       this.priceRef = React.createRef()
     }
 
@@ -38,7 +38,7 @@ class CourseEdit extends React.Component {
           this.titleRef.current.value = course.title
           this.descRef.current.value = course.description
           this.subjectRef.current.value = course.subject
-          this.schoolLevelRef.current.value = course.schoolLevel
+          this.levelRef.current.value = course.level
           this.priceRef.current.value = course.price
           
         })
@@ -64,11 +64,11 @@ class CourseEdit extends React.Component {
       const description = this.descRef.current.value
       const price = this.priceRef.current.value
       const subject = this.subjectRef.current.value
-      const schoolLevel = this.schoolLevelRef.current.value
+      const level = this.levelRef.current.value
       Api.put('/courses/' + this.courseId ,  {
          title,
          description,
-         schoolLevel,
+         level,
          subject,
          price,
        }).then(() => {
@@ -124,7 +124,7 @@ class CourseEdit extends React.Component {
       <div class="row">
           <div class="form-group col-md-6">
               <label>ชั้นเรียน</label>
-              <select ref={this.schoolLevelRef} class="form-control">
+              <select ref={this.levelRef} class="form-control">
                   {Constant.schoolLevels.map(l => (
                     <option>{l}</option>
 
