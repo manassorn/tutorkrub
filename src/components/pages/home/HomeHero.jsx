@@ -22,6 +22,7 @@ class HomeHero extends React.Component {
         <div className="pl-2">
 
             <img src="https://cdn0.agoda.net/images/emailmarketing/ycs_elements/agx-50-circle-check.png" width="16"/>&nbsp;ไม่มีข้อผูกมัด
+            <a href="ycsapp://agoda/dashboard">ycsapp://agoda/dashboard</a>
             <br/>
             <img src="https://cdn0.agoda.net/images/emailmarketing/ycs_elements/agx-50-circle-check.png" width="16"/>&nbsp;เรียนจบเป็นครั้งๆ
 
