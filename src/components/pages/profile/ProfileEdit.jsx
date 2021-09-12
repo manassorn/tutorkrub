@@ -15,7 +15,7 @@ class ProfileEdit extends React.Component {
     }
 
     componentDidMount() {
-      Api.get('/user/me')
+      Api.get('/users/me')
         .then(response => 
         {
         this.setState({ user: response.data.data })
