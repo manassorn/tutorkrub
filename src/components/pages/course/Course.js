@@ -27,6 +27,7 @@ class Course extends React.Component {
         .then(response => 
         {
           const course = response.data.data
+          console.log(course)
           this.setState({course})
           const tutorId = course.tutorId
 
