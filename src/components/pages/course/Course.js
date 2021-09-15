@@ -90,8 +90,8 @@ class Course extends React.Component {
         <h4>฿30</h4>
       </div>
       <div className="col-8 text-right d-block d-sm-none">
-       {this.state.course.tutorName}&nbsp;&nbsp;
-        <img src={this.state.course.tutorAvatarUrl} width="40" height="40" class="rounded-circle shadow" alt=""/>
+       {this.state.course.tutor && this.state.course.tutor.name}&nbsp;&nbsp;
+        <img src={this.state.course.tutor?this.state.course.tutor.avatarUrl:''} width="40" height="40" class="rounded-circle shadow" alt=""/>
        
       </div> 
 
