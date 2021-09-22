@@ -2,7 +2,7 @@ import React from "react";
 import Api from '../../../Api'
 import SimpleTitle from '../../common/SimpleTitle'
 import CalendarByWeek3Steps from '../../common/CalendarByWeek3Steps'
-import CalendarCarousel from '../../common/CalendarCarousel'
+import CalendarOutlook from '../../common/CalendarOutlook'
 import Utils from '../../../Utils'
 import './Course.css'
 
@@ -102,88 +102,20 @@ class Course extends React.Component {
 
       <div className="row">
       <div className="col-sm-7 border-top pt-3 mb-3">
-      <div className="d-flex">
-        <div>
-        <span className="bg-secondary radius-10 p-2 d-inline-block"> 
-          <img src="/assets/images/icons/appointment-book.png" width="45" alt=""/> 
-
-        </span> 
-        </div>
-        <div className="ml-3">
-        <h4 className="mb-1">เวลานัดหมาย</h4>
-        <span className="text-muted">
-        จองล่วงหน้าได้ 8 สัปดาห์
-        </span>
-        </div>
-      </div>
+        <h4 className="mb-1">ตารางเวลา</h4>
       
-        <CalendarCarousel/>
+        <CalendarOutlook/>
       </div>
 
-       
-      <div className="col-sm-5">
-      <div className="border p-3 radius-10">
-      <div className="d-flex">
-        <div>
-        <span className="bg-secondary radius-10 p-2 d-inline-block"> 
-          <img src="/assets/images/icons/appointment-book.png" width="45" alt=""/> 
-
-        </span> 
-        </div>
-        <div className="ml-3">
-        <h4 className="mb-1">เวลานัดหมาย</h4>
-        <span className="text-muted">
-        จองล่วงหน้าได้ 8 สัปดาห์
-        </span>
-        </div>
-      </div>
-      
-          <div class="mt-2 media align-items-center"> 
-           <div class="product-img"> 
-            <i className="bx bx-calendar" style={{fontSize:'30px'}}></i>
-
-           </div> 
-           <div class="media-body pl-3"> 
-            <h6 class="mb-0 font-weight-bold">{Utils.formatDate(new Date())}</h6> 
-           </div> 
-          </div> 
-          <div class = "mt-2 media align-items-center" >
-            <div class="product-img"> 
-           <i className="bx bx-alarm" style={{fontSize:'30px'}}></i>
-           </div> 
-           <div class = "media-body pl-3" >
-            <h6 class="mb-0 font-weight-bold">{Utils.formatHourPeriod(1,1)}</h6> </div>  
-            </div>
-      
-      
-        <button className="btn btn-secondary btn-block mt-3 mb-2" disabled={this.state.selectedDateHour? '' :'disabled'} onClick={this.createAppointment}>นัดหมาย</button>
-
-      </div>
-      </div>
-      </div>
-      
-
-      
-      <div>
-      {this.state.selectedDateHour && 
-        <>
-        <div className="font-weight-bold">
-          <i className="bx bx-calendar-event"></i>&nbsp;&nbsp;
-            {Utils.formatDate(this.state.selectedDateHour)}
-
-        </div>
-        <div className="font-weight-bold">
-          <i className="bx bx-alarm"></i>&nbsp;&nbsp;
-            {Utils.formatHourPeriod(this.state.selectedDateHour.getHours(), 1)}
-        </div>
-        </>
-      }
-
-
-        
       </div>
 
-     </div> 
+
+      <div className="p-3 fixed-bottom bg-white w-100 border-top">
+        <button className="btn btn-primary btn-block" >นัดหมาย</button>
+      </div>
+
+
+     </div>
 
     }
 }
