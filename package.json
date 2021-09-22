@@ -13,7 +13,8 @@
     "build-prod": "webpack --config webpack.prod.js",
     "start": "webpack serve --hot --mode development",
     "start:dev": "webpack-dev-server --config webpack.dev.js --host 0.0.0.0",
-    "start:local": "webpack-dev-server --config webpack.dev.js"
+    "start:local": "webpack-dev-server --config webpack.dev.js",
+    "start:localconnectdev": "webpack-dev-server --config webpack.localconnectdev.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
