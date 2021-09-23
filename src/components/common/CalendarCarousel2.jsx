@@ -31,16 +31,16 @@ class CalendarCarousel extends React.Component {
       return <div>
 
       <div class="mt-3 d-flex" role="group" aria-label="...">
-        <div className="w-25">
+        <div className="w-25 text-center">
           <a class="left carousel-control" href="#carouselCalendar" data-slide="prev">
           <i className="bx bx-md bx-caret-left"></i>
           </a>
         </div>
-        <div className="border w-100 text-center">
+        <div className="w-100 text-center">
           <h4 className="mb-0">กันยายน</h4>
 
         </div>
-        <div className="w-25">
+        <div className="w-25 text-center">
          <a class="left carousel-control" href="#carouselCalendar" data-slide="next">
 
           <i className="bx bx-md bx-caret-right"></i>
