@@ -104,7 +104,7 @@ class Course extends React.Component {
       <div className="col-sm-7 border-top pt-3 mb-3">
         <h4 className="mb-1">ตารางเวลา</h4>
       
-        <CalendarOutlook/>
+        <CalendarOutlook startOfWeek={new Date()}/>
       </div>
 
       </div>

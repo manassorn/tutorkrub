@@ -194,7 +194,7 @@ class CalendarPartOfDay extends React.Component {
     render() {
       return <div>
        <div class="row flex-nowrap">
-        <div class="col-1"> </div>
+        <div class="col-2"> </div>
         {this.daysOfWeekMini.map((dow,i) => (
             <div class="col-1 m-1 p-0 text-center">
             <div className="font-weight-boldx">
