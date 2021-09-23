@@ -40,3 +40,8 @@ border-bottom-right-radius: 3px;
 .hour.green-glow, .hr.green-glow {
   background: #90C750;
 }
+.today {
+  line-height: 1.6;
+  background: #0275d8;
+  color: white;
+}
