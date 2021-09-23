@@ -100,7 +100,7 @@ class Course extends React.Component {
         </div>
 
 
-      <div className="row" style={{marginBottom: '70px'}}>
+      <div className="row" style={{marginBottom: '170px'}}>
       <div className="col-sm-7 border-top pt-3 mb-3">
         <h4 className="mb-1">ตารางเวลา</h4>
       
