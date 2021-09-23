@@ -30,32 +30,23 @@ class CalendarCarousel extends React.Component {
     render() {
       return <div>
 
-      <div class="mt-3 btn-group d-flex" role="group" aria-label="...">
-        <button type="button" class="btn btn-white w-25">
-        <a ref={this.prevWeekRangeBtn} class="left carousel-control d-none" href="#carouselWeekRange" data-slide="prev">
-        <i className="bx bx-caret-left"></i>
-        </a>
-        <a class="left carousel-control" href="#carouselCalendar" data-slide="prev" onClick={e => this.prevWeekRangeBtn.current.click()}>
-        <i className="bx bx-md bx-caret-left"></i>
-        </a>
-        </button>
-        <button type="button" class="btn btn-white w-100">
-        
-        <h4>กันยายน</h4>
-        
-        </button>
-        <button type="button" class="btn btn-white w-25">
-          <a ref={this.nextWeekRangeBtn} class="left carousel-control d-none" href="#carouselWeekRange" data-slide="next">
-
-          <i className="bx bx-caret-right"></i>
+      <div class="mt-3 d-flex" role="group" aria-label="...">
+        <div className="w-25">
+          <a class="left carousel-control" href="#carouselCalendar" data-slide="prev">
+          <i className="bx bx-md bx-caret-left"></i>
           </a>
-          <a class="left carousel-control" href="#carouselCalendar" data-slide="next" onClick={e => this.nextWeekRangeBtn.current.click()}>
+        </div>
+        <div className="w-100">
+          <h4>กันยายน</h4>
+
+        </div>
+        <div className="w-25">
+         <a class="left carousel-control" href="#carouselCalendar" data-slide="next">
 
           <i className="bx bx-md bx-caret-right"></i>
           </a>
 
-
-        </button>
+        </div>
       </div>
       
        <div id="carouselCalendar" class="mt-2 carousel slide" data-ride="carousel" data-interval="false">
