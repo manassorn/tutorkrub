@@ -216,7 +216,7 @@ class CalendarPartOfDay extends React.Component {
       {[0,1,2,3].map(p => (
         <div class="row flex-nowrap">
           {/*<div className="col-3">{this.partsOfDay[p]}<br/>{this.partsOfDayTime[p]}</div>*/}
-          <div className="col-1">{p*4}<br/>{p*4+1}<br/>{p*4+2}<br/>{p*4+3}</div>
+          <div className="col-1">{p*8}:00</div>
           
           {[0,1,2,3,4,5,6].map(d => (
             <div class="part-of-time col-1 rounded m-1 bg-light p-0" data-toggle="modal" data-target={`#calendarPartOfDayModal${this.modalRandom}`} onClick={e => this.selectPartOfDay(d,p)}>
