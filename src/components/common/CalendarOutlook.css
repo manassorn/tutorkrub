@@ -14,7 +14,7 @@
   font-size: 8px;
 }
 .part-of-time .hr:not(:last-child) {
-  border-bottom: solid 1px #ffffff;
+  border-bottom: solid 1px #ddd;
 }
 .part-of-time .hr.selected {
   background: #90C750;
