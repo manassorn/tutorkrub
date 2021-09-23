@@ -14,7 +14,7 @@
   font-size: 8px;
 }
 .part-of-time .hr:not(:last-child) {
-  border-bottom: solid 1px #c3c3c4;
+  border-bottom: solid 1px #ffffff;
 }
 .part-of-time .hr.selected {
   background: #90C750;
@@ -26,7 +26,6 @@
 .part-of-time .hr.selected:last-child {
 border-bottom-left-radius: 3px;
 border-bottom-right-radius: 3px;
-border-bottom: 0px;
 }
 .checkbox {
   display:block;
