@@ -201,10 +201,10 @@ class CalendarPartOfDay extends React.Component {
               {dow}
             </div>
             {this.startOfWeek && 
-              <div className="font-weight-bold">{addDays(this.startOfWeek, i).getDate()}</div>
+              <div className="h5">{addDays(this.startOfWeek, i).getDate()}</div>
             }
-            {this.startOfWeek && 
-              <div>{Utils.formatShortMonth(addDays(this.startOfWeek, i))}</div>
+            {/*this.startOfWeek && 
+              <div>{Utils.formatShortMonth(addDays(this.startOfWeek, i))}</div>*/
             }
 
             </div>
