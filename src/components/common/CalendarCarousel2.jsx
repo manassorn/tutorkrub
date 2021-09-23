@@ -36,8 +36,8 @@ class CalendarCarousel extends React.Component {
           <i className="bx bx-md bx-caret-left"></i>
           </a>
         </div>
-        <div className="w-100 text-align-center">
-          <h4>กันยายน</h4>
+        <div className="w-100 text-center">
+          <h4 className="mb-0">กันยายน</h4>
 
         </div>
         <div className="w-25">
