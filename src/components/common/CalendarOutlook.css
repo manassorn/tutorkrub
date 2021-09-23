@@ -12,7 +12,9 @@
 .part-of-time .hr {
   line-height: 9px;
   font-size: 8px;
-  border-bottom: solid 1px #9a9a9a;
+}
+.part-of-time .hr:not(:last-child) {
+  border-bottom: solid 1px #a3a3a4;
 }
 .part-of-time .hr.selected {
   background: #90C750;
