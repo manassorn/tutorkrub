@@ -194,8 +194,7 @@ class CalendarPartOfDay extends React.Component {
     }
     
     todayClassName(i) {
-      const date = addDays(this.startOfWeek, i).getDate()
-      console.log(date, new Date())
+      const date = addDays(this.startOfWeek, i)
       if(isSameDay(date, new Date())) {
         return 'today'
       } else {
