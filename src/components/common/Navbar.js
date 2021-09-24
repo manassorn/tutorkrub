@@ -19,11 +19,15 @@ class Navbar extends React.Component {
 
     componentDidMount() {
         // this.getUser()
-        return
-      Auth.observeLogin((user)=>{
-        if(!user) return
-        this.setState({user,auth:true})
-      })
+      if(Me.getUser()) {
+        this.setState({ user: Me.getUser(), auth:true })
+      } else {
+        Me.subscribe((user)=>{
+          if(!user) return
+          console.log('user',user)
+          this.setState({user,auth:true})
+        })
+      }
     }
     
     devlogin(e, userId = 'fiSdcHz3FcLxZ0b2ienj') {
