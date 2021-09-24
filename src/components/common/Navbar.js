@@ -32,7 +32,7 @@ class Navbar extends React.Component {
     
     getUser() {
       var that = this
-      Api.get('/user/me').then(function(response) {
+      Api.get('/users/me').then(function(response) {
           that.setState({ user: response.data.data,auth:true })
         }).catch(function(error) {
         })
