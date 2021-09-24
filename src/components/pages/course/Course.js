@@ -74,10 +74,10 @@ class Course extends React.Component {
       
       </div>
       
-      <div className="row align-items-center mb-4">
+      <div className="row align-items-center mt-2 mb-3">
 
       <div className="col-8">
-        <img src={this.state.course.tutor?this.state.course.tutor.avatarUrl:''} width="40" height="40" class="rounded-circle shadow" alt=""/>
+        <img src={this.state.course.tutor?this.state.course.tutor.avatarUrl:''} width="32" height="32" class="rounded-circle shadow" alt=""/>
         &nbsp;&nbsp;
         {this.state.course.tutor && this.state.course.tutor.name}
 
