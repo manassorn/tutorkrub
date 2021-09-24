@@ -1,6 +1,6 @@
 import React from "react";
 import Api from '../../Api'
-import Me from '../../Me'
+import Auth from '../../Auth'
 import Separator from '../common/Separator'
 import FormValidation from '../common/FormValidation'
 import SimpleTitle from '../common/SimpleTitle'
@@ -40,7 +40,7 @@ class Login extends React.Component {
             .then(response =>
               {
                 const user = response.data.data
-                Me.subject.next(user)
+                Auth.checkLogin()
                 console.log(user)
               }
             );
@@ -56,6 +56,7 @@ class Login extends React.Component {
       const password =this.pwd.value
       const that = this;
       Api.post('/authen/login', {email, name, password}).then(() => {
+        Auth.checkLogin()
         const search = that.props.location.search; // could be '?foo=bar'
         const params = new URLSearchParams(search);
         const redirect = params.get('redirect');
