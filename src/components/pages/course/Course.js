@@ -58,7 +58,7 @@ class Course extends React.Component {
     }
     
     render() {
-      return      <div class="container pt-3 border-top" style={{maxWidth:'800px'}}>
+      return      <div class="container pt-3 border-top" style={{maxWidth:'720px'}}>
       
       
        <SimpleTitle title='คอร์สเรียน' />
@@ -94,11 +94,6 @@ class Course extends React.Component {
     
       </div>
       
-        <div className="col-sm-5">
-        <h6 className="mb-1">ตารางเวลา</h6>
-        
-        <CalendarCarousel2 startOfWeek={new Date()}/>
-      </div>
       
       
       </div>
