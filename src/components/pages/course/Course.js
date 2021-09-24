@@ -94,6 +94,9 @@ class Course extends React.Component {
     
       </div>
       
+        <div className="col-sm-5">
+        <button className="btn btn-primary">นัดหมาย</button>
+      </div>
       
       
       </div>
