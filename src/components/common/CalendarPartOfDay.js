@@ -1,6 +1,7 @@
 import React from "react";
 import addDays from 'date-fns/addDays'
 import differenceInHours from 'date-fns/differenceInHours'
+import isSameDay from 'date-fns/isSameDay'
 import Api from '../../Api'
 import Utils from '../../Utils'
 import SimpleTitle from '../common/SimpleTitle'
@@ -190,6 +191,15 @@ class CalendarPartOfDay extends React.Component {
     getPatternClassName(i) {
       return ['green-glow', 'stripe-grey', 'stripe-green', 'red-glow'][i]
     }
+    
+    todayClassName(i) {
+      const date = addDays(this.startOfWeek, i).getDate()
+      if(isSameDay(date, new Date())) {
+        return 'today'
+      } else {
+        return''
+      }
+    }
 
     render() {
       return <div>
@@ -201,7 +211,7 @@ class CalendarPartOfDay extends React.Component {
               {dow}
             </div>
             {this.startOfWeek && 
-              <div className="h5 bg-primary rounded-circle today">{addDays(this.startOfWeek, i).getDate()}</div>
+              <div className={`h5 ${todayClassName(i)}`}>{addDays(this.startOfWeek, i).getDate()}</div>
             }
             {/*this.startOfWeek && 
               <div>{Utils.formatShortMonth(addDays(this.startOfWeek, i))}</div>*/
