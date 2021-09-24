@@ -74,6 +74,7 @@ class CalendarPartOfDay extends React.Component {
       this.getHrClassNameForModal = this.getHrClassNameForModal.bind(this)
       this.getPatternClassName = this.getPatternClassName.bind(this)
       this.getEditingPatternClassName = this.getEditingPatternClassName.bind(this)
+      this.todayClassName = this.todayClassName.bind(this)
     }
 
     componentDidMount() {
