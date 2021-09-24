@@ -54,7 +54,9 @@ class ProfileEdit extends React.Component {
            <h6 class="mb-0 text-muted">ชื่อ</h6> 
            <b id="name-display">{this.state.user.name}</b> 
           </div> 
-          <a href="javascript:void(0)" edit-section="edit-name-section" class="edit-link">แก้ไข</a> 
+          <Link to='/user/edit/name'>
+            แก้ไข
+          </Link>
          </div> 
 
         </div> 

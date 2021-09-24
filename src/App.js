@@ -10,6 +10,7 @@ import Explore from "./components/pages/explore/Explore"
 import Profile from "./components/pages/profile/Profile"
 import ProfileEdit from "./components/pages/profile/ProfileEdit"
 import ProfileEditAvailability from "./components/pages/profile/ProfileEditAvailability"
+import ProfileEditName from "./components/pages/profile/ProfileEditName"
 import ProfileEditSkypeId from "./components/pages/profile/ProfileEditSkypeId"
 import ProfileEditZoomId from "./components/pages/profile/ProfileEditZoomId"
 import ProfileEditEmail from "./components/pages/profile/ProfileEditEmail"
@@ -56,6 +57,7 @@ class App extends React.Component {
               <Route path="/course" component={Course} />
               <Route path="/pay" component={Pay} />
               <Route path="/user/edit/avatar" component={ProfileEditAvatar} />
+              <Route path="/user/edit/name" component={ProfileEditName} />
               <Route path="/user/edit/skypeid" component={ProfileEditSkypeId} />
               <Route path="/user/edit/zoomid" component={ProfileEditZoomId} />
               <Route path="/user/edit/availability" component={ProfileEditAvailability} />
