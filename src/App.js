@@ -1,6 +1,6 @@
 import React from "react";
 import Api from "./Api"
-import Me from "./Me"
+import Auth from "./Auth"
 
 import Wrapper from "./components/common/Wrapper"
 import Course from "./components/pages/course/Course"
@@ -36,11 +36,7 @@ import {
 
 class App extends React.Component {
   componentDidMount(){
-    Api.get('/user/me').then(response => {
-      const user = response.data.data
-      console.log(user)
-      Me.setUser(user)
-    })
+    Auth.checkLogin()
   }
     render() {
         const { name } = this.props;
