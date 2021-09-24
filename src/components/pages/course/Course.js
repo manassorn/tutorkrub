@@ -71,24 +71,20 @@ class Course extends React.Component {
         &bull;&nbsp;<span className="text-warning">&#9733;</span> 0</span> 
       </div>
       
-      <div className="col-sm-4 d-none d-sm-block text-center">
-        <img src={this.state.course.tutor?this.state.course.tutor.avatarUrl:''} width="80" height="80" class="rounded-circle shadow" alt=""/>
-        <br/>
-       {this.state.course.tutor && this.state.course.tutor.name}
-
-      </div>
       
       </div>
       
       <div className="row align-items-center mb-4">
-      <div className="col-4">
-        <h4>฿30</h4>
-      </div>
-      <div className="col-8 text-right d-block d-sm-none">
+
+      <div className="col-8 d-block d-sm-none">
        {this.state.course.tutor && this.state.course.tutor.name}&nbsp;&nbsp;
         <img src={this.state.course.tutor?this.state.course.tutor.avatarUrl:''} width="40" height="40" class="rounded-circle shadow" alt=""/>
        
       </div> 
+      
+      <div className="col-4 text-right">
+        <h4>฿30</h4>
+      </div>
 
         
 
