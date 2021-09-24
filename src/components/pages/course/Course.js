@@ -65,7 +65,7 @@ class Course extends React.Component {
        
        <div className="row mt-3">
        
-       <div className="col-12 col-sm-8">
+       <div className="col-12 col-sm-6">
         <h6 className="font-weight-bold">{this.state.course.title}</h6>
         <span class="mt-2 text-muted">สอนแล้ว 0 ครั้ง &nbsp;
         &bull;&nbsp;<span className="text-warning">&#9733;</span> 0</span> 
@@ -91,10 +91,16 @@ class Course extends React.Component {
         ...<a href="#">อ่านเพิ่มเติม</a>
         </p>
       </div>
-      
-      
-        
+    
       </div>
+      
+        <div className="col-sm-6 border-top pt-3 mb-3">
+        <h6 className="mb-1">ตารางเวลา</h6>
+        
+        <CalendarCarousel2 startOfWeek={new Date()}/>
+      </div>
+      
+      
       </div>
       
 
