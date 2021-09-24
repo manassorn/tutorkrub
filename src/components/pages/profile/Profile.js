@@ -1,7 +1,6 @@
 import React from "react";
 import Api from '../../../Api'
 import Auth from '../../../Auth'
-import Me from '../../../Me'
 import SimpleTitle from '../../common/SimpleTitle'
 
 
@@ -18,7 +17,7 @@ class Profile extends React.Component {
 
     componentDidMount() {
       const that = this
-      Me.subscribe((user) => {
+      Auth.observeLogin((user) => {
         if(!user) return
         that.setState({user})
       })
