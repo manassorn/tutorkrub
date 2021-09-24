@@ -78,16 +78,9 @@ class Course extends React.Component {
       <div className="col-4 text-right">
         <h4 className="mb-0">฿{this.state.course.price}</h4>
       </div>
-      </div>      
-        
-      </div>
-
+      </div> 
       
       
-      </div>
-      
- 
-       
       <div className="border-top pt-3">
         <h6>รายละเอียด</h6>
         <p className="mt-2 text-muted">
@@ -98,6 +91,13 @@ class Course extends React.Component {
         ...<a href="#">อ่านเพิ่มเติม</a>
         </p>
       </div>
+      
+      
+        
+      </div>
+      </div>
+      
+
 
       <div className="row" style={{paddingBottom: '70px'}}>
       <div className="col-sm-7 border-top pt-3 mb-3">
