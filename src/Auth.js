@@ -16,7 +16,6 @@ const Auth ={
   checkLogin: () => {
     Api.get('/users/me').then(function(response) {
       const user = response.data.data
-      return
       subject.next(user)
       }).catch(function(error) {
     })
