@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Api from '../../Api'
 import Cookie from '../../Cookie'
-import Me from '../../Me'
+import Auth from '../../Auth'
 
 class Navbar extends React.Component {
     constructor(props) {
