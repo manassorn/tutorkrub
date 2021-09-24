@@ -70,26 +70,22 @@ class Course extends React.Component {
         <span class="mt-2 text-muted">สอนแล้ว 0 ครั้ง &nbsp;
         &bull;&nbsp;<span className="text-warning">&#9733;</span> 0</span> 
       </div>
-      
-      
-      </div>
-      
-      <div className="row align-items-center mt-2 mb-3">
 
+     <div className="row align-items-center mt-2 mb-3">
       <div className="col-8">
         <img src={this.state.course.tutor?this.state.course.tutor.avatarUrl:''} width="32" height="32" class="rounded-circle shadow" alt=""/>
         &nbsp;&nbsp;
         {this.state.course.tutor && this.state.course.tutor.name}
-
       </div> 
-      
       <div className="col-4 text-right">
         <h4 className="mb-0">฿{this.state.course.price}</h4>
       </div>
-
-        
-
-        </div>
+      </div>      
+      
+      
+      </div>
+      
+ 
        
       <div className="border-top pt-3">
         <h6>รายละเอียด</h6>
