@@ -17,7 +17,7 @@ const Auth ={
     Api.get('/users/me').then(function(response) {
       const user = response.data.data
       subject.next(user)
-      }).catch(function(error) {
+    }).catch(function(error) {
     })
   },
   observeLogin: (fn) => {
