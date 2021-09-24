@@ -15,6 +15,7 @@ const Auth ={
   },
   checkLogin: () => {
     console.log('aaa')
+    return
     Api.get('/users/me').then(function(response) {
       console.log('bbb')
       const user = response.data.data
