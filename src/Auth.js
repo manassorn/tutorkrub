@@ -1,6 +1,6 @@
 import Jwt from './Jwt'
 import Cookie from './Cookie'
-import Api from './Cookie'
+import Api from './Api'
 import { BehaviorSubject } from 'rxjs';
 
 const subject = new BehaviorSubject(null);
@@ -14,10 +14,7 @@ const Auth ={
     return json.userId
   },
   checkLogin: () => {
-    console.log('aaa')
-    return
     Api.get('/users/me').then(function(response) {
-      console.log('bbb')
       const user = response.data.data
       subject.next(user)
       }).catch(function(error) {
