@@ -1,7 +1,7 @@
+import { BehaviorSubject } from 'rxjs';
 import Jwt from './Jwt'
 import Cookie from './Cookie'
 import Api from './Api'
-import { BehaviorSubject } from 'rxjs';
 
 const subject = new BehaviorSubject(null);
 
