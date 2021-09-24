@@ -58,7 +58,7 @@ class Course extends React.Component {
     }
     
     render() {
-      return      <div class="container pt-3 border-top" style={{maxWidth:'720px'}}>
+      return      <div class="container pt-3 border-top" style={{maxWidth:'800px'}}>
       
       
        <SimpleTitle title='คอร์สเรียน' />
