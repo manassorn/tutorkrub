@@ -16,6 +16,7 @@ class Appointment extends React.Component {
       super(props);
       this.appointmentId = this.props.appointmentId
       this.state = {
+        user: {}
         messages: []
       }
       
@@ -29,6 +30,9 @@ class Appointment extends React.Component {
     }
     
     componentDidMount() {
+      Auth.observeLogin((user) => {
+        
+      })
       Api.get(`/appointment/${this.appointmentId}/message`)
         .then(response => 
         {
@@ -65,7 +69,7 @@ class Appointment extends React.Component {
     
     renderChat(message) {        
 
-      if(message.from === Me.userId()) {
+      if(message.from === 'me.userid') {
         return this.renderChatRight(message)
 
       } else {

@@ -1,6 +1,5 @@
 import React from "react";
 import Api from '../../../Api'
-import Me from '../../../Me'
 import SimpleTitle from '../../common/SimpleTitle'
 import ButtonSpinner from '../../common/ButtonSpinner'
 import Croppie from 'croppie'

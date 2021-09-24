@@ -1,6 +1,6 @@
 import React from "react";
 import Api from '../../../Api'
-import Me from '../../../Me'
+import Auth from '../../../Auth'
 import Separator from '../../common/Separator'
 import FormValidation from '../../common/FormValidation'
 import SimpleTitle from '../../common/SimpleTitle'
@@ -50,7 +50,8 @@ class Register extends React.Component {
             .then(response =>
               {
                 const user = response.data.data
-                Me.subject.next(user)
+                Auth.checkLogin()
+             //   Me.subject.next(user)
                 console.log(user)
               }
             );
