@@ -28,7 +28,7 @@ class ProfileEditName extends React.Component {
     
     submit() {
       const name = this.input.value
-      Api.post('/users/me', {name})
+      Api.put('/users/me', {name})
       .then(() => {
         location.href = '/user/edit'
       })
