@@ -66,7 +66,7 @@ class Course extends React.Component {
        <div className="row mt-3">
        
        <div className="col-12 col-sm-8">
-        <h3>{this.state.course.title}</h3>
+        <h6 className="font-weight-bold">{this.state.course.title}</h6>
         <span class="mt-2 text-muted">สอนแล้ว 0 ครั้ง &nbsp;
         &bull;&nbsp;<span className="text-warning">&#9733;</span> 0</span> 
       </div>
