@@ -14,7 +14,9 @@ const Auth ={
     return json.userId
   },
   checkLogin: () => {
+    console.log('aaa')
     Api.get('/users/me').then(function(response) {
+      console.log('bbb')
       const user = response.data.data
       subject.next(user)
       }).catch(function(error) {
