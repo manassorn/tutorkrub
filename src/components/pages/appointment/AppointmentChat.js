@@ -16,7 +16,7 @@ class Appointment extends React.Component {
       super(props);
       this.appointmentId = this.props.appointmentId
       this.state = {
-        user: {}
+        user: {},
         messages: []
       }
       
