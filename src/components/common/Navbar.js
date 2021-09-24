@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Api from '../../Api'
 import Cookie from '../../Cookie'
-import Auth from '../../Auth'
+import Me from '../../Me'
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -30,6 +30,14 @@ class Navbar extends React.Component {
       }
     }
     
+    getUser() {
+      var that = this
+      Api.get('/user/me').then(function(response) {
+          that.setState({ user: response.data.data,auth:true })
+        }).catch(function(error) {
+        })
+    }
+
     devlogin(e, userId = 'fiSdcHz3FcLxZ0b2ienj') {
       
       const that = this
