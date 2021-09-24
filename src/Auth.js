@@ -24,5 +24,5 @@ const Auth ={
     subject.subscribe(fn)
   }
 }
-Auth.checkLogin()
+//Auth.checkLogin()
 export default Auth
