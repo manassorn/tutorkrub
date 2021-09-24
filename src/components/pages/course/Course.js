@@ -84,7 +84,7 @@ class Course extends React.Component {
       </div> 
       
       <div className="col-4 text-right">
-        <h4 className="mb-0">฿30</h4>
+        <h4 className="mb-0">฿{this.state.course.price}</h4>
       </div>
 
         
