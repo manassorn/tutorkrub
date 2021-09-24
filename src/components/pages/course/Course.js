@@ -61,7 +61,7 @@ class Course extends React.Component {
       return      <div class="container pt-3 border-top" style={{maxWidth:'720px'}}>
       
       
-       <SimpleTitle title='รายละเอียดคอร์ส' />
+       <SimpleTitle title='คอร์สเรียน' />
        
        <div className="row mt-3">
        
@@ -69,11 +69,6 @@ class Course extends React.Component {
         <h3>{this.state.course.title}</h3>
         <span class="mt-2 text-muted">สอนแล้ว 0 ครั้ง &nbsp;
         &bull;&nbsp;<span className="text-warning">&#9733;</span> 0</span> 
-        <p className="mt-2 text-muted">
-        {this.state.course.description && this.state.course.description.split('\n').map(line => (
-          <>{line}<br/></>
-        ))}
-        </p>
       </div>
       
       <div className="col-sm-4 d-none d-sm-block text-center">
@@ -98,7 +93,17 @@ class Course extends React.Component {
         
 
         </div>
-
+       
+      <div className="col-12 col-sm-8">
+        <h5>รายละเอียด</h5>
+        <p className="mt-2 text-muted">
+        {this.state.course.description && this.state.course.description.split('\n').map(line => (
+          <>{line}<br/></>
+        ))}
+        <br/>
+        <a href="#">อ่านเพิ่มเติม</a>
+        </p>
+      </div>
 
       <div className="row" style={{paddingBottom: '70px'}}>
       <div className="col-sm-7 border-top pt-3 mb-3">
