@@ -98,7 +98,7 @@ class Course extends React.Component {
           <>{line}<br/></>
         ))}
         <br/>
-        <a href="#">อ่านเพิ่มเติม</a>
+        ...<a href="#">อ่านเพิ่มเติม</a>
         </p>
       </div>
 
