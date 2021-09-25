@@ -128,7 +128,7 @@ class CourseCheckout extends React.Component {
       
       <div className="row border-top">
       <div className="col">
-      <div class="form-check p-3 px-5 border rounded">
+      <div class="form-check p-3 px-3 border rounded">
 
 				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
 
