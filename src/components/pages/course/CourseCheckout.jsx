@@ -107,13 +107,6 @@ class CourseCheckout extends React.Component {
           </div>
 			</div>
       
-      <div class="form-group mt-2"> 
-       <label>เลือกวัน</label> 
-       <input ref={this.titleRef} type="text" class="form-control" placeholder="พิมพ์ชื่อคอร์ส" required/>
-       <div class="invalid-feedback">
-         กรุณาใส่ชื่อคอร์ส
-       </div>
-      </div> 
       
       <div class="form-group mt-2"> 
        <label>เลือกเวลา</label> 
@@ -132,6 +125,15 @@ class CourseCheckout extends React.Component {
       </div>
 
       </div>
+      
+      <div className="border-top">
+      <div class="form-check">
+
+				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
+
+				<label class="form-check-label" for="exampleRadios1">Default radio</label>
+			</div>
+			</div>
 
 
       <div className="p-3 fixed-bottom bg-white w-100 border-top">
