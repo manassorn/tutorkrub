@@ -4,6 +4,7 @@ import Auth from "./Auth"
 
 import Wrapper from "./components/common/Wrapper"
 import Course from "./components/pages/course/Course"
+import CourseCheckout from "./components/pages/course/CourseCheckout"
 import CourseAdd from "./components/pages/course/CourseAdd"
 import CourseEdit from "./components/pages/course/CourseEdit"
 import Explore from "./components/pages/explore/Explore"
@@ -47,6 +48,7 @@ class App extends React.Component {
               <Route exact path="/" component={Home} />
               <Route path="/appointment/list" component={AppointmentList} />
               <Route path="/appointment" component={Appointment} />
+              <Route path="/course/checkout" component={CourseCheckout} />
               <Route path="/course/add" component={CourseAdd} />
               <Route path="/course/edit" component={CourseEdit} />
               <Route path="/explore" component={Explore} />
