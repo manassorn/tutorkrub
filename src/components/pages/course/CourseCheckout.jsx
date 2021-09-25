@@ -94,7 +94,7 @@ class CourseCheckout extends React.Component {
       
 
 
-      <div className="row" style={{paddingBottom: '70px'}}>
+      <div className="row">
       <div className="col-sm-7 border-top pt-3 mb-3">
       
 				<div class="form-group mt-2">
@@ -126,12 +126,14 @@ class CourseCheckout extends React.Component {
 
       </div>
       
-      <div className="border-top">
+      <div className="row border-top">
+      <div className="col">
       <div class="form-check">
 
 				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
 
 				<label class="form-check-label" for="exampleRadios1">Default radio</label>
+			</div>
 			</div>
 			</div>
 
