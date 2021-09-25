@@ -6,7 +6,7 @@ import CalendarCarousel2 from '../../common/CalendarCarousel2'
 import Utils from '../../../Utils'
 import './Course.css'
 
-class Course extends React.Component {
+class CourseCheckout extends React.Component {
   
   
     constructor(props) {
@@ -80,21 +80,8 @@ class Course extends React.Component {
       </div>
       </div> 
       
-      
-      <div className="border-top pt-3">
-        <h6>รายละเอียด</h6>
-        <p className="mt-2 text-muted">
-        {this.state.course.description && this.state.course.description.split('\n').map(line => (
-          <>{line}<br/></>
-        ))}
-        <br/>
-        ...<a href="#">อ่านเพิ่มเติม</a>
-        </p>
       </div>
     
-      </div>
-      
-      
       
       </div>
       
@@ -102,18 +89,36 @@ class Course extends React.Component {
 
       <div className="row" style={{paddingBottom: '70px'}}>
       <div className="col-sm-7 border-top pt-3 mb-3">
-        <h6 className="mb-1">ตารางเวลา</h6>
-        
-        <CalendarCarousel2 startOfWeek={new Date()}/>
-        
-        
+      
+      <div class="form-group mt-2"> 
+       <label>เลือกวัน</label> 
+       <input ref={this.titleRef} type="text" class="form-control" placeholder="พิมพ์ชื่อคอร์ส" required/>
+       <div class="invalid-feedback">
+         กรุณาใส่ชื่อคอร์ส
+       </div>
+      </div> 
+      
+      <div class="form-group mt-2"> 
+       <label>เลือกเวลา</label> 
+       <select class="form-control" id="exampleFormControlSelect1">   
+          <option>00:00</option> 
+          <option>01:00</option> 
+          <option>3</option> 
+          <option>4</option> 
+          <option>5</option> </select>
+       <div class="invalid-feedback">
+         กรุณาใส่ชื่อคอร์ส
+       </div>
+      </div> 
+      
+      
       </div>
 
       </div>
 
 
       <div className="p-3 fixed-bottom bg-white w-100 border-top">
-        <a href={`/coursecheckout/${this.state.course._id}`} className="btn btn-primary btn-block" >นัดหมาย</a>
+        <button className="btn btn-primary btn-block" >ชำระเงิน</button>
       </div>
 
 
@@ -122,4 +127,4 @@ class Course extends React.Component {
     }
 }
 
-export default Course
+export default CourseCheckout
