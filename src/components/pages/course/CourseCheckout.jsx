@@ -37,7 +37,14 @@ class CourseCheckout extends React.Component {
           const recurringHex = response.data.data.recurringHex
           this.setState({recurringHex})
         });
-      
+      		$('.datepicker').pickadate({
+
+			selectMonths: false,
+
+	        selectYears: false,
+	        min: true,
+	        max:30
+		  })
     }
     
     onCalendarChanged(selectedDateHour){
@@ -89,6 +96,16 @@ class CourseCheckout extends React.Component {
 
       <div className="row" style={{paddingBottom: '70px'}}>
       <div className="col-sm-7 border-top pt-3 mb-3">
+      
+				<div class="form-group mt-2">
+
+					<label>เลือกวัน</label>
+
+					<input type="text" class="form-control datepicker" />
+          <div class="invalid-feedback">
+            กรุณาเลือกวัน
+          </div>
+			</div>
       
       <div class="form-group mt-2"> 
        <label>เลือกวัน</label> 
