@@ -133,7 +133,7 @@ class CourseCheckout extends React.Component {
 				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
 
 				<label class="form-check-label" for="exampleRadios1">QR code</label>
-			  <img src="http://i.imgur.com/lZN8Iwu.png" width="40" style={{position:'absolute',right:30}}/>
+			  <img src="https://i.imgur.com/iD8vae4_d.webp?maxwidth=640&shape=thumb&fidelity=medium" width="40" style={{position:'absolute',right:30}}/>
 			</div>
 			
      <div class="form-check p-3 px-4 border rounded">
