@@ -28,68 +28,13 @@ class Pay extends React.Component {
 
     render() {
         return      <div class="container pt-3"> 
-      <div class="row pb-3"> 
-       <div class="col"> 
-        <h3 class="mb-0">รับสอนคณิตศาสตร์</h3> 
-        <span class="text-muted pr-2">โดย manassorn </span> 
-        <div className="font-weight-bold">
-          <i className="bx bx-calendar-event"></i>&nbsp;&nbsp;
-                  พุธ 20 ธันวาคม 2563 
-
-        </div>
-        <div className="font-weight-bold">
-          <i className="bx bx-alarm"></i>&nbsp;&nbsp;
-                          00:00 - 01:00
-        
-        </div>
-        
-        
-  
-
-        
-        
-        
-       </div> 
-      </div> 
-      
-      <div class="row"> 
-       <div class="col-12 border-top mt-3 pt-3"> 
-        <h5>ช่องทางชำระเงิน</h5> 
-        <div class="border p-3 rounded"> 
-         <input type="radio"/> Promptpay 
-        </div> 
-
-
-       </div> 
-       <div class="col-12 border-top mt-3 pt-3"> 
-        <div class="row"> 
-         <div class="col font-weight-bold"> 
-          <h5> ยอดรวม </h5> 
-         </div> 
-         <div class="col text-right text-primary font-weight-bold" style={{fontSize:'18px'}}>
-           $15 
-         </div> 
-        </div> 
-        
-        <div className="row">
-          <div className="col-12">
-            <div class="form-group mt-2"> 
-               <label>โค้ดส่วนลด</label> 
-               <input id="name" type="text" class="form-control" placeholder=""/> 
-              </div>
-        
-        
-          </div>
-        </div>
-        
-        
-        <div class="row"> 
-         <div class="col"> 
-          <button class="btn btn-block btn-primary mt-3 mb-5">ชำระเงิน</button> 
-         </div> 
-        </div> 
-       </div> 
-      </div> 
+<form id="payment-form" action="https://sandbox-cdnv3.chillpay.co/Payment/" method="post" role="form" class="form-horizontal"> 
+<modernpay:widget id="modernpay-widget-container" data-merchantid="M031222" data-amount="10000" data-orderno="00000001" data-customerid="123456" data-mobileno="0889999999" data-clientip="182.232.163.141" data-routeno="1" data-currency="764" data-description="Test Payment" data-apikey="YKtcaYGPR1FyDon7KXYwCTD1WJv5gk91AfgVGW1C6nrfoIrjNCGBb2LK2yBrUtYr"> 
+</modernpay:widget>
+<button type="submit" id="btnSubmit" value="Submit" class="btn">Payment</button> 
+</form> 
+<script async src="https://sandbox-cdnv3.chillpay.co/js/widgets.js?v=1.00" charset="utf-8"></script>
+    
      </div> 
 
     }
