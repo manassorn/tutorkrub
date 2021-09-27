@@ -113,7 +113,7 @@ class Course extends React.Component {
 
 
       <div className="p-3 fixed-bottom bg-white w-100 border-top">
-        <a href={`/course/checkout/${this.state.course._id}`} className="btn btn-primary btn-block" >นัดหมาย</a>
+        <a href={`/checkout/${this.state.course._id}`} className="btn btn-primary btn-block" >นัดหมาย</a>
       </div>
 
 

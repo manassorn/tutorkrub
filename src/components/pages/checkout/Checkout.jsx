@@ -6,7 +6,7 @@ import CalendarCarousel2 from '../../common/CalendarCarousel2'
 import Utils from '../../../Utils'
 import './Course.css'
 
-class CourseCheckout extends React.Component {
+class Checkout extends React.Component {
   
   
     constructor(props) {
@@ -134,7 +134,7 @@ class CourseCheckout extends React.Component {
 				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
 
 				<label class="form-check-label" for="exampleRadios1">QR code</label>
-			  <img src="https://i.imgur.com/iD8vae4_d.webp?maxwidth=640&shape=thumb&fidelity=medium" width="40" style={{position:'absolute',right:30}}/>
+			  <img src="https://www.omise.co/assets/pricing/promptpay-b5504a07613f158a62f014647ba862aba4f22af1a116f6ca02aafb1770fd7e46.svg" width="80" style={{position:'absolute',right:30}}/>
 			</div>
 			
      <div class="form-check p-3 px-4 border rounded">
@@ -157,4 +157,4 @@ class CourseCheckout extends React.Component {
     }
 }
 
-export default CourseCheckout
+export default Checkout
