@@ -132,7 +132,7 @@ class Checkout extends React.Component {
 
 				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
 
-				<label class="form-check-label" for="exampleRadios1">QR code</label>
+				<label class="form-check-label" for="exampleRadios1">พร้อมเพย์</label>
 			  <img src="https://www.omise.co/assets/pricing/promptpay-b5504a07613f158a62f014647ba862aba4f22af1a116f6ca02aafb1770fd7e46.svg" width="80" style={{position:'absolute',right:30}}/>
 			</div>
 			
@@ -140,7 +140,10 @@ class Checkout extends React.Component {
 
 				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
 
-				<label class="form-check-label" for="exampleRadios1">True Money Wallet</label>
+				<label class="form-check-label" for="exampleRadios1">ทรูมันนี่วอลเล็ท</label>
+				
+				<img src="https://www.omise.co/assets/pricing/truemoney-b30675ae6b2cbd2de51b7e89d2bd7df3f6db5091cfd2ab429cd437921bc19c6f.svg" width="80" style={{position:'absolute',right:30}}/>
+
 			</div>
 			</div>
 			</div>
