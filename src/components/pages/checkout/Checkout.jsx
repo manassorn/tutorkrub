@@ -157,12 +157,11 @@ class Checkout extends React.Component {
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"> 
       <div class="modal-dialog modal-dialog-centered" role="document"> 
       <div class="modal-content"> 
-      <div class="modal-header border-0" hidden="true"> 
-      <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5> 
+      <div class="modal-header border-0"> 
+      <h5 class="modal-title" id="exampleModalLongTitle"> </h5> 
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> 
       </div> 
       <div class="modal-body text-center">
-      	 <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> 
 
       	<img src="https://www.omise.co/assets/pricing/promptpay-b5504a07613f158a62f014647ba862aba4f22af1a116f6ca02aafb1770fd7e46.svg" width="100" />
       	<h5 className="my-3">แสกนคิวอาร์โค้ดเพื่อจ่ายเงิน</h5>
