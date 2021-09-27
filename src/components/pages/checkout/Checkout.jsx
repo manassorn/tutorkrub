@@ -4,7 +4,6 @@ import SimpleTitle from '../../common/SimpleTitle'
 import CalendarByWeek3Steps from '../../common/CalendarByWeek3Steps'
 import CalendarCarousel2 from '../../common/CalendarCarousel2'
 import Utils from '../../../Utils'
-import './Course.css'
 
 class Checkout extends React.Component {
   
