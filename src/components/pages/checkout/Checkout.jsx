@@ -162,10 +162,10 @@ class Checkout extends React.Component {
       <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button> 
       </div> 
       <div class="modal-body text-center">
-      	<img src="https://www.omise.co/assets/pricing/promptpay-b5504a07613f158a62f014647ba862aba4f22af1a116f6ca02aafb1770fd7e46.svg" width="220" />
+      	<img src="https://www.omise.co/assets/pricing/promptpay-b5504a07613f158a62f014647ba862aba4f22af1a116f6ca02aafb1770fd7e46.svg" width="120" />
       	<h5>แสกนคิวอาร์โค้ดเพื่อจ่ายเงิน</h5>
       	
-<img src="https://chart.googleapis.com/chart?cht=qr&chl=http%3A%2F%2F1hourtutor.com&chs=180x180&choe=UTF-8&chld=L|2" width="320" />
+<img src="https://chart.googleapis.com/chart?cht=qr&chl=http%3A%2F%2F1hourtutor.com&chs=180x180&choe=UTF-8&chld=L|2" width="240" />
         <h3>฿450</h3>
         <p className="text-muted">
         <i className="bx bx-time"></i> 15:00
