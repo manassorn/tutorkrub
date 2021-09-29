@@ -54,7 +54,7 @@ class ProfileEditAvailableHours extends React.Component {
       
       	<div class="custom-control custom-switch mt-3">
 
-					<input type="checkbox" class="custom-control-input" id="customSwitch1" checked={this.state.isRecurring} onChange={this.onSwitcherChange}/>
+					<input type="checkbox" class="custom-control-input" id="customSwitch1" onChange={this.onSwitcherChange}/>
 
 					<label class="custom-control-label" for="customSwitch1">
 					เวลาเดิมทุกอาทิตย์
