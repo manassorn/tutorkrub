@@ -52,11 +52,13 @@ class ProfileEditAvailableHours extends React.Component {
       return <div className="container" style={{maxWidth:'720px'}}>
       <SimpleTitle title="แก้ไขเวลาที่สะดวกสอน"/>
       
-      	<div class="custom-control custom-switch">
+      	<div class="custom-control custom-switch mt-3">
 
-					<input type="checkbox" class="custom-control-input" id="customSwitch1"/>
+					<input type="checkbox" class="custom-control-input" id="customSwitch1" checked={this.state.isRecurring}/>
 
-					<label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+					<label class="custom-control-label" for="customSwitch1">
+					เวลาเดิมทุกอาทิตย์
+					</label>
 				</div>
       <div>
       <Switcher onChange={this.onSwitcherChange} checked={this.state.isRecurring} label="เวลาเดิมทุกอาทิตย์"/>
