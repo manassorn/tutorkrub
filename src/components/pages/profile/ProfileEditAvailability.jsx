@@ -54,15 +54,12 @@ class ProfileEditAvailableHours extends React.Component {
       
       	<div class="custom-control custom-switch mt-3">
 
-					<input type="checkbox" class="custom-control-input" id="customSwitch1" checked={this.state.isRecurring}/>
+					<input type="checkbox" class="custom-control-input" id="customSwitch1" checked={this.state.isRecurring} onChange={this.onSwitcherChange}/>
 
 					<label class="custom-control-label" for="customSwitch1">
 					เวลาเดิมทุกอาทิตย์
 					</label>
 				</div>
-      <div>
-      <Switcher onChange={this.onSwitcherChange} checked={this.state.isRecurring} label="เวลาเดิมทุกอาทิตย์"/>
-      </div>
       
       {this.state.isRecurring && <CalendarPartOfDay layer1Hex={this.state.recurringHex} ref={this.recurringCalendar} onSaved={hex => this.saveRecurring(hex)}/>}
       
