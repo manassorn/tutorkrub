@@ -65,7 +65,9 @@ class Profile extends React.Component {
 
           </div>
           <div className="col-md-4 col-6">
-            <a href="/user/edit/availability" className=" btn btn-block btn-outline-primary radius-10">เวลาที่สะดวกสอน</a>
+            <a href="/user/edit/availability" className=" btn btn-block btn-outline-primary radius-10">เวลาที่สะดวกสอน
+              <span className="bx-flashing badge badge-pill badge-danger">1</span>
+            </a>
 
           </div>
 
