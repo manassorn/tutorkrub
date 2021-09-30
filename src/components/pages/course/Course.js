@@ -100,8 +100,8 @@ class Course extends React.Component {
       
 
 
-      <div className="row" style={{paddingBottom: '70px'}}>
-      <div className="col-sm-7 pt-3 mb-3">
+      <div className="row pt-3" style={{paddingBottom: '70px'}}>
+      <div className="col-sm-7 mb-3">
         <h6 className="mb-1">ตารางเวลา</h6>
         
         <CalendarCarousel2 startOfWeek={new Date()}/>
