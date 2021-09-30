@@ -101,8 +101,11 @@ class Course extends React.Component {
 
 
       <div className="row pt-3" style={{paddingBottom: '70px'}}>
+        <div className="col-12">
+          <h4 className="mb-1">ตารางเวลา</h4>
+
+        </div>
       <div className="col-sm-7 mb-3">
-        <h4 className="mb-1">ตารางเวลา</h4>
         
         <CalendarCarousel2 startOfWeek={new Date()}/>
         
@@ -110,8 +113,8 @@ class Course extends React.Component {
       </div>
       
 
-      
-					<div class="card text-center col-sm-5 d-none d-sm-block">
+        <div className="col-sm-5 d-none d-sm-block">
+					<div class="card text-center">
 
 						<div class="card-body">
 							<h5 class="card-title">Special title treatment</h5>
@@ -120,7 +123,7 @@ class Course extends React.Component {
 
 						</div>
 					</div>
-      
+        </div>
       
 
       </div>
