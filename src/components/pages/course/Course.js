@@ -81,7 +81,7 @@ class Course extends React.Component {
       </div> 
       
       
-      <div className="border-top pt-3">
+      <div className="border-top py-3 border-bottom ">
         <h6>รายละเอียด</h6>
         <p className="mt-2 text-muted">
         {this.state.course.description && this.state.course.description.split('\n').map(line => (
@@ -101,7 +101,7 @@ class Course extends React.Component {
 
 
       <div className="row" style={{paddingBottom: '70px'}}>
-      <div className="col-sm-7 border-top pt-3 mb-3">
+      <div className="col-sm-7 pt-3 mb-3">
         <h6 className="mb-1">ตารางเวลา</h6>
         
         <CalendarCarousel2 startOfWeek={new Date()}/>
