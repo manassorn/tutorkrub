@@ -65,7 +65,7 @@ class Course extends React.Component {
        
        <div className="row mt-3">
        
-       <div className="col-12 col-sm-7">
+       <div className="col-12">
         <h6 className="font-weight-bold">{this.state.course.title}</h6>
         <span class="mt-2 text-muted">สอนแล้ว 0 ครั้ง &nbsp;
         &bull;&nbsp;<span className="text-warning">&#9733;</span> 0</span> 
@@ -108,11 +108,18 @@ class Course extends React.Component {
         
         
       </div>
+      
+
+      <div className="d-none d-sm-block">
+        <a href={`/checkout/${this.state.course._id}`} className="btn btn-primary btn-block" >นัดหมาย</a>
+      </div>
+      
+      
 
       </div>
 
 
-      <div className="p-3 fixed-bottom bg-white w-100 border-top">
+      <div className="p-3 fixed-bottom bg-white w-100 border-top d-block d-sm-none">
         <a href={`/checkout/${this.state.course._id}`} className="btn btn-primary btn-block" >นัดหมาย</a>
       </div>
 
