@@ -110,7 +110,7 @@ class Course extends React.Component {
       </div>
       
 
-      <div className="d-none d-sm-block">
+      <div className="col-sm-5 d-none d-sm-block">
         <a href={`/checkout/${this.state.course._id}`} className="btn btn-primary btn-block" >นัดหมาย</a>
       </div>
       
