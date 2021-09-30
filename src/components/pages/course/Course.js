@@ -66,7 +66,7 @@ class Course extends React.Component {
        <div className="row mt-3">
        
        <div className="col-12">
-        <h6 className="font-weight-bold">{this.state.course.title}</h6>
+        <h3 className="font-weight-bold">{this.state.course.title}</h3>
         <span class="mt-2 text-muted">สอนแล้ว 0 ครั้ง &nbsp;
         &bull;&nbsp;<span className="text-warning">&#9733;</span> 0</span> 
       <div className="row align-items-center mt-2 mb-3">
@@ -82,7 +82,7 @@ class Course extends React.Component {
       
       
       <div className="border-top py-3 border-bottom ">
-        <h6>รายละเอียด</h6>
+        <h4>รายละเอียด<h4>
         <p className="mt-2 text-muted">
         {this.state.course.description && this.state.course.description.split('\n').map(line => (
           <>{line}<br/></>
@@ -102,7 +102,7 @@ class Course extends React.Component {
 
       <div className="row pt-3" style={{paddingBottom: '70px'}}>
       <div className="col-sm-7 mb-3">
-        <h6 className="mb-1">ตารางเวลา</h6>
+        <h4 className="mb-1">ตารางเวลา</h4>
         
         <CalendarCarousel2 startOfWeek={new Date()}/>
         
