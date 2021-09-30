@@ -53,6 +53,10 @@ class ProfileEditAvailableHours extends React.Component {
       return <div className="container" style={{maxWidth:'720px'}}>
       <SimpleTitle title="แก้ไขเวลาที่สะดวกสอน"/>
       
+      <div className="row">
+      <div className="offset-sm-2 col-sm-8">
+      
+      
       	<div class="custom-control custom-switch mt-3">
 
 					<input type="checkbox" class="custom-control-input" id="customSwitch1" checked={this.state.isRecurring} onChange={this.onSwitcherChange}/>
@@ -67,6 +71,9 @@ class ProfileEditAvailableHours extends React.Component {
       {!this.state.isRecurring && <CalendarCarousel availability={this.state.availability}/>}
       
       <button className="mt-3 mb-5 btn btn-primary btn-block" onClick={this.saveAvailableHours}>บันทึก</button>
+      </div>
+      </div>
+    
       </div>
     }
 }
