@@ -110,15 +110,14 @@ class Course extends React.Component {
       </div>
       
 
-      <div className="col-sm-5 d-none d-sm-block">
-        <a href={`/checkout/${this.state.course._id}`} className="btn btn-primary btn-block" >นัดหมาย</a>
-      </div>
       
 					<div class="card text-center col-sm-5 d-none d-sm-block">
 
 						<div class="card-body">
 							<h5 class="card-title">Special title treatment</h5>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p> <a href="#" class="btn btn-primary">นัดหมาย</a>
+							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+							 <a href={`/checkout/${this.state.course._id}`} className="btn btn-primary btn-block" >นัดหมาย</a>
+
 						</div>
 					</div>
       
