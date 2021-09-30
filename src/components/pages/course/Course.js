@@ -82,7 +82,7 @@ class Course extends React.Component {
       
       
       <div className="border-top py-3 border-bottom ">
-        <h4>รายละเอียด<h4>
+        <h4>รายละเอียด</h4>
         <p className="mt-2 text-muted">
         {this.state.course.description && this.state.course.description.split('\n').map(line => (
           <>{line}<br/></>
