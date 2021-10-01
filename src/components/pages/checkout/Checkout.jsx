@@ -67,12 +67,12 @@ class Checkout extends React.Component {
       return      <div class="container pt-3 border-top" style={{maxWidth:'720px'}}>
       
       
-       <SimpleTitle title='คอร์สเรียน' />
+       <SimpleTitle title='นัดหมาย' />
        
        <div className="row mt-3">
        
        <div className="col-12 col-sm-7">
-        <h6 className="font-weight-bold">{this.state.course.title}</h6>
+        <h3 className="font-weight-bold">{this.state.course.title}</h3>
         <span class="mt-2 text-muted">สอนแล้ว 0 ครั้ง &nbsp;
         &bull;&nbsp;<span className="text-warning">&#9733;</span> 0</span> 
       <div className="row align-items-center mt-2 mb-3">
@@ -93,8 +93,8 @@ class Checkout extends React.Component {
       
 
 
-      <div className="row">
-      <div className="col-sm-7 border-top pt-3 mb-3">
+      <div className="row border-top pt-3">
+      <div className="col-sm-6">
       
 				<div class="form-group mt-2">
 
@@ -104,8 +104,11 @@ class Checkout extends React.Component {
           <div class="invalid-feedback">
             กรุณาเลือกวัน
           </div>
-			</div>
+			  </div>
+			 </div>
       
+      <div className="col-sm-6">
+
       
       <div class="form-group mt-2"> 
        <label>เลือกเวลา</label> 
