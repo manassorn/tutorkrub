@@ -71,7 +71,7 @@ class Checkout extends React.Component {
        
        <div className="row mt-3">
        
-       <div className="col-12 col-sm-7">
+       <div className="col-12">
         <h3 className="font-weight-bold">{this.state.course.title}</h3>
         <span class="mt-2 text-muted">สอนแล้ว 0 ครั้ง &nbsp;
         &bull;&nbsp;<span className="text-warning">&#9733;</span> 0</span> 
@@ -93,7 +93,7 @@ class Checkout extends React.Component {
       
 
 
-      <div className="row border-top pt-3">
+      <div className="row border-top py-3">
       <div className="col-sm-6">
       
 				<div class="form-group mt-2">
@@ -119,7 +119,7 @@ class Checkout extends React.Component {
           <option>4</option> 
           <option>5</option> </select>
        <div class="invalid-feedback">
-         กรุณาใส่ชื่อคอร์ส
+         กรุณาเลือกเวลา
        </div>
       </div> 
       
@@ -129,8 +129,11 @@ class Checkout extends React.Component {
       </div>
       
       <div className="row border-top pt-3">
-      <div className="col-sm-7">
-      <h6 className="font-weight-bold">ช่องทางชำระเงิน</h6>
+      <div className="col-12">
+        <h6 className="font-weight-bold">ช่องทางชำระเงิน</h6>
+
+      </div>
+      <div className="col-sm-6">
       <div class="form-check p-3 px-4 border rounded mb-2">
 
 				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
@@ -139,6 +142,9 @@ class Checkout extends React.Component {
 			  <img src="https://www.omise.co/assets/pricing/promptpay-b5504a07613f158a62f014647ba862aba4f22af1a116f6ca02aafb1770fd7e46.svg" width="80" style={{position:'absolute',right:30}}/>
 			</div>
 			
+		</div>
+		<div className="col-sm-6">
+
      <div class="form-check p-3 px-4 border rounded">
 
 				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
