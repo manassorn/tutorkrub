@@ -105,25 +105,17 @@ class Course extends React.Component {
           <h4 className="mb-1">ตารางเวลา</h4>
 
         </div>
-      <div className="col-sm-7 mb-3">
+      <div className="offset-sm-2 col-sm-8">
         
         <CalendarCarousel2 startOfWeek={new Date()}/>
         
         
       </div>
       
+      <div className="offset-sm-2 col-sm-8 mt-4">
+        <a href={`/checkout/${this.state.course._id}`} className="btn btn-primary btn-block" >นัดหมาย</a>
 
-        <div className="col-sm-5 d-none d-sm-block">
-					<div class="card text-center">
-
-						<div class="card-body">
-							<h5 class="card-title">Special title treatment</h5>
-							<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-							 <a href={`/checkout/${this.state.course._id}`} className="btn btn-primary btn-block" >นัดหมาย</a>
-
-						</div>
-					</div>
-        </div>
+      </div>
       
 
       </div>
