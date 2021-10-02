@@ -155,7 +155,7 @@ class Checkout extends React.Component {
 
 			</div>
 			</div>
-			<div className="offset-sm-3 col-sm-6 d-none d-sm-block mt-3">
+			<div className="col-12 d-none d-sm-block mt-3">
 			  <button className="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCenter">ชำระเงิน</button>
 
 			</div>
