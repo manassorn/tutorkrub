@@ -84,7 +84,7 @@ class Checkout extends React.Component {
     render() {
       return      <div class="container pt-3 border-top" style={{maxWidth:'720px'}}>
       
-      
+      <script type="text/javascript" src="https://cdn.omise.co/omise.js"> </script>
        <SimpleTitle title='นัดหมาย' />
        
        <div className="row mt-3">
