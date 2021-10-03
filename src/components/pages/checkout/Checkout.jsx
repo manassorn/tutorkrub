@@ -64,21 +64,28 @@ class Checkout extends React.Component {
         )
     }
     
-    createOmiseSource(callback) {
+    createOmiseSource(amount, callback) {
       Omise.setPublicKey('pkey_test_5kscphkh3r2cqs8plug'); 
       Omise.createSource(
         'promptpay', { 
-          "amount": 2000, 
+          "amount": amount, 
           "currency": "THB" 
           
         }, function(statusCode, response) {
           console.log(response["id"])
-          if(callback) callback()
+          if(callback) callback(response["id"])
         });
     }
     
     pay() {
-      this.createOmiseSource()
+      const amount = 2000
+      this.createOmiseSource(amount, (sourceId) => {
+        Api.post('/omise/charge/promptpay', {sourceId, amount}).then((res) => {
+          const qrUri = res.data.data.qrUri
+        
+          console.log(qrUri)
+        })
+      })
     }
     
     render() {
