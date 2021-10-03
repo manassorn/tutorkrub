@@ -12,7 +12,7 @@ class Checkout extends React.Component {
         super(props);
         this.state = {
           course: {},
-          selectedDateHour: undefined,
+          selectedDateHour: undefined, 
           qrUri:''
         }
       this.onCalendarChanged = this.onCalendarChanged.bind(this)
@@ -164,7 +164,7 @@ class Checkout extends React.Component {
 				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
 
 				<label class="form-check-label" for="exampleRadios1">พร้อมเพย์</label>
-			  <img src={this.state.qrUri} width="80" style={{position:'absolute',right:30}}/>
+			  <img src="https://www.omise.co/assets/pricing/promptpay-b5504a07613f158a62f014647ba862aba4f22af1a116f6ca02aafb1770fd7e46.svg" width="80" style={{position:'absolute',right:30}}/>
 			</div>
 			
 		</div>
@@ -206,7 +206,7 @@ class Checkout extends React.Component {
       	<img src="https://www.omise.co/assets/pricing/promptpay-b5504a07613f158a62f014647ba862aba4f22af1a116f6ca02aafb1770fd7e46.svg" width="100" />
       	<h5 className="my-3">แสกนคิวอาร์โค้ดเพื่อจ่ายเงิน</h5>
       	
-<img src="https://chart.googleapis.com/chart?cht=qr&chl=http%3A%2F%2F1hourtutor.com&chs=180x180&choe=UTF-8&chld=L|2" width="180" />
+<img src={this.state.qrUri} width="180" />
         <h3>฿450</h3>
         <p className="text-muted mb-0">
         <i className="bx bx-time"></i> 15:00
