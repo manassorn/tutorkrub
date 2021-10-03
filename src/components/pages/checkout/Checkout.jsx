@@ -12,7 +12,8 @@ class Checkout extends React.Component {
         super(props);
         this.state = {
           course: {},
-          selectedDateHour: undefined
+          selectedDateHour: undefined,
+          qrUri:''
         }
       this.onCalendarChanged = this.onCalendarChanged.bind(this)
       this.createAppointment = this.createAppointment.bind(this)
@@ -82,7 +83,7 @@ class Checkout extends React.Component {
       this.createOmiseSource(amount, (sourceId) => {
         Api.post('/omise/charge/promptpay', {sourceId, amount}).then((res) => {
           const qrUri = res.data.data.qrUri
-        
+          this.state.qrUri = qrUri
           console.log(qrUri)
         })
       })
@@ -163,7 +164,7 @@ class Checkout extends React.Component {
 				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
 
 				<label class="form-check-label" for="exampleRadios1">พร้อมเพย์</label>
-			  <img src="https://www.omise.co/assets/pricing/promptpay-b5504a07613f158a62f014647ba862aba4f22af1a116f6ca02aafb1770fd7e46.svg" width="80" style={{position:'absolute',right:30}}/>
+			  <img src={this.state.qrUri} width="80" style={{position:'absolute',right:30}}/>
 			</div>
 			
 		</div>
