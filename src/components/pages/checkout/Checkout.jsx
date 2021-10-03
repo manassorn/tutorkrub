@@ -72,7 +72,7 @@ class Checkout extends React.Component {
           "currency": "THB" 
           
         }, function(statusCode, response) {
-          console.log(response)
+          console.log(response["id"])
           if(callback) callback()
         });
     }
