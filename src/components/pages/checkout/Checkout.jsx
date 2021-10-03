@@ -16,6 +16,7 @@ class Checkout extends React.Component {
         }
       this.onCalendarChanged = this.onCalendarChanged.bind(this)
       this.createAppointment = this.createAppointment.bind(this)
+      this.pay = this.pay.bind(this)
     }
     
     componentDidMount() {
@@ -61,6 +62,23 @@ class Checkout extends React.Component {
           location.href = '/appointment/list'
         }
         )
+    }
+    
+    createOmiseSource(callback) {
+      Omise.setPublicKey('pkey_test_5kscphkh3r2cqs8plug'); 
+      Omise.createSource(
+        'promptpay', { 
+          "amount": 2000, 
+          "currency": "THB" 
+          
+        }, function(statusCode, response) {
+          console.log(response)
+          if(callback) callback()
+        });
+    }
+    
+    pay() {
+      this.createOmiseSource()
     }
     
     render() {
@@ -164,7 +182,7 @@ class Checkout extends React.Component {
 
 
       <div className="p-3 fixed-bottom bg-white w-100 border-top d-sm-none">
-        <button className="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCenter">ชำระเงิน</button>
+        <button className="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCenter" onClick={this.pay}>ชำระเงิน</button>
       </div>
 
       
