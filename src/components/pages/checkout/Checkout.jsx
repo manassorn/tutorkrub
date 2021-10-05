@@ -84,8 +84,7 @@ class Checkout extends React.Component {
       this.createOmiseSource(amount, (sourceId) => {
         Api.post('/omise/charge/promptpay', {sourceId, amount}).then((res) => {
           const qrUri = res.data.data.qrUri
-          that.state.qrUri = qrUri
-          console.log(qrUri)
+          that.setState({qrUri})
         })
       })
     }
