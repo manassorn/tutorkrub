@@ -6,9 +6,9 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     port: 9950,
-  
+    historyApiFallback: { index: 'index.html' },
     proxy: {
-      '/api': 'https://1hourtutor.com',
+      '/api': 'http://139.59.216.150:8080',
     },
   }
 });
