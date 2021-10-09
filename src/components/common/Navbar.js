@@ -122,7 +122,7 @@ class Navbar extends React.Component {
                                     </div>
                   <div className="position-relative">
                     <div style={{width:'48px', height:'48px'}}>
-                    <img src={this.state.user.avatarUrl} className="user-img" width="48" height="48" />
+                    <img src={this.state.user.avatarUrl || '/assets/images/avatars/avatar-default.jpg'} className="user-img" width="48" height="48" />
                      </div>                   <span className="msg-count2" >8</span>
 
                                     </div>

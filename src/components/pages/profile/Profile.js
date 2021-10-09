@@ -39,7 +39,7 @@ class Profile extends React.Component {
 
        <div className="border-top border-bottom py-4">
         <div class="text-center d-flex justify-content-center">
-         <img src={this.state.user.avatarUrl} class="rounded-circle shadow" width="130" height="130" alt=""/>
+         <img src={this.state.user.avatarUrl || '/assets/images/avatars/avatar-default.jpg'} class="rounded-circle shadow" width="130" height="130" alt=""/>
          <div class="m-3 text-left">
           <h5>{this.state.user.name}</h5>
 
