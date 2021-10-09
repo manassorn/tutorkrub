@@ -7,8 +7,11 @@ module.exports = merge(common, {
   mode: 'production',
   plugins: [ 
     new WebpackShellPluginNext({ 
-      onBuildEnd: ['cp -r assets dist/assets',
-      'cp index.html dist/index2.html'] }),
+      onBuildEnd: {
+        scripts:['cp -r assets dist/assets',
+      'cp index.html dist/index2.html']
+      } 
+    }),
 
   ],
 });
