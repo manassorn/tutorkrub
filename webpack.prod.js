@@ -8,7 +8,7 @@ module.exports = merge(common, {
     { 
       apply: (compiler) => { 
         compiler.hooks.afterEmit.tap('AfterEmitPlugin', (compilation) => { 
-          exec('cp -r assets dist/assets', (err, stdout, stderr) => { 
+          exec('cp -r assets dist/assets2', (err, stdout, stderr) => { 
             if (stdout) process.stdout.write(stdout); 
             if (stderr) process.stderr.write(stderr); 
           }); 
