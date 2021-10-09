@@ -1,8 +1,20 @@
 const { merge } = require('webpack-merge');
-const CopyPlugin = require("copy-webpack-plugin");
 const common = require('./webpack.common.js');
+const exec = require('child_process').exec;
 
 module.exports = merge(common, {
   mode: 'production',
-  plugins: [ new CopyPlugin({ patterns: [ { from: "assets", to: "dist/assets2" } ], options: { concurrency: 100, }, }), ],
+  plugins: [ 
+    { 
+      apply: (compiler) => { 
+        compiler.hooks.afterEmit.tap('AfterEmitPlugin', (compilation) => { 
+          exec('cp assets dist/assets2', (err, stdout, stderr) => { 
+            if (stdout) process.stdout.write(stdout); 
+            if (stderr) process.stderr.write(stderr); 
+          }); 
+        }); 
+      } 
+    }
+  
+  ],
 });
