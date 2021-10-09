@@ -18,12 +18,6 @@ function WebpackShellPlugin(options) {
 WebpackShellPlugin.prototype.apply = function(compiler) {
   const options = this.options;
 
-  compiler.plugin("compilation", compilation => {
-    if (options.onBuildStart.length) {
-      console.log("Executing pre-build scripts");
-      options.onBuildStart.forEach(script => exec(script, puts));
-    }
-  });
 
   compiler.plugin("after-emit", (compilation, callback) => {
     if (options.onBuildEnd.length) {
