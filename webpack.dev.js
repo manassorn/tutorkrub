@@ -7,7 +7,6 @@ module.exports = merge(common, {
   devServer: {
     port: 9950,
   
-    historyApiFallback: { index: 'dist/index.html' },
     proxy: {
       '/api': 'https://1hourtutor.com',
     },
