@@ -13,11 +13,11 @@ class HomeFooter extends React.Component {
       return <div className="p-3 border-top bg-light">
       <div className="row">
         <div className="col-sm-6">
-          <div className="row">
-            <div className="col"><i className="lni lni-facebook-original"/></div>
-            <div className="col"><i className="lni lni-youtube"/></div>
-            <div className="col"><i className="lni lni-instagram-original"/></div>
-            <div className="col"><i className="lni lni-twitter"/></div>
+          <div className="row" style={{fontSize:'36px'}}>
+            <div className="col text-center"><i className="lni lni-facebook-original"/></div>
+            <div className="col text-center"><i className="lni lni-youtube"/></div>
+            <div className="col text-center"><i className="lni lni-instagram-original"/></div>
+            <div className="col text-center"><i className="lni lni-twitter"/></div>
           </div>
         </div>
         <div className="col-sm-6">
