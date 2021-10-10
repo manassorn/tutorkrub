@@ -11,16 +11,21 @@ class HomeFooter extends React.Component {
     
     render() {
       return <div className="p-3 border-top bg-light">
-        <div className="d-flex bx-xl">
-          <i className="bx bxl-facebook-circle" />
-          <i className="lni lni-facebook-original" />
-          <i className="lni lni-youtube" />
-          <i className="lni lni-instagram-original" />
-          <i className="bx bxl-twitter-circle" />
-        
+      <div className="row">
+        <div className="col-sm-6">
+          <div className="row">
+            <div className="col"><i className="lni lni-facebook-original"/></div>
+            <div className="col"><i className="lni lni-youtube"/></div>
+            <div className="col"><i className="lni lni-instagram-original"/></div>
+            <div className="col"><i className="lni lni-twitter"/></div>
+          </div>
         </div>
-         วันอาวติวเตอร์
+        <div className="col-sm-6">
+          วันอาวติวเตอร์
           copyright © 2021
+        </div>
+      
+      </div>
       </div>
 
     }
