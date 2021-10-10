@@ -11,6 +11,8 @@ class HomeFooter extends React.Component {
     
     render() {
       return <div className="p-3 border-top bg-light">
+      <i className="bx bxl-facebook-circle" />
+      <i className="bx bxl-facebook-square" />
           บริษัท วันอาวติวเตอร์ จำกัด
           copyright © 2021
       </div>
