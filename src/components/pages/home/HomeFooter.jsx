@@ -13,10 +13,10 @@ class HomeFooter extends React.Component {
       return <div className="p-3 border-top bg-light">
       <div className="row">
         <div className="col-sm-6" style={{fontSize:'24px'}}>
-          <i className="lni lni-facebook-original mr-2"/>
-          <i className="lni lni-youtube mr-2"/>
-          <i className="lni lni-instagram-filled mr-2"/>
-          <i className="lni lni-twitter-original mr-2"/>
+          <i className="lni lni-facebook-original mr-3"/>
+          <i className="lni lni-youtube mr-3"/>
+          <i className="lni lni-instagram-filled mr-3"/>
+          <i className="lni lni-twitter-original mr-3"/>
 
 
         </div>
