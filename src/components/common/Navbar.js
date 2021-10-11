@@ -89,13 +89,18 @@ class Navbar extends React.Component {
                 </div>
                 
                 <div className="flex-grow-1" onClick={e => this.activateSecretPanel(e)}>
-                  
-                  
-                  <Link className="pl-4" to="/explore">สำรวจวิชาเรียน <span class="sr-only">(current)</span></Link>
-                  
 
-                
-                
+                  <Link className="pl-4" to="/explore">วิธีใช้งาน <span className="sr-only">(current)</span></Link>
+
+                  <Link className="pl-4" to="/explore">สำรวจวิชาเรียน</Link>
+
+                  <Link className="pl-4" to="/explore">สมัครสมาชิก</Link>
+
+                  <Link className="pl-4" to="/explore">เข้าสู่ระบบ</Link>
+
+
+
+
                 </div>
                 
                 
