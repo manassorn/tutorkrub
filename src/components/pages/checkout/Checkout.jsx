@@ -180,6 +180,28 @@ class Checkout extends React.Component {
 
 			</div>
 			</div>
+
+
+		<div className="col-sm-6">
+
+     <div class="form-check p-3 px-4 border rounded">
+
+				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
+
+				<label class="form-check-label" for="exampleRadios1">บัตรเครดิต</label>
+				
+				<div style={{position:'absolute',right:30}}>
+					<img src="https://www.omise.co/assets/pricing/visa-0b795a2d39bcf03d7b7624142d6d82919d99f8c942fa5419b31c4333c7645744.svg" width="80"/>
+					<img src="https://www.omise.co/assets/pricing/mastercard-de9bbb897f6b3f1cea0f59c9e1c67c80d9b0b74ee829f70b64961072a56331a1.svg" width="80"/>
+					<img src="https://www.omise.co/assets/pricing/jcb-5cb2403de82da39c5c11e6adfd36bb1c4039a00405401a64a3bb2ea07ea30355.svg" width="80"/>
+
+				</div>
+				<img src="https://www.omise.co/assets/pricing/truemoney-b30675ae6b2cbd2de51b7e89d2bd7df3f6db5091cfd2ab429cd437921bc19c6f.svg" width="80" style={{position:'absolute',right:30}}/>
+
+			</div>
+			</div>			
+			
+			
 			<div className="col-12 d-none d-sm-block mt-4">
 			  <button className="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModalCenter">ชำระเงิน</button>
 
