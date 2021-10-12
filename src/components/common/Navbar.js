@@ -99,7 +99,7 @@ class Navbar extends React.Component {
                  <div className="right-topbar ml-auto">
                 <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a className="nav-link dropdown-toggle dropdown-toggle-nocaret bx-xl" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <i className="bx bx-xl bx-menu"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
