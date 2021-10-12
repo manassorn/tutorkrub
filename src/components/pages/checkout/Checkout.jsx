@@ -90,7 +90,7 @@ class Checkout extends React.Component {
     }
     
     render() {
-      return      <div class="container pt-3 border-top" style={{maxWidth:'720px'}}>
+      return      <div class="container pt-3 border-top mb-4 mb-5" style={{maxWidth:'720px'}}>
       
        <SimpleTitle title='นัดหมาย' />
        
@@ -153,7 +153,7 @@ class Checkout extends React.Component {
 
       </div>
       
-      <div className="row border-top pt-3 mb-5">
+      <div className="row border-top pt-3">
       <div className="col-12">
         <h6 className="font-weight-bold">ช่องทางชำระเงิน</h6>
 
