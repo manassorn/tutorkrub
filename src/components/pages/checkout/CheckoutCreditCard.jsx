@@ -23,10 +23,29 @@ class CheckoutCreditCard extends React.Component {
         publicKey: 'OMISE_PUBLIC_KEY'
       });
 
-      OmiseCard.configureButton('#checkout-button', {
-        amount: 3000,
-        currency: 'USD',
-        buttonLabel: 'Pay 30 USD'
+      // OmiseCard.configureButton('#checkout-button', {
+      //   amount: 3000,
+      //   currency: 'USD',
+      //   buttonLabel: 'Pay 30 USD'
+      // });
+      var button = document.querySelector("#checkoutButton");
+      var form = document.querySelector("#checkoutForm");
+
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        OmiseCard.open({
+          amount: 12345,
+          currency: "THB",
+          defaultPaymentMethod: "credit_card",
+          onCreateTokenSuccess: (nonce) => {
+            if (nonce.startsWith("tokn_")) {
+              form.omiseToken.value = nonce;
+            } else {
+              form.omiseSource.value = nonce;
+            };
+            form.submit();
+          }
+        });
       });
     }
     
@@ -78,9 +97,9 @@ class CheckoutCreditCard extends React.Component {
        
        <div>
          <form id="checkoutForm" method="POST" action="/charge">
-           <input type="hidden" name="omiseToken" />
-           <input type="hidden" name="omiseSource" />
-           <button type="submit" id="checkout-button">Checkout</button>
+           <input type="hidden" name="omiseToken"/>
+             <input type="hidden" name="omiseSource"/>
+               <button type="submit" id="checkoutButton">Checkout</button>
          </form>
 
       </div>
