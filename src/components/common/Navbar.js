@@ -106,13 +106,16 @@ class Navbar extends React.Component {
                           <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'fiSdcHz3FcLxZ0b2ienj')}>วิธีใช้งาน</a>
                           <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'fiSdcHz3FcLxZ0b2ienj')}>สำรวจวิชาเรียน</a>
                           <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'Uh2S6P31pGs29M2zblDH')}>ติดต่อสอบถาม</a>
-                        </div>
-                               <div className="dropdown-divider mb-0"></div>	<a className="dropdown-item" onClick={e => this.logout(e)} href="#">
+                        
+                               <div className="dropdown-divider mb-0"></div>	
+                          <a className="dropdown-item" onClick={e => this.logout(e)} href="#">
                                     สมัครสมาชิก
                                 </a>
                       <a className="dropdown-item" onClick={e => this.logout(e)} href="#">
                                     เข้าสู่ระบบ
                                 </a>
+                        </div>
+
                            
                       </li>}
                       
