@@ -170,7 +170,7 @@ class Checkout extends React.Component {
 		</div>
 		<div className="col-sm-6">
 
-     <div class="form-check p-3 px-4 border rounded">
+     <div class="form-check p-3 px-4 border rounded mb-2">
 
 				<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
 
