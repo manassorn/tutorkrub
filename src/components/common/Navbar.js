@@ -98,15 +98,16 @@ class Navbar extends React.Component {
                 
                  <div className="right-topbar ml-auto">
                 <ul class="navbar-nav">
-                <li class="nav-item dropdown">
+                { !this.state.auth && <li class="nav-item dropdown">
                         <a className="nav-link dropdown-toggle dropdown-toggle-nocaret bx-md" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <i className="bx bx-md bx-menu"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'fiSdcHz3FcLxZ0b2ienj')}>Login as Pun</a>
-                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'Uh2S6P31pGs29M2zblDH')}>Login as Bamboo</a>
+                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'fiSdcHz3FcLxZ0b2ienj')}>วิธีใช้งาน</a>
+                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'fiSdcHz3FcLxZ0b2ienj')}>สำรวจวิชาเรียน</a>
+                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'Uh2S6P31pGs29M2zblDH')}>ติดต่อสอบถาม</a>
                         </div>
-                      </li>
+                      </li>}
                       
             { this.state.auth && 
                 <li className="nav-item dropdown dropdown-user-profile">
