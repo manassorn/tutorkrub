@@ -20,7 +20,7 @@ class CheckoutCreditCard extends React.Component {
     componentDidMount() {
       const {OmiseCard} = window;
       OmiseCard.configure({
-        publicKey: 'OMISE_PUBLIC_KEY'
+        publicKey: 'pkey_test_5kscphkh3r2cqs8plug'
       });
 
       // OmiseCard.configureButton('#checkout-button', {
