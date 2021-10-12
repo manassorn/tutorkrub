@@ -196,7 +196,6 @@ class Checkout extends React.Component {
 					<img src="https://www.omise.co/assets/pricing/jcb-5cb2403de82da39c5c11e6adfd36bb1c4039a00405401a64a3bb2ea07ea30355.svg" width="80"/>
 
 				</div>
-				<img src="https://www.omise.co/assets/pricing/truemoney-b30675ae6b2cbd2de51b7e89d2bd7df3f6db5091cfd2ab429cd437921bc19c6f.svg" width="80" style={{position:'absolute',right:30}}/>
 
 			</div>
 			</div>			
