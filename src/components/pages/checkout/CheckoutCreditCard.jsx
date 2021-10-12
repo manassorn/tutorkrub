@@ -18,6 +18,16 @@ class CheckoutCreditCard extends React.Component {
     }
     
     componentDidMount() {
+      const {OmiseCard} = window;
+      OmiseCard.configure({
+        publicKey: 'OMISE_PUBLIC_KEY'
+      });
+
+      OmiseCard.configureButton('#checkout-button', {
+        amount: 3000,
+        currency: 'USD',
+        buttonLabel: 'Pay 30 USD'
+      });
     }
     
     onCalendarChanged(selectedDateHour){
@@ -68,12 +78,9 @@ class CheckoutCreditCard extends React.Component {
        
        <div>
          <form id="checkoutForm" method="POST" action="/charge">
-           <script type="text/javascript" src="https://cdn.omise.co/omise.js"
-                   data-key="pkey_test_5kscphkh3r2cqs8plug'"
-                   data-amount="12345"
-                   data-currency="THB"
-                   data-default-payment-method="credit_card">
-           </script>
+           <input type="hidden" name="omiseToken" />
+           <input type="hidden" name="omiseSource" />
+           <button type="submit" id="checkoutButton">Checkout</button>
          </form>
 
       </div>
