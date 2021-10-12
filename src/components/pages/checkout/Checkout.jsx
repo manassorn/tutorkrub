@@ -153,7 +153,7 @@ class Checkout extends React.Component {
 
       </div>
       
-      <div className="row border-top pt-3 pb-5">
+      <div className="row border-top pt-3 mb-5">
       <div className="col-12">
         <h6 className="font-weight-bold">ช่องทางชำระเงิน</h6>
 
