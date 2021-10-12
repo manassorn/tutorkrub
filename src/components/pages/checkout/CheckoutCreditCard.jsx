@@ -80,7 +80,7 @@ class CheckoutCreditCard extends React.Component {
          <form id="checkoutForm" method="POST" action="/charge">
            <input type="hidden" name="omiseToken" />
            <input type="hidden" name="omiseSource" />
-           <button type="submit" id="checkoutButton">Checkout</button>
+           <button type="submit" id="checkout-button">Checkout</button>
          </form>
 
       </div>
