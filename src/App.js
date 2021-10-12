@@ -49,8 +49,8 @@ class App extends React.Component {
               <Route exact path="/" component={Home} />
               <Route path="/appointment/list" component={AppointmentList} />
               <Route path="/appointment" component={Appointment} />
-              <Route path="/checkout" component={Checkout} />
               <Route path="/checkout/creditcard" component={CheckoutCreditCard} />
+              <Route path="/checkout" component={Checkout} />
               <Route path="/course/add" component={CourseAdd} />
               <Route path="/course/edit" component={CourseEdit} />
               <Route path="/explore" component={Explore} />
