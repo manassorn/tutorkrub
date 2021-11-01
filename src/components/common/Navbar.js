@@ -75,7 +75,8 @@ class Navbar extends React.Component {
       var startingY = window.pageYOffset; 
       //var diff = elementY - startingY; 
       
-      var diff = document.querySelector(elementY).getBoundingClientRect().top
+      var navbarHeight = 80
+      var diff = document.querySelector(elementY).getBoundingClientRect().top - navbarHeight
       
       
       var start; // Bootstrap our animation - it will get called right before next frame shall be rendered. 
