@@ -108,12 +108,12 @@ class Navbar extends React.Component {
                           <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'Uh2S6P31pGs29M2zblDH')}>ติดต่อสอบถาม</a>
                         
                                <div className="dropdown-divider"></div>	
-                          <a className="dropdown-item" onClick={e => this.logout(e)} href="#">
+                          <Link className="dropdown-item" to="/register">
                                     สมัครสมาชิก
-                                </a>
-                      <a className="dropdown-item" onClick={e => this.logout(e)} href="#">
+                                </Link>
+                      <Link className="dropdown-item" to="/login">
                                     เข้าสู่ระบบ
-                                </a>
+                                </Link>
                         </div>
 
                            
