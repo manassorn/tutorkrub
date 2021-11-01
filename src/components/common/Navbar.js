@@ -125,7 +125,7 @@ class Navbar extends React.Component {
                                <div className="dropdown-divider"></div>	
                           <Link className="dropdown-item" to="/register">
                                     สมัครสมาชิก
-                                </>
+                                </Link>
                       <Link className="dropdown-item" to="/login">
                                     เข้าสู่ระบบ
                                 </Link>
