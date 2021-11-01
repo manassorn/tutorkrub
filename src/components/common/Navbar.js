@@ -72,10 +72,10 @@ class Navbar extends React.Component {
     }
     
     doScrolling(elementY, duration) { 
-      //var startingY = window.pageYOffset; 
+      var startingY = window.pageYOffset; 
       //var diff = elementY - startingY; 
       
-      document.querySelector(elementY).getBoundingClientRect().top
+      var diff = document.querySelector(elementY).getBoundingClientRect().top
       
       
       var start; // Bootstrap our animation - it will get called right before next frame shall be rendered. 
