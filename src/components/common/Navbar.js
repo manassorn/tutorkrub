@@ -72,8 +72,12 @@ class Navbar extends React.Component {
     }
     
     doScrolling(elementY, duration) { 
-      var startingY = window.pageYOffset; 
-      var diff = elementY - startingY; 
+      //var startingY = window.pageYOffset; 
+      //var diff = elementY - startingY; 
+      
+      document.querySelector(elementY).getBoundingClientRect().top
+      
+      
       var start; // Bootstrap our animation - it will get called right before next frame shall be rendered. 
     window.requestAnimationFrame(function step(timestamp) { 
       if (!start) start = timestamp; // Elapsed milliseconds since start of scrolling. 
