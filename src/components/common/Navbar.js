@@ -15,6 +15,7 @@ class Navbar extends React.Component {
         this.devlogin = this.devlogin.bind(this)
         this.logout = this.logout.bind(this)
         this.activateSecretPanel = this.activateSecretPanel.bind(this)
+        this.doScrolling = this.doScrolling.bind(this)
     }
 
     componentDidMount() {
@@ -69,6 +70,20 @@ class Navbar extends React.Component {
       }
       
     }
+    
+    doScrolling(elementY, duration) { 
+      var startingY = window.pageYOffset; 
+      var diff = elementY - startingY; 
+      var start; // Bootstrap our animation - it will get called right before next frame shall be rendered. 
+    window.requestAnimationFrame(function step(timestamp) { 
+      if (!start) start = timestamp; // Elapsed milliseconds since start of scrolling. 
+      var time = timestamp - start; // Get percent of completion in range [0, 1]. 
+      var percent = Math.min(time / duration, 1); window.scrollTo(0, startingY + diff * percent); // Proceed with animation as long as we wanted it to. 
+      if (time < duration) { 
+        window.requestAnimationFrame(step)
+      } 
+    }) 
+    }
 
 
     render() {
@@ -105,12 +120,12 @@ class Navbar extends React.Component {
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                           <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'fiSdcHz3FcLxZ0b2ienj')}>วิธีใช้งาน</a>
                           <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'fiSdcHz3FcLxZ0b2ienj')}>สำรวจวิชาเรียน</a>
-                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'Uh2S6P31pGs29M2zblDH')}>ติดต่อสอบถาม</a>
+                          <a class="dropdown-item" href="#" onClick={e => this.doScrolling('#home-contactus', 800)}>ติดต่อสอบถาม</a>
                         
                                <div className="dropdown-divider"></div>	
                           <Link className="dropdown-item" to="/register">
                                     สมัครสมาชิก
-                                </Link>
+                                </>
                       <Link className="dropdown-item" to="/login">
                                     เข้าสู่ระบบ
                                 </Link>
