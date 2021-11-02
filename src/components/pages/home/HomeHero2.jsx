@@ -19,7 +19,9 @@ class HomeHero2 extends React.Component {
         <div className="offset-md-1 col-md-5">
         <div class="jumbotron jumbotron-fluid" style={{background:'#fafafa'}}> 
         <div class="container"> 
-        <h1 class="display-4">Fluid jumbotron</h1> 
+        <h1 class="display-4">
+        ศูนย์รวมติวเตอร์ทุกวิชา
+        </h1> 
         <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> 
         <p class="lead">
           <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> 
@@ -29,11 +31,6 @@ class HomeHero2 extends React.Component {
         </div> 
         </div>
 
-
-        <div className="mt-3">
-          <a href="#" className="btn btn-outline-primary rounded-pill">สมัครสอน</a>
-          <a href="#" className="btn btn-outline-primary rounded-pill ml-3">สมัครเรียน</a>
-        </div>
       </div>
       
       <div className="col-md-6" style={{paddingTop:'0px'}}>
