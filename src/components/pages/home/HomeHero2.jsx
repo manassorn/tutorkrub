@@ -20,12 +20,14 @@ class HomeHero2 extends React.Component {
         <div class="jumbotron jumbotron-fluid" style={{background:'#fafafa'}}> 
         <div class="container"> 
         <h1 class="display-4">
-        ศูนย์รวมติวเตอร์ทุกวิชา
+        ศูนย์รวมติวเตอร์ ทุกวิชา
         </h1> 
-        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> 
         <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> 
-          <a class="btn btn-link btn-lg" href="#" role="button">Learn more</a> 
+        ทดลองเรียน 1 ชั่วโมงก่อนได้
+        </p> 
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">ทดลองเรียน 1 ชั่วโมง</a> 
+          <a class="btn btn-link btn-lg" href="#" role="button">อยากเป็นติวเตอร์</a> 
         </p> 
 
         </div> 
