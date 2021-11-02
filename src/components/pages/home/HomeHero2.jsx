@@ -17,7 +17,7 @@ class HomeHero2 extends React.Component {
   render() {
     return <div className="xhero-bg-young-boy row mx-0" style={{background:'#fafafa'}}>
         <div className="col-md-6 hero-message">
-        <div class="jumbotron jumbotron-fluid"> 
+        <div class="jumbotron jumbotron-fluid" style={{background:'#fafafa'}}> 
         <div class="container"> 
         <h1 class="display-4">Fluid jumbotron</h1> 
         <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p> 
