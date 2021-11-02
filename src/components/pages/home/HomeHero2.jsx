@@ -16,7 +16,7 @@ class HomeHero2 extends React.Component {
 
   render() {
     return <div className="xhero-bg-young-boy row mx-0" style={{background:'#fafafa'}}>
-        <div className="col-md-6">
+        <div className="offset-md-1 col-md-5">
         <div class="jumbotron jumbotron-fluid" style={{background:'#fafafa'}}> 
         <div class="container"> 
         <h1 class="display-4">Fluid jumbotron</h1> 
@@ -29,14 +29,6 @@ class HomeHero2 extends React.Component {
         </div> 
         </div>
 
-        <h1>สอน / เรียน แค่ 1 ชั่วโมง</h1>
-        <div className="pl-2">
-
-            <img src="https://cdn0.agoda.net/images/emailmarketing/ycs_elements/agx-50-circle-check.png" width="16"/>&nbsp;ไม่มีข้อผูกมัด
-            <br/>
-            <img src="https://cdn0.agoda.net/images/emailmarketing/ycs_elements/agx-50-circle-check.png" width="16"/>&nbsp;เรียนจบเป็นครั้งๆ
-
-        </div>
 
         <div className="mt-3">
           <a href="#" className="btn btn-outline-primary rounded-pill">สมัครสอน</a>
