@@ -16,7 +16,7 @@ class HomeHero2 extends React.Component {
 
   render() {
     return <div className="xhero-bg-young-boy row mx-0" style={{background:'#fafafa'}}>
-        <div className="col-md-6 hero-message">
+        <div className="col-md-6">
         <div class="jumbotron jumbotron-fluid" style={{background:'#fafafa'}}> 
         <div class="container"> 
         <h1 class="display-4">Fluid jumbotron</h1> 
