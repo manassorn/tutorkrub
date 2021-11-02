@@ -15,7 +15,7 @@ class HomeHero2 extends React.Component {
   }
 
   render() {
-    return <div className="xhero-bg-young-boy row mx-0">
+    return <div className="xhero-bg-young-boy row mx-0" style={{background:'#f5f5f5'}}>
         <div className="col-md-5 offset-md-2 hero-message">
 
         <h2>สอน / เรียน แค่ 1 ชั่วโมง</h2>
@@ -34,7 +34,7 @@ class HomeHero2 extends React.Component {
         </div>
       </div>
       
-      <div className="col-md-5 hero-message">
+      <div className="col-md-5" style={{paddingTop:'50px'}}>
         <img src="/assets/images/home/skype-call.jpg" width="100%"/>
       </div>
      </div>
