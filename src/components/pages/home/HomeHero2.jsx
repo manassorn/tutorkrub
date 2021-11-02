@@ -15,14 +15,13 @@ class HomeHero2 extends React.Component {
   }
 
   render() {
-    return <div className="xhero-bg-young-boy row mx-0" style={{background:'#f5f5f5'}}>
+    return <div className="xhero-bg-young-boy row mx-0" style={{background:'#fafafa'}}>
         <div className="col-md-5 offset-md-2 hero-message">
 
         <h2>สอน / เรียน แค่ 1 ชั่วโมง</h2>
         <div className="pl-2">
 
             <img src="https://cdn0.agoda.net/images/emailmarketing/ycs_elements/agx-50-circle-check.png" width="16"/>&nbsp;ไม่มีข้อผูกมัด
-            <a href="ycsapp://agoda/dashboard">ycsapp://agoda/dashboard</a>
             <br/>
             <img src="https://cdn0.agoda.net/images/emailmarketing/ycs_elements/agx-50-circle-check.png" width="16"/>&nbsp;เรียนจบเป็นครั้งๆ
 
