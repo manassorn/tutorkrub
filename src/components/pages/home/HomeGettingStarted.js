@@ -48,7 +48,7 @@ class HomeGettingStarted extends React.Component {
                 กรอกชื่อ นามสกุล อีเมลหรือเบอร์โทรศัพท์ให้ครบถ้วน
               </p>
               <a href="/register" className="btn btn-block btn-outline-primary py-2">
-              ลงทะเบียน
+              สมัครสมาชิก
               </a>
            </div> 
            </div>
@@ -69,7 +69,6 @@ class HomeGettingStarted extends React.Component {
               ค้นหาวิชาเรียน
             </a>
            </div> 
-           </div>
           </div>
           
           <div className="col-md-3">
