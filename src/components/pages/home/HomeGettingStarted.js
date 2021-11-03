@@ -43,7 +43,7 @@ class HomeGettingStarted extends React.Component {
            </div> 
            <div>
               
-              <h3 class="font font-weight-bold">1.ลงทะเบียน</h3> 
+              <h4 class="font font-weight-bold">1.ลงทะเบียน</h4> 
               <p className="">
                 กรอกชื่อ นามสกุล อีเมลหรือเบอร์โทรศัพท์ให้ครบถ้วน
               </p>
@@ -57,9 +57,9 @@ class HomeGettingStarted extends React.Component {
            </div> 
            <div>
               
-              <h3 class="font font-weight-bold">1.ลงทะเบียน</h3> 
+              <h4 class="font font-weight-bold">2.เลือกเวลาเรียนและชำระเงิน</h4> 
               <p className="">
-                กรอกชื่อ นามสกุล อีเมลหรือเบอร์โทรศัพท์ให้ครบถ้วน
+                เลือกเวลาเรียนได้เอง เลือกเวลาเรียนที่สะดวก ไม่ว่าเสาร์อาทิตย์ หรือวันธรรมดา ไม่ว่าเช้าตรู่หรือเที่ยงคืน
               </p>
            </div>
           </div>
