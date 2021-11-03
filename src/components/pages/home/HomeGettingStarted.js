@@ -78,6 +78,19 @@ class HomeGettingStarted extends React.Component {
           </div>
           
           
+          <div className="col-md-3">
+            <div class="title-icon"> 
+            <i className="bx bx-wallet"></i>
+           </div> 
+           <div>
+              
+              <h4 class="font font-weight-bold">4.เรียนจบ</h4> 
+              <p className="">
+                 เมื่อคุณเรียนจบ เงินจะถูกโอนเข้า "กระเป๋าตังค์" ของติวเตอร
+              </p>
+           </div>
+          </div>
+          
           
           <div className="col-md-5 border-left pt-4">
 
