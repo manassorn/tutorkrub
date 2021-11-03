@@ -49,20 +49,7 @@ class HomeFooter extends React.Component {
                         ส่งข้อความหาเรา
                     </button>
                 </form>
-                <div className="mt-3">
-                    <a href="#">
-                        <img src="/assets/images/icons/icon-circle-fb.png" width="36"/>
-                    </a>&nbsp;&nbsp;
-                    <a href="#">
-                        <img src="/assets/images/icons/icon-circle-yt.png" width="36"/>
-                    </a>&nbsp;&nbsp;
-                    <a href="#">
-                        <img src="/assets/images/icons/icon-circle-tt.png" width="36"/>
-                    </a>&nbsp;&nbsp;
-                    <a href="#">
-                        <img src="/assets/images/icons/icon-circle-ig.png" width="36"/>
-                    </a>
-                </div>
+                
             </div>
         </div>
       </div>
