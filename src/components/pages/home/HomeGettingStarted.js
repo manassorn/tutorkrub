@@ -31,7 +31,7 @@ class HomeGettingStarted extends React.Component {
     render() {
       return <div className="pt-5">
           <div className="text-center">
-              <span className="h6">4 ขั้นตอนง่าย ๆ</span>
+              <span className="h6">3 ขั้นตอนง่าย ๆ</span>
               <p className="h4">ง่ายๆ ในการ</p>
           </div>
           
@@ -53,7 +53,7 @@ class HomeGettingStarted extends React.Component {
           
           <div className="col-md-3">
             <div class="title-icon"> 
-            <i className="bx bx-id-card"></i>
+            <i className="bx bx-calendar"></i>
            </div> 
            <div>
               
@@ -64,6 +64,18 @@ class HomeGettingStarted extends React.Component {
            </div>
           </div>
           
+          <div className="col-md-3">
+            <div class="title-icon"> 
+            <i className="bx bx-video"></i>
+           </div> 
+           <div>
+              
+              <h4 class="font font-weight-bold">3.เริ่มเรียน</h4> 
+              <p className="">
+                เตรียมตัวก่อนเวลานัดหมาย 10 นาที ตรวจสอบอินเตอร์และอุปกรณ์ว่าพร้อมใช้งาน
+              </p>
+           </div>
+          </div>
           
           
           
