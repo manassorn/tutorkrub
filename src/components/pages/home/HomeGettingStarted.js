@@ -30,7 +30,7 @@ class HomeGettingStarted extends React.Component {
 
     render() {
       return <div className="pt-5">
-          <div className="text-center">
+          <div className="text-center mb-3">
               <span className="h6">3 ขั้นตอนง่าย ๆ</span>
               <p className="h4">ง่ายๆ ในการ</p>
           </div>
