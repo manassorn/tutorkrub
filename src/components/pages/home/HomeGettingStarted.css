@@ -37,6 +37,8 @@
    height: 60px;
    background: #dedede;
    border-radius: 12px;
+   text-align: center;
+   vertical-align: middle;
  }
  .title-icon i {
    font-size: 48px;
