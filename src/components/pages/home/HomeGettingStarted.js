@@ -38,8 +38,8 @@ class HomeGettingStarted extends React.Component {
           
       <div className="row mx-0">
           <div className="col-md-3">
-            <div class="product-img"> 
-            <i className="bx bx-id-card" style={{fontSize:'50px'}}></i>
+            <div class="title-icon"> 
+            <i className="bx bx-id-card"></i>
            </div> 
            <div>
               
@@ -52,8 +52,8 @@ class HomeGettingStarted extends React.Component {
           
           
           <div className="col-md-3">
-            <div class="product-img"> 
-            <i className="bx bx-id-card" style={{fontSize:'50px'}}></i>
+            <div class="title-icon"> 
+            <i className="bx bx-id-card"></i>
            </div> 
            <div>
               
