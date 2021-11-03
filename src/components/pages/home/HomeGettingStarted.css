@@ -35,9 +35,8 @@
  .title-icon {
    width: 60px;
    height: 60px;
-   background: #ccc;
+   background: #fafafa;
    border-radius: 12px;
-   padding:5px;
  }
  .title-icon i {
    font-size: 48px;
