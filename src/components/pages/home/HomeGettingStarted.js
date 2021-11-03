@@ -47,10 +47,6 @@ class HomeGettingStarted extends React.Component {
               <p className="">
                 กรอกชื่อ นามสกุล อีเมลหรือเบอร์โทรศัพท์ให้ครบถ้วน
               </p>
-              <a href="/register" className="btn btn-block btn-outline-primary py-2">
-              สมัครสมาชิก
-              </a>
-           </div> 
            </div>
           </div>
           
@@ -65,10 +61,7 @@ class HomeGettingStarted extends React.Component {
               <p className="">
                 เลือกเวลาเรียนได้เอง เลือกเวลาเรียนที่สะดวก ไม่ว่าเสาร์อาทิตย์ หรือวันธรรมดา ไม่ว่าเช้าตรู่หรือเที่ยงคืน
               </p>
-              <a href="/explore" className="btn btn-block btn-outline-primary py-2">
-              ค้นหาวิชาเรียน
-            </a>
-           </div> 
+           </div>
           </div>
           
           <div className="col-md-3">
@@ -93,7 +86,7 @@ class HomeGettingStarted extends React.Component {
               
               <h4 class="font font-weight-bold">4.เรียนจบ</h4> 
               <p className="">
-                 เมื่อคุณเรียนจบ เงินจะถูกโอนเข้า "กระเป๋าตังค์" ของติวเตอร
+                เตรียมตัวก่อนเวลานัดหมา เมื่อคุณเรียนจบ เงินจะถูกโอนเข้า "กระเป๋าตังค์" ของติวเตอร
               </p>
            </div>
           </div>
