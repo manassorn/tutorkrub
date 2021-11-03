@@ -37,7 +37,7 @@ class HomeGettingStarted extends React.Component {
           
           
       <div className="row mx-0">
-          <div className="col-md-3">
+          <div className="col-md-3 mb-3">
             <div class="title-icon"> 
             <i className="bx bx-id-card"></i>
            </div> 
@@ -54,7 +54,7 @@ class HomeGettingStarted extends React.Component {
           </div>
           
           
-          <div className="col-md-3">
+          <div className="col-md-3 mb-3">
             <div class="title-icon"> 
             <i className="bx bx-calendar"></i>
            </div> 
@@ -92,90 +92,14 @@ class HomeGettingStarted extends React.Component {
               
               <h4 class="font font-weight-bold">4.เรียนจบ</h4> 
               <p className="">
-                เตรียมตัวก่อนเวลานัดหมา เมื่อคุณเรียนจบ เงินจะถูกโอนเข้า "กระเป๋าตังค์" ของติวเตอร
+                
+ เมื่อคุณเรียนจบ เงินจะถูกโอนเข้า "กระเป๋าตังค์" ของติวเตอร์
               </p>
            </div>
           </div>
           
-          
-          <div className="col-md-5 border-left pt-4">
-
-          <div class="mt-2 media"> 
-           <div class="product-img"> 
-            <i className="bx bx-id-card" style={{fontSize:'30px'}}></i>
-           </div> 
-           <div class="media-body pl-3"> 
-            <h6 class="mb-0 font font-weight-bold">1. ลงทะเบียน</h6> 
-            <p className="mb-1">
-            กรอกชื่อ นามสกุล อีเมลหรือเบอร์โทรศัพท์ให้ครบถ้วน
-            </p>
-            <a href="/course/add" className="btn btn-block btn-outline-primary py-2">
-              สมัครสมาชิก
-            </a>
-           </div> 
           </div>
           
-          
-         <div class="mt-4 media"> 
-           <div class="product-img"> 
-            <i className="bx bx-calendar" style={{fontSize:'30px'}}></i>
-           </div> 
-           <div class="media-body pl-3"> 
-            <h6 class="mb-0 font-weight-bold">2. เวลาเรียนและชำระเงิน</h6> 
-            <p className="mb-1">
-  เลือกเวลาเรียนที่สะดวก
-            </p>
-            <a href="/course/add" className="btn btn-block btn-outline-primary py-2">
-              ค้นหาวิชาเรียน
-            </a>
-           </div> 
-          </div>
-          
-          
-          
-         <div class="mt-4 media"> 
-           <div class="product-img"> 
-            <i className="bx bx-video" style={{fontSize:'30px'}}></i>
-           </div> 
-           <div class="media-body pl-3"> 
-            <h6 class="mb-0 font-weight-bold">3. เริ่มเรียน</h6> 
-            <p className="mb-1">
- เตรียมตัวก่อนเวลานัดหมาย 10 นาที ตรวจสอบอินเตอร์และอุปกรณ์ว่าพร้อมใช้งาน
-            </p>
-           </div> 
-          </div>
-          
-         <div class="mt-4 media"> 
-           <div class="product-img"> 
-            <i className="bx bx-wallet" style={{fontSize:'30px'}}></i>
-           </div> 
-           <div class="media-body pl-3"> 
-            <h6 class="mb-0 font-weight-bold">4. เงินถูกโอนไปยังติวเตอร์</h6> 
-            <p className="mb-1">
- เมื่อคุณเรียนจบ เงินจะถูกโอนเข้า "กระเป๋าตังค์" ของติวเตอร์
-            </p>
-           </div> 
-          </div>
-
-          
-          
-          
-          
-          
-          </div>
-          
-          
-          
-          
-          
-          
-          </div>
-          
-          
-          
-          
-          
-
       </div>
 
     }
