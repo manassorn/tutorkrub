@@ -35,10 +35,13 @@
  .title-icon {
    width: 60px;
    height: 60px;
-   background: #eaeaea;
+   background: #f1f1f1;
    border-radius: 12px;
-   text-align: center;
    margin-bottom: 16px;
+   
+   display: flex;
+	align-items: center;
+	justify-content: center;
  }
  .title-icon i {
    font-size: 48px;
