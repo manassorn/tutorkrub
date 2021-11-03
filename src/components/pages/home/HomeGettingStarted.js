@@ -39,12 +39,26 @@ class HomeGettingStarted extends React.Component {
       <div className="row mx-0">
           <div className="col-md-3">
             <div class="product-img"> 
-            <i className="bx bx-id-card" style={{fontSize:'32px'}}></i>
+            <i className="bx bx-id-card" style={{fontSize:'50px'}}></i>
            </div> 
            <div>
               
-              <h6 class="mb-0 font font-weight-bold">1. ลงทะเบียน</h6> 
-              <p className="mb-1">
+              <h3 class="font font-weight-bold">1.ลงทะเบียน</h3> 
+              <p className="">
+                กรอกชื่อ นามสกุล อีเมลหรือเบอร์โทรศัพท์ให้ครบถ้วน
+              </p>
+           </div>
+          </div>
+          
+          
+          <div className="col-md-3">
+            <div class="product-img"> 
+            <i className="bx bx-id-card" style={{fontSize:'50px'}}></i>
+           </div> 
+           <div>
+              
+              <h3 class="font font-weight-bold">1.ลงทะเบียน</h3> 
+              <p className="">
                 กรอกชื่อ นามสกุล อีเมลหรือเบอร์โทรศัพท์ให้ครบถ้วน
               </p>
            </div>
