@@ -37,7 +37,7 @@ class HomeGettingStarted extends React.Component {
           
           
       <div className="row mx-0">
-          <div className="col-md-3 mb-3">
+          <div className="col-md-3 mb-4">
             <div class="title-icon"> 
             <i className="bx bx-id-card"></i>
            </div> 
@@ -54,7 +54,7 @@ class HomeGettingStarted extends React.Component {
           </div>
           
           
-          <div className="col-md-3 mb-3">
+          <div className="col-md-3 mb-4">
             <div class="title-icon"> 
             <i className="bx bx-calendar"></i>
            </div> 
