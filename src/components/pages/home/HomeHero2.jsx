@@ -15,7 +15,7 @@ class HomeHero2 extends React.Component {
   }
 
   render() {
-    return <div className="xhero-bg-young-boy row mx-0" style={{background:'#fafafa'}}>
+    return <div className="row mx-0x" style={{background:'#fafafa'}}>
         <div className="offset-md-1 col-md-6">
         <div class="jumbotron jumbotron-fluid pb-0" style={{background:'#fafafa'}}> 
         <div class="container"> 
