@@ -33,7 +33,7 @@ class HomeHero2 extends React.Component {
       </div>
       
       <div className="col-md-5" style={{paddingTop:'0px'}}>
-        <img src="/assets/images/home/skype-call.jpg" width="100%"/>
+        <img src="/assets/images/home/skype-call2.jpg" width="100%"/>
       </div>
      </div>
 
