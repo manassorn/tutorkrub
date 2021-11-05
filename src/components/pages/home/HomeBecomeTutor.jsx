@@ -13,7 +13,7 @@ class HomeBecomeTutor extends React.Component {
       return <div className="" id="home-contactus" style={{background:'#0099ff'}}>
           <div className="offset-md-2 col-md-8">
           <div className="row">
-              <div className="py-5 col-md-8">
+              <div className="p-5 col-md-8">
                   <span className="h4">สนใจเป็นติวเตอร์ </span>
                   <p className="lead">มาร่วมเป็นส่วนหนึ่งกับเรา </p>
                   <a href="/register" className="btn btn-danger">สมัครเป็นติวเตอร์</a>
