@@ -10,7 +10,7 @@ class HomeBecomeTutor extends React.Component {
     }
     
     render() {
-      return <div className="p-3 my-5" id="home-contactus" style={{background:'#0099ff'}}>
+      return <div className="" id="home-contactus" style={{background:'#0099ff'}}>
           <div className="offset-md-2 col-md-8">
           <div className="row">
               <div className="p-5 col-md-8">
