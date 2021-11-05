@@ -109,25 +109,7 @@ class HomeFooter extends React.Component {
       </div>
       
       
-          <div className="bg-light text-center pt-5 pb-3">
-              <span className="h6">ผู้คน</span>
-              <p className="h4">ที่กล่าวชมเรา</p>
-          </div>
-      
-      
-      <div className="row mx-0 px-md-5 py-4 bg-light">
-      {[0,1,2].map(() => (
-        <div className="col-sm-4">
-          <div class="card"> <div class="card-body text-center"> 
-          <p>
-          <img src="assets/images/avatars/avatar-10.png" width="100" height="100" class="rounded-circle ml-3 shadow" alt=""/>
-          </p>
-          <h5 class="card-title">Card title</h5> <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> </div> </div>
-        </div>
-      
-      ))}
-      
-      </div>
+          
       </div>
 
     }
