@@ -1,7 +1,7 @@
 import React from "react";
 import HomeHero from "./HomeHero";
 import HomeHero2 from "./HomeHero2";
-import HomeRegister from "./HomeRegister";
+import HomeBenefits from "./HomeBenefits";
 import HomeContactUs from "./HomeContactUs";
 import HomeBecomeTutor from "./HomeBecomeTutor";
 import HomeFooter from "./HomeFooter";
@@ -21,7 +21,7 @@ class Home extends React.Component {
     render() {
       return <div class="">
         <HomeHero2/>
-        <HomeRegister/>
+        <HomeBenefits/>
         <HomeGettingStarted/>
         <HomeContactUs/>
         <HomeBecomeTutor/>
