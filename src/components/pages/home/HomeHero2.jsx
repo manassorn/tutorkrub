@@ -15,7 +15,7 @@ class HomeHero2 extends React.Component {
   }
 
   render() {
-    return <div className="row py-5 align-items-center" style={{background:'#fafafa'}}>
+    return <div className="row mx-0 py-5 align-items-center" style={{background:'#fafafa'}}>
         <div className="offset-md-1 col-md-6 px-5">
         
         <h1 class="display-4">
@@ -33,7 +33,7 @@ class HomeHero2 extends React.Component {
       </div>
       
       <div className="col-md-4" style={{paddingTop:'0px'}}>
-        <img src="/assets/images/home/skype-call2.jpg" width="100%"/>
+        <img src="/assets/images/home/skype-call3.jpg" width="100%"/>
       </div>
      </div>
 
