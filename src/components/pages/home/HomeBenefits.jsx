@@ -109,7 +109,7 @@ class HomeFooter extends React.Component {
       </div>
       
       
-          <
+        
       </div>
 
     }
