@@ -15,10 +15,9 @@ class HomeHero2 extends React.Component {
   }
 
   render() {
-    return <div className="row mx-0x" style={{background:'#fafafa'}}>
-        <div className="offset-md-1 col-md-6">
-        <div class="jumbotron jumbotron-fluid pb-0" style={{background:'#fafafa'}}> 
-        <div class="container"> 
+    return <div className="row mx-0x py-5" style={{background:'#fafafa'}}>
+        <div className="offset-md-1 col-md-6 px-5">
+        
         <h1 class="display-4">
         ศูนย์รวมติวเตอร์ ทุกวิชา
         </h1> 
@@ -30,8 +29,6 @@ class HomeHero2 extends React.Component {
           <a class="btn btn-link" href="#" role="button">อยากเป็นติวเตอร์</a> 
         </p> 
 
-        </div> 
-        </div>
 
       </div>
       
