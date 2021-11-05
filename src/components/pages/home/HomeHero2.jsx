@@ -18,8 +18,8 @@ class HomeHero2 extends React.Component {
     return <div className="xhero-bg-young-boy row mx-0" style={{background:'#fafafa'}}>
         <div className="offset-md-1 col-md-5">
         <div class="jumbotron jumbotron-fluid" style={{background:'#fafafa'}}> 
-        <div class="container"> 
-        <h1 class="display-4">
+        <div class="containerx"> 
+        <h1 class="display-4x">
         ศูนย์รวมติวเตอร์ ทุกวิชา
         </h1> 
         <p class="lead">

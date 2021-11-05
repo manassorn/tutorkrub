@@ -42,7 +42,7 @@ class HomeFooter extends React.Component {
              <img src="/assets/images/home/mobile.jpg" width="100%" className="radius-10"/>
            </div> 
            <div class="media-body pl-3"> 
-            <h4 class="font-weight-bold">ไม่ผูกมัด</h4>
+            <h5 class="font-weight-bold">ไม่ผูกมัด</h5> 
             <p className="mb-1">
  ชำระค่าเรียนเป็นครั้ง ครั้งละ 1 ชั่วโมง
             </p>
@@ -55,7 +55,7 @@ class HomeFooter extends React.Component {
              <img src="/assets/images/home/online.png" width="100%" className="radius-10"/>
            </div> 
            <div class="media-body pl-3"> 
-            <h4 class="font-weight-bold">เรียนออนไลน์</h4> 
+            <h5 class="font-weight-bold">เรียนออนไลน์</h5> 
             <p className="mb-1">
  เรียนได้จากทุกที่ เว้นระยะห่างทางสังคม
             </p>
@@ -109,7 +109,7 @@ class HomeFooter extends React.Component {
       </div>
       
       
-          
+          <
       </div>
 
     }
