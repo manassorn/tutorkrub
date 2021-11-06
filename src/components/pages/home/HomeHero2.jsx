@@ -16,7 +16,7 @@ class HomeHero2 extends React.Component {
 
   render() {
     return <div className="row mx-0 py-5 align-items-center" style={{background:'#fafafa'}}>
-        <div className="offset-md-1 col-md-6 px-5">
+        <div className="offset-md-1 col-md-6 px-5 text-center text-md-left">
         
         <h1 class="display-4">
         ศูนย์รวมติวเตอร์ ทุกวิชา
