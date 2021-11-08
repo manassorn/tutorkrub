@@ -39,7 +39,7 @@ class HomeGettingStarted extends React.Component {
           <div className="row mx-0">
         
 
-          <div className="col-md-5 border-left pt-4">
+          <div className="offset-md-2 col-md-5 border-left pt-4">
 
           <div class="mt-2 media">
            <div class="product-img">
