@@ -15,7 +15,7 @@ class HomeBecomeTutor extends React.Component {
           <div className="row text-center">
               <div className="p-5 col-md-8x">
                   <h2 className="text-white">สนใจเป็นติวเตอร์  สมัครได้เลย</h2>
-                  <a href="/register" className="btn btn-white text-primary">สมัครเป็นติวเตอร์</a>
+                  <a href="/register" className="btn btn-outline-white text-primary">สมัครเป็นติวเตอร์</a>
               </div>
             </div>
           </div>
