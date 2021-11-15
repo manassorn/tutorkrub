@@ -29,7 +29,7 @@ class HomeGettingStarted extends React.Component {
     }
 
     render() {
-      return <div className="pt-5">
+      return <div className="pt-5 pb-5">
           <div className="text-center">
               <span className="h6">4 ขั้นตอนง่าย ๆ</span>
               <p className="h4">วิธีใช้งาน</p>
@@ -39,7 +39,7 @@ class HomeGettingStarted extends React.Component {
           <div className="row mx-0">
         
 
-          <div className="offset-md-2 col-md-5 border-left pt-4">
+          <div className="offset-md-2 col-md-5 pt-4">
 
           <div class="mt-2 media">
            <div class="product-img">
@@ -98,24 +98,9 @@ class HomeGettingStarted extends React.Component {
            </div>
           </div>
 
-
-
-
-
-
           </div>
 
-
-
-
-
-
           </div>
-
-
-
-
-
 
       </div>
 
