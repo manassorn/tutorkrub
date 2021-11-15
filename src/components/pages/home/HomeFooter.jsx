@@ -13,7 +13,7 @@ class HomeFooter extends React.Component {
       return <div className="p-3 border-top bg-light">
       <div className="row">
         
-        <div className="col text-center">
+        <div className="col">
           วันอาวติวเตอร์
           copyright © 2021
         </div>
