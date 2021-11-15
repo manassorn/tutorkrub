@@ -23,7 +23,7 @@ class Home extends React.Component {
         <HomeHero2/>
         <HomeBenefits/>
         <HomeGettingStarted/>
-        <HomeContactUs/>
+        
         <HomeBecomeTutor/>
         <HomeFooter/>
      </div> 
