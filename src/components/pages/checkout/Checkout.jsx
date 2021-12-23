@@ -54,7 +54,7 @@ class Checkout extends React.Component {
     
     createAppointment() {
       console.log(this.courseId)
-      Api.post(`/appointments/course/${this.courseId}`, {
+      Api.post(`/appointments`, {
         courseId: this.courseId,
         //startTime: this.state.selectedDateHour,
         startTime: new Date(),
