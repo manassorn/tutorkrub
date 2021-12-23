@@ -55,7 +55,9 @@ class Checkout extends React.Component {
     createAppointment() {
       console.log(this.courseId)
       Api.post(`/appointments/course/${this.courseId}`, {
-        startTime: this.state.selectedDateHour,
+        courseId: this.courseId,
+        //startTime: this.state.selectedDateHour,
+        startTime: new Date(),
         length: 1
       })
         .then(response => 
@@ -79,6 +81,7 @@ class Checkout extends React.Component {
     }
     
     pay() {
+      this.createAppointment()
       const amount = 2000
       const that = this
       this.createOmiseSource(amount, (sourceId) => {
