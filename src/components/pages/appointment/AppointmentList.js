@@ -24,6 +24,7 @@ class AppointmentList extends React.Component {
     Api.get('/appointments')
       .then(response => 
       {
+        console.log('xxxxxxx')
         let appointments = response.data.data
         appointments = appointments.map(a => {
           a.startTime = Utils.strToDate(a.startTime)
