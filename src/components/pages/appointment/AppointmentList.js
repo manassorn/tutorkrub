@@ -21,6 +21,7 @@ class AppointmentList extends React.Component {
   }
 
   componentDidMount() {
+    console.log('aaaaaaaa')
     Api.get('/appointments')
       .then(response => 
       {
