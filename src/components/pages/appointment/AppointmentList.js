@@ -21,11 +21,9 @@ class AppointmentList extends React.Component {
   }
 
   componentDidMount() {
-    console.log('aaaaaaaa')
     Api.get('/appointments')
       .then(response => 
       {
-        console.log('xxxxxxx')
         let appointments = response.data.data
         appointments = appointments.map(a => {
           a.startTime = Utils.strToDate(a.startTime)
@@ -98,7 +96,7 @@ class AppointmentList extends React.Component {
             <div className="row">
               <div className="col-md-8">
             <h5 class="card-title">{ap.courseTitle}</h5> 
-            <p class="card-text"><span className="text-muted">โดย {ap.tutorName}</span></p> 
+            <p class="card-text"><span className="text-muted">โดย {ap.tutor.name}</span></p> 
             <a href={`/appointment/${ap.id}`} class="card-link stretched-link">ดูรายละเอียด</a>
             <hr className="d-block d-md-none"/>
 
