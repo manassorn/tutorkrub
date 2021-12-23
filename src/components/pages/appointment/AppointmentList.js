@@ -21,7 +21,7 @@ class AppointmentList extends React.Component {
   }
 
   componentDidMount() {
-    Api.get('/appointments/study?status=toBePaid')
+    Api.get('/appointments')
       .then(response => 
       {
         let appointments = response.data.data
