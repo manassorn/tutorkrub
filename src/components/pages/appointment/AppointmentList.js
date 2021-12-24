@@ -97,7 +97,7 @@ class AppointmentList extends React.Component {
               <div className="col-md-8">
             <h5 class="card-title">{ap.course.title}</h5> 
             <p class="card-text"><span className="text-muted">โดย {ap.tutor.name}</span></p> 
-            <p class="card-text"><span className="border bg-light-primary text-primary">ใหม่</span></p> 
+            <p class="card-text"><span className="badge bg-light-primary text-primary">ใหม่</span></p> 
             <a href={`/appointment/${ap.id}`} class="card-link stretched-link">ดูรายละเอียด</a>
             <hr className="d-block d-md-none"/>
 
