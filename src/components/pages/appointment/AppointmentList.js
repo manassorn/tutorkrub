@@ -104,11 +104,6 @@ class AppointmentList extends React.Component {
               <div className="col-md-8">
             <h5 class="card-title">{ap.course.title}</h5> 
             <p class="card-text"><span className="text-muted">โดย {ap.tutor.name}</span></p> 
-            <p class="card-text"><span className="badge bg-light-primary text-primary">ใหม่</span>
-              <a href={`/appointment/${ap.id}`} class="card-link"><i className="bx bx-info-circle"></i></a>
-
-            </p> 
-            <a className="d-none" href={`/appointment/${ap.id}`} class="card-link stretched-link">ดูรายละเอียด</a>
             <hr className="d-none d-blockx d-md-none"/>
 
               </div>
