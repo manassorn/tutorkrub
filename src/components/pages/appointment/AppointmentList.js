@@ -91,7 +91,8 @@ class AppointmentList extends React.Component {
             <p>
             <span className="badge bg-light-primary text-primary">รอตอบรับ
             </span>
-            <i className="bx bx-sm bx-info-circle"></i>
+            <a href={`/appointment/${ap.id}`} class="card-link"><i className="bx bx-info-circle"></i></a>
+
 
             </p>
           </div>
