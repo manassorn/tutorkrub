@@ -13,10 +13,10 @@ class AppointmentList extends React.Component {
       appointments: []
     }
     this.icons = ['bx-bitcoin', 'bx-message', 'bx-chat', 'bx-task']
-    this.labels = ['รอชำระเงิน',
-    'รอตอบรับ',
-    'ตอบรับแล้ว',
-    'เรียนแล้ว',
+    this.labels = ['รอตอบรับ',
+    'ยืนยันแล้ว',
+    'สำเร็จ',
+    'ยกเลิก',
     ]
   }
 
