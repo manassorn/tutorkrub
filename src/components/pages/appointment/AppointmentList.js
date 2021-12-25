@@ -88,6 +88,11 @@ class AppointmentList extends React.Component {
            <h6 className="card-subtitle">
                 10:00
             </h6>
+            <p>
+            <span className="badge bg-light-primary text-primary">รอตอบรับ
+              <i className="bx bx-sm bx-info-circle"></i>
+            </span>
+            </p>
           </div>
            <div class="media-body ml-3 pl-3 border-left"> 
             
