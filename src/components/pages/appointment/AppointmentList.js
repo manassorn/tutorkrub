@@ -104,7 +104,6 @@ class AppointmentList extends React.Component {
               <div className="col-md-8">
             <h5 class="card-title">{ap.course.title}</h5> 
             <p class="card-text"><span className="text-muted">โดย {ap.tutor.name}</span></p> 
-            <a className="d-nonex" href={`/appointment/${ap.id}`} class="card-link stretched-link">ดูรายละเอียด</a>
             <hr className="d-none d-blockx d-md-none"/>
 
               </div>
@@ -114,7 +113,7 @@ class AppointmentList extends React.Component {
             <i className="bx bx-bitcoin"></i>
             </span> รอชำระเงิน
             </p>
-            <a href={`/appointment/${ap.id}`} class="btn btn-outline-primary btn-block stretched-link">ชำระเงิน</a>
+            <a href={`/appointment/${ap.id}`} class="btn btn-outline-primary btn-block stretched-link">ดูรายละเอียด</a>
 
               </div>
             </div>
