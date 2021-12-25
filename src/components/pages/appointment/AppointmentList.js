@@ -108,8 +108,8 @@ class AppointmentList extends React.Component {
               <a href={`/appointment/${ap.id}`} class="card-link"><i className="bx bx-info-circle"></i></a>
 
             </p> 
-            <a href={`/appointment/${ap.id}`} class="card-link stretched-link">ดูรายละเอียด</a>
-            <hr className="d-blockx d-md-none"/>
+            <a className="d-none" href={`/appointment/${ap.id}`} class="card-link stretched-link">ดูรายละเอียด</a>
+            <hr className="d-none d-blockx d-md-none"/>
 
               </div>
               <div className="col-md-4">
