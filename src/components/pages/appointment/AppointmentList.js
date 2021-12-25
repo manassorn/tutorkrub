@@ -114,6 +114,10 @@ class AppointmentList extends React.Component {
             </span> รอชำระเงิน
             </p>
             <a href={`/appointment/${ap.id}`} class="btn btn-outline-primary btn-block stretched-link">ดูรายละเอียด</a>
+            
+            <a href={`/appointment/${ap.id}`} class="btn btn-success btn-block">ยืนยัน</a>
+            <a href={`/appointment/${ap.id}`} class="btn btn-danger btn-block">ปฎิเสธ</a>
+
 
               </div>
             </div>
