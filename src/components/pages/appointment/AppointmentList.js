@@ -109,11 +109,11 @@ class AppointmentList extends React.Component {
 
             </p> 
             <a href={`/appointment/${ap.id}`} class="card-link stretched-link">ดูรายละเอียด</a>
-            <hr className="d-block d-md-none"/>
+            <hr className="d-blockx d-md-none"/>
 
               </div>
               <div className="col-md-4">
-            <p class="card-text">
+            <p class="card-text d-none">
             <span>
             <i className="bx bx-bitcoin"></i>
             </span> รอชำระเงิน
