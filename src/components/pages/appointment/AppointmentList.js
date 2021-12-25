@@ -90,8 +90,9 @@ class AppointmentList extends React.Component {
             </h6>
             <p>
             <span className="badge bg-light-primary text-primary">รอตอบรับ
-              <i className="bx bx-sm bx-info-circle"></i>
             </span>
+            <i className="bx bx-sm bx-info-circle"></i>
+
             </p>
           </div>
            <div class="media-body ml-3 pl-3 border-left"> 
