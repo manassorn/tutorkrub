@@ -113,7 +113,7 @@ class AppointmentList extends React.Component {
             <i className="bx bx-bitcoin"></i>
             </span> รอชำระเงิน
             </p>
-            <a href={`/appointment/${ap.id}`} class="btn btn-outline-primary btn-block stretched-link">ดูรายละเอียด</a>
+            <a href={`/appointment/${ap.id}`} class="btn btn-link btn-block stretched-link">ดูรายละเอียด</a>
             
             <a href={`/appointment/${ap.id}`} class="btn btn-success btn-block">ยืนยัน</a>
             <a href={`/appointment/${ap.id}`} class="btn btn-danger btn-block">ปฎิเสธ</a>
