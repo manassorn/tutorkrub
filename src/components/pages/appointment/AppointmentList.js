@@ -21,18 +21,31 @@ class AppointmentList extends React.Component {
   }
 
   componentDidMount() {
-    Api.get('/appointments')
-      .then(response => 
-      {
-        let appointments = response.data.data
-        appointments = appointments.map(a => {
-          a.startTime = Utils.strToDate(a.startTime)
-          return a
-        })
+    if(location.href.indexOf('?teststatuses') > 0) {
+      const statuses = ['created','accepted','completed','askedcancel','cancelled','hasaproblem','disputed']
+      const appointments = statuses.map(status => {
+        const ap = {
+          course: {title: 'Course Title'},
+          tutor: {name: 'Firstname Lastname'},
+          length: 1,
+          status: status
+        }
+        return ap
+      })
       this.setState({ appointments })
-      }
-      );
-    
+    } else {
+      Api.get('/appointments')
+        .then(response =>
+          {
+            let appointments = response.data.data
+            appointments = appointments.map(a => {
+              a.startTime = Utils.strToDate(a.startTime)
+              return a
+            })
+            this.setState({ appointments })
+          }
+        );
+    }
     
   }
 
