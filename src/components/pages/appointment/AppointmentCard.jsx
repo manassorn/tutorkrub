@@ -1,0 +1,72 @@
+import React from "react";
+import Api from '../../../Api'
+import SimpleTitle from '../../common/SimpleTitle'
+import Utils from '../../../Utils'
+import '../course/Course.css'
+
+class AppointmentCard extends React.Component {
+
+
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+    this.appointment = this.props.appointment
+  }
+
+  componentDidMount() {
+  }
+
+
+  render() {
+    const ap = this.appointment
+    return <div className="card radius-10 border">
+      <div className="card-body">
+        <div className="media align-items-center">
+          <div className="text-center">
+            <h5 className="card-title">{Utils.formatFullMonth(ap.startTime)}<br/>{ap.startTime.getDate()}</h5>
+            <h6 className="card-subtitle">
+              10:00
+            </h6>
+            <p>
+            <span className="badge bg-light-primary text-primary">รอตอบรับ
+            </span>
+              <a href={`/appointment/${ap.id}`} className="card-link"><i className="bx bx-info-circle"></i></a>
+
+
+            </p>
+          </div>
+          <div className="media-body ml-3 pl-3 border-left">
+
+
+            <div className="row">
+              <div className="col-md-8">
+                <h5 className="card-title">{ap.course.title}</h5>
+                <p className="card-text"><span className="text-muted">โดย {ap.tutor.name}</span></p>
+                <a className="d-none" href={`/appointment/${ap.id}`}
+                   className="card-link stretched-link">ดูรายละเอียด</a>
+                <hr className=" d-block d-md-none"/>
+
+              </div>
+              <div className="col-md-4">
+                <p className="card-text d-none">
+            <span>
+            <i className="bx bx-bitcoin"></i>
+            </span> รอชำระเงิน
+                </p>
+                <a href={`/appointment/${ap.id}`} className="btn btn-success btn-block">ยืนยัน</a>
+                <a href={`/appointment/${ap.id}`} className="btn btn-danger btn-block">ปฏิเสธ</a>
+
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  }
+}
+export default AppointmentCard

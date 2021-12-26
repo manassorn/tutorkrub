@@ -2,7 +2,7 @@ import React from "react";
 import Api from '../../../Api'
 import SimpleTitle from '../../common/SimpleTitle'
 import Utils from '../../../Utils'
-import '../course/Course.css'
+import AppointmentCard from './AppointmentCard'
 
 class AppointmentList extends React.Component {
 
@@ -80,54 +80,7 @@ class AppointmentList extends React.Component {
       </div>
       
       {this.state.appointments.map(ap => (
-        <div class="card radius-10 border"> 
-         <div class="card-body"> 
-          <div class="media align-items-center"> 
-          <div className="text-center">
-           <h5 class="card-title">{Utils.formatFullMonth(ap.startTime)}<br/>{ap.startTime.getDate()}</h5> 
-           <h6 className="card-subtitle">
-                10:00
-            </h6>
-            <p>
-            <span className="badge bg-light-primary text-primary">รอตอบรับ
-            </span>
-            <a href={`/appointment/${ap.id}`} class="card-link"><i className="bx bx-info-circle"></i></a>
-
-
-            </p>
-          </div>
-           <div class="media-body ml-3 pl-3 border-left"> 
-            
-
-
-            <div className="row">
-              <div className="col-md-8">
-            <h5 class="card-title">{ap.course.title}</h5> 
-            <p class="card-text"><span className="text-muted">โดย {ap.tutor.name}</span></p> 
-            <a className="d-none" href={`/appointment/${ap.id}`} class="card-link stretched-link">ดูรายละเอียด</a>
-            <hr className=" d-block d-md-none"/>
-
-              </div>
-              <div className="col-md-4">
-            <p class="card-text d-none">
-            <span>
-            <i className="bx bx-bitcoin"></i>
-            </span> รอชำระเงิน
-            </p>
-            <a href={`/appointment/${ap.id}`} class="btn btn-success btn-block">ยืนยัน</a>
-            <a href={`/appointment/${ap.id}`} class="btn btn-danger btn-block">ปฏิเสธ</a>
-
-
-              </div>
-            </div>
-
-           </div> 
-          </div> 
-         </div> 
-        </div> 
-        
-        
-      
+        <AppointmentCard appointment={ap} />
       ))}
 
       
