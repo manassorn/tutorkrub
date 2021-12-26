@@ -17,6 +17,24 @@ class AppointmentCard extends React.Component {
   componentDidMount() {
   }
 
+  interpretStatus(status) {
+    if(status == 'created') {
+      return {text: 'รอตอบรับ', className: 'bg-light-primary text-primary'}
+      return 'รอตอบรับ'
+    } else if(status == 'accepted') {
+      return {text: 'รอตอบรับ', className: 'badge-primary'}
+    } else if (status == 'completed') {
+      return {text: 'สำเร็จ', className: 'badge-success'}
+    } else if (status == 'askedcancel') {
+      return {text: 'ขอยกเลิก', className: 'badge-secondary'}
+    } else if (status == 'cancelled') {
+      return {text: 'ยกเลิกแล้ว', className: 'badge-secondary'}
+    } else if (status == 'hasaproblem') {
+      return {text: 'มีปัญหา', className: 'badge-danger'}
+    } else if (status == 'disputed') {
+      return {text: 'มีข้อขัดแย้ง', className: 'badge-danger'}
+    }
+  }
 
   render() {
     const ap = this.appointment
@@ -26,10 +44,10 @@ class AppointmentCard extends React.Component {
           <div className="text-center">
             <h5 className="card-title">{Utils.formatFullMonth(ap.startTime)}<br/>{ap.startTime.getDate()}</h5>
             <h6 className="card-subtitle">
-              10:00
+              {ap.startTime.getHour()}:00
             </h6>
             <p>
-            <span className="badge bg-light-primary text-primary">รอตอบรับ
+            <span className={`badge ${this.interpretStatus(ap.status).className}`}>{this.interpretStatus(ap.status).text}
             </span>
               <a href={`/appointment/${ap.id}`} className="card-link"><i className="bx bx-info-circle"></i></a>
 
