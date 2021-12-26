@@ -22,17 +22,17 @@ class AppointmentCard extends React.Component {
       return {text: 'รอตอบรับ', className: 'bg-light-primary text-primary'}
       return 'รอตอบรับ'
     } else if(status == 'accepted') {
-      return {text: 'รอตอบรับ', className: 'badge-primary'}
+      return {text: 'ยืนยันแล้ว', className: 'badge-primary'}
     } else if (status == 'completed') {
       return {text: 'สำเร็จ', className: 'badge-success'}
     } else if (status == 'askedcancel') {
-      return {text: 'ขอยกเลิก', className: 'badge-secondary'}
+      return {text: 'ขอยกเลิก', className: 'badge-danger'}
     } else if (status == 'cancelled') {
-      return {text: 'ยกเลิกแล้ว', className: 'badge-secondary'}
+      return {text: 'ยกเลิกแล้ว', className: 'badge-danger'}
     } else if (status == 'hasaproblem') {
-      return {text: 'มีปัญหา', className: 'badge-danger'}
+      return {text: 'มีปัญหา', className: 'bg-dark text-white'}
     } else if (status == 'disputed') {
-      return {text: 'มีข้อขัดแย้ง', className: 'badge-danger'}
+      return {text: 'มีข้อขัดแย้ง', className: 'bg-dark text-white'}
     }
   }
 
@@ -49,7 +49,7 @@ class AppointmentCard extends React.Component {
             <p>
             <span className={`badge ${this.interpretStatus(ap.status).className}`}>{this.interpretStatus(ap.status).text}
             </span>
-              &nbsp;&nbsp;<i className="bx bx-info-circle text-secondary" style={{'verticalAlign':'middle'}}></i>
+             &nbsp;<i className="bx bx-info-circle text-secondary" style={{verticalAlign:'middle'}}></i>
 
 
             </p>
