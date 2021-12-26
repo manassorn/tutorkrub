@@ -39,11 +39,7 @@ class AppointmentList extends React.Component {
 
   render() {
     return <div class="container" style={{maxWidth:'720px'}}> 
-    
-      <SimpleTitle title="รายการนัดหมาย"/>
-
-    
-      <div class="mb-3 mt-3"> 
+      <div class="mb-3 mt-3">
        <ul class="nav nav-tabs"> 
         <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#Experience"><span class="p-tab-name1">นัดเรียน</span> <span class="badge badge-pill badge-danger">3</span></a> </li> 
         <li class="nav-item"> <a class="nav-link" id="profile-tab" data-toggle="tab" href="#Biography"><span class="p-tab-name1">นัดสอน</span> <span class="badge badge-pill badge-danger">3</span></a> </li> 
