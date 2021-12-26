@@ -27,6 +27,7 @@ class AppointmentList extends React.Component {
         const ap = {
           course: {title: 'Course Title'},
           tutor: {name: 'Firstname Lastname'},
+          startTime: new Date(),
           length: 1,
           status: status
         }
