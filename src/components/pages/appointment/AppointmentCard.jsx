@@ -29,6 +29,8 @@ class AppointmentCard extends React.Component {
       return {text: 'ขอยกเลิก', className: 'badge-danger'}
     } else if (status == 'cancelled') {
       return {text: 'ยกเลิกแล้ว', className: 'badge-danger'}
+    } else if (status == 'expired') {
+      return {text: 'หมดอายุ', className: 'badge-warning'}
     } else if (status == 'hasaproblem') {
       return {text: 'มีปัญหา', className: 'bg-dark text-white'}
     } else if (status == 'disputed') {

@@ -22,7 +22,7 @@ class AppointmentList extends React.Component {
 
   componentDidMount() {
     if(location.href.indexOf('?teststatuses') > 0) {
-      const statuses = ['created','accepted','completed','askedcancel','cancelled','hasaproblem','disputed']
+      const statuses = ['created','accepted','completed','askedcancel','cancelled','expired','hasaproblem','disputed']
       const appointments = statuses.map(status => {
         const ap = {
           course: {title: 'Course Title'},
