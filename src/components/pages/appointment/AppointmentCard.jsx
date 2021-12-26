@@ -44,7 +44,7 @@ class AppointmentCard extends React.Component {
           <div className="text-center">
             <h5 className="card-title">{Utils.formatFullMonth(ap.startTime)}<br/>{ap.startTime.getDate()}</h5>
             <h6 className="card-subtitle">
-              {ap.startTime.getHour()}:00
+              {ap.startTime.getHours()}:00
             </h6>
             <p>
             <span className={`badge ${this.interpretStatus(ap.status).className}`}>{this.interpretStatus(ap.status).text}
