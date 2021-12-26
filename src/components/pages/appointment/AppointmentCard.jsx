@@ -49,7 +49,7 @@ class AppointmentCard extends React.Component {
             <p>
             <span className={`badge ${this.interpretStatus(ap.status).className}`}>{this.interpretStatus(ap.status).text}
             </span>
-              <a href={`/appointment/${ap.id}`} className="card-link"><i className="bx bx-info-circle"></i></a>
+              &nbsp;&nbsp;<i className="bx bx-info-circle text-secondary" style={{'verticalAlign':'middle'}}></i>
 
 
             </p>
