@@ -17,7 +17,7 @@ class AppointmentCard extends React.Component {
   componentDidMount() {
   }
 
-  interpretStatus(status) {
+  statusToDescription(status) {
     if(status == 'created') {
       return {text: 'รอตอบรับ', className: 'bg-light-primary text-primary'}
       return 'รอตอบรับ'
@@ -48,13 +48,13 @@ class AppointmentCard extends React.Component {
             <h6 className="card-subtitle">
               {ap.startTime.getHours()}:00
             </h6>
-            <p>
-            <span className={`badge ${this.interpretStatus(ap.status).className}`}>{this.interpretStatus(ap.status).text}
+            <div>
+            <span className={`badge ${this.statusToDescription(ap.status).className}`}>{this.statusToDescription(ap.status).text}
             </span>
              &nbsp;<i className="bx bx-info-circle text-secondary" style={{verticalAlign:'middle'}}></i>
 
 
-            </p>
+            </div>
           </div>
           <div className="media-body ml-3 pl-3 border-left">
 
