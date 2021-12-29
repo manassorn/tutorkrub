@@ -40,13 +40,14 @@ class AppointmentCard extends React.Component {
     }
   }
   
-  ActionButtons() {
+  actionButtons() {
     return  <a href={`gdj`} className="btn btn-success btn-block">ยืนยัddน</a>
 
   }
 
   render() {
     const ap = this.appointment
+    const actionButtons = this.actionButtons()
     return <div className="card radius-10 border">
       <div className="card-body">
         <div className="media align-items-center">
@@ -82,7 +83,7 @@ class AppointmentCard extends React.Component {
             </span> รอชำระเงิน
                 </p>
                 
-                <ActionButtons />
+                {actionButtons}
                 <a href={`/appointment/${ap.id}`} className="btn btn-success btn-block">ยืนยัน</a>
                 <a href={`/appointment/${ap.id}`} className="btn btn-danger btn-block">ปฏิเสธ</a>
 
