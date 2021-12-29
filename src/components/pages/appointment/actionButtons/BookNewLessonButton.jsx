@@ -17,7 +17,7 @@ class BookNewLessonButton extends React.Component {
     
     const ap = this.appointment
     
-    return  <a href={`/course/${ap.course.id}`} className="btn btn-success btn-block">นัดหมายอีกครั้ง</a>
+    return  <a href={`/course/${ap.course.id}`} className="btn btn-outline-primary btn-block">นัดหมายอีกครั้ง</a>
 
   }
 }
