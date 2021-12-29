@@ -35,10 +35,12 @@ class AppointmentCard extends React.Component {
       return {text: 'มีปัญหา', className: 'bg-dark text-white'}
     } else if (status == 'disputed') {
       return {text: 'มีข้อขัดแย้ง', className: 'bg-dark text-white'}
+    } else {
+      return { text: 'มีข้อขัดแย้ง', className: 'bg-dark text-white' }
     }
   }
   
-  actionButtons() {
+  ActionButtons() {
     return  <a href={`gdj`} className="btn btn-success btn-block">ยืนยัddน</a>
 
   }
@@ -80,7 +82,7 @@ class AppointmentCard extends React.Component {
             </span> รอชำระเงิน
                 </p>
                 
-                <actionButtons />
+                <ActionButtons />
                 <a href={`/appointment/${ap.id}`} className="btn btn-success btn-block">ยืนยัน</a>
                 <a href={`/appointment/${ap.id}`} className="btn btn-danger btn-block">ปฏิเสธ</a>
 
