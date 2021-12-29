@@ -3,6 +3,7 @@ import Api from '../../../Api'
 import SimpleTitle from '../../common/SimpleTitle'
 import Utils from '../../../Utils'
 import '../course/Course.css'
+import BookNewLessonButton from './actionButtons/BookNewLessonButton'
 
 class AppointmentCard extends React.Component {
 
@@ -40,14 +41,20 @@ class AppointmentCard extends React.Component {
     }
   }
   
-  actionButtons() {
-    return  <a href={`gdj`} className="btn btn-success btn-block">ยืนยัddน</a>
+  actionButtons(ap) {
+    if (ap.status == 'expired') {
+      return <BookNewLessonButton appointment={ap}/>
+    }
+    return <>
+      <a href={`/appointment/${ap.id}`} className="btn btn-success btn-block">ยืนยัน</a> 
+      <a href = { `/appointment/${ap.id}` } className = "btn btn-danger btn-block"> ปฏิเสธ  </a>
+    </>
 
   }
 
   render() {
     const ap = this.appointment
-    const actionButtons = this.actionButtons()
+    const actionButtons = this.actionButtons(ap)
     return <div className="card radius-10 border">
       <div className="card-body">
         <div className="media align-items-center">
@@ -84,9 +91,6 @@ class AppointmentCard extends React.Component {
                 </p>
                 
                 {actionButtons}
-                <a href={`/appointment/${ap.id}`} className="btn btn-success btn-block">ยืนยัน</a>
-                <a href={`/appointment/${ap.id}`} className="btn btn-danger btn-block">ปฏิเสธ</a>
-
 
               </div>
             </div>
