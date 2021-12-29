@@ -37,6 +37,11 @@ class AppointmentCard extends React.Component {
       return {text: 'มีข้อขัดแย้ง', className: 'bg-dark text-white'}
     }
   }
+  
+  actionButtons() {
+    return  <a href={`gdj`} className="btn btn-success btn-block">ยืนยัddน</a>
+
+  }
 
   render() {
     const ap = this.appointment
@@ -74,6 +79,8 @@ class AppointmentCard extends React.Component {
             <i className="bx bx-bitcoin"></i>
             </span> รอชำระเงิน
                 </p>
+                
+                <actionButtons />
                 <a href={`/appointment/${ap.id}`} className="btn btn-success btn-block">ยืนยัน</a>
                 <a href={`/appointment/${ap.id}`} className="btn btn-danger btn-block">ปฏิเสธ</a>
 
