@@ -19,7 +19,7 @@ class AppointmentCard extends React.Component {
 
   componentDidMount() {
     Auth.observeLogin((login) => {
-        if(!login.user) return
+        if(!login || !login.user) return
         this.setState({user:login.user})
       })
   }
@@ -59,6 +59,7 @@ class AppointmentCard extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     if(!this.state.user) return null
     const ap = this.appointment
     const actionButtons = this.actionButtons(ap)
