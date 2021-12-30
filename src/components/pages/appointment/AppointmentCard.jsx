@@ -49,7 +49,7 @@ class AppointmentCard extends React.Component {
   }
   
   actionButtons(ap) {
-    const isTutor = ap.course.tutor.id == this.state.user.id
+    const isTutor = ap.tutor.id == this.state.user.id
     if(isTutor) {
       if (ap.status == 'created') {
         return <>
