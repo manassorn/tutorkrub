@@ -99,13 +99,15 @@ class AppointmentCard extends React.Component {
                    className="card-link stretched-link">ดูรายละเอียด</a>
 
               </div>
-              <div className="col-md-4">
+              
+              
+              {actionButtons && <div className="col-md-4">
                 
                 <hr className=" d-block d-md-none"/>
 
                 {actionButtons}
 
-              </div>
+              </div>}
             </div>
 
           </div>
