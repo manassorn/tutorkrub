@@ -58,7 +58,7 @@ class AppointmentCard extends React.Component {
   }
 
   render() {
-    if(!this.state.user) return
+    if(!this.state.user) return null
     const ap = this.appointment
     const actionButtons = this.actionButtons(ap)
     return <div className="card radius-10 border">
