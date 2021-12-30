@@ -30,9 +30,7 @@ class Appointment extends React.Component {
     }
     
     componentDidMount() {
-      Auth.observeLogin((user) => {
-        
-      })
+      
       Api.get(`/appointment/${this.appointmentId}/message`)
         .then(response => 
         {

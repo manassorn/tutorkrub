@@ -15,10 +15,12 @@ const Auth ={
   },
   checkLogin: () => {
     Api.get('/users/me').then(function(response) {
-      const user = response.data.data
-      subject.next(user)
+        const user = response.data.data
+        const status = 'loggedin'
+        subject.next({status,user})
       }).catch(function(error) {
-    })
+        subject.next({status:'failed', user: null})
+      })
   },
   observeLogin: (fn) => {
     subject.subscribe(fn)

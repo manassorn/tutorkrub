@@ -17,9 +17,9 @@ class Profile extends React.Component {
 
     componentDidMount() {
       const that = this
-      Auth.observeLogin((user) => {
-        if(!user) return
-        that.setState({user})
+      Auth.observeLogin((login) => {
+        if(!login.user) return
+        that.setState({user:login.user})
       })
       Api.get('/courses')
         .then(response => 

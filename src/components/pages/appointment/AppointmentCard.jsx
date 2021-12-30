@@ -11,11 +11,16 @@ class AppointmentCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      user: null
     }
     this.appointment = this.props.appointment
   }
 
   componentDidMount() {
+    Auth.observeLogin((login) => {
+        if(!login.user) return
+        this.setState({user:login.user})
+      })
   }
 
   statusToDescription(status) {
@@ -53,6 +58,7 @@ class AppointmentCard extends React.Component {
   }
 
   render() {
+    if(!this.state.user) return
     const ap = this.appointment
     const actionButtons = this.actionButtons(ap)
     return <div className="card radius-10 border">

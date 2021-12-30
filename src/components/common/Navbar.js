@@ -19,9 +19,9 @@ class Navbar extends React.Component {
     }
 
     componentDidMount() {
-      Auth.observeLogin((user)=>{
-        if(!user) return
-        this.setState({user,auth:true})
+      Auth.observeLogin((login)=>{
+        if(!login.user) return
+        this.setState({user:login.user,auth:true})
       })
     }
 
