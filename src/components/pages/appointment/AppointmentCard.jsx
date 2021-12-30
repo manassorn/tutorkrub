@@ -97,16 +97,12 @@ class AppointmentCard extends React.Component {
                 <p className="card-text"><span className="text-muted">โดย {ap.tutor.name}</span></p>
                 <a className="d-none" href={`/appointment/${ap.id}`}
                    className="card-link stretched-link">ดูรายละเอียด</a>
-                <hr className=" d-block d-md-none"/>
 
               </div>
               <div className="col-md-4">
-                <p className="card-text d-none">
-            <span>
-            <i className="bx bx-bitcoin"></i>
-            </span> รอชำระเงิน
-                </p>
                 
+                <hr className=" d-block d-md-none"/>
+
                 {actionButtons}
 
               </div>
