@@ -2,6 +2,7 @@ import React from "react";
 import Api from '../../../Api'
 import SimpleTitle from '../../common/SimpleTitle'
 import Utils from '../../../Utils'
+import Auth from '../../../Auth'
 import '../course/Course.css'
 import BookNewLessonButton from './actionButtons/BookNewLessonButton'
 
