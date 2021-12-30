@@ -15,6 +15,7 @@ class AppointmentCard extends React.Component {
       user: null
     }
     this.appointment = this.props.appointment
+    this.actionButtons = this.actionButtons.bind(this)
   }
 
   componentDidMount() {
@@ -48,13 +49,22 @@ class AppointmentCard extends React.Component {
   }
   
   actionButtons(ap) {
-    if (ap.status == 'expired') {
-      return <BookNewLessonButton appointment={ap}/>
-    }
-    return <>
-      <a href={`/appointment/${ap.id}`} className="btn btn-success btn-block">ยืนยัน</a> 
+    const isTutor = ap.course.tutor.id == this.state.user.id
+    if(isTutor) {
+      if (ap.status == 'created') {
+        return <>
+      <a href={`/appointment/${ap.id}`} className="btn btn-primary btn-block">ยืนยัน</a> 
       <a href = { `/appointment/${ap.id}` } className = "btn btn-danger btn-block"> ปฏิเสธ  </a>
-    </>
+    </> 
+      }
+    } else {
+      if (ap.status == 'accepted' && ap.startTime.getTime() < new Date().getTime()) {
+        return <a href={`/appointment/${ap.id}`} className="btn btn-success btn-block">ยืนยัน</a> 
+      }
+    }
+    return null
+    
+    
 
   }
 
