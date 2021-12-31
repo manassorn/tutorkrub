@@ -107,7 +107,7 @@ class Appointment extends React.Component {
         <div className="text-center text-muted">
         
         <i className="bx bx-chat" style={{fontSize: '50px'}}></i>
-        <br/><br/>
+        <br/>
         ยังไม่มีบทสนทนา
         </div>
 
@@ -120,17 +120,13 @@ class Appointment extends React.Component {
        
        
        
-       <div>
-       <div class="input-group mb-3">
+       <div class="input-group my-3">
          <input type="text" class="form-control" placeholder="ส่งข้อความ..." aria-label="message" aria-describedby="button-addon2" ref={this.textInputRef}/>
          <div class="input-group-append">
            <button class="btn btn-primary" type="button" id="button-addon2" onClick={this.sendMessage}>
            <i className="bx bx-send text-light"></i>
            </button>
          </div>
-       </div>
-       
-       
        </div>
        
        </div>
