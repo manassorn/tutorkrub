@@ -104,7 +104,7 @@ class Appointment extends React.Component {
         
         <h3>ข้อความ</h3>
         
-        <div className="text-center text-muted">
+        <div className="text-center text-muted my-4">
         
         <i className="bx bx-chat" style={{fontSize: '50px'}}></i>
         <br/>
