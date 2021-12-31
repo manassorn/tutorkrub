@@ -3,7 +3,7 @@ import React from "react";
 class StudentNewActionCard extends React.Component {
     
   render() {
-    return <div className="alert alert-info">
+    return <div className="alert bg-light-primary text-primary">
       <h4>รอติวเตอร์ตอบรับ</h4>
       <hr/>
       <p>นัดหมายได้ถูกส่งไปยังติวเตอร์ ติวเตอร์จะตอบรับภายใน 24 ชั่วโมง
