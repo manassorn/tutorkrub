@@ -6,7 +6,6 @@ import Api from '../../../Api'
 import Auth from '../../../Auth'
 import Utils from '../../../Utils'
 import SimpleTitle from '../../common/SimpleTitle'
-import HeaderIcon from '../../common/HeaderIcon'
 import './Appointment.css'
 
 class Appointment extends React.Component {
@@ -102,8 +101,6 @@ class Appointment extends React.Component {
 
     render() {
         return <div className="border-top p-3">
-        
-        <HeaderIcon text="ข้อความ"/>
         
         <h3>ข้อความ</h3>
         
