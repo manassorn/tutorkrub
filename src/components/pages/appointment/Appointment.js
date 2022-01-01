@@ -72,10 +72,14 @@ class Appointment extends React.Component {
       
       
       <div className="card-body mt-0 pt-0">
-      รอตอบรับ
+        <span className="badge-primary">
+        รอตอบรับ
+        </span>
+      
       
         <div className="row">
-        <div className="col">        <button className="btn btn-danger btn-block radius-10">ปฏิเสธ</button></div>
+        <div className="d-none d-md-block col-md-6">
+        <div className="col">        <button className="btn btn-primary btn-block radius-10">ตกลง</button></div>
         <div className="col">        <button className="btn btn-danger btn-block radius-10">ปฏิเสธ</button></div>
         
         
