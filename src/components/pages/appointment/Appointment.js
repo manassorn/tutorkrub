@@ -73,6 +73,9 @@ class Appointment extends React.Component {
       
       <div className="card-body">
       รอตอบรับ
+      
+        <a href="anc"
+          className="btn btn-success radius-10">ตกลง</a>
       </div>
     </div>
        
