@@ -76,8 +76,8 @@ class Appointment extends React.Component {
       
         <div className="d-flex">
         
-        <button className="btn btn-success radius-10">ตกลง</button>
-        <button className="btn btn-danger radius-10">ตกลง</button>
+        <button className="btn btn-success btn-block radius-10 mr-2">ตกลง</button>
+        <button className="btn btn-danger btn-block radius-10 ml-2">ตกลง</button>
 
           
         </div>
