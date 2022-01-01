@@ -71,7 +71,7 @@ class Appointment extends React.Component {
       
       
       
-      <div>
+      <div className="card-body">
       รอตอบรับ
       </div>
     </div>
