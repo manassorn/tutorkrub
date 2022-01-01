@@ -71,13 +71,13 @@ class Appointment extends React.Component {
       
       
       
-      <div className="card-body mt-0">
+      <div className="card-body mt-0 pt-0">
       รอตอบรับ
       
-        <div className="row">
+        <div className="d-flex">
         
-        <button className="col btn btn-success radius-10">ตกลง</button>
-        <button className="col btn btn-danger radius-10">ตกลง</button>
+        <button className="btn btn-success radius-10">ตกลง</button>
+        <button className="btn btn-danger radius-10">ตกลง</button>
 
           
         </div>
