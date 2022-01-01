@@ -72,7 +72,7 @@ class Appointment extends React.Component {
       
       
       <div className="card-body mt-0 pt-0">
-        <span className="badge-primary">
+        <span className="badge badge-primary">
         รอตอบรับ
         </span>
       
