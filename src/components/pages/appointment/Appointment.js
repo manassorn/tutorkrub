@@ -38,7 +38,7 @@ class Appointment extends React.Component {
        <SimpleTitle title='รายละเอียดนัดหมาย' />
        
       <div className="row my-4">
-        <div className="col-4 col-md-3 offset-md-1">
+        <div className="col-4 col-md-3 offset-md-1 border-right">
           <div className="text-center">
             <h5 className="card-title">มกราคม<br/>12</h5>
             <h6 className="card-subtitle">
@@ -56,7 +56,7 @@ class Appointment extends React.Component {
         
         
         <div className="col-12">
-        <div className="row">
+        <div className="row mt-3">
         <div className="col-6 col-md-5 offset-md-1">        <button className="btn btn-primary btn-block radius-10">ตกลง</button></div>
         <div className="col-6 col-md-5">        <button className="btn btn-danger btn-block radius-10">ปฏิเสธ</button></div>
         </div>
