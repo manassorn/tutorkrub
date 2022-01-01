@@ -68,6 +68,12 @@ class Appointment extends React.Component {
           </div>
         </div>
       </div>
+      
+      
+      
+      <div>
+      รอตอบรับ
+      </div>
     </div>
        
        
