@@ -54,6 +54,12 @@ class Appointment extends React.Component {
 
         </div>
         
+        <div className="col-12">
+          โปรดคลิกปุ่มด้านล่างเพื่อตอบรับ 
+          หากติวเตอร์ไม่ตอบรับภายใน 2 วัน
+          นัดหมายจะถูกยกเลิกอัตโนมัติ
+        </div>
+        
         
         <div className="col-12">
         <div className="row mt-3">
