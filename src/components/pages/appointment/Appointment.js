@@ -53,6 +53,14 @@ class Appointment extends React.Component {
           <p className="card-text"><span className="text-muted">โดย Manassorn Vanichdilokkul</span></p>
 
         </div>
+        
+        
+      
+        <div className="row">
+        <div className="col">        <button className="btn btn-primary btn-block radius-10">ตกลง</button></div>
+        <div className="col">        <button className="btn btn-danger btn-block radius-10">ปฏิเสธ</button></div>
+        </div>
+        
       </div>
        
      <div className="card radius-10 xborder">
@@ -94,13 +102,8 @@ class Appointment extends React.Component {
       
       
         <div className="row">
-        <div className="d-none d-md-block col-md-6"></div>
         <div className="col">        <button className="btn btn-primary btn-block radius-10">ตกลง</button></div>
         <div className="col">        <button className="btn btn-danger btn-block radius-10">ปฏิเสธ</button></div>
-        
-        
-
-          
         </div>
       </div>
     </div>
