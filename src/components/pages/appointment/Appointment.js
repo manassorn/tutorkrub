@@ -55,10 +55,11 @@ class Appointment extends React.Component {
         </div>
         
         
-      
+        <div className="col-12">
         <div className="row">
         <div className="col-6 col-md-5 offset-md-1">        <button className="btn btn-primary btn-block radius-10">ตกลง</button></div>
         <div className="col-6 col-md-5">        <button className="btn btn-danger btn-block radius-10">ปฏิเสธ</button></div>
+        </div>
         </div>
         
       </div>
