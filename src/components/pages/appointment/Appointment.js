@@ -38,7 +38,7 @@ class Appointment extends React.Component {
        <SimpleTitle title='รายละเอียดนัดหมาย' />
        
        
-     <div className="card radius-10 border">
+     <div className="card radius-10 xborder">
       <div className="card-body">
         <div className="media align-items-center">
           <div className="text-center">
