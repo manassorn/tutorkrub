@@ -58,8 +58,8 @@ class Appointment extends React.Component {
         
 
         
-        <div className="col-6">        <button className="btn btn-primary btn-block radius-10">ตกลง</button></div>
-        <div className="col-6">        <button className="btn btn-danger btn-block radius-10">ปฏิเสธ</button></div>
+        <div className="col-6 mt-3">        <button className="btn btn-primary btn-block radius-10">ตกลง</button></div>
+        <div className="col-6 mt-3">        <button className="btn btn-danger btn-block radius-10">ปฏิเสธ</button></div>
         
       <div className="col-12 mt-3">
         <p className="mb-2">
