@@ -75,54 +75,7 @@ class Appointment extends React.Component {
       </div>  
       </div>
        
-     <div className="card radius-10 xborder">
-      <div className="card-body">
-        <div className="media align-items-center">
-          <div className="text-center">
-            <h5 className="card-title">มกราคม<br/>12</h5>
-            <h6 className="card-subtitle">
-              10:00
-            </h6>
-            <div>
-            </div>
-          </div>
-          
-          <div className="media-body ml-3 pl-3 border-left">
-
-
-            <div className="row">
-              <div className="col-md-8">
-                <h5 className="card-title">Course Title</h5>
-                <p className="card-text"><span className="text-muted">โดย Manassorn Vanichdilokkul</span></p>
-
-              </div>
-              
-              
-              
-            </div>
-
-          </div>
-        </div>
-      </div>
-      
-      
-      
-      <div className="card-body mt-0 pt-0">
-        <span className="badge badge-primary">
-        รอตอบรับ
-        </span>
-      
-      
-        <div className="row">
-        <div className="col">        <button className="btn btn-primary btn-block radius-10">ตกลง</button></div>
-        <div className="col">        <button className="btn btn-danger btn-block radius-10">ปฏิเสธ</button></div>
-        </div>
-      </div>
-    </div>
-       
-       
-       
-       
+  
        
        
        
