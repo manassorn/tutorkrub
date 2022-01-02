@@ -56,8 +56,13 @@ class Appointment extends React.Component {
 
         </div>
         
-        <div className="col-12 mt-2">
-        <p>
+
+        
+        <div className="col-6">        <button className="btn btn-primary btn-block radius-10">ตกลง</button></div>
+        <div className="col-6">        <button className="btn btn-danger btn-block radius-10">ปฏิเสธ</button></div>
+        
+      <div className="col-12 mt-3">
+        <p className="mb-2">
         <span className="badge text-primary bg-light-primary">รอตอบรับ</span>
         </p>
         <p>
@@ -66,9 +71,6 @@ class Appointment extends React.Component {
           นัดหมายจะถูกยกเลิกอัตโนมัติ
         </p>
         </div>
-        
-        <div className="col-6">        <button className="btn btn-primary btn-block radius-10">ตกลง</button></div>
-        <div className="col-6">        <button className="btn btn-danger btn-block radius-10">ปฏิเสธ</button></div>
         
         
       </div>
@@ -116,11 +118,6 @@ class Appointment extends React.Component {
            </div> 
           </div>
           
-        
-        <StudentNewActionCard/>
-      
-        
- 
 
          </div>
         </div>
