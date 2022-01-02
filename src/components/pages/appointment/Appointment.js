@@ -38,7 +38,9 @@ class Appointment extends React.Component {
        <SimpleTitle title='รายละเอียดนัดหมาย' />
        
       <div className="row my-4 border-bottom pb-4">
-        <div className="col-4 col-md-3 offset-md-1 border-right">
+      <div className="offset-md-1 col-md-10">
+      <div className="row">
+        <div className="col-4 border-right">
           <div className="text-center">
             <h5 className="card-title">มกราคม<br/>12</h5>
             <h6 className="card-subtitle">
@@ -48,7 +50,7 @@ class Appointment extends React.Component {
             </div>
           </div>
         </div>
-        <div className="col-8 col-md-7">
+        <div className="col-8">
           <h5 className="card-title">Course Title</h5>
           <p className="card-text"><span className="text-muted">โดย Manassorn Vanichdilokkul</span></p>
 
@@ -60,14 +62,12 @@ class Appointment extends React.Component {
           นัดหมายจะถูกยกเลิกอัตโนมัติ
         </div>
         
+        <div className="col-6">        <button className="btn btn-primary btn-block radius-10">ตกลง</button></div>
+        <div className="col-6">        <button className="btn btn-danger btn-block radius-10">ปฏิเสธ</button></div>
         
-        <div className="col-12">
-        <div className="row mt-3">
-        <div className="col-6 col-md-5 offset-md-1">        <button className="btn btn-primary btn-block radius-10">ตกลง</button></div>
-        <div className="col-6 col-md-5">        <button className="btn btn-danger btn-block radius-10">ปฏิเสธ</button></div>
-        </div>
-        </div>
         
+      </div>
+      </div>  
       </div>
        
      <div className="card radius-10 xborder">
