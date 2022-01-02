@@ -56,10 +56,15 @@ class Appointment extends React.Component {
 
         </div>
         
-        <div className="col-12">
+        <div className="col-12 mt-2">
+        <p>
+        <span className="badge text-primary bg-light-primary">รอตอบรับ</span>
+        </p>
+        <p>
           โปรดคลิกปุ่มด้านล่างเพื่อตอบรับ 
           หากติวเตอร์ไม่ตอบรับภายใน 2 วัน
           นัดหมายจะถูกยกเลิกอัตโนมัติ
+        </p>
         </div>
         
         <div className="col-6">        <button className="btn btn-primary btn-block radius-10">ตกลง</button></div>
