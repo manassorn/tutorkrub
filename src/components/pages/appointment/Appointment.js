@@ -81,50 +81,6 @@ class Appointment extends React.Component {
        
        
        
-       
-       
-       
-       
-       
-              <div class="p-3">
-        <div>
-         <div class="">
-          <div class="media align-items-top"> 
-           <div class=""> 
-            <img src="/assets/images/avatars/avatar-1.png" width="40" height="40" class="rounded-circle" alt="" /> 
-           </div> 
-           <div class="media-body pl-2"> 
-            <h4 class="mb-1 font-weight-bold">รับสอนคณิตศาสตร์ </h4> 
-             
-           </div> 
-          </div> 
-         
-          
-          <div class="mt-2 media align-items-center"> 
-           <div class="product-img"> 
-            <i className="bx bx-calendar" style={{fontSize:'30px'}}></i>
-
-           </div> 
-           <div class="media-body pl-3"> 
-            <h6 class="mb-0 font-weight-bold">{Utils.formatDate(new Date())}</h6> 
-           </div> 
-          </div>
-          <div class="mt-2 media align-items-center"> 
-           <div class="product-img"> 
-           <i className="bx bx-alarm" style={{fontSize:'30px'}}></i>
-           </div> 
-           <div class="media-body pl-3"> 
-            <h6 class="mb-0 font-weight-bold">{Utils.formatHourPeriod(1,1)}</h6> 
-           </div> 
-          </div>
-          
-
-         </div>
-        </div>
-        
-        
-       </div>
-       
        <div className="row">
        <div className="col-sm-6">
        <AppointmentChat appointmentId={this.appointmentId}/>
