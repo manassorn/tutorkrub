@@ -65,7 +65,7 @@ class Appointment extends React.Component {
         <p className="mb-2">
         <span className="badge text-primary bg-light-primary">รอตอบรับ</span>
         </p>
-        <p>
+        <p className="mb-0">
           โปรดคลิกปุ่มด้านล่างเพื่อตอบรับ 
           หากติวเตอร์ไม่ตอบรับภายใน 2 วัน
           นัดหมายจะถูกยกเลิกอัตโนมัติ
