@@ -77,7 +77,6 @@ class Appointment extends React.Component {
         
         <div className="col-12">
           <h5 className="card-titlex">Course Title</h5>
-          <p className="card-textx"><span className="text-muted">โดย Manassorn Vanichdilokkul</span></p>
 
         </div>
         
@@ -92,6 +91,14 @@ class Appointment extends React.Component {
         <div className="col-4">
           <h6 className="text-muted mb-1">ราคา</h6>
           <p>฿100.00</p>
+        </div>
+        
+        <div className="col-12 border-top mt-3">
+          <img src={this.state.course.tutor?this.state.course.tutor.avatarUrl:''} width="32" height="32" class="rounded-circle shadow" alt=""/>
+        &nbsp;&nbsp;
+        <span>Manassorn Vanichdilokkul</span>
+        
+
         </div>
         
       </div>
