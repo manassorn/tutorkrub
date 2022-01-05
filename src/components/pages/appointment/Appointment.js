@@ -44,6 +44,9 @@ class Appointment extends React.Component {
             <h6 className="card-subtitle">
               10:00
             </h6>
+            <p className="mb-2">
+            <span className="badge text-primary bg-light-primary">รอตอบรับ</span>
+            </p>
             <div>
             </div>
           </div>
@@ -60,9 +63,7 @@ class Appointment extends React.Component {
         <div className="col-6 mt-3">        <button className="btn btn-danger btn-block radius-10">ปฏิเสธ</button></div>
         
       <div className="col-12 mt-3">
-        <p className="mb-2">
-        <span className="badge text-primary bg-light-primary">รอตอบรับ</span>
-        </p>
+
         <p className="mb-0">
           โปรดคลิกปุ่มด้านล่างเพื่อตอบรับ 
           หากติวเตอร์ไม่ตอบรับภายใน 2 วัน
