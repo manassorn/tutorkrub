@@ -76,8 +76,8 @@ class Appointment extends React.Component {
         
         
         <div className="col-12">
-          <h5 className="card-title">Course Title</h5>
-          <p className="card-text"><span className="text-muted">โดย Manassorn Vanichdilokkul</span></p>
+          <h5 className="card-titlex">Course Title</h5>
+          <p className="card-textx"><span className="text-muted">โดย Manassorn Vanichdilokkul</span></p>
 
         </div>
         
