@@ -84,7 +84,7 @@ class Appointment extends React.Component {
        
        
        <div className="row">
-       <div className="col-sm-6">
+       <div className="col-md-10 offset-md-1">
        <AppointmentChat appointmentId={this.appointmentId}/>
        </div>
        
