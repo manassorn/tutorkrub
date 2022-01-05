@@ -93,8 +93,8 @@ class Appointment extends React.Component {
           <p>฿100.00</p>
         </div>
         
-        <div className="col-12 border-top mt-3">
-          <img src={this.state.course.tutor?this.state.course.tutor.avatarUrl:''} width="32" height="32" class="rounded-circle shadow" alt=""/>
+        <div className="col-12 border-top pt-3">
+          <img src="" width="32" height="32" class="rounded-circle shadow" alt=""/>
         &nbsp;&nbsp;
         <span>Manassorn Vanichdilokkul</span>
         
