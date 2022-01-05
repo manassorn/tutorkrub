@@ -64,9 +64,9 @@ class Appointment extends React.Component {
         
       <div className="col-12 mt-3">
 
-        <p className="mb-0">
+        <div className="alert alert-secondary">
           โปรดตอบรับภายใน 12 ม.ค. 13:00
-        </p>
+        </div>
         </div>
         
         
