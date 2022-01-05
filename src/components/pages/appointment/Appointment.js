@@ -35,8 +35,6 @@ class Appointment extends React.Component {
         return <div class="container pt-3 border-top" style={{maxWidth:'720px'}}>
       
       
-       <SimpleTitle title='รายละเอียดนัดหมาย' />
-       
       <div className="row my-4 border-bottom pb-4">
       <div className="offset-md-1 col-md-10">
       <div className="row">
