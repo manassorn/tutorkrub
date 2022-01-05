@@ -80,12 +80,12 @@ class Appointment extends React.Component {
           <p>คณิตศาสตร์</p>
         </div>
         <div className="col-4">
-          <h6 className="text-muted mb-1">วิชา</h6>
-          <p>คณิตศาสตร์</p>
+          <h6 className="text-muted mb-1">เวลา</h6>
+          <p>1 ชั่วโมง</p>
         </div>
         <div className="col-4">
-          <h6 className="text-muted mb-1">วิชา</h6>
-          <p>คณิตศาสตร์</p>
+          <h6 className="text-muted mb-1">ราคา</h6>
+          <p>฿100.00</p>
         </div>
         
       </div>
