@@ -112,7 +112,7 @@ class Appointment extends React.Component {
        <AppointmentChat appointmentId={this.appointmentId}/>
        </div>
        
-       <div className="col-sm-6">
+       <div className="col-md-10 offset-md-1">
        <div className="pl-3 pt-3 border-top">
        <h3>
        ประวัติ
