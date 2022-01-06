@@ -102,14 +102,9 @@ class Appointment extends React.Component {
     render() {
         return <div className="border-top p-3">
         
-        <h3>ข้อความ</h3>
+        <h3>สนทนา</h3>
         
-        <div className="text-center text-muted my-5">
-        
-        <i className="bx bx-chat" style={{fontSize: '50px'}}></i>
-        <br/>
-        ยังไม่มีบทสนทนา
-        </div>
+
 
        <div class="d-none chat-contentx ps ps--active-y"> 
        
