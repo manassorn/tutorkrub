@@ -113,7 +113,7 @@ class Appointment extends React.Component {
        </div>
        
        <div className="col-md-10 offset-md-1">
-       <div className="pl-3 pt-3 border-top">
+       <div className="py-4 border-top">
        <h5>
        ประวัติ
        </h5>
