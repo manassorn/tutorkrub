@@ -38,7 +38,7 @@ class Appointment extends React.Component {
       <div className="row my-4 border-bottom pb-4">
       <div className="offset-md-1 col-md-10">
       <div className="row">
-        <div className="col-12 bg-light p-3">
+        <div className="col-12 bg-light p-3 mb-3">
           <div className="text-center">
             <h5 className="card-title">มกราคม<br/>12</h5>
             <h6 className="card-subtitle">
