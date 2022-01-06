@@ -100,7 +100,7 @@ class Appointment extends React.Component {
     }
 
     render() {
-        return <div className="p-3">
+        return <div className="py-4">
         
         <h5>สนทนา</h5>
         
