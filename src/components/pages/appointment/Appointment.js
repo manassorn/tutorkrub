@@ -114,9 +114,9 @@ class Appointment extends React.Component {
        
        <div className="col-md-10 offset-md-1">
        <div className="pl-3 pt-3 border-top">
-       <h3>
+       <h5>
        ประวัติ
-       </h3>
+       </h5>
         <ol className="timeline">
         <li>ติวเตอร์เปลี่ยนเวลานัดหมาย
           <small>{Utils.formatTimestamp(new Date())}</small>
