@@ -81,7 +81,7 @@ class Appointment extends React.Component {
         <div className="col-12 border-top pt-3">
           <img src="" width="32" height="32" class="rounded-circle shadow" alt=""/>
         &nbsp;&nbsp;
-        <span>Manassorn Vanichdilokkul</span>
+        <a href="x">Manassorn Vanichdilokkul</a>
         </div>
         
         <div className="col-6 mt-3">        <button className="btn btn-primary btn-block radius-10">ตกลง</button></div>
