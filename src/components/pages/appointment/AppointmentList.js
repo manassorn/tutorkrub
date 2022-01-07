@@ -52,31 +52,34 @@ class AppointmentList extends React.Component {
 
 
   render() {
-    return <div class="container" style={{maxWidth:'720px'}}> 
+    return <div class="container" style={{maxWidth:'720px'}}>
 
-      
-      
-      <div className="py-4">
-        <div className="btn-group d-flex d-sm-none" role="group" aria-label="Basic example">
-        {this.icons.map((icon, i) => (
-          <button type="button" className="btn btn-white font-13 w-25" style={{position:'relative'}}>
-            <i className={"bx bx-md my-0 " + icon}></i><br/>
-            {this.labels[i]}
-          <span className="badge badge-pill badge-danger" style={{position:'absolute',top:'10px',right:'10px'}}>3</span>
-          </button>
-        
-        ))}
+
+
+      <div className="py-4 d-sm-none">
+        <div className="btn-group d-flex" role="group" aria-label="Basic example">
+          {this.icons.map((icon, i) => (
+            <button type="button" className="btn btn-white font-13 w-25" style={{position:'relative'}}>
+              <i className={"bx bx-md my-0 " + icon}></i><br/>
+              {this.labels[i]}
+              <span className="badge badge-pill badge-danger" style={{position:'absolute',top:'10px',right:'10px'}}>3</span>
+            </button>
+
+          ))}
 
         </div>
+      </div>
+
+      <div className="py-4 d-none d-sm-block">
         <div className="btn-group d-flex" role="group" aria-label="Basic example">
-        {this.icons.map((icon, i) => (
-          
-          <button type="button" className="btn btn-white w-100">
-            {this.labels[i]} &nbsp;&nbsp;
-          <span className="badge badge-pill badge-danger">3</span>
-          </button>
-        ))}
-          
+          {this.icons.map((icon, i) => (
+
+            <button type="button" className="btn btn-white w-100">
+              {this.labels[i]} &nbsp;&nbsp;
+              <span className="badge badge-pill badge-danger">3</span>
+            </button>
+          ))}
+
         </div>
       </div>
       
