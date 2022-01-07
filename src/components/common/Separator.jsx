@@ -14,7 +14,7 @@ class Separator extends React.Component {
   }
 
   render() {
-    return <div class="separator">&nbsp;&nbsp;&nbsp;{this.text}&nbsp;&nbsp;&nbsp;</div>
+    return <div className="separator">&nbsp;&nbsp;&nbsp;{this.text}&nbsp;&nbsp;&nbsp;</div>
 
   }
 }
