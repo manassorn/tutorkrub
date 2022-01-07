@@ -83,7 +83,8 @@ class Register extends React.Component {
       
       <SimpleTitle title='ลงทะเบียน' />
        
-      <div class="p-3">
+      <div className="row">
+      <div class="col-md-6 offset-md-3 py-4">
 
         
     <button class="btn btn-primary btn-block d-flex" onClick={e => this.loginFb}>
@@ -135,7 +136,7 @@ class Register extends React.Component {
       </div>
       
       
-       
+       </div>
      </div> 
 
     }
