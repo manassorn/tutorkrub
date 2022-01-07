@@ -42,7 +42,6 @@ class Register extends React.Component {
     }
     
     loginFb() {
-      console.log('loginfb')
       window.FB.login(function(response) {
         if (response.authResponse) {
           const accessToken = response.authResponse.accessToken
@@ -52,7 +51,6 @@ class Register extends React.Component {
                 const user = response.data.data
                 Auth.checkLogin()
              //   Me.subject.next(user)
-                console.log(user)
               }
             );
 

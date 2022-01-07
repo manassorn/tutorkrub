@@ -27,7 +27,6 @@ class Course extends React.Component {
         .then(response => 
         {
           const course = response.data.data
-          console.log(JSON.stringify(course))
           this.setState({course})
           const tutorId = course.tutorId
 
@@ -45,7 +44,6 @@ class Course extends React.Component {
     }
     
     createAppointment() {
-      console.log(this.courseId)
       Api.post(`/appointments/course/${this.courseId}`, {
         startTime: this.state.selectedDateHour,
         length: 1

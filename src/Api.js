@@ -19,11 +19,6 @@ Api.interceptors.request.use(function(config) {
 Api.interceptors.response.use(function(response) {
   return response;
 }, function(error) {
-  console.log(Object.keys(error))
-  console.log(error.response)
-  console.log(error.request.responseURL)
-  console.log(Object.keys(error.response))
-  console.log(error.config.url)  
 
   if (error.config.url != '/user/me' && error.config.url != '/authen/login' && error.response.status == 401) {
     

@@ -15,15 +15,7 @@ class Pay extends React.Component {
     }
 
     componentDidMount() {
-      /*Api.get('/crud/course')
-        .then(response => 
-        {
-          console.log('courses',response.data.data)
-        
-        this.setState({ courses: response.data.data })
-        }
-        );
-      */
+      
     }
 
     render() {

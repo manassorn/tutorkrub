@@ -33,7 +33,6 @@ class Appointment extends React.Component {
       Api.get(`/appointment/${this.appointmentId}/message`)
         .then(response => 
         {
-          console.log(JSON.stringify(response.data.data))
           
         let messages = response.data.data
         messages.sort((a,b) => {

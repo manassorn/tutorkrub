@@ -28,7 +28,6 @@ class Checkout extends React.Component {
         .then(response => 
         {
           const course = response.data.data
-          console.log(JSON.stringify(course))
           this.setState({course})
           const tutorId = course.tutorId
 
@@ -53,7 +52,6 @@ class Checkout extends React.Component {
     }
     
     createAppointment() {
-      console.log(this.courseId)
       Api.post(`/appointments`, {
         courseId: this.courseId,
         //startTime: this.state.selectedDateHour,

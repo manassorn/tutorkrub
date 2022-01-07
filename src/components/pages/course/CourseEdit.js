@@ -51,7 +51,6 @@ class CourseEdit extends React.Component {
     
     submitForm() {
       const form = this.refs.form;
-      console.log(form)
       if (form.checkValidity() === false) {
         form.classList.add('was-validated');
         return false

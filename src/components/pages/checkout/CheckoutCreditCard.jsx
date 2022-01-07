@@ -74,7 +74,6 @@ class CheckoutCreditCard extends React.Component {
           "currency": "THB" 
           
         }, function(statusCode, response) {
-          console.log(response["id"])
           if(callback) callback(response["id"])
         });
     }
