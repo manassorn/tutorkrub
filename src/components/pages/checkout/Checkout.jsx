@@ -194,9 +194,9 @@ class Checkout extends React.Component {
 				<label class="form-check-label" for="exampleRadios1">บัตรเครดิต</label>
 				
 				<span style={{position:'absolute',right:30}}>
-					<img src="https://www.omise.co/assets/pricing/visa-0b795a2d39bcf03d7b7624142d6d82919d99f8c942fa5419b31c4333c7645744.svg" width="80"/>
-					<img src="https://www.omise.co/assets/pricing/mastercard-de9bbb897f6b3f1cea0f59c9e1c67c80d9b0b74ee829f70b64961072a56331a1.svg" width="80"/>
-					<img src="https://www.omise.co/assets/pricing/jcb-5cb2403de82da39c5c11e6adfd36bb1c4039a00405401a64a3bb2ea07ea30355.svg" width="80"/>
+					<img src="https://www.omise.co/assets/pricing/visa-0b795a2d39bcf03d7b7624142d6d82919d99f8c942fa5419b31c4333c7645744.svg" height="24"/>
+					<img src="https://www.omise.co/assets/pricing/mastercard-de9bbb897f6b3f1cea0f59c9e1c67c80d9b0b74ee829f70b64961072a56331a1.svg" height="24"/>
+					<img src="https://www.omise.co/assets/pricing/jcb-5cb2403de82da39c5c11e6adfd36bb1c4039a00405401a64a3bb2ea07ea30355.svg" height="24"/>
 
 				</span>
 
