@@ -56,7 +56,7 @@ class AppointmentList extends React.Component {
 
       
       
-      <div className="my-4">
+      <div className="py-4">
         <div className="btn-group d-flex d-sm-none" role="group" aria-label="Basic example">
         {this.icons.map((icon, i) => (
           <button type="button" className="btn btn-white font-13 w-25" style={{position:'relative'}}>
@@ -71,7 +71,7 @@ class AppointmentList extends React.Component {
         {this.icons.map((icon, i) => (
           
           <button type="button" className="btn btn-white w-100">
-            {this.labels[i]}
+            {this.labels[i]} &nbsp;&nbsp;
           <span className="badge badge-pill badge-danger">3</span>
           </button>
         ))}
