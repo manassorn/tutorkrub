@@ -78,11 +78,11 @@ class Login extends React.Component {
       
       
       <SimpleTitle title='เข้าสู่ระบบ' />
-       
-      <div class="p-3">
+       <div className="row">
+      <div className="col-md-6 offset-md-3 py-3">
 
         
-    <button class="btn btn-primary btn-block d-flex" onClick={e => this.loginFb}>
+    <button className="btn btn-primary btn-block d-flex" onClick={e => this.loginFb}>
     <span>
     <i className="bx bxl-facebook"></i>
     </span>
@@ -119,7 +119,7 @@ class Login extends React.Component {
       </div>
       
       
-       
+       </div>
      </div> 
 
     }
