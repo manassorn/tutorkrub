@@ -110,22 +110,22 @@ class Navbar extends React.Component {
                 
                 <div className="flex-grow-1" onClick={e => this.activateSecretPanel(e)}>
 
-                  <Link className="pl-4" to="/explore">สำรวจวิชาเรียน <span class="sr-only">(current)</span></Link>
+                  <Link className="pl-4" to="/explore">สำรวจวิชาเรียน <span className="sr-only">(current)</span></Link>
 
                 </div>
                 
                 
                 
                  <div className="right-topbar ml-auto">
-                <ul class="navbar-nav">
-                { !this.state.auth && <li class="nav-item dropdown">
+                <ul className="navbar-nav">
+                { !this.state.auth && <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle dropdown-toggle-nocaret bx-md" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           <i className="bx bx-md bx-menu"></i>
                         </a>
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'fiSdcHz3FcLxZ0b2ienj')}>วิธีใช้งาน</a>
-                          <a class="dropdown-item" href="#" onClick={e => this.devlogin(e, 'fiSdcHz3FcLxZ0b2ienj')}>สำรวจวิชาเรียน</a>
-                          <a class="dropdown-item" href="#" onClick={e => this.doScrolling('#home-contactus', 800)}>ติดต่อสอบถาม</a>
+                        <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                          <a className="dropdown-item" href="#" onClick={e => this.devlogin(e, 'fiSdcHz3FcLxZ0b2ienj')}>วิธีใช้งาน</a>
+                          <a className="dropdown-item" href="#" onClick={e => this.devlogin(e, 'fiSdcHz3FcLxZ0b2ienj')}>สำรวจวิชาเรียน</a>
+                          <a className="dropdown-item" href="#" onClick={e => this.doScrolling('#home-contactus', 800)}>ติดต่อสอบถาม</a>
                         
                                <div className="dropdown-divider"></div>	
                           <Link className="dropdown-item" to="/register">
@@ -202,21 +202,21 @@ class Navbar extends React.Component {
             </nav>
             
         </header>
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
-              <div class="modal-body">
+              <div className="modal-body">
                 ...
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" className="btn btn-primary">Save changes</button>
               </div>
             </div>
           </div>
