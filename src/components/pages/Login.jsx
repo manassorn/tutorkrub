@@ -74,7 +74,7 @@ class Login extends React.Component {
 
 
     render() {
-        return <div class="container pt-3 border-top" style={{maxWidth:'720px'}}>
+        return <div className="container pt-3 border-top" style={{maxWidth:'720px'}}>
       
       
       <SimpleTitle title='เข้าสู่ระบบ' />
@@ -96,24 +96,24 @@ class Login extends React.Component {
 
         
     <FormValidation ref={this.form} validate={this.validate} onSubmit={e => this.register(e)}>
-      <div class="form-group mt-2"> 
+      <div className="form-group mt-2"> 
        <label>อีเมล / เบอร์โทรศัพท์</label> 
-       <input ref={ele => this.email = ele} id="email" type="email" class="form-control" placeholder="example@user.com" required />
-       <div class="invalid-feedback">
+       <input ref={ele => this.email = ele} id="email" type="email" className="form-control" placeholder="example@user.com" required />
+       <div className="invalid-feedback">
          โปรดกรอกอีเมลให้ถูกต้อง
        </div>
       </div> 
 
-      <div class="form-group mt-2"> 
+      <div className="form-group mt-2"> 
        <label>รหัสผ่าน</label> 
-       <input ref={ele => this.pwd = ele} id="pwd" type="password" class="form-control" required />
-       <div class="invalid-feedback">
+       <input ref={ele => this.pwd = ele} id="pwd" type="password" className="form-control" required />
+       <div className="invalid-feedback">
          โปรดกรอกรหัสผ่าน
        </div>
       </div>
     
-      <button id="submit-email-btn" type="submit" class="btn btn-primary btn-block" onClick={e => {this.login(e)}}>เข้าสู่ระบบ</button>
-      <a href="/register" class="btn btn-link btn-block">ลงทะเบียน</a> 
+      <button id="submit-email-btn" type="submit" className="btn btn-primary btn-block" onClick={e => {this.login(e)}}>เข้าสู่ระบบ</button>
+      <a href="/register" className="btn btn-link btn-block">ลงทะเบียน</a> 
     </FormValidation>
        
       </div>
