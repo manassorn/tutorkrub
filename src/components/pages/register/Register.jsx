@@ -78,16 +78,16 @@ class Register extends React.Component {
 
 
     render() {
-        return <div class="container pt-3 border-top" style={{maxWidth:'720px'}}>
+        return <div className="container pt-3 border-top" style={{maxWidth:'720px'}}>
       
       
       <SimpleTitle title='ลงทะเบียน' />
        
       <div className="row">
-      <div class="col-md-6 offset-md-3 py-4">
+      <div className="col-md-6 offset-md-3 py-4">
 
         
-    <button class="btn btn-primary btn-block d-flex" onClick={e => this.loginFb}>
+    <button className="btn btn-primary btn-block d-flex" onClick={e => this.loginFb}>
     <span>
     <i className="bx bxl-facebook"></i>
     </span>
@@ -101,36 +101,36 @@ class Register extends React.Component {
 
         
     <FormValidation ref={this.form} validate={this.validate} onSubmit={e => this.register(e)}>
-      <div class="form-group mt-2"> 
+      <div className="form-group mt-2"> 
        <label>อีเมล</label> 
-       <input ref={ele => this.email = ele} id="email" type="email" class="form-control" placeholder="example@user.com" required />
-       <div class="invalid-feedback">
+       <input ref={ele => this.email = ele} id="email" type="email" className="form-control" placeholder="example@user.com" required />
+       <div className="invalid-feedback">
          โปรดกรอกอีเมลให้ถูกต้อง
        </div>
       </div> 
-      <div class="form-group mt-2"> 
+      <div className="form-group mt-2"> 
        <label>ชื่อ</label> 
-       <input ref={ele => this.name = ele} id="name" type="text" class="form-control" required />
-       <div class="invalid-feedback">
+       <input ref={ele => this.name = ele} id="name" type="text" className="form-control" required />
+       <div className="invalid-feedback">
          โปรดกรอกชื่อ
        </div>
       </div>
-      <div class="form-group mt-2"> 
+      <div className="form-group mt-2"> 
        <label>รหัสผ่าน</label> 
-       <input ref={ele => this.pwd = ele} id="pwd" type="password" class="form-control" required />
-       <div class="invalid-feedback">
+       <input ref={ele => this.pwd = ele} id="pwd" type="password" className="form-control" required />
+       <div className="invalid-feedback">
          โปรดกรอกรหัสผ่าน
        </div>
       </div>
-      <div class="form-group mt-2"> 
+      <div className="form-group mt-2"> 
        <label>ยืนยันรหัสผ่าน</label> 
-       <input ref={ele => this.pwd2 = ele} id="pwd2" type="password" class="form-control" aria-describedby="pwdMismatch" onChange={this.validate} required />
-       <div class="invalid-feedback">
+       <input ref={ele => this.pwd2 = ele} id="pwd2" type="password" className="form-control" aria-describedby="pwdMismatch" onChange={this.validate} required />
+       <div className="invalid-feedback">
          โปรดยืนยันรหัสผ่านให้ถูกต้อง
        </div>
       </div>
-      <button id="submit-email-btn" type="submit" class="btn btn-primary btn-block">ดำเนินการต่อ</button>
-      <a href="/login" class="btn btn-link btn-block">เข้าสู่ระบบ</a> 
+      <button id="submit-email-btn" type="submit" className="btn btn-primary btn-block">ดำเนินการต่อ</button>
+      <a href="/login" className="btn btn-link btn-block">เข้าสู่ระบบ</a> 
     </FormValidation>
        
       </div>
