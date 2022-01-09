@@ -14,8 +14,7 @@ class HomeFooter extends React.Component {
       <div className="row">
         
         <div className="text-center col-md-5 offset-md-1 text-md-left">
-          วันอาวติวเตอร์
-          copyright © 2021
+            <img src="/assets/images/logo1.png" className="logo-icon" alt="" height="48"/>
         </div>
         <div className="text-center col-md-5 text-md-right">
           วันอาวติวเตอร์
