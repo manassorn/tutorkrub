@@ -18,8 +18,8 @@ class HomeHero2 extends React.Component {
     return <div className="row mx-0 py-5 align-items-center" style={{background:'#fafafa'}}>
         <div className="offset-md-1 col-md-6 px-5 text-center text-md-left">
         
-        <h1 class="display-4">
-        ศูนย์รวมติวเตอร์ ทุกวิชา
+        <h1>
+        แพลตฟอร์มเชื่อมโยงระหว่างติวเตอร์และนักเรียน
         </h1> 
         <p class="lead">
         ทดลองเรียน 1 ชั่วโมงก่อนได้
