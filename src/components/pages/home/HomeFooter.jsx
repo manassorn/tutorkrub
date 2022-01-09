@@ -11,7 +11,7 @@ class HomeFooter extends React.Component {
     
     render() {
       return <div className="p-3" style={{background:'#262626',color:'#fdfdfd'}}>
-      <div className="row">
+      <div className="row align-items-center">
         
         <div className="text-center col-md-5 offset-md-1 text-md-left">
             <img src="/assets/images/logo1.png" alt="" height="48" width="48"/>
