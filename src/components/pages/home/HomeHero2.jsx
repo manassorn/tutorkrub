@@ -19,6 +19,9 @@ class HomeHero2 extends React.Component {
         <div className="offset-md-1 col-md-6 px-5 text-center text-md-left">
         
         <h2>
+          <img src="/assets/images/logo1.png" alt="" height="48" width="48"/>
+          1HourTutor<br/>
+
         แพลตฟอร์มเชื่อมโยงระหว่างติวเตอร์และนักเรียน
         </h2> 
         <p class="lead">
