@@ -41,13 +41,15 @@ class HomeHero2 extends React.Component {
         <img src="/assets/images/home/skype-call3.jpg" width="100%"/>
       </div>
       
-      <div className="px-3 col-12 d-block d-md-none">
+      <div className="col-12 d-block d-md-none">
+        <div className="px-3">
         <h4>ค้นหาติวเตอร์ที่สอนได้ "ตรงใจ"</h4>
-        <ul>
+        <ul className="font-20">
           <li>เรียนออนไลน์</li>
           <li>เลือกเวลาเรียนเองได้</li>
           <li>ชำระเงินเป็นครั้ง ครั้งละ 1-2 ชั่วโมง</li>
         </ul>
+        </div>
       </div>
      </div>
 
