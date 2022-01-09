@@ -95,7 +95,7 @@ class Login extends React.Component {
         </div>
 
         
-    <FormValidation ref={this.form} validate={this.validate} onSubmit={e => this.register(e)}>
+    <FormValidation ref={this.form} validate={this.validate} onSubmit={e => this.register(e)}>  
       <div className="form-group mt-2"> 
        <label>อีเมล / เบอร์โทรศัพท์</label> 
        <input ref={ele => this.email = ele} id="email" type="email" className="form-control" placeholder="example@user.com" required />
