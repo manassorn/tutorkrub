@@ -40,7 +40,6 @@ class Appointment extends React.Component {
       <div className="row">
         <div className="col-12 bg-light p-3 mb-3">
           <div className="text-center">
-                  <i class='bx bx-dots-horizontal-rounded float-right font-24'></i>
 
             <h5 className="card-title">มกราคม<br/>12</h5>
             <h6 className="card-subtitle">
