@@ -19,7 +19,7 @@ class HomeHero2 extends React.Component {
         <div className="offset-md-1 col-md-6 px-5 text-center text-md-left">
         
         <h1>
-          <img src="/assets/images/logo1.png" alt="" height="54" width="54"/>
+          <img src="/assets/images/logo1.png" alt="" height="64" width="64"/>
           1HourTutor
 
         </h1>
@@ -31,8 +31,9 @@ class HomeHero2 extends React.Component {
         ทดลองเรียน 1 ชั่วโมงก่อนได้
         </p> 
         <p class="leadx">
-          <a class="btn btn-primary font-weight-bold px-4" href="#" role="button">ทดลองเรียน 1 ชั่วโมง</a> 
+          <a class="btn btn-primary font-weight-bold px-4 radius-10" href="#" role="button">ทดลองเรียน 1 ชั่วโมง</a> 
         </p> 
+        
 
 
       </div>
