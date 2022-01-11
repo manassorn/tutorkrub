@@ -30,8 +30,8 @@ class HomeEasyAppointment extends React.Component {
             
               <div className="col-md-4">
                <div className="d-flex">
-                <img src="" width="24" width="24"/>
-                <div className="border radius-10">
+                <img src="" width="24" width="24" className="pr-3"/>
+                <div className="border radius-10 p-3">
                   ค้นหาติวเตอร์ง่ายๆ ตรงใจ
                 </div>
                </div>
