@@ -6,6 +6,7 @@ import HomeContactUs from "./HomeContactUs";
 import HomeBecomeTutor from "./HomeBecomeTutor";
 import HomeFooter from "./HomeFooter";
 import HomeGettingStarted from "./HomeGettingStarted";
+import HomeEasyAppointment from "./HomeEasyAppointment";
 
 class Home extends React.Component {
   
@@ -23,6 +24,7 @@ class Home extends React.Component {
         <HomeHero2/>
         <HomeBenefits/>
         <HomeGettingStarted/>
+        <HomeEasyAppointment/>
         
         <HomeBecomeTutor/>
         <HomeFooter/>
