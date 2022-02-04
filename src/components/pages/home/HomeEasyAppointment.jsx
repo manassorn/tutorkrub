@@ -37,6 +37,11 @@ class HomeEasyAppointment extends React.Component {
                ddd
               
               </div>
+              
+              <div className="border m-1" style={{width:'350px'}}>
+               ddd
+              
+              </div>
             
             </div>
             
