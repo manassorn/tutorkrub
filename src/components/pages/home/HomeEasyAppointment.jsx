@@ -28,12 +28,12 @@ class HomeEasyAppointment extends React.Component {
             <div className="col-md-10 offset-md-1">
             <div className="d-flex">
             
-              <div className="border" style={{width:'250px'}}>
+              <div className="border m-1" style={{width:'350px'}}>
                ddd
               
               </div>
                         
-              <div className="border" style={{width:'250px'}}>
+              <div className="border m-1" style={{width:'350px'}}>
                ddd
               
               </div>
