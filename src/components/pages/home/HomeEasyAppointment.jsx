@@ -26,7 +26,7 @@ class HomeEasyAppointment extends React.Component {
 
           <div className="row">
             <div className="col-md-10 offset-md-1">
-            <div className="d-flex flex-column flex-md-row">
+            <div className="d-flex flex-column flex-md-row justify-content-around">
             
               <div className="border m-1" style={{width:'200px'}}>
                ddd
