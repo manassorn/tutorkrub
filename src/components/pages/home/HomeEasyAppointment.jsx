@@ -1,7 +1,7 @@
 import React from "react";
 import Api from '../../../Api'
 import SimpleTitle from '../../common/SimpleTitle'
-import './HomeGettingStarted.css'
+import './HomeEasyAppointment.css'
 
 class HomeEasyAppointment extends React.Component {
 
@@ -30,7 +30,7 @@ class HomeEasyAppointment extends React.Component {
 
               {[0,1,2,3,4].map(i => (
                 <div className="col-md-3 px-4" style={{width:'200px'}}>
-                  <div style={{boxShadow:'rgba(0, 0, 0, 0.16) 0px 1px 4px;'}} className="text-center radius-10">
+                  <div className="text-center radius-10 box-shadow">
                     <img src="https://i.imgur.com/BDmdbeI.png" style={{width: '60%'}} /><br/>
                       <h2>asdf</h2>
                       <p className="px-3 pb-3">dfsdfsdfsd asd asdf as fasd fasd fasd fasd fads fas fa sfas df asasdf.
