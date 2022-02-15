@@ -29,7 +29,7 @@ class HomeEasyAppointment extends React.Component {
             <div className="row">
 
               {[0,1,2,3,4].map(i => (
-                <div className="col-md-3 px-4" style={{width:'200px'}}>
+                <div className="col-md-3 px-4">
                   <div className="text-center radius-10 box-shadow">
                     <img src="https://i.imgur.com/BDmdbeI.png" style={{width: '60%'}} /><br/>
                       <h2>asdf</h2>
