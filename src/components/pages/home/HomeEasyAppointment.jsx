@@ -29,18 +29,12 @@ class HomeEasyAppointment extends React.Component {
             <div className="row">
 
 
-                <div className="col-md-3 px-4">
-                  <div className="text-center radius-10 box-shadow">
-                    <img src="/assets/images/home/asset3.png" style={{width: '60%'}} /><br/>
-                      <h2>เวลานัดหมาย</h2>
-                      <p className="px-3 pb-3">เลือกเวลาเรียนได้เอง</p>
-                  </div>
-                </div>
                 
-              {[0,1,2,3,4].map(i => (
+                
+              {[1,2,3,4,5].map(i => (
                 <div className="col-md-3 px-4">
                   <div className="text-center radius-10 box-shadow">
-                    <img src="/assets/images/home/asset2.png" style={{width: '60%'}} /><br/>
+                    <img src={`/assets${i}/images/home/asset.png`} style={{width: '60%'}} /><br/>
                       <h2>asdf</h2>
                       <p className="px-3 pb-3">dfsdfsdfsd asd asdf as fasd fasd fasd fasd fads fas fa sfas df asasdf.
                         asf</p>
