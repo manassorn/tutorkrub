@@ -34,7 +34,7 @@ class HomeEasyAppointment extends React.Component {
               {[1,2,3,4,5].map(i => (
                 <div className="col-md-3 px-4">
                   <div className="text-center radius-10 box-shadow">
-                    <img src={`/assets${i}/images/home/asset.png`} style={{width: '60%'}} /><br/>
+                    <img src={`/assets/images/home/asset${i}.png`} style={{width: '60%'}} /><br/>
                       <h2>asdf</h2>
                       <p className="px-3 pb-3">dfsdfsdfsd asd asdf as fasd fasd fasd fasd fads fas fa sfas df asasdf.
                         asf</p>
