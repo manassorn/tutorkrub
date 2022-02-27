@@ -9,6 +9,35 @@ class HomeEasyAppointment extends React.Component {
         super(props);
         this.state = {
         }
+        this.details = [
+          {
+            imgage:'1',
+            title:'ชำระเงินได้หลายช่องทาง',
+            desc:'เราเป็นตัวกลางชำระเงิน และโอนเงินให้ติวเตอร์เมื่อเรียนจบ'
+          },
+          {
+            imgage:'2',
+            title:'ขั้นต่ำ 1 ชั่วโมง',
+            desc:'เรียนครั้งละ 1 - 2 ชั่วโมง ไม่จำเป็นต้องเรียนเป็นคอร์ส'
+          },
+          {
+            imgage:'3',
+            title:'เลือกเวลาเรียนเอง',
+            desc:'สามารถเลือกเวลาได้เอง ตี 1 ตี 2 ก็ยังได้'
+          },
+          {
+            imgage:'4',
+            title:'เรียน 1 ต่อ 1',
+            desc:'เป็นกันเอง เรียนตามสไตล์ที่ชอบ'
+          },
+          {
+           imgage: '5',
+           title: 'มีติวเตอร์หลายวิชา',
+           desc: 'มีติวเตอร์พร้อมสอนหลากหลายวิชา'
+         },
+        ]
+          
+        
     }
 
     componentDidMount() {
@@ -31,13 +60,12 @@ class HomeEasyAppointment extends React.Component {
 
                 
                 
-              {[1,2,3,4,5].map(i => (
+              {this.details.map(d => (
                 <div className="col-md-3 px-4">
                   <div className="text-center radius-10 box-shadow">
-                    <img src={`/assets/images/home/asset${i}.png`} style={{width: '60%'}} /><br/>
-                      <h2>asdf</h2>
-                      <p className="px-3 pb-3">dfsdfsdfsd asd asdf as fasd fasd fasd fasd fads fas fa sfas df asasdf.
-                        asf</p>
+                    <img src={`/assets/images/home/asset${d.image}.png`} style={{width: '60%'}} /><br/>
+                      <h2>{d.title}</h2>
+                      <p className="px-3 pb-3">{d.desc}</p>
                   </div>
                 </div>
               ))}
