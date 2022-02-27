@@ -23,7 +23,7 @@ class HomeEasyAppointment extends React.Component {
           {
             image:'3',
             title:'เลือกเวลาเรียนเอง',
-            desc:'สามารถเลือกเวลาได้เอง ตี 1 ตี 2 ก็ยังได้'
+            desc:'ไม่ว่าจะเช้า-สาย-บ่าย-เย็น ตี 1 ตี 2 ก็ยังได้'
           },
           {
             image:'4',
@@ -32,8 +32,8 @@ class HomeEasyAppointment extends React.Component {
           },
           {
            image: '5',
-           title: 'มีติวเตอร์หลายวิชา',
-           desc: 'มีติวเตอร์พร้อมสอนหลากหลายวิชา'
+           title: 'หลากหลายวิชา',
+           desc: 'มีติวเตอร์หลากหลายวิชา'
          },
         ]
           
