@@ -64,7 +64,7 @@ class HomeEasyAppointment extends React.Component {
                 <div className="col-md-3 px-4">
                   <div className="text-center radius-10 box-shadow">
                     <img src={`/assets/images/home/asset${d.image}.png`} style={{width: '60%'}} /><br/>
-                      <h5 className="text-bold">{d.title}</h5>
+                      <h5 className="text-weight-bold">{d.title}</h5>
                       <p className="px-3 pb-3">{d.desc}</p>
                   </div>
                 </div>
