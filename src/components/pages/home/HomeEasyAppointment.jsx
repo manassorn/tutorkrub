@@ -12,7 +12,7 @@ class HomeEasyAppointment extends React.Component {
         this.details = [
           {
             image:'1',
-            title:'ชำระเงินได้หลายช่องทาง',
+            title:'ชำระเงินปลอดภัย',
             desc:'เราเป็นตัวกลางชำระเงิน และโอนเงินให้ติวเตอร์เมื่อเรียนจบ'
           },
           {
