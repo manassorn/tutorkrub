@@ -53,9 +53,9 @@ class HomeEasyAppointment extends React.Component {
           </div>
           
 
-          <div className="row">
+          <div className="row mx-0">
             <div className="col-md-10 offset-md-1">
-            <div className="row">
+            <div className="row mx-0">
 
 
                 
