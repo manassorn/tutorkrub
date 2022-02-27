@@ -81,4 +81,4 @@ class HomeEasyAppointment extends React.Component {
     }
 }
 
-export default HomeEasyBenefits2;
+export default HomeBenefits2;
