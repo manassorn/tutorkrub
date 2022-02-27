@@ -3,7 +3,7 @@ import Api from '../../../Api'
 import SimpleTitle from '../../common/SimpleTitle'
 import './HomeBenefits2.css'
 
-class HomeEasyAppointment extends React.Component {
+class HomeBenefits2 extends React.Component {
 
     constructor(props) {
         super(props);
