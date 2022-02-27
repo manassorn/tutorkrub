@@ -12,29 +12,21 @@ class HomeEasyAppointment extends React.Component {
         this.details = [
           {
             image:'1',
-            title:'ชำระเงินปลอดภัย',
-            desc:'เราเป็นตัวกลางชำระเงิน และโอนเงินให้ติวเตอร์เมื่อเรียนจบ'
+            title:'เลือกติวเตอร์',
           },
           {
             image:'2',
-            title:'ขั้นต่ำ 1 ชั่วโมง',
-            desc:'เรียนครั้งละ 1 - 2 ชั่วโมง ไม่จำเป็นต้องเรียนเป็นคอร์ส'
+            title:'เลือกเวลา',
           },
           {
             image:'3',
-            title:'เลือกเวลาเรียนเอง',
-            desc:'ไม่ว่าจะเช้า-สาย-บ่าย-เย็น ตี 1 ตี 2 ก็ยังได้'
+            title:'ชำระเงิน',
           },
           {
             image:'4',
-            title:'เรียน 1 ต่อ 1',
-            desc:'เป็นกันเอง เรียนตามสไตล์ที่ชอบ'
+            title:'เริ่มเ',
           },
-          {
-           image: '5',
-           title: 'หลากหลายวิชา',
-           desc: 'มีติวเตอร์หลากหลายวิชา'
-         },
+
         ]
           
         
@@ -53,27 +45,26 @@ class HomeEasyAppointment extends React.Component {
           </div>
           
 
-          <div className="row mx-0">
-            <div className="col-md-10 offset-md-1">
-            <div className="row mx-0">
+          <div className="row">
+            {this.details.map(d => (
 
-
-                
-                
-              {this.details.map(d => (
-                <div className="col-md-3 px-4">
+            <div className="col-md-3">
+            <div className="row">
+                <div className="col-2">
+                 <img src="//v.fastcdn.co/u/c787f3ba/25900801-0-arrow.png" />
+                </div>
+                <div className="col-10">
                   <div className="text-center radius-10 box-shadow">
-                    <img src={`/assets/images/home/asset${d.image}.png`} style={{width: '60%'}} /><br/>
-                      <h5 className="text-weight-bold">{d.title}</h5>
-                      <p className="px-3 pb-3">{d.desc}</p>
+                      <h4 className="text-weight-bold">{d.title}</h4>
                   </div>
                 </div>
-              ))}
 
             
             </div>
             
             </div>
+            ))}
+
           </div>
 
       </div>
