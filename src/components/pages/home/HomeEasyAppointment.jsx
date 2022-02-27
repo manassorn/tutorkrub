@@ -55,7 +55,7 @@ class HomeEasyAppointment extends React.Component {
                 </div>
                 <div className="col-9">
                   <div className="text-center radius-10 box-shadow py-3">
-                      <h4 className="text-weight-bold">{d.title}</h4>
+                      <h4 className="text-weight-bold mb-0">{d.title}</h4>
                   </div>
                 </div>
 
