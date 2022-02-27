@@ -25,7 +25,7 @@ class Home extends React.Component {
         <HomeHero2/>
         <HomeBenefits/>
         <HomeGettingStarted/>
-        <HomeBenefits/>
+        <HomeBenefits2/>
 
         <HomeEasyAppointment/>
         
