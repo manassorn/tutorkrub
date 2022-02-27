@@ -24,7 +24,7 @@ class HomeEasyAppointment extends React.Component {
           },
           {
             image:'4',
-            title:'เริ่มเ',
+            title:'เริ่มเรียน',
           },
 
         ]
@@ -50,10 +50,10 @@ class HomeEasyAppointment extends React.Component {
 
             <div className="col-md-3">
             <div className="row">
-                <div className="col-2">
+                <div className="col-3">
                  <img src="http://v.fastcdn.co/u/c787f3ba/25900801-0-arrow.png" width="100%" />
                 </div>
-                <div className="col-10">
+                <div className="col-9">
                   <div className="text-center radius-10 box-shadow py-3">
                       <h4 className="text-weight-bold">{d.title}</h4>
                   </div>
