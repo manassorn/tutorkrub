@@ -50,7 +50,7 @@ class HomeEasyAppointment extends React.Component {
 
             <div className="col-md-3">
             <div className="row">
-                <div className="col-2 col-md-3 align-self-center text-right bg-danger">
+                <div className="col-2 col-md-3 align-self-center text-align-right bg-danger">
                  <img className="m-2" src="http://v.fastcdn.co/u/c787f3ba/25900801-0-arrow.png" width="90%" />
                 </div>
                 <div className="col-10 col-md-9 pr-5">
