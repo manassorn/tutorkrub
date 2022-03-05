@@ -12,15 +12,11 @@ class HomeEasyAppointment extends React.Component {
         this.details = [
           {
             image:'1',
-            title:'เลือกติวเตอร์',
+            title:'ค้นหาติวเตอร์',
           },
           {
             image:'2',
             title:'เลือกเวลา',
-          },
-          {
-            image:'3',
-            title:'ชำระเงิน',
           },
           {
             image:'4',
@@ -48,8 +44,8 @@ class HomeEasyAppointment extends React.Component {
           <div className="row mx-0">
             {this.details.map(d => (
 
-            <div className="col-md-3">
-            <div className="row">
+            <div className="col-md-4">
+            <div className="row mt-3">
                 <div className="col-2 col-md-3 align-self-center text-right pr-0 bg-danger">
                  <img className="" src="http://v.fastcdn.co/u/c787f3ba/25900801-0-arrow.png" width="90%" />
                 </div>
