@@ -45,7 +45,7 @@ class HomeEasyAppointment extends React.Component {
           </div>
           
 
-          <div className="row">
+          <div className="row mx-0">
             {this.details.map(d => (
 
             <div className="col-md-3">
