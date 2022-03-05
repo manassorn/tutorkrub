@@ -37,7 +37,7 @@ class HomeEasyAppointment extends React.Component {
     }
 
     render() {
-      return <div className="py-5">
+      return <div className="py-5" style={{'background':'#027bff'}}>
           <div className="text-center">
             <h2>
             นัดหมายง่ายสบายๆ
@@ -50,8 +50,8 @@ class HomeEasyAppointment extends React.Component {
 
             <div className="col-md-3">
             <div className="row">
-                <div className="col-2 col-md-3 align-self-center">
-                 <img src="http://v.fastcdn.co/u/c787f3ba/25900801-0-arrow.png" width="100%" />
+                <div className="col-2 col-md-3 align-self-center p-2">
+                 <img src="http://v.fastcdn.co/u/c787f3ba/25900801-0-arrow.png" width="60%" />
                 </div>
                 <div className="col-10 col-md-9">
                   <div className="text-center radius-10 box-shadow py-3">
