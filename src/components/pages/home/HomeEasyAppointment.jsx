@@ -33,7 +33,7 @@ class HomeEasyAppointment extends React.Component {
     }
 
     render() {
-      return <div className="py-5" style={{'background':'#027bff'}}>
+      return <div className="py-4" style={{'background':'#027bff'}}>
           <div className="text-center text-white">
             <h2>
             นัดหมายง่ายสบายๆ
@@ -63,10 +63,10 @@ class HomeEasyAppointment extends React.Component {
 
           </div>
 
-          <div className="text-center text-white">
+          <div className="text-center text-white m-3">
             <h3>ทดลองเรียน</h3>
-          <button class="btn btn-danger bg-rose radius-10">ค้นหาติวเตอร์</button>
-          <p>สอบถามข้อมูลเพิ่มเติม <a href="#">คลิก</a></p>
+          <button class="btn btn-danger bg-light-danger radius-10 py-2 px-5">ค้นหาติวเตอร์</button>
+          <p>สอบถามข้อมูลเพิ่มเติม <a href="#" className="text-white">คลิก</a></p>
           
           </div>
           
