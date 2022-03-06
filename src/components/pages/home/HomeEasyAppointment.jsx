@@ -50,7 +50,7 @@ class HomeEasyAppointment extends React.Component {
                  <img className="" src="http://v.fastcdn.co/u/c787f3ba/25900801-0-arrow.png" width="90%" />
                 </div>
                 <div className="col-10 col-md-9">
-                  <div className="text-center radius-10 box-shadow py-3 bg-light-primary">
+                  <div className="text-center radius-10 box-shadow py-3 bg-white text-weight-bold">
                       <h4 className="text-weight-bold mb-0">{d.title}</h4>
                   </div>
                 </div>
