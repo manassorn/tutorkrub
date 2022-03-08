@@ -71,8 +71,8 @@ class HomeEasyAppointment extends React.Component {
 
           <div className="text-center text-white m-4">
             <h3 className="mb-2">ทดลองเรียน</h3>
-          <button class="btn btn-danger bg-rose radius-10 py-2 px-5">ค้นหาติวเตอร์</button>
-          <p className="mt-2">สอบถามข้อมูลเพิ่มเติม <u><a href="#" className="text-white">คลิก</a></u></p>
+          <button class="btn btn-lg btn-danger bg-red-light radius-10 py-2 px-5">ค้นหาติวเตอร์</button>
+          <p className="mt-2">สอบถามข้อมูลเพิ่มเติม <a href="#" className="text-white">คลิก</a></p>
           
           </div>
 
