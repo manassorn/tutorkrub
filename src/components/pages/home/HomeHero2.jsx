@@ -20,7 +20,7 @@ class HomeHero2 extends React.Component {
         
         <h1>
           <img src="/assets/images/logo1.png" alt="" height="64" width="64"/>
-          1HourTutor
+          TutorKrub
 
         </h1>
         <h2>
