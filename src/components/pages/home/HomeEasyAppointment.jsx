@@ -23,7 +23,7 @@ class HomeEasyAppointment extends React.Component {
           {
             image:'4',
             title:'เริ่มเรียน!',
-            title2:'เริ่มเรียนได้เลย ตามเวลานัดหมาย',
+            title2:'เตรียมอินเตอร์เน็ทให้พร้อม',
           },
 
         ]
@@ -36,14 +36,14 @@ class HomeEasyAppointment extends React.Component {
     }
 
     render() {
-      return <div className="py-4" style={{'background':'#027bff'}}>
+      return <div className="" style={{'background':'#027bff'}}>
         <div className="container">
-          <div className="text-center text-white">
+          <div className="text-center text-white my-4">
             <h2>
             นัดหมายติวเตอร์ง่ายๆ
 
             </h2>
-            <h4>ติวเตอร์หลายท่านรออยู่ เพียงแค่ทำตาม 3 ขั้นตอนด้านล่าง</h4>
+            <h4 className="font-weight-light">ติวเตอร์หลายท่านรออยู่ เพียงแค่ทำตาม 3 ขั้นตอนด้านล่าง</h4>
           </div>
           
 
@@ -69,10 +69,10 @@ class HomeEasyAppointment extends React.Component {
 
           </div>
 
-          <div className="text-center text-white m-3">
+          <div className="text-center text-white m-4">
             <h3 className="mb-2">ทดลองเรียน</h3>
           <button class="btn btn-danger bg-rose radius-10 py-2 px-5">ค้นหาติวเตอร์</button>
-          <p className="mt-2">สอบถามข้อมูลเพิ่มเติม <a href="#" className="text-white">คลิก</a></p>
+          <p className="mt-2">สอบถามข้อมูลเพิ่มเติม <u><a href="#" className="text-white">คลิก</a></u></p>
           
           </div>
 
