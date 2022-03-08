@@ -31,7 +31,7 @@ class HomeHero2 extends React.Component {
         ทดลองเรียน 1 ชั่วโมงก่อนได้
         </p> 
         <p class="leadx">
-          <a class="btn btn-primary font-weight-bold px-4 radius-10" href="#" role="button">ทดลองเรียน 1 ชั่วโมง</a> 
+          <a class="btn btn-lg btn-primary font-weight-bold px-4 radius-10" href="#" role="button">ทดลองเรียน 1 ชั่วโมง</a>
         </p> 
         
 
