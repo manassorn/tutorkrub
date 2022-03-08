@@ -46,10 +46,12 @@ class HomeBenefits2 extends React.Component {
 
     render() {
       return <div className="py-5 container">
-          <div className="text-center">
+          <div className="text-center my-4">
             <h2>
-            นัดหมายง่ายสบายๆ
+              เรียนกับเรา
+
             </h2>
+            <h4 className="font-weight-light">เรียนกับเรา ได้ประโยชน์อะไรบ้างมากมาย</h4>
           </div>
           
 
