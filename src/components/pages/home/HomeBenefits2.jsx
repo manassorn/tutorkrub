@@ -46,7 +46,7 @@ class HomeBenefits2 extends React.Component {
 
     render() {
       return <div className="py-5 container">
-          <div className="text-center my-4">
+          <div className="text-center my-ถ">
             <h2>
               เรียนกับเรา
 

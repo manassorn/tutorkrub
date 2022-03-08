@@ -23,8 +23,8 @@ class Home extends React.Component {
     render() {
       return <div class="">
         <HomeHero2/>
-        <HomeBenefits/>
-        <HomeGettingStarted/>
+        {/*<HomeBenefits/>*/}
+        {/*<HomeGettingStarted/>*/}
         <HomeBenefits2/>
 
         <HomeEasyAppointment/>
