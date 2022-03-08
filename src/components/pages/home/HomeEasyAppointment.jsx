@@ -36,7 +36,7 @@ class HomeEasyAppointment extends React.Component {
     }
 
     render() {
-      return <div className="" style={{'background':'#027bff'}}>
+      return <div className="py-5" style={{'background':'#027bff'}}>
         <div className="container">
           <div className="text-center text-white my-4">
             <h2>
