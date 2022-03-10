@@ -14,8 +14,10 @@ class Card2 extends React.Component {
   }
 
   render() {
-    return <div class="col-6 col-md-3">
-            <div class="card" style={{'box-shadow':'none'}}>
+    const course = this.props.course
+
+    return <div className="col-md-6 border">
+            <div className="card" style={{'box-shadow':'none'}}>
                 <div className="bg-light" style={{paddingTop:'100%',position:'relative'}}>
                 <img class="card-img-top rounded rounded-lg" src={course.tutor.avatarUrl} alt="" style={{position:'absolute',top:0}}/>
                 </div>
