@@ -25,11 +25,11 @@ class Card2 extends React.Component {
           <p className="text-secondary">ติวเตอร์</p>
         </div>
       </div>
-      <div className="field">
+      <div className="field mt-2">
         <label>วิชา</label>
         <span>{course.subject}</span>
       </div>
-      <div className="d-flex">
+      <div className="d-flex mt-2">
         <div className="w-50 field">
           <label className="">ชั้นเรียน</label>
           <span>{course.schoolLevel}</span>
