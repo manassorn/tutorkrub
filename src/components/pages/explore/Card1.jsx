@@ -9,11 +9,11 @@ class Card1 extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        course: this.props.course
       }
     }
 
     render() {
+      const course = this.props.course
       return <div class="col-6 col-md-3">
             <div class="card" style={{'box-shadow':'none'}}>
                 <div className="bg-light" style={{paddingTop:'100%',position:'relative'}}>
