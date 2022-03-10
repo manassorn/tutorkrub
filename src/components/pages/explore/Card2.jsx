@@ -31,10 +31,10 @@ class Card2 extends React.Component {
         </h7>
       </div>
       <div className="d-flex">
-        <h7>ชั้นเรียน
+        <h7 className="w-50">ชั้นเรียน
         <span>{course.schoolLevel}</span>
         </h7>
-        <h7>ราคา
+        <h7 className="w-50">ราคา
           <span>{course.price}</span>
         </h7>
       
