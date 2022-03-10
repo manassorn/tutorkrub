@@ -18,12 +18,16 @@ class Card2 extends React.Component {
 
     return <div className="col-md-6">
     <div className="border radius-10 p-2">
-      <div className="d-flex">
+      <div className="d-flex align-items-center">
         <img className="mr-2 rounded rounded-lg" src={course.tutor.avatarUrl} alt="" width="80"/>
-        <div className="align-item-center">
+        <div className="">
           <h5 className="font-weight-bold">Manassorn Vanichdilokkul</h5>
           <p className="text-secondary">ติวเตอร์</p>
         </div>
+      </div>
+      <div>
+        <h6 className="text-secondary">ชั้นเรียน</h6>
+        <p>คณิตศาสตร์, อังกฤษ</p>
       </div>
 
     </div>
