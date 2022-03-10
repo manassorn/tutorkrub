@@ -26,30 +26,22 @@ class Card2 extends React.Component {
         </div>
       </div>
       <div>
-        <h7 className="text-secondary">วิชา</h7>
-        <p>{course.subject}</p>
+        <h7>วิชา
+        <span>{course.subject}</span>
+        </h7>
       </div>
-      <div>
+      <div className="d-flex">
+        <h7>ชั้นเรียน
+        <span>{course.schoolLevel}</span>
+        </h7>
+        <h7>ราคา
+          <span>{course.price}</span>
+        </h7>
       
       </div>
 
     </div>
-            <div className="card" style={{'box-shadow':'none'}}>
-                <div className="bg-light" style={{paddingTop:'100%',position:'relative'}}>
-                <img class="card-img-top rounded rounded-lg" src={course.tutor.avatarUrl} alt="" style={{position:'absolute',top:0}}/>
-                </div>
-                <div class="card-body p-0 mt-2">
-                    <p class="card-text">
-                        <a href={`/course/${course.id}`} className="stretched-link text-dark h6">
-                        {course.title}</a><br/>
-                                              <span class="badge badge-pill badge-secondary">{course.schoolLevel}</span>
-                                 &nbsp;             <span class="badge badge-pill badge-secondary">{course.subject}</span>
-
-                        <div className="mt-2 font-weight-bold h6">฿{course.price}/ชั่วโมง</div>
-                    </p>
-                </div>
-            </div>
-        </div>
+    </div>
 
   }
 }
