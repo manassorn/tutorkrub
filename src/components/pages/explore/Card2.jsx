@@ -17,10 +17,10 @@ class Card2 extends React.Component {
     const course = this.props.course
 
     return <div className="col-md-6">
-    <div className="border radius-10">
+    <div className="border radius-10 p-2">
       <div style={{float:'left'}}>
-        <img className="mr-2 rounded rounded-lg" src={course.tutor.avatarUrl} alt="" width="150"/>
-        <h4 className="font-weight-bold">Manassorn Vanichdilokkul</h4>
+        <img className="mr-2 rounded rounded-lg" src={course.tutor.avatarUrl} alt="" width="80"/>
+        <h5 className="font-weight-bold">Manassorn Vanichdilokkul</h5>
         <p className="text-secondary">ติวเตอร์</p>
       </div>
 
