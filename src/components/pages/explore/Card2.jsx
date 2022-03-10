@@ -16,7 +16,15 @@ class Card2 extends React.Component {
   render() {
     const course = this.props.course
 
-    return <div className="col-md-6 border">
+    return <div className="col-md-6">
+    <div className="border radius-10">
+      <div style={{float:'left'}}>
+        <img className="mr-2 rounded rounded-lg" src={course.tutor.avatarUrl} alt="" width="150"/>
+        <h4 className="font-weight-bold">Manassorn Vanichdilokkul</h4>
+        <p className="text-secondary">ติวเตอร์</p>
+      </div>
+
+    </div>
             <div className="card" style={{'box-shadow':'none'}}>
                 <div className="bg-light" style={{paddingTop:'100%',position:'relative'}}>
                 <img class="card-img-top rounded rounded-lg" src={course.tutor.avatarUrl} alt="" style={{position:'absolute',top:0}}/>
