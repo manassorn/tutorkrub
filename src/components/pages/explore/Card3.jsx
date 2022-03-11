@@ -27,11 +27,19 @@ class Card3 extends React.Component {
           
           <p className="text-secondary mb-0">ติวเตอร์</p>
           <div>
-            <i className="lni lni-graduation bx-xs" />
+            <i className="lni lni-graduation bx-xs mr-1 text-primary" />
             <span>{course.subject}</span>
           </div>
-          <div></div>
-          <div></div>
+          <div>
+            <i className="lni lni-flag-alt bx-xs mr-1 text-primary" />
+            <span>{course.schoolLevel || 'ม.1'}</span>
+
+          </div>
+          <div>
+            <i className="lni lni-coin bx-xs mr-1 text-primary" />
+            <span>฿{course.price} / ชั่วโมง</span>
+
+          </div>
         </div>
         <a href="#" style={{width:'16px'}}><img src="https://i.imgur.com/d6xHzmg.png" width="16" /></a>
       </div>
