@@ -5,6 +5,7 @@ import SimpleTitle from '../../common/SimpleTitle'
 import Card1 from './Card1'
 import Card2 from './Card2'
 import Card3 from './Card3'
+import Card4 from './Card4'
 import './Explore.scss'
 
 class Explore extends React.Component {
@@ -78,7 +79,7 @@ class Explore extends React.Component {
         <div id="course-cards" class="row">
 
         {this.state.courses.map(course => (
-          <Card3 course={course} />
+          <Card4 course={course} />
 
         ))}
 
