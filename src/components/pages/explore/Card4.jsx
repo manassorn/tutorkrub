@@ -16,7 +16,7 @@ class Card4 extends React.Component {
   render() {
     const course = this.props.course
 
-    return <div className="col-md-6">
+    return <div className="col-md-6 mb-3">
     <div className="border radius-10 p-3 bg-white">
       <div className="d-flex align-items-centerx">
         <div>
