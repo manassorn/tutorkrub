@@ -17,7 +17,7 @@ class Card2 extends React.Component {
     const course = this.props.course
 
     return <div className="col-md-6">
-    <div className="border radius-10 p-2">
+    <div className="border radius-10 p-3">
       <div className="d-flex align-items-center">
         <img className="mr-2 rounded rounded-lg" src={course.tutor.avatarUrl} alt="" width="80"/>
         <div className="">

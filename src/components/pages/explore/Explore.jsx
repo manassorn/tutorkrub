@@ -29,71 +29,74 @@ class Explore extends React.Component {
     }
 
     render() {
-      return  <div class="container"> 
-      <div class=" border-bottom pb-0 pt-3 "> 
-      
-      <div className="row">
-      <div class="col-6 col-sm-3 btn-group-round mb-3"> 
-        <div class="btn-group d-flex"> 
-          <button type="button" class="btn btn-white">&nbsp;&nbsp;&nbsp;ชั้นเรียน&nbsp;&nbsp;&nbsp;</button> 
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSchoolLevel"> 
-          
-          {Constant.schoolLevels.map(label => (
-            <a class="dropdown-item" href="javaScript:;">{label}</a> 
+      return  <div style={{background:'#F5F6F9'}}>
+      <div class="container">
+        <div class=" border-bottom pb-0 pt-3 bg-white">
 
-          ))}
-          </div>
-          <button id="dropdownSchoolLevel" type="button" class="btn btn-white dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="sr-only">Toggle Dropdown</span> 
-          </button> 
-        </div> 
-      </div>
-      
-       
-            <div class="col-6 col-sm-3 btn-group-round mb-3"> 
-            
-              <div class="btn-group d-flex"> 
+        <div className="row">
+        <div class="col-6 col-sm-3 btn-group-round mb-3">
+          <div class="btn-group d-flex">
+            <button type="button" class="btn btn-white">&nbsp;&nbsp;&nbsp;ชั้นเรียน&nbsp;&nbsp;&nbsp;</button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSchoolLevel">
 
-                <button type="button" class="btn btn-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;วิชา&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button> 
-                <div class="dropdown-menu dropdown-menu-right">
-          {Constant.subjects.map(label => (
-            <a class="dropdown-item" href="javaScript:;">{label}</a> 
+            {Constant.schoolLevels.map(label => (
+              <a class="dropdown-item" href="javaScript:;">{label}</a>
 
-          ))}
-                </div>
-                <button type="button" class="btn btn-white dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="sr-only">Toggle Dropdown</span> 
-                </button> 
-              </div> 
+            ))}
             </div>
-      </div>
-      
-      
-     </div> 
+            <button id="dropdownSchoolLevel" type="button" class="btn btn-white dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="sr-only">Toggle Dropdown</span>
+            </button>
+          </div>
+        </div>
 
-      <div class="row"> 
-       <div class="col-12"> 
-        <h1>คณิตศาสตร์</h1> 
-       </div> 
-      </div> 
-      <div id="course-cards" class="row">
-      
-      {this.state.courses.map(course => (
-        <Card2 course={course} />
-        
-      ))}
-        
-        
-        
-       
-      </div> 
-    
 
-      
-      <div class="row"> 
-       <div class="col-sm-12 col-md-6 offset-md-3"> 
-        <button class="btn btn-block btn-outline-primary">next</button> 
-       </div> 
-      </div> 
-     </div> 
+              <div class="col-6 col-sm-3 btn-group-round mb-3">
+
+                <div class="btn-group d-flex">
+
+                  <button type="button" class="btn btn-white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;วิชา&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                  <div class="dropdown-menu dropdown-menu-right">
+            {Constant.subjects.map(label => (
+              <a class="dropdown-item" href="javaScript:;">{label}</a>
+
+            ))}
+                  </div>
+                  <button type="button" class="btn btn-white dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                </div>
+              </div>
+        </div>
+
+
+       </div>
+
+        <div class="row">
+         <div class="col-12">
+          <h1>คณิตศาสตร์</h1>
+         </div>
+        </div>
+        <div id="course-cards" class="row">
+
+        {this.state.courses.map(course => (
+          <Card2 course={course} />
+
+        ))}
+
+
+
+
+        </div>
+
+
+
+        <div class="row">
+         <div class="col-sm-12 col-md-6 offset-md-3">
+          <button class="btn btn-block btn-outline-primary">next</button>
+         </div>
+        </div>
+       </div>
+
+    </div>
 
     }
 }
