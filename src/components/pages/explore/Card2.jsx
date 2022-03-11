@@ -37,7 +37,7 @@ class Card2 extends React.Component {
         </div>
         <div className="w-50 field">
           <label className="">ราคาต่อชั่วโมง</label>
-          <span>฿{course.price} บาทต่อชั่วโมง</span>
+          <span>฿{course.price} / ชั่วโมง</span>
         </div>
       </div>
 

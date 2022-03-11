@@ -78,7 +78,7 @@ class Explore extends React.Component {
         <div id="course-cards" class="row">
 
         {this.state.courses.map(course => (
-          <Card2 course={course} />
+          <Card3 course={course} />
 
         ))}
 
