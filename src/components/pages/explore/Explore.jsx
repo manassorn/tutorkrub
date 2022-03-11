@@ -31,7 +31,7 @@ class Explore extends React.Component {
     render() {
       return  <div style={{background:'#F5F6F9'}}>
       <div class="container">
-        <div class=" border-bottom pb-0 pt-3 bg-white">
+        <div class=" border-bottom pb-0 pt-3">
 
         <div className="row">
         <div class="col-6 col-sm-3 btn-group-round mb-3">
