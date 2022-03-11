@@ -20,7 +20,7 @@ class Card2 extends React.Component {
     <div className="border radius-10 p-3 bg-white">
       <div className="d-flex align-items-centerx">
         <img className="mr-3 rounded rounded-lg" src={course.tutor.avatarUrl} alt="" width="80"/>
-        <div className="">
+        <div className="flex-grow-1">
           <h5 className="font-weight-bold mt-2">{course.tutor.name}</h5>
           <p className="text-secondary mb-0">ติวเตอร์</p>
         </div>
