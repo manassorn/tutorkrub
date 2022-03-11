@@ -37,7 +37,7 @@ class Explore extends React.Component {
         <div class="col-6 col-sm-3 btn-group-round mb-3">
           <div class="btn-group d-flex">
             <button type="button" class="btn btn-white">&nbsp;&nbsp;&nbsp;ชั้นเรียน&nbsp;&nbsp;&nbsp;</button>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSchoolLevel">
+            <div class="dropdown-menu dropdown-menu-right" ariap-labelledby="dropdownSchoolLevel">
 
             {Constant.schoolLevels.map(label => (
               <a class="dropdown-item" href="javaScript:;">{label}</a>
