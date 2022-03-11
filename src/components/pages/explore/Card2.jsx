@@ -18,11 +18,11 @@ class Card2 extends React.Component {
 
     return <div className="col-md-6">
     <div className="border radius-10 p-3 bg-white">
-      <div className="d-flex align-items-center">
+      <div className="d-flex align-items-centerx">
         <img className="mr-3 rounded rounded-lg" src={course.tutor.avatarUrl} alt="" width="80"/>
         <div className="">
-          <h5 className="font-weight-bold">{course.tutor.name}</h5>
-          <p className="text-secondary">ติวเตอร์</p>
+          <h5 className="font-weight-bold mt-2">{course.tutor.name}</h5>
+          <p className="text-secondary mb-0">ติวเตอร์</p>
         </div>
         <a href="#" style={{width:'16px'}}><img src="https://i.imgur.com/d6xHzmg.png" width="16" /></a>
       </div>
@@ -36,8 +36,8 @@ class Card2 extends React.Component {
           <span>{course.schoolLevel}</span>
         </div>
         <div className="w-50 field">
-          <label className="">ราคา</label>
-          <span>{course.price}</span>
+          <label className="">ราคาต่อชั่วโมง</label>
+          <span>฿{course.price} บาทต่อชั่วโมง</span>
         </div>
       </div>
 
