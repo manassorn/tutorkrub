@@ -30,6 +30,11 @@ class ProfileLayout extends React.Component {
               </div>
             </a>
             <b>{this.state.user.username}</b>
+            <div>
+              <span className="py-2 px-4 rounded" style={{background:'#f5f6f9', color:'#9c9cac'}}>
+                สอนสนุก เข้าใจนักเรียน มีความอดทน
+              </span>
+            </div>
           </div>
           <div className="offset-md-3 col-md-6 my-3">
             <a href="/user/edit" className="btn btn-block btn-outline-primary radius-10">
