@@ -27,7 +27,7 @@ class ProfileLayout extends React.Component {
               <div className="user-image">
                 <img src={this.state.user.avatarUrl} className="rounded-circle shadow" width="130" height="130" alt=""/>
                 <span className="edit-icon btn btn-primary rounded"><i className="bx bx-camera"></i></span>
-                <span className="icon-tutor btn btn-primary rounded"><img src="/assets/images/logo1.png" className="w-100" alt=""/></span>
+                <span className="icon-tutor"><img src="/assets/images/logo1.png" className="w-100" alt=""/></span>
 
               </div>
             </a>
