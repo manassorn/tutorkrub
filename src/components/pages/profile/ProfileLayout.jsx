@@ -31,7 +31,7 @@ class ProfileLayout extends React.Component {
             </a>
             <b>{this.state.user.username}</b>
             <div>
-              <span className="py-2 px-4 rounded" style={{background:'#f5f6f9', color:'#9c9cac'}}>
+              <span className="py-2 px-4 rounded font-italic mt-3" style={{background:'#f5f6f9', color:'#9c9cac'}}>
                 สอนสนุก เข้าใจนักเรียน มีความอดทน
               </span>
             </div>
