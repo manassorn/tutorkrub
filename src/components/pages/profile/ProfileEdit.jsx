@@ -55,7 +55,7 @@ class ProfileEdit extends React.Component {
           </div> 
           <a href="javascript:void(0)" edit-section="edit-email-section" class="edit-link">แก้ไข</a> 
          </div>
-        <div class="d-flex justify-content-between"> 
+        <div class="d-flex justify-content-between mt-2">
           <div> 
            <h6 class="mb-0 text-muted">ชื่อ</h6> 
            <b id="name-display">{this.state.user.name}</b> 
@@ -66,7 +66,7 @@ class ProfileEdit extends React.Component {
          </div> 
 
         </div> 
-        <div class="border-bottom pt-3 pb-3"> 
+        <div class="pt-3 pb-3">
          <h6>ความปลอดภัย</h6> 
          <div class="d-flex justify-content-between"> 
           <div> 
