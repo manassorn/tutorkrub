@@ -27,10 +27,10 @@ class ProfileEdit extends React.Component {
       
       return <div class="container" style={{'maxWidth':'720px'}}>
             
-      <SimpleTitle title="แก้ไขโปรไฟล์"/>
+      {/*<SimpleTitle title="แก้ไขโปรไฟล์"/>*/}
 
       <div class="row"> 
-       <div class="col border rounded ml-3 mr-3"> 
+       <div class="col border rounded m-3">
         <div class="border-bottom pt-3 pb-3 text-center d-flex flex-column align-items-center"> 
           <a href="/user/edit/avatar">
           <div className="user-image">
@@ -71,28 +71,29 @@ class ProfileEdit extends React.Component {
          </div> 
         </div> 
 
-        <div class="pt-3 pb-3"> 
-         <h6>ช่องทางการเรียนการสอน</h6> 
-         <div class="d-flex justify-content-between"> 
-          <div> 
-           <h6 class="mb-0 text-muted">Skype ID</h6> 
-           <b id="skype-id-display">{this.state.user.skypeId || '-'}</b> 
-          </div> 
-          <Link to='/user/edit/skypeid'>
-            แก้ไข
-          </Link>
-         </div> 
-         <div class="d-flex justify-content-between"> 
-          <div> 
-           <h6 class="mb-0 text-muted">Zoom ID</h6> 
-           <b id="zoom-id-display">{this.state.user.zoomId || '-'}</b> 
-          </div> 
-          
-          <Link to='/user/edit/zoomid'>
-            แก้ไข
-          </Link>
-         </div> 
-        </div> 
+        {/*<div class="pt-3 pb-3"> */}
+        {/* <h6>ช่องทางการเรียนการสอน</h6> */}
+        {/* <div class="d-flex justify-content-between"> */}
+        {/*  <div> */}
+        {/*   <h6 class="mb-0 text-muted">Skype ID</h6> */}
+        {/*   <b id="skype-id-display">{this.state.user.skypeId || '-'}</b> */}
+        {/*  </div> */}
+        {/*  <Link to='/user/edit/skypeid'>*/}
+        {/*    แก้ไข*/}
+        {/*  </Link>*/}
+        {/* </div> */}
+        {/* <div class="d-flex justify-content-between"> */}
+        {/*  <div> */}
+        {/*   <h6 class="mb-0 text-muted">Zoom ID</h6> */}
+        {/*   <b id="zoom-id-display">{this.state.user.zoomId || '-'}</b> */}
+        {/*  </div> */}
+        {/*  */}
+        {/*  <Link to='/user/edit/zoomid'>*/}
+        {/*    แก้ไข*/}
+        {/*  </Link>*/}
+        {/* </div> */}
+        {/*</div> */}
+
        </div> 
       </div> 
      </div> 
