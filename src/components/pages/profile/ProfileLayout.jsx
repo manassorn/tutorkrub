@@ -30,9 +30,9 @@ class ProfileLayout extends React.Component {
               </div>
             </a>
             <b>{this.state.user.username}</b>
-            <div>
-              <span className="py-2 px-4 rounded font-italic mt-3" style={{background:'#f5f6f9', color:'#9c9cac'}}>
-                สอนสนุก เข้าใจนักเรียน มีความอดทน
+            <div className="mt-3">
+              <span className="py-2 px-4 rounded font-italic" style={{background:'#f5f6f9', color:'#9c9cac'}}>
+                สอนสนุก เข้าใจนักเรียน มีความอดทน <i className="bx bx-pencil bx-xs" />
               </span>
             </div>
           </div>
