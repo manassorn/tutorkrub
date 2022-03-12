@@ -30,6 +30,7 @@ class ProfileTutor extends React.Component {
       return <ProfileLayout>
         <ProfileGroup>
           <ProfileField></ProfileField>
+          <ProfileField></ProfileField>
         </ProfileGroup>
       </ProfileLayout>
             
