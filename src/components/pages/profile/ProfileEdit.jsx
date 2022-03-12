@@ -51,7 +51,7 @@ class ProfileEdit extends React.Component {
          <div class="d-flex justify-content-between"> 
           <div> 
            <h6 class="mb-0 text-muted">อีเมล</h6> 
-           <b id="email-display">{this.state.user.email}</b> 
+           <b id="email-display">{this.state.user.email || gg@gmail.com}</b>
           </div> 
           <a href="javascript:void(0)" edit-section="edit-email-section" class="edit-link">แก้ไข</a> 
          </div>
