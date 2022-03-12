@@ -19,7 +19,7 @@ class ProfileField extends React.Component {
     return <div className="d-flex justify-content-between mt-3">
       <div>
         <h6 className="mb-0 text-muted">{this.props.label}</h6>
-        <b id="email-display">{this.props.value}</b>
+        <span style={{fontWeight:'400'}}>{this.props.value}</span>
       </div>
       <a href="javascript:void(0)" edit-section="edit-email-section" className="edit-link">แก้ไข</a>
     </div>
