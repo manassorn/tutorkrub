@@ -40,13 +40,13 @@ class ProfileEdit extends React.Component {
             </a>
             <b>{this.state.user.username}</b>
           </div>
-          <div className="offset-md-3 col-md-6 border-bottom pb-3">
+          <div className="offset-md-3 col-md-6 border-bottom my-3">
             <a href="/user/edit" className="btn btn-block btn-outline-primary radius-10">
               <i className="lni lni-graduation" />&nbsp;&nbsp;สมัครเป็นติวเตอร์
             </a>
 
           </div>
-        <div class="border-bottom pt-3 pb-3"> 
+        <div class="border-bottom pt-3 pb-3 border-top">
          <h6>ข้อมูลส่วนบุคคล</h6> 
          <div class="d-flex justify-content-between"> 
           <div> 

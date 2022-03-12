@@ -1,7 +1,7 @@
 /.idea/
 .cache/
 coverage/
-dist/*
+dist/
 !dist/index.html
 !dist/index2.html
 !dist/assets
