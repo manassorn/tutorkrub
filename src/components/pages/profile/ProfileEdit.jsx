@@ -48,7 +48,7 @@ class ProfileEdit extends React.Component {
           </div>
         <div class="border-bottom pt-3 pb-3 border-top">
          <h6>ข้อมูลส่วนบุคคล</h6> 
-         <div class="d-flex justify-content-between"> 
+         <div class="d-flex justify-content-between mt-3">
           <div> 
            <h6 class="mb-0 text-muted">อีเมล</h6> 
            <b id="email-display">{this.state.user.email || "gg@gmail.com"}</b>
