@@ -19,6 +19,7 @@ class ProfileField extends React.Component {
     return <div className="d-flex justify-content-between mt-3">
       <div>
         <label className="font-14 mb-0 text-muted">{this.props.label}</label>
+        <br/>
         <span className="" style={{fontWeight:'500'}}>{this.props.value}</span>
       </div>
       <a href="javascript:void(0)" edit-section="edit-email-section" className="edit-link">แก้ไข</a>
