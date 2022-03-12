@@ -30,7 +30,7 @@ class ProfileEdit extends React.Component {
       {/*<SimpleTitle title="แก้ไขโปรไฟล์"/>*/}
 
       <div class="row"> 
-        <div class="col border rounded m-3">
+        <div class="col border rounded radius-10 m-3">
           <div class="my-3 text-center d-flex flex-column align-items-center">
             <a href="/user/edit/avatar">
             <div className="user-image">
@@ -40,7 +40,7 @@ class ProfileEdit extends React.Component {
             </a>
             <b>{this.state.user.username}</b>
           </div>
-          <div className="offset-md-3 col-md-6 border-bottom my-3">
+          <div className="offset-md-3 col-md-6 my-3">
             <a href="/user/edit" className="btn btn-block btn-outline-primary radius-10">
               <i className="lni lni-graduation" />&nbsp;&nbsp;สมัครเป็นติวเตอร์
             </a>
