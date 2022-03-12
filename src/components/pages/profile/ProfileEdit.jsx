@@ -30,20 +30,22 @@ class ProfileEdit extends React.Component {
       {/*<SimpleTitle title="แก้ไขโปรไฟล์"/>*/}
 
       <div class="row"> 
-       <div class="col border rounded m-3">
-        <div class="border-bottom pt-3 pb-3 text-center d-flex flex-column align-items-center"> 
-          <a href="/user/edit/avatar">
-          <div className="user-image">
-            <img src={this.state.user.avatarUrl} class="rounded-circle shadow" width="130" height="130" alt=""/> <span className="edit-icon btn btn-primary rounded"><i className="bx bx-camera"></i></span>
+        <div class="col border rounded m-3">
+          <div class="border-bottom pt-3 pb-3 text-center d-flex flex-column align-items-center">
+            <a href="/user/edit/avatar">
+            <div className="user-image">
+              <img src={this.state.user.avatarUrl} class="rounded-circle shadow" width="130" height="130" alt=""/> <span className="edit-icon btn btn-primary rounded"><i className="bx bx-camera"></i></span>
 
+            </div>
+            </a>
+            <b>{this.state.user.username}</b>
           </div>
-          </a>
-          <b>{this.state.user.username}</b>
           <div className="offset-md-3 col-md-6">
-            <a href="/user/edit" className="btn btn-block btn-outline-primary radius-10">สมัครเป็นติวเตอร์</a>
+            <a href="/user/edit" className="btn btn-block btn-outline-primary radius-10">
+              <i className="lni lni-graduation" />&nbsp;&nbsp;สมัครเป็นติวเตอร์
+            </a>
 
           </div>
-        </div> 
         <div class="border-bottom pt-3 pb-3"> 
          <h6>ข้อมูลส่วนบุคคล</h6> 
          <div class="d-flex justify-content-between"> 
