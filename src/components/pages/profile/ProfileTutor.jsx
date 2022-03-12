@@ -37,14 +37,14 @@ class ProfileTutor extends React.Component {
           <ProfileField label="ปริญญาตรี" value="จุฬาลงกณ์มหาวิทยาลัย GPA 3.10"></ProfileField>
           <a href="#">+ เพิ่มการศึกษา</a>
         </ProfileGroup>
-        <ProfileGroup name="ช่องทางติดต่อ">
-          <ProfileField label="Line" value="manassorn"></ProfileField>
+        <ProfileGroup name="ช่องทางพูดคุยกับนักเรียน">
+          <ProfileField label="Line" value="-"></ProfileField>
           <a href="#">+ เพิ่มช่องทางติดต่อ</a>
         </ProfileGroup>
-        <ProfileGroup name="ที่อยู่">
-          <ProfileField label="จังหวัด" value="ชลบุรี"></ProfileField>
-          <ProfileField label="เขต/อำเภอ" value="เมือง"></ProfileField>
-          <ProfileField label="แขวง/ตำบล" value="บ้านสวน"></ProfileField>
+        <ProfileGroup name="สอนออนไซต์">
+          <ProfileField label="จังหวัด" value="-"></ProfileField>
+          <ProfileField label="เขต/อำเภอ" value="-"></ProfileField>
+          <ProfileField label="แขวง/ตำบล" value="-"></ProfileField>
         </ProfileGroup>
         <ProfileGroup name="รายละเอียดอื่นๆ">
           <ul>
