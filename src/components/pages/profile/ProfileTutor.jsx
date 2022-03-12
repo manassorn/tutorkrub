@@ -2,6 +2,8 @@ import React from "react";
 import {Link} from "react-router-dom";
 import Api from '../../../Api'
 import ProfileLayout from './ProfileLayout'
+import ProfileGroup from './ProfileGroup'
+import ProfileField from './ProfileField'
 import './ProfileEdit.css'
 
 class ProfileTutor extends React.Component {
@@ -25,7 +27,11 @@ class ProfileTutor extends React.Component {
 
     render() {
       
-      return <ProfileLayout></ProfileLayout>
+      return <ProfileLayout>
+        <ProfileGroup>
+          <ProfileField></ProfileField>
+        </ProfileGroup>
+      </ProfileLayout>
             
     }
 };
