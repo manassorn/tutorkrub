@@ -28,9 +28,9 @@ class ProfileTutor extends React.Component {
     render() {
       
       return <ProfileLayout>
-        <ProfileGroup>
-          <ProfileField></ProfileField>
-          <ProfileField></ProfileField>
+        <ProfileGroup name="ข้อมูลส่วนบุคคล">
+          <ProfileField label="อีเมล" value="gg@g.com"></ProfileField>
+          <ProfileField label="ชื่อ" value="Manassorn"></ProfileField>
         </ProfileGroup>
       </ProfileLayout>
             
