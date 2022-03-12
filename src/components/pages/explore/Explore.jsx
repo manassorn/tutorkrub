@@ -71,10 +71,8 @@ class Explore extends React.Component {
 
        </div>
 
-        <div class="row">
-         <div class="col-12">
+        <div className="my-4">
           <h1>คณิตศาสตร์</h1>
-         </div>
         </div>
         <div id="course-cards" class="row">
 
