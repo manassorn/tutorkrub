@@ -16,7 +16,7 @@ class ProfileGroup extends React.Component {
 
   render() {
 
-    return <div className="border-bottom pt-3 pb-3 border-top">
+    return <div className="pt-3 pb-3 border-top">
       <h6>{this.props.name}</h6>
       {this.props.children}
     </div>
