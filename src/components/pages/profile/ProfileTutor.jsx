@@ -41,6 +41,11 @@ class ProfileTutor extends React.Component {
           <ProfileField label="Line" value="manassorn"></ProfileField>
           <a href="#">+ เพิ่มช่องทางติดต่อ</a>
         </ProfileGroup>
+        <ProfileGroup name="ที่อยู่">
+          <ProfileField label="จังหวัด" value="ชลบุรี"></ProfileField>
+          <ProfileField label="เขต/อำเภอ" value="เมือง"></ProfileField>
+          <ProfileField label="แขวง/ตำบล" value="บ้านสวน"></ProfileField>
+        </ProfileGroup>
         <ProfileGroup name="รายละเอียดอื่นๆ">
           <ul>
             <li>ฟรีใบงานแบบไฟล์</li>
