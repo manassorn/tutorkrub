@@ -9,9 +9,6 @@ class ProfileGroup extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      user: {}
-    }
   }
 
   componentDidMount() {
@@ -20,7 +17,7 @@ class ProfileGroup extends React.Component {
   render() {
 
     return <div className="border-bottom pt-3 pb-3 border-top">
-      <h6>ข้อมูลส่วนบุคคล</h6>
+      <h6>{this.props.name}</h6>
       {this.props.children}
     </div>
 
