@@ -31,7 +31,7 @@ class ProfileTutor extends React.Component {
         <ProfileGroup name="ข้อมูลส่วนบุคคล">
           <ProfileField label="สอน" value="คณิตศาสตร์, อังกฤษ"></ProfileField>
           <ProfileField label="ชั้นเรียน" value="ม.1 - ม.6"></ProfileField>
-          <ProfileField label="ราคาต่อชั่วโมง" value="ม.1 - ม.6"></ProfileField>
+          <ProfileField label="ราคาต่อชั่วโมง" value="฿100 / ชั่วโมง"></ProfileField>
         </ProfileGroup>
       </ProfileLayout>
             
