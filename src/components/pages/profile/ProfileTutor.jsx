@@ -38,7 +38,8 @@ class ProfileTutor extends React.Component {
           <a href="#">+ เพิ่มการศึกษา</a>
         </ProfileGroup>
         <ProfileGroup name="รายละเอียดอื่นๆ">
-          <ProfileField label="" value="จุฬาลงกณ์มหาวิทยาลัย GPA 3.10"></ProfileField>
+          <ProfileField label="" value="ฟรีใบงานแบบไฟล์"></ProfileField>
+          <ProfileField label="" value="ปูพื้นฐาน, เนื้อหาในชั้นเรียน, สอนทำการบ้าน"></ProfileField>
           <a href="#">+ เพิ่มรายละเอียด</a>
         </ProfileGroup>
       </ProfileLayout>
