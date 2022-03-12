@@ -38,7 +38,11 @@ class ProfileEdit extends React.Component {
 
           </div>
           </a>
-         <b>{this.state.user.username}</b> 
+          <b>{this.state.user.username}</b>
+          <div className="offset-md-3 col-md-6">
+            <a href="/user/edit" className="btn btn-block btn-outline-primary radius-10">สมัครเป็นติวเตอร์</a>
+
+          </div>
         </div> 
         <div class="border-bottom pt-3 pb-3"> 
          <h6>ข้อมูลส่วนบุคคล</h6> 
