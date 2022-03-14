@@ -24,6 +24,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-router-dom": "5.2.0",
+    "react-select": "^5.2.2",
     "rxjs": "^7.0.0"
   },
   "devDependencies": {
