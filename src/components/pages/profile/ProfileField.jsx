@@ -1,7 +1,4 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import Api from '../../../Api'
-import SimpleTitle from '../../common/SimpleTitle'
 import './ProfileEdit.css'
 
 class ProfileField extends React.Component {
@@ -16,7 +13,7 @@ class ProfileField extends React.Component {
 
   render() {
 
-    return <div className="d-flex justify-content-between mt-3">
+    return <div className="profile-field d-flex justify-content-between mt-3">
       <div>
         <h6 className="mb-0 text-muted">{this.props.label}</h6>
         <b id="email-display">{this.props.value}</b>
