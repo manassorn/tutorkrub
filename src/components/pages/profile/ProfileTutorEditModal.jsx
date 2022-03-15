@@ -82,6 +82,22 @@ class ProfileTutor extends React.Component {
   </div>
 </form>
 
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">ระดับการศึกษา</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Line</option>
+      <option>IG</option>
+      <option>FB</option>
+      <option>เบอร์โทร</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+</form>
+
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-primary">Save changes</button>
