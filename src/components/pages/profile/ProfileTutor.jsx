@@ -28,6 +28,7 @@ class ProfileTutor extends React.Component {
     }
 
     onEditClick(name) {
+      console.log('name=',name)
       this.setState({editField: name})
     }
 
