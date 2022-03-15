@@ -38,8 +38,8 @@ class ProfileTutor extends React.Component {
       return <div>
       <ProfileLayout>
         <ProfileGroup name="ข้อมูลการสอน">
-          <ProfileField label="สอนวิชา" value="คณิตศาสตร์, อังกฤษ" name="subjects" onEditClick={() => this.onEditClick('subjects')}></ProfileField>
-          <ProfileField label="ชั้นเรียน" value="ม.1 - ม.6" name="schoolLevels" onEditClick={() => this.onEditClick('schoolLevels')}></ProfileField>
+          <ProfileField label="สอนวิชา" value="คณิตศาสตร์, อังกฤษ"  onEditClick={() => this.onEditClick('subjects')}></ProfileField>
+          <ProfileField label="ชั้นเรียน" value="ม.1 - ม.6"  onEditClick={() => this.onEditClick('schoolLevels')}></ProfileField>
           <ProfileField label="ราคาต่อชั่วโมง" value="฿100 / ชั่วโมง"></ProfileField>
         </ProfileGroup>
         <ProfileGroup name="การศึกษา">

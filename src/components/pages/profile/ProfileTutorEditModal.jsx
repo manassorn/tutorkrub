@@ -24,7 +24,7 @@ class ProfileTutor extends React.Component {
       
       return <div>
         <div className="modal" tabIndex="-1" role="dialog" id="editTutorPrifileModal">
-          <div className="modal-dialog" role="document">
+          <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Modal title</h5>
