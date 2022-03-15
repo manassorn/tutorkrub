@@ -14,7 +14,7 @@ class ProfileTutor extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          user: {}
+          editField: 'subjects'
         }
     }
 
@@ -27,13 +27,17 @@ class ProfileTutor extends React.Component {
         );
     }
 
+    onEditClick(name) {
+      this.setState({editField: name})
+    }
+
     render() {
       
       return <div>
       <ProfileLayout>
         <ProfileGroup name="ข้อมูลการสอน">
-          <ProfileField label="สอนวิชา" value="คณิตศาสตร์, อังกฤษ"></ProfileField>
-          <ProfileField label="ชั้นเรียน" value="ม.1 - ม.6"></ProfileField>
+          <ProfileField label="สอนวิชา" value="คณิตศาสตร์, อังกฤษ" name="subjects" onClickEdit={this.onEditClick}></ProfileField>
+          <ProfileField label="ชั้นเรียน" value="ม.1 - ม.6" name="schoolLevels" onClickEdit={this.onEditClick}></ProfileField>
           <ProfileField label="ราคาต่อชั่วโมง" value="฿100 / ชั่วโมง"></ProfileField>
         </ProfileGroup>
         <ProfileGroup name="การศึกษา">
@@ -55,7 +59,7 @@ class ProfileTutor extends React.Component {
         </ProfileGroup>
       </ProfileLayout>
 
-      <ProfileTutorEditModal/>
+      <ProfileTutorEditModal editField={this.state.editField}/>
 
     </div>
     }

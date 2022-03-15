@@ -13,7 +13,7 @@ class ProfileTutor extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          user: {}
+          editField: 'subjects'
         }
     }
 
@@ -24,6 +24,15 @@ class ProfileTutor extends React.Component {
         this.setState({ user: response.data.data })
         }
         );
+    }
+
+    getDerivedStateFromProps(props, current_state) {
+      if (current_state.editField !== props.editField) {
+        return {
+          editField: props.editField
+        }
+      }
+      return null
     }
 
     render() {
@@ -39,7 +48,9 @@ class ProfileTutor extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                <Select options={['a','b']} />
+                {this.state.editField == "subjects" && <Select options={[{label:'Math',value:'Math'}, {label:'English',value:'English'}]} />}
+                {this.state.editField == "schoolLevels" && <Select options={[{label:'m.1',value:'m.1'}, {label:'m.2',value:'m.2'}]} />}
+
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-primary">Save changes</button>
