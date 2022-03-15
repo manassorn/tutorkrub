@@ -17,7 +17,12 @@ class ProfileTutor extends React.Component {
     }
 
     componentDidMount() {
-    
+    $.Thailand({
+        $search: $('#search'),
+        onDataFill: function(data){
+            console.log(data)
+        }
+    });
     }
 
     render() {
@@ -94,6 +99,14 @@ class ProfileTutor extends React.Component {
   </div>
   <div class="form-group">
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+</form>
+
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">ที่อยู่</label>
+    <input type="email" class="form-control" id="search" aria-describedby="emailHelp" placeholder="Enter email"/>
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
 </form>
