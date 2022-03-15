@@ -19,7 +19,7 @@ class ProfileField extends React.Component {
         <br/>
         <span className="" style={{fontWeight:'500'}}>{this.props.value}</span>
       </div>
-      <a href="javascript:void(0)" edit-section="edit-email-section" className="edit-link"data-toggle="modal" data-target="#editSubjectModal">แก้ไข</a>
+      <a href="javascript:void(0)" edit-section="edit-email-section" className="edit-link"data-toggle="modal" data-target="#editTutorPrifileModal">แก้ไข</a>
     </div>
 
   }
