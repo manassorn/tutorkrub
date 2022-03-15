@@ -42,9 +42,20 @@ class ProfileTutor extends React.Component {
   </div>
   <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"/>
   <div class="input-group-append">
-    <span class="input-group-text">ต่อชั่วโมง</span>
+    <span class="input-group-text">บาทต่อชั่วโมง</span>
   </div>
 </div>
+
+
+<section id="textarea" contenteditable="true">
+<ul>
+    <li>List item here</li>
+    <li>List item here</li>
+    <li>List item here</li>
+    <li>List item here</li>
+</ul>
+
+</section>
 
               </div>
               <div className="modal-footer">
