@@ -16,6 +16,7 @@ class ProfileTutor extends React.Component {
         this.state = {
           editField: 'subjects'
         }
+        this.onEditClick = this.onEditClick.bind(this)
     }
 
     componentDidMount() {
