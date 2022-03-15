@@ -13,27 +13,11 @@ class ProfileTutor extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          editField: this.props.editField
         }
     }
 
     componentDidMount() {
-      Api.get('/users/me')
-        .then(response => 
-        {
-        this.setState({ user: response.data.data })
-        }
-        );
-    }
-
-    getDerivedStateFromPropsxx(props, current_state) {
-      console.log('props=',props)
-      if (current_state.editField !== props.editField) {
-        return {
-          editField: props.editField
-        }
-      }
-      return null
+    
     }
 
     render() {
