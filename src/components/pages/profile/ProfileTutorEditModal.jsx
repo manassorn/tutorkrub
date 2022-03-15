@@ -27,6 +27,7 @@ class ProfileTutor extends React.Component {
     }
 
     getDerivedStateFromProps(props, current_state) {
+      console.log('props=',props)
       if (current_state.editField !== props.editField) {
         return {
           editField: props.editField
