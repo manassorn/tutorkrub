@@ -13,7 +13,7 @@ class ProfileTutor extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          editField: 'subjects'
+          editField: this.props.editField
         }
     }
 
