@@ -5,6 +5,7 @@ import Api from '../../../Api'
 import ProfileLayout from './ProfileLayout'
 import ProfileGroup from './ProfileGroup'
 import ProfileField from './ProfileField'
+import ProfileTutorEditModal from './ProfileTutorEditModal'
 import './ProfileEdit.css'
 
 class ProfileTutor extends React.Component {
@@ -54,7 +55,7 @@ class ProfileTutor extends React.Component {
         </ProfileGroup>
       </ProfileLayout>
 
-
+      <ProfileTutorEditModal/>
 
     </div>
     }
