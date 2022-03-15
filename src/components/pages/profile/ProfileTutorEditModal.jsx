@@ -26,7 +26,7 @@ class ProfileTutor extends React.Component {
         );
     }
 
-    static getDerivedStateFromProps(props, current_state) {
+    getDerivedStateFromPropsxx(props, current_state) {
       console.log('props=',props)
       if (current_state.editField !== props.editField) {
         return {
@@ -49,8 +49,8 @@ class ProfileTutor extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                {this.state.editField == "subjects" && <Select options={[{label:'Math',value:'Math'}, {label:'English',value:'English'}]} />}
-                {this.state.editField == "schoolLevels" && <Select options={[{label:'m.1',value:'m.1'}, {label:'m.2',value:'m.2'}]} />}
+                {this.props.editField == "subjects" && <Select options={[{label:'Math',value:'Math'}, {label:'English',value:'English'}]} />}
+                {this.props.editField == "schoolLevels" && <Select options={[{label:'m.1',value:'m.1'}, {label:'m.2',value:'m.2'}]} />}
 
               </div>
               <div className="modal-footer">
