@@ -24,7 +24,7 @@ class ProfileTutor extends React.Component {
       
       return <div>
         <div className="modal" tabIndex="-1" role="dialog" id="editTutorPrifileModal">
-          <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal-dialog modal-dialog-centeredx" role="document">
             <div className="modal-content">
               <div className="modal-header">
                 <h5 className="modal-title">Modal title</h5>
@@ -35,6 +35,16 @@ class ProfileTutor extends React.Component {
               <div className="modal-body">
                 {this.props.editField == "subjects" && <Select options={[{label:'Math',value:'Math'}, {label:'English',value:'English'}]} />}
                 {this.props.editField == "schoolLevels" && <Select options={[{label:'m.1',value:'m.1'}, {label:'m.2',value:'m.2'}]} />}
+                
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">฿</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"/>
+  <div class="input-group-append">
+    <span class="input-group-text">ต่อชั่วโมง</span>
+  </div>
+</div>
 
               </div>
               <div className="modal-footer">
