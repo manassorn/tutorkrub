@@ -142,7 +142,7 @@ class Address extends React.Component {
     return <FormValidation ref={this.form} onSubmit={e => this.submit(e)}>     
   <div class="form-group">
     <label for="exampleFormControlSelect1">ที่อยู่</label>
-    <input type="email" class="form-control" id="search" aria-describedby="emailHelp" placeholder="Enter email"/>
+    <input type="text" class="form-control" id="search" aria-describedby="emailHelp" placeholder="กรอกที่อยู่"/>
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
 </FormValidation>
