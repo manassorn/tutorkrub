@@ -131,11 +131,12 @@ class Contact extends React.Component {
 
 class Address extends React.Component {
   componentDidMount() {
+    const that=this
     $.Thailand({
         $search: $('#search'),
         onDataFill: function(data){
             console.log(data)
-          this.input.value = 'abv'
+          that.input.value = 'abv'
         }
     });
     }
