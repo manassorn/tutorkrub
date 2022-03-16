@@ -6,6 +6,7 @@ import ProfileLayout from './ProfileLayout'
 import ProfileGroup from './ProfileGroup'
 import ProfileField from './ProfileField'
 import FormValidation from '../../common/FormValidation'
+import Constant from '../../../../Constant'
 import './ProfileEdit.css'
 
 class ProfileTutor extends React.Component {
@@ -15,6 +16,8 @@ class ProfileTutor extends React.Component {
         super(props);
         this.state = {
         }
+        this.subjectOptions = Constant.subjects.map(a => {return {value:a, label:a}})
+        this.levelOptions = Constant.schoolLevels.map(a => {return {value:a, label:a}})
     }
 
     componentDidMount() {
@@ -33,15 +36,15 @@ class ProfileTutor extends React.Component {
           <div className="modal-dialog modal-dialog-centeredx" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Modal title</h5>
+                <h5 className="modal-title">แก้ไข</h5>
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div className="modal-body">
-                {this.props.editField == "subjects" && <Select options={[{label:'Math',value:'Math'}, {label:'English',value:'English'}]} />}
-                {this.props.editField == "schoolLevels" && <Select options={[{label:'m.1',value:'m.1'}, {label:'m.2',value:'m.2'}]} />}
-
+                {this.props.editField == "subjects" && <Select options={this.subjectOptions} />}
+                {this.props.editField == "schoolLevels" && <Select options={this.levelOptions} />}
+<Price/>
 <FormValidation ref={this.form} onSubmit={e => this.submit(e)}>                
 <div class="input-group mb-3">
   <div class="input-group-prepend">
@@ -128,5 +131,24 @@ class ProfileTutor extends React.Component {
     </div>
     }
 };
+
+class Price extends React.Component {
+  render() {
+    return <FormValidation ref={this.form} onSubmit={e => this.submit(e)}>                
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">฿</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" required/>
+  <div class="input-group-append">
+    <span class="input-group-text">บาทต่อชั่วโมง</span>
+  </div>
+  <div class="invalid-feedback">โปรดกรอก</div>
+
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+</FormValidation>
+  }
+}
 
 export default ProfileTutor
