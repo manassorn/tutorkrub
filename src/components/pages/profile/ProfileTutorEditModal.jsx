@@ -48,12 +48,11 @@ class ProfileTutor extends React.Component {
     <span class="input-group-text">฿</span>
   </div>
   <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" required/>
-  <div class="invalid-feedback">
-      โปรดกรอก
-  </div>
   <div class="input-group-append">
     <span class="input-group-text">บาทต่อชั่วโมง</span>
   </div>
+  <div class="invalid-feedback">โปรดกรอก</div>
+
 </div>
 <button type="submit" class="btn btn-primary">Submit</button>
 </FormValidation>
