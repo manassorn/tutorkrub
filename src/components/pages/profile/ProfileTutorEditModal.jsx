@@ -20,15 +20,7 @@ class ProfileTutor extends React.Component {
         this.levelOptions = Constant.schoolLevels.map(a => {return {value:a, label:a}})
     }
 
-    componentDidMount() {
-    $.Thailand({
-        $search: $('#search'),
-        onDataFill: function(data){
-            console.log(data)
-        }
-    });
-    }
-
+    
     render() {
       
       return <div>
@@ -42,82 +34,17 @@ class ProfileTutor extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                {this.props.editField == "subjects" && <Select options={this.subjectOptions} />}
-                {this.props.editField == "schoolLevels" && <Select options={this.levelOptions} />}
-<Price/>
-<FormValidation ref={this.form} onSubmit={e => this.submit(e)}>                
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text">฿</span>
-  </div>
-  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" required/>
-  <div class="input-group-append">
-    <span class="input-group-text">บาทต่อชั่วโมง</span>
-  </div>
-  <div class="invalid-feedback">โปรดกรอก</div>
+              {this.props.editField == "teachingSubjects" && <Select options={this.subjectOptions} />}
+              {this.props.editField == "teachingLevels" && <Select options={this.levelOptions} />}
+              {this.props.editField == "price" && <Price/>}
+              {this.props.editField == "education" && <Education/>}
+              {this.props.editField == "address" && <Address/>}
 
-</div>
-<button type="submit" class="btn btn-primary">Submit</button>
-</FormValidation>
 
-<section id="textarea" contenteditable="true">
-<ul>
-    <li>List item here</li>
-    <li>List item here</li>
-    <li>List item here</li>
-    <li>List item here</li>
-</ul>
 
-</section>
 
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">ระดับการศึกษา</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>ม.ปลาย</option>
-      <option>ปริญญาตรี</option>
-      <option>ปริญญาโท</option>
-      <option>ปริญญาเอก</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputEmail1">สถานศึกษา</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">คณะ/สาขา</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">GPA</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
-  </div>
-</form>
 
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">ระดับการศึกษา</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>Line</option>
-      <option>IG</option>
-      <option>FB</option>
-      <option>เบอร์โทร</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-</form>
 
-<form>
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">ที่อยู่</label>
-    <input type="email" class="form-control" id="search" aria-describedby="emailHelp" placeholder="Enter email"/>
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-</form>
 
               </div>
               <div className="modal-footer">
@@ -148,6 +75,78 @@ class Price extends React.Component {
 </div>
 <button type="submit" class="btn btn-primary">Submit</button>
 </FormValidation>
+  }
+}
+
+class Education extends React.Component {
+  render() {
+    return <FormValidation ref={this.form} onSubmit={e => this.submit(e)}>                
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">ระดับการศึกษา</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>ม.ปลาย</option>
+      <option>ปริญญาตรี</option>
+      <option>ปริญญาโท</option>
+      <option>ปริญญาเอก</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">สถานศึกษา</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">คณะ/สาขา</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">GPA</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+  </div>
+</FormValidation>
+  }
+}
+
+class Contact extends React.Component {
+  render() {
+    return <FormValidation ref={this.form} onSubmit={e => this.submit(e)}>                
+
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">ระดับการศึกษา</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>Line</option>
+      <option>IG</option>
+      <option>FB</option>
+      <option>เบอร์โทร</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+</FormValidation>
+  }
+}
+
+class Address extends React.Component {
+  componentDidMount() {
+    $.Thailand({
+        $search: $('#search'),
+        onDataFill: function(data){
+            console.log(data)
+        }
+    });
+    }
+  render() {
+    return <FormValidation ref={this.form} onSubmit={e => this.submit(e)}>     
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">ที่อยู่</label>
+    <input type="email" class="form-control" id="search" aria-describedby="emailHelp" placeholder="Enter email"/>
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+</FormValidation>
+
   }
 }
 

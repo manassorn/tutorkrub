@@ -38,20 +38,20 @@ class ProfileTutor extends React.Component {
       return <div>
       <ProfileLayout>
         <ProfileGroup name="ข้อมูลการสอน">
-          <ProfileField label="สอนวิชา" value="คณิตศาสตร์, อังกฤษ"  onEditClick={() => this.onEditClick('subjects')}></ProfileField>
-          <ProfileField label="ชั้นเรียน" value="ม.1 - ม.6"  onEditClick={() => this.onEditClick('schoolLevels')}></ProfileField>
+          <ProfileField label="สอนวิชา" value="คณิตศาสตร์, อังกฤษ"  onEditClick={() => this.onEditClick('teachingSubjects')}></ProfileField>
+          <ProfileField label="ชั้นเรียน" value="ม.1 - ม.6"  onEditClick={() => this.onEditClick('teachingLevels')}></ProfileField>
           <ProfileField label="ราคาต่อชั่วโมง" value="฿100 / ชั่วโมง"></ProfileField>
         </ProfileGroup>
         <ProfileGroup name="การศึกษา">
-          <ProfileField label="ปริญญาตรี" value="จุฬาลงกณ์มหาวิทยาลัย GPA 3.10"></ProfileField>
+          <ProfileField label="ปริญญาตรี" value="จุฬาลงกณ์มหาวิทยาลัย GPA 3.10" onEditClick={() => this.onEditClick('education')}></ProfileField>
           <a href="#">+ เพิ่มการศึกษา</a>
         </ProfileGroup>
         <ProfileGroup name="ช่องทางพูดคุยกับนักเรียน">
-          <ProfileField label="Line" value="-"></ProfileField>
+          <ProfileField label="Line" value="-" onEditClick={() => this.onEditClick('contact')}></ProfileField>
           <a href="#">+ เพิ่มช่องทางติดต่อ</a>
         </ProfileGroup>
         <ProfileGroup name="สอนออนไซต์">
-          <ProfileField label="ที่อยู่" value="-"></ProfileField>
+          <ProfileField label="ที่อยู่" value="-" onEditClick={() => this.onEditClick('address')}></ProfileField>
         </ProfileGroup>
         <ProfileGroup name="รายละเอียดอื่นๆ">
           <ul>
