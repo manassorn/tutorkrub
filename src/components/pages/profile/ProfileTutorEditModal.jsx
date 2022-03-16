@@ -6,7 +6,7 @@ import ProfileLayout from './ProfileLayout'
 import ProfileGroup from './ProfileGroup'
 import ProfileField from './ProfileField'
 import FormValidation from '../../common/FormValidation'
-import Constant from '../../../../Constant'
+import Constant from '../../../Constant'
 import './ProfileEdit.css'
 
 class ProfileTutor extends React.Component {
