@@ -5,6 +5,7 @@ import Api from '../../../Api'
 import ProfileLayout from './ProfileLayout'
 import ProfileGroup from './ProfileGroup'
 import ProfileField from './ProfileField'
+import FormValidation from '../../common/FormValidation'
 import './ProfileEdit.css'
 
 class ProfileTutor extends React.Component {
@@ -40,17 +41,22 @@ class ProfileTutor extends React.Component {
               <div className="modal-body">
                 {this.props.editField == "subjects" && <Select options={[{label:'Math',value:'Math'}, {label:'English',value:'English'}]} />}
                 {this.props.editField == "schoolLevels" && <Select options={[{label:'m.1',value:'m.1'}, {label:'m.2',value:'m.2'}]} />}
-                
+
+<FormValidation ref={this.form} onSubmit={e => this.submit(e)}>                
 <div class="input-group mb-3">
   <div class="input-group-prepend">
     <span class="input-group-text">฿</span>
   </div>
-  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"/>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" required/>
+  <div class="invalid-feedback">
+      โปรดกรอก
+  </div>
   <div class="input-group-append">
     <span class="input-group-text">บาทต่อชั่วโมง</span>
   </div>
 </div>
-
+<button type="submit" class="btn btn-primary">Submit</button>
+</FormValidation>
 
 <section id="textarea" contenteditable="true">
 <ul>
