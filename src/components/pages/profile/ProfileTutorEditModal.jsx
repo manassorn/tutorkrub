@@ -61,7 +61,9 @@ class ProfileTutor extends React.Component {
 
 class Price extends React.Component {
   render() {
-    return <FormValidation ref={this.form} onSubmit={e => this.submit(e)}>                
+    return <FormValidation ref={this.form} onSubmit={e => this.submit(e)}>        <div class="form-group">
+        <label for="exampleFormControlSelect1">ระดับการศึกษา</label>
+
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text">฿</span>
@@ -72,6 +74,7 @@ class Price extends React.Component {
           </div>
           <div class="invalid-feedback">โปรดกรอก</div>
 
+        </div>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </FormValidation>
