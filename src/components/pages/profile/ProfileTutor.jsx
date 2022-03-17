@@ -40,14 +40,14 @@ class ProfileTutor extends React.Component {
         <ProfileGroup name="ข้อมูลการสอน">
           <ProfileField label="สอนวิชา" value="คณิตศาสตร์, อังกฤษ"  onEditClick={() => this.onEditClick('teachingSubjects')}></ProfileField>
           <ProfileField label="ชั้นเรียน" value="ม.1 - ม.6"  onEditClick={() => this.onEditClick('teachingLevels')}></ProfileField>
-          <ProfileField label="ราคาต่อชั่วโมง" value="฿100 / ชั่วโมง"></ProfileField>
+          <ProfileField label="ราคาต่อชั่วโมง" value="฿100 / ชั่วโมง" onEditClick={() => this.onEditClick('price')}></ProfileField>
         </ProfileGroup>
         <ProfileGroup name="การศึกษา">
           <ProfileField label="ปริญญาตรี" value="จุฬาลงกณ์มหาวิทยาลัย GPA 3.10" onEditClick={() => this.onEditClick('education')}></ProfileField>
           <a href="#">+ เพิ่มการศึกษา</a>
         </ProfileGroup>
         <ProfileGroup name="ช่องทางพูดคุยกับนักเรียน">
-          <ProfileField label="Line" value="-" onEditClick={() => this.onEditClick('contact')}></ProfileField>
+          <ProfileField label="Line" value="-" onEditClick={() => this.onEditClick('contacts')}></ProfileField>
           <a href="#">+ เพิ่มช่องทางติดต่อ</a>
         </ProfileGroup>
         <ProfileGroup name="สอนออนไซต์">
