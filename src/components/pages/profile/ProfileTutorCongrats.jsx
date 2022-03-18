@@ -25,9 +25,10 @@ class ProfileTutorContrats extends React.Component {
                 <div className="text-center">
                   <img src="/assets/images/avatars/avatar-1.png" className="rounded-circle shadow p-1 m-3" width="130" height="130" alt=""/>
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
-                  <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
                 </div>
-                <div>
+                <div className="my-4 text-center">
+                  <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
+
                   {Constant.subjects.map(subject => (
                     <CheckBoxBadge label={subject}/>
                   ))}
