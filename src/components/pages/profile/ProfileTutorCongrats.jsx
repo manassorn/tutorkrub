@@ -23,14 +23,14 @@ class ProfileTutorContrats extends React.Component {
     
     render() {
       
-      return <div style={{background:'#28223f'}}>
+      return <div>
         <div className="modal d-block" tabIndex="-1" role="dialog" id="editTutorPrifileModal">
           <div className="modal-dialog modal-dialog-centeredx" role="document">
             <div className="modal-content">
               <div className="modal-body">
                 <div className="pt-5 text-center">
                   <img src="" className="rounded-circle shadow p-1" width="130" height="130" alt=""/>
-                  <h2>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h2>
+                  <h3>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h3>
                 </div>
 
 
