@@ -34,9 +34,13 @@ class ProfileTutorContrats extends React.Component {
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
                 </div>
                 <div>
-                  <CheckBoxBadge/>
-                  <CheckBoxBadge/>
+                  <CheckBoxBadge label="คณิตศาสตร์"/>
+                  <CheckBoxBadge label="ฟิสิกส์"/>
 
+                </div>
+                <div className="modal-footerx">
+                  <button type="button" className="btn btn-primary">Save changes</button>
+                  <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
 
 
@@ -61,8 +65,8 @@ class ProfileTutorContrats extends React.Component {
 class CheckBoxBadge extends React.Component {
   render() {
     return <div className="form-check form-check-inline border badge badge-pill text py-1 px-2">
-      <input className="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"/>
-        <label className="form-check-label" htmlFor="inlineCheckbox3">Unity</label>
+      <input className="form-check-input" type="checkbox" id={this.props.lable} value="option3"/>
+        <label className="form-check-label" htmlFor="inlineCheckbox3">{this.props.label}</label>
     </div>
   }
 }
