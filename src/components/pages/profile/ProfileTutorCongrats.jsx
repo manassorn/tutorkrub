@@ -26,7 +26,7 @@ class ProfileTutorContrats extends React.Component {
                   <img src="/assets/images/avatars/avatar-1.png" className="rounded-circle shadow p-1 m-3" width="130" height="130" alt=""/>
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
                 </div>
-                <div className="my-4 text-center">
+                <div className="my-5 text-center">
                   <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
 
                   {Constant.subjects.map(subject => (
