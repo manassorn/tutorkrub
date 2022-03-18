@@ -38,8 +38,8 @@ class ProfileTutorContrats extends React.Component {
                   <CheckBoxBadge label="ฟิสิกส์"/>
 
                 </div>
-                <div className="modal-footerx">
-                  <button type="button" className="btn btn-primary">Save changes</button>
+                <div className="modal-footerx text-center mt-3">
+                  <button type="button" className="btn btn-primary mr-2">Save changes</button>
                   <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
 
