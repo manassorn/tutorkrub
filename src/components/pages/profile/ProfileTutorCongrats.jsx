@@ -8,6 +8,7 @@ import ProfileField from './ProfileField'
 import FormValidation from '../../common/FormValidation'
 import Constant from '../../../Constant'
 import './ProfileEdit.css'
+import './ProfileTutorCongrats.scss'
 
 class ProfileTutorContrats extends React.Component {
   
