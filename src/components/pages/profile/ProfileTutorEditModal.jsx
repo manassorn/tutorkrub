@@ -133,6 +133,9 @@ class Contact extends React.Component {
 class Address extends React.Component {
   componentDidMount() {
     const that=this
+    setTimeout(() => {
+      that.input.value = 'xxx'
+    },1000)
     $.Thailand({
         $search: $('#search'),
         onDataFill: function(data){
