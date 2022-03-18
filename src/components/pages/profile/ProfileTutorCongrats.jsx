@@ -21,8 +21,8 @@ class ProfileTutorContrats extends React.Component {
         <div className="modal d-block" tabIndex="-1" role="dialog" id="editTutorPrifileModal">
           <div className="modal-dialog modal-dialog-centeredx" role="document">
             <div className="modal-content">
-              <div className="modal-body">
-                <div className="pt-5 text-center">
+              <div className="modal-body py-5">
+                <div className="text-center">
                   <img src="/assets/images/avatars/avatar-1.png" className="rounded-circle shadow p-1 m-3" width="130" height="130" alt=""/>
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
                   <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
@@ -34,8 +34,8 @@ class ProfileTutorContrats extends React.Component {
 
                 </div>
                 <div className="modal-footerx text-center mt-4">
-                  <button type="button" className="btn btn-secondary" data-dismiss="modal">กลับ</button>
-                  <button type="button" className="btn btn-primary ml-2">ต่อไป</button>
+                  <button type="button" className="btn btn-secondary" data-dismiss="modal" style={{minWidth:'120px'}}>กลับ</button>
+                  <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}}>ต่อไป</button>
                 </div>
 
 
