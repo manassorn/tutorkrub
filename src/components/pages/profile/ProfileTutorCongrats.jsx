@@ -1,11 +1,4 @@
 import React from "react";
-import Select from 'react-select'
-import {Link} from "react-router-dom";
-import Api from '../../../Api'
-import ProfileLayout from './ProfileLayout'
-import ProfileGroup from './ProfileGroup'
-import ProfileField from './ProfileField'
-import FormValidation from '../../common/FormValidation'
 import Constant from '../../../Constant'
 import './ProfileEdit.css'
 import './ProfileTutorCongrats.scss'
@@ -35,8 +28,9 @@ class ProfileTutorContrats extends React.Component {
                   <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
                 </div>
                 <div>
-                  <CheckBoxBadge label="คณิตศาสตร์"/>
-                  <CheckBoxBadge label="ฟิสิกส์"/>
+                  {Constant.subjects.map(subject => {
+                    <CheckBoxBadge label={subject}/>
+                  })}
 
                 </div>
                 <div className="modal-footerx text-center mt-4">
