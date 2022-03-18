@@ -23,7 +23,7 @@ class ProfileTutorContrats extends React.Component {
             <div className="modal-content">
               <div className="modal-body">
                 <div className="pt-5 text-center">
-                  <img src="" className="rounded-circle shadow p-1 m-3" width="130" height="130" alt=""/>
+                  <img src="/assets/images/avatars/avatar-1.png" className="rounded-circle shadow p-1 m-3" width="130" height="130" alt=""/>
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
                   <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
                 </div>
