@@ -58,8 +58,8 @@ class App extends React.Component {
               <Route path="/explore" component={Explore} />
               <Route path="/course" component={Course} />
               <Route path="/pay" component={Pay} />
-              <Route path="/profile/tutor" component={ProfileTutor} />
               <Route path="/profile/tutor/congrats" component={ProfileTutorContrats} />
+              <Route path="/profile/tutor" component={ProfileTutor} />
               <Route path="/user/edit/avatar" component={ProfileEditAvatar} />
               <Route path="/user/edit/name" component={ProfileEditName} />
               <Route path="/user/edit/skypeid" component={ProfileEditSkypeId} />
