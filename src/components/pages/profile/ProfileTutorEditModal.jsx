@@ -139,7 +139,8 @@ class Address extends React.Component {
     $.Thailand({
         $search: $('#search'),
         onDataFill: function(data){
-            console.log(data)
+          console.log(data)
+          console.log(that)
           that.input.value = 'abv'
         }
     });
