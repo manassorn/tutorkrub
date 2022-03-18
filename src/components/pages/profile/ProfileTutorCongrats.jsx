@@ -28,9 +28,9 @@ class ProfileTutorContrats extends React.Component {
                   <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
                 </div>
                 <div>
-                  {Constant.subjects.map(subject => {
+                  {Constant.subjects.map(subject => (
                     <CheckBoxBadge label={subject}/>
-                  })}
+                  ))}
 
                 </div>
                 <div className="modal-footerx text-center mt-4">
