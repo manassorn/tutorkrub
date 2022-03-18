@@ -33,7 +33,11 @@ class ProfileTutorContrats extends React.Component {
                   <img src="" className="rounded-circle shadow p-1" width="130" height="130" alt=""/>
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
                 </div>
+                <div>
+                  <CheckBoxBadge/>
+                  <CheckBoxBadge/>
 
+                </div>
 
 
 
@@ -53,5 +57,14 @@ class ProfileTutorContrats extends React.Component {
     </div>
     }
 };
+
+class CheckBoxBadge extends React.Component {
+  render() {
+    return <div className="form-check form-check-inline border badge badge-pill text py-1 px-2">
+      <input className="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3"/>
+        <label className="form-check-label" htmlFor="inlineCheckbox3">Unity</label>
+    </div>
+  }
+}
 
 export default ProfileTutorContrats
