@@ -23,22 +23,16 @@ class ProfileTutorContrats extends React.Component {
     
     render() {
       
-      return <div>
-        <div className="modal" tabIndex="-1" role="dialog" id="editTutorPrifileModal">
+      return <div style={{background:'#28223f'}}>
+        <div className="modal d-block" tabIndex="-1" role="dialog" id="editTutorPrifileModal">
           <div className="modal-dialog modal-dialog-centeredx" role="document">
             <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">แก้ไข</h5>
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
               <div className="modal-body">
-              {this.props.editField == "teachingSubjects" && <Select options={this.subjectOptions} />}
-              {this.props.editField == "teachingLevels" && <Select options={this.levelOptions} />}
-              {this.props.editField == "price" && <Price/>}
-              {this.props.editField == "education" && <Education/>}
-              {this.props.editField == "address" && <Address/>}
+                <div className="pt-5 text-center">
+                  <img src="" className="rounded-circle shadow p-1" width="130" height="130" alt=""/>
+                  <h2>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h2>
+                </div>
+
 
 
 

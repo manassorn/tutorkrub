@@ -19,6 +19,7 @@ import ProfileEditEmail from "./components/pages/profile/ProfileEditEmail"
 import ProfileEditAvatar from "./components/pages/profile/ProfileEditAvatar"
 import ProfileEditEmailVerifyCode from "./components/pages/profile/ProfileEditEmailVerifyCode"
 import ProfileTutor from "./components/pages/profile/ProfileTutor"
+import ProfileTutorContrats from "./components/pages/profile/ProfileTutorContrats"
 import Pay from "./components/pages/Pay"
 import Appointment from "./components/pages/appointment/Appointment"
 import AppointmentList from "./components/pages/appointment/AppointmentList"
@@ -58,6 +59,7 @@ class App extends React.Component {
               <Route path="/course" component={Course} />
               <Route path="/pay" component={Pay} />
               <Route path="/profile/tutor" component={ProfileTutor} />
+              <Route path="/profile/tutor/congrats" component={ProfileTutorContrats} />
               <Route path="/user/edit/avatar" component={ProfileEditAvatar} />
               <Route path="/user/edit/name" component={ProfileEditName} />
               <Route path="/user/edit/skypeid" component={ProfileEditSkypeId} />
