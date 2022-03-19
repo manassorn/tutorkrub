@@ -13,7 +13,7 @@ class ProfileTutorContrats extends React.Component {
         this.subjectOptions = Constant.subjects.map(a => {return {value:a, label:a}})
         this.levelOptions = Constant.schoolLevels.map(a => {return {value:a, label:a}})
     }
-    test () {
+    abc () {
       $('.congrats-step1').addClass('slide-out');
       $('.congrats-step2').addClass('slide-in');
 
@@ -39,8 +39,8 @@ class ProfileTutorContrats extends React.Component {
                   {Constant.subjects.map(subject => (
                     <CheckBoxBadge label={subject}/>
                   ))}
-                  <div className="modal-footerx text-center my-4">
-                  <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={this.test}>กลับ</button>
+                  <div className="text-center my-4">
+                  <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={() => {this.abc()}}>กลับ</button>
                   <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}}>ต่อไป</button>
                   </div>
 
