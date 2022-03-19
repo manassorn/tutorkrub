@@ -14,10 +14,16 @@ h1, h2, h3, h4, h5, h6 {
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
+.slide-in.backwards {
+  animation-fill-mode: backwards;
+}
 .slide-out {
   animation-name: slide-out;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
+}
+.slide-out.backwards {
+  animation-fill-mode: backwards;
 }
 .congrats-step {
   position: absolute;

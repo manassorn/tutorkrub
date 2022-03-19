@@ -25,6 +25,12 @@ class ProfileTutorcongrats extends React.Component {
     $('.congrats-step3').addClass('slide-in');
 
   }
+  xyz () {
+    console.log('xyz')
+    $('.congrats-step1').addClass('backwards');
+    $('.congrats-step2').addClass('backwards');
+
+  }
 
 
     
@@ -61,7 +67,7 @@ class ProfileTutorcongrats extends React.Component {
                     ))}
 
                     <div className="text-center my-4">
-                    <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}}>กลับ</button>
+                    <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={this.xyz}>กลับ</button>
                     <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={this.edf}>ต่อไป</button>
                     </div>
 
