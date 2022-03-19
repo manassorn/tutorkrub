@@ -1,34 +1,42 @@
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Sarabun', sans-serif;
 }
-@keyframes slide-in {
+@keyframes slide-in-left {
+  from {left:-100%}
+  to {left:0}
+}
+@keyframes slide-in-right {
   from {left:100%}
   to {left:0}
 }
-@keyframes slide-out {
+@keyframes slide-out-left {
   from {left:0}
   to {left:-100%}
 }
-.slide-in {
-  animation-name: slide-in;
+@keyframes slide-out-right {
+  from {left:0}
+  to {left:100%}
+}
+.slide-in-left {
+  animation-name: slide-in-left;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
 
 }
-.slide-in-back {
-  animation-name: slide-in;
-  animation-duration: 1.5s;
-  animation-direction: reverse;
-}
-.slide-out {
-  animation-name: slide-out;
+.slide-in-right {
+  animation-name: slide-in-right;
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
-.slide-out-back {
+.slide-out-left {
+  animation-name: slide-out-left;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+.slide-out-right {
   animation-name: slide-out;
   animation-duration: 1.5s;
-  animation-direction: reverse;
+  animation-fill-mode: forwards;
 }
 .congrats-step {
   position: absolute;

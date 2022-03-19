@@ -15,8 +15,8 @@ class ProfileTutorcongrats extends React.Component {
     }
   abc () {
     console.log('abc')
-    $('.congrats-step1').addClass('slide-out-back');
-    $('.congrats-step2').addClass('slide-in');
+    $('.congrats-step1').addClass('slide-out-left');
+    $('.congrats-step2').addClass('slide-in-right');
 
   }
   edf () {
@@ -26,8 +26,8 @@ class ProfileTutorcongrats extends React.Component {
 
   }
   xyz () {
-    $('.congrats-step1').removeClass('slide-out-back').addClass('slide-out-back');
-    $('.congrats-step2').removeClass('slide-in').addClass('slide-in-back');
+    $('.congrats-step1').removeClass('slide-out-left').addClass('slide-in-left''');
+    $('.congrats-step2').removeClass('slide-in-right').addClass('slide-out-right');
 
   }
 
