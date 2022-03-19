@@ -27,10 +27,10 @@ class ProfileTutorContrats extends React.Component {
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
                 </div>
                 <div className="position-relative">
-                <div className="my-4 text-center step step1">
+                <div className="my-4 text-center stepx step2">
                   <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
 
-                  <div className="position-relative">
+                  <div className="position-relativex">
                   {Constant.subjects.map(subject => (
                     <CheckBoxBadge label={subject}/>
                   ))}
