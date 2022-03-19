@@ -13,6 +13,12 @@ class ProfileTutorContrats extends React.Component {
         this.subjectOptions = Constant.subjects.map(a => {return {value:a, label:a}})
         this.levelOptions = Constant.schoolLevels.map(a => {return {value:a, label:a}})
     }
+    test () {
+      $('.congrats-step1').addClass('slide-out');
+      $('.congrats-step2').addClass('slide-in');
+
+    }
+
 
     
     render() {
@@ -27,22 +33,20 @@ class ProfileTutorContrats extends React.Component {
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
                 </div>
                 <div className="position-relative">
-                <div className="my-4 text-center stepx step2">
+                <div className="my-4 text-center contrats-step contrats-step1">
                   <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
 
-                  <div className="position-relativex">
                   {Constant.subjects.map(subject => (
                     <CheckBoxBadge label={subject}/>
                   ))}
-                  </div>
                   <div className="modal-footerx text-center my-4">
-                  <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}}>กลับ</button>
+                  <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={this.test}>กลับ</button>
                   <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}}>ต่อไป</button>
                   </div>
 
                 </div>
 
-                <div className="my-4 text-center step step2">
+                <div className="my-4 text-center contrats-step contrats-step2">
                   <p>คุณสอนชั้นเรียนไหนบ้าง (เลือกได้หลายชั้น)</p>
 
                   {Constant.schoolLevels.map(subject => (
@@ -56,7 +60,7 @@ class ProfileTutorContrats extends React.Component {
 
                 </div>
 
-                <div className="my-4 text-center step step3">
+                <div className="my-4 text-center contrats-step contrats-step3">
                   <p>สอนชั่วโมงละกี่บาท</p>
 
                   <input type="number" min="50"/>
