@@ -13,12 +13,18 @@ class ProfileTutorcongrats extends React.Component {
         this.subjectOptions = Constant.subjects.map(a => {return {value:a, label:a}})
         this.levelOptions = Constant.schoolLevels.map(a => {return {value:a, label:a}})
     }
-    abc () {
-      console.log('abc')
-      $('.congrats-step1').addClass('slide-out');
-      $('.congrats-step2').addClass('slide-in');
+  abc () {
+    console.log('abc')
+    $('.congrats-step1').addClass('slide-out');
+    $('.congrats-step2').addClass('slide-in');
 
-    }
+  }
+  edf () {
+    console.log('edf')
+    $('.congrats-step2').addClass('slide-out');
+    $('.congrats-step3').addClass('slide-in');
+
+  }
 
 
     
@@ -56,7 +62,7 @@ class ProfileTutorcongrats extends React.Component {
 
                     <div className="text-center my-4">
                     <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}}>กลับ</button>
-                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}}>ต่อไป</button>
+                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={this.edf}>ต่อไป</button>
                     </div>
 
                   </div>
