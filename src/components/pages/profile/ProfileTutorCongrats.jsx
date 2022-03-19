@@ -15,8 +15,8 @@ class ProfileTutorcongrats extends React.Component {
     }
   abc () {
     console.log('abc')
-    $('.congrats-step1').addClass('slide-out-left');
-    $('.congrats-step2').addClass('slide-in-right');
+    $('.congrats-step1').removeClass('slide-in-left').addClass('slide-out-left');
+    $('.congrats-step2').removeClass('slide-out-right').addClass('slide-in-right');
 
   }
   edf () {
