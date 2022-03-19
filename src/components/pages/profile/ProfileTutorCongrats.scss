@@ -17,7 +17,6 @@ h1, h2, h3, h4, h5, h6 {
 .slide-in-back {
   animation-name: slide-in;
   animation-duration: 1.5s;
-  animation-fill-mode: backwards;
   animation-direction: reverse;
 }
 .slide-out {
@@ -28,7 +27,6 @@ h1, h2, h3, h4, h5, h6 {
 .slide-out-back {
   animation-name: slide-out;
   animation-duration: 1.5s;
-  animation-fill-mode: backwards;
   animation-direction: reverse;
 }
 .congrats-step {
