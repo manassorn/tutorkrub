@@ -11,11 +11,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 .slide-in {
   animation-name: slide-in;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
 }
 .slide-out {
   animation-name: slide-out;
-  animation-duration: 1.2s;
+  animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
 .congrats-step {
