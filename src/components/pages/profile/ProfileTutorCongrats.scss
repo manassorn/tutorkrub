@@ -18,6 +18,7 @@ h1, h2, h3, h4, h5, h6 {
   animation-name: slide-in;
   animation-duration: 1.5s;
   animation-fill-mode: backwards;
+  animation-direction: reverse;
 }
 .slide-out {
   animation-name: slide-out;
