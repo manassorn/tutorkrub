@@ -30,10 +30,11 @@ class ProfileTutorContrats extends React.Component {
                 <div className="my-4 text-center step step1">
                   <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
 
+                  <div>
                   {Constant.subjects.map(subject => (
                     <CheckBoxBadge label={subject}/>
                   ))}
-                  
+                  </div>
                   <div className="modal-footerx text-center my-4">
                   <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}}>กลับ</button>
                   <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}}>ต่อไป</button>
