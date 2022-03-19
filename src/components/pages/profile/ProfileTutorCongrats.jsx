@@ -3,7 +3,7 @@ import Constant from '../../../Constant'
 import './ProfileEdit.css'
 import './ProfileTutorCongrats.scss'
 
-class ProfileTutorContrats extends React.Component {
+class ProfileTutorcongrats extends React.Component {
   
   
     constructor(props) {
@@ -34,7 +34,7 @@ class ProfileTutorContrats extends React.Component {
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
                 </div>
                 <div className="position-relative">
-                  <div className="my-4 text-center contrats-step contrats-step1">
+                  <div className="my-4 text-center congrats-step congrats-step1">
                     <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
 
                     {Constant.subjects.map(subject => (
@@ -47,7 +47,7 @@ class ProfileTutorContrats extends React.Component {
 
                   </div>
 
-                  <div className="my-4 text-center contrats-step contrats-step2">
+                  <div className="my-4 text-center congrats-step congrats-step2">
                     <p>คุณสอนชั้นเรียนไหนบ้าง (เลือกได้หลายชั้น)</p>
 
                     {Constant.schoolLevels.map(subject => (
@@ -61,7 +61,7 @@ class ProfileTutorContrats extends React.Component {
 
                   </div>
 
-                  <div className="my-4 text-center contrats-step contrats-step3">
+                  <div className="my-4 text-center congrats-step congrats-step3">
                     <p>สอนชั่วโมงละกี่บาท</p>
 
                     <input type="number" min="50"/>
@@ -94,4 +94,4 @@ class CheckBoxBadge extends React.Component {
   }
 }
 
-export default ProfileTutorContrats
+export default ProfileTutorcongrats
