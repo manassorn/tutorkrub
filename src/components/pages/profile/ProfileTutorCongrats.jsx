@@ -26,7 +26,8 @@ class ProfileTutorContrats extends React.Component {
                   <img src="/assets/images/avatars/avatar-1.png" className="rounded-circle shadow p-1 m-3" width="130" height="130" alt=""/>
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
                 </div>
-                <div className="my-4 text-center">
+                <div className="position-relative">
+                <div className="my-4 text-center step1">
                   <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
 
                   {Constant.subjects.map(subject => (
@@ -40,7 +41,7 @@ class ProfileTutorContrats extends React.Component {
 
                 </div>
 
-                <div className="my-4 text-center">
+                <div className="my-4 text-center step2">
                   <p>คุณสอนชั้นเรียนไหนบ้าง (เลือกได้หลายชั้น)</p>
 
                   {Constant.schoolLevels.map(subject => (
@@ -54,9 +55,19 @@ class ProfileTutorContrats extends React.Component {
 
                 </div>
 
+                <div className="my-4 text-center step3">
+                  <p>สอนชั่วโมงละกี่บาท</p>
 
+                  <input type="number" min="50"/>
+                  
+                  <div className="modal-footerx text-center my-4">
+                  <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}}>กลับ</button>
+                  <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}}>ต่อไป</button>
+                  </div>
 
+                  </div>
 
+              </div>
 
 
               </div>
