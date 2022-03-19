@@ -26,9 +26,8 @@ class ProfileTutorcongrats extends React.Component {
 
   }
   xyz () {
-    console.log('xyz')
-    $('.congrats-step1').addClass('backwards');
-    $('.congrats-step2').addClass('backwards');
+    $('.congrats-step1').removeClass('slide-out').addClass('slide-out-back');
+    $('.congrats-step2').removeClass('slide-in').addClass('slide-in-back');
 
   }
 
@@ -45,7 +44,7 @@ class ProfileTutorcongrats extends React.Component {
                   <img src="/assets/images/avatars/avatar-1.png" className="rounded-circle shadow p-1 m-3" width="130" height="130" alt=""/>
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
                 </div>
-                <div className="position-relative overflow-hidden" style={{height:'200px'}}>
+                <div className="position-relative overflow-hidden" style={{height:'300px'}}>
                   <div className="my-4 text-center congrats-step congrats-step1">
                     <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
 

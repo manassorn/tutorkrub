@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
-.slide-in.backwards {
+.slide-in-back {
   animation-name: slide-in;
   animation-duration: 1.5s;
   animation-fill-mode: backwards;
@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
   animation-duration: 1.5s;
   animation-fill-mode: forwards;
 }
-.slide-out.backwards {
+.slide-out-back {
   animation-name: slide-out;
   animation-duration: 1.5s;
   animation-fill-mode: backwards;
