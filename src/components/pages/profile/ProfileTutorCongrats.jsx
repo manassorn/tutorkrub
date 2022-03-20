@@ -44,7 +44,7 @@ class ProfileTutorcongrats extends React.Component {
                   <img src="/assets/images/avatars/avatar-1.png" className="rounded-circle shadow p-1 m-3" width="130" height="130" alt=""/>
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
                 </div>
-                <div className="position-relative overflow-hidden" style={{height:'330px'}}>
+                <div className="position-relative overflow-hidden" style={{height:'30px'}}>
                   <div className="my-4 text-center congrats-step congrats-step1">
                     <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
 
@@ -75,7 +75,7 @@ class ProfileTutorcongrats extends React.Component {
                   <div className="my-4 text-center congrats-step congrats-step3">
                     <p>สอนชั่วโมงละกี่บาท</p>
 
-                    <input type="number" min="50"/>
+                    <input type="number" min="50" className="form-control"/>
 
                     <div className="modal-footerx text-center my-4">
                     <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}}>กลับ</button>
