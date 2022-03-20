@@ -42,10 +42,10 @@ class ProfileTutorcongrats extends React.Component {
   next(ele) {
     console.log(ele.nextElementSibling.outerHTML)
     const nextEle = ele.nextElementSibling
-    nextEle.classList.remove('slide-in-left')
-    nextEle.classList.add('slide-out-left')
-    ele.classList.remove('slide-out-right')
-    ele.classList.add('slide-in-right')
+    nextEle.classList.remove('slide-out-right')
+    nextEle.classList.add('slide-in-right')
+    ele.classList.remove('slide-in-left')
+    ele.classList.add('slide-out-left')
   }
 
 
