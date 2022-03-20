@@ -83,8 +83,8 @@ class ProfileTutorcongrats extends React.Component {
                     ))}
 
                     <div className="text-center my-4">
-                    <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={this.xyz}>กลับ</button>
-                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.back(this.step2)}}>ต่อไป</button>
+                    <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={e => {this.back(this.step2)}}>กลับ</button>
+                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.next(this.step2)}}>ต่อไป</button>
                     </div>
 
                   </div>
@@ -95,8 +95,8 @@ class ProfileTutorcongrats extends React.Component {
                     <input type="number" min="50" className="form-control"/>
 
                     <div className="modal-footerx text-center my-4">
-                    <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}}>กลับ</button>
-                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}}>ต่อไป</button>
+                    <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={e =>{this.back(this.step3)}}>กลับ</button>
+                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}}>เรียบร้อย</button>
                     </div>
 
                   </div>
