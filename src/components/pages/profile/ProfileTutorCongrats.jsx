@@ -30,6 +30,22 @@ class ProfileTutorcongrats extends React.Component {
     $('.congrats-step2').removeClass('slide-in-right').addClass('slide-out-right');
 
   }
+  
+  back(ele) {
+    prevEle = ele.previousSibilng
+    prevEle.classList.remove('slide-out-left')
+    prevEle.classList.add('slide-in-left')
+    ele.classList.remove('slide-in-right')
+    ele.classList.add('slide-out-right')
+  }
+  
+  next(e) {
+    nextEle = ele.nextSibilng
+    nextEle.classList.remove('slide-in-left')
+    nextEle.classList.add('slide-out-left')
+    ele.classList.remove('slide-out-right')
+    ele.classList.add('slide-in-right')
+  }
 
 
     
@@ -45,7 +61,7 @@ class ProfileTutorcongrats extends React.Component {
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
                 </div>
                 <div className="position-relative overflow-hidden" style={{height:'30px'}}>
-                  <div className="my-4 text-center congrats-step congrats-step1">
+                  <div className="my-4 text-center congrats-step congrats-step1" ref={ele => {this.step1 = ele}}>
                     <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
 
                     {Constant.subjects.map(subject => (
@@ -53,12 +69,12 @@ class ProfileTutorcongrats extends React.Component {
                     ))}
                     <div className="text-center my-4">
                       <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}}>กลับ</button>
-                      <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={this.abc}>ต่อไป</button>
+                      <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.next(this.step1)}}>ต่อไป</button>
                     </div>
 
                   </div>
 
-                  <div className="my-4 text-center congrats-step congrats-step2">
+                  <div className="my-4 text-center congrats-step congrats-step2" ref={ele => {this.step2 = ele}}>
                     <p>คุณสอนชั้นเรียนไหนบ้าง (เลือกได้หลายชั้น)</p>
 
                     {Constant.schoolLevels.map(subject => (
@@ -67,12 +83,12 @@ class ProfileTutorcongrats extends React.Component {
 
                     <div className="text-center my-4">
                     <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={this.xyz}>กลับ</button>
-                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={this.edf}>ต่อไป</button>
+                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.back(this.step2)}}>ต่อไป</button>
                     </div>
 
                   </div>
 
-                  <div className="my-4 text-center congrats-step congrats-step3">
+                  <div className="my-4 text-center congrats-step congrats-step3" ref={ele => {this.step3 = ele}}>
                     <p>สอนชั่วโมงละกี่บาท</p>
 
                     <input type="number" min="50" className="form-control"/>
