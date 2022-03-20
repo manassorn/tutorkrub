@@ -40,7 +40,7 @@ class ProfileTutorcongrats extends React.Component {
   }
   
   next(ele) {
-    console.log(ele.classList)
+    console.log(ele.outerHTML)
     const nextEle = ele.nextElementSibilng
     nextEle.classList.remove('slide-in-left')
     nextEle.classList.add('slide-out-left')
