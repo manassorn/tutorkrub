@@ -32,7 +32,7 @@ class ProfileTutorcongrats extends React.Component {
   }
   
   back(ele) {
-    prevEle = ele.previousSibilng
+    const prevEle = ele.previousSibilng
     prevEle.classList.remove('slide-out-left')
     prevEle.classList.add('slide-in-left')
     ele.classList.remove('slide-in-right')
@@ -40,7 +40,7 @@ class ProfileTutorcongrats extends React.Component {
   }
   
   next(ele) {
-    nextEle = ele.nextSibilng
+    const nextEle = ele.nextSibilng
     nextEle.classList.remove('slide-in-left')
     nextEle.classList.add('slide-out-left')
     ele.classList.remove('slide-out-right')
