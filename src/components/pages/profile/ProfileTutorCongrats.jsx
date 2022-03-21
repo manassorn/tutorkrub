@@ -49,8 +49,8 @@ class ProfileTutorcongrats extends React.Component {
                 </div>
                 <div className="position-relative overflow-hidden" style={{height:'300px'}}>
                   <div className="my-4 text-center congrats-step congrats-step1" ref={ele => {this.step1 = ele}}>
-                  <div class="progress" style="height: 2px;">
-  <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div class="progress" style={{height:'2px'}}>
+  <div class="progress-bar" role="progressbar" style={{width:'33%'}} aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
 </div>
                     <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
 
