@@ -38,6 +38,9 @@ class ProfileTutorcongrats extends React.Component {
       return <div>
         <div className="modal d-block" tabIndex="-1" role="dialog" id="editTutorPrifileModal">
           <div className="modal-dialog modal-dialog-centeredx" role="document">
+            <div className="position-absolute" style={{left:'20px',top:'10px'}}>
+              <img src="/assets/images/logo1.png" width="60"/>
+            </div>
             <div className="modal-content">
               <div className="modal-body py-5">
                 <div className="text-center">
@@ -75,7 +78,7 @@ class ProfileTutorcongrats extends React.Component {
                   <div className="my-4 text-center congrats-step congrats-step3" ref={ele => {this.step3 = ele}}>
                     <p>สอนชั่วโมงละกี่บาท</p>
 
-                    <div className="input-group mb-3" style={{maxWidth:'300px'}}>
+                    <div className="input-group mb-3 mx-auto" style={{maxWidth:'300px'}}>
                       <input type="number" className="form-control" placeholder=""
                              aria-label="Recipient's username" aria-describedby="basic-addon2" min="50"/>
                         <div className="input-group-append">
