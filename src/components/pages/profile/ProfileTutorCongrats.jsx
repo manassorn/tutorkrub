@@ -13,38 +13,21 @@ class ProfileTutorcongrats extends React.Component {
         this.subjectOptions = Constant.subjects.map(a => {return {value:a, label:a}})
         this.levelOptions = Constant.schoolLevels.map(a => {return {value:a, label:a}})
     }
-  abc () {
-    console.log('abc')
-    $('.congrats-step1').removeClass('slide-in-left').addClass('slide-out-left');
-    $('.congrats-step2').removeClass('slide-out-right').addClass('slide-in-right');
-
-  }
-  edf () {
-    console.log('edf')
-    $('.congrats-step2').addClass('slide-out');
-    $('.congrats-step3').addClass('slide-in');
-
-  }
-  xyz () {
-    $('.congrats-step1').removeClass('slide-out-left').addClass('slide-in-left');
-    $('.congrats-step2').removeClass('slide-in-right').addClass('slide-out-right');
-
-  }
   
   back(ele) {
     const prevEle = ele.previousSibling
-    prevEle.classList.remove('slide-out-left')
+    prevEle.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left')
     prevEle.classList.add('slide-in-left')
-    ele.classList.remove('slide-in-right')
+    ele.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left')
     ele.classList.add('slide-out-right')
   }
   
   next(ele) {
     console.log(ele.nextElementSibling.outerHTML)
     const nextEle = ele.nextElementSibling
-    nextEle.classList.remove('slide-out-right')
+    nextEle.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left')
     nextEle.classList.add('slide-in-right')
-    ele.classList.remove('slide-in-left')
+    ele.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left')
     ele.classList.add('slide-out-left')
   }
 
