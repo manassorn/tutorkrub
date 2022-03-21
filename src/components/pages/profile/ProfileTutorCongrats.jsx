@@ -75,7 +75,13 @@ class ProfileTutorcongrats extends React.Component {
                   <div className="my-4 text-center congrats-step congrats-step3" ref={ele => {this.step3 = ele}}>
                     <p>สอนชั่วโมงละกี่บาท</p>
 
-                    <input type="number" min="50" className="form-control"/>
+                    <div className="input-group mb-3" style={{maxWidth:'300px'}}>
+                      <input type="number" className="form-control" placeholder=""
+                             aria-label="Recipient's username" aria-describedby="basic-addon2" min="50"/>
+                        <div className="input-group-append">
+                          <span className="input-group-text" id="basic-addon2">บาทต่อชั่วโมง</span>
+                        </div>
+                    </div>
 
                     <div className="modal-footerx text-center my-4">
                     <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={e =>{this.back(this.step3)}}>กลับ</button>
