@@ -36,7 +36,7 @@ class ProfileTutorcongrats extends React.Component {
     render() {
       
       return <div>
-        <div className="modal d-block" tabIndex="-1" role="dialog" id="editTutorPrifileModal" style={{background:'#F1F3F6'}}>
+        <div className="modal d-block" tabIndex="-1" role="dialog" id="editTutorPrifileModal" style={{background:'rgba(241,243,246,0.8)'}}>
           <div className="modal-dialog modal-dialog-centeredx" role="document">
             <div className="position-absolute" style={{left:'20px',top:'10px', zIndex:'100'}}>
               <img src="/assets/images/logo1.png" width="60"/>
