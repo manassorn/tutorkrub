@@ -49,9 +49,9 @@ class ProfileTutorcongrats extends React.Component {
                 </div>
                 <div className="position-relative overflow-hidden" style={{height:'300px'}}>
                   <div className="text-center congrats-step congrats-step1" ref={ele => {this.step1 = ele}}>
-                  <div className="my-4 progress" style={{height:'2px'}}>
-  <div class="progress-bar" role="progressbar" style={{width:'33%'}} aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
+                    <div className="my-4 progress mx-auto" style={{height:'3px',maxWidth:'300px'}}>
+                      <div class="progress-bar" role="progressbar" style={{width:'33%'}} aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                     <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
 
                     {Constant.subjects.map(subject => (
@@ -64,7 +64,11 @@ class ProfileTutorcongrats extends React.Component {
 
                   </div>
 
-                  <div className="my-4 text-center congrats-step congrats-step2" ref={ele => {this.step2 = ele}}>
+                  <div className="my-4x text-center congrats-step congrats-step2" ref={ele => {this.step2 = ele}}>
+                    <div className="my-4 progress mx-auto" style={{height: '3px', maxWidth: '300px'}}>
+                      <div className="progress-bar" role="progressbar" style={{width: '66%'}} aria-valuenow="66"
+                           aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                     <p>คุณสอนชั้นเรียนไหนบ้าง (เลือกได้หลายชั้น)</p>
 
                     {Constant.schoolLevels.map(subject => (
@@ -78,7 +82,11 @@ class ProfileTutorcongrats extends React.Component {
 
                   </div>
 
-                  <div className="my-4 text-center congrats-step congrats-step3" ref={ele => {this.step3 = ele}}>
+                  <div className="my-4x text-center congrats-step congrats-step3" ref={ele => {this.step3 = ele}}>
+                    <div className="my-4 progress mx-auto" style={{height: '3px', maxWidth: '300px'}}>
+                      <div className="progress-bar" role="progressbar" style={{width: '100%'}} aria-valuenow="100"
+                           aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                     <p>สอนชั่วโมงละกี่บาท</p>
 
                     <div className="input-group mb-3 mx-auto" style={{maxWidth:'300px'}}>
