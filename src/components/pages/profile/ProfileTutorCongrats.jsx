@@ -36,7 +36,7 @@ class ProfileTutorcongrats extends React.Component {
     render() {
       
       return <div>
-        <div className="modal d-block" tabIndex="-1" role="dialog" id="editTutorPrifileModal" style={{background:'rgba(241,243,246,0.8)'}}>
+        <div className="modal d-block" tabIndex="-1" role="dialog" id="editTutorPrifileModal" style={{background:'rgba(241,243,246,0.6)'}}>
           <div className="modal-dialog modal-dialog-centeredx" role="document">
             <div className="position-absolute" style={{left:'20px',top:'10px', zIndex:'100'}}>
               <img src="/assets/images/logo1.png" width="60"/>
@@ -100,6 +100,13 @@ class ProfileTutorcongrats extends React.Component {
                     <div className="modal-footerx text-center my-4">
                     <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={e =>{this.back(this.step3)}}>กลับ</button>
                     <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}}>เรียบร้อย</button>
+                    </div>
+
+                  </div>
+
+                  <div className="my-4 text-center congrats-step congrats-step4" ref={ele => {this.step3 = ele}}>
+                    <div className="text-center font-30">
+                      🎉
                     </div>
 
                   </div>
