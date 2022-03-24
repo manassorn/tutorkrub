@@ -104,9 +104,12 @@ class ProfileTutorcongrats extends React.Component {
 
                   </div>
 
-                  <div className="my-4 text-center congrats-step congrats-step4" ref={ele => {this.step4 = ele}}>
-                    <div className="text-center font-60">
+                  <div className="text-center congrats-step congrats-step4" ref={ele => {this.step4 = ele}}>
+                    <div className="my-4 font-60">
                       🎉
+                    </div>
+                    <div className="modal-footerx text-center my-4">
+                      <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e =>{this.next(this.step3)}}>เรียบร้อย</button>
                     </div>
 
                   </div>
