@@ -105,7 +105,7 @@ class ProfileTutorcongrats extends React.Component {
                   </div>
 
                   <div className="my-4 text-center congrats-step congrats-step4" ref={ele => {this.step4 = ele}}>
-                    <div className="text-center font-30">
+                    <div className="text-center font-60">
                       🎉
                     </div>
 
