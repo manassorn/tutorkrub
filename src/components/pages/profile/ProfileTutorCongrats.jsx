@@ -109,7 +109,7 @@ class ProfileTutorcongrats extends React.Component {
                       🎉
                     </div>
                     <div className="modal-footerx text-center my-4">
-                      <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e =>{this.next(this.step3)}}>เรียบร้อย</button>
+                      <button type="button" className="btn btn-outline-primary" data-dismiss="modal" style={{minWidth:'150px'}} onClick={e =>{this.back(this.step3)}}>ไปยังหน้าโปรไฟล์</button>
                     </div>
 
                   </div>
