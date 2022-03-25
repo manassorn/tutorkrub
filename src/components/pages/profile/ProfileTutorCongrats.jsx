@@ -47,8 +47,8 @@ class ProfileTutorcongrats extends React.Component {
                 <div className="text-center">
                   <div className="m-3 mx-auto position-relative" style={{width:'130px',height:'130px'}}>
                     <img src="/assets/images/avatars/avatar-1.png" style={{left:0}} className="rounded-circle shadow p-1 position-absolute" width="130" height="130" alt=""/>
-                    <svg viewBox="0 0 130 130" className="position-absolute" style={{left:0}}>
-                      <circle ref={ele => {this.progress1 = ele}} cx="65" cy="65" r="65" stroke-dasharray="0 0 0 100"/>
+                    <svg viewBox="0 0 130 130" className="position-absolute" style={{left:0,borderRadius:'50%'}}>
+                      <circle ref={ele => {this.progress1 = ele}} className="a" cx="31.8309886184" cy="31.8309886184" r="15.9154943092" stroke-dasharray="0 0 0 100"/>
                     </svg>
                   </div>
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
