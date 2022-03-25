@@ -59,32 +59,13 @@ circle {
   stroke:#007bff;
 }
 .pie1 {
-  -webkit-animation: pie1 1.5s infinite ease both;
   animation: pie1 1.5s 1 ease both;
 }
 .pie2 {
-  -webkit-animation: pie2 1.5s infinite ease both;
   animation: pie2 1.5s 1 ease both;
-}
-/*
- pie percentage made by stroke-dasharray.
- stroke-dasharray format is...
-
- keyframe 100% : 0 offset this-percentage rest
-
- I added keyframe 50% for infinite presentation.
-*/
-
-/* 1st pie is 40% */
-@-webkit-keyframes pie1 {
-  100% {stroke-dasharray: 33,67,0,0;}
 }
 @keyframes pie1 {
   100% {stroke-dasharray: 33,67,0,0;}
-}
-@-webkit-keyframes pie2 {
-  0% {stroke-dasharray: 33,67,0,0;}
-  100% {stroke-dasharray: 67,33,0,0;}
 }
 @keyframes pie2 {
   0% {stroke-dasharray: 33,67,0,0;}
