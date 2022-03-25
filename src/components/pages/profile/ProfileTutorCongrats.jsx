@@ -12,6 +12,7 @@ class ProfileTutorcongrats extends React.Component {
         }
         this.subjectOptions = Constant.subjects.map(a => {return {value:a, label:a}})
         this.levelOptions = Constant.schoolLevels.map(a => {return {value:a, label:a}})
+        this.next = this.next.bind(this)
     }
   
   back(ele) {
@@ -23,7 +24,7 @@ class ProfileTutorcongrats extends React.Component {
   }
   
   next(ele) {
-    console.log(ele.nextElementSibling.outerHTML)
+    this.progress1.classList.add('progress-anim')
     const nextEle = ele.nextElementSibling
     nextEle.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left')
     nextEle.classList.add('slide-in-right')
@@ -44,7 +45,12 @@ class ProfileTutorcongrats extends React.Component {
             <div className="modal-content">
               <div className="modal-body py-5">
                 <div className="text-center">
-                  <img src="/assets/images/avatars/avatar-1.png" className="rounded-circle shadow p-1 m-3" width="130" height="130" alt=""/>
+                  <div className="m-3 mx-auto position-relative" style={{width:'130px',height:'130px'}}>
+                    <img src="/assets/images/avatars/avatar-1.png" style={{left:0}} className="rounded-circle shadow p-1 position-absolute" width="130" height="130" alt=""/>
+                    <svg viewBox="0 0 130 130" className="position-absolute" style={{left:0}}>
+                      <circle ref={ele => {this.progress1 = ele}} cx="65" cy="65" r="65" stroke-dasharray="0 0 0 100"/>
+                    </svg>
+                  </div>
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
                 </div>
                 <div className="position-relative overflow-hidden" style={{height:'300px'}}>
@@ -100,7 +106,7 @@ class ProfileTutorcongrats extends React.Component {
                     <div className="modal-footerx text-center my-4">
                     <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={e =>{this.back(this.step3)}}>กลับ</button>
                     <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e =>{this.next(this.step3)}}>เรียบร้อย
-                      <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      &nbsp;<span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     </button>
                     </div>
 

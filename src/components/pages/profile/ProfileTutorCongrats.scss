@@ -45,3 +45,9 @@ h1, h2, h3, h4, h5, h6 {
 .congrats-step2, .congrats-step3, .congrats-step4 {
   left: 100%;
 }
+.progress-anim {
+  animation-name: progress-anim;
+}
+@keyframes progress-anim {
+  50%,100% {stroke-dasharray: 40,60,0,0;}
+}
