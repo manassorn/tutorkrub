@@ -58,16 +58,23 @@ circle {
   stroke-dashoffset: 25;
   stroke:#007bff;
 }
-.pie1 {
-  animation: pie1 1.5s 1 ease both;
+.progress-1 {
+  animation: progress-1 1.5s 1 ease both;
 }
-.pie2 {
-  animation: pie2 1.5s 1 ease both;
+.progress-2 {
+  animation: progress-2 1.5s 1 ease both;
 }
-@keyframes pie1 {
+.progress-3 {
+  animation: progress-3 1.5s 1 ease both;
+}
+@keyframes progress-1 {
   100% {stroke-dasharray: 33,67,0,0;}
 }
-@keyframes pie2 {
+@keyframes progress-2 {
   0% {stroke-dasharray: 33,67,0,0;}
   100% {stroke-dasharray: 67,33,0,0;}
+}
+@keyframes progress-3 {
+  0% {stroke-dasharray: 67,33,0,0;}
+  100% {stroke-dasharray: 100,0,0,0;}
 }

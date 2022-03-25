@@ -17,6 +17,16 @@ class ProfileTutorcongrats extends React.Component {
     }
   
   back(ele) {
+    this.progress1.classList.remove(
+      'progress-1','progress-2','progress-3'
+      ,'forward','reverse')
+    if (ele == this.step1) {
+      // this.progress1.classList.add('progress-1','reverse')
+    } else if (ele == this.step2) {
+      this.progress1.classList.add('progress-2','reverse')
+    } else if (ele == this.step3) {
+      this.progress1.classList.add('progress-3','reverse')
+    }
     this.progress1.classList.remove('pie1')
     this.progress1.classList.add('pie2')
     const prevEle = ele.previousSibling
@@ -27,7 +37,16 @@ class ProfileTutorcongrats extends React.Component {
   }
   
   next(ele) {
-    this.progress1.classList.add('pie1')
+    this.progress1.classList.remove(
+      'progress-1','progress-2','progress-3'
+      ,'forward','reverse')
+    if (ele == this.step1) {
+      this.progress1.classList.add('progress-1','forward')
+    } else if (ele == this.step2) {
+      this.progress1.classList.add('progress-2','forward')
+    } else if (ele == this.step3) {
+      // this.progress1.classList.add('progress-3','forward')
+    }
     const nextEle = ele.nextElementSibling
     nextEle.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left')
     nextEle.classList.add('slide-in-right')
