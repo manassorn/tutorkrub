@@ -2,6 +2,7 @@ import React from "react";
 import Constant from '../../../Constant'
 import './ProfileEdit.css'
 import './ProfileTutorCongrats.scss'
+import ConfettiCannon from "./ConfettiCannon";
 
 class ProfileTutorcongrats extends React.Component {
   
@@ -40,6 +41,7 @@ class ProfileTutorcongrats extends React.Component {
       this.progress1.classList.add('progress-2')
     } else if (ele == this.step3) {
       this.progress1.classList.add('progress-3')
+      const confetti = new ConfettiCannon();
     }
     const nextEle = ele.nextElementSibling
     nextEle.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left')
