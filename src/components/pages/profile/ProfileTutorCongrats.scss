@@ -83,8 +83,10 @@ circle {
   100% {stroke-dasharray: 33,67,0,0;}
 }
 @-webkit-keyframes pie2 {
+  0% {stroke-dasharray: 33,67,0,0;}
   100% {stroke-dasharray: 67,33,0,0;}
 }
 @keyframes pie2 {
+  0% {stroke-dasharray: 33,67,0,0;}
   100% {stroke-dasharray: 67,33,0,0;}
 }
