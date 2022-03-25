@@ -51,9 +51,30 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes progress-anim {
   50%,100% {stroke-dasharray: 40,60,0,0;}
 }
-.a {
+circle {
   fill:rgba(0,0,0,0);
   stroke-width:31.8309886184;
-  stroke-dasharray: 0,0,0,100;
+  stroke-dasharray: 33,67,0,0;
   stroke-dashoffset: 25;
+  -webkit-animation: pie1 3s infinite ease both;
+  animation: pie1 6s infinite ease both;
+}
+.pie1 {
+  stroke:hsl(180,70%,30%);
+}
+/*
+ pie percentage made by stroke-dasharray.
+ stroke-dasharray format is...
+
+ keyframe 100% : 0 offset this-percentage rest
+
+ I added keyframe 50% for infinite presentation.
+*/
+
+/* 1st pie is 40% */
+@-webkit-keyframes pie1 {
+  50%,100% {stroke-dasharray: 40,60,0,0;}
+}
+@keyframes pie1 {
+  50%,100% {stroke-dasharray: 40,60,0,0;}
 }
