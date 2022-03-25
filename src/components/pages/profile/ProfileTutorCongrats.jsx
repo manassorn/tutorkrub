@@ -12,10 +12,13 @@ class ProfileTutorcongrats extends React.Component {
         }
         this.subjectOptions = Constant.subjects.map(a => {return {value:a, label:a}})
         this.levelOptions = Constant.schoolLevels.map(a => {return {value:a, label:a}})
-        this.next = this.next.bind(this)
+      this.back = this.back.bind(this)
+      this.next = this.next.bind(this)
     }
   
   back(ele) {
+    this.progress1.classList.remove('pie1')
+    this.progress1.classList.add('pie2')
     const prevEle = ele.previousSibling
     prevEle.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left')
     prevEle.classList.add('slide-in-left')

@@ -73,8 +73,14 @@ circle {
 
 /* 1st pie is 40% */
 @-webkit-keyframes pie1 {
-  100% {stroke-dasharray: 40,60,0,0;}
+  100% {stroke-dasharray: 33,67,0,0;}
 }
 @keyframes pie1 {
-  100% {stroke-dasharray: 40,60,0,0;}
+  100% {stroke-dasharray: 33,67,0,0;}
+}
+@-webkit-keyframes pie2 {
+  100% {stroke-dasharray: 67,33,0,0;}
+}
+@keyframes pie2 {
+  100% {stroke-dasharray: 67,33,0,0;}
 }
