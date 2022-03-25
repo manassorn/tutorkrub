@@ -24,7 +24,7 @@ class ProfileTutorcongrats extends React.Component {
   }
   
   next(ele) {
-    this.progress1.classList.add('progress-anim')
+    this.progress1.classList.add('pie1')
     const nextEle = ele.nextElementSibling
     nextEle.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left')
     nextEle.classList.add('slide-in-right')
@@ -46,7 +46,7 @@ class ProfileTutorcongrats extends React.Component {
               <div className="modal-body py-5">
                 <div className="text-center">
                   <div className="m-3 mx-auto position-relative" style={{width:'130px',height:'130px'}}>
-                    <img src="/assets/images/avatars/avatar-1.png" style={{left:0}} className="rounded-circle shadow p-1 position-absolute" width="130" height="130" alt=""/>
+                    <img src="/assets/images/avatars/avatar-1.png" style={{left:0}} className="rounded-circle shadow p-2 position-absolute" width="130" height="130" alt=""/>
                     <svg viewBox="0 0 63.6619772368 63.6619772368">
                       <circle className="pie1" cx="31.8309886184" cy="31.8309886184" r="15.9154943092"/>
                     </svg>

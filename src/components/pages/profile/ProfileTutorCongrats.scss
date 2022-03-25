@@ -56,11 +56,11 @@ circle {
   stroke-width:31.8309886184;
   stroke-dasharray: 33,67,0,0;
   stroke-dashoffset: 25;
-  -webkit-animation: pie1 3s infinite ease both;
-  animation: pie1 6s infinite ease both;
+  stroke:#007bff;
 }
 .pie1 {
-  stroke:hsl(180,70%,30%);
+  -webkit-animation: pie1 3s infinite ease both;
+  animation: pie1 6s 1 ease both;
 }
 /*
  pie percentage made by stroke-dasharray.
