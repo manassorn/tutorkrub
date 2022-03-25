@@ -18,15 +18,12 @@ class ProfileTutorcongrats extends React.Component {
   
   back(ele) {
     this.progress1.classList.remove(
-      'progress-1','progress-2','progress-3'
-      ,'forward','reverse')
+      'progress-1','progress-2','progress-3','reverse')
     if (ele == this.step2) {
       this.progress1.classList.add('progress-1','reverse')
     } else if (ele == this.step3) {
       this.progress1.classList.add('progress-2','reverse')
     }
-    this.progress1.classList.remove('pie1')
-    this.progress1.classList.add('pie2')
     const prevEle = ele.previousSibling
     prevEle.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left')
     prevEle.classList.add('slide-in-left')
