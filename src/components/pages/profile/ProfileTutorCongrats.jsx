@@ -48,7 +48,7 @@ class ProfileTutorcongrats extends React.Component {
                   <div className="m-3 mx-auto position-relative" style={{width:'130px',height:'130px'}}>
                     <img src="/assets/images/avatars/avatar-1.png" style={{left:0}} className="rounded-circle shadow p-2 position-absolute" width="130" height="130" alt=""/>
                     <svg viewBox="0 0 63.6619772368 63.6619772368">
-                      <circle className="pie1x" cx="31.8309886184" cy="31.8309886184" r="15.9154943092"/>
+                      <circle ref={ele => {this.progress1 = ele}} className="pie1x" cx="31.8309886184" cy="31.8309886184" r="15.9154943092"/>
                     </svg>
                   </div>
                   <h4>ยินดีต้อนรับ<br/>ติวเตอร์คนใหม่</h4>
