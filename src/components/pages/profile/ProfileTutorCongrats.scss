@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 100%;
 }
 .progress-anim {
-  animation-name: progress-anim;
+  animation: progress-anim 2s infinite ease both;
 }
 @keyframes progress-anim {
   50%,100% {stroke-dasharray: 40,60,0,0;}
