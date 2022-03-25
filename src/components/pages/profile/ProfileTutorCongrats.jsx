@@ -20,12 +20,10 @@ class ProfileTutorcongrats extends React.Component {
     this.progress1.classList.remove(
       'progress-1','progress-2','progress-3'
       ,'forward','reverse')
-    if (ele == this.step1) {
-      // this.progress1.classList.add('progress-1','reverse')
-    } else if (ele == this.step2) {
-      this.progress1.classList.add('progress-2','reverse')
+    if (ele == this.step2) {
+      this.progress1.classList.add('progress-1','reverse')
     } else if (ele == this.step3) {
-      this.progress1.classList.add('progress-3','reverse')
+      this.progress1.classList.add('progress-2','reverse')
     }
     this.progress1.classList.remove('pie1')
     this.progress1.classList.add('pie2')
@@ -38,14 +36,13 @@ class ProfileTutorcongrats extends React.Component {
   
   next(ele) {
     this.progress1.classList.remove(
-      'progress-1','progress-2','progress-3'
-      ,'forward','reverse')
+      'progress-1','progress-2','progress-3','reverse')
     if (ele == this.step1) {
-      this.progress1.classList.add('progress-1','forward')
+      this.progress1.classList.add('progress-1')
     } else if (ele == this.step2) {
-      this.progress1.classList.add('progress-2','forward')
+      this.progress1.classList.add('progress-2')
     } else if (ele == this.step3) {
-      // this.progress1.classList.add('progress-3','forward')
+      this.progress1.classList.add('progress-3')
     }
     const nextEle = ele.nextElementSibling
     nextEle.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left')
