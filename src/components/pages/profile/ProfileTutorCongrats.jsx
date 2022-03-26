@@ -61,7 +61,7 @@ class ProfileTutorcongrats extends React.Component {
     const teachingSubjects = this.subjectCheckBoxes.filter(ele => ele.checked).map(ele => ele.value)
     const teachingLevels = this.levelCheckBoxes.filter(ele => ele.checked).map(ele => ele.value)
     const price = this.price.value
-    Api.post('tutors', {teachingSubject,teachingLevels, price})
+    Api.post('tutors', {teachingSubjects,teachingLevels, price})
     .then(() => {
       this.next(this.step3)
     })
