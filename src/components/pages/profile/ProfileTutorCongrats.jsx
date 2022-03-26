@@ -13,8 +13,11 @@ class ProfileTutorcongrats extends React.Component {
         }
         this.subjectOptions = Constant.subjects.map(a => {return {value:a, label:a}})
         this.levelOptions = Constant.schoolLevels.map(a => {return {value:a, label:a}})
+      this.subjectCheckBoxes = []
+      this.levelCheckBoxes = []
       this.back = this.back.bind(this)
       this.next = this.next.bind(this)
+      
     }
   
   back(ele) {
@@ -33,6 +36,9 @@ class ProfileTutorcongrats extends React.Component {
   }
   
   next(ele) {
+    this.subjectCheckBoxes.map(ele => {
+      console.log(ele.checked)
+    })
     this.progress1.classList.remove(
       'progress-1','progress-2','progress-3','reverse')
     if (ele == this.step1) {
@@ -47,6 +53,10 @@ class ProfileTutorcongrats extends React.Component {
     nextEle.classList.add('slide-in-right')
     ele.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left')
     ele.classList.add('slide-out-left')
+  }
+  
+  register() {
+    Api.post('tutors')
   }
 
 
@@ -95,7 +105,7 @@ class ProfileTutorcongrats extends React.Component {
                     <p>คุณสอนชั้นเรียนไหนบ้าง (เลือกได้หลายชั้น)</p>
 
                     {Constant.schoolLevels.map(subject => (
-                      <CheckBoxBadge label={subject}/>
+                      <CheckBoxBadge ref={ele => this.subjectCheckBoxes.add(ele)} label={subject}/>
                     ))}
 
                     <div className="text-center my-4">
@@ -154,7 +164,7 @@ class ProfileTutorcongrats extends React.Component {
 class CheckBoxBadge extends React.Component {
   render() {
     return <div className="form-check form-check-inline border badge badge-pill text py-1 px-2">
-      <input className="form-check-input" type="checkbox" id={this.props.lable} value="option3"/>
+      <input ref={ele => this.checkBox= ele} onClick={e => this.checked=this.checkBox.checked } className="form-check-input" type="checkbox" id={this.props.lable} value="option3"/>
         <label className="form-check-label" htmlFor="inlineCheckbox3">{this.props.label}</label>
     </div>
   }
