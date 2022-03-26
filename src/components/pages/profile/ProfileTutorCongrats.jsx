@@ -17,6 +17,7 @@ class ProfileTutorcongrats extends React.Component {
       this.levelCheckBoxes = []
       this.back = this.back.bind(this)
       this.next = this.next.bind(this)
+      this.register = this.register.bind(this)
       
     }
   
@@ -56,7 +57,13 @@ class ProfileTutorcongrats extends React.Component {
   }
   
   register() {
-    Api.post('tutors')
+    const teachingSubjects = this.subjectCheckBoxes.filter(ele => ele.checked).map(ele => ele.value)
+    const teachingLevels = this.levelCheckBoxes.filter(ele => ele.checked).map(ele => ele.value)
+    const price = this.price.value
+    Api.post('tutors', {teachingSubject,teachingLevels, price})
+    .then(() => {
+      this.next(this.step3)
+    })
   }
 
 
@@ -104,8 +111,8 @@ class ProfileTutorcongrats extends React.Component {
                     {/*</div>*/}
                     <p>คุณสอนชั้นเรียนไหนบ้าง (เลือกได้หลายชั้น)</p>
 
-                    {Constant.schoolLevels.map(subject => (
-                      <CheckBoxBadge label={subject}/>
+                    {Constant.schoolLevels.map(level => (
+                      <CheckBoxBadge ref={ele => this.levelCheckBoxes.push(ele)} label={level}/>
                     ))}
 
                     <div className="text-center my-4">
@@ -123,7 +130,7 @@ class ProfileTutorcongrats extends React.Component {
                     <p>สอนชั่วโมงละกี่บาท</p>
 
                     <div className="input-group mb-3 mx-auto" style={{maxWidth:'300px'}}>
-                      <input type="number" className="form-control" placeholder=""
+                      <input ref={ele => this.price = ele} type="number" className="form-control" placeholder=""
                              aria-label="Recipient's username" aria-describedby="basic-addon2" min="50"/>
                         <div className="input-group-append">
                           <span className="input-group-text" id="basic-addon2">บาทต่อชั่วโมง</span>
@@ -132,7 +139,7 @@ class ProfileTutorcongrats extends React.Component {
 
                     <div className="modal-footerx text-center my-4">
                     <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={e =>{this.back(this.step3)}}>กลับ</button>
-                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e =>{this.next(this.step3)}}>เรียบร้อย
+                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e =>{this.register()}}>เรียบร้อย
                       &nbsp;<span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                     </button>
                     </div>
@@ -164,7 +171,7 @@ class ProfileTutorcongrats extends React.Component {
 class CheckBoxBadge extends React.Component {
   render() {
     return <div className="form-check form-check-inline border badge badge-pill text py-1 px-2">
-      <input ref={ele => this.checkBox= ele} onClick={e => this.checked=this.checkBox.checked } className="form-check-input" type="checkbox" id={this.props.lable} value="option3"/>
+      <input ref={ele => this.checkBox= ele} onClick={e => {this.checked=this.checkBox.checked; this.value=this.checkBox.value }} className="form-check-input" type="checkbox" id={this.props.label} value={this.props.label}/>
         <label className="form-check-label" htmlFor="inlineCheckbox3">{this.props.label}</label>
     </div>
   }
