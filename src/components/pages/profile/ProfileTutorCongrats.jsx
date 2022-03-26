@@ -88,7 +88,7 @@ class ProfileTutorcongrats extends React.Component {
                     <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
 
                     {Constant.subjects.map(subject => (
-                      <CheckBoxBadge label={subject}/>
+                      <CheckBoxBadge ref={ele => {this.subjectCheckBoxes.add(ele)}} label={subject}/>
                     ))}
                     <div className="text-center my-4">
                       <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}}>กลับ</button>
@@ -105,7 +105,7 @@ class ProfileTutorcongrats extends React.Component {
                     <p>คุณสอนชั้นเรียนไหนบ้าง (เลือกได้หลายชั้น)</p>
 
                     {Constant.schoolLevels.map(subject => (
-                      <CheckBoxBadge ref={ele => this.subjectCheckBoxes.add(ele)} label={subject}/>
+                      <CheckBoxBadge label={subject}/>
                     ))}
 
                     <div className="text-center my-4">
