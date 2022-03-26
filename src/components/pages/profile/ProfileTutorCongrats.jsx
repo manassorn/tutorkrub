@@ -3,6 +3,7 @@ import Constant from '../../../Constant'
 import './ProfileEdit.css'
 import './ProfileTutorCongrats.scss'
 import ConfettiCannon from "./ConfettiCannon";
+import Api from "../../../Api";
 
 class ProfileTutorcongrats extends React.Component {
   
