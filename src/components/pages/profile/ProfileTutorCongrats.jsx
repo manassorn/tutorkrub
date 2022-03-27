@@ -122,7 +122,7 @@ class ProfileTutorcongrats extends React.Component {
 
                     <div className="text-center my-4">
                     <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={e => {this.back(this.step2)}}>กลับ</button>
-                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.next(this.step2)}}>ต่อไป</button>
+                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.next(this.step2)}} disabled>ต่อไป</button>
                     </div>
 
                   </div>
