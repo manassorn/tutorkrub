@@ -19,6 +19,9 @@ class ProfileTutorcongrats extends React.Component {
       this.levelCheckBoxes = []
       this.back = this.back.bind(this)
       this.next = this.next.bind(this)
+      this.onSubjectClick = this.onSubjectClick.bind(this)
+      this.onLevelClick = this.onLevelClick.bind(this)
+      this.onPriceChange = this.onPriceChange.bind(this)
       this.register = this.register.bind(this)
       
     }
@@ -53,6 +56,18 @@ class ProfileTutorcongrats extends React.Component {
     nextEle.classList.add('slide-in-right')
     ele.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left')
     ele.classList.add('slide-out-left')
+  }
+  
+  onSubjectClick() {
+    this.subjectButton.disabled = this.subjectCheckBoxes.every(cb => !cb.checked)
+  }
+  
+  onLevelClick() {
+    this.levelButton.disabled = this.levelCheckBoxes.every(cb => !cb.checked)
+  }
+  
+  onPriceChange() {
+    
   }
   
   register() {
@@ -100,11 +115,11 @@ class ProfileTutorcongrats extends React.Component {
                     <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
 
                     {Constant.subjects.map(subject => (
-                      <CheckBoxBadge ref={ele => {this.subjectCheckBoxes.push(ele)}} label={subject}/>
+                      <CheckBoxBadge ref={ele => {this.subjectCheckBoxes.push(ele)}} label={subject} onClick={this.onSubjectClick}/>
                     ))}
                     <div className="text-center my-4">
                       <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}}>กลับ</button>
-                      <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.next(this.step1)}}>ต่อไป</button>
+                      <button ref={ele => this.subjectButton = ele} type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.next(this.step1)}} disabled>ต่อไป</button>
                     </div>
 
                   </div>
@@ -117,12 +132,12 @@ class ProfileTutorcongrats extends React.Component {
                     <p>คุณสอนชั้นเรียนไหนบ้าง (เลือกได้หลายชั้น)</p>
 
                     {Constant.schoolLevels.map(level => (
-                      <CheckBoxBadge ref={ele => this.levelCheckBoxes.push(ele)} label={level}/>
+                      <CheckBoxBadge ref={ele => this.levelCheckBoxes.push(ele)} label={level} onClick={this.onLevelClick}/>
                     ))}
 
                     <div className="text-center my-4">
                     <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={e => {this.back(this.step2)}}>กลับ</button>
-                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.next(this.step2)}} disabled>ต่อไป</button>
+                    <button ref={ele => this.levelButton = ele} type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.next(this.step2)}} disabled>ต่อไป</button>
                     </div>
 
                   </div>
@@ -175,9 +190,19 @@ class ProfileTutorcongrats extends React.Component {
 };
 
 class CheckBoxBadge extends React.Component {
+  constructor(){
+    this.checked = false
+    this.value = undefined
+    this.onClick = this.onClick.bind(this)
+  }
+  onClick(e) {
+    this.checked = this.checkBox.checked
+    this.value = this.checkBox.value
+    this.props.onClick(e)
+  }
   render() {
     return <div className="form-check form-check-inline border badge badge-pill text py-1 px-2">
-      <input ref={ele => this.checkBox= ele} onClick={e => {this.checked=this.checkBox.checked; this.value=this.checkBox.value }} className="form-check-input" type="checkbox" id={this.props.label} value={this.props.label}/>
+      <input ref={ele => this.checkBox= ele} onClick={this.onClick} className="form-check-input" type="checkbox" id={this.props.label} value={this.props.label}/>
         <label className="form-check-label" htmlFor="inlineCheckbox3">{this.props.label}</label>
     </div>
   }
