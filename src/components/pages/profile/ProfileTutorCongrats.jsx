@@ -190,7 +190,8 @@ class ProfileTutorcongrats extends React.Component {
 };
 
 class CheckBoxBadge extends React.Component {
-  constructor(){
+  constructor(props){
+    super(props)
     this.onClick = this.onClick.bind(this)
   }
   onClick(e) {
