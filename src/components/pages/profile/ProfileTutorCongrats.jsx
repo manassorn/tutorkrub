@@ -145,7 +145,7 @@ class ProfileTutorcongrats extends React.Component {
                     <div className="modal-footerx text-center my-4">
                     <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={e =>{this.back(this.step3)}}>กลับ</button>
                     <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e =>{this.register()}}>
-                    {!this.state.submitting ?(เรียบร้อย):(<span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>)}
+                    {!this.state.submitting ?(<>เรียบร้อย</>):(<span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>)}
                     
                     </button>
                     </div>
