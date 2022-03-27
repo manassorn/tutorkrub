@@ -191,8 +191,6 @@ class ProfileTutorcongrats extends React.Component {
 
 class CheckBoxBadge extends React.Component {
   constructor(){
-    this.checked = false
-    this.value = undefined
     this.onClick = this.onClick.bind(this)
   }
   onClick(e) {
