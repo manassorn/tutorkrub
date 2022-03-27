@@ -38,9 +38,6 @@ class ProfileTutorcongrats extends React.Component {
   }
   
   next(ele) {
-    this.subjectCheckBoxes.map(ele => {
-      console.log(ele.checked)
-    })
     this.progress1.classList.remove(
       'progress-1','progress-2','progress-3','reverse')
     if (ele == this.step1) {
@@ -61,9 +58,15 @@ class ProfileTutorcongrats extends React.Component {
     const teachingSubjects = this.subjectCheckBoxes.filter(ele => ele.checked).map(ele => ele.value)
     const teachingLevels = this.levelCheckBoxes.filter(ele => ele.checked).map(ele => ele.value)
     const price = this.price.value
+    const startTime = new Date().getTime()
+    
     Api.post('tutors', {teachingSubjects,teachingLevels, price})
     .then(() => {
-      this.next(this.step3)
+      const delay = 3000 - startTime + new Date().getTime()
+      setTimeout(() => {
+        this.next(this.step3)
+
+      }, delay)
     })
   }
 
