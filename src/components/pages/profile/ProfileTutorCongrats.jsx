@@ -11,6 +11,7 @@ class ProfileTutorcongrats extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+          submitting: false
         }
         this.subjectOptions = Constant.subjects.map(a => {return {value:a, label:a}})
         this.levelOptions = Constant.schoolLevels.map(a => {return {value:a, label:a}})
@@ -59,7 +60,7 @@ class ProfileTutorcongrats extends React.Component {
     const teachingLevels = this.levelCheckBoxes.filter(ele => ele.checked).map(ele => ele.value)
     const price = this.price.value
     const startTime = new Date().getTime()
-    
+    this.setState({submitting:true})
     Api.post('tutors', {teachingSubjects,teachingLevels, price})
     .then(() => {
       const delay = 2000 - startTime + new Date().getTime()
@@ -143,8 +144,9 @@ class ProfileTutorcongrats extends React.Component {
 
                     <div className="modal-footerx text-center my-4">
                     <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={e =>{this.back(this.step3)}}>กลับ</button>
-                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e =>{this.register()}}>เรียบร้อย
-                      &nbsp;<span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    <button type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e =>{this.register()}}>
+                    {this.state.submitting ?(เรียบร้อย):(<span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>)}
+                    
                     </button>
                     </div>
 
