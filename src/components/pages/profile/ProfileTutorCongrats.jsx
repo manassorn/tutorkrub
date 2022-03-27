@@ -62,7 +62,7 @@ class ProfileTutorcongrats extends React.Component {
     
     Api.post('tutors', {teachingSubjects,teachingLevels, price})
     .then(() => {
-      const delay = 3000 - startTime + new Date().getTime()
+      const delay = 2000 - startTime + new Date().getTime()
       setTimeout(() => {
         this.next(this.step3)
 
