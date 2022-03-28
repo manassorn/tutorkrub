@@ -119,8 +119,8 @@ class ProfileTutorcongrats extends React.Component {
                     {/*</div>*/}
                     <p>คุณสอนวิชาอะไร (เลือกได้หลายวิชา)</p>
 
-                    {Constant.subjects.map(subject => (
-                      <CheckBoxBadge ref={ele => {this.subjectCheckBoxes.push(ele)}} label={subject} onClick={this.onSubjectClick}/>
+                    {Constant.subjects.map((subject, i) => (
+                      <CheckBoxBadge ref={ele => {this.subjectCheckBoxes[i] = ele}} label={subject} onClick={this.onSubjectClick}/>
                     ))}
                     <div className="text-center my-4">
                       <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}}>กลับ</button>
