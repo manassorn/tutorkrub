@@ -11,7 +11,9 @@ class ProfileTutorcongrats extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          submitting: false
+          submitting: false,
+          sujectButtonDisable: false,
+          levelButtonDisable: false
         }
         this.subjectOptions = Constant.subjects.map(a => {return {value:a, label:a}})
         this.levelOptions = Constant.schoolLevels.map(a => {return {value:a, label:a}})
@@ -59,11 +61,11 @@ class ProfileTutorcongrats extends React.Component {
   }
   
   onSubjectClick() {
-    this.subjectButton.disabled = this.subjectCheckBoxes.every(cb => !cb.checked)
+    this.setState({subjectButtonDisable: this.subjectCheckBoxes.every(cb => !cb.checked)})
   }
   
   onLevelClick() {
-    this.levelButton.disabled = this.levelCheckBoxes.every(cb => !cb.checked)
+    this.setState({levelButtonDisable: this.levelCheckBoxes.every(cb => !cb.checked)})
   }
   
   onPriceChange() {
@@ -119,7 +121,7 @@ class ProfileTutorcongrats extends React.Component {
                     ))}
                     <div className="text-center my-4">
                       <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}}>กลับ</button>
-                      <button ref={ele => this.subjectButton = ele} type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.next(this.step1)}} disabled>ต่อไป</button>
+                      <button ref={ele => this.subjectButton = ele} type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.next(this.step1)}} disabled={this.state.sujectButtonDisable}>ต่อไป</button>
                     </div>
 
                   </div>
@@ -137,7 +139,7 @@ class ProfileTutorcongrats extends React.Component {
 
                     <div className="text-center my-4">
                     <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}} onClick={e => {this.back(this.step2)}}>กลับ</button>
-                    <button ref={ele => this.levelButton = ele} type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.next(this.step2)}} disabled>ต่อไป</button>
+                    <button ref={ele => this.levelButton = ele} type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.next(this.step2)}} disabled={this.state.levelButtonDisable}>ต่อไป</button>
                     </div>
 
                   </div>
