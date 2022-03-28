@@ -12,8 +12,8 @@ class ProfileTutorcongrats extends React.Component {
         super(props);
         this.state = {
           submitting: false,
-          sujectButtonDisable: false,
-          levelButtonDisable: false
+          sujectButtonDisable: true,
+          levelButtonDisable: true
         }
         this.subjectOptions = Constant.subjects.map(a => {return {value:a, label:a}})
         this.levelOptions = Constant.schoolLevels.map(a => {return {value:a, label:a}})
