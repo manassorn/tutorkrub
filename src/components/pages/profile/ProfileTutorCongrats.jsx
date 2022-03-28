@@ -61,7 +61,8 @@ class ProfileTutorcongrats extends React.Component {
   }
   
   onSubjectClick() {
-    this.setState({subjectButtonDisable: this.subjectCheckBoxes.every(cb => !cb.checked)})
+      const subjectButtonDisable = this.subjectCheckBoxes.every(cb => !cb.checked)
+    this.setState({subjectButtonDisable})
   }
   
   onLevelClick() {
