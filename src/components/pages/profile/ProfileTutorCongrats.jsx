@@ -12,7 +12,7 @@ class ProfileTutorcongrats extends React.Component {
         super(props);
         this.state = {
           submitting: false,
-          sujectButtonDisable: true,
+          subjectButtonDisable: true,
           levelButtonDisable: true
         }
         this.subjectOptions = Constant.subjects.map(a => {return {value:a, label:a}})
@@ -61,6 +61,7 @@ class ProfileTutorcongrats extends React.Component {
   }
   
   onSubjectClick() {
+      console.log(this.subjectCheckBoxes.length)
       const subjectButtonDisable = this.subjectCheckBoxes.every(cb => !cb.checked)
     console.log(subjectButtonDisable,'..')
     this.setState({subjectButtonDisable})
@@ -123,7 +124,7 @@ class ProfileTutorcongrats extends React.Component {
                     ))}
                     <div className="text-center my-4">
                       <button type="button" className="btn btn-outline-secondary" data-dismiss="modal" style={{minWidth:'120px'}}>กลับ</button>
-                      <button ref={ele => this.subjectButton = ele} type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.next(this.step1)}} disabled={this.state.sujectButtonDisable}>ต่อไป</button>
+                      <button ref={ele => this.subjectButton = ele} type="button" className="btn btn-primary ml-2" style={{minWidth:'120px'}} onClick={e => {this.next(this.step1)}} disabled={this.state.subjectButtonDisable}>ต่อไป</button>
                     </div>
 
                   </div>
