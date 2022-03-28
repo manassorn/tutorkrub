@@ -61,10 +61,7 @@ class ProfileTutorcongrats extends React.Component {
   }
   
   onSubjectClick() {
-      console.log(this.subjectCheckBoxes.length)
-      const subjectButtonDisable = this.subjectCheckBoxes.every(cb => !cb.checked)
-    console.log(subjectButtonDisable,'..')
-    this.setState({subjectButtonDisable})
+    this.setState({subjectButtonDisable: this.subjectCheckBoxes.every(cb => !cb.checked)})
   }
   
   onLevelClick() {
@@ -136,8 +133,8 @@ class ProfileTutorcongrats extends React.Component {
                     {/*</div>*/}
                     <p>คุณสอนชั้นเรียนไหนบ้าง (เลือกได้หลายชั้น)</p>
 
-                    {Constant.schoolLevels.map(level => (
-                      <CheckBoxBadge ref={ele => this.levelCheckBoxes.push(ele)} label={level} onClick={this.onLevelClick}/>
+                    {Constant.schoolLevels.map((level, i) => (
+                      <CheckBoxBadge ref={ele => this.levelCheckBoxes[i] = ele} label={level} onClick={this.onLevelClick}/>
                     ))}
 
                     <div className="text-center my-4">
