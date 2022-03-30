@@ -7,7 +7,7 @@ module.exports = merge(common, {
   plugins: [ 
     new WebpackShellPluginNext({ 
       onBuildEnd: {
-        scripts:['cp -r assets dist/assets',
+        scripts:['cp -r public/assets dist/assets',
       'cp index.html dist/index.html']
       } 
     }),
