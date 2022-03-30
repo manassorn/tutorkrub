@@ -96,7 +96,7 @@ class ProfileTutorcongrats extends React.Component {
         <div className="modal d-block bg-forgot" tabIndex="-1" role="dialog" id="editTutorPrifileModal">
           <div className="modal-dialog modal-dialog-centeredx" role="document">
             <div className="position-absolute" style={{left:'20px',top:'10px', zIndex:'100'}}>
-              <img src="/assets/images/logo1.png" width="60"/>
+              <img src="/assets/images/logo2.png" width="60"/>
             </div>
             <div className="modal-content">
               <div className="modal-body py-5">

@@ -98,12 +98,12 @@ class Navbar extends React.Component {
                 <div className="left-topbar d-flex align-items-center">
                     <div className="logo-white">
                     <Link to="/">
-                        <img src="/assets/images/logo1.png" className="logo-icon" alt=""/>
+                        <img src="/assets/images/logo2.png" className="logo-icon" alt=""/>
                         </Link>
                     </div>
                     <div className="logo-dark">
                     <Link to="/">
-                        <img src="/assets/images/logo1.png" className="logo-icon2" alt=""/>
+                        <img src="/assets/images/logo2.png" className="logo-icon2" alt=""/>
                         </Link>
                     </div>
                 </div>
