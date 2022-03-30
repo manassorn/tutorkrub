@@ -100,13 +100,13 @@ class ProfileTutorcongrats extends React.Component {
         <div className="modal d-block bg-forgot" tabIndex="-1" role="dialog" id="editTutorPrifileModal">
           <div className="modal-dialog modal-dialog-centeredx" role="document">
             <div className="position-absolute" style={{left:'20px',top:'10px', zIndex:'100'}}>
-              <img src="/assets/images/logo2.png" width="60"/>
+              <img src="/public/assets/images/logo2.png" width="60"/>
             </div>
             <div className="modal-content">
               <div className="modal-body py-5">
                 <div className="text-center">
                   <div className="m-3 mx-auto position-relative" style={{width:'130px',height:'130px'}}>
-                    <img src="/assets/images/avatars/avatar-1.png" style={{left:0}} className="rounded-circle shadow p-2 position-absolute" width="130" height="130" alt=""/>
+                    <img src="/public/assets/images/avatars/avatar-1.png" style={{left:0}} className="rounded-circle shadow p-2 position-absolute" width="130" height="130" alt=""/>
                     <svg viewBox="0 0 63.6619772368 63.6619772368">
                       <circle ref={ele => {this.progress1 = ele}} className="pie1x" cx="31.8309886184" cy="31.8309886184" r="15.9154943092"/>
                     </svg>

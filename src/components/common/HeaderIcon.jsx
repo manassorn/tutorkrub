@@ -22,7 +22,7 @@ class HeaderIcon extends React.Component {
       return <div className="d-flex">
         <div>
         <span className="bg-secondary radius-10 p-2 d-inline-block"> 
-          <img src="/assets/images/icons/appointment-book.png" width="45" alt=""/> 
+          <img src="/public/assets/images/icons/appointment-book.png" width="45" alt=""/>
 
         </span> 
         </div>

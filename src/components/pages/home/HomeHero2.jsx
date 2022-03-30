@@ -19,7 +19,7 @@ class HomeHero2 extends React.Component {
         <div className="offset-md-1 col-md-6 px-5 text-center text-md-left">
         
         <h1>
-          <img src="/assets/images/logo2.png" alt="" height="64" width="64"/>
+          <img src="/public/assets/images/logo2.png" alt="" height="64" width="64"/>
           TutorKrub
 
         </h1>
@@ -39,7 +39,7 @@ class HomeHero2 extends React.Component {
       </div>
       
       <div className="col-md-5 pt-0">
-        <img src="/assets/images/home/skype-call3.jpg" width="100%"/>
+        <img src="/public/assets/images/home/skype-call3.jpg" width="100%"/>
       </div>
       
       <div className="col-12 d-block d-md-none">

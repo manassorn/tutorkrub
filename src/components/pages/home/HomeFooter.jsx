@@ -14,7 +14,7 @@ class HomeFooter extends React.Component {
       <div className="row align-items-center">
         
         <div className="text-center col-md-5 offset-md-1 text-md-left">
-            <img src="/assets/images/logo2.png" alt="" height="48" width="48"/>
+            <img src="/public/assets/images/logo2.png" alt="" height="48" width="48"/>
         </div>
         <div className="text-center col-md-5 text-md-right">
           

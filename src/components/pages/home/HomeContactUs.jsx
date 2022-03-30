@@ -28,7 +28,7 @@ class HomeFooter extends React.Component {
         <div className="row">
             <div className="col-md-4 offset-md-2">
                 <div className="col-5 col-md-12 mx-auto">
-                    <img src="/assets/images/home/contact-us.jpg" width="100%"/>
+                    <img src="/public/assets/images/home/contact-us.jpg" width="100%"/>
                 </div>
             </div>
             <div className="col-md-4">
