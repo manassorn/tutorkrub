@@ -2,7 +2,7 @@ import React from "react";
 import Constant from '../../../Constant'
 import './ProfileEdit.css'
 import './ProfileTutorCongrats.scss'
-import ConfettiCannon from "./ConfettiCannon";
+import confetti from "canvas-confetti";
 import Api from "../../../Api";
 
 class ProfileTutorcongrats extends React.Component {
@@ -52,6 +52,11 @@ class ProfileTutorcongrats extends React.Component {
       this.progress1.classList.add('progress-2')
     } else if (ele == this.step3) {
       this.progress1.classList.add('progress-3')
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
     }
     const nextEle = ele.nextElementSibling
     nextEle.classList.remove('slide-out-left', 'slide-out-right', 'slide-in-right', 'slide-in-left')
