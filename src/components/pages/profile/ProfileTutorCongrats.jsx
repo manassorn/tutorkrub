@@ -2,7 +2,7 @@ import React from "react";
 import Constant from '../../../Constant'
 import './ProfileEdit.css'
 import './ProfileTutorCongrats.scss'
-import "canvas-confetti";
+import confetti from "canvas-confetti";
 import Api from "../../../Api";
 
 class ProfileTutorcongrats extends React.Component {
