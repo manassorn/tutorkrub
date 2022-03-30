@@ -13,7 +13,7 @@ File: app.css
     font-weight: normal;
     font-style: normal;
     src: url('../fonts/boxicons.eot');
-    src: url('../fonts/boxicons.eot') format('embedded-opentype'), url('public/assets/fonts/boxicons.woff2') format('woff2'), url('public/assets/fonts/boxicons.woff') format('woff'), url('public/assets/fonts/boxicons.ttf') format('truetype'), url('public/assets/fonts/boxicons.svg?#boxicons') format('svg')
+    src: url('../fonts/boxicons.eot') format('embedded-opentype'), url('/public/assets/fonts/boxicons.woff2') format('woff2'), url('/public/assets/fonts/boxicons.woff') format('woff'), url('/public/assets/fonts/boxicons.ttf') format('truetype'), url('/public/assets/fonts/boxicons.svg?#boxicons') format('svg')
 }
 .bx {
     font-family: 'boxicons'!important;
