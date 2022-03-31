@@ -4771,8 +4771,8 @@ Learn More: lineicons.com
 -------------------------------- */
 @font-face {
   font-family: 'LineIcons';
-  src: url('public/assets/fonts/LineIcons.eot');
-  src: url('public/assets/fonts/LineIcons.eot') format('embedded-opentype'), url('public/assets/fonts/LineIcons.woff2') format('woff2'), url('public/assets/fonts/LineIcons.woff') format('woff'), url('public/assets/fonts/LineIcons.ttf') format('truetype'), url('public/assets/fonts/LineIcons.svg') format('svg');
+  src: url('/public/assets/fonts/LineIcons.eot');
+  src: url('/public/assets/fonts/LineIcons.eot') format('embedded-opentype'), url('/public/assets/fonts/LineIcons.woff2') format('woff2'), url('/public/assets/fonts/LineIcons.woff') format('woff'), url('/public/assets/fonts/LineIcons.ttf') format('truetype'), url('/public/assets/fonts/LineIcons.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
