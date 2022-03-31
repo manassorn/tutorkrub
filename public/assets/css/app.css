@@ -2153,7 +2153,7 @@ input::placeholder {
 
 .bg-forgot {
 
-	background-image: url(public/assets/images/login-images/4087092.jpg);
+	background-image: url(/public/assets/images/login-images/4087092.jpg);
 
 	background-size: cover;
 
@@ -2165,7 +2165,7 @@ input::placeholder {
 
 .bg-lock-screen {
 
-	background-image: url(public/assets/images/login-images/lock-screen-img.jpg);
+	background-image: url(/public/assets/images/login-images/lock-screen-img.jpg);
 
 	background-size: cover;
 
