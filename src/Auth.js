@@ -14,10 +14,10 @@ const Auth ={
     return json.userId
   },
   checkLogin: () => {
-    Api.get('/users/me').then(function(response) {
-        const user = response.data.data
-        const status = 'loggedin'
-        subject.next({status,user})
+    Api.get('/authen/checkLogin').then(function(response) {
+        const login = response.data.data
+        const loginStatus = login.loginStatus
+        subject.next({loginStatus,user})
       }).catch(function(error) {
         subject.next({status:'failed', user: null})
       })

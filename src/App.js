@@ -81,4 +81,22 @@ class App extends React.Component {
     }
 }
 
+class RequireAuth extend React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      loginStatus: 'unknown'
+    }
+  }
+  render() {
+    if (this.state.loginStatus == 'unknown') {
+      
+    } else if (this.state.loginStatus == 'not_authorized') {
+      return <Navi/>
+    } else if (this.state.loginStatus == 'authorized') {
+      return this.props.children
+    }
+  }
+}
+
 export default App;
