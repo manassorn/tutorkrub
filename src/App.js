@@ -109,6 +109,8 @@ class RequireAuth extends React.Component {
     } else if (this.state.loginStatus == 'authorized') {
       return this.props.children
     }
+    console.log(this.state.loginStatus)
+    return null
   }
 }
 
