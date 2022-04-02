@@ -19,7 +19,7 @@ const Auth ={
         const loginStatus = login.loginStatus
         subject.next({loginStatus,user})
       }).catch(function(error) {
-        subject.next({status:'failed', user: null})
+        subject.next({loginStatus:'failed', user: null})
       })
   },
   observeLogin: (fn) => {
