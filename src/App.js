@@ -48,10 +48,10 @@ class App extends React.Component {
           <BrowserRouter>
             <Wrapper>
             <Switch>
-              <div>
+              <RequireAuth>
                 <Route path="/profile/tutor/congrats" component={ProfileTutorCongrats} />
 
-              </div>
+              </RequireAuth>
               
               <Route exact path="/" component={Home} />
               <Route path="/appointment/list" component={AppointmentList} />
@@ -94,9 +94,9 @@ class RequireAuth extends React.Component {
   }
   render() {
     if (this.state.loginStatus == 'unknown') {
-      
+      return 'aaa'
     } else if (this.state.loginStatus == 'not_authorized') {
-      return ''
+      return 'xxx'
     } else if (this.state.loginStatus == 'authorized') {
       return this.props.children
     }
