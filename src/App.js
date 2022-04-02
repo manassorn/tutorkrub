@@ -85,7 +85,7 @@ class App extends React.Component {
     }
 }
 
-class RequireAuth extend React.Component {
+class RequireAuth extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -96,7 +96,7 @@ class RequireAuth extend React.Component {
     if (this.state.loginStatus == 'unknown') {
       
     } else if (this.state.loginStatus == 'not_authorized') {
-      return <Navi/>
+      return ''
     } else if (this.state.loginStatus == 'authorized') {
       return this.props.children
     }
