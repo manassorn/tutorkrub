@@ -95,6 +95,7 @@ class RequireAuth extends React.Component {
   componentDidMount() {
     Auth.observeLogin((login)=>{
       if(login) {
+        console.log(login)
         const loginStatus = login.loginStatus
         this.setState({loginStatus})
 
