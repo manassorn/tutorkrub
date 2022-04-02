@@ -48,6 +48,11 @@ class App extends React.Component {
           <BrowserRouter>
             <Wrapper>
             <Switch>
+              <div>
+                <Route path="/profile/tutor/congrats" component={ProfileTutorCongrats} />
+
+              </div>
+              
               <Route exact path="/" component={Home} />
               <Route path="/appointment/list" component={AppointmentList} />
               <Route path="/appointment" component={Appointment} />
@@ -58,7 +63,6 @@ class App extends React.Component {
               <Route path="/explore" component={Explore} />
               <Route path="/course" component={Course} />
               <Route path="/pay" component={Pay} />
-              <Route path="/profile/tutor/congrats" component={ProfileTutorCongrats} />
               <Route path="/profile/tutor" component={ProfileTutor} />
               <Route path="/user/edit/avatar" component={ProfileEditAvatar} />
               <Route path="/user/edit/name" component={ProfileEditName} />
