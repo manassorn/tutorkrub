@@ -48,13 +48,16 @@ class App extends React.Component {
           <BrowserRouter>
             <Wrapper>
             <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/register" component={Register} />
+              <Route path="/login" component={Login} />
+
               <RequireAuth>
                 cccc
                 <Route path="/profile/tutor/congrats" component={ProfileTutorCongrats} />
 
               </RequireAuth>
-              
-              <Route exact path="/" component={Home} />
+
               <Route path="/appointment/list" component={AppointmentList} />
               <Route path="/appointment" component={Appointment} />
               <Route path="/checkout/creditcard" component={CheckoutCreditCard} />
@@ -74,8 +77,6 @@ class App extends React.Component {
               <Route path="/user/edit/email/verifycode" component={ProfileEditEmailVerifyCode} />
               <Route path="/user/edit" component={ProfileEdit} />
               <Route path="/user" component={Profile} />
-              <Route path="/register" component={Register} />
-              <Route path="/login" component={Login} />
 
               <Redirect to="/" />
             </Switch>
