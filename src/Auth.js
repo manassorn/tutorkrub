@@ -17,6 +17,7 @@ const Auth ={
     Api.get('/authen/checkLogin').then(function(response) {
         const login = response.data.data
         const loginStatus = login.loginStatus
+        const user = login.user
         subject.next({loginStatus,user})
       }).catch(function(error) {
         subject.next({loginStatus:'failed', user: null})
