@@ -49,6 +49,7 @@ class App extends React.Component {
             <Wrapper>
             <Switch>
               <RequireAuth>
+                cccc
                 <Route path="/profile/tutor/congrats" component={ProfileTutorCongrats} />
 
               </RequireAuth>
