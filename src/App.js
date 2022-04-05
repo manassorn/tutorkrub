@@ -108,7 +108,6 @@ class RequireAuth extends React.Component {
   }
   render() {
     console.log('xxxxx')
-    let location = useLocation();
     if (this.state.loginStatus == 'unknown') {
       return 'aaa'
     } else if (this.state.loginStatus == 'not_authorized') {
