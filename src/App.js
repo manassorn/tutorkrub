@@ -33,7 +33,8 @@ import {
   Route,
   Link,
   Switch,
-  Redirect
+  Redirect,
+  useLocation
 } from "react-router-dom";
 
 
@@ -51,12 +52,9 @@ class App extends React.Component {
               <Route exact path="/" component={Home} />
               <Route path="/register" component={Register} />
               <Route path="/login" component={Login} />
+              <Route path="/profile/tutor/congrats" element={<RequireAuth><ProfileTutorCongrats/></RequireAuth>} />
 
-              <RequireAuth>
-                cccc
-                <Route path="/profile/tutor/congrats" component={ProfileTutorCongrats} />
 
-              </RequireAuth>
 
               <Route path="/appointment/list" component={AppointmentList} />
               <Route path="/appointment" component={Appointment} />
@@ -105,10 +103,11 @@ class RequireAuth extends React.Component {
     })
   }
   render() {
+    let location = useLocation();
     if (this.state.loginStatus == 'unknown') {
       return 'aaa'
     } else if (this.state.loginStatus == 'not_authorized') {
-      return 'xxx'
+      return <Navigate to="/login" state={{ from: location }} replace />;
     } else if (this.state.loginStatus == 'authorized') {
       console.log('abc')
       return this.props.children
