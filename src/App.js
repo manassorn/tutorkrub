@@ -52,7 +52,10 @@ class App extends React.Component {
               <Route exact path="/" component={Home} />
               <Route path="/register" component={Register} />
               <Route path="/login" component={Login} />
-              <Route path="/profile/tutor/congrats" element={<RequireAuth><ProfileTutorCongrats/></RequireAuth>} />
+              {/*<Route path="/profile/tutor/congrats" element={<RequireAuth><ProfileTutorCongrats/></RequireAuth>} />*/}
+              <Route path="/profile/tutor/congrats" >
+                <RequireAuth><ProfileTutorCongrats/></RequireAuth>
+              </Route>
 
 
 
