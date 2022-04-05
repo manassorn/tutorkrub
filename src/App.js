@@ -54,6 +54,7 @@ class App extends React.Component {
               <Route path="/login" component={Login} />
               {/*<Route path="/profile/tutor/congrats" element={<RequireAuth><ProfileTutorCongrats/></RequireAuth>} />*/}
               <Route path="/profile/tutor/congrats" >
+                asasdf
                 <RequireAuth><ProfileTutorCongrats/></RequireAuth>
               </Route>
 
