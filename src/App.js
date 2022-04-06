@@ -26,6 +26,7 @@ import AppointmentList from "./components/pages/appointment/AppointmentList"
 import Register from "./components/pages/register/Register"
 import Login from "./components/pages/Login"
 import Home from "./components/pages/home/Home"
+import test from "./components/test"
 // IMPORT
 
 import {
@@ -50,6 +51,7 @@ class App extends React.Component {
             <Wrapper>
             <Routes>
               <Route path="/" element={<Home/>} />
+              <Route path="/test" element={<test/>} />
               <Route path="/register" element={<Register/>} />
               <Route path="/login" element={<Login/>} />
               <Route path="/profile/tutor/congrats" element={<RequireAuth><ProfileTutorCongrats/></RequireAuth>} />
