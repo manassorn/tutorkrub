@@ -32,8 +32,7 @@ import {
   BrowserRouter,
   Route,
   Link,
-  Switch,
-  Redirect,
+  Routes,
   useLocation,
   Navigate
 } from "react-router-dom";
@@ -49,7 +48,7 @@ class App extends React.Component {
         return (
           <BrowserRouter>
             <Wrapper>
-            <Switch>
+            <Routes>
               <Route exact path="/" component={Home} />
               <Route path="/register" component={Register} />
               <Route path="/login" component={Login} />
@@ -81,8 +80,8 @@ class App extends React.Component {
               <Route path="/user/edit" component={ProfileEdit} />
               <Route path="/user" component={Profile} />
 
-              <Redirect to="/" />
-            </Switch>
+              <Navigate to="/" replace/>
+            </Routes>
             </Wrapper>
           </BrowserRouter>
 
