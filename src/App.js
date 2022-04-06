@@ -111,7 +111,7 @@ class RequireAuth extends React.Component {
       return 'aaa'
     } else if (this.state.loginStatus == 'not_authorized') {
       console.log('xxx')
-      return <Navigate to="/login" state={{ from: location }} replace />;
+      return <Navigate to="/login" state={{ from: location }} replacex />;
     } else if (this.state.loginStatus == 'authorized') {
       console.log('abc')
       return this.props.children
