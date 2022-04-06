@@ -51,7 +51,7 @@ class App extends React.Component {
             <Routes>
               <Route exact path="/" component={Home} />
               <Route path="/register" component={Register} />
-              <Route path="/login" component={Login} />
+              <Route path="/login" element={<Login/>} />
               {/*<Route path="/profile/tutor/congrats" element={<RequireAuth><ProfileTutorCongrats/></RequireAuth>} />*/}
               <Route path="/profile/tutor/congrats" element={<RequireAuth><ProfileTutorCongrats/></RequireAuth>} />
                 
@@ -106,9 +106,7 @@ class RequireAuth extends React.Component {
     })
   }
   render() {
-    console.log('xxxxx')
     if (this.state.loginStatus == 'unknown') {
-      return 'aaa'
     } else if (this.state.loginStatus == 'not_authorized') {
       console.log('xxx')
       return <Navigate to="/login" state={{ from: location }} replacex />;
