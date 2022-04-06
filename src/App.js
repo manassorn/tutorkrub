@@ -76,8 +76,10 @@ class App extends React.Component {
               <Route path="/user/edit/email/verifycode" component={ProfileEditEmailVerifyCode} />
               <Route path="/user/edit" component={ProfileEdit} />
               <Route path="/user" component={Profile} />
+              
+              
+              <Route path="*" element={              <Navigate to="/" replace/>} />
 
-              <Navigate to="/" replace/>
             </Routes>
             </Wrapper>
           </BrowserRouter>
