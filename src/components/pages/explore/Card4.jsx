@@ -28,7 +28,7 @@ class Card4 extends React.Component {
           <p className="text-secondary mb-3">ติวเตอร์</p>
 
         </div>
-        <a href="#" style={{width:'16px'}}><img src="https://i.imgur.com/d6xHzmg.png" width="16" /></a>
+        <a href="#" style={{width:'26px'}}><img src="https://i.imgur.com/d6xHzmg.png" width="26" /></a>
       </div>
           <div>
             <i className="lni lni-graduation bx-xs mr-1 text-primary" />
