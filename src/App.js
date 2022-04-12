@@ -26,14 +26,14 @@ import AppointmentList from "./components/pages/appointment/AppointmentList"
 import Register from "./components/pages/register/Register"
 import Login from "./components/pages/Login"
 import Home from "./components/pages/home/Home"
+import Test from "./components/test"
 // IMPORT
 
 import {
   BrowserRouter,
   Route,
   Link,
-  Switch,
-  Redirect,
+  Routes,
   useLocation,
   Navigate
 } from "react-router-dom";
@@ -49,40 +49,39 @@ class App extends React.Component {
         return (
           <BrowserRouter>
             <Wrapper>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/register" component={Register} />
-              <Route path="/login" component={Login} />
-              {/*<Route path="/profile/tutor/congrats" element={<RequireAuth><ProfileTutorCongrats/></RequireAuth>} />*/}
-              <Route path="/profile/tutor/congrats" >
-                asasdf
-                <RequireAuth><ProfileTutorCongrats/></RequireAuth>
-              </Route>
+            <Routes>
+              <Route path="/" element={<Home/>} />
+              <Route path="/test" element={<Test/>} />
+              <Route path="/register" element={<Register/>} />
+              <Route path="/login" element={<Login/>} />
+              <Route path="/profile/tutor/congrats" element={<RequireAuth><ProfileTutorCongrats/></RequireAuth>} />
+                
+                
 
+              <Route path="/appointment/list" element={<AppointmentList/>} />
+              <Route path="/appointment" element={<Appointment/>} />
+              <Route path="/checkout/creditcard" element={<CheckoutCreditCard/>} />
+              <Route path="/checkout" element={<Checkout/>} />
+              <Route path="/course/add" element={<CourseAdd/>} />
+              <Route path="/course/edit" element={<CourseEdit/>} />
+              <Route path="/explore" element={<Explore/>} />
+              <Route path="/course" element={<Course/>} />
+              <Route path="/pay" element={<Pay/>} />
+              <Route path="/profile/tutor" element={<ProfileTutor/>} />
+              <Route path="/user/edit/avatar" element={<ProfileEditAvatar/>} />
+              <Route path="/user/edit/name" element={<ProfileEditName/>} />
+              <Route path="/user/edit/skypeid" element={<ProfileEditSkypeId/>} />
+              <Route path="/user/edit/zoomid" element={<ProfileEditZoomId/>} />
+              <Route path="/user/edit/availability" element={<ProfileEditAvailability/>} />
+              <Route path="/user/edit/email" element={<ProfileEditEmail/>} />
+              <Route path="/user/edit/email/verifycode" element={<ProfileEditEmailVerifyCode/>} />
+              <Route path="/user/edit" element={<ProfileEdit/>} />
+              <Route path="/user" element={<Profile/>} />
+              
+              
+              <Route path="*" element={              <Navigate to="/" replace/>} />
 
-
-              <Route path="/appointment/list" component={AppointmentList} />
-              <Route path="/appointment" component={Appointment} />
-              <Route path="/checkout/creditcard" component={CheckoutCreditCard} />
-              <Route path="/checkout" component={Checkout} />
-              <Route path="/course/add" component={CourseAdd} />
-              <Route path="/course/edit" component={CourseEdit} />
-              <Route path="/explore" component={Explore} />
-              <Route path="/course" component={Course} />
-              <Route path="/pay" component={Pay} />
-              <Route path="/profile/tutor" component={ProfileTutor} />
-              <Route path="/user/edit/avatar" component={ProfileEditAvatar} />
-              <Route path="/user/edit/name" component={ProfileEditName} />
-              <Route path="/user/edit/skypeid" component={ProfileEditSkypeId} />
-              <Route path="/user/edit/zoomid" component={ProfileEditZoomId} />
-              <Route path="/user/edit/availability" component={ProfileEditAvailability} />
-              <Route path="/user/edit/email" component={ProfileEditEmail} />
-              <Route path="/user/edit/email/verifycode" component={ProfileEditEmailVerifyCode} />
-              <Route path="/user/edit" component={ProfileEdit} />
-              <Route path="/user" component={Profile} />
-
-              <Redirect to="/" />
-            </Switch>
+            </Routes>
             </Wrapper>
           </BrowserRouter>
 
@@ -98,6 +97,7 @@ class RequireAuth extends React.Component {
     }
   }
   componentDidMount() {
+    
     Auth.observeLogin((login)=>{
       if(login) {
         console.log(login)
@@ -108,12 +108,10 @@ class RequireAuth extends React.Component {
     })
   }
   render() {
-    console.log('xxxxx')
     if (this.state.loginStatus == 'unknown') {
-      return 'aaa'
     } else if (this.state.loginStatus == 'not_authorized') {
       console.log('xxx')
-      return <Navigate to="/login" state={{ from: location }} replace />;
+      return <Navigate to="/login" state={{ from: location }} replacex />;
     } else if (this.state.loginStatus == 'authorized') {
       console.log('abc')
       return this.props.children

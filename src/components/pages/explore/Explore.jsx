@@ -14,16 +14,16 @@ class Explore extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        courses: []
+        tutors: []
       }
     }
 
     componentDidMount() {
-      Api.get('/explore')
+      Api.get('/search')
         .then(response => 
         {
-        var courses = response.data.data
-        this.setState({ courses })
+        var tutors = response.data.data
+        this.setState({ tutors })
         }
         );
       
@@ -76,8 +76,8 @@ class Explore extends React.Component {
         </div>
         <div id="course-cards" class="row">
 
-        {this.state.courses.map(course => (
-          <Card4 course={course} />
+        {this.state.tutors.map(tutor => (
+          <Card4 tutor={tutor} />
 
         ))}
 
