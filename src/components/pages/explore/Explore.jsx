@@ -14,8 +14,10 @@ class Explore extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        tutors: []
+        tutors: [],
+        favTutors: []
       }
+      this.isFavorite = this.isFavorite.bind(this)
     }
 
     componentDidMount() {
@@ -27,6 +29,14 @@ class Explore extends React.Component {
         }
         );
       
+      Api.get('favorites').then(response => {
+        const favTutors = response.data.data.tutors
+        this.setState({favTutors})
+      })
+    }
+    
+    isFavorite(tutorId) {
+      return this.state.favTutors.indexOf(tutorId) >= 0
     }
 
     render() {
@@ -77,7 +87,7 @@ class Explore extends React.Component {
         <div id="course-cards" class="row">
 
         {this.state.tutors.map(tutor => (
-          <Card4 tutor={tutor} />
+          <Card4 tutor={tutor} isFavorite={this.isFavorite(tutor.id)} />
 
         ))}
 
