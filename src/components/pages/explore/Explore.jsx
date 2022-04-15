@@ -36,6 +36,7 @@ class Explore extends React.Component {
     }
     
     isFavorite(tutorId) {
+      console.log(tutorId,'aa')
       return this.state.favTutors.indexOf(tutorId) >= 0
     }
 
