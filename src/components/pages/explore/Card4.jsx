@@ -33,7 +33,7 @@ class Card4 extends React.Component {
           <p className="text-secondary mb-3">ติวเตอร์</p>
 
         </div>
-        <a href="#" style={{width:'26px'}} className={`heart ${this.state.isFavorite?'active':''}`} onClick={e => this.toggleFavorite(tutor.id)}>&nbsp;
+        <a href="#" style={{width:'26px'}} className={`heart active ${this.state.isFavorite?'active':''}`} onClick={e => this.toggleFavorite(tutor.id)}>&nbsp;
         </a>
       </div>
           <div>

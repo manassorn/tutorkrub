@@ -58,7 +58,7 @@ class Explore extends React.Component {
             </div>
             <button id="dropdownSchoolLevel" type="button" class="btn btn-white dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <span class="sr-only">Toggle Dropdown</span>
             </button>
-          </div>
+        </div>
         </div>
 
 
