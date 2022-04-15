@@ -88,7 +88,7 @@ class Explore extends React.Component {
         <div id="course-cards" class="row">
 
         {this.state.tutors.map(tutor => (
-          <Card4 tutor={tutor} isFavorite={this.isFavorite(tutor.id)} />
+          <Card4 tutor={tutor} isFavorite={this.isFavorite(tutor._id)} />
 
         ))}
 
