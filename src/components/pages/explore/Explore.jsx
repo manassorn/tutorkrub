@@ -29,7 +29,7 @@ class Explore extends React.Component {
         }
         );
       
-      Api.get('favorites').then(response => {
+      Api.get('/favorites').then(response => {
         const favTutors = response.data.data.tutors
         this.setState({favTutors})
       })
