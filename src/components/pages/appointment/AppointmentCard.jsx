@@ -20,7 +20,7 @@ class AppointmentCard extends React.Component {
 
   componentDidMount() {
     Auth.observeLogin((login) => {
-        if(!login.user) return
+        if(!login || !login.user) return
         this.setState({user:login.user})
       })
   }

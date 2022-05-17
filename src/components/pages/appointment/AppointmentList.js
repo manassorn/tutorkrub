@@ -52,14 +52,14 @@ class AppointmentList extends React.Component {
 
 
   render() {
-    return <div class="container" style={{maxWidth:'720px'}}>
+    return <div className="container" style={{maxWidth:'720px'}}>
 
 
 
       <div className="py-4 d-sm-none">
         <div className="btn-group d-flex" role="group" aria-label="Basic example">
           {this.icons.map((icon, i) => (
-            <button type="button" className="btn btn-white font-13 w-25" style={{position:'relative'}}>
+            <button type="button" className="btn btn-white font-13 w-25" style={{position:'relative'}} key={icon}>
               <i className={"bx bx-md my-0 " + icon}></i><br/>
               {this.labels[i]}
               <span className="badge badge-pill badge-danger" style={{position:'absolute',top:'10px',right:'10px'}}>3</span>
@@ -74,7 +74,7 @@ class AppointmentList extends React.Component {
         <div className="btn-group d-flex" role="group" aria-label="Basic example">
           {this.icons.map((icon, i) => (
 
-            <button type="button" className="btn btn-white w-100">
+            <button type="button" className="btn btn-white w-100" key={icon}>
               {this.labels[i]} &nbsp;&nbsp;
               <span className="badge badge-pill badge-danger">3</span>
             </button>
@@ -84,7 +84,7 @@ class AppointmentList extends React.Component {
       </div>
       
       {this.state.appointments.map(ap => (
-        <AppointmentCard appointment={ap} />
+        <AppointmentCard appointment={ap} key={ap}/>
       ))}
 
       
