@@ -12,10 +12,17 @@ class Card4 extends React.Component {
       tutor: {},
       isFavorite: this.props.isFavorite
     }
+    this.toggleFavorite = this.toggleFavorite.bind(this)
+  }
+
+  componentDidUpdate(prevProps) {
+    if(this.state.isFavorite != this.props.isFavorite) {
+      this.setState({isFavorite: this.props.isFavorite})
+    }
   }
 
   toggleFavorite(tutorId) {
-
+    this.props.toggleFavorite(tutorId, this.state.isFavorite)
   }
 
   render() {

@@ -63,7 +63,7 @@ class HomeBenefits2 extends React.Component {
                 
                 
               {this.details.map(d => (
-                <div className="col-md-3 px-4">
+                <div className="col-md-3 px-4" key={d.title}>
                   <div className="text-center radius-10 box-shadow">
                     <img src={`/public/assets/images/home/asset${d.image}.png`} style={{width: '60%'}} /><br/>
                       <h5 className="text-weight-bold">{d.title}</h5>

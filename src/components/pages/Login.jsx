@@ -57,7 +57,7 @@ class Login extends React.Component {
       const that = this;
       Api.post('/authen/login', {email, name, password}).then(() => {
         Auth.checkLogin()
-        const search = that.props.location.search; // could be '?foo=bar'
+        const search = window.location.search; // could be '?foo=bar'
         const params = new URLSearchParams(search);
         const redirect = params.get('redirect');
         if(redirect) {

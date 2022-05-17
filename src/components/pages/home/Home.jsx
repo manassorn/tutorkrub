@@ -21,7 +21,7 @@ class Home extends React.Component {
     }
 
     render() {
-      return <div class="">
+      return <div className="">
         <HomeHero2/>
         {/*<HomeBenefits/>*/}
         {/*<HomeGettingStarted/>*/}

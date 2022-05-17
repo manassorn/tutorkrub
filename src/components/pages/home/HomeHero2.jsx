@@ -27,11 +27,11 @@ class HomeHero2 extends React.Component {
 
         แพลตฟอร์มเชื่อมโยงระหว่างติวเตอร์และนักเรียน
         </h2> 
-        <p class="lead">
+        <p className="lead">
         ทดลองเรียน 1 ชั่วโมงก่อนได้
         </p> 
-        <p class="leadx">
-          <a class="btn btn-lg btn-primary font-weight-bold px-4 radius-10" href="#" role="button">ทดลองเรียน 1 ชั่วโมง</a>
+        <p className="leadx">
+          <a className="btn btn-lg btn-primary font-weight-bold px-4 radius-10" href="#" role="button">ทดลองเรียน 1 ชั่วโมง</a>
         </p> 
         
 
