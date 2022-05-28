@@ -24,7 +24,6 @@ import Pay from "./components/pages/Pay"
 import Appointment from "./components/pages/appointment/Appointment"
 import AppointmentList from "./components/pages/appointment/AppointmentList"
 import Register from "./components/pages/register/Register"
-import Register3 from "./components/pages/register/Register3"
 import Login from "./components/pages/Login"
 import Home from "./components/pages/home/Home"
 import Test from "./components/test"
@@ -54,7 +53,6 @@ class App extends React.Component {
               <Route path="/" element={<Home/>} />
               <Route path="/test" element={<Test/>} />
               <Route path="/register" element={<Register/>} />
-              <Route path="/register3" element={<Register3/>} />
               <Route path="/login" element={<Login/>} />
               <Route path="/profile/tutor/congrats" element={<RequireAuth><ProfileTutorCongrats/></RequireAuth>} />
                 
