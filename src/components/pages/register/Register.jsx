@@ -14,10 +14,10 @@ class Register extends React.Component {
     this.state = {
     }
     this.form = React.createRef()
-    this.email2 = React.createRef()
+    this.email = React.createRef()
     this.pwd = React.createRef()
     this.pwd2 = React.createRef()
-    this.registerButton = React.createRef()
+    this.nextButton = React.createRef()
     this.validate = this.validate.bind(this)
     this.register = this.register.bind(this)
   }
@@ -61,16 +61,14 @@ class Register extends React.Component {
   }
 
   register(event) {
-    console.log('aa')
-    const email = this.email2.current.value
+    const email = this.email.current.value
     const password =this.pwd.current.value
     const loginAccount = {email, password}
 
     Api.post('/register', {loginAccount}).then(() => {
-      location.href = '/course/explore'
+      this.nextButton.current.click()
     }).catch((error) => {
-      console.log(error.response.data.error.message)
-      this.email2.current.fail(error.response.data.error.message)
+      this.email.current.fail(error.response.data.error.message)
     })
     event.preventDefault()
   }
@@ -103,13 +101,11 @@ class Register extends React.Component {
                 <div className="carousel-item">
 
                   <Form ref={this.form} validate={this.validate} onSubmit={e => this.register(e)}>
-                    {/*<form className="needs-validation" noValidate>*/}
 
                     <div className="form-group">
                       <label>อีเมล</label>
-                      <Input ref={this.email2} id="email" type="email" className="form-control form-control-lg" placeholder="example@gmail.com"
+                      <Input ref={this.email} id="email" type="email" className="form-control form-control-lg" placeholder="example@gmail.com"
                              required invalidmessage="โปรดกรอกอีเมลให้ถูกต้อง"/>
-                      {/*<InvalidFeedback ref={this.emailFeedback} input={this.email2} invalidinvalidMessage="โปรดกรอกอีเมลให้ถูกต้อง" />*/}
 
                     </div>
                     <div className="form-group mt-2">
@@ -117,27 +113,19 @@ class Register extends React.Component {
 
                       <Input ref={this.pwd} id="pwd" type="password" className="form-control form-control-lg" placeholder="" required invalidmessage="กรุณากรอกรหัสผ่าน"/>
 
-                      {/*<div className="invalid-feedback">*/}
-                      {/*  กรุณากรอกรหัสผ่าน*/}
-                      {/*</div>*/}
                     </div>
                     <div className="form-group mt-2">
                       <label>ยืนยันรหัสผ่าน</label>
                       <Input ref={this.pwd2} id="pwd2" type="password" className="form-control form-control-lg" placeholder="" required invalidmessage="กรุณากรอกยืนยันรหัสผ่าน"/>
-                      {/*<div className="invalid-feedback">*/}
-                      {/*  โปรดยืนยันรหัสผ่านให้ถูกต้อง*/}
-                      {/*</div>*/}
                     </div>
-                    <button ref={this.registerButton} id="submit-login-btn" type="submit" className="btn btn-primary btn-lg btn-block">ลงทะเบียน
+                    <button id="submit-login-btn" type="submit" className="btn btn-primary btn-lg btn-block">ลงทะเบียน
                     </button>
-                    <a href="#carouselExampleSlidesOnly" data-slide="next" className="btn btn-link btn-lg btn-block" >test next</a>
-                    {/*</form>*/}
+                    <a ref={this.nextButton} href="#carouselExampleSlidesOnly" data-slide="next" className="btn btn-link btn-lg btn-block d-none" >test next</a>
                   </Form>
                 </div>
                 <div className="carousel-item">
 
                   <FormValidation  validate={this.validate} onSubmit={e => this.register(e)}>
-                    {/*<form className="needs-validation" noValidate>*/}
 
                     <div className="form-group">
                       <label>กำหนด @KrubID ให้สามารถจำได้ง่าย และสื่อถึงตัวคุณ เพื่อให้สามารถค้นหาเจอได้ง่าย</label>
