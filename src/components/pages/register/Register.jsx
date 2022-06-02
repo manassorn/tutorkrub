@@ -1,22 +1,19 @@
 import React from "react";
 import Api from '../../../Api'
 import Auth from '../../../Auth'
-import Separator from '../../common/Separator'
 import FormValidation from '../../common/FormValidation'
-import {Form, InvalidFeedback, Input} from '../../common/FormValidation2'
-import SimpleTitle from '../../common/SimpleTitle'
+import {Form, Input} from '../../common/FormValidation2'
 
 class Register extends React.Component {
-
 
   constructor(props) {
     super(props);
     this.state = {
     }
-    this.form = React.createRef()
     this.email = React.createRef()
     this.pwd = React.createRef()
     this.pwd2 = React.createRef()
+    this.krubId = React.createRef()
     this.nextButton = React.createRef()
     this.validate = this.validate.bind(this)
     this.register = this.register.bind(this)
@@ -27,14 +24,11 @@ class Register extends React.Component {
   }
 
   validate() {
-    console.log('xx', this.pwd.current.value, this.pwd2.current.value)
-    // return false
     if(this.pwd.current.value !== this.pwd2.current.value) {
       try{
         this.pwd2.current.fail("โปรดยืนยันรหัสผ่านให้ถูกต้อง")
       } catch (e) {
         console.error(e)
-        return false
       }
       return false
     }
@@ -60,18 +54,35 @@ class Register extends React.Component {
     });
   }
 
+  checkEmail(e) {
+    Api.post('/register/checkemail', {email:this.email.current.value}).then((res) => {
+      if(res.data.data.exists === false) {
+        this.nextButton.current.click()
+      } else {
+        this.email.current.fail("อีเมลนี้ถูกใช้งานแล้ว")
+      }
+
+    }).catch((error) => {
+      console.error(error)
+    })
+    e.preventDefault()
+  }
+
   register(event) {
     const email = this.email.current.value
     const password =this.pwd.current.value
+    const krubId =this.krubId.current.value
     const loginAccount = {email, password}
+    const user = {krubId}
 
-    Api.post('/register', {loginAccount}).then(() => {
-      this.nextButton.current.click()
+    Api.post('/register', {loginAccount, user}).then(() => {
+      location.href = '/explore'
     }).catch((error) => {
-      this.email.current.fail(error.response.data.error.message)
+      this.krubId.current.fail(error.response.data.error.message)
     })
     event.preventDefault()
   }
+
 
 
   render() {
@@ -80,7 +91,7 @@ class Register extends React.Component {
         <div className="card shadow-lg forgot-box">
           <div className="card-body p-md-5">
             <h4 className="font-weight-bold">ลงทะเบียนฟรี</h4>
-            <p className="text-muted">Enter your registered email ID to reset the password</p>
+            <p className="text-muted">ยินดีต้อนรับติวเตอร์และนักเรียน มาร่วมเป็นส่วนหนึ่งกับเรา!</p>
 
 
             <div id="carouselExampleSlidesOnly" className="carousel slide" data-interval="false" data-ride="carousel">
@@ -100,7 +111,7 @@ class Register extends React.Component {
                 </div>
                 <div className="carousel-item">
 
-                  <Form ref={this.form} validate={this.validate} onSubmit={e => this.register(e)}>
+                  <Form validate={this.validate} onSubmit={e => this.checkEmail(e)}>
 
                     <div className="form-group">
                       <label>อีเมล</label>
@@ -125,25 +136,22 @@ class Register extends React.Component {
                 </div>
                 <div className="carousel-item">
 
-                  <FormValidation  validate={this.validate} onSubmit={e => this.register(e)}>
+                  <Form onSubmit={e => this.register(e)}>
 
                     <div className="form-group">
-                      <label>กำหนด @KrubID ให้สามารถจำได้ง่าย และสื่อถึงตัวคุณ เพื่อให้สามารถค้นหาเจอได้ง่าย</label>
+                      <label>กำหนด @KrubID ให้สามารถจำได้ง่าย และสื่อถึงตัวคุณ เพื่อให้สามารถค้นหาเจอได้ง่าย (สามารถเปลี่ยนได้ภายหลัง)</label>
                       <div className="input-group mb-3">
                         <div className="input-group-prepend">
                           <span className="input-group-text" id="basic-addon1">@</span>
                         </div>
-                        <input type="text" className="form-control form-control-lg" placeholder="เช่น ครูนุ้ย" aria-label="KrubID"
-                               aria-describedby="basic-addon1" />
-                      </div>
-                      <div className="invalid-feedback">
-                        โปรดกรอกข้อมูล
+                        <Input ref={this.krubId} type="text" className="form-control form-control-lg" placeholder="เช่น พี่มายด์, พี่แองจี้" aria-label="KrubID"
+                               aria-describedby="basic-addon1" required pattern="[A-Za-z0-9ก-ฮ]*" invalidmessage="โปรดกรอกตัวอักษร ภาษาไทย หรืออ ังกฤษ หรือ ตัวเลข0-9"/>
                       </div>
                     </div>
                     <button id="submit-login-btn" type="submit" className="btn btn-primary btn-lg btn-block">ตั้งชื่อ
                     </button>
                     {/*</form>*/}
-                  </FormValidation>
+                  </Form>
                 </div>
               </div>
             </div>

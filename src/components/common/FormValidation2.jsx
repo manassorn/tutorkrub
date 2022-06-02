@@ -130,7 +130,8 @@ class Input extends React.Component {
   }
 
   componentDidMount() {
-    this.inputElement.current.addEventListener('change', (e) => {
+    console.log('did mount')
+    this.inputElement.current.addEventListener('input', (e) => {
       this.value = e.target.value
       //todo - this part is a bit tricky
       this.inputElement.current.classList.remove('is-invalid')
