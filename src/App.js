@@ -54,7 +54,8 @@ class App extends React.Component {
               <Route path="/test" element={<Test/>} />
               <Route path="/register" element={<Register/>} />
               <Route path="/login" element={<Login/>} />
-              <Route path="/profile/tutor/congrats" element={<RequireAuth><ProfileTutorCongrats/></RequireAuth>} />
+              {/*<Route path="/profile/tutor/congrats" element={<RequireAuth><ProfileTutorCongrats/></RequireAuth>} />*/}
+              <Route path="/profile/tutor/congrats" element={<ProfileTutorCongrats/>} />
                 
                 
 

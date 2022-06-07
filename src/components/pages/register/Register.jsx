@@ -76,7 +76,8 @@ class Register extends React.Component {
     const user = {krubId}
 
     Api.post('/register', {loginAccount, user}).then(() => {
-      location.href = '/explore'
+      this.nextButton.current.click()
+      // location.href = '/explore'
     }).catch((error) => {
       this.krubId.current.fail(error.response.data.error.message)
     })
@@ -131,7 +132,7 @@ class Register extends React.Component {
                     </div>
                     <button id="submit-login-btn" type="submit" className="btn btn-primary btn-lg btn-block">ลงทะเบียน
                     </button>
-                    <a ref={this.nextButton} href="#carouselExampleSlidesOnly" data-slide="next" className="btn btn-link btn-lg btn-block d-none" >test next</a>
+                    <a ref={this.nextButton} href="#carouselExampleSlidesOnly" data-slide="next" className="btn btn-link btn-lg btn-block d-nonex" >test next</a>
                   </Form>
                 </div>
                 <div className="carousel-item">
@@ -150,8 +151,26 @@ class Register extends React.Component {
                     </div>
                     <button id="submit-login-btn" type="submit" className="btn btn-primary btn-lg btn-block">ตั้งชื่อ
                     </button>
+                    <a ref={this.nextButton} href="#carouselExampleSlidesOnly" data-slide="next" className="btn btn-link btn-lg btn-block d-nonex" >test next</a>
                     {/*</form>*/}
                   </Form>
+                </div>
+                <div className="carousel-item">
+
+                  <div className="text-center">
+                    <svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" style={{width: '120px'}}>
+                      <g stroke="#007bff" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"
+                         stroke-linejoin="round">
+                        <path className="circle"
+                              d="M13 1C6.372583 1 1 6.372583 1 13s5.372583 12 12 12 12-5.372583 12-12S19.627417 1 13 1z"/>
+                        <path className="tick" d="M6.5 13.5L10 17 l8.808621-8.308621"/>
+                      </g>
+                    </svg>
+                  </div>
+
+                  <a href="/explore" className="btn btn-link btn-lg btn-block" >ฉันเป็นติวเตอร์</a>
+                  <a href="/explore" className="btn btn-link btn-lg btn-block" >ฉันเป็นนักเรียน</a>
+
                 </div>
               </div>
             </div>
