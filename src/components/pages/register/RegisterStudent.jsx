@@ -4,7 +4,7 @@ import Auth from '../../../Auth'
 import FormValidation from '../../common/FormValidation'
 import {Form, Input} from '../../common/FormValidation2'
 
-class Register extends React.Component {
+class RegisterStudent extends React.Component {
 
   constructor(props) {
     super(props);
@@ -92,7 +92,7 @@ class Register extends React.Component {
         <div className="card shadow-lg forgot-box">
           <div className="card-body p-md-5">
             <h4 className="font-weight-bold">ลงทะเบียนฟรี</h4>
-            <p className="text-muted">ยินดีต้อนรับติวเตอร์และนักเรียน มาร่วมเป็นส่วนหนึ่งกับเรา!</p>
+            <p className="text-muted">ยินดีต้อนรับนักเรียนคนใหม่ สมัครเป็นติวเตอร์ <a href="/register/tutor">คลิกที่นี่</a></p>
 
 
             <div id="carouselExampleSlidesOnly" className="carousel slide" data-interval="false" data-ride="carousel">
@@ -186,4 +186,4 @@ class Register extends React.Component {
 
   }
 }
-export default Register;
+export default RegisterStudent;

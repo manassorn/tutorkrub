@@ -23,7 +23,8 @@ import ProfileTutorCongrats from "./components/pages/profile/ProfileTutorCongrat
 import Pay from "./components/pages/Pay"
 import Appointment from "./components/pages/appointment/Appointment"
 import AppointmentList from "./components/pages/appointment/AppointmentList"
-import Register from "./components/pages/register/Register"
+import RegisterStudent from "./components/pages/register/RegisterStudent"
+import RegisterTutor from "./components/pages/register/RegisterTutor"
 import Login from "./components/pages/Login"
 import Home from "./components/pages/home/Home"
 import Test from "./components/test"
@@ -52,7 +53,8 @@ class App extends React.Component {
             <Routes>
               <Route path="/" element={<Home/>} />
               <Route path="/test" element={<Test/>} />
-              <Route path="/register" element={<Register/>} />
+              <Route path="/register" element={<RegisterStudent/>} />
+              <Route path="/register/tutor" element={<RegisterTutor/>} />
               <Route path="/login" element={<Login/>} />
               {/*<Route path="/profile/tutor/congrats" element={<RequireAuth><ProfileTutorCongrats/></RequireAuth>} />*/}
               <Route path="/profile/tutor/congrats" element={<ProfileTutorCongrats/>} />
