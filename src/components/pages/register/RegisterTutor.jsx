@@ -1,13 +1,15 @@
 import React, {useState, useRef, useEffect} from "react";
 import Api from '../../../Api'
 import Auth from '../../../Auth'
-import FormValidation from '../../common/FormValidation'
-import {Form, Input} from '../../common/FormValidation2'
+import {Link} from "react-router-dom";
 import Constant from "../../../Constant";
 import ButtonSpinner from "../../common/ButtonSpinner";
 import Croppie from "croppie";
 import "croppie/croppie.css"
 import {isDebugMode} from "../../../Debug";
+import CheckBoxBadge from "./CheckBoxBadge";
+import LoginAccountForm from "./LoginAccountForm"
+import KrubIdForm from "./KrubIdForm";
 
 class Register extends React.Component {
 
@@ -42,7 +44,7 @@ class Register extends React.Component {
     });
   }
 
-  registerTutor(event) {
+  registerTutor() {
     const registerTutorData = {
       email: this.email,
       pwd: this.pwd,
@@ -58,7 +60,6 @@ class Register extends React.Component {
     }).catch((error) => {
       console.error(error)
     })
-    event.preventDefault()
   }
 
   render() {
@@ -67,7 +68,7 @@ class Register extends React.Component {
         <div className="card shadow-lg forgot-box">
           <div className="card-body p-md-5">
             <h4 className="font-weight-bold">มาเป็นติวเตอร์กันเถอะ</h4>
-            <p className="text-muted">มาร่วมเป็นส่วนหนึ่งกับเรา!
+            <p className="text-muted">ยินดีต้อนรับติวเตอร์คนใหม่! เป็นนักเรียน<Link to="/register">คลิกที่นี่</Link>
               <a ref={this.nextButton} href="#carouselExampleSlidesOnly" data-slide="next" className={isDebugMode?'':'d-none'}>test next</a>
             </p>
 
@@ -126,12 +127,13 @@ class Register extends React.Component {
                 <div className="carousel-item">
                   <TutorPriceUpdate onComplete={price => {
                     this.tutorPrice = price
-                    this.nextButton.current.click()
+                    this.registerTutor()
+                    // this.nextButton.current.click()
 
-                    console.log(this.email,this.pwd)
-                    console.log(this.krubId)
-                    console.log(this.tutorSubjects,this.tutorLevels,this.tutorPrice)
-                    console.log(this.tutorProfileImageBlob)
+                    // console.log(this.email,this.pwd)
+                    // console.log(this.krubId)
+                    // console.log(this.tutorSubjects,this.tutorLevels,this.tutorPrice)
+                    // console.log(this.tutorProfileImageBlob)
                   }}/>
                 </div>
                 <div className="carousel-item">
@@ -145,10 +147,9 @@ class Register extends React.Component {
                         <path className="tick" d="M6.5 13.5L10 17 l8.808621-8.308621"/>
                       </g>
                     </svg>
+                    <h4 className="font-weight-bold">ยินดีต้อนรับ 🎉</h4>
+                    <p className="text-muted">กรอกข้อมูลให้ครบถ้วน เพื่อให้สามารถค้นหาเจอได้ง่าย</p>
                   </div>
-
-                  <a href="/explore" className="btn btn-link btn-lg btn-block" >ฉันเป็นติวเตอร์</a>
-                  <a href="/explore" className="btn btn-link btn-lg btn-block" >ฉันเป็นนักเรียน</a>
 
                 </div>
               </div>
@@ -164,94 +165,6 @@ class Register extends React.Component {
     </div>
 
   }
-}
-
-function LoginAccountForm({onComplete}) {
-  const pwd = useRef(null)
-  const pwd2 = useRef(null)
-  const email = useRef(null)
-
-  function validate() {
-    if(pwd.current.value !== pwd2.current.value) {
-      pwd2.current.fail("โปรดยืนยันรหัสผ่านให้ถูกต้อง")
-      return false
-    }
-    return true
-  }
-
-  function checkEmail(e) {
-    Api.post('/register/checkemail', {email: email.current.value}).then((res) => {
-      if(res.data.data.exists === false) {
-        onComplete({
-          email: email.current.value,
-          pwd: pwd.current.value
-        })
-      } else {
-        email.current.fail("อีเมลนี้ถูกใช้งานแล้ว")
-      }
-    }).catch((error) => {
-      console.error(error)
-    })
-    e.preventDefault()
-  }
-
-  return (
-    <Form validate={validate} onSubmit={e => checkEmail(e)}>
-
-      <div className="form-group">
-        <label>อีเมล</label>
-        <Input ref={email} id="email" type="email" className="form-control form-control-lg" placeholder="example@gmail.com"
-               required invalidmessage="โปรดกรอกอีเมลให้ถูกต้อง"/>
-
-      </div>
-      <div className="form-group mt-2">
-        <label>รหัสผ่าน</label>
-
-        <Input ref={pwd} id="pwd" type="password" className="form-control form-control-lg" placeholder="" required invalidmessage="กรุณากรอกรหัสผ่าน"/>
-
-      </div>
-      <div className="form-group mt-2">
-        <label>ยืนยันรหัสผ่าน</label>
-        <Input ref={pwd2} id="pwd2" type="password" className="form-control form-control-lg" placeholder="" required invalidmessage="กรุณากรอกยืนยันรหัสผ่าน"/>
-      </div>
-      <button type="submit" className="btn btn-primary btn-lg btn-block">ลงทะเบียน</button>
-    </Form>
-  )
-}
-
-function KrubIdForm({onComplete}) {
-  const krubId = useRef(null);
-
-
-  function checkKrubId(e) {
-    Api.post('/register/checkkrubid', {krubId: krubId.current.value}).then((res) => {
-      if(res.data.data.exists === false) {
-        onComplete(krubId.current.value)
-      } else {
-        krubId.current.fail("Krub ID นี้ถูกใช้งานแล้ว")
-      }
-    }).catch((error) => {
-      console.error(error)
-    })
-    e.preventDefault()
-  }
-
-  return (
-    <Form onSubmit={e => checkKrubId(e)}>
-      <div className="form-group">
-        <label>กำหนด @KrubID ให้สามารถจำได้ง่าย และสื่อถึงตัวคุณ เพื่อให้สามารถค้นหาเจอได้ง่าย (สามารถเปลี่ยนได้ภายหลัง)</label>
-        <div className="input-group mb-3">
-          <div className="input-group-prepend">
-            <span className="input-group-text" id="basic-addon1">@</span>
-          </div>
-          <Input ref={krubId} type="text" className="form-control form-control-lg" placeholder="เช่น พี่มายด์, พี่แองจี้" aria-label="KrubID"
-                 aria-describedby="basic-addon1" required pattern="[A-Za-z0-9ก-ฮ]*" invalidmessage="โปรดกรอกตัวอักษร ภาษาไทย หรืออ ังกฤษ หรือ ตัวเลข0-9"/>
-        </div>
-      </div>
-      <button type="submit" className="btn btn-primary btn-lg btn-block">ตั้งชื่อ</button>
-      {/*</form>*/}
-    </Form>
-  )
 }
 
 function TutorProfileImageForm({onComplete}) {
@@ -420,27 +333,10 @@ function TutorPriceUpdate({onComplete}) {
         </div>
 
       </div>
-      <button onClick={save} className="btn btn-primary btn-lg btn-block">บันทึก
-      </button>
+      {/*<button onClick={save} className="btn btn-primary btn-lg btn-block">บันทึก</button>*/}
+      <ButtonSpinner onClick={e => save}>บันทึก</ButtonSpinner>
     </>
   )
 }
 
-class CheckBoxBadge extends React.Component {
-  constructor(props){
-    super(props)
-    this.onClick = this.onClick.bind(this)
-  }
-  onClick(e) {
-    this.checked = this.checkBox.checked
-    this.value = this.checkBox.value
-    this.props.onClick(e)
-  }
-  render() {
-    return <div className="form-check form-check-inline border badge badge-pill text py-1 px-2">
-      <input ref={ele => this.checkBox= ele} onClick={e => this.onClick(e)} className="form-check-input" type="checkbox" id={this.props.label} value={this.props.label}/>
-      <label className="form-check-label" htmlFor="inlineCheckbox3">{this.props.label}</label>
-    </div>
-  }
-}
 export default Register;

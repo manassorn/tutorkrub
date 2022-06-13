@@ -1,8 +1,10 @@
 import React from "react";
 import Api from '../../../Api'
 import Auth from '../../../Auth'
-import FormValidation from '../../common/FormValidation'
-import {Form, Input} from '../../common/FormValidation2'
+import {Link} from "react-router-dom";
+import LoginAccountForm from "./LoginAccountForm";
+import KrubIdForm from "./KrubIdForm";
+import {isDebugMode} from "../../../Debug";
 
 class RegisterStudent extends React.Component {
 
@@ -10,29 +12,8 @@ class RegisterStudent extends React.Component {
     super(props);
     this.state = {
     }
-    this.email = React.createRef()
-    this.pwd = React.createRef()
-    this.pwd2 = React.createRef()
-    this.krubId = React.createRef()
     this.nextButton = React.createRef()
-    this.validate = this.validate.bind(this)
     this.register = this.register.bind(this)
-  }
-
-  componentDidMount() {
-
-  }
-
-  validate() {
-    if(this.pwd.current.value !== this.pwd2.current.value) {
-      try{
-        this.pwd2.current.fail("โปรดยืนยันรหัสผ่านให้ถูกต้อง")
-      } catch (e) {
-        console.error(e)
-      }
-      return false
-    }
-    return true
   }
 
   loginFb() {
@@ -54,32 +35,17 @@ class RegisterStudent extends React.Component {
     });
   }
 
-  checkEmail(e) {
-    Api.post('/register/checkemail', {email:this.email.current.value}).then((res) => {
-      if(res.data.data.exists === false) {
-        this.nextButton.current.click()
-      } else {
-        this.email.current.fail("อีเมลนี้ถูกใช้งานแล้ว")
-      }
-
-    }).catch((error) => {
-      console.error(error)
-    })
-    e.preventDefault()
-  }
-
-  register(event) {
-    const email = this.email.current.value
-    const password =this.pwd.current.value
-    const krubId =this.krubId.current.value
-    const loginAccount = {email, password}
-    const user = {krubId}
-
-    Api.post('/register', {loginAccount, user}).then(() => {
+  register() {
+    const registerModel = {
+      email: this.email,
+      pwd: this.pwd,
+      krubId: this.krubId
+    }
+    Api.post('/register', registerModel).then(() => {
       this.nextButton.current.click()
       // location.href = '/explore'
     }).catch((error) => {
-      this.krubId.current.fail(error.response.data.error.message)
+      console.error(error)
     })
     event.preventDefault()
   }
@@ -91,8 +57,10 @@ class RegisterStudent extends React.Component {
       <div className="authentication-forgot d-flex align-items-center justify-content-center">
         <div className="card shadow-lg forgot-box">
           <div className="card-body p-md-5">
-            <h4 className="font-weight-bold">ลงทะเบียนฟรี</h4>
-            <p className="text-muted">ยินดีต้อนรับนักเรียนคนใหม่ สมัครเป็นติวเตอร์ <a href="/register/tutor">คลิกที่นี่</a></p>
+            <h4 className="font-weight-bold">ลงทะเบียนสำหรับนักเรียน</h4>
+            <p className="text-muted">ยินดีต้อนรับนักเรียนคนใหม่ สมัครเป็นติวเตอร์<Link to="/register/tutor">คลิกที่นี่</Link>
+              <a ref={this.nextButton} href="#carouselExampleSlidesOnly" data-slide="next" className={isDebugMode?'':'d-none'}>test next</a>
+            </p>
 
 
             <div id="carouselExampleSlidesOnly" className="carousel slide" data-interval="false" data-ride="carousel">
@@ -112,48 +80,18 @@ class RegisterStudent extends React.Component {
                 </div>
                 <div className="carousel-item">
 
-                  <Form validate={this.validate} onSubmit={e => this.checkEmail(e)}>
+                  <LoginAccountForm onComplete={({email, pwd}) => {
+                    this.email = email
+                    this.pwd = pwd
+                    this.nextButton.current.click()
+                  }}/>
 
-                    <div className="form-group">
-                      <label>อีเมล</label>
-                      <Input ref={this.email} id="email" type="email" className="form-control form-control-lg" placeholder="example@gmail.com"
-                             required invalidmessage="โปรดกรอกอีเมลให้ถูกต้อง"/>
-
-                    </div>
-                    <div className="form-group mt-2">
-                      <label>รหัสผ่าน</label>
-
-                      <Input ref={this.pwd} id="pwd" type="password" className="form-control form-control-lg" placeholder="" required invalidmessage="กรุณากรอกรหัสผ่าน"/>
-
-                    </div>
-                    <div className="form-group mt-2">
-                      <label>ยืนยันรหัสผ่าน</label>
-                      <Input ref={this.pwd2} id="pwd2" type="password" className="form-control form-control-lg" placeholder="" required invalidmessage="กรุณากรอกยืนยันรหัสผ่าน"/>
-                    </div>
-                    <button id="submit-login-btn" type="submit" className="btn btn-primary btn-lg btn-block">ลงทะเบียน
-                    </button>
-                    <a ref={this.nextButton} href="#carouselExampleSlidesOnly" data-slide="next" className="btn btn-link btn-lg btn-block d-nonex" >test next</a>
-                  </Form>
                 </div>
                 <div className="carousel-item">
-
-                  <Form onSubmit={e => this.register(e)}>
-
-                    <div className="form-group">
-                      <label>กำหนด @KrubID ให้สามารถจำได้ง่าย และสื่อถึงตัวคุณ เพื่อให้สามารถค้นหาเจอได้ง่าย (สามารถเปลี่ยนได้ภายหลัง)</label>
-                      <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                          <span className="input-group-text" id="basic-addon1">@</span>
-                        </div>
-                        <Input ref={this.krubId} type="text" className="form-control form-control-lg" placeholder="เช่น พี่มายด์, พี่แองจี้" aria-label="KrubID"
-                               aria-describedby="basic-addon1" required pattern="[A-Za-z0-9ก-ฮ]*" invalidmessage="โปรดกรอกตัวอักษร ภาษาไทย หรืออ ังกฤษ หรือ ตัวเลข0-9"/>
-                      </div>
-                    </div>
-                    <button id="submit-login-btn" type="submit" className="btn btn-primary btn-lg btn-block">ตั้งชื่อ
-                    </button>
-                    <a ref={this.nextButton} href="#carouselExampleSlidesOnly" data-slide="next" className="btn btn-link btn-lg btn-block d-nonex" >test next</a>
-                    {/*</form>*/}
-                  </Form>
+                  <KrubIdForm onComplete={krubId => {
+                    this.krubId = krubId
+                    this.register()
+                  }}/>
                 </div>
                 <div className="carousel-item">
 
