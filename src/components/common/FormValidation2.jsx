@@ -87,7 +87,6 @@ class InvalidFeedback extends React.Component {
   }
 
   componentDidMount() {
-    console.log('did mount')
 
     this.props.input.current.addEventListener("input", (e) => {
       this.props.input.current.classList.remove('is-invalid')
@@ -130,7 +129,6 @@ class Input extends React.Component {
   }
 
   componentDidMount() {
-    console.log('did mount')
     this.inputElement.current.addEventListener('input', (e) => {
       this.value = e.target.value
       //todo - this part is a bit tricky

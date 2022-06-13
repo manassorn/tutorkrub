@@ -16,7 +16,9 @@ class ButtonSpinner extends React.Component {
   
   click(e) {
     this.setState({spin: true})
-    this.props.onClick?.()
+    if(this.props.onClick) {
+      this.props.onClick()
+    }
   }
 
   render() {

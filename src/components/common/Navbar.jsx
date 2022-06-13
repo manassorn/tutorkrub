@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import Api from '../../Api'
 import Cookie from '../../Cookie'
 import Auth from '../../Auth'
+import {toggleDebugMode} from "../../Debug";
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -111,6 +112,7 @@ class Navbar extends React.Component {
                 <div className="flex-grow-1" onClick={e => this.activateSecretPanel(e)}>
 
                   <Link className="pl-4" to="/explore">สำรวจวิชาเรียน <span className="sr-only">(current)</span></Link>
+                  <a onClick={toggleDebugMode}>.</a>
 
                 </div>
                 

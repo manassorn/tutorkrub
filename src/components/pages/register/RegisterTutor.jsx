@@ -1,4 +1,4 @@
-import React, {useState, useRef} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import Api from '../../../Api'
 import Auth from '../../../Auth'
 import FormValidation from '../../common/FormValidation'
@@ -7,77 +7,20 @@ import Constant from "../../../Constant";
 import ButtonSpinner from "../../common/ButtonSpinner";
 import Croppie from "croppie";
 import "croppie/croppie.css"
+import {isDebugMode} from "../../../Debug";
 
 class Register extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      isEditingProfilePhoto: false
     }
-    this.email = React.createRef()
-    this.pwd = React.createRef()
-    this.pwd2 = React.createRef()
-    this.krubId = React.createRef()
     this.nextButton = React.createRef()
-    this.uploadInput = React.createRef()
-    this.uploadPreview = React.createRef()
-    this.validate = this.validate.bind(this)
-    this.register = this.register.bind(this)
-    this.readImageFile = this.readImageFile.bind(this)
+    this.registerTutor = this.registerTutor.bind(this)
   }
 
   componentDidMount() {
 
-    const el = this.uploadPreview.current
-    this.croppieInstance = new Croppie(el, {
-      viewport: {
-        width: 200,
-        height: 200,
-        type: 'square'
-      },
-      boundary: {
-        width: 300,
-        height: 300
-      },
-      enableOrientation: true,
-      enableExif: true
-    })
-    this.croppieInstance.bind({
-      url: '/assets/images/avatars/avatar-1.png'
-    });
-  }
-
-  validate() {
-    if(this.pwd.current.value !== this.pwd2.current.value) {
-      try{
-        this.pwd2.current.fail("โปรดยืนยันรหัสผ่านให้ถูกต้อง")
-      } catch (e) {
-        console.error(e)
-      }
-      return false
-    }
-    return true
-  }
-
-  readImageFile() {
-    const input = this.uploadInput.current
-    var that = this
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      reader.onload = function(event) {
-        that.croppieInstance.bind( {
-          url: event.target.result,
-        });
-
-        that.setState({isEditingProfilePhoto: true})
-
-      };
-
-      reader.readAsDataURL(input.files[0]);
-    }/* else {
-      alert('Sorry - you\'re browser doesn\'t support the FileReader API');
-    }*/
   }
 
   loginFb() {
@@ -99,37 +42,24 @@ class Register extends React.Component {
     });
   }
 
-  checkEmail(e) {
-    Api.post('/register/checkemail', {email:this.email.current.value}).then((res) => {
-      if(res.data.data.exists === false) {
-        this.nextButton.current.click()
-      } else {
-        this.email.current.fail("อีเมลนี้ถูกใช้งานแล้ว")
-      }
+  registerTutor(event) {
+    const registerTutorData = {
+      email: this.email,
+      pwd: this.pwd,
+      krubId: this.krubId,
+      tutorSubjects: this.tutorSubjects,
+      tutorLevels: this.tutorLevels,
+      tutorPrice: this.tutorPrice
+    }
 
-    }).catch((error) => {
-      console.error(error)
-    })
-    e.preventDefault()
-  }
-
-  register(event) {
-    const email = this.email.current.value
-    const password =this.pwd.current.value
-    const krubId =this.krubId.current.value
-    const loginAccount = {email, password}
-    const user = {krubId}
-
-    Api.post('/register', {loginAccount, user}).then(() => {
+    Api.post('/register/tutor', registerTutorData).then(() => {
       this.nextButton.current.click()
       // location.href = '/explore'
     }).catch((error) => {
-      this.krubId.current.fail(error.response.data.error.message)
+      console.error(error)
     })
     event.preventDefault()
   }
-
-
 
   render() {
     return <div className="bg-forgot wrapper" style={{backgroundImage:'url(https://i.imgur.com/QOqce2G.png)'}}>
@@ -137,7 +67,11 @@ class Register extends React.Component {
         <div className="card shadow-lg forgot-box">
           <div className="card-body p-md-5">
             <h4 className="font-weight-bold">มาเป็นติวเตอร์กันเถอะ</h4>
-            <p className="text-muted">มาร่วมเป็นส่วนหนึ่งกับเรา!</p>
+            <p className="text-muted">มาร่วมเป็นส่วนหนึ่งกับเรา!
+              <a ref={this.nextButton} href="#carouselExampleSlidesOnly" data-slide="next" className={isDebugMode?'':'d-none'}>test next</a>
+            </p>
+
+
 
 
             <div id="carouselExampleSlidesOnly" className="carousel slide" data-interval="false" data-ride="carousel">
@@ -157,74 +91,34 @@ class Register extends React.Component {
                 </div>
                 <div className="carousel-item">
 
-                  <Form validate={this.validate} onSubmit={e => this.checkEmail(e)}>
-
-                    <div className="form-group">
-                      <label>อีเมล</label>
-                      <Input ref={this.email} id="email" type="email" className="form-control form-control-lg" placeholder="example@gmail.com"
-                             required invalidmessage="โปรดกรอกอีเมลให้ถูกต้อง"/>
-
-                    </div>
-                    <div className="form-group mt-2">
-                      <label>รหัสผ่าน</label>
-
-                      <Input ref={this.pwd} id="pwd" type="password" className="form-control form-control-lg" placeholder="" required invalidmessage="กรุณากรอกรหัสผ่าน"/>
-
-                    </div>
-                    <div className="form-group mt-2">
-                      <label>ยืนยันรหัสผ่าน</label>
-                      <Input ref={this.pwd2} id="pwd2" type="password" className="form-control form-control-lg" placeholder="" required invalidmessage="กรุณากรอกยืนยันรหัสผ่าน"/>
-                    </div>
-                    <button id="submit-login-btn" type="submit" className="btn btn-primary btn-lg btn-block">ลงทะเบียน
-                    </button>
-                    <a ref={this.nextButton} href="#carouselExampleSlidesOnly" data-slide="next" className="btn btn-link btn-lg btn-block d-nonex" >test next</a>
-                  </Form>
+                  <LoginAccountForm onComplete={({email, pwd}) => {
+                    this.email = email
+                    this.pwd = pwd
+                    this.nextButton.current.click()
+                  }}/>
                 </div>
                 <div className="carousel-item">
 
-                  <KrubIdForm onComplete={(krubId) => {
+                  <KrubIdForm onComplete={krubId => {
+                    console.log('krubId',krubId)
                     this.krubId = krubId
                     this.nextButton.current.click()
                   }}/>
                 </div>
                 <div className="carousel-item">
-                  <div  className={this.state.isEditingProfilePhoto?'d-none':''}>
-                    <div className="border-primary radius-30 p-5 text-center" style={{borderStyle:'dashed',borderWidth:'5px'}}>
-
-                      <a className="btn btn-link btn-lg btn-block d-nonex" onClick={e => this.uploadInput.current.click()}>
-                        <i className="bx bx-image bx-md"></i><br/>
-                        อัพโหลดรูปโปรไฟล์
-                      </a>
-                      <input type="file" ref={this.uploadInput} id="upload-input" accept="image/*" className="d-none"
-                             onChange={this.readImageFile} required/>
-
-
-                    </div>
-                  </div>
-                  <div className={this.state.isEditingProfilePhoto?'':'d-none'}>
-                    <div ref={this.uploadPreview} id="upload-preview" style={{height: '350px'}}></div>
-
-                    <div className="pb-3 text-center" style={{lineHeight: '30px'}}>
-                      <a onClick={e => this.croppieInstance.rotate(-90)}
-                         className="btn btn-outline-primary">หมุนรูป <i
-                        className="bx bx-rotate-right"></i></a>   &nbsp;&nbsp;&nbsp;
-                      <a onClick={e => this.uploadInput.current.click()}
-                         className="btn btn-outline-primary">เลือกรูปใหม่ <i className="bx bx-image"></i></a>
-                    </div>
-                    <ButtonSpinner onClick={e => this.uploadImageFile(e)}/>
-                  </div>
-
-                  <a ref={this.nextButton} href="#carouselExampleSlidesOnly" data-slide="next" className="btn btn-link btn-lg btn-block d-nonex" >test next</a>
-
+                  <TutorProfileImageForm onComplete={imageBlob => {
+                    this.tutorProfileImageBlob = imageBlob
+                    this.nextButton.current.click()
+                  }}/>
                 </div>
                 <div className="carousel-item">
-                  <TutorSubjectsUpdate onComplete={subjects => {
+                  <TutorSubjectsForm onComplete={subjects => {
                     this.tutorSubjects = subjects
                     this.nextButton.current.click()
                   }}/>
                 </div>
                 <div className="carousel-item">
-                  <TutorLevelsUpdate onComplete={levels => {
+                  <TutorLevelsForm onComplete={levels => {
                     this.tutorLevels = levels
                     this.nextButton.current.click()
                   }}/>
@@ -233,14 +127,19 @@ class Register extends React.Component {
                   <TutorPriceUpdate onComplete={price => {
                     this.tutorPrice = price
                     this.nextButton.current.click()
+
+                    console.log(this.email,this.pwd)
+                    console.log(this.krubId)
+                    console.log(this.tutorSubjects,this.tutorLevels,this.tutorPrice)
+                    console.log(this.tutorProfileImageBlob)
                   }}/>
                 </div>
                 <div className="carousel-item">
 
                   <div className="text-center">
                     <svg viewBox="0 0 26 26" xmlns="http://www.w3.org/2000/svg" style={{width: '120px'}}>
-                      <g stroke="#007bff" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round"
-                         stroke-linejoin="round">
+                      <g stroke="#007bff" strokeWidth="1" fill="none" fillRule="evenodd" strokeLinecap="round"
+                         strokeLinejoin="round">
                         <path className="circle"
                               d="M13 1C6.372583 1 1 6.372583 1 13s5.372583 12 12 12 12-5.372583 12-12S19.627417 1 13 1z"/>
                         <path className="tick" d="M6.5 13.5L10 17 l8.808621-8.308621"/>
@@ -267,15 +166,78 @@ class Register extends React.Component {
   }
 }
 
-function KrubIdForm({onComplete}) {
-  const krubId = useRef(null);
+function LoginAccountForm({onComplete}) {
+  const pwd = useRef(null)
+  const pwd2 = useRef(null)
+  const email = useRef(null)
 
-  function save() {
-    onComplete(krubId.current.value)
+  function validate() {
+    if(pwd.current.value !== pwd2.current.value) {
+      pwd2.current.fail("โปรดยืนยันรหัสผ่านให้ถูกต้อง")
+      return false
+    }
+    return true
+  }
+
+  function checkEmail(e) {
+    Api.post('/register/checkemail', {email: email.current.value}).then((res) => {
+      if(res.data.data.exists === false) {
+        onComplete({
+          email: email.current.value,
+          pwd: pwd.current.value
+        })
+      } else {
+        email.current.fail("อีเมลนี้ถูกใช้งานแล้ว")
+      }
+    }).catch((error) => {
+      console.error(error)
+    })
+    e.preventDefault()
   }
 
   return (
-    <Form>
+    <Form validate={validate} onSubmit={e => checkEmail(e)}>
+
+      <div className="form-group">
+        <label>อีเมล</label>
+        <Input ref={email} id="email" type="email" className="form-control form-control-lg" placeholder="example@gmail.com"
+               required invalidmessage="โปรดกรอกอีเมลให้ถูกต้อง"/>
+
+      </div>
+      <div className="form-group mt-2">
+        <label>รหัสผ่าน</label>
+
+        <Input ref={pwd} id="pwd" type="password" className="form-control form-control-lg" placeholder="" required invalidmessage="กรุณากรอกรหัสผ่าน"/>
+
+      </div>
+      <div className="form-group mt-2">
+        <label>ยืนยันรหัสผ่าน</label>
+        <Input ref={pwd2} id="pwd2" type="password" className="form-control form-control-lg" placeholder="" required invalidmessage="กรุณากรอกยืนยันรหัสผ่าน"/>
+      </div>
+      <button type="submit" className="btn btn-primary btn-lg btn-block">ลงทะเบียน</button>
+    </Form>
+  )
+}
+
+function KrubIdForm({onComplete}) {
+  const krubId = useRef(null);
+
+
+  function checkKrubId(e) {
+    Api.post('/register/checkkrubid', {krubId: krubId.current.value}).then((res) => {
+      if(res.data.data.exists === false) {
+        onComplete(krubId.current.value)
+      } else {
+        krubId.current.fail("Krub ID นี้ถูกใช้งานแล้ว")
+      }
+    }).catch((error) => {
+      console.error(error)
+    })
+    e.preventDefault()
+  }
+
+  return (
+    <Form onSubmit={e => checkKrubId(e)}>
       <div className="form-group">
         <label>กำหนด @KrubID ให้สามารถจำได้ง่าย และสื่อถึงตัวคุณ เพื่อให้สามารถค้นหาเจอได้ง่าย (สามารถเปลี่ยนได้ภายหลัง)</label>
         <div className="input-group mb-3">
@@ -286,18 +248,100 @@ function KrubIdForm({onComplete}) {
                  aria-describedby="basic-addon1" required pattern="[A-Za-z0-9ก-ฮ]*" invalidmessage="โปรดกรอกตัวอักษร ภาษาไทย หรืออ ังกฤษ หรือ ตัวเลข0-9"/>
         </div>
       </div>
-      <button onClick={save} className="btn btn-primary btn-lg btn-block">ตั้งชื่อ</button>
-      <a onClick={onComplete} className="btn btn-link btn-lg btn-block d-nonex" >test next</a>
+      <button type="submit" className="btn btn-primary btn-lg btn-block">ตั้งชื่อ</button>
       {/*</form>*/}
     </Form>
   )
 }
 
-function TutorProfileImageUpdate({onComplete}) {
+function TutorProfileImageForm({onComplete}) {
+  const [isEditMode, setEditMode] = useState(false)
+  const browseFileInput = useRef(null)
+  const imageEditor = useRef(null)
+  let croppieInstance = useRef(null)
 
+  useEffect(() => {
+    croppieInstance.current = new Croppie(imageEditor.current, {
+      viewport: {
+        width: 200,
+        height: 200,
+        type: 'square'
+      },
+      boundary: {
+        width: 300,
+        height: 300
+      },
+      enableOrientation: true,
+      enableExif: true
+    })
+    croppieInstance.current.bind({
+      url: '/public/assets/images/avatars/avatar-1.png'
+    });
+  }, [])
+
+  function onImageFileChange() {
+    const input = browseFileInput.current
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        croppieInstance.current.bind({
+          url: event.target.result,
+        });
+        setEditMode(true)
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+  function save() {
+    croppieInstance.current.result({
+      type: "blob",
+      size: {width:700},
+      format: "png",
+      quality: 1
+    }).then(function(imageBlob) {
+      //canvas.toBlob((blob) => {
+      // var formData = new FormData()
+      // formData.append('file', blob)
+      onComplete(imageBlob)
+
+    })
+  }
+
+  return (
+    <>
+      <div  className={isEditMode?'d-none':''}>
+        <div className="border-primary radius-30 p-5 text-center" style={{borderStyle:'dashed',borderWidth:'5px'}}>
+
+          <a className="btn btn-link btn-lg btn-block d-nonex" onClick={e => browseFileInput.current.click()}>
+            <i className="bx bx-image bx-md"></i><br/>
+            อัพโหลดรูปโปรไฟล์
+          </a>
+          <input type="file" ref={browseFileInput} id="upload-input" accept="image/*" className="d-none"
+                 onChange={onImageFileChange} required/>
+
+
+        </div>
+      </div>
+      <div className={isEditMode?'':'d-none'}>
+        <div ref={imageEditor} style={{height: '350px'}}></div>
+
+        <div className="pb-3 text-center" style={{lineHeight: '30px'}}>
+          <a onClick={e => croppieInstance.rotate(-90)}
+             className="btn btn-outline-primary">หมุนรูป <i
+            className="bx bx-rotate-right"></i></a>   &nbsp;&nbsp;&nbsp;
+          <a onClick={e => browseFileInput.current.click()}
+             className="btn btn-outline-primary">เลือกรูปใหม่ <i className="bx bx-image"></i></a>
+        </div>
+        <button onClick={save} className="btn btn-primary btn-lg btn-block">บันทึก</button>
+        {/*<ButtonSpinner  onClick={e => save}/>*/}
+      </div>
+
+    </>
+  )
 }
 
-function TutorSubjectsUpdate({onComplete}) {
+function TutorSubjectsForm({onComplete}) {
 
   const checkBoxes = []
   const [buttonDisable, setButtonDisable] = useState(true)
@@ -317,18 +361,17 @@ function TutorSubjectsUpdate({onComplete}) {
         <label>สอนวิชาอะไร (เลือกได้หลายวิชา)</label><br/>
 
         {Constant.subjects.map((subject, i) => (
-          <CheckBoxBadge ref={ele => checkBoxes[i] = ele} label={subject} onClick={onClick}/>
+          <CheckBoxBadge ref={ele => checkBoxes[i] = ele} label={subject} key={subject} onClick={onClick}/>
         ))}
 
       </div>
       <button onClick={save} className="btn btn-primary btn-lg btn-block" disabled={buttonDisable}>บันทึก
       </button>
-      <a onClick={onComplete} className="btn btn-link btn-lg btn-block d-nonex" >test next</a>
     </>
   )
 }
 
-function TutorLevelsUpdate ({onComplete}) {
+function TutorLevelsForm ({onComplete}) {
 
   const checkBoxes = []
   const [buttonDisable, setButtonDisable] = useState(true)
@@ -347,12 +390,10 @@ function TutorLevelsUpdate ({onComplete}) {
       <div className="form-group">
         <label>สอนชั้นอะไร (เลือกได้หลายชั้น)</label><br/>
         {Constant.schoolLevels.map((level, i) => (
-          <CheckBoxBadge ref={ele => checkBoxes[i] = ele} label={level} onClick={e => onClick()}/>
+          <CheckBoxBadge ref={ele => checkBoxes[i] = ele} label={level} key={level} onClick={e => onClick()}/>
         ))}
       </div>
-      <button onClick={save} className="btn btn-primary btn-lg btn-block" disabled={buttonDisable}>บันทึก
-      </button>
-      <a onClick={onComplete} className="btn btn-link btn-lg btn-block d-nonex" >test next</a>
+      <button onClick={save} className="btn btn-primary btn-lg btn-block" disabled={buttonDisable}>บันทึก</button>
     </>
   )
 }
@@ -381,7 +422,6 @@ function TutorPriceUpdate({onComplete}) {
       </div>
       <button onClick={save} className="btn btn-primary btn-lg btn-block">บันทึก
       </button>
-      <a onClick={onComplete} className="btn btn-link btn-lg btn-block d-nonex" >test next</a>
     </>
   )
 }
