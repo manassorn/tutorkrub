@@ -20,10 +20,10 @@ Api.interceptors.response.use(function(response) {
   return response;
 }, function(error) {
 
-  if (error.config.url != '/user/me' && error.config.url != '/authen/login' && error.response.status == 401) {
-    
-    location.href = '/login?redirect=' + location.pathname
-  }
+  // if (error.config.url != '/user/me' && error.config.url != '/authen/login' && error.response.status == 401) {
+  //
+  //   location.href = '/login?redirect=' + location.pathname
+  // }
   return Promise.reject(error);
 });
 

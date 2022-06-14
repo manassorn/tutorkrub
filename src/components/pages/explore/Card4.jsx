@@ -35,7 +35,7 @@ class Card4 extends React.Component {
           <img className="mr-3 rounded-circle mb-3" src={tutor.avatarUrl} alt="" width="80"/>
         </div>
         <div className="flex-grow-1">
-          <h5 className="font-weight-bold mt-2 mb-1">{tutor.name}</h5>
+          <h5 className="font-weight-bold mt-2 mb-1">{tutor.krubId}</h5>
           
           <p className="text-secondary mb-3">ติวเตอร์</p>
 
@@ -45,16 +45,16 @@ class Card4 extends React.Component {
       </div>
           <div>
             <i className="lni lni-graduation bx-xs mr-1 text-primary" />
-            <span>{tutor.teachingSubjects.join(', ')}</span>
+            <span>{tutor.tutorSubjects && tutor.tutorSubjects.join(', ')}</span>
           </div>
           <div>
             <i className="lni lni-flag-alt bx-xs mr-1 text-primary" />
-            <span>{tutor.teachingLevels.join(', ') }</span>
+            <span>{tutor.tutorLevels && tutor.tutorLevels.join(', ') }</span>
 
           </div>
           <div>
             <i className="lni lni-coin bx-xs mr-1 text-primary" />
-            <span>฿{tutor.price} / ชั่วโมง</span>
+            <span>฿{tutor.price || tutor.tutorPrice} / ชั่วโมง</span>
 
           </div>
 
