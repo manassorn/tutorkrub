@@ -16,10 +16,10 @@
 .heart {
   width: 26px;
   height: 26px;
-  background-image: url(/public/assets/images/icons/icon-heart.png);
+  background-image: url(/public/assets/images/icons/icon-heart.svg);
 
   &.active {
-    background-image: url(/public/assets/images/icons/icon-heart-fill.png);
+    background-image: url(/public/assets/images/icons/icon-heart-fill.svg);
   }
 }
 

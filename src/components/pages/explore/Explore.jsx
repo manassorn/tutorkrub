@@ -55,7 +55,7 @@ class Explore extends React.Component {
     }
 
     render() {
-      return  <div style={{background:'#F5F6F9'}}>
+      return  <div>
       <div className="container">
         <div className=" border-bottom pb-0 pt-3">
 
@@ -97,7 +97,7 @@ class Explore extends React.Component {
        </div>
 
         <div className="my-4">
-          <h1>คณิตศาสตร์</h1>
+        {/*  <h1>คณิตศาสตร์</h1>*/}
         </div>
         <div id="course-cards" className="row">
 
@@ -115,7 +115,7 @@ class Explore extends React.Component {
 
         <div className="row">
          <div className="col-sm-12 col-md-6 offset-md-3">
-          <button className="btn btn-block btn-outline-primary">next</button>
+          {/*<button className="btn btn-block btn-outline-primary">next</button>*/}
          </div>
         </div>
        </div>
