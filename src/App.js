@@ -8,6 +8,7 @@ import Checkout from "./components/pages/checkout/Checkout"
 import CheckoutCreditCard from "./components/pages/checkout/CheckoutCreditCard"
 import CourseAdd from "./components/pages/course/CourseAdd"
 import CourseEdit from "./components/pages/course/CourseEdit"
+import Tutor from "./components/pages/tutor/Tutor"
 import Explore from "./components/pages/explore/Explore"
 import Profile from "./components/pages/profile/Profile"
 import ProfileEdit from "./components/pages/profile/ProfileEdit"
@@ -69,6 +70,7 @@ class App extends React.Component {
               <Route path="/course/edit" element={<CourseEdit/>} />
               <Route path="/explore" element={<Explore/>} />
               <Route path="/course" element={<Course/>} />
+              <Route path="/tutor/:tutorId" element={<Tutor/>} />
               <Route path="/pay" element={<Pay/>} />
               <Route path="/profile/tutor" element={<ProfileTutor/>} />
               <Route path="/user/edit/avatar" element={<ProfileEditAvatar/>} />
