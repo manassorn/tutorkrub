@@ -204,15 +204,15 @@ class CalendarPartOfDay extends React.Component {
 
     render() {
       return <div>
-       <div class="row flex-nowrap">
-        <div class="col-3"> </div>
+       <div className="row flex-nowrap">
+        <div className="col-3"> </div>
         {this.daysOfWeekMini.map((dow,i) => (
-            <div class="col-1 m-1 p-0 text-center">
+            <div className="col-1 m-1 p-0 text-center" key={dow}>
             <div className="font-weight-boldx">
               {dow}
             </div>
             {this.startOfWeek && 
-              <div className={`cal-date h5 ${this.todayClassName(i)}`}>{addDays(this.startOfWeek, i).getDate()}</div>
+              <div className={`cal-date h6 ${this.todayClassName(i)}`}>{addDays(this.startOfWeek, i).getDate()}</div>
             }
             {/*this.startOfWeek && 
               <div>{Utils.formatShortMonth(addDays(this.startOfWeek, i))}</div>*/
@@ -225,14 +225,14 @@ class CalendarPartOfDay extends React.Component {
       </div>
       
       {[0,1,2,3].map(p => (
-        <div class="row flex-nowrap">
-          <div class="col-3">{this.partsOfDay[p]}<br/>{this.partsOfDayTime[p]}</div>
+        <div className="row flex-nowrap" key={p}>
+          <div className="col-3">{this.partsOfDay[p]}<br/>{this.partsOfDayTime[p]}</div>
           
           {[0,1,2,3,4,5,6].map(d => (
-            <div class="part-of-time col-1 rounded m-1 bg-light p-0" data-toggle="modal" data-target={`#calendarPartOfDayModal${this.modalRandom}`} onClick={e => this.selectPartOfDay(d,p)}>
+            <div key={d} className="part-of-time col-1 rounded m-1 bg-light p-0" data-toggle="modal" data-target={`#calendarPartOfDayModal${this.modalRandom}`} onClick={e => this.selectPartOfDay(d,p)}>
             
             {[0,1,2,3,4,5].map(h => (
-              <div className={`hr ${this.getHrClassName(d,p,h)}`}> &nbsp;</div>
+              <div className={`hr ${this.getHrClassName(d,p,h)}`} key={h}> &nbsp;</div>
 
             ))}
 
@@ -245,21 +245,21 @@ class CalendarPartOfDay extends React.Component {
         </div>
       ))}
       
-        <div class="modal fade" id={`calendarPartOfDayModal${this.modalRandom}`} tabindex="-1" role="dialog" aria-labelledby="calendarPartOfDayModalTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="calendarPartOfDayModalTitle">เลือกเวลาที่สะดวก</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <div className="modal fade" id={`calendarPartOfDayModal${this.modalRandom}`} tabIndex="-1" role="dialog" aria-labelledby="calendarPartOfDayModalTitle" aria-hidden="true">
+    <div className="modal-dialog modal-dialog-centered" role="document">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title" id="calendarPartOfDayModalTitle">เลือกเวลาที่สะดวก</h5>
+          <button type="button" className="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <div class="pt-2 pb-2 mb-2 font-weight-bold">{this.daysOfWeek[this.state.clickedDayIndex]}</div>
+        <div className="modal-body">
+          <div className="pt-2 pb-2 mb-2 font-weight-bold">{this.daysOfWeek[this.state.clickedDayIndex]}</div>
           
           {[0,1,2,3,4,5].map(i => (
     
-<label class="checkbox px-3 py-2 bg-light hour">
+<label className="checkbox px-3 py-2 bg-light hour" key={i}>
     <input style={{verticalAlign: 'middle'}} type="checkbox" onChange={e => this.onModalCheckboxChange(i)} checked={this.state.modalCheckboxes[i]} ref={this.hourCheckboxRefs[i]} />
     <span style={{verticalAlign: 'middle'}} className={`ml-2 ${this.getHrClassNameForModal(this.state.clickedDayIndex, this.state.clickedPartIndex,i)}`}>{this.state.clickedPartIndex * 6 + i}:00</span>
 </label>
@@ -269,8 +269,8 @@ class CalendarPartOfDay extends React.Component {
          
           
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-primary btn-block" data-dismiss="modal" onClick={this.saveHours}>บันทึก</button>
+        <div className="modal-footer">
+          <button type="button" className="btn btn-outline-primary btn-block" data-dismiss="modal" onClick={this.saveHours}>บันทึก</button>
         </div>
       </div>
     </div>

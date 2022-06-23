@@ -7,7 +7,7 @@ import SimpleTitle from '../common/SimpleTitle'
 import './CalendarOutlook.css'
 import './Patterns.css'
 
-class CalendarPartOfDay extends React.Component {
+class CalendarOutlook extends React.Component {
 
 
     constructor(props) {
@@ -277,4 +277,4 @@ class CalendarPartOfDay extends React.Component {
     }
 }
 
-export default CalendarPartOfDay
+export default CalendarOutlook

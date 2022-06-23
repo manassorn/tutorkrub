@@ -55,7 +55,7 @@ class Card4 extends React.Component {
 
                 </div>
                 <div className="mt-3">
-                  <Link to={`/tutor/${tutor.id}`} className="stretched-link">ดูรายละเอียด</Link>
+                  <Link to={`/explore/tutor/${tutor.id}`} className="stretched-link">ดูรายละเอียด</Link>
                 </div>
 
               </div>

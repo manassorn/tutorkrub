@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import Api from '../../../Api'
+import CalendarCarousel2 from "../../common/CalendarCarousel2";
 
 function Tutor() {
   let { tutorId } = useParams();
@@ -40,7 +41,6 @@ function Tutor() {
                   </p>
                   <p className="card-text">
                   </p>
-                  <a href="#" className="btn btn-primary">นัดหมายเวลา</a>
                 </div>
               </div>
             </div>
@@ -50,21 +50,21 @@ function Tutor() {
               <div className="p-2 w-100 text-center">0 ชั่วโมง</div>
             </div>
           </div>
-        </div>
-        <div className="col-12 col-lg-4 col-xl-4">
-          <div className="card">
-            <div className="card-body">
-              a
-            </div>
-          </div>
-        </div>
-        <div className="col-12 col-lg-8 col-xl-8">
           <div className="card">
             <div className="card-body">
               <h5 className="card-title">แนะนำตัว </h5>
               <p className="card-text">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
               </p>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-lg-4 col-xl-4">
+          <div className="card">
+            <div className="card-body">
+              <CalendarCarousel2/>
+
+              <a href="#" className="btn btn-primary mt-3 btn-block">นัดหมายเวลา</a>
             </div>
           </div>
         </div>

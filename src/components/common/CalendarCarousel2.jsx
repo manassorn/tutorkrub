@@ -6,7 +6,7 @@ import Api from '../../Api'
 import Utils from '../../Utils'
 import CalendarPartOfDay from './CalendarPartOfDay'
 
-class CalendarCarousel extends React.Component {
+class CalendarCarousel2 extends React.Component {
 
 
     constructor(props) {
@@ -30,29 +30,29 @@ class CalendarCarousel extends React.Component {
     render() {
       return <div>
 
-      <div class="mt-3 d-flex" role="group" aria-label="...">
+      <div className="mt-3 d-flex" role="group" aria-label="...">
         <div className="w-25 text-center">
-          <a class="left carousel-control" href="#carouselCalendar" data-slide="prev" style={{color:'black'}}>
-          <i className="bx bx-md bx-caret-left"></i>
+          <a className="left carousel-control" href="#carouselCalendar" data-slide="prev" style={{color:'black'}}>
+          <i className="bx bx-sm bx-caret-left" style={{lineHeight:1}}></i>
           </a>
         </div>
         <div className="w-100 text-center">
-          <h4 className="mb-0">กันยายน</h4>
+          <h5 className="mb-0">กันยายน</h5>
 
         </div>
         <div className="w-25 text-center">
-         <a class="left carousel-control" href="#carouselCalendar" data-slide="next" style={{color:'black'}}>
+         <a className="left carousel-control" href="#carouselCalendar" data-slide="next" style={{color:'black'}}>
 
-          <i className="bx bx-md bx-caret-right"></i>
+          <i className="bx bx-sm bx-caret-right" style={{lineHeight:1}}></i>
           </a>
 
         </div>
       </div>
       
-       <div id="carouselCalendar" class="mt-2 carousel slide" data-ride="carousel" data-interval="false">
-         <div class="carousel-inner">
+       <div id="carouselCalendar" className="mt-2 carousel slide" data-ride="carousel" data-interval="false">
+         <div className="carousel-inner">
          {Utils.range(this.numberOfWeeks).map(i => (
-            <div className={`carousel-item ${(i==0)?'active':''}`}>
+            <div className={`carousel-item ${(i==0)?'active':''}`} key={i}>
               <CalendarPartOfDay startOfWeek={addWeeks(startOfWeek(new Date()),i)} isRecurring="false" availability={this.props.availability}/>
             </div>
          ))}
@@ -63,4 +63,4 @@ class CalendarCarousel extends React.Component {
     }
 }
 
-export default CalendarCarousel
+export default CalendarCarousel2
