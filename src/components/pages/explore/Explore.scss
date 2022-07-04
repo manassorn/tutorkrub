@@ -17,6 +17,8 @@
   width: 26px;
   height: 26px;
   background-image: url(/public/assets/images/icons/icon-heart.svg);
+  z-index: 2;
+  cursor: pointer;
 
   &.active {
     background-image: url(/public/assets/images/icons/icon-heart-fill.svg);

@@ -36,14 +36,19 @@ class Login extends React.Component {
       window.FB.login(function(response) {
         if (response.authResponse) {
           const accessToken = response.authResponse.accessToken
-          Api.post('/authen/fb', { accessToken })
-            .then(response =>
-              {
-                const user = response.data.data
-                Auth.checkLogin()
-                console.log(user)
-              }
-            );
+          window.FB.api('/me', { locale: 'en_US', fields: 'name, email' },
+            function(response) {
+              console.log(response.email);
+            }
+          );
+          // Api.post('/authen/fb', { accessToken })
+          //   .then(response =>
+          //     {
+          //       const user = response.data.data
+          //       Auth.checkLogin()
+          //       console.log(user)
+          //     }
+          //   );
 
         } else {
           console.log('User cancelled login or did not fully authorize.');
