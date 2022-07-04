@@ -33,6 +33,7 @@ class Login extends React.Component {
     
     
     loginFb() {
+      console.log('aa');
       window.FB.login(function(response) {
         if (response.authResponse) {
           const accessToken = response.authResponse.accessToken
