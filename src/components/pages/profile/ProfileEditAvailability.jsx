@@ -4,7 +4,7 @@ import Auth from '../../../Auth'
 import SimpleTitle from '../../common/SimpleTitle'
 import Switcher from '../../common/Switcher'
 
-import CalendarPartOfDay from '../../common/CalendarPartOfDay'
+import CalendarAWeekPreview from '../../common/CalendarAWeekPreview'
 import CalendarCarousel from '../../common/CalendarCarousel'
 
 class ProfileEditAvailableHours extends React.Component {
@@ -66,7 +66,7 @@ class ProfileEditAvailableHours extends React.Component {
 					</label>
 				</div>
       
-      {this.state.isRecurring && <CalendarPartOfDay layer1Hex={this.state.recurringHex} ref={this.recurringCalendar} onSaved={hex => this.saveRecurring(hex)}/>}
+      {this.state.isRecurring && <CalendarAWeekPreview layer1Hex={this.state.recurringHex} ref={this.recurringCalendar} onSaved={hex => this.saveRecurring(hex)}/>}
       
       {!this.state.isRecurring && <CalendarCarousel availability={this.state.availability}/>}
       

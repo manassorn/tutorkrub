@@ -4,7 +4,7 @@ import addWeeks from "date-fns/addWeeks";
 import addDays from "date-fns/addDays";
 import Api from '../../Api'
 import Utils from '../../Utils'
-import CalendarPartOfDay from './CalendarPartOfDay'
+import CalendarAWeekPreview from './CalendarAWeekPreview'
 
 class CalendarCarousel2 extends React.Component {
 
@@ -53,7 +53,7 @@ class CalendarCarousel2 extends React.Component {
          <div className="carousel-inner">
          {Utils.range(this.numberOfWeeks).map(i => (
             <div className={`carousel-item ${(i==0)?'active':''}`} key={i}>
-              <CalendarPartOfDay startOfWeek={addWeeks(startOfWeek(new Date()),i)} isRecurring="false" availability={this.props.availability}/>
+              <CalendarAWeekPreview startOfWeek={addWeeks(startOfWeek(new Date()),i)} isRecurring="false" availability={this.props.availability}/>
             </div>
          ))}
         

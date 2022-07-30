@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import Api from '../../../Api'
 import CalendarCarousel2 from "../../common/CalendarCarousel2";
+import CalendarByWeek3Steps from "../../common/CalendarByWeek3Steps";
 
 function Tutor() {
   let { tutorId } = useParams();
@@ -58,13 +59,34 @@ function Tutor() {
               </p>
             </div>
           </div>
+          <div className="card">
+            <div className="card-body">
+              <h5 className="card-title">คอร์ส </h5>
+              <div className="media align-items-center mt-3">
+                <div className="media-body">
+                  <p className="font-weight-bold mb-0">ภาษาอังกฤษ ม.1 - ม.6</p>
+                  <p className="text-secondary mb-0">100฿/ชั่วโมง</p>
+                </div>
+                <a href="/checkout" className="btn btn-sm btn-outline-primary radius-10">นัดหมาย</a>
+              </div>
+              <hr/>
+
+              <div className="media align-items-center mt-3">
+                <div className="media-body">
+                  <p className="font-weight-bold mb-0">ภาษาอังกฤษ ม.1 - ม.6</p>
+                  <p className="text-secondary mb-0">100฿/ชั่วโมง</p>
+                </div>
+                <a href="/checkout" className="btn btn-sm btn-outline-primary radius-10">นัดหมาย</a>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="col-12 col-lg-4 col-xl-4">
           <div className="card">
             <div className="card-body">
               <CalendarCarousel2/>
 
-              <a href="#" className="btn btn-primary mt-3 btn-block">นัดหมายเวลา</a>
+              {/*<a href="#" className="btn btn-primary mt-3 btn-block">นัดหมายเวลา</a>*/}
             </div>
           </div>
         </div>
