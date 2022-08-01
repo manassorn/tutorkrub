@@ -1,7 +1,7 @@
 import React from "react";
 import Api from '../../../Api'
 import SimpleTitle from '../../common/SimpleTitle'
-import CalendarAWeekPreview from '../../common/CalendarAWeekPreview'
+import CalendarWeekPreview from '../../common/CalendarWeekPreview'
 import Constant from '../../../Constant'
 
 class CourseAdd extends React.Component {
@@ -151,7 +151,7 @@ class CourseAdd extends React.Component {
         </div>
       
         
-        <CalendarAWeekPreview onChanged={this.onCalendarChanged}/>
+        <CalendarWeekPreview onChanged={this.onCalendarChanged}/>
       
       </div>
       

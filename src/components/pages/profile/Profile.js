@@ -2,6 +2,7 @@ import React from "react";
 import Api from '../../../Api'
 import Auth from '../../../Auth'
 import SimpleTitle from '../../common/SimpleTitle'
+import CalendarWeekPreview from "../../common/CalendarWeekPreview";
 
 
 class Profile extends React.Component {
@@ -30,87 +31,174 @@ class Profile extends React.Component {
       
     }
 
-    render() {
+  render() {
 
-        return      <div className="container" style={{'maxWidth':'720px'}}>
-
-      <SimpleTitle title="โปรไฟล์"/>
-
-
-       <div className="border-top border-bottom py-4">
-        <div className="text-center d-flex justify-content-center">
-         <img src={this.state.user.avatarUrl || '/public/assets/images/avatars/avatar-default.jpg'} className="rounded-circle shadow" width="130" height="130" alt=""/>
-         <div className="m-3 text-left">
-          <h5>{this.state.user.name}</h5>
-
-          <div className="d-flex mt-2">
-           <div className="pr-3 pt-1 pb-1 border-right">
-            <h6 className="mb-0 text-muted">สอนแล้ว<br/>0</h6>
-           </div>
-           <div className="pl-3 pr-3 pt-1 pb-1 border-right">
-            <h6 className="mb-0 text-muted">สอนแล้ว<br/>0</h6>
-           </div>
-           <div className="pl-3 pr-3 pt-1 pb-1">
-            <h6 className="mb-0 text-muted">สอนแล้ว<br/>0</h6>
-           </div>
+    return <div>
+      <div className="row bg-light border-bottom">
+        <div className="offset-md-2 col-md-8">
+          <div className="media align-items-centerx py-4">
+            <div style={{width:'130px',height:'130px'}}>
+              <img src={this.state.user.avatarUrl || '/public/assets/images/avatars/avatar-default.jpg'} className="rounded-circle shadow" width="130" height="130" alt=""/>
+            </div>
+            <div className="media-body pl-3">
+              <h4 className="mb-0 font-weight-bold">Manassorn</h4>
+              <p className="mb-0 text-secondary">@manassorn</p>
+            </div>
+            <div className={'px-4'}>
+              <button className={'btn btn-primary px-5'}>แก้ไขโปรไฟล์</button>
+            </div>
           </div>
-
-
-         </div>
         </div>
-        
-        <div className="row mt-3">
-          <div className="offset-md-2 col-md-4 col-6">
-            <a href="/user/edit" className="btn btn-block btn-outline-primary radius-10">แก้ไขโปรไฟล์</a>
+      </div>
 
+      <div className="row">
+        <div className="offset-md-2 col-md-8">
+          <div className="media align-items-center radius-10 mt-4 border" style={{backgroundColor:'#8EE9EE'}}>
+            <div style={{width:'130px'}}>
+              <img src="/public/assets/images/tutor-left.jpg" width="130" className={'radius-10'}/>
+            </div>
+            <div className="media-body pl-3 pb-3">
+              <h4 className="mb-0 font-weight-bold">สนใจเป็นติวเตอร์</h4>
+              <p className="mb-0 text-secondary">@manassorn</p>
+            </div>
+            <div className={'px-4'}>
+              <button className={'btn btn-primary px-5'}>สมัครตอนนี้</button>
+            </div>
           </div>
-          <div className="col-md-4 col-6">
-            <a href="/user/edit/availability" className=" btn btn-block btn-outline-primary radius-10">เวลาที่สะดวกสอน
-              <span className="bx-flashing badge badge-pill badge-danger">1</span>
-            </a>
-
-          </div>
-
-
         </div>
-       </div>
-
-
-       <div className="py-4">
-        <div className="text-center d-flex justify-content-between align-items-center">
-         <h5>คอร์สของฉัน</h5>
-         <a href="/course/add" className="btn btn-primary ml-auto radius-10"><i className="bx bx-plus"></i> เพิ่มคอร์ส</a>
-
-        </div>
-       </div>
+      </div>
 
 
       <div className="row">
-        
-      
-       
-       {this.state.courses.map(course => (
-      <div className="course-card col-lg-4" key={course.id}>
-        <div className="card radius-10 border">
-         <div style={{borderLeft:"solid 5px green"}} className="radius-10 card-body">
-            <h5 className="card-title">{course.title}</h5>
-            <p className="card-text">฿{course.price} . {course.schoolLevel} . {course.subject}</p>
-
-
-            <a href={`/course/edit/${course.id}`} className="card-link stretched-link">แก้ไข</a>
-
-
-         </div>
+        <div className="offset-md-2 col-md-8">
+          <div className="media align-items-center radius-10 mt-4 border text-white" style={{backgroundColor:'#006DB6'}}>
+            <div style={{width:'130px'}}>
+              <img src="/public/assets/images/share-social.png" width="130" className={'radius-10'}/>
+            </div>
+            <div className="media-body pl-3 pb-3">
+              <h4 className="mb-0 font-weight-bold">แชร์โซเชียล</h4>
+              <p className="mb-0">โพสลงโซเชียล ด้วยภาพสวยงาม เพิ่มโอกาสให้คนเห็น</p>
+            </div>
+            <div className={'px-4'}>
+              <button className={'btn btn-warning px-5'}>แชร์ไปยัง Facebook ฟรี</button>
+            </div>
+          </div>
         </div>
-       </div>
-       ))}
-       
-       
       </div>
 
-     </div> 
 
-    }
+
+
+      <div className={'container'}>
+
+        <div className="row mt-3">
+          <div className="col-md-8">
+            <div className="card">
+              <div className="card-body">
+                <div className="d-flex align-items-center">
+                  <div>
+                    <h5 className="font-weight-bold mb-0">ข้อมูลการสอน</h5>
+                  </div>
+                  <div className="dropdown ml-auto">
+                    <div className="cursor-pointer text-dark font-24 dropdown-toggle dropdown-toggle-nocaret"
+                         data-toggle="dropdown"><i className="bx bx-dots-horizontal-rounded"></i>
+                    </div>
+                    <div className="dropdown-menu dropdown-menu-right"><a className="dropdown-item"
+                                                                          href="javaScript:;">Action</a>
+                      <a className="dropdown-item" href="javaScript:;">Another action</a>
+                      <div className="dropdown-divider"></div>
+                      <a className="dropdown-item" href="javaScript:;">Something else here</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="media align-items-center mt-3">
+                  <div style={{width:'90px'}}>
+                    <p className="text-secondary mb-0">สอนวิชา</p>
+                  </div>
+                  <div className="media-body">
+                    <p className="font-weight-bold mb-0">ภาษาอังกฤษ, ภาษาไทย, คณิตศาสตร์</p>
+                  </div>
+                  <a href="/checkout" className="btn btn-sm btn-link">แก้ไข</a>
+                </div>
+                <hr/>
+
+                <div className="media align-items-center mt-3">
+                  <div style={{width:'90px'}}>
+                    <p className="text-secondary mb-0">สอนชั้นเรียน</p>
+                  </div>
+                  <div className="media-body">
+                    <p className="font-weight-bold mb-0">ม.1 - ม.6</p>
+                  </div>
+                  <a href="/checkout" className="btn btn-sm btn-link">แก้ไข</a>
+                </div>
+              </div>
+            </div>
+
+            <div className="card">
+              <div className="card-body">
+                <div className="d-flex align-items-center">
+                  <div>
+                    <h5 className="font-weight-bold mb-0">คอร์ส</h5>
+                  </div>
+                  <button className="btn btn-sm btn-outline-primary radius-10 ml-auto"><i className="bx bx-plus"></i> เพิ่มคอร์ส</button>
+
+                </div>
+
+                <div className="text-center">
+                  <img src="/public/assets/images/book-gray.jpg" width="150"/><br/>
+                  <span className="text-muted">ไม่พบคอร์ส</span>
+                </div>
+                <div className="d-none">
+                  <div className="media align-items-center mt-3">
+                    <div className="media-body">
+                      <p className="font-weight-bold mb-0">ภาษาอังกฤษ ม.1 - ม.6</p>
+                      <p className="text-secondary mb-0">100฿/ชั่วโมง</p>
+                    </div>
+                    <a href="/checkout" className="btn btn-sm btn-link">แก้ไข</a>
+                  </div>
+                  <hr/>
+
+                  <div className="media align-items-center mt-3">
+                  <div className="media-body">
+                    <p className="font-weight-bold mb-0">ภาษาอังกฤษ ม.1 - ม.6</p>
+                    <p className="text-secondary mb-0">100฿/ชั่วโมง</p>
+                  </div>
+                  <a href="/checkout" className="btn btn-sm btn-link">แก้ไข</a>
+                </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div className={'col-md-4'}>
+            <div className="card">
+              <div className="card-body">
+                <div className="d-flex align-items-center">
+                  <div>
+                    <h5 className="font-weight-bold mb-0">เวลาที่สะดวกสอน</h5>
+                  </div>
+                  <button className="btn btn-sm btn-outline-primary radius-10 ml-auto">แก้ไข</button>
+                </div>
+
+                <div className="text-center mt-4">
+                  <img src="/public/assets/images/calendar-gray.jpg" width="150"/><br/>
+                  <span className="text-secondary">ไม่พบตารางสอน</span>
+                </div>
+                <div>
+                  <CalendarWeekPreview/>
+                </div>
+
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>
+
+
+    </div>
+
+  }
 };
 
 export default Profile

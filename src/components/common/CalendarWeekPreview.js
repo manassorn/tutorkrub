@@ -5,10 +5,10 @@ import isSameDay from 'date-fns/isSameDay'
 import Api from '../../Api'
 import Utils from '../../Utils'
 import SimpleTitle from '../common/SimpleTitle'
-import './CalendarAWeekPreview.css'
+import './CalendarWeekPreview.css'
 import './Patterns.css'
 
-class CalendarAWeekPreview extends React.Component {
+class CalendarWeekPreview extends React.Component {
 
 
     constructor(props) {
@@ -285,4 +285,4 @@ class CalendarAWeekPreview extends React.Component {
     }
 }
 
-export default CalendarAWeekPreview
+export default CalendarWeekPreview

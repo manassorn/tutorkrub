@@ -100,13 +100,13 @@ class Navbar extends React.Component {
                     </div>
                   </a>
                   <div className="dropdown-menu dropdown-menu-right">
-                    <Link className="dropdown-item" to="/user">
+                    <Link className="dropdown-item" to="/profile">
                       <i className="bx bx-user"></i><span>โปรไฟล์</span>
                     </Link>
                     <Link className="dropdown-item" to="/course/add">
                       <i className="bx bx-plus-circle"></i><span>สร้างคอร์ส</span>
                     </Link>
-                    <Link className="dropdown-item" to="/user" >
+                    <Link className="dropdown-item" to="/profile" >
                       <i className="bx bx-grid"></i><span>คอร์สของฉัน</span>
                     </Link>
                     <Link className="dropdown-item" to="/appointment/list">
