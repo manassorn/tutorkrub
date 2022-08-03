@@ -13,7 +13,7 @@ class SimpleTitle extends React.Component {
 
         return <div className="p-3 text-center border-bottom" style={{position:'relative'}}> 
           {this.props.backBtn && (
-            <a href="javascript:history.back()" style={{position:'absolute',left:'15px',top:'8px'}}>
+            <a href={typeof this.props.backBtn === 'string'?this.props.backBtn:'javascript:history.back()'} style={{position:'absolute',left:'15px',top:'8px'}}>
               <i className="bx bx-chevron-left text-dark" style={{fontSize:'36px'}}></i>
             </a>
           )}

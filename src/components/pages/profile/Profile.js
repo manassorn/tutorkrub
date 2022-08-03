@@ -12,7 +12,7 @@ class Profile extends React.Component {
         super(props);
         this.state = {
           user: {}, 
-          courses: []
+          tutor: undefined
         }
     }
 
@@ -22,12 +22,10 @@ class Profile extends React.Component {
         if(!login || !login.user) return
         that.setState({user:login.user})
       })
-      Api.get('/courses')
-        .then(response => 
-        {
-        this.setState({ courses: response.data.data })
-        }
-        );
+      Api.get('/tutors').then(response => {
+        const tutor = response.data.data
+        this.setState({tutor})
+      });
       
     }
 
@@ -178,16 +176,19 @@ class Profile extends React.Component {
                   <div>
                     <h5 className="font-weight-bold mb-0">เวลาที่สะดวกสอน</h5>
                   </div>
-                  <button className="btn btn-sm btn-outline-primary radius-10 ml-auto">แก้ไข</button>
+                  <a href="/profile/edit/availability" className="btn btn-sm btn-outline-primary radius-10 ml-auto">แก้ไข</a>
                 </div>
 
-                <div className="text-center mt-4">
-                  <img src="/public/assets/images/calendar-gray.jpg" width="150"/><br/>
-                  <span className="text-secondary">ไม่พบตารางสอน</span>
-                </div>
-                <div>
-                  <CalendarWeekPreview/>
-                </div>
+                {this.state.tutor ? (
+                  <div>
+                    <CalendarWeekPreview availability={this.state.tutor.availability}/>
+                  </div>
+                ) : (
+                  <div className="text-center mt-4">
+                    <img src="/public/assets/images/calendar-gray.jpg" width="150"/><br/>
+                    <span className="text-secondary">ไม่พบตารางสอน</span>
+                  </div>
+                )}
 
               </div>
             </div>

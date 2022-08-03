@@ -73,14 +73,14 @@ class App extends React.Component {
               <Route path="/course" element={<Course/>} />
               <Route path="/pay" element={<Pay/>} />
               <Route path="/profile/tutor" element={<ProfileTutor/>} />
-              <Route path="/user/edit/avatar" element={<ProfileEditAvatar/>} />
-              <Route path="/user/edit/name" element={<ProfileEditName/>} />
-              <Route path="/user/edit/skypeid" element={<ProfileEditSkypeId/>} />
-              <Route path="/user/edit/zoomid" element={<ProfileEditZoomId/>} />
-              <Route path="/user/edit/availability" element={<ProfileEditAvailability/>} />
-              <Route path="/user/edit/email" element={<ProfileEditEmail/>} />
-              <Route path="/user/edit/email/verifycode" element={<ProfileEditEmailVerifyCode/>} />
-              <Route path="/user/edit" element={<ProfileEdit/>} />
+              <Route path="/profile/edit/avatar" element={<ProfileEditAvatar/>} />
+              <Route path="/profile/edit/name" element={<ProfileEditName/>} />
+              <Route path="/profile/edit/skypeid" element={<ProfileEditSkypeId/>} />
+              <Route path="/profile/edit/zoomid" element={<ProfileEditZoomId/>} />
+              <Route path="/profile/edit/availability" element={<ProfileEditAvailability/>} />
+              <Route path="/profile/edit/email" element={<ProfileEditEmail/>} />
+              <Route path="/profile/edit/email/verifycode" element={<ProfileEditEmailVerifyCode/>} />
+              <Route path="/profile/edit" element={<ProfileEdit/>} />
               <Route path="/profile" element={<Profile/>} />
               
               

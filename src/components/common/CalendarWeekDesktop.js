@@ -6,29 +6,50 @@ import CalendarByWeek3Steps from "./CalendarByWeek3Steps";
 import './CalendarWeekDesktop.scss'
 
 
-function CalendarWeekDesktop() {
+function CalendarWeekDesktop(props) {
   let { tutorId } = useParams();
-  const [tutor, setTutor] = useState(null)
+  const mode = props.mode || 'book'
+  const matrix = new Array(7).fill(0).map(() => new Array(24).fill(0));
+  const [availability, setAvailability] = useState(props.availability || matrix)
 
   useEffect(() => {
-    Api.get(`/search?tutorid=${tutorId}`).then(response => {
-      setTutor(response.data.data[0])
+  }, [])
+
+  function onTimeClick(day, hour) {
+    const av = [...availability]
+    av[day][hour] = 1-av[day][hour]
+    setAvailability(av)
+  }
+  
+  function onSaveButtonClick() {
+    Api.put('/tutors', {availability}).then(response => {
+      console.log('success')
     }).catch(error => {
       console.error(error)
     })
-  }, [])
+  }
 
   return (
     <div>
-      <div className="d-flex mb-2">
-        <div className="btn-group">
-          <button className="btn btn-outline-primary py-0 px-1" type="button" aria-label="prev"><i
-            className="bx bx-chevron-left"></i></button>
-          <button className="btn btn-outline-primary py-0 px-1" type="button" aria-label="next"><i
-            className="bx bx-chevron-right"></i></button>
+      {mode == 'edit' && (
+        <div className="d-flex mb-2 justify-content-between align-items-center">
+          <span className="text-muted">คลิกที่ตารางด้านล่างเพื่อแก้ไขเวลา</span>
+          <button className="btn btn-primary" onClick={onSaveButtonClick}>บันทึกการเปลี่ยนแปลง</button>
         </div>
-        <div className="h5 mb-0 ml-2 font-weight-bold">23 ก.ค. - 31 ก.ค.</div>
-      </div>
+      )}
+      {mode == 'book' && (
+        <div className="d-flex mb-2 justify-content-between align-items-center">
+          <div className="d-flex align-items-center">
+            <div className="btn-group">
+              <button className="btn btn-outline-primary py-0 px-1" type="button" aria-label="prev"><i
+                className="bx bx-chevron-left"></i></button>
+              <button className="btn btn-outline-primary py-0 px-1" type="button" aria-label="next"><i
+                className="bx bx-chevron-right"></i></button>
+            </div>
+            <div className="h5 mb-0 ml-3 font-weight-bold">23 ก.ค. - 31 ก.ค.</div>
+          </div>
+        </div>
+      )}
       <table className="table table-bordered table-sm schedule">
         <thead>
         <tr>
@@ -46,8 +67,8 @@ function CalendarWeekDesktop() {
         {[...Array(24).keys()].map(hour => (
           <tr>
             <th scope="row" className="text-center">{('0' + hour).substr(-2)}:00</th>
-            {[1,2,3,4,5,6,7].map(i => (
-              <td>&nbsp;</td>
+            {[...Array(7).keys()].map(day => (
+              <td onClick={e => onTimeClick(day, hour)} className={availability[day][hour]?'active':''}>&nbsp;</td>
             ))}
           </tr>
         ))}
