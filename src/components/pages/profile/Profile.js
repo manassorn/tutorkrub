@@ -1,42 +1,43 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Api from '../../../Api'
 import Auth from '../../../Auth'
 import SimpleTitle from '../../common/SimpleTitle'
-import CalendarWeekPreview from "../../common/CalendarWeekPreview";
+import CalendarWeekPreview2 from "../../common/CalendarWeekPreview2";
+import CourseEditModal from "../../pages/course/CourseEditModal";
+import ProfileEditTeachingSubjectsModal from "./ProfileEditTeachingSubjectsModal";
+import ProfileEditTeachingLevelsModal from "./ProfileEditTeachingLevelsModal";
+import LevelRangeDisplay from "../../common/LevelRangeDisplay";
 
 
-class Profile extends React.Component {
-  
-  
-    constructor(props) {
-        super(props);
-        this.state = {
-          user: {}, 
-          tutor: undefined
-        }
-    }
+function Profile(props) {
+  const subjectsEditModal = useRef(null)
+  const levelsEditModal = useRef(null)
+  const [tutor, setTutor] = useState(null)
+  const [tutorSubjects, setTutorSubjects] = useState([])
+  const [tutorLevels, setTutorLevels] = useState([])
 
-    componentDidMount() {
-      const that = this
-      Auth.observeLogin((login) => {
-        if(!login || !login.user) return
-        that.setState({user:login.user})
-      })
-      Api.get('/tutors').then(response => {
-        const tutor = response.data.data
-        this.setState({tutor})
-      });
-      
-    }
+  useEffect(() => {
+    Api.get('/tutors').then(response => {
+      const tutor = response.data.data
+      setTutor(tutor)
+      setTutorSubjects(tutor.tutorSubjects)
+      setTutorLevels(tutor.tutorLevels)
+    });
+  }, [])
 
-  render() {
+  function openModal(ref, e) {
+    ref.current.open()
+    e.preventDefault()
+  }
 
-    return <div>
+
+  return (
+    <div>
       <div className="row bg-light border-bottom">
         <div className="offset-md-2 col-md-8">
           <div className="media align-items-centerx py-4">
             <div style={{width:'130px',height:'130px'}}>
-              <img src={this.state.user.avatarUrl || '/public/assets/images/avatars/avatar-default.jpg'} className="rounded-circle shadow" width="130" height="130" alt=""/>
+              <img src={'/public/assets/images/avatars/avatar-default.jpg'} className="rounded-circle shadow" width="130" height="130" alt=""/>
             </div>
             <div className="media-body pl-3">
               <h4 className="mb-0 font-weight-bold">Manassorn</h4>
@@ -115,9 +116,9 @@ class Profile extends React.Component {
                     <p className="text-secondary mb-0">สอนวิชา</p>
                   </div>
                   <div className="media-body">
-                    <p className="font-weight-bold mb-0">ภาษาอังกฤษ, ภาษาไทย, คณิตศาสตร์</p>
+                    <p className="font-weight-bold mb-0">{tutorSubjects.join(', ')}</p>
                   </div>
-                  <a href="/checkout" className="btn btn-sm btn-link">แก้ไข</a>
+                  <a href="#" className="btn btn-sm btn-link text-secondary" onClick={e => openModal(subjectsEditModal, e)}>แก้ไข</a>
                 </div>
                 <hr/>
 
@@ -126,9 +127,9 @@ class Profile extends React.Component {
                     <p className="text-secondary mb-0">สอนชั้นเรียน</p>
                   </div>
                   <div className="media-body">
-                    <p className="font-weight-bold mb-0">ม.1 - ม.6</p>
+                    <p className="font-weight-bold mb-0"><LevelRangeDisplay levels={tutorLevels}/></p>
                   </div>
-                  <a href="/checkout" className="btn btn-sm btn-link">แก้ไข</a>
+                  <a href="#" className="btn btn-sm btn-link text-secondary" onClick={e => openModal(levelsEditModal, e)}>แก้ไข</a>
                 </div>
               </div>
             </div>
@@ -139,21 +140,17 @@ class Profile extends React.Component {
                   <div>
                     <h5 className="font-weight-bold mb-0">คอร์ส</h5>
                   </div>
-                  <button className="btn btn-sm btn-outline-primary radius-10 ml-auto"><i className="bx bx-plus"></i> เพิ่มคอร์ส</button>
+                  <button className="btn btn-sm btn-outline-primary radius-10 ml-auto" data-toggle="modal" data-target="#courseEditModal"><i className="bx bx-plus"></i> เพิ่มคอร์ส</button>
 
                 </div>
 
-                <div className="text-center">
-                  <img src="/public/assets/images/book-gray.jpg" width="150"/><br/>
-                  <span className="text-muted">ไม่พบคอร์ส</span>
-                </div>
-                <div className="d-none">
+                <div>
                   <div className="media align-items-center mt-3">
                     <div className="media-body">
                       <p className="font-weight-bold mb-0">ภาษาอังกฤษ ม.1 - ม.6</p>
                       <p className="text-secondary mb-0">100฿/ชั่วโมง</p>
                     </div>
-                    <a href="/checkout" className="btn btn-sm btn-link">แก้ไข</a>
+                    <a href="/checkout" className="btn btn-sm btn-link text-secondary">แก้ไข</a>
                   </div>
                   <hr/>
 
@@ -162,7 +159,7 @@ class Profile extends React.Component {
                     <p className="font-weight-bold mb-0">ภาษาอังกฤษ ม.1 - ม.6</p>
                     <p className="text-secondary mb-0">100฿/ชั่วโมง</p>
                   </div>
-                  <a href="/checkout" className="btn btn-sm btn-link">แก้ไข</a>
+                  <a href="/checkout" className="btn btn-sm btn-link text-secondary">แก้ไข</a>
                 </div>
                 </div>
               </div>
@@ -179,9 +176,9 @@ class Profile extends React.Component {
                   <a href="/profile/edit/availability" className="btn btn-sm btn-outline-primary radius-10 ml-auto">แก้ไข</a>
                 </div>
 
-                {this.state.tutor ? (
+                {tutor ? (
                   <div>
-                    <CalendarWeekPreview availability={this.state.tutor.availability}/>
+                    <CalendarWeekPreview2 availability={tutor.availability}/>
                   </div>
                 ) : (
                   <div className="text-center mt-4">
@@ -196,10 +193,12 @@ class Profile extends React.Component {
       </div>
       </div>
 
-
+      <CourseEditModal id="courseEditModal"/>
+      <ProfileEditTeachingSubjectsModal ref={subjectsEditModal} subjects={tutorSubjects} onChange={setTutorSubjects}/>
+      <ProfileEditTeachingLevelsModal ref={levelsEditModal} levels={tutorLevels} onChange={setTutorLevels}/>
+      {/*<ProfileEditCourseModal ref={courseEditModal} onChange={setTutorLevels}/>*/}
     </div>
-
-  }
-};
+  )
+}
 
 export default Profile
