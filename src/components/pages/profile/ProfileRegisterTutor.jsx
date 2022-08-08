@@ -2,10 +2,10 @@ import React from "react";
 import confetti from 'canvas-confetti'
 import Constant from '../../../Constant'
 import './ProfileEdit.css'
-import './ProfileTutorRegister.scss'
+import './ProfileRegisterTutor.scss'
 import Api from "../../../Api";
 
-class ProfileTutorRegister extends React.Component {
+class ProfileRegisterTutor extends React.Component {
   
   
     constructor(props) {
@@ -217,4 +217,4 @@ class CheckBoxBadge extends React.Component {
   }
 }
 
-export default ProfileTutorRegister
+export default ProfileRegisterTutor

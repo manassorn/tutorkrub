@@ -20,7 +20,7 @@ import ProfileEditEmail from "./components/pages/profile/ProfileEditEmail"
 import ProfileEditAvatar from "./components/pages/profile/ProfileEditAvatar"
 import ProfileEditEmailVerifyCode from "./components/pages/profile/ProfileEditEmailVerifyCode"
 import ProfileTutor from "./components/pages/profile/ProfileTutor"
-import ProfileTutorRegister from "./components/pages/profile/ProfileTutorRegister"
+import ProfileRegisterTutor from "./components/pages/profile/ProfileRegisterTutor"
 import Pay from "./components/pages/Pay"
 import Appointment from "./components/pages/appointment/Appointment"
 import AppointmentList from "./components/pages/appointment/AppointmentList"
@@ -57,8 +57,6 @@ class App extends React.Component {
               <Route path="/register" element={<RegisterStudent/>} />
               <Route path="/register/tutor" element={<RegisterTutor/>} />
               <Route path="/login" element={<Login/>} />
-              {/*<Route path="/profile/tutor/register" element={<RequireAuth><ProfileTutorRegister/></RequireAuth>} />*/}
-              <Route path="/profile/tutor/register" element={<ProfileTutorRegister/>} />
                 
                 
 
@@ -81,6 +79,8 @@ class App extends React.Component {
               <Route path="/profile/edit/email" element={<ProfileEditEmail/>} />
               <Route path="/profile/edit/email/verifycode" element={<ProfileEditEmailVerifyCode/>} />
               <Route path="/profile/edit" element={<ProfileEdit/>} />
+              {/*<Route path="/profile/tutor/register" element={<RequireAuth><ProfileTutorRegister/></RequireAuth>} />*/}
+              <Route path="/profile/register-tutor" element={<ProfileRegisterTutor/>} />
               <Route path="/profile" element={<Profile/>} />
               
               

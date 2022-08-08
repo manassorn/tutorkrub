@@ -61,7 +61,7 @@ function Profile(props) {
               <p className="mb-0 text-secondary">@manassorn</p>
             </div>
             <div className={'px-4'}>
-              <a href="/profile/tutor/register" className="btn btn-primary px-5'">&nbsp;&nbsp;&nbsp;สมัครตอนนี้&nbsp;&nbsp;&nbsp;</a>
+              <a href="/profile/register-tutor" className="btn btn-primary px-5'">&nbsp;&nbsp;&nbsp;สมัครตอนนี้&nbsp;&nbsp;&nbsp;</a>
             </div>
           </div>
         </div>
