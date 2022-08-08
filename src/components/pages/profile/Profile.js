@@ -61,7 +61,7 @@ function Profile(props) {
               <p className="mb-0 text-secondary">@manassorn</p>
             </div>
             <div className={'px-4'}>
-              <button className={'btn btn-primary px-5'}>สมัครตอนนี้</button>
+              <a href="/profile/tutor/register" className="btn btn-primary px-5'">&nbsp;&nbsp;&nbsp;สมัครตอนนี้&nbsp;&nbsp;&nbsp;</a>
             </div>
           </div>
         </div>
@@ -140,7 +140,7 @@ function Profile(props) {
                   <div>
                     <h5 className="font-weight-bold mb-0">คอร์ส</h5>
                   </div>
-                  <button className="btn btn-sm btn-outline-primary radius-10 ml-auto" data-toggle="modal" data-target="#courseEditModal"><i className="bx bx-plus"></i> เพิ่มคอร์ส</button>
+                  <button className="btn btn-sm btn-outline-secondary radius-10 ml-auto" data-toggle="modal" data-target="#courseEditModal"><i className="bx bx-plus"></i> เพิ่มคอร์ส</button>
 
                 </div>
 
@@ -173,7 +173,7 @@ function Profile(props) {
                   <div>
                     <h5 className="font-weight-bold mb-0">เวลาที่สะดวกสอน</h5>
                   </div>
-                  <a href="/profile/edit/availability" className="btn btn-sm btn-outline-primary radius-10 ml-auto">แก้ไข</a>
+                  <a href="/profile/edit/availability" className="btn btn-sm btn-outline-secondary radius-10 ml-auto">แก้ไข</a>
                 </div>
 
                 {tutor ? (
