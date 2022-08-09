@@ -12,7 +12,8 @@ const ProfileEditCourseModal = forwardRef((props, ref) =>  {
     }
   }));
   const [show, setShow] = useState(false)
-  const checkboxesRef = useRef([]);
+  const titleRef = useRef('');
+  const priceRef = useRef('');
 
   function close() {
     setShow(false)
@@ -20,31 +21,55 @@ const ProfileEditCourseModal = forwardRef((props, ref) =>  {
 
   function save() {
 
-    const tutorLevels = checkboxesRef.current
-      .filter(item => item.getChecked())
-      .map(item => item.getValue())
-    Api.put('/tutors', {tutorLevels}).then(response => {
-      close()
-      props.onChange(tutorLevels)
-    }).catch(error => {
+    if (props.course) {
+      const course = {
+        id: props.course && props.course.id || '',
+        title: titleRef.current.value,
+        price: priceRef.current.value
+      }
+      Api.put(`/courses/${props.course && props.course.id || 'undefined'}`, course).then(response => {
+        close()
+        props.onChange(course)
+      }).catch(error => {
 
-    })
+      })
+    } else {
+      const course = {
+        title: titleRef.current.value,
+        price: priceRef.current.value
+      }
+      Api.post(`/courses`, course).then(response => {
+        close()
+        props.onChange(course)
+      }).catch(error => {
+
+      })
+    }
+
   }
 
   return (
     <Modal show={show}  onHide={close}>
       <Modal.Header closeButton>
-        <Modal.Title>สอนชั้นเรียน</Modal.Title>
+        <Modal.Title>คอร์ส</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
-        <p>สอนชั้นเรียน:</p>
-        {Constant.schoolLevels.map((level, i) => (
-          <CheckboxPill label={level} defaultChecked={props.levels.indexOf(level) >= 0} ref={el => checkboxesRef.current[i] = el} />
-        ))}
+        <form>
+          <div className="form-group">
+            <label htmlFor="course-name" className="col-form-label">ชื่อคอร์ส:</label>
+            <input type="text" className="form-control" id="course-title" ref={titleRef} defaultValue={props.course && props.course.title}/>
+            <small id="ืcourseNameHelp" className="form-text text-muted">เช่น ภาษาอังกฤษ ม.1 - ม.6</small>
+          </div>
+          <div className="form-group">
+            <label htmlFor="course-price" className="col-form-label">ราคาต่อชั่วโมง:</label>
+            <input type="text" className="form-control" id="course-price" ref={priceRef} defaultValue={props.course && props.course.price}/>
+          </div>
+        </form>
       </Modal.Body>
 
       <Modal.Footer>
+        <Button variant="outline-danger" onClick={save}>ลบ</Button>
         <Button variant="primary" onClick={save}>บันทึก</Button>
       </Modal.Footer>
     </Modal>

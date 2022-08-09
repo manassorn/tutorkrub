@@ -6,15 +6,19 @@ import CalendarWeekPreview2 from "../../common/CalendarWeekPreview2";
 import CourseEditModal from "../../pages/course/CourseEditModal";
 import ProfileEditTeachingSubjectsModal from "./ProfileEditTeachingSubjectsModal";
 import ProfileEditTeachingLevelsModal from "./ProfileEditTeachingLevelsModal";
+import ProfileEditCourseModal from "./ProfileEditCourseModal";
 import LevelRangeDisplay from "../../common/LevelRangeDisplay";
 
 
 function Profile(props) {
   const subjectsEditModal = useRef(null)
   const levelsEditModal = useRef(null)
+  const courseEditModal = useRef(null)
   const [tutor, setTutor] = useState(null)
   const [tutorSubjects, setTutorSubjects] = useState([])
   const [tutorLevels, setTutorLevels] = useState([])
+  const [courses, setCourses] = useState([])
+  const [editingCourse, setEditingCourse] = useState(null)
 
   useEffect(() => {
     Api.get('/tutors').then(response => {
@@ -23,6 +27,10 @@ function Profile(props) {
       setTutorSubjects(tutor.tutorSubjects)
       setTutorLevels(tutor.tutorLevels)
     });
+    Api.get('/courses').then(response => {
+      const courses = response.data.data
+      setCourses(courses)
+    });
   }, [])
 
   function openModal(ref, e) {
@@ -30,6 +38,16 @@ function Profile(props) {
     e.preventDefault()
   }
 
+  function onCourseChange(course) {
+    const c = [...courses]
+    const coursePos = c.map(item => item.id).indexOf(course.id)
+    if(coursePos < 0) {
+      c[c.length] = course
+    } else {
+      c[coursePos] = course
+    }
+    setCourses(c)
+  }
 
   return (
     <div>
@@ -140,27 +158,23 @@ function Profile(props) {
                   <div>
                     <h5 className="font-weight-bold mb-0">คอร์ส</h5>
                   </div>
-                  <button className="btn btn-sm btn-outline-secondary radius-10 ml-auto" data-toggle="modal" data-target="#courseEditModal"><i className="bx bx-plus"></i> เพิ่มคอร์ส</button>
+                  <button className="btn btn-sm btn-outline-secondary radius-10 ml-auto" onClick={e => {setEditingCourse(null);openModal(courseEditModal, e)}}><i className="bx bx-plus"></i> เพิ่มคอร์ส</button>
 
                 </div>
 
                 <div>
-                  <div className="media align-items-center mt-3">
-                    <div className="media-body">
-                      <p className="font-weight-bold mb-0">ภาษาอังกฤษ ม.1 - ม.6</p>
-                      <p className="text-secondary mb-0">100฿/ชั่วโมง</p>
-                    </div>
-                    <a href="/checkout" className="btn btn-sm btn-link text-secondary">แก้ไข</a>
-                  </div>
-                  <hr/>
-
-                  <div className="media align-items-center mt-3">
-                  <div className="media-body">
-                    <p className="font-weight-bold mb-0">ภาษาอังกฤษ ม.1 - ม.6</p>
-                    <p className="text-secondary mb-0">100฿/ชั่วโมง</p>
-                  </div>
-                  <a href="/checkout" className="btn btn-sm btn-link text-secondary">แก้ไข</a>
-                </div>
+                  {courses.map((course, i) => (
+                    <>
+                      <div className="media align-items-center mt-3">
+                        <div className="media-body">
+                          <p className="font-weight-bold mb-0">{course.title}</p>
+                          <p className="text-secondary mb-0">{course.price}฿/ชั่วโมง</p>
+                        </div>
+                        <a href="#" className="btn btn-sm btn-link text-secondary" onClick={e => {setEditingCourse(course);openModal(courseEditModal, e)}}>แก้ไข</a>
+                      </div>
+                      {i!=courses.length-1 && <hr/>}
+                    </>
+                  ))}
                 </div>
               </div>
             </div>
@@ -193,10 +207,9 @@ function Profile(props) {
       </div>
       </div>
 
-      <CourseEditModal id="courseEditModal"/>
       <ProfileEditTeachingSubjectsModal ref={subjectsEditModal} subjects={tutorSubjects} onChange={setTutorSubjects}/>
       <ProfileEditTeachingLevelsModal ref={levelsEditModal} levels={tutorLevels} onChange={setTutorLevels}/>
-      {/*<ProfileEditCourseModal ref={courseEditModal} onChange={setTutorLevels}/>*/}
+      <ProfileEditCourseModal ref={courseEditModal} course={editingCourse} onChange={onCourseChange}/>
     </div>
   )
 }
