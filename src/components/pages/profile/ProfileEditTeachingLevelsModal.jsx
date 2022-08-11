@@ -20,12 +20,12 @@ const ProfileEditTeachingLevelsModal = forwardRef((props, ref) =>  {
 
   function save() {
 
-    const tutorLevels = checkboxesRef.current
+    const teachLevels = checkboxesRef.current
       .filter(item => item.getChecked())
       .map(item => item.getValue())
-    Api.put('/tutors', {tutorLevels}).then(response => {
+    Api.put('/tutors', {teachLevels}).then(response => {
       close()
-      props.onChange(tutorLevels)
+      props.onChange(teachLevels)
     }).catch(error => {
 
     })

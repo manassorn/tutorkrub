@@ -81,12 +81,12 @@ class ProfileRegisterTutor extends React.Component {
   }
   
   register() {
-    const teachingSubjects = this.subjectCheckBoxes.filter(ele => ele.checked).map(ele => ele.value)
-    const teachingLevels = this.levelCheckBoxes.filter(ele => ele.checked).map(ele => ele.value)
+    const teachSubjects = this.subjectCheckBoxes.filter(ele => ele.checked).map(ele => ele.value)
+    const teachLevels = this.levelCheckBoxes.filter(ele => ele.checked).map(ele => ele.value)
     const price = this.price.value
     const startTime = new Date().getTime()
     this.setState({submitting:true})
-    Api.post('tutors', {teachingSubjects,teachingLevels, price})
+    Api.post('tutors', {teachSubjects,teachLevels, price})
     .then(() => {
       const delay = 2000 - startTime + new Date().getTime()
       setTimeout(() => {

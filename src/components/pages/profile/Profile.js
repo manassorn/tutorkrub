@@ -15,8 +15,8 @@ function Profile(props) {
   const levelsEditModal = useRef(null)
   const courseEditModal = useRef(null)
   const [tutor, setTutor] = useState(null)
-  const [tutorSubjects, setTutorSubjects] = useState([])
-  const [tutorLevels, setTutorLevels] = useState([])
+  const [teachSubjects, setTutorSubjects] = useState([])
+  const [teachLevels, setTutorLevels] = useState([])
   const [courses, setCourses] = useState([])
   const [editingCourse, setEditingCourse] = useState(null)
 
@@ -24,8 +24,8 @@ function Profile(props) {
     Api.get('/tutors').then(response => {
       const tutor = response.data.data
       setTutor(tutor)
-      setTutorSubjects(tutor.tutorSubjects)
-      setTutorLevels(tutor.tutorLevels)
+      setTutorSubjects(tutor.teachSubjects)
+      setTutorLevels(tutor.teachLevels)
     });
     Api.get('/courses').then(response => {
       const courses = response.data.data
@@ -134,7 +134,7 @@ function Profile(props) {
                     <p className="text-secondary mb-0">สอนวิชา</p>
                   </div>
                   <div className="media-body">
-                    <p className="font-weight-bold mb-0">{tutorSubjects.join(', ')}</p>
+                    <p className="font-weight-bold mb-0">{teachSubjects.join(', ')}</p>
                   </div>
                   <a href="#" className="btn btn-sm btn-link text-secondary" onClick={e => openModal(subjectsEditModal, e)}>แก้ไข</a>
                 </div>
@@ -145,7 +145,7 @@ function Profile(props) {
                     <p className="text-secondary mb-0">สอนชั้นเรียน</p>
                   </div>
                   <div className="media-body">
-                    <p className="font-weight-bold mb-0"><LevelRangeDisplay levels={tutorLevels}/></p>
+                    <p className="font-weight-bold mb-0"><LevelRangeDisplay levels={teachLevels}/></p>
                   </div>
                   <a href="#" className="btn btn-sm btn-link text-secondary" onClick={e => openModal(levelsEditModal, e)}>แก้ไข</a>
                 </div>
@@ -207,9 +207,9 @@ function Profile(props) {
       </div>
       </div>
 
-      <ProfileEditTeachingSubjectsModal ref={subjectsEditModal} subjects={tutorSubjects} onChange={setTutorSubjects}/>
-      <ProfileEditTeachingLevelsModal ref={levelsEditModal} levels={tutorLevels} onChange={setTutorLevels}/>
-      <ProfileEditCourseModal ref={courseEditModal} course={editingCourse} onChange={onCourseChange}/>
+      <ProfileEditTeachingSubjectsModal ref={subjectsEditModal} subjects={teachSubjects} onChange={setTutorSubjects}/>
+      <ProfileEditTeachingLevelsModal ref={levelsEditModal} levels={teachLevels} onChange={setTutorLevels}/>
+      <ProfileEditCourseModal ref={courseEditModal} course={editingCourse} tutor={tutor} onChange={onCourseChange}/>
     </div>
   )
 }

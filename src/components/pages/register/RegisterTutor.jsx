@@ -49,8 +49,8 @@ class Register extends React.Component {
       email: this.email,
       pwd: this.pwd,
       krubId: this.krubId,
-      tutorSubjects: this.tutorSubjects,
-      tutorLevels: this.tutorLevels,
+      teachSubjects: this.teachSubjects,
+      teachLevels: this.teachLevels,
       tutorPrice: this.tutorPrice
     }
 
@@ -114,13 +114,13 @@ class Register extends React.Component {
                 </div>
                 <div className="carousel-item">
                   <TutorSubjectsForm onComplete={subjects => {
-                    this.tutorSubjects = subjects
+                    this.teachSubjects = subjects
                     this.nextButton.current.click()
                   }}/>
                 </div>
                 <div className="carousel-item">
                   <TutorLevelsForm onComplete={levels => {
-                    this.tutorLevels = levels
+                    this.teachLevels = levels
                     this.nextButton.current.click()
                   }}/>
                 </div>
@@ -132,7 +132,7 @@ class Register extends React.Component {
 
                     // console.log(this.email,this.pwd)
                     // console.log(this.krubId)
-                    // console.log(this.tutorSubjects,this.tutorLevels,this.tutorPrice)
+                    // console.log(this.teachSubjects,this.teachLevels,this.tutorPrice)
                     // console.log(this.tutorProfileImageBlob)
                   }}/>
                 </div>

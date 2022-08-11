@@ -10,8 +10,8 @@ import './Patterns.css'
 
 function CalendarWeekPreview2(props) {
 
-  // const matrix = new Array(7).fill(0).map(() => new Array(24).fill(0));
-  const [availability, setAvailability] = useState(props.availability /*|| matrix*/)
+  const matrix = new Array(7).fill(0).map(() => new Array(24).fill(0));
+  const [availability, setAvailability] = useState(props.availability || matrix)
   const startOfWeek = props.startOfWeek
   const daysOfWeekMini = ['จ',
     'อ',

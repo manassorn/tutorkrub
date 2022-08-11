@@ -20,12 +20,12 @@ const ProfileEditTeachingSubjectsModal = forwardRef((props, ref) =>  {
 
   function save() {
 
-    const tutorSubjects = checkboxesRef.current
+    const teachSubjects = checkboxesRef.current
       .filter(item => item.getChecked())
       .map(item => item.getValue())
-    Api.put('/tutors', {tutorSubjects}).then(response => {
+    Api.put('/tutors', {teachSubjects}).then(response => {
       close()
-      props.onChange(tutorSubjects)
+      props.onChange(teachSubjects)
     }).catch(error => {
 
     })

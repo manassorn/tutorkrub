@@ -64,6 +64,7 @@ class App extends React.Component {
               <Route path="/appointment" element={<Appointment/>} />
               <Route path="/checkout/creditcard" element={<CheckoutCreditCard/>} />
               <Route path="/checkout" element={<Checkout/>} />
+              <Route path="/checkout/course/:courseId" element={<Checkout/>} />
               <Route path="/course/add" element={<CourseAdd/>} />
               <Route path="/course/edit" element={<CourseEdit/>} />
               <Route path="/explore" element={<Explore/>} />

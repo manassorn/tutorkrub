@@ -22,7 +22,7 @@ class Explore extends React.Component {
     }
 
     componentDidMount() {
-      Api.get('/search')
+      Api.get('/search/tutors')
         .then(response => 
         {
         var tutors = response.data.data
@@ -31,7 +31,7 @@ class Explore extends React.Component {
         );
       
       Api.get('/favorites').then(response => {
-        const favTutors = response.data.data.tutors
+        const favTutors = response.data.data.tutors || []
         this.setState({favTutors})
       })
     }

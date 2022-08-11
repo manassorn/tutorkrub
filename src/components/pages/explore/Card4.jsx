@@ -42,11 +42,11 @@ class Card4 extends React.Component {
 
                 <div>
                   <i className="lni lni-graduation bx-xs mr-1 text-primary" />
-                  <span>{tutor.tutorSubjects && tutor.tutorSubjects.join(', ')}</span>
+                  <span>{tutor.teachSubjects && tutor.teachSubjects.join(', ')}</span>
                 </div>
                 <div>
                   <i className="lni lni-flag-alt bx-xs mr-1 text-primary" />
-                  <span>{tutor.tutorLevels && tutor.tutorLevels.join(', ') }</span>
+                  <span>{tutor.teachLevels && tutor.teachLevels.join(', ') }</span>
 
                 </div>
                 <div>

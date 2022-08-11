@@ -25,7 +25,8 @@ const ProfileEditCourseModal = forwardRef((props, ref) =>  {
       const course = {
         id: props.course && props.course.id || '',
         title: titleRef.current.value,
-        price: priceRef.current.value
+        price: priceRef.current.value,
+        tutor: props.tutor.id
       }
       Api.put(`/courses/${props.course && props.course.id || 'undefined'}`, course).then(response => {
         close()

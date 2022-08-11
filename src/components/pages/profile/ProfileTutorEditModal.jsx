@@ -34,8 +34,8 @@ class ProfileTutor extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-              {this.props.editField == "teachingSubjects" && <Select options={this.subjectOptions} />}
-              {this.props.editField == "teachingLevels" && <Select options={this.levelOptions} />}
+              {this.props.editField == "teachSubjects" && <Select options={this.subjectOptions} />}
+              {this.props.editField == "teachLevels" && <Select options={this.levelOptions} />}
               {this.props.editField == "price" && <Price/>}
               {this.props.editField == "education" && <Education/>}
               {this.props.editField == "address" && <Address/>}

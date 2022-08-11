@@ -1,96 +1,74 @@
-import React from "react";
+import React, {useRef} from "react";
 import startOfWeek from "date-fns/startOfWeek";
 import addWeeks from "date-fns/addWeeks";
 import addDays from "date-fns/addDays";
 import Api from '../../Api'
 import Utils from '../../Utils'
-import CalendarWeekPreview from './CalendarWeekPreview'
+import CalendarWeekPreview2 from './CalendarWeekPreview2'
 
-class CalendarCarousel extends React.Component {
+function CalendarCarousel(props) {
 
+  const numberOfWeeks = props.numberOfWeeks || 8
+  const dateInWeekRanges = Utils.range(numberOfWeeks).map(i => {
+    const startDate = addWeeks(startOfWeek(new Date()), i)
+    const endDate = addDays(startDate, 6)
+    return [startDate, endDate]
+  })
+  const dateRangesPrevBtn = useRef(null)
+  const dateRangesNextBtn = useRef(null)
 
-    constructor(props) {
-      super(props);
-      this.numberOfWeeks = 8
-      this.weekRanges = Utils.range(this.numberOfWeeks).map(i => {
-        const startDate = addWeeks(startOfWeek(new Date()), i)
-        const endDate = addDays(startDate, 6)
-        return [startDate, endDate]
-      })
-      
-      this.prevWeekRangeBtn = React.createRef()
-      this.nextWeekRangeBtn = React.createRef()
-    }
+  return (
+    <div>
 
-    componentDidMount() {
-    }
-    
-    
-
-    render() {
-      return <div>
-
-      <div class="mt-3 btn-group d-flex" role="group" aria-label="...">
-        <button type="button" class="btn btn-white w-25">
-        <a ref={this.prevWeekRangeBtn} class="left carousel-control d-none" href="#carouselWeekRange" data-slide="prev">
-        <i className="bx bx-caret-left"></i>
-        </a>
-        <a class="left carousel-control" href="#carouselCalendar" data-slide="prev" onClick={e => this.prevWeekRangeBtn.current.click()}>
-        <i className="bx bx-md bx-caret-left"></i>
-        </a>
-        </button>
-        <button type="button" class="btn btn-white w-100">
-        
-        <div id="carouselWeekRange" class="mt-2 carousel slide" data-ride="carousel" data-interval="false">
-        <ol class="carousel-indicators" style={{bottom:'-14px'}}>
-          {this.weekRanges.map((r,i) => (
-
-            <li data-target="#carouselWeekRange" data-slide-to={i} class={(i==0)?'active':''}></li>
-          ))}
-
-          </ol>
-         <div class="carousel-inner font-weight-bold">
-          {this.weekRanges.map((r,i) => (
-          <div className={`carousel-item ${(i==0)?'active':''}`}>
-
-            {r[0].getDate()} {Utils.formatShortMonth(r[0])}&nbsp;-&nbsp; 
-            {r[1].getDate()} {Utils.formatShortMonth(r[1])} 
-            <br/>
-            <br/>
-          </div>
-          ))}
-        
-         </div>
-       </div>
-
-        
-        </button>
-        <button type="button" class="btn btn-white w-25">
-          <a ref={this.nextWeekRangeBtn} class="left carousel-control d-none" href="#carouselWeekRange" data-slide="next">
-
-          <i className="bx bx-caret-right"></i>
+      <div className="mt-3 d-flex" role="group" aria-label="...">
+        <div className="w-25 text-center">
+          <a className="left carousel-control" href="#carouselCalendar" data-slide="prev" style={{color:'black'}} onClick={e => dateRangesPrevBtn.current.click()}>
+            <i className="bx bx-sm bx-caret-left" style={{lineHeight:1}}></i>
           </a>
-          <a class="left carousel-control" href="#carouselCalendar" data-slide="next" onClick={e => this.nextWeekRangeBtn.current.click()}>
+        </div>
+        <div className="w-100 text-center">
 
-          <i className="bx bx-md bx-caret-right"></i>
-          </a>
+          <div id="carouselDateRanges" className="mt-2 carousel slide" data-ride="carousel" data-interval="false">
 
+            <a className="left carousel-control d-none" href="#carouselDateRanges" data-slide="prev" ref={dateRangesPrevBtn}>&nbsp;</a>
+            <a className="left carousel-control d-none" href="#carouselDateRanges" data-slide="next" ref={dateRangesNextBtn}>&nbsp;</a>
 
-        </button>
-      </div>
-      
-       <div id="carouselCalendar" class="mt-2 carousel slide" data-ride="carousel" data-interval="false">
-         <div class="carousel-inner">
-         {Utils.range(this.numberOfWeeks).map(i => (
-            <div className={`carousel-item ${(i==0)?'active':''}`}>
-              <CalendarWeekPreview startOfWeek={addWeeks(startOfWeek(new Date()),i)} isRecurring="false" availability={this.props.availability}/>
+            <div className="carousel-inner">
+              {dateInWeekRanges.map((r, i) => (
+                <div className={`carousel-item ${(i == 0) ? 'active' : ''} h5`}>
+
+                  {r[0].getDate()} {Utils.formatShortMonth(r[0])}&nbsp;-&nbsp;
+                  {r[1].getDate()} {Utils.formatShortMonth(r[1])}
+                </div>
+              ))}
+
             </div>
-         ))}
-        
-         </div>
-       </div>
+          </div>
+          {/*<h5 className="mb-0">กันยายน</h5>*/}
+
+
+        </div>
+        <div className="w-25 text-center">
+          <a className="left carousel-control" href="#carouselCalendar" data-slide="next" style={{color:'black'}} onClick={e => dateRangesNextBtn.current.click()}>
+
+            <i className="bx bx-sm bx-caret-right" style={{lineHeight:1}}></i>
+          </a>
+
+        </div>
       </div>
-    }
+
+      <div id="carouselCalendar" className="mt-2 carousel slide" data-ride="carousel" data-interval="false">
+        <div className="carousel-inner">
+          {Utils.range(numberOfWeeks).map(i => (
+            <div className={`carousel-item ${(i==0)?'active':''}`} key={i}>
+              <CalendarWeekPreview2 startOfWeek={addWeeks(startOfWeek(new Date()),i)} isRecurring="false" availability={props.availability}/>
+            </div>
+          ))}
+
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default CalendarCarousel

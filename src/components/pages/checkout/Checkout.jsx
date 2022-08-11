@@ -4,16 +4,23 @@ import Api from '../../../Api'
 import CalendarWeekDesktop from "../../common/CalendarWeekDesktop";
 
 function Checkout() {
-  let { tutorId, courseId } = useParams();
-  // const [tutor, setTutor] = useState(null)
+  let { courseId } = useParams();
+  const [course, setCourse] = useState(null)
+  const [tutor, setTutor] = useState(null)
   //
-  // useEffect(() => {
-  //   Api.get(`/search?tutorid=${tutorId}`).then(response => {
-  //     setTutor(response.data.data[0])
-  //   }).catch(error => {
-  //     console.error(error)
-  //   })
-  // }, [])
+  useEffect(() => {
+    Api.get(`/search/courses?id=${courseId}`).then(response => {
+      const course = response.data.data[0]
+      setCourse(course)
+
+      return Api.get(`/search/tutors?id=${course.tutor}`).then(res => {
+        const tutor = res.data.data[0]
+        setTutor(tutor)
+      })
+    }).catch(error => {
+      console.error(error)
+    })
+  }, [])
 
   return (
     <div className="mt-5 bg-light">
@@ -48,18 +55,18 @@ function Checkout() {
                 </div>
                 <div className="media align-items-center">
                   <div className="media-body">
-                    <h6 className="mb-0 font-weight-bold">ภาษาอังกฤษ ม.1-ม.6</h6>
-                    <p className="mb-0 text-secondary">$29/Each 56 Orders</p>
+                    <h6 className="mb-0 font-weight-bold">{course && course.title}</h6>
+                    <p className="mb-0 text-secondary">สอนโดย {tutor && tutor.name}</p>
                   </div>
-                  <p className="mb-0 text-purple">$521.52</p>
+                  <p className="mb-0 text-purple">฿{course && course.price}</p>
                 </div>
                 <hr/>
                 <div className="media align-items-center">
                   <div className="media-body">
-                    <h6 className="mb-0 font-weight-bold">ภาษาอังกฤษ ม.1-ม.6</h6>
-                    <p className="mb-0 text-secondary">$29/Each 56 Orders</p>
+                    <h6 className="mb-0 font-weight-bold">{course && course.title}</h6>
+                    <p className="mb-0 text-secondary">สอนโดย {tutor && tutor.name}</p>
                   </div>
-                  <p className="mb-0 text-purple">$521.52</p>
+                  <p className="mb-0 text-purple">฿{course && course.price}</p>
                 </div>
                 <hr/>
                 <div className="media align-items-center">
@@ -109,7 +116,7 @@ function Checkout() {
           <div className="col-8">
             <div className="card">
               <div className="card-body">
-                <CalendarWeekDesktop/>
+                {tutor && <CalendarWeekDesktop availability={tutor.availability}/>}
               </div>
             </div>
           </div>

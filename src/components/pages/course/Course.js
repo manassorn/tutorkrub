@@ -2,7 +2,7 @@ import React from "react";
 import Api from '../../../Api'
 import SimpleTitle from '../../common/SimpleTitle'
 import CalendarByWeek3Steps from '../../common/CalendarByWeek3Steps'
-import CalendarCarousel2 from '../../common/CalendarCarousel2'
+import CalendarCarousel from '../../common/CalendarCarousel'
 import Utils from '../../../Utils'
 import './Course.css'
 
@@ -105,7 +105,7 @@ class Course extends React.Component {
         </div>
       <div className="offset-sm-2 col-sm-8">
         
-        <CalendarCarousel2 startOfWeek={new Date()}/>
+        <CalendarCarousel startOfWeek={new Date()}/>
         
         
       </div>
