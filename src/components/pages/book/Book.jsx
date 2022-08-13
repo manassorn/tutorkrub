@@ -4,7 +4,7 @@ import Api from '../../../Api'
 import DateUtils from '../../../DateUtils'
 import CalendarWeekBookTime from "../../calendar/CalendarWeekBookTime";
 
-function Checkout() {
+function Book() {
   let { courseId } = useParams();
   const [course, setCourse] = useState(null)
   const [tutor, setTutor] = useState(null)
@@ -134,4 +134,4 @@ function Checkout() {
 }
 
 
-export default Checkout
+export default Book

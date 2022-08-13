@@ -1,0 +1,15 @@
+table.schedule {
+  td.active {
+    background-color: #bfe49b;
+  }
+  td:hover {
+    background-color: #739f40;
+    cursor: pointer;
+  }
+}
+.green-glow {
+  background: #90C750;
+}
+.green-emerald {
+  background: #50C878;
+}

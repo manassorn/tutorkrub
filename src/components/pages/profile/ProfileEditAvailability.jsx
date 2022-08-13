@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import Api from '../../../Api'
 import SimpleTitle from '../../common/SimpleTitle'
 
-import CalendarWeekDesktop from "../../common/CalendarWeekDesktop";
+import CalendarWeekEditAvailability from "../../calendar/CalendarWeekEditAvailability";
 
 function ProfileEditAvailability(props) {
 
@@ -21,7 +21,7 @@ function ProfileEditAvailability(props) {
         <div className="offset-md-2 col-md-8">
           <SimpleTitle title="แก้ไขเวลาที่สะดวกสอน" backBtn="/profile"/>
           <br/>
-          {tutor && <CalendarWeekDesktop mode="edit" availability={tutor.availability}/>}
+          {tutor && <CalendarWeekEditAvailability availability={tutor.availability} />}
         </div>
       </div>
     </div>
