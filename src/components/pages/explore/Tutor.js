@@ -75,7 +75,7 @@ function Tutor() {
                       <p className="font-weight-bold mb-0">{course.title}</p>
                       <p className="text-secondary mb-0">{course.price}฿/ชั่วโมง</p>
                     </div>
-                    <a href={'/checkout/course/' + course.id} className="btn btn-sm btn-outline-primary radius-10">นัดหมาย</a>
+                    <a href={'/book/course/' + course.id} className="btn btn-sm btn-outline-primary radius-10">นัดหมาย</a>
                   </div>
                   { i < courses.length - 1 && <hr/>}
                 </>

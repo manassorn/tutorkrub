@@ -1,7 +1,4 @@
 import React, {useEffect, useRef, useState} from "react";
-import Overlay from 'react-bootstrap/Overlay';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
 import Api from "../../Api";
 import Utils from "../../Utils";
 import CalendarWeekTimeCellColor from "./CalendarWeekTimeCellColor";
@@ -11,7 +8,7 @@ import DateUtils from "../../DateUtils"
 function CalendarWeekBookTime(props) {
   const maxWeekBook = 8
   const matrix = new Array(7).fill(0).map(() => new Array(24).fill(0));
-  const [availability, setAvailability] = useState(props.availability || matrix)
+  const [availability, setAvailability] = useState(getActualAvailability(props.availability) || matrix)
   const [selectedDay, setSelectedDay] = useState(null)
   const [selectedHour, setSelectedHour] = useState(null)
   const [weekIndex, setWeekIndex] = useState(0)
@@ -24,30 +21,39 @@ function CalendarWeekBookTime(props) {
   useEffect(() => {
   }, [])
 
+  function getActualAvailability(repeatingAvailability) {
+    const emptyDay = Utils.range(24).fill(0)
+    const day = new Date().getDay() // 0 = Sunday
+    const actualAvailability = Utils.range(maxWeekBook).map(w => {
+      if(w == 0) {
+        const av = [...repeatingAvailability]
+        for(let i = 0; i < day; i++) {
+          av[i] = emptyDay
+        }
+        return av
+      }
+      return [...repeatingAvailability]
+    })
+    // console.log(actualAvailability)
+    return actualAvailability
+  }
+
   function onTimeClick(day, hour) {
-    if(availability[day][hour] == 0) return
-    const av = [...availability]
-    console.log(selectedDay,selectedHour)
-    if(selectedDay && selectedHour) {
-      av[selectedDay][selectedHour] = 1
-    }
-    setSelectedDay(day)
-    setSelectedHour(hour)
-    if(av[day][hour] == 1) {
-      av[day][hour] = 2
-    }
-    setAvailability(av)
+    // if(availability[day][hour] == 0) return
+    // const av = [...availability]
+    // console.log(selectedDay,selectedHour)
+    // if(selectedDay && selectedHour) {
+    //   av[selectedDay][selectedHour] = 1
+    // }
+    // setSelectedDay(day)
+    // setSelectedHour(hour)
+    // if(av[day][hour] == 1) {
+    //   av[day][hour] = 2
+    // }
+    // setAvailability(av)
     if(props.onDateTimeClick) {
       props.onDateTimeClick(new Date(weeklyDates[weekIndex][day].setHours(hour)))
     }
-  }
-  
-  function onSaveButtonClick() {
-    Api.put('/tutors', {availability}).then(response => {
-      console.log('success')
-    }).catch(error => {
-      console.error(error)
-    })
   }
 
   function onPrevClick() {
@@ -83,7 +89,13 @@ function CalendarWeekBookTime(props) {
 
           จองล่วงหน้าได้ {maxWeekBook} สัปดาห์</div>
       </div>
-      <CalendarWeekTimeCellColor weeklyDates={weeklyDates[weekIndex]} weeklyDatesFormat={weeklyDatesShortFormat[weekIndex]} colorFlagMatrix={availability} colorFlagCssClassMap={(flag) => ['', 'green-glow', 'green-emerald'][flag]} onTimeClick={onTimeClick} />
+
+      {Utils.range(maxWeekBook).map(i => (
+        <div className={i != weekIndex && 'd-none'}>
+          <CalendarWeekTimeCellColor weeklyDates={weeklyDates[i]} weeklyDatesFormat={weeklyDatesShortFormat[i]} colorFlagMatrix={availability[i]} colorFlagCssClassMap={(flag) => ['', 'green-glow', 'green-emerald'][flag]} clickable={flag => flag !== 0} onTimeClick={onTimeClick} />
+        </div>
+      ))}
+      {/*<CalendarWeekTimeCellColor weeklyDates={weeklyDates[weekIndex]} weeklyDatesFormat={weeklyDatesShortFormat[weekIndex]} colorFlagMatrix={availability[weekIndex]} colorFlagCssClassMap={(flag) => ['', 'green-glow', 'green-emerald'][flag]} onTimeClick={onTimeClick} />*/}
 
     </div>
   )

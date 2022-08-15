@@ -111,7 +111,7 @@ class Course extends React.Component {
       </div>
       
       <div className="offset-sm-2 col-sm-8 mt-4">
-        <a href={`/checkout/${this.state.course._id}`} className="btn btn-primary btn-block" >นัดหมาย</a>
+        <a href={`/book/${this.state.course._id}`} className="btn btn-primary btn-block" >นัดหมาย</a>
 
       </div>
       
@@ -120,7 +120,7 @@ class Course extends React.Component {
 
 
       <div className="p-3 fixed-bottom bg-white w-100 border-top d-block d-sm-none">
-        <a href={`/checkout/${this.state.course._id}`} className="btn btn-primary btn-block" >นัดหมาย</a>
+        <a href={`/book/${this.state.course._id}`} className="btn btn-primary btn-block" >นัดหมาย</a>
       </div>
 
 

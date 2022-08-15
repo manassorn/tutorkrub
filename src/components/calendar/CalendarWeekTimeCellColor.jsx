@@ -4,15 +4,27 @@ import './CalendarWeekTimeCellColor.scss'
 
 
 function CalendarWeekTimeCellColor(props) {
-  const matrix = new Array(7).fill(0).map(() => new Array(24).fill(0));
-  const [colorFlagMatrix, setColorFlags] = useState(props.colorFlagMatrix || matrix)
+  // const matrix = new Array(7).fill(0).map(() => new Array(24).fill(0));
+  // const [colorFlagMatrix, setColorFlags] = useState(props.colorFlagMatrix || matrix)
   const daysInWeek = DateUtils.getDaysInWeek()
 
   useEffect(() => {
   }, [])
 
+  function cellClassNames(day, hour) {
+    const color = props.colorFlagCssClassMap(props.colorFlagMatrix[day][hour])
+    const clickable = clickAble(day, hour)?'clickable':''
+    return color + ' ' + clickable
+  }
+
+  function clickAble(day, hour) {
+    return props.clickable === true || props.clickable(props.colorFlagMatrix[day][hour])
+  }
+
   function onTimeClick(day, hour) {
-    props.onTimeClick(day, hour)
+    if (clickAble(day, hour)) {
+      props.onTimeClick(day, hour)
+    }
   }
 
   return (
@@ -42,7 +54,7 @@ function CalendarWeekTimeCellColor(props) {
           <tr>
             <th scope="row" className="text-center">{('0' + hour).substr(-2)}:00</th>
             {[...Array(7).keys()].map(day => (
-              <td onClick={e => onTimeClick(day, hour)} className={props.colorFlagCssClassMap(colorFlagMatrix[day][hour])}>&nbsp;</td>
+              <td onClick={e => onTimeClick(day, hour)} className={cellClassNames(day, hour)}>&nbsp;</td>
             ))}
           </tr>
         ))}

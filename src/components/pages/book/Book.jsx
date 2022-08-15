@@ -3,12 +3,14 @@ import {useParams} from "react-router-dom";
 import Api from '../../../Api'
 import DateUtils from '../../../DateUtils'
 import CalendarWeekBookTime from "../../calendar/CalendarWeekBookTime";
+import PromptpayQRCodeModal from "./PromptpayQRCodeModal";
 
 function Book() {
   let { courseId } = useParams();
   const [course, setCourse] = useState(null)
   const [tutor, setTutor] = useState(null)
   const [scheduleDateTime, setScheduleDateTime] = useState(null)
+  const [showPromptpayQRCodeModal, setShowPromptpayQRCodeModal] = useState(false)
   //
   useEffect(() => {
     Api.get(`/search/courses?id=${courseId}`).then(response => {
@@ -113,7 +115,7 @@ function Book() {
                 </div>
 
                 <div className="text-right mt-3">
-                  <button type="button" className="btn btn-primary radius-10 ml-lg-3">&nbsp;&nbsp;ชำระเงิน<i className="bx bx-chevron-right"></i></button>
+                  <button type="button" onClick={e => setShowPromptpayQRCodeModal(true)} className={"btn btn-primary radius-10 ml-lg-3 " + (!scheduleDateTime && 'disabled btn-secondary')}>&nbsp;&nbsp;ชำระเงิน ฿{course && course.price}&nbsp;&nbsp;</button>
                 </div>
               </div>
 
@@ -129,6 +131,8 @@ function Book() {
           </div>
         </div>
       </div>
+
+      {showPromptpayQRCodeModal && <PromptpayQRCodeModal amount={course.price} />}
     </div>
   )
 }

@@ -6,6 +6,7 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
+    disableHostCheck: true,
     static: {
       directory: path.join(__dirname, 'public'),
       publicPath: '/public'

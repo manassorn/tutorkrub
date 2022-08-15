@@ -4,8 +4,7 @@ import Auth from "./Auth"
 
 import Wrapper from "./components/common/Wrapper"
 import Course from "./components/pages/course/Course"
-import Checkout from "./components/pages/checkout/Checkout"
-import CheckoutCreditCard from "./components/pages/checkout/CheckoutCreditCard"
+import Book from "./components/pages/book/Book"
 import CourseAdd from "./components/pages/course/CourseAdd"
 import CourseEdit from "./components/pages/course/CourseEdit"
 import Tutor from "./components/pages/explore/Tutor"
@@ -62,9 +61,8 @@ class App extends React.Component {
 
               <Route path="/appointment/list" element={<AppointmentList/>} />
               <Route path="/appointment" element={<Appointment/>} />
-              <Route path="/checkout/creditcard" element={<CheckoutCreditCard/>} />
-              <Route path="/checkout" element={<Checkout/>} />
-              <Route path="/checkout/course/:courseId" element={<Checkout/>} />
+              <Route path="/book" element={<Book/>} />
+              <Route path="/book/course/:courseId" element={<Book/>} />
               <Route path="/course/add" element={<CourseAdd/>} />
               <Route path="/course/edit" element={<CourseEdit/>} />
               <Route path="/explore" element={<Explore/>} />

@@ -1,10 +1,5 @@
 import React from "react";
 import Select from 'react-select'
-import {Link} from "react-router-dom";
-import Api from '../../../Api'
-import ProfileLayout from './ProfileLayout'
-import ProfileGroup from './ProfileGroup'
-import ProfileField from './ProfileField'
 import FormValidation from '../../common/FormValidation'
 import Constant from '../../../Constant'
 import './ProfileEdit.css'
