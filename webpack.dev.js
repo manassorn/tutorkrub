@@ -6,7 +6,12 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    disableHostCheck: true,
+    allowedHosts: [
+      '139.59.216.150',
+      '139.59.216.150:9950',
+      'tutorkrub.dev',
+      'www.tutorkrub.dev',
+    ],
     static: {
       directory: path.join(__dirname, 'public'),
       publicPath: '/public'
