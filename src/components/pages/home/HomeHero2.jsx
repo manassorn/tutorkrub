@@ -19,7 +19,7 @@ class HomeHero2 extends React.Component {
         <div className="offset-md-1 col-md-6 px-5 text-center text-md-left">
         
         <h1>
-          <img src="/public/assets/images/logo2.png" alt="" height="64" width="64"/>
+          <img src="/public/assets/images/logo3.png" alt="" height="64" width="64"/>
           TutorKrub
 
         </h1>

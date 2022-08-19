@@ -104,7 +104,7 @@ class ProfileRegisterTutor extends React.Component {
         <div className="modal d-block bg-forgot" tabIndex="-1" role="dialog" id="editTutorPrifileModal">
           <div className="modal-dialog modal-dialog-centeredx" role="document">
             <div className="position-absolute" style={{left:'20px',top:'10px', zIndex:'100'}}>
-              <img src="/public/assets/images/logo2.png" width="60"/>
+              <img src="/public/assets/images/logo3.png" width="60"/>
             </div>
             <div className="modal-content">
               <div className="modal-body py-5">

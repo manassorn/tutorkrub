@@ -132,7 +132,7 @@ function Book() {
         </div>
       </div>
 
-      {showPromptpayQRCodeModal && <PromptpayQRCodeModal amount={course.price} />}
+      {showPromptpayQRCodeModal && <PromptpayQRCodeModal amount={course.price} scheduleDateTime={scheduleDateTime} />}
     </div>
   )
 }
