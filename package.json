@@ -13,7 +13,7 @@
     "build-prod": "webpack --config webpack.prod.js",
     "start": "npm run start:local",
     "start:dev": "webpack-dev-server --config webpack.dev.js --host 0.0.0.0",
-    "start:local": "webpack-dev-server --config webpack.dev.js",
+    "start:local": "webpack-dev-server --config webpack.local.js",
     "start:localconnectdev": "webpack-dev-server --config webpack.localconnectdev.js"
   },
   "dependencies": {

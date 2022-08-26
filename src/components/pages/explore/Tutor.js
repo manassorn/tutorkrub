@@ -18,7 +18,7 @@ function Tutor() {
     }).catch(error => {
       console.error(error)
     })
-    Api.get(`/courses`).then(response => {
+    Api.get(`/search/courses?tutorid=${tutorId}`).then(response => {
       setCourses(response.data.data)
     }).catch(error => {
       console.error(error)

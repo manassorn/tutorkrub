@@ -8,32 +8,60 @@ function PromptpayQRCodeModal(props) {
 
   const [show, setShow] = useState(true)
   const [qrCodeUrl, setQRCodeUrl] = useState(null)
+  const [countDown, setCountDown] = useState(0)
 
   useEffect(() => {
+    const payment = props.payment
+    console.log(payment)
+    if (payment && payment.promptpayQRCodeUrl) {
+      showQRCode(payment.promptpayQRCodeUrl)
+    } else {
+      Api.post('/omise/promptpay/qrcode', {
+        paymentId: payment.id
+      }).then(res => {
+        showQRCode(res.data.data.promptpayQRCodeUrl)
+      })
+    }
 
-    const startTime = new Date().getTime()
-    Api.post('/omise/promptpay/qrcode', {
-      course: props.course.id,
-      scheduleDate: format(props.scheduleDateTime, 'yyyy-MM-dd'),
-      scheduleHour: props.scheduleDateTime.getHour(),
-      amount: props.amount,
-      sourceId: response.id,
-    }).then(res => {
-      const qrCodeUrl = res.data.data.qrCodeUrl
-      const img = new Image()
-      img.src = qrCodeUrl
-      const delay5s = 5000 - (new Date().getTime() - startTime)
-      setTimeout(() => {
-        setQRCodeUrl(qrCodeUrl)
-      }, delay5s)
+    const intervalId = startCountDown()
+    return(() => {
+      clearInterval(intervalId)
     })
-
   }, [])
 
+  function showQRCode(qrCodeUrl) {
+    const img = new Image()
+    img.src = qrCodeUrl
+    // delay for preload image
+    setTimeout(() => {
+      setQRCodeUrl(qrCodeUrl)
+    }, 1000)
+  }
+
+  function startCountDown() {
+    const intervalId = setInterval(() => {
+      setCountDown((countDown) => {
+        if(countDown == 0) return 360
+        else return  countDown - 1
+      })
+    }, 1000)
+    return intervalId
+  }
+
+  function timer(mins) {
+    return pad(Math.floor(mins / 60)) + ':' + pad((mins % 60))
+  }
+
+  function pad(digit) {
+    return ('0' + digit).slice(-2)
+  }
+
   return (
-    <Modal show={show} onHide={() => setShow(false)}>
-      <Modal.Header closeButton>
-        <Modal.Title>QR Code Promptpay</Modal.Title>
+    <Modal show={show} onHide={() => setShow(false)} size="sm">
+      <Modal.Header closeButton className="bg-light-primary">
+        <Modal.Title>
+          <h4 className="mb-0 text-primary">฿100</h4>
+        </Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
@@ -51,7 +79,10 @@ function PromptpayQRCodeModal(props) {
             </div>
           )}
           {qrCodeUrl && (
-            <img src={qrCodeUrl} width="280" height="397"/>
+            <>
+              <img src={qrCodeUrl} width="100%" />
+              <p>โปรดใช้โทรศัพท์มือถือสแกนภายใน <span className="text-primary">{timer(countDown)}</span> นาที</p>
+            </>
           )}
 
         </div>

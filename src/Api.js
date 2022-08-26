@@ -4,7 +4,7 @@ import Auth from './Auth'
 
 const Api = axios.create({
   baseURL: '/api',
-  timeout: 1000,
+  // timeout: 1000,
   headers: { 'X-Custom-Header': 'foobar' }
 });
 Api.interceptors.request.use(function(config) {

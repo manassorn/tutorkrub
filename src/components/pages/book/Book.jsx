@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
+import format from 'date-fns/format';
 import Api from '../../../Api'
 import DateUtils from '../../../DateUtils'
 import CalendarWeekBookTime from "../../calendar/CalendarWeekBookTime";
@@ -10,6 +11,7 @@ function Book() {
   const [course, setCourse] = useState(null)
   const [tutor, setTutor] = useState(null)
   const [scheduleDateTime, setScheduleDateTime] = useState(null)
+  const [payment, setPayment] = useState(false)
   const [showPromptpayQRCodeModal, setShowPromptpayQRCodeModal] = useState(false)
   //
   useEffect(() => {
@@ -27,8 +29,36 @@ function Book() {
   }, [])
 
   function onDateTimeClick(date) {
-    console.log('aa')
     setScheduleDateTime(date)
+  }
+
+  function startIntervalCheckPaymentStatus() {
+    const intervalId = setInterval(() => {
+      Api.get(`/payments/${payment.id}/status`).then((res) => {
+        if (res.data.data == 'paid') {
+
+          clearInterval(intervalId)
+        }
+      })
+    }, 2000)
+  }
+
+  function createPayment() {
+    console.log('scheduleDateTime',scheduleDateTime)
+    const payment = {
+      courseId: course.id,
+      amount: course.price,
+      scheduleDate: format(scheduleDateTime, 'yyyy-MM-dd'),
+      scheduleHour: scheduleDateTime.getHours()
+    }
+    return Api.put('/payments', payment)
+  }
+
+  function pay() {
+    createPayment().then((res) => {
+      setPayment(res.data.data)
+      setShowPromptpayQRCodeModal(true)
+    })
   }
 
   return (
@@ -115,7 +145,7 @@ function Book() {
                 </div>
 
                 <div className="text-right mt-3">
-                  <button type="button" onClick={e => setShowPromptpayQRCodeModal(true)} className={"btn btn-primary radius-10 ml-lg-3 " + (!scheduleDateTime && 'disabled btn-secondary')}>&nbsp;&nbsp;ชำระเงิน ฿{course && course.price}&nbsp;&nbsp;</button>
+                  <button type="button" onClick={pay} className={"btn btn-primary radius-10 ml-lg-3 " + (!scheduleDateTime && 'disabled btn-secondary')}>&nbsp;&nbsp;ชำระเงิน ฿{course && course.price}&nbsp;&nbsp;</button>
                 </div>
               </div>
 
@@ -132,7 +162,7 @@ function Book() {
         </div>
       </div>
 
-      {showPromptpayQRCodeModal && <PromptpayQRCodeModal amount={course.price} scheduleDateTime={scheduleDateTime} />}
+      {showPromptpayQRCodeModal && <PromptpayQRCodeModal scheduleDateTime={scheduleDateTime} payment={payment} />}
     </div>
   )
 }
