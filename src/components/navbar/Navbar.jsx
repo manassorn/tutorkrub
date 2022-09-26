@@ -38,12 +38,14 @@ function Navbar(props) {
     <header className="top-header">
       <nav className="navbar navbar-expand">
         <div className="left-topbar d-flex align-items-center">
-          <div className="logo-white">
-            <img src="/public/assets/images/logo3.png" width="60" alt=""/>
-          </div>
-          <div className="logo-dark">
-            <img src="/public/assets/images/logo3.png" width="60" alt=""/>
-          </div>
+          <Link to="/">
+            <div className="logo-white">
+              <img src="/public/assets/images/logo3.png" width="60" alt=""/>
+            </div>
+            <div className="logo-dark">
+              <img src="/public/assets/images/logo3.png" width="60" alt=""/>
+            </div>
+          </Link>
         </div>
 
         <NavbarCenter isLoggedIn={isLoggedIn}/>

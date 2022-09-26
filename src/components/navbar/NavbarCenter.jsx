@@ -1,4 +1,5 @@
 import React, {useEffect, useRef, useState} from "react";
+import {Link} from "react-router-dom";
 
 function NavbarCenter(props) {
 
@@ -7,16 +8,34 @@ function NavbarCenter(props) {
       <ul className="navbar-nav justify-content-center">
         {props.isLoggedIn ? (
           <>
-            <li className="nav-item mx-2"><a className="nav-link text-primaryx py-0" href="#">สำรวจวิชาเรียน <span
-              className="sr-only">(current)</span></a></li>
-            <li className="nav-item mx-2"><a className="nav-link text-primaryx py-0" href="#">รายการนัดหมาย</a></li>
-            <li className="nav-item mx-2"><a className="nav-link text-primaryx py-0" href="#">คูปอง</a></li>
+            <li className="nav-item mx-2">
+              <Link to="/explore" className="nav-link py-0">
+                สำรวจวิชาเรียน
+              </Link>
+            </li>
+            <li className="nav-item mx-2">
+              <Link to="/appointment" className="nav-link py-0">
+                รายการนัดหมาย
+              </Link>
+            </li>
+            <li className="nav-item mx-2">
+              <Link to="/coupon" className="nav-link py-0">
+                คูปอง
+              </Link>
+            </li>
           </>
         ) : (
           <>
-            <li className="nav-item mx-2"><a className="nav-link text-primaryx py-0" href="#">สำรวจวิชาเรียน <span
-              className="sr-only">(current)</span></a></li>
-            <li className="nav-item mx-2"><a className="nav-link text-primaryx py-0" href="#">ติดต่อสอบถาม</a></li>
+            <li className="nav-item mx-2">
+              <Link to="/explore" className="nav-link py-0">
+                สำรวจวิชาเรียน
+              </Link>
+            </li>
+            <li className="nav-item mx-2">
+              <Link to="https://m.me/tutorkrub" className="nav-link py-0">
+                <a className="nav-link py-0" href="#">ติดต่อสอบถาม</a>
+              </Link>
+            </li>
           </>
         )}
       </ul>
