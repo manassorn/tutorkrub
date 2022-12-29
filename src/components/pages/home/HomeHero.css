@@ -29,3 +29,10 @@
   }
 }
 
+.home-hero {
+    color: #313140;
+}
+.home-hero li {
+    color: #515164;
+    font-size: 16px;
+}

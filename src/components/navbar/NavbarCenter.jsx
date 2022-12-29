@@ -4,21 +4,21 @@ import {Link} from "react-router-dom";
 function NavbarCenter(props) {
 
   return (
-    <div className="flex-grow-1 search-bar">
-      <ul className="navbar-nav justify-content-center">
+    <div className="flex-grow-1 navbar-center">
+      <ul className="navbar-nav justify-content-end">
         {props.isLoggedIn ? (
           <>
-            <li className="nav-item mx-2">
+            <li className="nav-item">
               <Link to="/explore" className="nav-link py-0">
                 สำรวจวิชาเรียน
               </Link>
             </li>
-            <li className="nav-item mx-2">
+            <li className="nav-item">
               <Link to="/appointment" className="nav-link py-0">
                 รายการนัดหมาย
               </Link>
             </li>
-            <li className="nav-item mx-2">
+            <li className="nav-item">
               <Link to="/coupon" className="nav-link py-0">
                 คูปอง
               </Link>
@@ -26,15 +26,13 @@ function NavbarCenter(props) {
           </>
         ) : (
           <>
-            <li className="nav-item mx-2">
+            <li className="nav-item">
               <Link to="/explore" className="nav-link py-0">
                 สำรวจวิชาเรียน
               </Link>
             </li>
-            <li className="nav-item mx-2">
-              <Link to="https://m.me/tutorkrub" className="nav-link py-0">
-                <a className="nav-link py-0" href="#">ติดต่อสอบถาม</a>
-              </Link>
+            <li className="nav-item">
+              <a className="nav-link py-0" href="https://m.me/tutorkrub" target="_blank">ติดต่อสอบถาม</a>
             </li>
           </>
         )}
