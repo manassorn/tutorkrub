@@ -33,12 +33,12 @@ class Card4 extends React.Component {
 
             <div className="media">
               <div className="text-center">
-                <img className="rounded-circle mb-2 p-1 border" src={tutor.avatarUrl} alt="" width="80"/>
+                <img className="rounded-circle mb-2 p-1 border" src={tutor.avatarUrl} alt="" width="80" height="80"/>
                 <br/>
                 <p className="text-secondary mb-3">ติวเตอร์</p>
               </div>
               <div className="media-body pl-3">
-                <h5 className="font-weight-bold mt-2 mb-3">{tutor.krubId}</h5>
+                <h5 className="font-weight-bold mt-2 mb-3">{tutor.name}</h5>
 
                 <div>
                   <i className="lni lni-graduation bx-xs mr-1 text-primary" />
@@ -55,7 +55,11 @@ class Card4 extends React.Component {
 
                 </div>
                 <div className="mt-3">
-                  <Link to={`/explore/tutor/${tutor.id}`} className="stretched-link">ดูรายละเอียด</Link>
+                  {
+                    tutor.fbPostURL?
+                      <Link to={`/explore/tutor/${tutor.id}`} className="stretched-link">ดูรายละเอียด</Link>
+                      :<a href={tutor.fbPostURL} className="stretched-link">ดูรายละเอียด</a>
+                  }
                 </div>
 
               </div>

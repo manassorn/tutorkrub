@@ -25,6 +25,7 @@ import Appointment from "./components/pages/appointment/Appointment"
 import AppointmentList from "./components/pages/appointment/AppointmentList"
 import RegisterStudent from "./components/pages/register/RegisterStudent"
 import RegisterTutor from "./components/pages/register/RegisterTutor"
+import AdminTutorAdd from "./components/pages/admin/AdminTutorAdd"
 import Login from "./components/pages/Login"
 import Home from "./components/pages/home/Home"
 import Test from "./components/test"
@@ -56,6 +57,7 @@ class App extends React.Component {
               <Route path="/register" element={<RegisterStudent/>} />
               <Route path="/register/tutor" element={<RegisterTutor/>} />
               <Route path="/login" element={<Login/>} />
+              <Route path="/admin/tutor/add" element={<AdminTutorAdd/>} />
                 
                 
 
